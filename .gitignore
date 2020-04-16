@@ -1,6 +1,14 @@
 /*
 /cards/result_full.json
 !.gitignore
+!DefaultRoutine.cs
+!DefaultRoutineSettings.cs
+!SettingsGui.xaml
+!silverfish_HB.cs
 !LICENSE
 !README.md
+!/ai
+!/behavior
 !/cards
+!/data
+!/penalties
