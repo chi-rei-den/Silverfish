@@ -1,0 +1,31 @@
+/* _BEGIN_TEMPLATE_
+{
+  "id": "BOT_531",
+  "name": [
+    "星界密使",
+    "Celestial Emissary"
+  ],
+  "text": [
+    "<b>战吼：</b>在本回合中，你的下一个法术将获得<b>法术伤害+2</b>。",
+    "<b>Battlecry:</b> Your next spell this turn has <b>Spell Damage +2</b>."
+  ],
+  "cardClass": "MAGE",
+  "type": "MINION",
+  "cost": 2,
+  "rarity": "RARE",
+  "set": "BOOMSDAY",
+  "collectible": true,
+  "dbfId": 49263
+}
+_END_TEMPLATE_ */
+
+namespace HREngine.Bots
+{
+	class Sim_BOT_531 : SimTemplate //* 星界密使 Celestial Emissary
+	{
+		//<b>Battlecry:</b> Your next spell this turn has <b>Spell Damage +2</b>.
+		//<b>战吼：</b>在本回合中，你的下一个法术将获得<b>法术伤害+2</b>。
+
+
+	}
+}

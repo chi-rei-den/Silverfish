@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+/* _BEGIN_TEMPLATE_
+{
+  "id": "ICC_829t",
+  "name": [
+    "冰墓裁决",
+    "Grave Vengeance"
+  ],
+  "text": [
+    "<b>吸血</b>",
+    "<b>Lifesteal</b>"
+  ],
+  "cardClass": "PALADIN",
+  "type": "WEAPON",
+  "cost": 8,
+  "rarity": null,
+  "set": "ICECROWN",
+  "collectible": null,
+  "dbfId": 43405
+}
+_END_TEMPLATE_ */
+
+namespace HREngine.Bots
+{
+	class Sim_ICC_829t : SimTemplate //* 5/3 Grave Vengeance
+	{
+		//Lifesteal
+		//Handled in minionAttacksMinion()
+
+		CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_829t);
+
+		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+		{
+            p.equipWeapon(weapon, ownplay);
+		}
+	}
+}

@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+/* _BEGIN_TEMPLATE_
+{
+  "id": "AT_099",
+  "name": [
+    "科多兽骑手",
+    "Kodorider"
+  ],
+  "text": [
+    "<b>激励：</b>召唤一个3/5的作战科多兽。",
+    "<b>Inspire:</b> Summon a 3/5 War Kodo."
+  ],
+  "cardClass": "NEUTRAL",
+  "type": "MINION",
+  "cost": 6,
+  "rarity": "EPIC",
+  "set": "TGT",
+  "collectible": true,
+  "dbfId": 2598
+}
+_END_TEMPLATE_ */
+
+namespace HREngine.Bots
+{
+	class Sim_AT_099 : SimTemplate //* Kodorider
+	{
+		//Inspire: Summon a 3/5 War Kodo.
+
+        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_099t); //War Kodo
+		
+		public override void onInspire(Playfield p, Minion m, bool own)
+        {
+            if (m.own == own) p.callKid(kid, m.zonepos, own);
+        }
+	}
+}

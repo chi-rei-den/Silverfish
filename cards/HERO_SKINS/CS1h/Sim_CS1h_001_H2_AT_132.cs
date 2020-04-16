@@ -1,0 +1,31 @@
+/* _BEGIN_TEMPLATE_
+{
+  "id": "CS1h_001_H2_AT_132",
+  "name": [
+    "治疗术",
+    "Heal"
+  ],
+  "text": [
+    "<b>英雄技能</b>\n恢复#4点生命值。",
+    "<b>Hero Power</b>\nRestore #4 Health."
+  ],
+  "cardClass": "PRIEST",
+  "type": "HERO_POWER",
+  "cost": 2,
+  "rarity": null,
+  "set": "HERO_SKINS",
+  "collectible": null,
+  "dbfId": 54818
+}
+_END_TEMPLATE_ */
+
+namespace HREngine.Bots
+{
+	class Sim_CS1h_001_H2_AT_132 : SimTemplate //* 治疗术 Heal
+	{
+		//<b>Hero Power</b>Restore #4 Health.
+		//<b>英雄技能</b>恢复#4点生命值。
+
+
+	}
+}

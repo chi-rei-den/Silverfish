@@ -1,0 +1,31 @@
+/* _BEGIN_TEMPLATE_
+{
+  "id": "GILA_BOSS_45p",
+  "name": [
+    "毒饮",
+    "Poisoned Drink"
+  ],
+  "text": [
+    "<b>被动英雄技能</b>\n每当一个玩家抽一张牌时，对其造成1点伤害。",
+    "[x]<b>Passive Hero Power</b>\nWhenever a player\ndraws a card, deal 1\ndamage to them."
+  ],
+  "cardClass": "NEUTRAL",
+  "type": "HERO_POWER",
+  "cost": 0,
+  "rarity": null,
+  "set": "GILNEAS",
+  "collectible": null,
+  "dbfId": 48633
+}
+_END_TEMPLATE_ */
+
+namespace HREngine.Bots
+{
+	class Sim_GILA_BOSS_45p : SimTemplate //* 毒饮 Poisoned Drink
+	{
+		//[x]<b>Passive Hero Power</b>Whenever a playerdraws a card, deal 1damage to them.
+		//<b>被动英雄技能</b>每当一个玩家抽一张牌时，对其造成1点伤害。
+
+
+	}
+}
