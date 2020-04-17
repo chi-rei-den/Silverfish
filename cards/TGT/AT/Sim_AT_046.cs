@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_046 : SimTemplate //* Tuskarr Totemic
+    class Sim_AT_046 : SimCard //* Tuskarr Totemic
     {
         //Battlecry: Summon a random basic Totem.
 

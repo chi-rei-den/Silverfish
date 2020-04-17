@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Paladin_04 : SimTemplate //* 伤人伤己 Self-Sacrifice
+	class Sim_TRLA_Paladin_04 : SimCard //* 伤人伤己 Self-Sacrifice
 	{
 		//
 		//

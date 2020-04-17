@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_032 : SimTemplate //* Grove Tender
+    class Sim_GVG_032 : SimCard //* Grove Tender
     {
 
         //    Choose One - Give each player a Mana Crystal; or Each player draws a card.

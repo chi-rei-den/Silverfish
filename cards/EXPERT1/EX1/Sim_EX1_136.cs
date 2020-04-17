@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_136 : SimTemplate //* Redemption
+    class Sim_EX1_136 : SimCard //* Redemption
     {
         //Secret: When one of your minions dies, return it to life with 1 Health.
 

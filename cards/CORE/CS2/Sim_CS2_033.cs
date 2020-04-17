@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_033 : SimTemplate //waterelemental
+	class Sim_CS2_033 : SimCard //waterelemental
 	{
 
 //    friert/ jeden charakter ein, der von diesem diener verletzt wurde.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_116 : SimTemplate //leeroyjenkins
+	class Sim_EX1_116 : SimCard //leeroyjenkins
 	{
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_116t);//whelp
 //    ansturm/. kampfschrei:/ ruft zwei welplinge (1/1) für euren gegner herbei.

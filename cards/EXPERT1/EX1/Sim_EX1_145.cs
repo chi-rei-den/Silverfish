@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_145 : SimTemplate //preparation
+	class Sim_EX1_145 : SimCard //preparation
 	{
 
 //    der nächste zauber, den ihr in diesem zug wirkt, kostet (3) weniger.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_141 : SimTemplate //ironforgerifleman
+	class Sim_CS2_141 : SimCard //ironforgerifleman
 	{
 
 //    kampfschrei:/ verursacht 1 schaden.

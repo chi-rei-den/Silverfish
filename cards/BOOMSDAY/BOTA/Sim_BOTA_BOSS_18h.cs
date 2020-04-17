@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_18h : SimTemplate //* 水晶工匠坎格尔 Crystalsmith Kangor
+	class Sim_BOTA_BOSS_18h : SimCard //* 水晶工匠坎格尔 Crystalsmith Kangor
 	{
 		//
 		//

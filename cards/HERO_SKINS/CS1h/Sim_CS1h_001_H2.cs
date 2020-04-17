@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1h_001_H2 : SimTemplate //* 次级治疗术 Lesser Heal
+	class Sim_CS1h_001_H2 : SimCard //* 次级治疗术 Lesser Heal
 	{
 		//<b>Hero Power</b>Restore #2 Health.
 		//<b>英雄技能</b>恢复#2点生命值。

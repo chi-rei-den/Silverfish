@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_036t : SimTemplate //* 巨型蝗虫 Giant Locust
+	class Sim_ULDA_036t : SimCard //* 巨型蝗虫 Giant Locust
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka4t : SimTemplate //chicken
+	class Sim_Mekka4t : SimCard //chicken
 	{
 
 //    i&gt;put, put, put!/i&gt;

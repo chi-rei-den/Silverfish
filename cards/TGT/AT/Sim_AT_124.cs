@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_124 : SimTemplate //* Bolf Ramshield
+	class Sim_AT_124 : SimCard //* Bolf Ramshield
 	{
 		//Whenever your hero takes damage, this minion takes it instead.
 

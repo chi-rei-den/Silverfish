@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_169 : SimTemplate //* Innervate
+    class Sim_EX1_169 : SimCard //* Innervate
 	{
         //Gain 1 Mana Crystal this turn only.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_089 : SimTemplate //* Gentle Megasaur
+	class Sim_UNG_089 : SimCard //* Gentle Megasaur
 	{
 		//Battlecry: Adapt your Murlocs.
 

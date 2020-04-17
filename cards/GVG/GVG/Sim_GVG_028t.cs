@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_028t : SimTemplate //Gallywix's Coin
+    class Sim_GVG_028t : SimCard //Gallywix's Coin
     {
 
         //    Gain 1 Mana Crystal this turn only.

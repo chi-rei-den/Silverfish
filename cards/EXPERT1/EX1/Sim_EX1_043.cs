@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_043 : SimTemplate //twilightdrake
+	class Sim_EX1_043 : SimCard //twilightdrake
 	{
 
 //    kampfschrei:/ erhält +1 leben für jede karte auf eurer hand.

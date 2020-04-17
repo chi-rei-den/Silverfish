@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_183 : SimTemplate //multishot
+	class Sim_DS1_183 : SimCard //multishot
 	{
 
 //    fügt zwei zufälligen feindlichen dienern $3 schaden zu.

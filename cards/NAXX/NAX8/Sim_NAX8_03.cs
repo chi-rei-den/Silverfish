@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX8_03 : SimTemplate //* Unrelenting Trainee
+	class Sim_NAX8_03 : SimCard //* Unrelenting Trainee
 	{
 //    Deathrattle:: Summon a Spectral Trainee for your opponent.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX8_03t); //Spectral Trainee

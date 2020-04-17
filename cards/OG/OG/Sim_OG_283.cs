@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_283 : SimTemplate //* C'Thun's Chosen
+	class Sim_OG_283 : SimCard //* C'Thun's Chosen
 	{
 		//Divine Shield. Battlecry: Give your C'Thun +2/+2 (wherever it is).
 		

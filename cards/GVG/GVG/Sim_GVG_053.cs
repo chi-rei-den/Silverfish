@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_053 : SimTemplate //Shieldmaiden
+    class Sim_GVG_053 : SimCard //Shieldmaiden
     {
 
         //   Battlecry:&lt;/b&gt; Gain 5 Armor.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_039 : SimTemplate //* Gorillabot A-3
+	class Sim_LOE_039 : SimCard //* Gorillabot A-3
 	{
 		//Battlecry: If you control another Mech, Discover a Mech.
 		

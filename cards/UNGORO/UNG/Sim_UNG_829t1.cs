@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829t1 : SimTemplate //* Nether Portal
+	class Sim_UNG_829t1 : SimCard //* Nether Portal
 	{
 		//Open a permanent portal that summons 3/2 Imps.
 

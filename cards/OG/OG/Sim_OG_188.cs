@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_188 : SimTemplate //* Klaxxi Amber-Weaver
+	class Sim_OG_188 : SimCard //* Klaxxi Amber-Weaver
 	{
 		//Battlecry: If your C'Thun has at least 10 Attack, gain +5 Health.
 		

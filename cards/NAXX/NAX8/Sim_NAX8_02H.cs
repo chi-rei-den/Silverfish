@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX8_02H : SimTemplate //* Harvest heroic
+	class Sim_NAX8_02H : SimCard //* Harvest heroic
 	{
 
 //    Hero PowerDraw a card. Gain a Mana Crystal.

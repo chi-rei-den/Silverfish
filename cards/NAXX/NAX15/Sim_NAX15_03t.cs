@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX15_03t : SimTemplate //* Guardian of Icecrown
+	class Sim_NAX15_03t : SimCard //* Guardian of Icecrown
 	{
 		//Taunt
 	}

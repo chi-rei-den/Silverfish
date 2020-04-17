@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_010 : SimTemplate //* Druid of the Flame
+    class Sim_BRM_010 : SimCard //* Druid of the Flame
     {
 		// Choose One - Transform into a 5/2 minion; or a 2/5 minion.
         CardDB.Card fireCat52 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRM_010t);

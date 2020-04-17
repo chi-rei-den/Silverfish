@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_607 : SimTemplate //innerrage
+	class Sim_EX1_607 : SimCard //innerrage
 	{
 
 //    fügt einem diener $1 schaden zu. der diener erhält +2 angriff.

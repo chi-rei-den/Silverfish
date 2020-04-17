@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042t : SimTemplate //* Sabertooth Lion
+	class Sim_AT_042t : SimCard //* Sabertooth Lion
 	{
 		//Charge
 	}

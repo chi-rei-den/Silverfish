@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_002 : SimTemplate //theblackknight
+	class Sim_EX1_002 : SimCard //theblackknight
 	{
 
 //    kampfschrei:/ vernichtet einen feindlichen diener mit spott/.

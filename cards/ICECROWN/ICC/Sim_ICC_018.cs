@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_018: SimTemplate //* Phantom Freebooter
+    class Sim_ICC_018: SimCard //* Phantom Freebooter
     {
         // Battlecry: Gain stats equal to your weapon's.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_313 : SimTemplate //pitlord
+    class Sim_EX1_313 : SimCard //pitlord
     {
 
         //    kampfschrei:/ fügt eurem helden 5 schaden zu.

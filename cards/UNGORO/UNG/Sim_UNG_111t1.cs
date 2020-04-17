@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_111t1 : SimTemplate //* Mana Treant
+	class Sim_UNG_111t1 : SimCard //* Mana Treant
 	{
 		//Deathrattle: Gain an empty Mana Crystal.
 

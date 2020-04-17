@@ -17,7 +17,6 @@ namespace HREngine.Bots
         private static readonly ILog Log = Logger.GetLoggerInstanceForType();
         public List<Playfield> storedBoards = new List<Playfield>();
 
-
         public static List<T> TakeList<T>(IEnumerable<T> source, int limit)
         {
             List<T> retlist = new List<T>();

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_031 : SimTemplate //* Ice Lance
+    class Sim_CS2_031 : SimCard //* Ice Lance
 	{
         //Freeze a character. If it was already Frozen, deal $4 damage instead.
 

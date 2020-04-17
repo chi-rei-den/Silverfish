@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_089 : SimTemplate //holylight
+	class Sim_CS2_089 : SimCard //holylight
 	{
 
 //    stellt #6 leben wieder her.

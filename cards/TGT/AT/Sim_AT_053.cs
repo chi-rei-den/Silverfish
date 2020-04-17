@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_053 : SimTemplate //* Ancestral Knowledge
+	class Sim_AT_053 : SimCard //* Ancestral Knowledge
 	{
 		//Draw 2 Cards. Overload: (2)
 		

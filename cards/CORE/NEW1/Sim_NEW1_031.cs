@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_031 : SimTemplate //* animalcompanion
+	class Sim_NEW1_031 : SimCard //* animalcompanion
 	{
         //Summon a random Beast Companion.
 

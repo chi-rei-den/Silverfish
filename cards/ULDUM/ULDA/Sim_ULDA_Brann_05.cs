@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_05 : SimTemplate //* 巨龙之力 Dragons
+	class Sim_ULDA_Brann_05 : SimCard //* 巨龙之力 Dragons
 	{
 		//
 		//

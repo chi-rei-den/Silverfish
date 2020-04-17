@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_237 : SimTemplate //starvingbuzzard
+	class Sim_CS2_237 : SimCard //starvingbuzzard
 	{
 
 //    zieht jedes mal eine karte, wenn ihr ein wildtier herbeiruft.

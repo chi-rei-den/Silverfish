@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_900 : SimTemplate //* Unlicensed Apothecary
+	class Sim_CFM_900 : SimCard //* Unlicensed Apothecary
 	{
 		// Whenever you summon a minion, deal 5 damage to your Hero.
 

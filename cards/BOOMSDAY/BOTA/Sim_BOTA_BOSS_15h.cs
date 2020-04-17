@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_15h : SimTemplate //* 爆破专家布林娜 Boomnician Breena
+	class Sim_BOTA_BOSS_15h : SimCard //* 爆破专家布林娜 Boomnician Breena
 	{
 		//
 		//

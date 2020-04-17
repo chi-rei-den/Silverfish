@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_015 : SimTemplate //* Convert
+	class Sim_AT_015 : SimCard //* Convert
 	{
 		//Put a copy of an enemy minion into your hand.
 

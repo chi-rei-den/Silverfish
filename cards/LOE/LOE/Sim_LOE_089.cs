@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_089 : SimTemplate //* Wobbling Runts
+	class Sim_LOE_089 : SimCard //* Wobbling Runts
 	{
 		//Deathrattle: Summon three 2/2 Runts.
         

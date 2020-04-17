@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_BOSS_61h : SimTemplate //* 女巫哈加莎 Hagatha the Witch
+	class Sim_GILA_BOSS_61h : SimCard //* 女巫哈加莎 Hagatha the Witch
 	{
 		//
 		//

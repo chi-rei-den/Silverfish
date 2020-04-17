@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_323 : SimTemplate //* Polluted Hoarder
+	class Sim_OG_323 : SimCard //* Polluted Hoarder
 	{
 		//Deathrattle: Draw a card.
 		

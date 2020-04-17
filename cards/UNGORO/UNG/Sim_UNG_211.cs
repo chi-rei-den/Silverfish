@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211 : SimTemplate //* Kalimos, Primal Lord
+	class Sim_UNG_211 : SimCard //* Kalimos, Primal Lord
 	{
 		//Battlecry: If you played an Elemental last turn, cast an Elemental Invocation.
 

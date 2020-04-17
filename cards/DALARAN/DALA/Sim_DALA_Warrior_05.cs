@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_05 : SimTemplate //* 突袭 Rush
+	class Sim_DALA_Warrior_05 : SimCard //* 突袭 Rush
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_238: SimTemplate //* Animated Berserker
+    class Sim_ICC_238: SimCard //* Animated Berserker
     {
         // After you play a minion deal 1 damage to it.
 

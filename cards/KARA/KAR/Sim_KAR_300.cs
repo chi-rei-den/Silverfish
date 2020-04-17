@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_300 : SimTemplate //* Enchanted Raven
+	class Sim_KAR_300 : SimCard //* Enchanted Raven
 	{
 		// -
 	}

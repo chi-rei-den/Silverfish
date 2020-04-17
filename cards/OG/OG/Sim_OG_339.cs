@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_339 : SimTemplate //* Skeram Cultist
+	class Sim_OG_339 : SimCard //* Skeram Cultist
 	{
 		//Battlecry: Give your C'Thun +2/+2 (wherever it is).
 		

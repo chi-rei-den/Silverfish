@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_027 : SimTemplate //* Evolve
+	class Sim_OG_027 : SimCard //* Evolve
 	{
 		//Transform your minions into random minions that cost (1) more.
 		

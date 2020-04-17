@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_363 : SimTemplate //blessingofwisdom
+	class Sim_EX1_363 : SimCard //blessingofwisdom
 	{
 
 //    wählt einen diener aus. zieht jedes mal eine karte, wenn er angreift.

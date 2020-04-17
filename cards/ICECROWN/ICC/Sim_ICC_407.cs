@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_407: SimTemplate //* Gnomeferatu
+    class Sim_ICC_407: SimCard //* Gnomeferatu
     {
         // Battlecry: Remove the top card of your opponent's deck.
 

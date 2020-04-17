@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_152 : SimTemplate //* Grotesque Dragonhawk
+	class Sim_OG_152 : SimCard //* Grotesque Dragonhawk
 	{
 		//Windfury
 	}

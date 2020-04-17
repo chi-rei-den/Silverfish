@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_028 : SimTemplate //* Fool's Bane
+	class Sim_KAR_028 : SimCard //* Fool's Bane
 	{
         //Unlimited attacks each turn. Can't attack heroes.
         // handled in public void getMoveList

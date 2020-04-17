@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_006 : SimTemplate //* Vilefin Inquisitor
+	class Sim_OG_006 : SimCard //* Vilefin Inquisitor
 	{
 		//Battlecry: Your Hero Power becomes 'Summon a 1/1 Murloc.'
 		

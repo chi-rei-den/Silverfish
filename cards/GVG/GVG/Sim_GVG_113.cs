@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_113 : SimTemplate //Foe Reaper 4000
+    class Sim_GVG_113 : SimCard //Foe Reaper 4000
     {
 
         //  Also damages the minions next to whomever he attacks. 

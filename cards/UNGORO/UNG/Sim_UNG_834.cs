@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_834 : SimTemplate //* Feeding Time
+	class Sim_UNG_834 : SimCard //* Feeding Time
 	{
 		//Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.
 

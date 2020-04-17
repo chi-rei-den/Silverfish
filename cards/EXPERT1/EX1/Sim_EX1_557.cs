@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_557 : SimTemplate //natpagle
+	class Sim_EX1_557 : SimCard //natpagle
 	{
 
 //    zu beginn eures zuges besteht eine chance von 50%, dass ihr eine zusätzliche karte zieht.

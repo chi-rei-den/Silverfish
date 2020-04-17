@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_115 : SimTemplate //Toshley
+    class Sim_GVG_115 : SimCard //Toshley
     {
 
         //   Battlecry Deathrattle: Add a Spare Part card to your hand.

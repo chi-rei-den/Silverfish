@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_080t : SimTemplate //Druid of the Fang better form :D
+    class Sim_GVG_080t : SimCard //Druid of the Fang better form :D
     {
 
        // 7/7 minion

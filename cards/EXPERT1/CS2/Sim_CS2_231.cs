@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_231 : SimTemplate//wisp
+    class Sim_CS2_231 : SimCard//wisp
     {
 
 

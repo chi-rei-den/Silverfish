@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_021 : SimTemplate //* Doomsayer
+    class Sim_NEW1_021 : SimCard //* Doomsayer
 	{
         // At the start of your turn, destroy ALL minions.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_06 : SimTemplate //* 坚实护卫 Protectors
+	class Sim_ULDA_Brann_06 : SimCard //* 坚实护卫 Protectors
 	{
 		//
 		//

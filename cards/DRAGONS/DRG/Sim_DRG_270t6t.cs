@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_270t6t : SimTemplate //* 玛里苟斯的绵羊 Malygos's Sheep
+	class Sim_DRG_270t6t : SimCard //* 玛里苟斯的绵羊 Malygos's Sheep
 	{
 		//
 		//

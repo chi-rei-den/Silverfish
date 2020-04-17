@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_926 : SimTemplate //* Cornered Sentry
+	class Sim_UNG_926 : SimCard //* Cornered Sentry
 	{
 		//Taunt. Battlecry: Summon three 1/1 Raptors for your opponent.
 

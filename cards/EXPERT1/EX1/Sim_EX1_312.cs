@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_312 : SimTemplate //twistingnether
+	class Sim_EX1_312 : SimCard //twistingnether
 	{
 
 //    vernichtet alle diener.

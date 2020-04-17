@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_431 : SimTemplate //* 污染腐化 Contamination!
+	class Sim_BOTA_431 : SimCard //* 污染腐化 Contamination!
 	{
 		//Start Board Clear Puzzle 2-3.
 		//Start Board Clear Puzzle 2-3.

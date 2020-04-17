@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_016 : SimTemplate //Fel Reaver
+    class Sim_GVG_016 : SimCard //Fel Reaver
     {
 
         //    Whenever your opponent plays a card, discard the top 3 cards of your deck.

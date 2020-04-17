@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_701: SimTemplate //* Skulking Geist
+    class Sim_ICC_701: SimCard //* Skulking Geist
     {
         // Battlecry: Destroy all 1-Cost spells in both hands and decks.
 

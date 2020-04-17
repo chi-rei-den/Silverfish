@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_019 : SimTemplate //* Air Elemental
+	class Sim_UNG_019 : SimCard //* Air Elemental
 	{
 		//Can't be targeted by spells or Hero Powers.
 

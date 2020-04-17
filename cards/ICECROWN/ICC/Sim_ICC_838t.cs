@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_838t : SimTemplate //* Frozen Champion
+    class Sim_ICC_838t : SimCard //* Frozen Champion
     {
         // Deathrattle: Add a random Legendary minion to your hand.
 

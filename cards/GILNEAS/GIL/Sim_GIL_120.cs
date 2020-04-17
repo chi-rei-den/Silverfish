@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_120 : SimTemplate //* 暴怒的双头巨人 Furious Ettin
+	class Sim_GIL_120 : SimCard //* 暴怒的双头巨人 Furious Ettin
 	{
 		//<b>Taunt</b>
 		//<b>嘲讽</b>

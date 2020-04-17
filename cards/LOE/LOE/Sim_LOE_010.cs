@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_010 : SimTemplate //* Pit Snake
+	class Sim_LOE_010 : SimCard //* Pit Snake
 	{
 		//Destroy any minion damaged by this minion.
 	}

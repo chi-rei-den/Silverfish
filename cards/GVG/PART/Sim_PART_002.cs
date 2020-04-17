@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_002 : SimTemplate //Time Rewinder
+    class Sim_PART_002 : SimCard //Time Rewinder
     {
 
         //   Return a friendly minion to your hand.

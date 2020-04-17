@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_024 : SimTemplate //* Mana Bind
+	class Sim_UNG_024 : SimCard //* Mana Bind
 	{
 		//Secret: When your opponent casts a spell, add a copy to your hand that costs (0).
 

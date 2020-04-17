@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX14_02 : SimTemplate //* Frost Breath
+	class Sim_NAX14_02 : SimCard //* Frost Breath
 	{
 		// Hero PowerDestroy all enemy minions that aren't Frozen.
 		

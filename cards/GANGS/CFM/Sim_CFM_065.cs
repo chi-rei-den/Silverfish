@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_065 : SimTemplate //* Volcanic Potion
+	class Sim_CFM_065 : SimCard //* Volcanic Potion
 	{
 		// Deal 2 damage to all minions.
 

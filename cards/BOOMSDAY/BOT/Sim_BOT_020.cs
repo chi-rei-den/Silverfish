@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_020 : SimTemplate //* 滑板机器人 Skaterbot
+	class Sim_BOT_020 : SimCard //* 滑板机器人 Skaterbot
 	{
 		//<b>Magnetic</b><b>Rush</b>
 		//<b>磁力</b><b>突袭</b>

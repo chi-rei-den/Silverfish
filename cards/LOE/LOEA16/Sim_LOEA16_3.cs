@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOEA16_3 : SimTemplate //* Lantern of Power
+	class Sim_LOEA16_3 : SimCard //* Lantern of Power
 	{
 		//Give a minion +10/+10.
 

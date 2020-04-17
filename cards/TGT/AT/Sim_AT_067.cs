@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_067 : SimTemplate //* Magnataur Alpha
+	class Sim_AT_067 : SimCard //* Magnataur Alpha
 	{
 		//Also damages the minions next to whomever he attacks.
         //done in minionAttacksMinion

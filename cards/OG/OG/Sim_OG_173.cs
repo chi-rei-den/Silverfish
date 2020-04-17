@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_173 : SimTemplate //* Blood of The Ancient One
+	class Sim_OG_173 : SimCard //* Blood of The Ancient One
 	{
 		//If you control two of these at the end of your turn, merge them into 'The Ancient One'
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_946 : SimTemplate //* Gluttonous Ooze
+	class Sim_UNG_946 : SimCard //* Gluttonous Ooze
 	{
 		//Battlecry: Destroy your opponent's weapon and gain Armor equal to its Attack.
 

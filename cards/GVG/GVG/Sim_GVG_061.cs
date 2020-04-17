@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_061 : SimTemplate //* Muster for Battle
+    class Sim_GVG_061 : SimCard //* Muster for Battle
     {
         // Summon three 1/1 Silver Hand Recruits. Equip a 1/4 Weapon.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_010 : SimTemplate //* Nightbane Templar
+	class Sim_KAR_010 : SimCard //* Nightbane Templar
 	{
 		//Battlecry: If you're holding a Dragon, summon two 1/1 Whelps.
 		

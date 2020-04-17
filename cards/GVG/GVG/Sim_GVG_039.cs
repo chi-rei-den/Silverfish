@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_039 : SimTemplate //Vitality Totem
+    class Sim_GVG_039 : SimCard //Vitality Totem
     {
 
         //    At the end of your turn, restore 4 Health to your hero.

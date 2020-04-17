@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DREAM_04 : SimTemplate //dream
+	class Sim_DREAM_04 : SimCard //dream
 	{
 
 //    lasst einen diener auf die hand seines besitzers zurückkehren.

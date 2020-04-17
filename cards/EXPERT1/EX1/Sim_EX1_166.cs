@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_166 : SimTemplate //* Keeper of the Grove
+    class Sim_EX1_166 : SimCard //* Keeper of the Grove
 	{
         // Choose One - Deal 2 damage; or Silence a minion.
 

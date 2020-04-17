@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_018 : SimTemplate//bloodsail raider
+    class Sim_NEW1_018 : SimCard//bloodsail raider
     {
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

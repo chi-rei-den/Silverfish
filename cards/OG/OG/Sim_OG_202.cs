@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_202 : SimTemplate //* Mire Keeper
+    class Sim_OG_202 : SimCard //* Mire Keeper
     {
         //Choose One - Summon a 2/2 Slime; or Gain an empty Mana Crystal.
 

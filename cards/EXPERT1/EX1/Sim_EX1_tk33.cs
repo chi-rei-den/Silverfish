@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_tk33 : SimTemplate //* inferno
+	class Sim_EX1_tk33 : SimCard //* inferno
 	{
         //Hero PowerSummon a 6/6 Infernal.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_02 : SimTemplate //* 巨型随从 Big Minions
+	class Sim_ULDA_Elise_02 : SimCard //* 巨型随从 Big Minions
 	{
 		//
 		//

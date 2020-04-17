@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_940 : SimTemplate //* Awaken the Makers
+	class Sim_UNG_940 : SimCard //* Awaken the Makers
 	{
 		//Quest: Summon 7 Deathrattle minions. Reward: Amara, Warden of Hope.
 

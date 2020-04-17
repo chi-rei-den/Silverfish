@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_073 : SimTemplate //* Fossilized Devilsaur
+	class Sim_LOE_073 : SimCard //* Fossilized Devilsaur
 	{
 		//Battlecry: If you control a Beast, gain Taunt.
 		

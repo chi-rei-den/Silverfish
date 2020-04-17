@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_035 : SimTemplate //Malorne
+    class Sim_GVG_035 : SimCard //Malorne
     {
 
         //    Deathrattle:&lt;/b&gt; Shuffle this minion into your deck.

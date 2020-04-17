@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_310 : SimTemplate //* Doomguard
+    class Sim_EX1_310 : SimCard //* Doomguard
 	{
         // Charge. Battlecry: Discard two random cards.
 

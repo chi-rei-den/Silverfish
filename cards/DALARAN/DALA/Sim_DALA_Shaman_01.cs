@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_01 : SimTemplate //* 洪流滚滚 Flood
+	class Sim_DALA_Shaman_01 : SimCard //* 洪流滚滚 Flood
 	{
 		//
 		//

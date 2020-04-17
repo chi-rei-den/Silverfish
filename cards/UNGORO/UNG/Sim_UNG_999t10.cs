@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t10 : SimTemplate //* Shrouding Mist
+	class Sim_UNG_999t10 : SimCard //* Shrouding Mist
 	{
 		//Stealth until your next turn.
 

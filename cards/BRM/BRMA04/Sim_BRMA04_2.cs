@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA04_2 : SimTemplate //* Magma Pulse
+	class Sim_BRMA04_2 : SimCard //* Magma Pulse
 	{
 		// Hero Power: Deal 1 damage to all minions.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX6_03t : SimTemplate //* Spore
+	class Sim_NAX6_03t : SimCard //* Spore
 	{
 //    Deathrattle: Give all enemy minions +8 Attack.
 

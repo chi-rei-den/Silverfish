@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_05 : SimTemplate //rexxar
+	class Sim_HERO_05 : SimCard //rexxar
 	{
 
 //

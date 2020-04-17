@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_221 : SimTemplate //* Selfless Hero
+	class Sim_OG_221 : SimCard //* Selfless Hero
 	{
 		//Deathrattle: Give a random friendly minion Divine Shield.
 

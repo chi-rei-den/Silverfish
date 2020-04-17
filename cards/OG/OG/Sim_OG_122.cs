@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_122 : SimTemplate //* Mukla, Tyrant of the Vale
+	class Sim_OG_122 : SimCard //* Mukla, Tyrant of the Vale
 	{
 		//Battlecry: Add 2 Bananas to your hand.
 		

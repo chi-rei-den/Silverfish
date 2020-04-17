@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_BOSS_55t : SimTemplate //* 小精灵 Wisp
+	class Sim_GILA_BOSS_55t : SimCard //* 小精灵 Wisp
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_189 : SimTemplate //elvenarcher
+	class Sim_CS2_189 : SimCard //elvenarcher
 	{
 
 //    kampfschrei:/ verursacht 1 schaden.

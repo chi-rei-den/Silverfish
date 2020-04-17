@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX12_04 : SimTemplate //* Enrage
+	class Sim_NAX12_04 : SimCard //* Enrage
 	{
 		//Give your hero +6 Attack this turn.
 		

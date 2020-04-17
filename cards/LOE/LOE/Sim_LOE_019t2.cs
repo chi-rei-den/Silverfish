@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_019t2 : SimTemplate //* Golden Monkey
+	class Sim_LOE_019t2 : SimCard //* Golden Monkey
 	{
 		//Taunt. Battlecry: Replace your hand and deck with Legendary minions.
 		

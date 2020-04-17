@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_393 : SimTemplate //amaniberserker
+	class Sim_EX1_393 : SimCard //amaniberserker
 	{
 
 //    wutanfall:/ +3 angriff

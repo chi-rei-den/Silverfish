@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_290 : SimTemplate //* Ancient Harbinger
+	class Sim_OG_290 : SimCard //* Ancient Harbinger
 	{
 		//At the start of your turn, put a 10-Cost minion from your deck into your hand.
 		

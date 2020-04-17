@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_065 : SimTemplate //* Menagerie Warden
+	class Sim_KAR_065 : SimCard //* Menagerie Warden
 	{
 		//Battlecry: Choose a friendly Beast. Summon a copy of it.
 		

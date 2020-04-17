@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_129 : SimTemplate //innerfire
+	class Sim_CS1_129 : SimCard //innerfire
 	{
 
 //    setzt den angriff eines dieners auf einen wert, der seinem leben entspricht.

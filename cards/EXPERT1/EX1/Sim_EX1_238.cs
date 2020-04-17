@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_238 : SimTemplate //lightningbolt
+	class Sim_EX1_238 : SimCard //lightningbolt
 	{
 
 //    verursacht $3 schaden. überladung:/ (1)

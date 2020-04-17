@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_207 : SimTemplate //* Faceless Summoner
+	class Sim_OG_207 : SimCard //* Faceless Summoner
 	{
 		//Battlecry: Summon a random 3-Cost minion.
 		

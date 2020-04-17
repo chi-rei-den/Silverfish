@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_616 : SimTemplate //manawraith
+	class Sim_EX1_616 : SimCard //manawraith
 	{
 
 //    alle diener kosten (1) mehr.

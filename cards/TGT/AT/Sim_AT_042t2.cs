@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042t2 : SimTemplate //* Sabertooth Panther
+	class Sim_AT_042t2 : SimCard //* Sabertooth Panther
 	{
 		//Stealth
 	}

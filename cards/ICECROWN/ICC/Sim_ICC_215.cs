@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_215: SimTemplate //* Archbishop Benedictus
+    class Sim_ICC_215: SimCard //* Archbishop Benedictus
     {
         // Battlecry: Shuffle a copy of your opponent's deck into your deck.
 

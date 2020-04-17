@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_232 : SimTemplate //ironbarkprotector
+	class Sim_CS2_232 : SimCard //ironbarkprotector
 	{
 
 //    spott/

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_854 : SimTemplate //* Free From Amber
+	class Sim_UNG_854 : SimCard //* Free From Amber
 	{
 		//Discover a minion that costs (8) or more. Summon it.
 

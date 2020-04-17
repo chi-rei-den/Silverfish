@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_293 : SimTemplate //* Dark Arakkoa
+	class Sim_OG_293 : SimCard //* Dark Arakkoa
 	{
 		//Taunt. Battlecry: Give your C'Thun +3/+3 (wherever it is).
 		

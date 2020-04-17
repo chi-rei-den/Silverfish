@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_202 : SimTemplate //* Fire Plume Harbinger
+	class Sim_UNG_202 : SimCard //* Fire Plume Harbinger
 	{
 		//Battlecry: Reduce the Cost of Elementals in your hand by (1).
         

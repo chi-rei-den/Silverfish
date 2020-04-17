@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_085 : SimTemplate //* 达拉然圣剑士 Dalaran Crusader
+	class Sim_DAL_085 : SimCard //* 达拉然圣剑士 Dalaran Crusader
 	{
 		//<b>Divine Shield</b>
 		//<b>圣盾</b>

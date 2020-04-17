@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX12_02 : SimTemplate //* Decimate
+	class Sim_NAX12_02 : SimCard //* Decimate
 	{
 		// Hero Power: Change the Health of all minions to 1.
 

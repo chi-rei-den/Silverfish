@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_091 : SimTemplate //* Tournament Medic
+	class Sim_AT_091 : SimCard //* Tournament Medic
 	{
 		//Inspire: Restore 2 Health to your Hero.
 		

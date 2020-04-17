@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_815 : SimTemplate //* Wickerflame Burnbristle
+	class Sim_CFM_815 : SimCard //* Wickerflame Burnbristle
 	{
 		// Taunt. Divine Shield. Damage dealt by his minion also heals your hero.
         //done in triggerAMinionDealedDmg (Playfield)

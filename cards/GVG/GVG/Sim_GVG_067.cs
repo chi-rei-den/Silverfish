@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_067 : SimTemplate //Stonesplinter Trogg
+    class Sim_GVG_067 : SimCard //Stonesplinter Trogg
     {
 
         //   Whenever your opponent casts a spell, gain +1 Attack.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_025 : SimTemplate //* Volcano
+	class Sim_UNG_025 : SimCard //* Volcano
 	{
 		//Deal $15 damage randomly split among all minions. Overload: (2)
 

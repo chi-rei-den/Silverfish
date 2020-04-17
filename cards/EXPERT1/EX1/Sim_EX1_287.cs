@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_287 : SimTemplate //counterspell
+	class Sim_EX1_287 : SimCard //counterspell
 	{
         //todo secret
 //    geheimnis:/ wenn euer gegner einen zauber wirkt, kontert/ ihr ihn.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_252: SimTemplate //* Coldwraith
+    class Sim_ICC_252: SimCard //* Coldwraith
     {
         // Battlecry: If an enemy is Frozen, draw a card.
 

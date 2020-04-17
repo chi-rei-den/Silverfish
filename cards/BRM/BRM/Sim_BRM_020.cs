@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_020 : SimTemplate //* Dragonkin Sorcerer
+	class Sim_BRM_020 : SimCard //* Dragonkin Sorcerer
 	{
 		// Whenever you target this minion with a spell, gain +1/+1.
 		// handled in public void playACard

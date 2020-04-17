@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_092 : SimTemplate //* 奥术仆从 Arcane Servant
+	class Sim_DAL_092 : SimCard //* 奥术仆从 Arcane Servant
 	{
 		//
 		//

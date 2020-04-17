@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Druid_06 : SimTemplate //* 野性撕咬 Feral Bite
+	class Sim_DALA_Druid_06 : SimCard //* 野性撕咬 Feral Bite
 	{
 		//
 		//

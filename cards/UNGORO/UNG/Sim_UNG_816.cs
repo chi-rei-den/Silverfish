@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_816 : SimTemplate //* Servant of Kalimos
+	class Sim_UNG_816 : SimCard //* Servant of Kalimos
 	{
 		//Battlecry: If you played an Elemental last turn Discover an Elemental.
 

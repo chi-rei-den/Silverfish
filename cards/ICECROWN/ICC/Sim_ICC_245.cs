@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_245: SimTemplate //* Blackguard
+    class Sim_ICC_245: SimCard //* Blackguard
     {
         // Whenever your hero is healed, deal that much damage to a random enemy minion.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_086 : SimTemplate //* Forbidden Flame
+	class Sim_OG_086 : SimCard //* Forbidden Flame
 	{
 		//Spend all your Mana. Deal that much damage to a minion.
 		

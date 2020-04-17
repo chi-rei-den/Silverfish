@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_661 : SimTemplate //* Pint-Size Potion
+	class Sim_CFM_661 : SimCard //* Pint-Size Potion
 	{
 		// Give all enemy minions -3 Attack this turn only.
 

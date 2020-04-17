@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_066 : SimTemplate //Dunemaul Shaman
+    class Sim_GVG_066 : SimCard //Dunemaul Shaman
     {
         //   Windfury, Overload: (1)
 

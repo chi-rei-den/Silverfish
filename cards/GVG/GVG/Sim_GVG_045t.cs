@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_045t : SimTemplate //Imp
+    class Sim_GVG_045t : SimCard //Imp
     {
 
         //   just an imp

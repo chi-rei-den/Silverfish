@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_833: SimTemplate //* Frost Lich Jaina
+    class Sim_ICC_833: SimCard //* Frost Lich Jaina
     {
         // Battlecry: Summon a 3/6 Water Elemental. Your Elementals have Lifesteal for the rest of the game.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_508 : SimTemplate //* Grimscale Oracle
+    class Sim_EX1_508 : SimCard //* Grimscale Oracle
     {
         //Your other Murlocs have +1 Attack.
 

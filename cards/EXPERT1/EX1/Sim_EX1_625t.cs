@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_625t : SimTemplate //* Mind Spike
+	class Sim_EX1_625t : SimCard //* Mind Spike
 	{
 		//Hero Power: Deal 2 damage.
 

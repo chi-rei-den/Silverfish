@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_091 : SimTemplate //Arcane Nullifier X-21
+    class Sim_GVG_091 : SimCard //Arcane Nullifier X-21
     {
 
         //   Taunt  can't be targeted by spells or Hero Powers.

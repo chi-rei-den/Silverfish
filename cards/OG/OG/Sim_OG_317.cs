@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_317 : SimTemplate //* Deathwing, Dragonlord
+	class Sim_OG_317 : SimCard //* Deathwing, Dragonlord
 	{
 		//Deathrattle: Put all Dragons from your hand into the battlefield.
 		

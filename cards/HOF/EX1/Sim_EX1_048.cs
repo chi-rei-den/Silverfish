@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_048 : SimTemplate //spellbreaker
+	class Sim_EX1_048 : SimCard //spellbreaker
 	{
 
 //    kampfschrei:/ bringt einen diener zum schweigen/.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_200: SimTemplate //* Venomstrike Trap
+    class Sim_ICC_200: SimCard //* Venomstrike Trap
     {
         // Secret: When one of your minions is attacked, summon a 2/3 Poisonous Cobra.
 

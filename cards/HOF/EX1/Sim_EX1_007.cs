@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_007 : SimTemplate//* Acolyte of Pain
+    class Sim_EX1_007 : SimCard//* Acolyte of Pain
     {
         // Whenever this minion takes damage, draw a card.
 

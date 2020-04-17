@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_051 : SimTemplate //* Forbidden Ancient
+	class Sim_OG_051 : SimCard //* Forbidden Ancient
 	{
 		//Battlecry: Spend all your Mana. Gain +1/+1 for each mana spent.
 		

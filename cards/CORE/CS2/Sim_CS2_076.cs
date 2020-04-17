@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_076 : SimTemplate//Assassinate
+    class Sim_CS2_076 : SimCard//Assassinate
     {
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

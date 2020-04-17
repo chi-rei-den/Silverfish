@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_325 : SimTemplate //* Small-time Buccaneer
+	class Sim_CFM_325 : SimCard //* Small-time Buccaneer
 	{
 		// Has +2 Attack while you have a weapon equipped.
 

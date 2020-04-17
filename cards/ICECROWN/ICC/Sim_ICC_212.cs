@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_212: SimTemplate //* Acolyte of Agony
+    class Sim_ICC_212: SimCard //* Acolyte of Agony
     {
         // Lifesteal
     }

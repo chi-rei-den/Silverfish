@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_004 : SimTemplate//* Mad Scientist
+    class Sim_FP1_004 : SimCard//* Mad Scientist
     {
         // Deathrattle: Put a Secret: from your deck into the battlefield.
 

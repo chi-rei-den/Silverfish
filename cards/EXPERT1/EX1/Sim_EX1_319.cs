@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_319 : SimTemplate //flameimp
+    class Sim_EX1_319 : SimCard //flameimp
     {
 
         //    kampfschrei:/ fügt eurem helden 3 schaden zu.

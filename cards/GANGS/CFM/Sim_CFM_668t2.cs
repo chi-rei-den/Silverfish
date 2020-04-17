@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_668t2 : SimTemplate //* Doppelgangster
+	class Sim_CFM_668t2 : SimCard //* Doppelgangster
 	{
 		// Battlecry: Summon 2 copies of this minion.
 

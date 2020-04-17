@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_077 : SimTemplate //* Argent Lance
+	class Sim_AT_077 : SimCard //* Argent Lance
 	{
 		//Battlecry : Reveal a minion in each deck. If yours costs more, gain +1 durability.
 

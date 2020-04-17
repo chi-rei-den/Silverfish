@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_012 : SimTemplate //* Spawn of Shadows
+	class Sim_AT_012 : SimCard //* Spawn of Shadows
 	{
 		//Inspire :Deal 4 damage to each hero.
 

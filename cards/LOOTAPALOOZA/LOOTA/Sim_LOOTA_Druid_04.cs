@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Druid_04 : SimTemplate //* 青玉之牙 Jade Fangs
+	class Sim_LOOTA_Druid_04 : SimCard //* 青玉之牙 Jade Fangs
 	{
 		//
 		//

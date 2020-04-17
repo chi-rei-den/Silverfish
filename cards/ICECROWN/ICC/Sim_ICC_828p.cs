@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_828p: SimTemplate //* Build-a-Beast
+    class Sim_ICC_828p: SimCard //* Build-a-Beast
     {
         // Hero Power: Craft a custom Zombeast.
 

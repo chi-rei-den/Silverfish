@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_033 : SimTemplate //* Blackwing Technician
+    class Sim_BRM_033 : SimCard //* Blackwing Technician
     {
         // Battlecry: If you're holding a Dragon, gain +1/+1.
 

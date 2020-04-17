@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Mage_31 : SimTemplate //* 防御施法 Defense
+	class Sim_LOOTA_Mage_31 : SimCard //* 防御施法 Defense
 	{
 		//
 		//

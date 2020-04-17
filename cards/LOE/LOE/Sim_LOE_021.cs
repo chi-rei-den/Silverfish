@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_021 : SimTemplate //* Dart Trap
+	class Sim_LOE_021 : SimCard //* Dart Trap
 	{
 		//Secret: When an opposing Hero Power is used, deal 5 damage to a random enemy.
 

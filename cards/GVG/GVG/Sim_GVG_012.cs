@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_012 : SimTemplate //Light of the Naaru
+    class Sim_GVG_012 : SimCard //Light of the Naaru
     {
 
         //    Restore #3 Health. If the target is still damaged, summon a Lightwarden.

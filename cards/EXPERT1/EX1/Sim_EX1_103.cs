@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_103 : SimTemplate//* Coldlight Seer
+    class Sim_EX1_103 : SimCard//* Coldlight Seer
     {
         // Battlecry: Give your other Murlocs +2 Health.
 	

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_045 : SimTemplate //rockbiterweapon
+	class Sim_CS2_045 : SimCard //rockbiterweapon
 	{
 
 //    verleiht einem befreundeten charakter +3 angriff in diesem zug.

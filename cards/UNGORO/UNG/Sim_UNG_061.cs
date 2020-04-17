@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_061 : SimTemplate //* Obsidian Shard
+	class Sim_UNG_061 : SimCard //* Obsidian Shard
 	{
 		//Costs (1) less for each card you've played from another class.
 

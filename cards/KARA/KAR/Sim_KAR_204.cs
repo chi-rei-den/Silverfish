@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_204 : SimTemplate //* Onyx Bishop
+	class Sim_KAR_204 : SimCard //* Onyx Bishop
 	{
 		//Battlecry: Summon a friendly minion that died this game.
 				

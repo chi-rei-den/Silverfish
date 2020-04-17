@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_021 : SimTemplate //* Steam Surger
+	class Sim_UNG_021 : SimCard //* Steam Surger
 	{
 		//Battlecry: If you played an Elemental last turn add a 'Flame Geyser' to your hand.
 

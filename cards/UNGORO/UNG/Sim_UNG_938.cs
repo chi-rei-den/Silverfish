@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_938 : SimTemplate //* Hot Spring Guardian
+	class Sim_UNG_938 : SimCard //* Hot Spring Guardian
 	{
 		//Taunt. Battlecry: Restore 3 Health.
 

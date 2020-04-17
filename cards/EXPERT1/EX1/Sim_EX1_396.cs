@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_396 : SimTemplate//mogushan warden
+    class Sim_EX1_396 : SimCard//mogushan warden
     {
 
 

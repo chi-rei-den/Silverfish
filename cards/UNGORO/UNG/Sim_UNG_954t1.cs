@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_954t1 : SimTemplate //* Galvadon
+	class Sim_UNG_954t1 : SimCard //* Galvadon
 	{
 		//Battlecry: Adapt 5 times.
 

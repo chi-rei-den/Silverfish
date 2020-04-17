@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA14_10 : SimTemplate //* Activate!
+	class Sim_BRMA14_10 : SimCard //* Activate!
 	{
 		// Hero Power: Activate a random Tron.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t7 : SimTemplate //* Anti-Magic Shell
+    class Sim_ICC_314t7 : SimCard //* Anti-Magic Shell
     {
         // Give your minions +2/+2 and "Can't be targeted by spells or Hero Powers."
 

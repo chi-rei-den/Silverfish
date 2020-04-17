@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_03 : SimTemplate //* 小小军团 Small Army
+	class Sim_ULDA_Finley_03 : SimCard //* 小小军团 Small Army
 	{
 		//
 		//

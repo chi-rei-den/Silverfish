@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_171 : SimTemplate //stonetuskboar
+	class Sim_CS2_171 : SimCard //stonetuskboar
 	{
 
 //    ansturm/

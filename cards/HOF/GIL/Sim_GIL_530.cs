@@ -26,7 +26,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
 
-    public class Sim_GIL_530 : SimTemplate //��ȼ����
+    public class Sim_GIL_530 : SimCard //��ȼ����
     {
         /// <summary>
         /// Battlecry: If your deck has only even-Cost cards, deal 2 damage.

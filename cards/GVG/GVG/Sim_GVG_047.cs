@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_047 : SimTemplate //Sabotage
+    class Sim_GVG_047 : SimCard //Sabotage
     {
 
         //   Destroy a random enemy minion. Combo: And your opponent's weapon.

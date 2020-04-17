@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_057 : SimTemplate //* Stablemaster
+	class Sim_AT_057 : SimCard //* Stablemaster
 	{
 		//Battlecry: Give a friendly Beast Immune this Turn.
 

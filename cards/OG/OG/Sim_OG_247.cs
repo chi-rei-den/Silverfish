@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_247 : SimTemplate //* Twisted Worgen
+	class Sim_OG_247 : SimCard //* Twisted Worgen
 	{
 		//Stealth
 	}

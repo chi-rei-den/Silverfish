@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_088 : SimTemplate //Ogre Ninja
+    class Sim_GVG_088 : SimCard //Ogre Ninja
     {
 
         //  Stealth 

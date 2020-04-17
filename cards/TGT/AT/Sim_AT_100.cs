@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_100 : SimTemplate //* Silver Hand Regent
+	class Sim_AT_100 : SimCard //* Silver Hand Regent
 	{
 		//Inspire: Summon a 1/1 Silver Hand Recruit.
 		

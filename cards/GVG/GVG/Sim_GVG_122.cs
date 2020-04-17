@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_122 : SimTemplate //Wee Spellstopper
+    class Sim_GVG_122 : SimCard //Wee Spellstopper
     {
 
         //   Adjacent minions can't be targeted by spells or Hero Powers.

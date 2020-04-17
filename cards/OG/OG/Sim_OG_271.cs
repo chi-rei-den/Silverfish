@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_271 : SimTemplate //* Scaled Nightmare
+	class Sim_OG_271 : SimCard //* Scaled Nightmare
 	{
 		//At the start of your turn, double this minion's Attack.
 		

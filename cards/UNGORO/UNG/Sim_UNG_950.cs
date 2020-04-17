@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_950 : SimTemplate //* Vinecleaver
+	class Sim_UNG_950 : SimCard //* Vinecleaver
 	{
 		//After your hero attacks, summon two 1/1 Silver Hand Recruits.
 

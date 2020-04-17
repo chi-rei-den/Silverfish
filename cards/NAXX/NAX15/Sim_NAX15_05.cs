@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX15_05 : SimTemplate //* Mr. Bigglesworth
+	class Sim_NAX15_05 : SimCard //* Mr. Bigglesworth
 	{
 		//This is Kel'Thuzad's kitty.
 	}

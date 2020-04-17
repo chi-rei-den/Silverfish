@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_400 : SimTemplate //whirlwind
+	class Sim_EX1_400 : SimCard //whirlwind
 	{
 
 //    fügt allen dienern $1 schaden zu.

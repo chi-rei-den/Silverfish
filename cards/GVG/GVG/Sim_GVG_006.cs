@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_006 : SimTemplate //Mechwarper
+    class Sim_GVG_006 : SimCard //Mechwarper
     {
 
         //    Your Mechs cost (1) less.

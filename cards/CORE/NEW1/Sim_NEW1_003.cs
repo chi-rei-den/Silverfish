@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_003 : SimTemplate //sacrificialpact
+    class Sim_NEW1_003 : SimCard //sacrificialpact
     {
 
         //    vernichtet einen dämon. stellt bei eurem helden #5 leben wieder her.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_025 : SimTemplate //* Volcanic Drake
+	class Sim_BRM_025 : SimCard //* Volcanic Drake
 	{
 		// Costs (1) less for each minion that died this turn.
 		

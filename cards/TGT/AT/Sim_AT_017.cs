@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_017 : SimTemplate //* Twilight Guardian
+	class Sim_AT_017 : SimCard //* Twilight Guardian
 	{
 		//Battlecry: If you're holding a Dragon, gain +1 Attack and Taunt.
 

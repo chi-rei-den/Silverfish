@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_617 : SimTemplate //* Celestial Dreamer
+	class Sim_CFM_617 : SimCard //* Celestial Dreamer
 	{
 		// Battlecry: If a friendly minion has 5 or more attack, gain +2/+2.
 

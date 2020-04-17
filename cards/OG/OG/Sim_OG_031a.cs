@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_031a : SimTemplate //* Twilight Elemental
+	class Sim_OG_031a : SimCard //* Twilight Elemental
 	{
 		// -
 	}

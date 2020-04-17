@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_029 : SimTemplate //millhousemanastorm
+	class Sim_NEW1_029 : SimCard //millhousemanastorm
 	{
 
 //    kampfschrei:/ im nächsten zug kosten zauber für euren gegner (0) mana.

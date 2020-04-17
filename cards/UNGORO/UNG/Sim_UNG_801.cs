@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_801 : SimTemplate //* Nesting Roc
+	class Sim_UNG_801 : SimCard //* Nesting Roc
 	{
 		//Battlecry: If you control at least 2 other minions, gain Taunt.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_349 : SimTemplate //divinefavor
+	class Sim_EX1_349 : SimCard //divinefavor
 	{
 
 //    zieht so viele karten, bis ihr genauso viele karten auf eurer hand habt wie euer gegner.

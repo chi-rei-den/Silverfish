@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_910 : SimTemplate //* Grievous Bite
+	class Sim_UNG_910 : SimCard //* Grievous Bite
 	{
 		//Deal $2 damage to a minion and $1 damage to adjacent ones.
 

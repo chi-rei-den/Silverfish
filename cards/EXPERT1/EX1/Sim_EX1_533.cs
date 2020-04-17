@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_533 : SimTemplate//Misdirection
+    class Sim_EX1_533 : SimCard//Misdirection
     {
         public override void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
         {

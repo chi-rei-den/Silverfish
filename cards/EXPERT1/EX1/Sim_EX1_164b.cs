@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_164b : SimTemplate //nourish
+	class Sim_EX1_164b : SimCard //nourish
 	{
 
 //    zieht 3 karten.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_054 : SimTemplate //Ogre Warmaul
+    class Sim_GVG_054 : SimCard //Ogre Warmaul
     {
 
         //   50% chance to attack the wrong enemy.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_672 : SimTemplate //* Madam Goya
+	class Sim_CFM_672 : SimCard //* Madam Goya
 	{
 		// Battlecry: Choose a friendly minion. Swap it with a minion in your deck.
 

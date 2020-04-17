@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_178b : SimTemplate //* Uproot
+    class Sim_EX1_178b : SimCard //* Uproot
 	{
         //+5 Attack.
 

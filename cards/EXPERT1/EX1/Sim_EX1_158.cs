@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_158 : SimTemplate //souloftheforest
+	class Sim_EX1_158 : SimCard //souloftheforest
 	{
 
 //    verleiht euren dienern „todesröcheln:/ ruft einen treant (2/2) herbei.“

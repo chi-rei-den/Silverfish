@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_094 : SimTemplate //* Felfire Potion
+	class Sim_CFM_094 : SimCard //* Felfire Potion
 	{
 		// Deal 5 damage to all characters.
 

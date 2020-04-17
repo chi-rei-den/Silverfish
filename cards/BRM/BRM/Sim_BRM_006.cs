@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_006 : SimTemplate //* Imp Gang Boss
+	class Sim_BRM_006 : SimCard //* Imp Gang Boss
 	{
 		// Whenever this minion takes damage, summon a 1/1 Imp.
 

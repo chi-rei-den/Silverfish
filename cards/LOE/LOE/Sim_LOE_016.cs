@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_016 : SimTemplate //* Rumbling Elemental
+	class Sim_LOE_016 : SimCard //* Rumbling Elemental
 	{
 		//After you play a Battlecry minion, deal 2 damage to a random enemy.
 		

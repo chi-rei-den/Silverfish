@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOT_258 : SimTemplate //* 厄运鼹鼠 Dire Mole
+	class Sim_LOOT_258 : SimCard //* 厄运鼹鼠 Dire Mole
 	{
 		//
 		//

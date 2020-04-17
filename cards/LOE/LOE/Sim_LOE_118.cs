@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_118 : SimTemplate //* Cursed Blade
+	class Sim_LOE_118 : SimCard //* Cursed Blade
 	{
 		//Double all damage dealt to your hero.
         //handled in getDamageOrHeal

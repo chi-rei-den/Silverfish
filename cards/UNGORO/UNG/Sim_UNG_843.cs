@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_843 : SimTemplate //* The Voraxx
+	class Sim_UNG_843 : SimCard //* The Voraxx
 	{
 		//After you cast a spell on this minion, summon a 1/1 Plant and cast another copy on it.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_072 : SimTemplate //* Journey Below
+	class Sim_OG_072 : SimCard //* Journey Below
 	{
 		//Discover a Deathrattle card
 		

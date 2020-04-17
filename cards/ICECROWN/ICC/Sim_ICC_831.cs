@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_831: SimTemplate //* Bloodreaver Gul'dan
+    class Sim_ICC_831: SimCard //* Bloodreaver Gul'dan
     {
         // Battlecry: Summon all friendly Demons that died this game.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_045 : SimTemplate //Imp-losion
+    class Sim_GVG_045 : SimCard //Imp-losion
     {
 
         //   Deal $2-$4 damage to a minion. Summon a 1/1 Imp for each damage dealt.

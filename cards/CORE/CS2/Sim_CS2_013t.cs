@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_013t : SimTemplate //excessmana
+	class Sim_CS2_013t : SimCard //excessmana
 	{
 
 //    zieht eine karte. i&gt;(ihr könnt nur 10 mana in eurer leiste haben.)/i&gt;

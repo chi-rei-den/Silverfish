@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_145 : SimTemplate //* Psych-o-Tron
+	class Sim_OG_145 : SimCard //* Psych-o-Tron
 	{
 		//Taunt. Divine Shield
 	}

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_685 : SimTemplate //* Don Han'Cho
+	class Sim_CFM_685 : SimCard //* Don Han'Cho
 	{
         // Battlecry: Give a random minion in your hand +5/+5.
 

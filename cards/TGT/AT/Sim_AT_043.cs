@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_043 : SimTemplate //* Astral Communion
+	class Sim_AT_043 : SimCard //* Astral Communion
 	{
 		//Gain 10 Mana Crystals. Discard your hand.
 

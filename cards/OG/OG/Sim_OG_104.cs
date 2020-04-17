@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_104 : SimTemplate //* Embrace the Shadow
+    class Sim_OG_104 : SimCard //* Embrace the Shadow
     {
         //This turn, your healing effects deal damage instead.
 

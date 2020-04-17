@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_083 : SimTemplate //* Twilight Flamecaller
+	class Sim_OG_083 : SimCard //* Twilight Flamecaller
 	{
 		//Battlecry: Deal 1 damage to all enemy minions
 		

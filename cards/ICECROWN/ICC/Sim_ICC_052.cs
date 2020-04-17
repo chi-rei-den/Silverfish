@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_052: SimTemplate //* Play Dead
+    class Sim_ICC_052: SimCard //* Play Dead
     {
         // Triger a friendly minion's deathrattle
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warlock_11 : SimTemplate //* 妄动即灾祸 Jinx
+	class Sim_TRLA_Warlock_11 : SimCard //* 妄动即灾祸 Jinx
 	{
 		//
 		//

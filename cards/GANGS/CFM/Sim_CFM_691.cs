@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_691 : SimTemplate //* Jade Swarmer
+	class Sim_CFM_691 : SimCard //* Jade Swarmer
 	{
 		// Stealth, Deathrattle: Summon a Jade Golem.
 

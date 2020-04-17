@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_hexfrog : SimTemplate //frog
+	class Sim_hexfrog : SimCard //frog
 	{
 
 //    spott/

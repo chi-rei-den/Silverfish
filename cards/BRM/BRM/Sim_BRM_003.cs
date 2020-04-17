@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_003 : SimTemplate //* Dragon's Breath
+	class Sim_BRM_003 : SimCard //* Dragon's Breath
 	{
 		// Deal 4 damage. Costs (1) less for each minion that died this turn.
 		

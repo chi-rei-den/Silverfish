@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_034 : SimTemplate //* Fireblast
+	class Sim_CS2_034 : SimCard //* Fireblast
 	{
 		//Hero Power: Deal 1 damage.
 		

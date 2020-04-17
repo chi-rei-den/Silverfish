@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_624 : SimTemplate //* 钢铁生命 Lifesteel
+	class Sim_BOTA_624 : SimCard //* 钢铁生命 Lifesteel
 	{
 		//Start Survival Puzzle 2-4.
 		//Start Survival Puzzle 2-4.

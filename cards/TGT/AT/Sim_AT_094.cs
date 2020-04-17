@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_094 : SimTemplate //* Flame Juggler
+	class Sim_AT_094 : SimCard //* Flame Juggler
 	{
 		//Deal 1 damage to a random enemy.
 

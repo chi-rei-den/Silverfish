@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_283 : SimTemplate //* Frost Elemental
+    class Sim_EX1_283 : SimCard //* Frost Elemental
 	{
         //Battlecry: Freeze a character.
 

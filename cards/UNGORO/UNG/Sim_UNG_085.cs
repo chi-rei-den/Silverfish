@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_085 : SimTemplate //* Emerald Hive Queen
+	class Sim_UNG_085 : SimCard //* Emerald Hive Queen
 	{
 		//Your minions cost (2) more.
 

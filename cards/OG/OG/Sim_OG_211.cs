@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_211 : SimTemplate //* Call of the Wild
+	class Sim_OG_211 : SimCard //* Call of the Wild
 	{
 		//Summon all 3 Animal Companions.
 		

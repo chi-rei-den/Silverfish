@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA07_2H : SimTemplate //* ME SMASH
+	class Sim_BRMA07_2H : SimCard //* ME SMASH
 	{
 		// Hero Power: Destroy a random enemy minion.
 				

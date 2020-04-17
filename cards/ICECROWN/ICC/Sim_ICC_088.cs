@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_088: SimTemplate //* Voodoo Hexxer
+    class Sim_ICC_088: SimCard //* Voodoo Hexxer
     {
         // Taunt. Freeze any character damaged by this minion.
 

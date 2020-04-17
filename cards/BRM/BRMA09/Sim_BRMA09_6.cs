@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRMA09_6 : SimTemplate //* The True Warchief
+    class Sim_BRMA09_6 : SimCard //* The True Warchief
     {
         // Destroy a Legendary minion.
 		

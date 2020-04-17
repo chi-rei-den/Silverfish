@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_109 : SimTemplate //Mini-Mage
+    class Sim_GVG_109 : SimCard //Mini-Mage
     {
 
         //   Stealth Spell Damage +1

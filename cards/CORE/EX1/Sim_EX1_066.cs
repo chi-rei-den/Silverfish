@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_066 : SimTemplate //acidicswampooze
+	class Sim_EX1_066 : SimCard //acidicswampooze
 	{
 
 //    kampfschrei:/ zerstört die waffe eures gegners.

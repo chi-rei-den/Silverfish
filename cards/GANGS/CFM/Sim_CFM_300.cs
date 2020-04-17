@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_300 : SimTemplate //* Public Defender
+	class Sim_CFM_300 : SimCard //* Public Defender
 	{
 		// Taunt
 	}

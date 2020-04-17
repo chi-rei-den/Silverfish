@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_003 : SimTemplate //* Echoing Ooze
+    class Sim_FP1_003 : SimCard //* Echoing Ooze
 	{
         //Battlecry: Summon an exact copy of this minion at the end of the turn.
 

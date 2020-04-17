@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_856 : SimTemplate //* Hallucination
+	class Sim_UNG_856 : SimCard //* Hallucination
 	{
 		//Discover a card from your opponent's class.
 

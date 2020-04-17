@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_095 : SimTemplate //gadgetzanauctioneer
+	class Sim_EX1_095 : SimCard //gadgetzanauctioneer
 	{
 
 //    zieht jedes mal eine karte, wenn ihr einen zauber wirkt.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_317 : SimTemplate //sensedemons
+	class Sim_EX1_317 : SimCard //sensedemons
 	{
 
 //    fügt eurer hand zwei zufällige dämonen aus eurem deck hinzu.

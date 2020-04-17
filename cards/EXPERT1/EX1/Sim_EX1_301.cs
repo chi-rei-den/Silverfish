@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_301 : SimTemplate //felguard
+	class Sim_EX1_301 : SimCard //felguard
 	{
 
 //    spott/. kampfschrei:/ zerstört einen eurer manakristalle.

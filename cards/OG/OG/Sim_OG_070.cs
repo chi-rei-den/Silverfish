@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_070 : SimTemplate //* Bladed Cultist
+	class Sim_OG_070 : SimCard //* Bladed Cultist
 	{
 		//Combo: Gain +1/+1.
 		

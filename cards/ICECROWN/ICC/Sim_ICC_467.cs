@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_467: SimTemplate //* Deathspeaker
+    class Sim_ICC_467: SimCard //* Deathspeaker
     {
         // Battlecry: Give a friendly minion Immune this turn.
 

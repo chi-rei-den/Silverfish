@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX6_02H : SimTemplate //* Necrotic Aura
+	class Sim_NAX6_02H : SimCard //* Necrotic Aura
 	{
 		//Hero Power: Deal 3 damage to the enemy hero.
 		

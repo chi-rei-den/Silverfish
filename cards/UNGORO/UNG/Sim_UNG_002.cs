@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_002 : SimTemplate //* Volcanosaur
+	class Sim_UNG_002 : SimCard //* Volcanosaur
 	{
 		//Battlecry: Adapt, then Adapt.
 

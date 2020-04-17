@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Champs_KeepWinnerDeck_IK : SimTemplate
+	class Sim_TB_Champs_KeepWinnerDeck_IK : SimCard
 	{
 	}
 }

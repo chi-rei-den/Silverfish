@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_114 : SimTemplate //* Evil Heckler
+	class Sim_AT_114 : SimCard //* Evil Heckler
 	{
 		//Taunt
 	}

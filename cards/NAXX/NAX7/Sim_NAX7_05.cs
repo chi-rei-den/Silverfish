@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX7_05 : SimTemplate //* Mind Control Crystal
+	class Sim_NAX7_05 : SimCard //* Mind Control Crystal
 	{
 		// Activate the Crystal to control the Understudies!
 

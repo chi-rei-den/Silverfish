@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_107t : SimTemplate //* 部族神龛 Tribal Shrine
+	class Sim_TRLA_107t : SimCard //* 部族神龛 Tribal Shrine
 	{
 		//
 		//

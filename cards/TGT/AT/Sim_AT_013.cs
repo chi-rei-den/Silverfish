@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_013 : SimTemplate //* Power Word: Glory
+	class Sim_AT_013 : SimCard //* Power Word: Glory
 	{
 		//Choose a minion. Whenever it at tacks, restore 4 health to your hero.
 

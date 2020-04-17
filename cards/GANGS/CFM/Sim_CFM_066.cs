@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_066 : SimTemplate //* Kabal Lackey
+	class Sim_CFM_066 : SimCard //* Kabal Lackey
 	{
 		// Battlecry: The next Secret you play this turn costs (0).
 

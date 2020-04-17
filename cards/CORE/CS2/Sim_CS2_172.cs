@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_172 : SimTemplate //bloodfenraptor
+	class Sim_CS2_172 : SimCard //bloodfenraptor
 	{
 
 //

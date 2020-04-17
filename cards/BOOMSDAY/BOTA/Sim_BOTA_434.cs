@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_434 : SimTemplate //* 横行霸道 Curious Crustacean
+	class Sim_BOTA_434 : SimCard //* 横行霸道 Curious Crustacean
 	{
 		//Start Board Clear Puzzle 2-6.
 		//Start Board Clear Puzzle 2-6.

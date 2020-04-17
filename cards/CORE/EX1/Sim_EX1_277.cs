@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_277 : SimTemplate //* Arcane Missiles
+    class Sim_EX1_277 : SimCard //* Arcane Missiles
     {
         
         //Deal $3 damage randomly split among all enemies.

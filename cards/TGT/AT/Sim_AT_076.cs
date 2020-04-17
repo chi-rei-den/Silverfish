@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_076 : SimTemplate //* Murloc Knight
+	class Sim_AT_076 : SimCard //* Murloc Knight
 	{
 		//Inspire: Summon a random Murloc.
 		

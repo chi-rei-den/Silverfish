@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_590 : SimTemplate //* Blood Knight
+    class Sim_EX1_590 : SimCard //* Blood Knight
 	{
         //Battlecry: All minions lose Divine Shield. Gain +3/+3 for each Shield lost.
 

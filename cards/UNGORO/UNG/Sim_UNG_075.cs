@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_075 : SimTemplate //* Vicious Fledgling
+	class Sim_UNG_075 : SimCard //* Vicious Fledgling
 	{
 		//After this minion attacks a hero, Adapt.
         //handled

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_355 : SimTemplate //blessedchampion
+	class Sim_EX1_355 : SimCard //blessedchampion
 	{
 
 //    verdoppelt den angriff eines dieners.

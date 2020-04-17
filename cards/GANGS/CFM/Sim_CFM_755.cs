@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_755 : SimTemplate //* Grimestreet Pawnbroker
+	class Sim_CFM_755 : SimCard //* Grimestreet Pawnbroker
 	{
 		// Battlecry: Give a random weapon in your hand +1/+1.
 

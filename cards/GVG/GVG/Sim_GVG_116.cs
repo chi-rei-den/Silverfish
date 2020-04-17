@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_116 : SimTemplate //* Mekgineer Thermaplugg
+    class Sim_GVG_116 : SimCard //* Mekgineer Thermaplugg
     {
         //   Whenever an enemy minion dies, summon a Leper Gnome.
 		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_029);//lepergnome

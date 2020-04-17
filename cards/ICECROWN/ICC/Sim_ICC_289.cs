@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_289: SimTemplate //* Moorabi
+    class Sim_ICC_289: SimCard //* Moorabi
     {
         // Whenever another minion is Frozen, add a copy of it to your hand.
 

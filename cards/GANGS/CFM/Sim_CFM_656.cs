@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_656 : SimTemplate //* Streetwise Investigator
+	class Sim_CFM_656 : SimCard //* Streetwise Investigator
 	{
 		// Battlecry: Enemy minions lose Stealth.
 

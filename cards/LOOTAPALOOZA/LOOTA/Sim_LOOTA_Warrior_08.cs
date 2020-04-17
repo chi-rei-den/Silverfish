@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warrior_08 : SimTemplate //* 粉碎 Smash!
+	class Sim_LOOTA_Warrior_08 : SimCard //* 粉碎 Smash!
 	{
 		//
 		//

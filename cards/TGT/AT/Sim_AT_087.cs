@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_087 : SimTemplate //* Argent Horserider
+	class Sim_AT_087 : SimCard //* Argent Horserider
 	{
 		//Divine Shield, Charge
 	}

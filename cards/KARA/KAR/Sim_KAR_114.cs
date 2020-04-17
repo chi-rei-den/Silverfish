@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_114 : SimTemplate //* Barnes
+	class Sim_KAR_114 : SimCard //* Barnes
 	{
 		//Battlecry: Summon a 1/1 copy of a random minion in your deck.
 		

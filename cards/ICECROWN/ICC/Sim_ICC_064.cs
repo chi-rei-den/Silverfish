@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_064: SimTemplate //* Blood Razor
+    class Sim_ICC_064: SimCard //* Blood Razor
     {
         // Battlecry and Deathrattle: Deal 1 damage to all minions.
 

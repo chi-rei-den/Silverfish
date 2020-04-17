@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Priest_05 : SimTemplate //* 元素亲和 Elementals
+	class Sim_TRLA_Priest_05 : SimCard //* 元素亲和 Elementals
 	{
 		//
 		//

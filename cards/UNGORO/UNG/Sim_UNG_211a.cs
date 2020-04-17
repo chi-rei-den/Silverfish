@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211a : SimTemplate //* Invocation of Earth
+	class Sim_UNG_211a : SimCard //* Invocation of Earth
 	{
 		//Fill your board with 1/1 Elementals.
 

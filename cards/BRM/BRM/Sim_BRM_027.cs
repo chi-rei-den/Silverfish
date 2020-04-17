@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_027 : SimTemplate //* Majordomo Executus
+	class Sim_BRM_027 : SimCard //* Majordomo Executus
 	{
 		//Deathrattle: Replace your hero with Ragnaros, the Firelord.
 		        

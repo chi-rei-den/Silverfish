@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_094 : SimTemplate //hammerofwrath
+	class Sim_CS2_094 : SimCard //hammerofwrath
 	{
 
 //    verursacht $3 schaden. zieht eine karte.

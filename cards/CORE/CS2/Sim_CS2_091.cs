@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_091 : SimTemplate //lightsjustice
+	class Sim_CS2_091 : SimCard //lightsjustice
 	{
 
 //

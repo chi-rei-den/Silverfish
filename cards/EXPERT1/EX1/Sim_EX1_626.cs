@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_626 : SimTemplate //massdispel
+	class Sim_EX1_626 : SimCard //massdispel
 	{
 
 //    bringt alle feindlichen diener zum schweigen/. zieht eine karte.

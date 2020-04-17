@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_831p: SimTemplate //* Siphon Life
+    class Sim_ICC_831p: SimCard //* Siphon Life
     {
         // Hero Power: Lifesteal. Deal 3 damage.
 

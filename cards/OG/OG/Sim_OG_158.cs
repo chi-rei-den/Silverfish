@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_158 : SimTemplate //* Zealous Initiate
+	class Sim_OG_158 : SimCard //* Zealous Initiate
 	{
 		//Deathrattle: Give a random friendly minion +1/+1.
 		

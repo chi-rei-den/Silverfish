@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_022 : SimTemplate //* Fist of Jaraxxus
+	class Sim_AT_022 : SimCard //* Fist of Jaraxxus
 	{
 		//When you play or discard this, deal 4 damage to a random enemy.
 

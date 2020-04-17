@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Druid_05 : SimTemplate //* 人多势众 Stampede
+	class Sim_LOOTA_Druid_05 : SimCard //* 人多势众 Stampede
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_105 : SimTemplate //mountaingiant
+	class Sim_EX1_105 : SimCard //mountaingiant
 	{
 
 //    kostet (1) weniger für jede andere karte auf eurer hand.

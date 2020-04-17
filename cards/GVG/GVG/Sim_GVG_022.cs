@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_022 : SimTemplate //Tinker's Sharpsword Oil
+    class Sim_GVG_022 : SimCard //Tinker's Sharpsword Oil
     {
 
         //    Give your weapon +3 Attack. Combo: Give a random friendly minion +3 Attack.

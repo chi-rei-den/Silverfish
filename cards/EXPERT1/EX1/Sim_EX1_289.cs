@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_289 : SimTemplate //icebarrier
+	class Sim_EX1_289 : SimCard //icebarrier
 	{
 
         //todo secret

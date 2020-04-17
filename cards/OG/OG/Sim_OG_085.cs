@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_085 : SimTemplate //* Demented Frostcaller
+	class Sim_OG_085 : SimCard //* Demented Frostcaller
 	{
 		//After you cast a spell, Freeze a random enemy character.
 		

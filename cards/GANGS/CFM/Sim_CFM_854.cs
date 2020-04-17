@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_854 : SimTemplate //* Ancient of Blossoms
+	class Sim_CFM_854 : SimCard //* Ancient of Blossoms
 	{
 		// Taunt
 	}

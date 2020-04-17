@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_038 : SimTemplate //ancestralspirit
+	class Sim_CS2_038 : SimCard //ancestralspirit
 	{
 
 //    verleiht einem diener „todesröcheln:/ ruft diesen diener erneut herbei.“

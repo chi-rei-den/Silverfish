@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA17_6H : SimTemplate //* 4/2 Bone Construct
+	class Sim_BRMA17_6H : SimCard //* 4/2 Bone Construct
 	{
 		//-
 	}

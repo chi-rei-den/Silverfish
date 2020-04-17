@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NAX8_05t : SimTemplate //* Spectral Rider
+    class Sim_NAX8_05t : SimCard //* Spectral Rider
     {
         //    At the start of your turn, deal 1 damage to your hero.
 

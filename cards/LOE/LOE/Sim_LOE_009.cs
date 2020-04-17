@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_009 : SimTemplate //* Obsidian Destroyer
+	class Sim_LOE_009 : SimCard //* Obsidian Destroyer
 	{
 		//At the end of your turn, summon a 1/1 Scarab with Taunt.
 

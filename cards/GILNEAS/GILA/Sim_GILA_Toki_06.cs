@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Toki_06 : SimTemplate //* 秘法学识 Knowledge
+	class Sim_GILA_Toki_06 : SimCard //* 秘法学识 Knowledge
 	{
 		//
 		//

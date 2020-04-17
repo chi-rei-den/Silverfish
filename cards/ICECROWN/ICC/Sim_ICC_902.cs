@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_902: SimTemplate //* Mindbreaker
+    class Sim_ICC_902: SimCard //* Mindbreaker
     {
         // Hero Powers are disabled.
 

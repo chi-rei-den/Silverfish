@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    internal class Sim_GVG_059 : SimTemplate //Coghammer
+    internal class Sim_GVG_059 : SimCard //Coghammer
     {
         //   Battlecry: Give a random friendly minion Divine Shield and Taunt;.
         private CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_059);

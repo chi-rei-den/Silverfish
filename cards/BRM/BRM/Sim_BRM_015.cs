@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_015 : SimTemplate //* Revenge
+	class Sim_BRM_015 : SimCard //* Revenge
 	{
 		// Deal 1 damage to all minions. If you have 12 or less Health, deal 3 damage instead.
 		

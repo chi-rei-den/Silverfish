@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_07h : SimTemplate //* 软泥教授弗洛普 Flobbidinous Floop
+	class Sim_BOTA_BOSS_07h : SimCard //* 软泥教授弗洛普 Flobbidinous Floop
 	{
 		//
 		//

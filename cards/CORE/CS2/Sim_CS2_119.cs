@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_119 : SimTemplate //oasissnapjaw
+	class Sim_CS2_119 : SimCard //oasissnapjaw
 	{
 
 //

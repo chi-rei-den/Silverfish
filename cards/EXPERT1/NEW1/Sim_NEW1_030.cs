@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_030 : SimTemplate //* Deathwing
+    class Sim_NEW1_030 : SimCard //* Deathwing
 	{
         //Battlecry: Destroy all other minions and discard your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_010 : SimTemplate //* Ram Wrangler
+	class Sim_AT_010 : SimCard //* Ram Wrangler
 	{
 		//Battlecry: If you have a Beast, summon a random Beast.
 

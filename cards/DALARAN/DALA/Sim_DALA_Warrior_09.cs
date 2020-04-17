@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_09 : SimTemplate //* 武装 Arsenal
+	class Sim_DALA_Warrior_09 : SimCard //* 武装 Arsenal
 	{
 		//
 		//

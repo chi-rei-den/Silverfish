@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_410 : SimTemplate //shieldslam
+	class Sim_EX1_410 : SimCard //shieldslam
 	{
 
 //    fügt einem diener für jeden eurer rüstungspunkte 1 schaden zu.

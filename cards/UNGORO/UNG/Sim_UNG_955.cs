@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_955 : SimTemplate //* Meteor
+	class Sim_UNG_955 : SimCard //* Meteor
 	{
 		//Deal $15 damage to a minion and $3 damage to adjacent ones.
 

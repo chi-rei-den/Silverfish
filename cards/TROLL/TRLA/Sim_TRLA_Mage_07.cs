@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_07 : SimTemplate //* 法术能量 Spell Power
+	class Sim_TRLA_Mage_07 : SimCard //* 法术能量 Spell Power
 	{
 		//
 		//

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_09a : SimTemplate //* 泰兰德·语风 Tyrande Whisperwind
+	class Sim_HERO_09a : SimCard //* 泰兰德·语风 Tyrande Whisperwind
 	{
 		//
 		//

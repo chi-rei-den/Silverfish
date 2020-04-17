@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_809 : SimTemplate //* Fire Fly
+	class Sim_UNG_809 : SimCard //* Fire Fly
 	{
 		//Battlecry: Add a 1/2 Elemental to your hand.
 

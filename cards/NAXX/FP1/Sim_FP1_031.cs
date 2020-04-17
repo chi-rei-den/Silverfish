@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_031 : SimTemplate //baronrivendare
+	class Sim_FP1_031 : SimCard //baronrivendare
 	{
 
 //    die todesröcheln/-effekte eurer diener werden 2-mal ausgelöst.

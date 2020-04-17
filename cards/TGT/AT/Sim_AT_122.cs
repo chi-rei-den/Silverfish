@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_122 : SimTemplate //* Gormok the Impaler
+	class Sim_AT_122 : SimCard //* Gormok the Impaler
 	{
 		//Battlecry: If you have at least 4 other minions, deal 4 damage.
 

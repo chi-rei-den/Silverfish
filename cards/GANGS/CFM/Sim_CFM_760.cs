@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_760 : SimTemplate //* Kabal Crystal Runner
+	class Sim_CFM_760 : SimCard //* Kabal Crystal Runner
 	{
 		// Costs (2) less for each Secret you've played this game.
 	}

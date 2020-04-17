@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_049 : SimTemplate //* Toxic Arrow
+    class Sim_ICC_049 : SimCard //* Toxic Arrow
     {
         // Deal 2 damage to a minion. If it survives, give it Poisonous.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_500t2 : SimTemplate //* 手铳 Handgonne
+	class Sim_GILA_500t2 : SimCard //* 手铳 Handgonne
 	{
 		//
 		//

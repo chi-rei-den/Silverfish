@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warrior_07 : SimTemplate //* 嘲讽 Taunt
+	class Sim_LOOTA_Warrior_07 : SimCard //* 嘲讽 Taunt
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_851: SimTemplate //* Prince Keleseth
+    class Sim_ICC_851: SimCard //* Prince Keleseth
     {
         // Battlecry: If your deck has no 2-cost cards, give all minions in your deck +1/+1.
 

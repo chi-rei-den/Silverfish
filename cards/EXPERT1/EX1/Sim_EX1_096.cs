@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_096 : SimTemplate //* loothoarder
+	class Sim_EX1_096 : SimCard //* loothoarder
 	{
 
 //    todesröcheln:/ zieht eine karte.

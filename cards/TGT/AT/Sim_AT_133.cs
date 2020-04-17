@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_133 : SimTemplate //* Gadgetzan Jouster
+	class Sim_AT_133 : SimCard //* Gadgetzan Jouster
 	{
 		//Battlecry: Reveal a minion in each deck. If yours costs more, gain +1/+1
 		

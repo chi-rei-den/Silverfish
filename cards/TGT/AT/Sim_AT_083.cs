@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_083 : SimTemplate //* Dragonhawk Rider
+	class Sim_AT_083 : SimCard //* Dragonhawk Rider
 	{
 		//Inspire: Gain Windfury this turn.
 

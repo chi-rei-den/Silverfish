@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_014 : SimTemplate //* Master of Disguise
+    class Sim_NEW1_014 : SimCard //* Master of Disguise
 	{
         // Battlecry: Give a friendly minion Stealth until your next turn.
 

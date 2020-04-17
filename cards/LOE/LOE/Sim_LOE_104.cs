@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_104 : SimTemplate //* Entomb
+	class Sim_LOE_104 : SimCard //* Entomb
 	{
 		//Choose an enemy minion. Shuffle it into your deck.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_112 : SimTemplate //arcanitereaper
+	class Sim_CS2_112 : SimCard //arcanitereaper
 	{
 
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_112);

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_009 : SimTemplate //* deathlord
+	class Sim_FP1_009 : SimCard //* deathlord
 	{
         //Taunt. Deathrattle: Your opponent puts a minion from their deck into the battlefield.
         CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_612);//kirintormage

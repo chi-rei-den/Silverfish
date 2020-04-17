@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_147 : SimTemplate //gnomishinventor
+	class Sim_CS2_147 : SimCard //gnomishinventor
 	{
 
 //    kampfschrei:/ zieht eine karte.

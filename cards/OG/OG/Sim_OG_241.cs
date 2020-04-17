@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_241 : SimTemplate //* Possessed Villager
+	class Sim_OG_241 : SimCard //* Possessed Villager
 	{
 		//Deathrattle: Summon a 1/1 Shadowbeast.
 

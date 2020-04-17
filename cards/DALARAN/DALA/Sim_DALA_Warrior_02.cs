@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_02 : SimTemplate //* 创伤 Damaged
+	class Sim_DALA_Warrior_02 : SimCard //* 创伤 Damaged
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_309 : SimTemplate //* Princess Huhuran
+    class Sim_OG_309 : SimCard //* Princess Huhuran
     {
         //Battlecry: Trigger a friendly minion's Deathrattle effect immediately.
 

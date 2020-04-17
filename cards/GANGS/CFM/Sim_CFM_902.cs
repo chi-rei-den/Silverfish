@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_902 : SimTemplate //* Aya Blackpaw
+	class Sim_CFM_902 : SimCard //* Aya Blackpaw
 	{
 		// Battlecry and Deathrattle: Summon a Jade Golem.
 

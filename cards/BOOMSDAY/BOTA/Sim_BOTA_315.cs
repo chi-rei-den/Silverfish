@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_315 : SimTemplate //* B计划 Plan B
+	class Sim_BOTA_315 : SimCard //* B计划 Plan B
 	{
 		//Start Lethal Puzzle 1-9.
 		//Start Lethal Puzzle 1-9.

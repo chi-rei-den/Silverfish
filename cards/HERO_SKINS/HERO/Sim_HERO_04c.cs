@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_04c : SimTemplate //* 吵吵爵士 Sir Annoy-O
+	class Sim_HERO_04c : SimCard //* 吵吵爵士 Sir Annoy-O
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_316 : SimTemplate //* Herald Volazj
+	class Sim_OG_316 : SimCard //* Herald Volazj
 	{
 		//Battlecry: Summon a 1/1 copy of each of your other minions.
 

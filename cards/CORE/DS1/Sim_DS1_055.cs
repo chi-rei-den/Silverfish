@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_055 : SimTemplate //darkscalehealer
+	class Sim_DS1_055 : SimCard //darkscalehealer
 	{
 
 //    kampfschrei:/ stellt bei allen befreundeten charakteren 2 leben wieder her.

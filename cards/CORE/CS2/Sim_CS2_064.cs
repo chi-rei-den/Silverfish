@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_064 : SimTemplate //* Dread Infernal
+    class Sim_CS2_064 : SimCard //* Dread Infernal
 	{
         // Battlecry: Deal 1 damage to ALL other characters.
 

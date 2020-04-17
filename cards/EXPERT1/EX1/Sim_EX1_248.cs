@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_248 : SimTemplate //* feralspirit
+	class Sim_EX1_248 : SimCard //* feralspirit
 	{
         //Summon two 2/3 Spirit Wolves with Taunt. Overload: (2)
 

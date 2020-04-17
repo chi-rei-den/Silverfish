@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_016 : SimTemplate //* Wailing Soul
+    class Sim_FP1_016 : SimCard //* Wailing Soul
 	{
         // Battlecry: Silence your other minions.
 

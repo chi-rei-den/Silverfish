@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_024 : SimTemplate //* Demonfuse
+	class Sim_AT_024 : SimCard //* Demonfuse
 	{
 		//Give a Demon +3/+3. Give your opponent a Mana Crystal.
 		

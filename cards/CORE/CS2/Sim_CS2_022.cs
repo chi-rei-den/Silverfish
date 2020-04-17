@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_022 : SimTemplate//Polymorph
+    class Sim_CS2_022 : SimCard//Polymorph
     {
 
         private CardDB.Card sheep = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_tk1);

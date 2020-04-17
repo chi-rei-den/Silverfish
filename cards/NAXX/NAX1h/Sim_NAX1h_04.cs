@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX1h_04 : SimTemplate //* Skitter
+	class Sim_NAX1h_04 : SimCard //* Skitter
 	{
 		// Hero Power: Summon a 4/4 Nerubian.
 		

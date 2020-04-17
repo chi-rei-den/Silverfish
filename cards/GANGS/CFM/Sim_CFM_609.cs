@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_609 : SimTemplate //* Fel Orc Soulfiend
+	class Sim_CFM_609 : SimCard //* Fel Orc Soulfiend
 	{
 		// At the start of your turn, deal 2 damage to this minion.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_150 : SimTemplate //stormpikecommando
+	class Sim_CS2_150 : SimCard //stormpikecommando
 	{
 
 //    kampfschrei:/ verursacht 2 schaden.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_925 : SimTemplate //* Ornery Direhorn
+	class Sim_UNG_925 : SimCard //* Ornery Direhorn
 	{
 		//Taunt. Battlecry: Adapt.
 

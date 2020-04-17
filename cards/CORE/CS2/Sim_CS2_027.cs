@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_027 : SimTemplate //* mirrorimage
+	class Sim_CS2_027 : SimCard //* mirrorimage
 	{
         //Summon two 0/2 minions with Taunt.
 		

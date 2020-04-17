@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DREAM_02 : SimTemplate //yseraawakens
+	class Sim_DREAM_02 : SimCard //yseraawakens
 	{
 
 //    fügt allen charakteren mit ausnahme von ysera $5 schaden zu.

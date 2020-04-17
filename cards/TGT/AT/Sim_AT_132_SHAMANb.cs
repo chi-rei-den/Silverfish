@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_SHAMANb : SimTemplate //* Searing Totem
+	class Sim_AT_132_SHAMANb : SimCard //* Searing Totem
 	{
 		//1/1
 	}

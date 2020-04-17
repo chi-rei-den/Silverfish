@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_028t : SimTemplate //* Time Warp
+	class Sim_UNG_028t : SimCard //* Time Warp
 	{
 		//Take an extra turn.
 

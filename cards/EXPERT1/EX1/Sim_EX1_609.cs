@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_609 : SimTemplate //snipe
+	class Sim_EX1_609 : SimCard //snipe
 	{
         //todo secret
 //    geheimnis:/ wenn euer gegner einen diener ausspielt, werden diesem $4 schaden zugefügt.

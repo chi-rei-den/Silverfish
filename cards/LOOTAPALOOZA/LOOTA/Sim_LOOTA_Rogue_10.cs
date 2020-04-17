@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Rogue_10 : SimTemplate //* 暗杀之法 Assassin
+	class Sim_LOOTA_Rogue_10 : SimCard //* 暗杀之法 Assassin
 	{
 		//
 		//

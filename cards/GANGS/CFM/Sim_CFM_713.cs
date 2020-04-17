@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_713 : SimTemplate //* Jade Blossom
+	class Sim_CFM_713 : SimCard //* Jade Blossom
 	{
 		// Summon a Jade Golem. Gain an empty Mana Crystal.
         

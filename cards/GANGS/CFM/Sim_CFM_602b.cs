@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_602b : SimTemplate //* Jade Idol
+	class Sim_CFM_602b : SimCard //* Jade Idol
 	{
 		// Shuffle 3 Jade Idols into your deck.
 

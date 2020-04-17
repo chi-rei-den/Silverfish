@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_113 : SimTemplate //* Everyfin is Awesome
+	class Sim_LOE_113 : SimCard //* Everyfin is Awesome
 	{
 		//Give your minions +2/+2. Costs (1) less for each murloc you control.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_004 : SimTemplate //* Arcane Blast
+	class Sim_AT_004 : SimCard //* Arcane Blast
 	{
 		//Deal 2 damage to a minion. This spell gets double bonus from Spell Damage.
 

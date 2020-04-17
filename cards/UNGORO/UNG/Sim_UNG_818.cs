@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_818 : SimTemplate //* Volatile Elemental
+	class Sim_UNG_818 : SimCard //* Volatile Elemental
 	{
 		//Deathrattle: Deal 3 damage to a random enemy minion.
 

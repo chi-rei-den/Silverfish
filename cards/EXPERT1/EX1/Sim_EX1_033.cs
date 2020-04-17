@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_033 : SimTemplate //windfuryharpy
+	class Sim_EX1_033 : SimCard //windfuryharpy
 	{
 
 //    windzorn/

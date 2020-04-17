@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_267 : SimTemplate //* Southsea Squidface
+	class Sim_OG_267 : SimCard //* Southsea Squidface
 	{
 		//Deathrattle: Give your weapon +2 Attack.
 		

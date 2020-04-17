@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_554t : SimTemplate //* 猛火元素 Greasefire Elemental
+	class Sim_DAL_554t : SimCard //* 猛火元素 Greasefire Elemental
 	{
 		//
 		//

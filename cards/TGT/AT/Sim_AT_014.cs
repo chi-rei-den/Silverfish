@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_014 : SimTemplate //* Shadowfiend
+	class Sim_AT_014 : SimCard //* Shadowfiend
 	{
 		//Whenever you draw a card reduce its cost by (1)
 

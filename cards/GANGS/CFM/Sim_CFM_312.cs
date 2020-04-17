@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_312 : SimTemplate //* Jade Chieftain
+	class Sim_CFM_312 : SimCard //* Jade Chieftain
 	{
 		// Battlecry: Summon a Jade Golem. Give it Taunt.
 

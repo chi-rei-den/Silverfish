@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_034 : SimTemplate //huffer
+	class Sim_NEW1_034 : SimCard //huffer
 	{
 
 //    ansturm/

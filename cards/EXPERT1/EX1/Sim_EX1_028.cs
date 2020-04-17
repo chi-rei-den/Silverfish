@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_028 : SimTemplate //stranglethorntiger
+	class Sim_EX1_028 : SimCard //stranglethorntiger
 	{
 
 //    verstohlenheit/

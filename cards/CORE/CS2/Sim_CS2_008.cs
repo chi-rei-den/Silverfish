@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_008 : SimTemplate//moonfire
+    class Sim_CS2_008 : SimCard//moonfire
     {
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

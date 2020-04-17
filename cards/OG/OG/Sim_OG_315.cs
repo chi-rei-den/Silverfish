@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_315 : SimTemplate //* Bloodsail Cultist
+    class Sim_OG_315 : SimCard //* Bloodsail Cultist
     {
         //Battlecry: If you control a Pirate, give your weapon +1/+1.
 

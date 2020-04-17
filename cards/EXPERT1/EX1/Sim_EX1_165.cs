@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_165 : SimTemplate  //* Druid of the Claw
+    class Sim_EX1_165 : SimCard  //* Druid of the Claw
     {
         // Choose One - Charge; or +2 Health and Taunt.
 

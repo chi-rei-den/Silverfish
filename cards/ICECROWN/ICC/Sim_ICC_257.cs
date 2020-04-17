@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_257: SimTemplate //* Corpse Raiser
+    class Sim_ICC_257: SimCard //* Corpse Raiser
     {
         // Battlecry: Give a friendly minion "Deathrattle: Resummon this minion."
 

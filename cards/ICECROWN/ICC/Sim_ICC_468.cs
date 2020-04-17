@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_468: SimTemplate //* Wretched Tiller
+    class Sim_ICC_468: SimCard //* Wretched Tiller
     {
         // Whenever this minion attacks, deal 2 damage to the enemy hero.
         //done in triggerAMinionIsGoingToAttack

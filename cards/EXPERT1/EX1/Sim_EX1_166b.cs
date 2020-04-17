@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_166b : SimTemplate //dispel
+	class Sim_EX1_166b : SimCard //dispel
 	{
 
 //    bringt einen diener zum schweigen/.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX3_02H : SimTemplate //* Web Wrap
+	class Sim_NAX3_02H : SimCard //* Web Wrap
 	{
 		// Hero Power: Return 2 random enemy minions to your opponent's hand.
 		

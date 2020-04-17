@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_750 : SimTemplate //* Krul the Unshackled
+	class Sim_CFM_750 : SimCard //* Krul the Unshackled
 	{
 		// Battlecry: If your deck has no duplicates, summon all Demons from your hand.
 

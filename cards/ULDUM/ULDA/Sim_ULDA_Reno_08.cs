@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_08 : SimTemplate //* 暴走召唤 Summoning Frenzy
+	class Sim_ULDA_Reno_08 : SimCard //* 暴走召唤 Summoning Frenzy
 	{
 		//
 		//

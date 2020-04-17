@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_954 : SimTemplate //* The Last Kaleidosaur
+	class Sim_UNG_954 : SimCard //* The Last Kaleidosaur
 	{
 		//Quest: Cast 6 spells on your minions. Reward: Galvadon.
 

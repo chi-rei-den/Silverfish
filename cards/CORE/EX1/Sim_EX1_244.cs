@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_244 : SimTemplate//totemic might
+    class Sim_EX1_244 : SimCard//totemic might
     {
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

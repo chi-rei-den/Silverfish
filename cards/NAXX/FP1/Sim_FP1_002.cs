@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_002 : SimTemplate //* hauntedcreeper
+	class Sim_FP1_002 : SimCard //* hauntedcreeper
 	{
         //Deathrattle: Summon two 1/1 Spectral Spiders.
 

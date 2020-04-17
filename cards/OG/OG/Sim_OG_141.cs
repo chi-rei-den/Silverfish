@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_141 : SimTemplate //* Faceless Behemoth
+	class Sim_OG_141 : SimCard //* Faceless Behemoth
 	{
 		// -
 	}

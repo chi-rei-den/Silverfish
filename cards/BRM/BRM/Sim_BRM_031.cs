@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_031 : SimTemplate //* Chromaggus
+    class Sim_BRM_031 : SimCard //* Chromaggus
 	{
 		// Whenever you draw a card, put another copy into your hand.
 		

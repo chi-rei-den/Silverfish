@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_03h : SimTemplate //* 星术师阿尔文 Astromancer Arwyn
+	class Sim_BOTA_BOSS_03h : SimCard //* 星术师阿尔文 Astromancer Arwyn
 	{
 		//
 		//

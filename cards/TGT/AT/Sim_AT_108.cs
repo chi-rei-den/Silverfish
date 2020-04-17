@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_108 : SimTemplate //* Armored Warhorse
+	class Sim_AT_108 : SimCard //* Armored Warhorse
 	{
 		//Battlecry: Reveal a minion in each deck.If yours costs more, gain Charge.
 		

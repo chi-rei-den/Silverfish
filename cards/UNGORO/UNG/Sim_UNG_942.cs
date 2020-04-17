@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_942 : SimTemplate //* Unite the Murlocs
+	class Sim_UNG_942 : SimCard //* Unite the Murlocs
 	{
 		//Quest: Summon 10 Murlocs. Reward: Megafin.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_807 : SimTemplate //* Auctionmaster Beardo
+	class Sim_CFM_807 : SimCard //* Auctionmaster Beardo
 	{
 		// After you cast a spell, refresh your Hero Power.
 

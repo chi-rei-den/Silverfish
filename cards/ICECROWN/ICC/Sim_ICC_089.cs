@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_089: SimTemplate //* Ice Fishing
+    class Sim_ICC_089: SimCard //* Ice Fishing
     {
         // Draw 2 Murlocs from your deck.
 

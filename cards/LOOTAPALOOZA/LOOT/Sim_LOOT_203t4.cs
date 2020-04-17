@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOT_203t4 : SimTemplate //* 秘银魔像 Mithril Golem
+	class Sim_LOOT_203t4 : SimCard //* 秘银魔像 Mithril Golem
 	{
 		//
 		//

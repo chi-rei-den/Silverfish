@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_324 : SimTemplate //* White Eyes
+	class Sim_CFM_324 : SimCard //* White Eyes
 	{
 		// Taunt. Deathrattle: Shuffle 'The Storm Guardian' into your deck.
 

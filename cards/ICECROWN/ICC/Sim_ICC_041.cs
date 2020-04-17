@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_041: SimTemplate //* Defile
+    class Sim_ICC_041: SimCard //* Defile
     {
         // Deal 1 damage to all minions. If any die, cast this again.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_102 : SimTemplate //Tinkertown Technician
+    class Sim_GVG_102 : SimCard //Tinkertown Technician
     {
 
         // Battlecry: If you have a Mech, gain +1/+1 and add a Spare Part to your hand.  

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_830: SimTemplate //* Shadowreaper Anduin
+    class Sim_ICC_830: SimCard //* Shadowreaper Anduin
     {
         // Battlecry: Destroy all minions with 5 or more Attack.
         

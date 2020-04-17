@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_023 : SimTemplate// dark cultist
+    class Sim_FP1_023 : SimCard// dark cultist
     {
         //todo list
         public override void onDeathrattle(Playfield p, Minion m)

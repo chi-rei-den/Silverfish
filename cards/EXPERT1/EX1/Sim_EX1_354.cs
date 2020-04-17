@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_354 : SimTemplate//lay on hands
+    class Sim_EX1_354 : SimCard//lay on hands
     {
 
         //Stellt #8 Leben wieder her. Zieht 3 Karten.

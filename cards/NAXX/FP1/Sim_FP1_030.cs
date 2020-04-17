@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_030 : SimTemplate //loatheb
+	class Sim_FP1_030 : SimCard //loatheb
 	{
 
 //    kampfschrei:/ im nächsten zug kosten zauber für euren gegner (5) mehr.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_235 : SimTemplate //* northshirecleric
+	class Sim_CS2_235 : SimCard //* northshirecleric
 	{
         //Whenever a minion is healed, draw a card.
 

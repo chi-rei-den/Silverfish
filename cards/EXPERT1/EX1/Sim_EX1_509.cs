@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_509 : SimTemplate //* Murloc Tidecaller
+    class Sim_EX1_509 : SimCard //* Murloc Tidecaller
 	{
         //Whenever you summon a Murloc, gain +1 Attack.
 

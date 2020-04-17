@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211aa : SimTemplate //* Stone Elemental
+	class Sim_UNG_211aa : SimCard //* Stone Elemental
 	{
 		
 

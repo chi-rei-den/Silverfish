@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Rogue_04 : SimTemplate //* 奇袭战术 Aggressive Tactics
+	class Sim_TRLA_Rogue_04 : SimCard //* 奇袭战术 Aggressive Tactics
 	{
 		//
 		//

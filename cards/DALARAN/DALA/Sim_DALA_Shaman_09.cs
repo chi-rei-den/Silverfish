@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_09 : SimTemplate //* 雕琢符文 Carvings
+	class Sim_DALA_Shaman_09 : SimCard //* 雕琢符文 Carvings
 	{
 		//
 		//

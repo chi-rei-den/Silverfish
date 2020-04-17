@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_067t1 : SimTemplate //* Crystal Core
+	class Sim_UNG_067t1 : SimCard //* Crystal Core
 	{
 		//For the rest of the game, your minions are 5/5.
 

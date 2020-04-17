@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_825: SimTemplate //* Abominable Bowman
+    class Sim_ICC_825: SimCard //* Abominable Bowman
     {
         // Deathrattle: Summon a random friendly Beast that died this game.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_134 : SimTemplate //* Yogg-Saron, Hope's End
+    class Sim_OG_134 : SimCard //* Yogg-Saron, Hope's End
     {
         //Battlecry: Cast a random spell for each spell you've cast this game (targets chosen randomly).
 

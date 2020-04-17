@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_127 : SimTemplate //* Nexus-Champion Saraad
+	class Sim_AT_127 : SimCard //* Nexus-Champion Saraad
 	{
 		//Inspire: Add a random spell to your hand.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_007a : SimTemplate //starfall choice left
+    class Sim_NEW1_007a : SimCard //starfall choice left
     {
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_178a : SimTemplate //* Rooted
+    class Sim_EX1_178a : SimCard //* Rooted
 	{
         //+5 Health and Taunt.
 

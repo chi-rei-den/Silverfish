@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_119 : SimTemplate //Blingtron 3000
+    class Sim_GVG_119 : SimCard //Blingtron 3000
     {
 
         //   Battlecry: Equip a random weapon for each player.

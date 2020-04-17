@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_083: SimTemplate //* Doomed Apprentice
+    class Sim_ICC_083: SimCard //* Doomed Apprentice
     {
         // Your opponent's spells cost (1) more.
 

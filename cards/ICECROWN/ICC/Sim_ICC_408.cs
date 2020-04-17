@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_408: SimTemplate //* Val'kyr Soulclaimer
+    class Sim_ICC_408: SimCard //* Val'kyr Soulclaimer
     {
         // Whenever this minion survives damage, summon a 2/2 Ghoul
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_595 : SimTemplate //* cultmaster
+	class Sim_EX1_595 : SimCard //* cultmaster
 	{
         // Whenever one of your other minions dies, draw a card.
 

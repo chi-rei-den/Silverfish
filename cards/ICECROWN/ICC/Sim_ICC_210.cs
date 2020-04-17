@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_210: SimTemplate //* Shadow Ascendant
+    class Sim_ICC_210: SimCard //* Shadow Ascendant
     {
         // At the end of your turn, give another random friendly minion +1/+1.
 

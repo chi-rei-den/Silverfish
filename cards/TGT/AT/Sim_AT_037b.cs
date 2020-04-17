@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_037b : SimTemplate //* Living Roots
+	class Sim_AT_037b : SimCard //* Living Roots
 	{
 		//Summon two 1/1 Saplings.
 		

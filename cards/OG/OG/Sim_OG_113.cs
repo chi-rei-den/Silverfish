@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_113 : SimTemplate //* Darkshire Councilman
+	class Sim_OG_113 : SimCard //* Darkshire Councilman
 	{
 		//After you summon a minion, gain +1 Attack.
 

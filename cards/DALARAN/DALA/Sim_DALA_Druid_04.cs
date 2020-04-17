@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Druid_04 : SimTemplate //* 枝繁叶茂 All Bark
+	class Sim_DALA_Druid_04 : SimCard //* 枝繁叶茂 All Bark
 	{
 		//
 		//

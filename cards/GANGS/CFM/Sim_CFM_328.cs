@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_328 : SimTemplate //* Fight Promoter
+	class Sim_CFM_328 : SimCard //* Fight Promoter
 	{
 		// Battlecry: If you control a minion with 6 or more Health, draw two cards.
 

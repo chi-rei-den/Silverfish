@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_582 : SimTemplate //dalaranmage
+	class Sim_EX1_582 : SimCard //dalaranmage
 	{
 
 //    zauberschaden +1/

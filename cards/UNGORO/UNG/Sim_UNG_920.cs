@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_920 : SimTemplate //* The Marsh Queen
+	class Sim_UNG_920 : SimCard //* The Marsh Queen
 	{
 		//Quest: Play seven 1-Cost minions. Reward: Queen Carnassa.
 

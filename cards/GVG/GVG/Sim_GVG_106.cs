@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_106 : SimTemplate //* Junkbot
+    class Sim_GVG_106 : SimCard //* Junkbot
     {
 //   Whenever a friendly Mech dies, gain +2/+2.
 

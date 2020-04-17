@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_108 : SimTemplate //* Earthen Scales
+	class Sim_UNG_108 : SimCard //* Earthen Scales
 	{
 		//Give a friendly minion +1/+1, then gain Armor equal to its Attack.
 

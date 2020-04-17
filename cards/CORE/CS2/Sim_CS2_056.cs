@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_056 : SimTemplate //lifetap
+	class Sim_CS2_056 : SimCard //lifetap
 	{
 
 //    heldenfähigkeit/\nzieht eine karte und erleidet 2 schaden.

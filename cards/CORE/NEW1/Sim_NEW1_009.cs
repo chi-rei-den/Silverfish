@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_009 : SimTemplate //healingtotem
+	class Sim_NEW1_009 : SimCard //healingtotem
 	{
 
 //    stellt am ende eures zuges bei allen befreundeten dienern 1 leben wieder her.

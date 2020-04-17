@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_561 : SimTemplate //alexstrasza
+	class Sim_EX1_561 : SimCard //alexstrasza
 	{
 
 //    kampfschrei:/ setzt das verbleibende leben eines helden auf 15.

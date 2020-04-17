@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_14h : SimTemplate //* 迈拉·腐泉 Myra Rotspring
+	class Sim_BOTA_BOSS_14h : SimCard //* 迈拉·腐泉 Myra Rotspring
 	{
 		//
 		//

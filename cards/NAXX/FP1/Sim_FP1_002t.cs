@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_002t : SimTemplate //spectralspider
+	class Sim_FP1_002t : SimCard //spectralspider
 	{
 
 //

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA14_5 : SimTemplate //* 3/3 toxitron
+	class Sim_BRMA14_5 : SimCard //* 3/3 toxitron
 	{
 		// At the start of your turn, deal 1 damage to all other minions.
 

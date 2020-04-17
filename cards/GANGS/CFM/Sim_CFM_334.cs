@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_334 : SimTemplate //* Smuggler's Crate
+	class Sim_CFM_334 : SimCard //* Smuggler's Crate
 	{
 		// Give a random Beast in your hand +2/+2.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_531t : SimTemplate //* 暴牙破坏者 Rumbletusk Breaker
+	class Sim_TRL_531t : SimCard //* 暴牙破坏者 Rumbletusk Breaker
 	{
 		//
 		//

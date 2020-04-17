@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_074 : SimTemplate //deadlypoison
+	class Sim_CS2_074 : SimCard //deadlypoison
 	{
 
 //    eure waffe erhält +2 angriff.

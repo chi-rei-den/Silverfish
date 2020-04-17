@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_105 : SimTemplate //heroicstrike
+    class Sim_CS2_105 : SimCard //heroicstrike
     {
 
         //    verleiht eurem helden +4 angriff in diesem zug.

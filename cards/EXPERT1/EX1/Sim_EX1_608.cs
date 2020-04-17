@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_608 : SimTemplate //* Sorcerer's Apprentice
+    class Sim_EX1_608 : SimCard //* Sorcerer's Apprentice
 	{
         // Your spells cost (1) less.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_312 : SimTemplate //* 小心火烛 A Dim Flame
+	class Sim_BOTA_312 : SimCard //* 小心火烛 A Dim Flame
 	{
 		//Start Lethal Puzzle 2-4.
 		//Start Lethal Puzzle 2-4.

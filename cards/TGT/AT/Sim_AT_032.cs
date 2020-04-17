@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_032 : SimTemplate //* Shady Dealer
+	class Sim_AT_032 : SimCard //* Shady Dealer
 	{
 		//Battlecry: If you have a Pirate, gain +1/+1.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_021 : SimTemplate //* Tiny Knight of Evil
+    class Sim_AT_021 : SimCard //* Tiny Knight of Evil
 	{
         //Whenever you discard a card, gain +1/+1.
         //Only on the board

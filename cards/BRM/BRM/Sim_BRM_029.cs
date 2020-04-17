@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_029 : SimTemplate //* Rend Blackhand
+    class Sim_BRM_029 : SimCard //* Rend Blackhand
     {
         // Battlecry: If you're holding a Dragon, destroy a Legendary minion.
 

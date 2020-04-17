@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_087 : SimTemplate //* Bittertide Hydra
+	class Sim_UNG_087 : SimCard //* Bittertide Hydra
 	{
 		//Whenever this minion takes damage, deal 3 damage to your hero.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_026 : SimTemplate //* Wrathguard
+	class Sim_AT_026 : SimCard //* Wrathguard
 	{
 		//Whenever this minion takes damage, also deal that amount to your hero.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_309 : SimTemplate //* 可升级机器人 Upgradeable Framebot
+	class Sim_BOT_309 : SimCard //* 可升级机器人 Upgradeable Framebot
 	{
 		//
 		//

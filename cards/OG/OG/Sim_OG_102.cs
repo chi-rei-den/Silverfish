@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_102 : SimTemplate //* Darkspeaker
+    class Sim_OG_102 : SimCard //* Darkspeaker
     {
         //Battlecry: Swap stats with a friendly minion.
 

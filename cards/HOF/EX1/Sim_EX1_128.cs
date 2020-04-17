@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_128 : SimTemplate //conceal
+	class Sim_EX1_128 : SimCard //conceal
 	{
 
 //    verleiht euren dienern bis zu eurem nächsten zug verstohlenheit/.

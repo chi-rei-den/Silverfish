@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_610 : SimTemplate //explosivetrap
+	class Sim_EX1_610 : SimCard //explosivetrap
 	{
         //todo secret
 //    geheimnis:/ wenn euer held angegriffen wird, erleiden alle feinde $2 schaden.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_962 : SimTemplate //* Lightfused Stegodon
+	class Sim_UNG_962 : SimCard //* Lightfused Stegodon
 	{
 		//Battlecry: Adapt your Silver Hand Recruits.
 

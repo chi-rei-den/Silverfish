@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_593 : SimTemplate //nightblade
+    class Sim_EX1_593 : SimCard //nightblade
     {
 
         //    kampfschrei: /fügt dem feindlichen helden 3 schaden zu.

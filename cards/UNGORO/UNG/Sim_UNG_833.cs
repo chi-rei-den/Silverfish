@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_833 : SimTemplate //* Lakkari Felhound
+	class Sim_UNG_833 : SimCard //* Lakkari Felhound
 	{
 		//Taunt. Battlecry: Discard two random cards.
 

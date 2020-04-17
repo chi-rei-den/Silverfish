@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_005a : SimTemplate //* Big Bad Wolf
+	class Sim_KAR_005a : SimCard //* Big Bad Wolf
 	{
 		//-
 	}

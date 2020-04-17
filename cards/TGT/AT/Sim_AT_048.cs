@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_048 : SimTemplate //* Healing Wave
+	class Sim_AT_048 : SimCard //* Healing Wave
 	{
 		//Restore 7 Health. Reveal a minion in each deck. If yours costs more, Restore 14 instead.
 

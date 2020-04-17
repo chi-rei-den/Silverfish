@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_957 : SimTemplate //* Direhorn Hatchling
+	class Sim_UNG_957 : SimCard //* Direhorn Hatchling
 	{
 		//Taunt. Deathrattle: Shuffle a 6/9 Direhorn with Taunt into your deck.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_049 : SimTemplate //* Gahz'rilla
+    class Sim_GVG_049 : SimCard //* Gahz'rilla
     {
         // Whenever this minion takes damage, double its Attack.
 

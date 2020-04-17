@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_09 : SimTemplate //* 备战就绪 Combat Ready
+	class Sim_ULDA_Brann_09 : SimCard //* 备战就绪 Combat Ready
 	{
 		//
 		//

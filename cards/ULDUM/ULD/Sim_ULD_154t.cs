@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_154t : SimTemplate //* 土狼 Hyena
+	class Sim_ULD_154t : SimCard //* 土狼 Hyena
 	{
 		//
 		//

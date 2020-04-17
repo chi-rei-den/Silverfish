@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_146 : SimTemplate //southseadeckhand
+	class Sim_CS2_146 : SimCard //southseadeckhand
 	{
 
 //    hat ansturm/, während ihr eine waffe angelegt habt.

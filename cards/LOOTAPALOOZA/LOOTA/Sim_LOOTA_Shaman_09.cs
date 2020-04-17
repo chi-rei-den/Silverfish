@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Shaman_09 : SimTemplate //* 图腾之道 Totems
+	class Sim_LOOTA_Shaman_09 : SimCard //* 图腾之道 Totems
 	{
 		//
 		//

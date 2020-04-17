@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_608 : SimTemplate //* Blastcrystal Potion
+	class Sim_CFM_608 : SimCard //* Blastcrystal Potion
 	{
 		// Destroy a minion and one of your Mana Crystals.
 

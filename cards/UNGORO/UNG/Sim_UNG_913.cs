@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_913 : SimTemplate //* Tol'vir Warden
+	class Sim_UNG_913 : SimCard //* Tol'vir Warden
 	{
 		//Battlecry: Draw two 1-Cost minions from your deck.
 

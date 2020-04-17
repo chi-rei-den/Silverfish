@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_05 : SimTemplate //* 机械小队 Mechs
+	class Sim_ULDA_Reno_05 : SimCard //* 机械小队 Mechs
 	{
 		//
 		//

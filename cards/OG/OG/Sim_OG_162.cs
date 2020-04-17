@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_162 : SimTemplate //* Disciple of C'Thun
+	class Sim_OG_162 : SimCard //* Disciple of C'Thun
 	{
 		//Battlecry: Deal 2 damage. Give your C'Thun +2/+2 (wherever it is)
 		

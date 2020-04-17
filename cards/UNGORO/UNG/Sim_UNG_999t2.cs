@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t2 : SimTemplate //* Living Spores
+	class Sim_UNG_999t2 : SimCard //* Living Spores
 	{
 		//Deathrattle: Summon two 1/1 Plants.
 

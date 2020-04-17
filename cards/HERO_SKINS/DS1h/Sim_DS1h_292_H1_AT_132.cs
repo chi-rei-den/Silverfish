@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1h_292_H1_AT_132 : SimTemplate //* Ballista Shot
+	class Sim_DS1h_292_H1_AT_132 : SimCard //* Ballista Shot
 	{
 		//Hero Power: Deal 3 damage to the enemy hero.
 		

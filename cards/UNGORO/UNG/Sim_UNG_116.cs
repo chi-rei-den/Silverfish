@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_116 : SimTemplate //* Jungle Giants
+	class Sim_UNG_116 : SimCard //* Jungle Giants
 	{
 		//Quest: Summon 5 minions with 5 or more Attack. Reward: Barnabus.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_047 : SimTemplate //* Tomb Spider
+	class Sim_LOE_047 : SimCard //* Tomb Spider
 	{
 		//Battlecry: Discover a Beast.
 		

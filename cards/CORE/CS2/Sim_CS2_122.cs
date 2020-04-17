@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_122 : SimTemplate //raidleader
+	class Sim_CS2_122 : SimCard //raidleader
 	{
 
 //    eure anderen diener haben +1 angriff.

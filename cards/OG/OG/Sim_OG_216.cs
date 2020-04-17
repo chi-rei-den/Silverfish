@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_216 : SimTemplate //* Infested Wolf
+	class Sim_OG_216 : SimCard //* Infested Wolf
 	{
 		//Deathrattle: Summon two 1/1 Spiders.
 

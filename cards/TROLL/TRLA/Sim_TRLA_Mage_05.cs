@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_05 : SimTemplate //* 冰冷寒霜 Frost
+	class Sim_TRLA_Mage_05 : SimCard //* 冰冷寒霜 Frost
 	{
 		//
 		//

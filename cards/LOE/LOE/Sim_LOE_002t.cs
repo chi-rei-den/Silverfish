@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_002t : SimTemplate //* Roaring Torch
+	class Sim_LOE_002t : SimCard //* Roaring Torch
 	{
 		//Deal 6 damage.
 		

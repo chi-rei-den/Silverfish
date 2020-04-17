@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_027 : SimTemplate //southseacaptain
+	class Sim_NEW1_027 : SimCard //southseacaptain
 	{
 
 //    eure anderen piraten haben +1/+1.

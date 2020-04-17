@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_050 : SimTemplate //coldlightoracle
+	class Sim_EX1_050 : SimCard //coldlightoracle
 	{
 
 //    kampfschrei:/ jeder spieler zieht 2 karten.

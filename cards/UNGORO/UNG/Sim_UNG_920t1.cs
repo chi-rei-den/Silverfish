@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_920t1 : SimTemplate //* Queen Carnassa
+	class Sim_UNG_920t1 : SimCard //* Queen Carnassa
 	{
 		//Battlecry: Shuffle 15 Raptors into your deck.
 

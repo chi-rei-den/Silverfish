@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_900: SimTemplate //* Necrotic Geist
+    class Sim_ICC_900: SimCard //* Necrotic Geist
     {
         // Whenever one of your other minions dies, summon a 2/2 Ghoul.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_715 : SimTemplate //* Jade Spirit
+	class Sim_CFM_715 : SimCard //* Jade Spirit
 	{
 		// Battlecry: Summon a Jade Golem.
 

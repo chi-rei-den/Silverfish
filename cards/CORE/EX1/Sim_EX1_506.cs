@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_506 : SimTemplate //murloctidehunter
+	class Sim_EX1_506 : SimCard //murloctidehunter
 	{
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_506a);//murlocscout
 //    kampfschrei:/ ruft einen murlocspäher (1/1) herbei.

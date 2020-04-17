@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_384 : SimTemplate //* avengingwrath
+    class Sim_EX1_384 : SimCard //* avengingwrath
     {
         //Deal $8 damage randomly split among all enemies.
 

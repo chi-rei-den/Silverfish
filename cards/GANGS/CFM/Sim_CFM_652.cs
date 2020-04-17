@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_652 : SimTemplate //* Second-Rate Bruiser
+	class Sim_CFM_652 : SimCard //* Second-Rate Bruiser
 	{
 		// Taunt. Costs (2) less if your opponent has at least three minions.
 	}

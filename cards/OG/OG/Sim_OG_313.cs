@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_313 : SimTemplate //* Addled Grizzly
+	class Sim_OG_313 : SimCard //* Addled Grizzly
 	{
 		//After you summon a minion, give it +1/+1.
 		

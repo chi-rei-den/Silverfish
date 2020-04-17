@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_044 : SimTemplate //Spider Tank
+    class Sim_GVG_044 : SimCard //Spider Tank
     {
 
         //   just a spider tank :D

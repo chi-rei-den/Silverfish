@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_790 : SimTemplate //* Dirty Rat
+	class Sim_CFM_790 : SimCard //* Dirty Rat
 	{
 		// Taunt. Battlecry: Your opponent summons a random minion from their hand.
 

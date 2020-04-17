@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_693 : SimTemplate //* Gadgetzan Ferryman
+	class Sim_CFM_693 : SimCard //* Gadgetzan Ferryman
 	{
 		// Combo: Return a friendly minion to your hand.
 

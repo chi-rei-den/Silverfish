@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_812 : SimTemplate //* Sabretooth Stalker
+	class Sim_UNG_812 : SimCard //* Sabretooth Stalker
 	{
 		//Stealth
 

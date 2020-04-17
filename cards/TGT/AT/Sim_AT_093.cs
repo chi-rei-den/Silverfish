@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_093 : SimTemplate //* Frigid Snobold
+	class Sim_AT_093 : SimCard //* Frigid Snobold
 	{
 		//Spell Damage +1.
 

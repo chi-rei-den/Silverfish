@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_066 : SimTemplate //* Orgrimmar Aspirant
+	class Sim_AT_066 : SimCard //* Orgrimmar Aspirant
 	{
 		//Inspire: Give your weapon +1 Attack.
 

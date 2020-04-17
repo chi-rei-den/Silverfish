@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_853 : SimTemplate //* Grimestreet Smuggler
+	class Sim_CFM_853 : SimCard //* Grimestreet Smuggler
 	{
         // Battlecry: Give a random minion in your hand +1/+1
 

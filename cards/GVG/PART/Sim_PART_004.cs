@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_004 : SimTemplate //Finicky Cloakfield
+    class Sim_PART_004 : SimCard //Finicky Cloakfield
     {
 
         //   Give a friendly minion Stealth until your next turn.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_033 : SimTemplate //* Tree of Life
+    class Sim_GVG_033 : SimCard //* Tree of Life
     {
 
         //    Restore all characters to full Health.

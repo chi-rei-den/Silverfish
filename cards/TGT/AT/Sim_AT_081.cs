@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_081 : SimTemplate //* Eadric the Pure
+	class Sim_AT_081 : SimCard //* Eadric the Pure
 	{
 		//Battlecry: Change all enemy minions' attack to 1.
 		

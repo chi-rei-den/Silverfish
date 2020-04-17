@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ICC_314t3 : SimTemplate //* Doom Pact
+	class Sim_ICC_314t3 : SimCard //* Doom Pact
     {
         // Destroy all minions. Remove the top card from your deck for each minion destroyed.
 

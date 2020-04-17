@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_321 : SimTemplate //* Crazed Worshipper
+	class Sim_OG_321 : SimCard //* Crazed Worshipper
 	{
 		//Taunt. Whenever this minion takes damage, give your C'Thun +1/+1 (wherever it is).
 

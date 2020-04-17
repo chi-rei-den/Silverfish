@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_013 : SimTemplate //* Kel'Thuzad
+    class Sim_FP1_013 : SimCard //* Kel'Thuzad
 	{
         // At the end of each turn, summon all friendly minions that died this turn.
 

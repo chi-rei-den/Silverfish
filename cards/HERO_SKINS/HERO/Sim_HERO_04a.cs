@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_04a : SimTemplate //* 女伯爵莉亚德琳 Lady Liadrin
+	class Sim_HERO_04a : SimCard //* 女伯爵莉亚德琳 Lady Liadrin
 	{
 		//
 		//

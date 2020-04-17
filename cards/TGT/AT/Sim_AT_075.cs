@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_075 : SimTemplate //* Warhorse Trainer
+	class Sim_AT_075 : SimCard //* Warhorse Trainer
 	{
 		//Your Silver Hand Recruits have +1 Attack.
 

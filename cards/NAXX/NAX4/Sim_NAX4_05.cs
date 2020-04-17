@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX4_05 : SimTemplate //* Plague
+	class Sim_NAX4_05 : SimCard //* Plague
 	{
 		// Destroy all non-Skeleton minions.
 		

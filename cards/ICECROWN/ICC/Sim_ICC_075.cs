@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_075: SimTemplate //* Despicable Dreadlord
+    class Sim_ICC_075: SimCard //* Despicable Dreadlord
     {
         // At the end of your turn, deal 1 damage to all enemy minions.
 

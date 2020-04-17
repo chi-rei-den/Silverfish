@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_062 : SimTemplate //* oldmurkeye
+	class Sim_EX1_062 : SimCard //* oldmurkeye
 	{
         // Charge. Has +1 Attack for each other Murloc on the battlefield.
 

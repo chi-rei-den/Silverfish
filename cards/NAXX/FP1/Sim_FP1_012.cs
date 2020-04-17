@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_012 : SimTemplate //* Sludge Belcher
+	class Sim_FP1_012 : SimCard //* Sludge Belcher
 	{
 		//Taunt. Deathrattle: Summon a 1/2 Slime with Taunt.
 		

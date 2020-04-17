@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_044 : SimTemplate //* Mulch
+	class Sim_AT_044 : SimCard //* Mulch
 	{
 		//Destroy a minion. Add a random minion to your opponent's hand.
 

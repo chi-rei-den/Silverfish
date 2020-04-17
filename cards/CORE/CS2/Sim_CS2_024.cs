@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_024 : SimTemplate //Frostbolt
+    class Sim_CS2_024 : SimCard //Frostbolt
     {
         //Deal $3 damage to a character and Freeze it.
 

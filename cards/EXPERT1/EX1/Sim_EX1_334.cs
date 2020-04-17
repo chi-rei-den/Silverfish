@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_334 : SimTemplate //shadowmadness
+	class Sim_EX1_334 : SimCard //shadowmadness
 	{
 
 //    übernehmt bis zum ende des zuges die kontrolle über einen feindlichen diener mit max. 3 angriff.

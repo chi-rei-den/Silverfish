@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_KTRAF_2s : SimTemplate
+	class Sim_TB_KTRAF_2s : SimCard
 	{
 	}
 }

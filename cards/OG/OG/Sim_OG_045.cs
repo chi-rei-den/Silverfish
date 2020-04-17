@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_045 : SimTemplate //* Infest
+    class Sim_OG_045 : SimCard //* Infest
     {
         //Give your minions "Deathrattle: Add a random Beast to your hand."
 

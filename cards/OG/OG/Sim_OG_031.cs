@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_031 : SimTemplate //* Hammer of Twilight
+    class Sim_OG_031 : SimCard //* Hammer of Twilight
     {
         //Deathrattle: Summon a 4/2 Elemental.
 

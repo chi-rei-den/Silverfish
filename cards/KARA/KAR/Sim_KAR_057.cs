@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_057 : SimTemplate //* Ivory Knight
+	class Sim_KAR_057 : SimCard //* Ivory Knight
 	{
 		//Battlecry: Discover a spell. Restore Health to your hero equal to its Cost.
 

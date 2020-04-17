@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_004 : SimTemplate //* Twilight Whelp
+    class Sim_BRM_004 : SimCard //* Twilight Whelp
     {
         // Battlecry: If you're holding a Dragon, gain +2 Health.
 

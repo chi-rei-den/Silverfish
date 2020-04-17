@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_014 : SimTemplate //kingmukla
+	class Sim_EX1_014 : SimCard //kingmukla
 	{
 
 //    kampfschrei:/ gebt eurem gegner 2 bananen.

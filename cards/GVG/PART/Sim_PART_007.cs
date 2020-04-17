@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_007 : SimTemplate //Whirling Blades
+    class Sim_PART_007 : SimCard //Whirling Blades
     {
 
         //Give a minion +1 Attack.   

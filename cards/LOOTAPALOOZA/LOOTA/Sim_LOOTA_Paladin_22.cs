@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Paladin_22 : SimTemplate //* 灵魂祝福 Many Blessings
+	class Sim_LOOTA_Paladin_22 : SimCard //* 灵魂祝福 Many Blessings
 	{
 		//
 		//

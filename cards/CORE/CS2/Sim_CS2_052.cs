@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_052 : SimTemplate //wrathofairtotem
+	class Sim_CS2_052 : SimCard //wrathofairtotem
 	{
 
 //    zauberschaden +1/

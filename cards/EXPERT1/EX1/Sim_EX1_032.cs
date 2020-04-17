@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_032 : SimTemplate //sunwalker
+	class Sim_EX1_032 : SimCard //sunwalker
 	{
 
 //    spott/, gottesschild/

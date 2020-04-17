@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_036 : SimTemplate //* Anub'arak
+	class Sim_AT_036 : SimCard //* Anub'arak
 	{
 		//Deathrattle: Return this to your hand and summon a 4/4 Nerubian.
 		

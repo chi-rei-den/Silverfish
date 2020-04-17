@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_004 : SimTemplate //* Cat Trick
+	class Sim_KAR_004 : SimCard //* Cat Trick
 	{
 		//Secret: After your opponent casts a spell, summon a 4/2 Panther with Stealth.
 

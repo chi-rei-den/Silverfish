@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_275 : SimTemplate //* Cone of Cold
+    class Sim_EX1_275 : SimCard //* Cone of Cold
 	{
         //Freeze a minion and the minions next to it, and deal $1 damage to them.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Hunter_03 : SimTemplate //* 花式射击 Shots
+	class Sim_LOOTA_Hunter_03 : SimCard //* 花式射击 Shots
 	{
 		//
 		//

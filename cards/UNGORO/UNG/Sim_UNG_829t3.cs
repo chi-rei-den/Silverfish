@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829t3 : SimTemplate //* Nether Imp
+	class Sim_UNG_829t3 : SimCard //* Nether Imp
 	{
 		
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_BOSS_69p : SimTemplate //* 巨龙之怒 Dragonwrath
+	class Sim_DALA_BOSS_69p : SimCard //* 巨龙之怒 Dragonwrath
 	{
 		// currently)</i>
 		//点）</i>。

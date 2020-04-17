@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Priest_9 : SimTemplate //* 组合施法 Combo Caster
+	class Sim_LOOTA_Priest_9 : SimCard //* 组合施法 Combo Caster
 	{
 		//
 		//

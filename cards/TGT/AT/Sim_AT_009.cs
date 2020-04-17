@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_009 : SimTemplate //* Rhonin
+	class Sim_AT_009 : SimCard //* Rhonin
 	{
 		//Deathrattle: Add 3 copies of Arcane Missiles to your hand.
 

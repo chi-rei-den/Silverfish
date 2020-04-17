@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_15 : SimTemplate //* 法术票友 Spell Lovers
+	class Sim_ULDA_Reno_15 : SimCard //* 法术票友 Spell Lovers
 	{
 		//
 		//

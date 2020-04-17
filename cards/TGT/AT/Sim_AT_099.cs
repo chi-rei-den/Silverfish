@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_099 : SimTemplate //* Kodorider
+	class Sim_AT_099 : SimCard //* Kodorider
 	{
 		//Inspire: Summon a 3/5 War Kodo.
 

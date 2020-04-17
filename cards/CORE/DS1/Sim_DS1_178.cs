@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_178 : SimTemplate //tundrarhino
+	class Sim_DS1_178 : SimCard //tundrarhino
 	{
 
 //    eure wildtiere haben ansturm/.

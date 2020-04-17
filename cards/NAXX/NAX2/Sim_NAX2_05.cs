@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX2_05 : SimTemplate //* Worshipper
+	class Sim_NAX2_05 : SimCard //* Worshipper
 	{
 		// Your hero has +1 Attack on your turn.
 

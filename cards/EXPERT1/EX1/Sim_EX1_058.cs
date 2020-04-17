@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_058 : SimTemplate //* sunfuryprotector
+	class Sim_EX1_058 : SimCard //* sunfuryprotector
 	{
         //Battlecry: Give adjacent minions Taunt.
 

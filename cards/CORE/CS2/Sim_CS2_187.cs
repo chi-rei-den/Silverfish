@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_187 : SimTemplate //bootybaybodyguard
+	class Sim_CS2_187 : SimCard //bootybaybodyguard
 	{
 
 //    spott/

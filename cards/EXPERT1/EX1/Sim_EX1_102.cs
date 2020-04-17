@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_102 : SimTemplate //demolisher
+    class Sim_EX1_102 : SimCard //demolisher
     {
 
         //    fügt zu beginn eures zuges einem zufälligen feind 2 schaden zu.

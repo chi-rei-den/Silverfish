@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_041 : SimTemplate //* Dark Wispers
+    class Sim_GVG_041 : SimCard //* Dark Wispers
     {
         //   Choose One - Summon 5 Wisps; or Give a minion +5/+5 and Taunt.
 

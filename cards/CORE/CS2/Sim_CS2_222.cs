@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_222 : SimTemplate //stormwindchampion
+	class Sim_CS2_222 : SimCard //stormwindchampion
 	{
 
 //    eure anderen diener haben +1/+1.

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_05 : SimTemplate //* 卫士 Vanguard
+	class Sim_GILA_Darius_05 : SimCard //* 卫士 Vanguard
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_083 : SimTemplate //tinkmasteroverspark
+	class Sim_EX1_083 : SimCard //tinkmasteroverspark
 	{
         CardDB.Card card1 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_tk29); // rex
         CardDB.Card card2 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_tk28); // squirrel

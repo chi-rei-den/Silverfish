@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_080 : SimTemplate //* Garrison Commander
+	class Sim_AT_080 : SimCard //* Garrison Commander
 	{
 		//You can use your Hero Power twice on your turn.
 	

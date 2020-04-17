@@ -20,7 +20,7 @@ namespace HREngine.Bots
             return "None";
         }
 
-        public virtual int getPlayCardPenality(CardDB.Card card, Minion target, Playfield p)
+        public virtual int getPlayCardPenality(HearthDb.Card card, Minion target, Playfield p)
         {
             return 0;
         }

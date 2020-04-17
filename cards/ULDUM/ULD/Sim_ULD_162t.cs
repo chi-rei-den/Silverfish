@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_162t : SimTemplate //* 怪盗恶魔 EVIL Demon
+	class Sim_ULD_162t : SimCard //* 怪盗恶魔 EVIL Demon
 	{
 		//
 		//

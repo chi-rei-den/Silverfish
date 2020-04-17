@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Hunter_12 : SimTemplate //* 变废为宝 Scrapyard
+	class Sim_TRLA_Hunter_12 : SimCard //* 变废为宝 Scrapyard
 	{
 		//
 		//

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_450 : SimTemplate //* 邪犬 Vilefiend
+	class Sim_ULD_450 : SimCard //* 邪犬 Vilefiend
 	{
 		//<b>Lifesteal</b>
 		//<b>吸血</b>

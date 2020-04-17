@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_034 : SimTemplate //* Mech-Bear-Cat
+    class Sim_GVG_034 : SimCard //* Mech-Bear-Cat
     {
         // Whenever this minion takes damage, add a Spare Part card to your hand.
 

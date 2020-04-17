@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_743t : SimTemplate //* 荆棘帮马仔 Hench-Clan Squire
+	class Sim_DAL_743t : SimCard //* 荆棘帮马仔 Hench-Clan Squire
 	{
 		//
 		//

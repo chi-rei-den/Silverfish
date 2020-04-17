@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_02 : SimTemplate //* 灵魂之力 Spirits
+	class Sim_DALA_Shaman_02 : SimCard //* 灵魂之力 Spirits
 	{
 		//
 		//

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warrior_07 : SimTemplate //* 散兵 Fervent Fans
+	class Sim_TRLA_Warrior_07 : SimCard //* 散兵 Fervent Fans
 	{
 		//
 		//

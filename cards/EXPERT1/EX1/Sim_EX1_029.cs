@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_029 : SimTemplate //lepergnome
+    class Sim_EX1_029 : SimCard //lepergnome
     {
 
         //    todesröcheln:/ fügt dem feindlichen helden 2 schaden zu.

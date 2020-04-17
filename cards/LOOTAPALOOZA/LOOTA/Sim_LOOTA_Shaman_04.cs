@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Shaman_04 : SimTemplate //* 异化变形 Mutations
+	class Sim_LOOTA_Shaman_04 : SimCard //* 异化变形 Mutations
 	{
 		//
 		//

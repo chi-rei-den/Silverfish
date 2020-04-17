@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_151t : SimTemplate //* 赛场新秀 Hotshot
+	class Sim_TRL_151t : SimCard //* 赛场新秀 Hotshot
 	{
 		//
 		//

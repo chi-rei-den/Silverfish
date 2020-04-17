@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_392 : SimTemplate //battlerage
+	class Sim_EX1_392 : SimCard //battlerage
 	{
 
 //    zieht eine karte für jeden verletzten befreundeten charakter.

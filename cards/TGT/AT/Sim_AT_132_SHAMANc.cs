@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_SHAMANc : SimTemplate //* Stoneclaw Totem
+	class Sim_AT_132_SHAMANc : SimCard //* Stoneclaw Totem
 	{
 		//Taunt
 	}

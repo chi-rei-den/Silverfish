@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_234 : SimTemplate //* Darkshire Alchemist
+	class Sim_OG_234 : SimCard //* Darkshire Alchemist
 	{
 		//Battlecry: Restore 5 Health.
 		

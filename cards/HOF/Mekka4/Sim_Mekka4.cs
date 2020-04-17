@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka4 : SimTemplate //* poultryizer
+	class Sim_Mekka4 : SimCard //* poultryizer
 	{
         CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.Mekka4t);
                                 

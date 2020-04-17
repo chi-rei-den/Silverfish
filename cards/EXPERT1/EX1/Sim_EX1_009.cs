@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_009 : SimTemplate //angrychicken
+	class Sim_EX1_009 : SimCard //angrychicken
 	{
 
 //    wutanfall:/ +5 angriff.

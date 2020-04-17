@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_226 : SimTemplate //* Frostwolf Warlord
+    class Sim_CS2_226 : SimCard //* Frostwolf Warlord
 	{
         // Battlecry: Gain +1/+1 for each other friendly minion on the battlefield.
 

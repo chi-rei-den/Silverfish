@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_090 : SimTemplate //Madder Bomber
+    class Sim_GVG_090 : SimCard //Madder Bomber
     {
 
         //   Battlecry: Deal 6 damage randomly split between all other characters.

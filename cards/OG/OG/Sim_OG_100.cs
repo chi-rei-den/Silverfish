@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_100 : SimTemplate //* Shadow Word: Horror
+    class Sim_OG_100 : SimCard //* Shadow Word: Horror
     {
         //Destroy all minions with 2 or less Attack.
 

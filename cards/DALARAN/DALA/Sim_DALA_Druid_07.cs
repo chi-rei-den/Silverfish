@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Druid_07 : SimTemplate //* 自然生长 Nurture and Grow
+	class Sim_DALA_Druid_07 : SimCard //* 自然生长 Nurture and Grow
 	{
 		//
 		//

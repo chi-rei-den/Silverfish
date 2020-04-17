@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t25 : SimTemplate //* Heart of Fire
+	class Sim_CFM_621t25 : SimCard //* Heart of Fire
 	{
 		// Deal $8 damage.
 		

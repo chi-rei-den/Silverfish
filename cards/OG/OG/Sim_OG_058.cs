@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_058 : SimTemplate //* Rusty Hook
+	class Sim_OG_058 : SimCard //* Rusty Hook
 	{
         CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_058);
 

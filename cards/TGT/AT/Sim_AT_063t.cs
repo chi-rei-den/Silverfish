@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_063t : SimTemplate //* Dreadscale
+	class Sim_AT_063t : SimCard //* Dreadscale
 	{
 		//At the end of your turn, deal 1 damage to all other minions.
 

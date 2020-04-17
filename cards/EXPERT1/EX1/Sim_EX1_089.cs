@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_089 : SimTemplate //arcanegolem
+	class Sim_EX1_089 : SimCard //arcanegolem
 	{
 
 //    ansturm/. kampfschrei:/ gebt eurem gegner 1 manakristall.

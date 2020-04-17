@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_025 : SimTemplate //bloodsailcorsair
+	class Sim_NEW1_025 : SimCard //bloodsailcorsair
 	{
 
 //    kampfschrei:/ zieht 1 haltbarkeit von der waffe eures gegners ab.

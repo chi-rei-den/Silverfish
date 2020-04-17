@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_178 : SimTemplate //* ancientofwar
+    class Sim_EX1_178 : SimCard //* ancientofwar
     {
         //Choose One - +5 Attack; or +5 Health and Taunt.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_666 : SimTemplate //* Grook Fu Master
+	class Sim_CFM_666 : SimCard //* Grook Fu Master
 	{
 		// Windfury
 	}

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_108 : SimTemplate //Recombobulator
+    class Sim_GVG_108 : SimCard //Recombobulator
     {
 
         //   Battlecry: Transform a friendly minion into a random minion with the same Cost.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_810: SimTemplate //* Deathaxe Punisher
+    class Sim_ICC_810: SimCard //* Deathaxe Punisher
     {
         // Battlecry: Give a random Lifesteal minion in your hand +2/+2.
 

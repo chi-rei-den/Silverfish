@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_003 : SimTemplate //Unstable Portal
+    class Sim_GVG_003 : SimCard //Unstable Portal
     {
 
         //    Add a random minion to your hand. It costs (3) less.

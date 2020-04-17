@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_573b : SimTemplate //* shandoslesson
+	class Sim_EX1_573b : SimCard //* shandoslesson
 	{
         //Summon two 2/2 Treants with Taunt.
 

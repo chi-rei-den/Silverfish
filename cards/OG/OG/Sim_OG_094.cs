@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_094 : SimTemplate //* Power Word Tentacles
+	class Sim_OG_094 : SimCard //* Power Word Tentacles
 	{
 		//Give a minion +2/+6.
 		

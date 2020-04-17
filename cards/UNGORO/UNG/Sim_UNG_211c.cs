@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211c : SimTemplate //* Invocation of Fire
+	class Sim_UNG_211c : SimCard //* Invocation of Fire
 	{
 		//Deal 6 damage to the enemy hero.
 

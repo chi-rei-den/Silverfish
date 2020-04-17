@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_164 : SimTemplate //* nourish
+    class Sim_EX1_164 : SimCard //* nourish
     {
 
         //    Choose One - Gain 2 Mana Crystals or Draw 3 cards.

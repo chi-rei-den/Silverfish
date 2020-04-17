@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080b : SimTemplate //* Kingsblood Toxin
+	class Sim_OG_080b : SimCard //* Kingsblood Toxin
 	{
 		//Draw a card.
 		

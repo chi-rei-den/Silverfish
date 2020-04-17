@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NAX11_04 : SimTemplate//* Mutating Injection
+    class Sim_NAX11_04 : SimCard//* Mutating Injection
     {
 	// Give a minion +4/+4 and Taunt.
 	

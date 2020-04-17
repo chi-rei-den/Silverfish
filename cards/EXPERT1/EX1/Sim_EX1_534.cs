@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_534 : SimTemplate //* savannahhighmane
+	class Sim_EX1_534 : SimCard //* savannahhighmane
 	{
         //Deathrattle: Summon two 2/2 Hyenas.
 

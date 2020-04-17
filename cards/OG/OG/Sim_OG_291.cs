@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_291 : SimTemplate //* Shadowcaster
+    class Sim_OG_291 : SimCard //* Shadowcaster
     {
         //Battlecry: Choose a friendly minion. Add a 1/1 copy to your hand that costs (1).
 

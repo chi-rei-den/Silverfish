@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829t2 : SimTemplate //* Nether Portal
+	class Sim_UNG_829t2 : SimCard //* Nether Portal
 	{
 		//At the end of your turn, summon two 3/2 Imps.
 

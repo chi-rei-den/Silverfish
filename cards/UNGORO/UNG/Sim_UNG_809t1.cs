@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_809t1 : SimTemplate //* Flame Elemental
+	class Sim_UNG_809t1 : SimCard //* Flame Elemental
 	{
 		
 

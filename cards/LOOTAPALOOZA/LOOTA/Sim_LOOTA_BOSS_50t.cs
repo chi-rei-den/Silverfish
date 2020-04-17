@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_BOSS_50t : SimTemplate //* 蘑菇药水 Mushroom Potion
+	class Sim_LOOTA_BOSS_50t : SimCard //* 蘑菇药水 Mushroom Potion
 	{
 		//{0}{1}
 		//{0}{1}

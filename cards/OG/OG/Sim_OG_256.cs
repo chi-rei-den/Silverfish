@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_256 : SimTemplate //* Spawn of N'Zoth
+	class Sim_OG_256 : SimCard //* Spawn of N'Zoth
 	{
 		//Deathive your minions +1/+1.
 		

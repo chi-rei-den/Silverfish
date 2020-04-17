@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_302 : SimTemplate //mortalcoil
+	class Sim_EX1_302 : SimCard //mortalcoil
 	{
 
 //    fügt einem diener $1 schaden zu. zieht eine karte, wenn er dadurch vernichtet wird.

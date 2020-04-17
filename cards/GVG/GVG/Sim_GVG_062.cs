@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_062 : SimTemplate //Cobalt Guardian
+    class Sim_GVG_062 : SimCard //Cobalt Guardian
     {
 
         //   Whenever you summon a Mech, gain Divine Shield.

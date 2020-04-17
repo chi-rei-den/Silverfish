@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_129 : SimTemplate //fanofknives
+	class Sim_EX1_129 : SimCard //fanofknives
 	{
 
 //    fügt allen feindlichen dienern $1 schaden zu. zieht eine karte.

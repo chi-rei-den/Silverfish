@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Hunter_05 : SimTemplate //* 森然巨兽 Big Beasts
+	class Sim_DALA_Hunter_05 : SimCard //* 森然巨兽 Big Beasts
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_108 : SimTemplate //execute
+	class Sim_CS2_108 : SimCard //execute
 	{
 
 //    vernichtet einen verletzten feindlichen diener.

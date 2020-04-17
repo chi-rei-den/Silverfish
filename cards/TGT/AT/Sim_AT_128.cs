@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_128 : SimTemplate //* The Skeleton Knight
+	class Sim_AT_128 : SimCard //* The Skeleton Knight
 	{
 		//Deathrattle: Reveal a minion in each deck. If yours costs more, return this to your hand.
 		

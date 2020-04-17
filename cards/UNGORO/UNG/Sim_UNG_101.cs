@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_101 : SimTemplate //* Shellshifter
+	class Sim_UNG_101 : SimCard //* Shellshifter
 	{
 		//Choose One - Transform into a 5/3 with Stealth or a 3/5 with Taunt.
 

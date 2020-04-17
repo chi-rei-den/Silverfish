@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_006 : SimTemplate //* Alarm-o-Bot
+    class Sim_EX1_006 : SimCard //* Alarm-o-Bot
 	{
         //At the start of your turn, swap this minion with a random one in your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_010b : SimTemplate //* Fire Hawk Form
+	class Sim_BRM_010b : SimCard //* Fire Hawk Form
 	{
 		// Transform into a 2/5 minion.
 

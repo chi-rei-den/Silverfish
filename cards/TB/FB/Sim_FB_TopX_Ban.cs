@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_TopX_Ban : SimTemplate
+	class Sim_FB_TopX_Ban : SimCard
 	{
 	}
 }

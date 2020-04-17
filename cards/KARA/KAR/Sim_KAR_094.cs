@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_094 : SimTemplate //* Deadly Fork
+	class Sim_KAR_094 : SimCard //* Deadly Fork
 	{
 		//Deathrattle: Add a 3/2 weapon to your hand.
 

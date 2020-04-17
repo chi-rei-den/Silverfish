@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_259 : SimTemplate//Lightning Storm
+    class Sim_EX1_259 : SimCard//Lightning Storm
     {
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_MAGE : SimTemplate //* Fireblast Rank 2
+	class Sim_AT_132_MAGE : SimCard //* Fireblast Rank 2
 	{
 		//Hero Power: Deal 2 damage.
 		

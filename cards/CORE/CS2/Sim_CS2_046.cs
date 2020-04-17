@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_046 : SimTemplate //bloodlust
+	class Sim_CS2_046 : SimCard //bloodlust
 	{
 
 //    verleiht euren dienern +3 angriff in diesem zug.

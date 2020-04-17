@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_096: SimTemplate //* Furnacefire Colossus
+    class Sim_ICC_096: SimCard //* Furnacefire Colossus
     {
         // Battlecry: Discard all weapons from your hand and gain their stats.
 

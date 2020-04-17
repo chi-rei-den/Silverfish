@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_639 : SimTemplate //* Grimestreet Enforcer
+	class Sim_CFM_639 : SimCard //* Grimestreet Enforcer
 	{
 		// At the end of your turn, give all minions in your hand +1/+1.
 

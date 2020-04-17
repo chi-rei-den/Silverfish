@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_07b : SimTemplate //* 机械加拉克苏斯 Mecha-Jaraxxus
+	class Sim_HERO_07b : SimCard //* 机械加拉克苏斯 Mecha-Jaraxxus
 	{
 		//
 		//

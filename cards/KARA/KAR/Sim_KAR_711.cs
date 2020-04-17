@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_711 : SimTemplate //* Arcane Giant
+	class Sim_KAR_711 : SimCard //* Arcane Giant
 	{
 		//Costs (1) less for each spell you've cast this game.
 	}

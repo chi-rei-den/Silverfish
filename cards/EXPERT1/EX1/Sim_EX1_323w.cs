@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_323w : SimTemplate //* Blood Fury
+    class Sim_EX1_323w : SimCard //* Blood Fury
 	{
         CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_323w);
 

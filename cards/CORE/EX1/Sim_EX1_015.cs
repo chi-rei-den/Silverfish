@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_015 : SimTemplate //noviceengineer
+	class Sim_EX1_015 : SimCard //noviceengineer
 	{
 
 //    kampfschrei:/ zieht eine karte.

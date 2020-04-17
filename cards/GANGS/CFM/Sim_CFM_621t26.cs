@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t26 : SimTemplate //* Stonescale Oil
+	class Sim_CFM_621t26 : SimCard //* Stonescale Oil
 	{
 		// Gain 10 Armor.
 

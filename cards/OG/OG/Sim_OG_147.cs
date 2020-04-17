@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_147 : SimTemplate //* Corrupted Healbot
+	class Sim_OG_147 : SimCard //* Corrupted Healbot
 	{
 		//Deathrattle: Restore 8 Health to the enemy hero.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_241a : SimTemplate //* Shadowbeast
+	class Sim_OG_241a : SimCard //* Shadowbeast
 	{
 		// -
 	}

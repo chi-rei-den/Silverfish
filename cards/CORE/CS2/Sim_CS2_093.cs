@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_093 : SimTemplate //consecration
+	class Sim_CS2_093 : SimCard //consecration
 	{
 
 //    fügt allen feinden $2 schaden zu.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX4_04H : SimTemplate //* Raise Dead
+	class Sim_NAX4_04H : SimCard //* Raise Dead
 	{
 		//Passive Hero Power: Whenever an enemy dies, raise a 5/5 Skeleton.
 		//Handled in triggerAMinionDied()

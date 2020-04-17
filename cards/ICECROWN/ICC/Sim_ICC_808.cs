@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_808: SimTemplate //* Crypt Lord
+    class Sim_ICC_808: SimCard //* Crypt Lord
     {
         // Taunt. After you summon a minion, gain +1 Health.
         

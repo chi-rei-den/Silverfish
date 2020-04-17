@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_655 : SimTemplate //* Toxic Sewer Ooze
+	class Sim_CFM_655 : SimCard //* Toxic Sewer Ooze
 	{
 		// Battlecry: Remove 1 Durability from your opponent's weapon.
 

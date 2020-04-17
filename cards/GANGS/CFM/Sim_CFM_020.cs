@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_020 : SimTemplate //* Raza the Chained
+	class Sim_CFM_020 : SimCard //* Raza the Chained
 	{
 		// Battlecry: If your deck has no duplicates, your Hero Power costs (0) this game.
 				

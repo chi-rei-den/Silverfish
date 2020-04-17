@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_110 : SimTemplate //* Ancient Shade
+	class Sim_LOE_110 : SimCard //* Ancient Shade
 	{
 		//Battlecry: Shuffle an 'Ancient Curse' into your deck that deals 7 damage to you when drawn.
 		

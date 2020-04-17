@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_12h : SimTemplate //* 小学徒斯托米 Lil' Stormy
+	class Sim_BOTA_BOSS_12h : SimCard //* 小学徒斯托米 Lil' Stormy
 	{
 		//
 		//

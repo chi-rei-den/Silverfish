@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_13 : SimTemplate //* 直接命中 Direct Hit
+	class Sim_ULDA_Brann_13 : SimCard //* 直接命中 Direct Hit
 	{
 		//
 		//

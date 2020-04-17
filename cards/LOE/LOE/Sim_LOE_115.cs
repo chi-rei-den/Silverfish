@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_115 : SimTemplate //* Raven Idol
+	class Sim_LOE_115 : SimCard //* Raven Idol
 	{
 		//Choose one - Discover a minion; or Discover a spell.
 		

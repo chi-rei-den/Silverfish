@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_026 : SimTemplate //* Protect the King
+	class Sim_KAR_026 : SimCard //* Protect the King
 	{
 		//For each enemy minion, summon a 1/1 Pawn with Taunt
 		

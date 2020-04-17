@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_916 : SimTemplate //* Stampede
+	class Sim_UNG_916 : SimCard //* Stampede
 	{
 		//Each time you play a Beast this turn, add a random Beast to your hand.
 

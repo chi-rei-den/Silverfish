@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_039 : SimTemplate //* Street Trickster
+	class Sim_CFM_039 : SimCard //* Street Trickster
 	{
 		// Spell Damage +1
 

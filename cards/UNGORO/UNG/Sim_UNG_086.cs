@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_086 : SimTemplate //* Giant Anaconda
+	class Sim_UNG_086 : SimCard //* Giant Anaconda
 	{
 		//Deathrattle: Summon a minion from your hand with 5 or more Attack.
 

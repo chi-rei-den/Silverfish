@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_081 : SimTemplate //* Shatter
+	class Sim_OG_081 : SimCard //* Shatter
 	{
 		//Destroy a Frozen minion.
 		

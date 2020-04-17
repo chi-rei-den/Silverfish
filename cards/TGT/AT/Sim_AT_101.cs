@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_101 : SimTemplate //* Pit Fighter
+	class Sim_AT_101 : SimCard //* Pit Fighter
 	{
 		//-
 	}

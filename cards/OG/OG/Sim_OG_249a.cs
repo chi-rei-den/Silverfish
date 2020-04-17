@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_249a : SimTemplate //* Slime 2/2
+	class Sim_OG_249a : SimCard //* Slime 2/2
 	{
 		// -
 	}

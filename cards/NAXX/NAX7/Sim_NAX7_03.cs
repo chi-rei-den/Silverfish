@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX7_03 : SimTemplate //* Unbalancing Strike
+	class Sim_NAX7_03 : SimCard //* Unbalancing Strike
 	{
 		// Hero Power: Deal 3 damage.
 		

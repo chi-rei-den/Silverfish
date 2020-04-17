@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_082 : SimTemplate //* Lowly Squire
+	class Sim_AT_082 : SimCard //* Lowly Squire
 	{
 		//Inspire: Gain +1 Attack.
 				

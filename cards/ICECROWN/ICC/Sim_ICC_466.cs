@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_466: SimTemplate //* Saronite Chain Gang
+    class Sim_ICC_466: SimCard //* Saronite Chain Gang
     {
         // Taunt Battlecry: Summon another Saronite Chain Gang.
 

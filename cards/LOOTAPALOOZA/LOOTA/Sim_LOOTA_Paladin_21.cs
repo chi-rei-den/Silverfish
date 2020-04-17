@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Paladin_21 : SimTemplate //* 感召鱼人 Murlocs
+	class Sim_LOOTA_Paladin_21 : SimCard //* 感召鱼人 Murlocs
 	{
 		//
 		//

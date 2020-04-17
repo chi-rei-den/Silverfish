@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_051 : SimTemplate //Warbot
+    class Sim_GVG_051 : SimCard //Warbot
     {
 
         //   Enrage:&lt;/b&gt; +1 Attack.

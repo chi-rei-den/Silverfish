@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_625 : SimTemplate //* 双重麻烦 Double Trouble
+	class Sim_BOTA_625 : SimCard //* 双重麻烦 Double Trouble
 	{
 		//Start Survival Puzzle 2-5.
 		//Start Survival Puzzle 2-5.

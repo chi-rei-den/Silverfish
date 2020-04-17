@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_322 : SimTemplate //* Blackwater Pirate
+    class Sim_OG_322 : SimCard //* Blackwater Pirate
     {
         //Your weapons cost (2) less.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_847 : SimTemplate //* Blazecaller
+	class Sim_UNG_847 : SimCard //* Blazecaller
 	{
 		//Battlecry: If you played an Elemental last turn, deal 5 damage.
 

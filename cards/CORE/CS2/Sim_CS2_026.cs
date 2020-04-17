@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_026 : SimTemplate //* Frost Nova
+    class Sim_CS2_026 : SimCard //* Frost Nova
     {
         // Freeze all enemy minions.
 

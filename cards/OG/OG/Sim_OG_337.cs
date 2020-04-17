@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_337 : SimTemplate //* Cyclopian Horror
+	class Sim_OG_337 : SimCard //* Cyclopian Horror
 	{
 		//Taunt. Battlecry: Gain +1 Health for each enemy minion.
 		

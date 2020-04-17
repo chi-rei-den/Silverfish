@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_005 : SimTemplate //* Emergency Coolant
+    class Sim_PART_005 : SimCard //* Emergency Coolant
     {
         //Freeze a minion. 
 

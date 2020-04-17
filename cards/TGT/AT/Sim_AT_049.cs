@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_049 : SimTemplate //* Thunder Bluff Valiant
+	class Sim_AT_049 : SimCard //* Thunder Bluff Valiant
 	{
 		//Inspire: Give your Totems +2 Attack.
 

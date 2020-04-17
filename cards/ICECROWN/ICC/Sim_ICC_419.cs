@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_419: SimTemplate //* Bearshark
+    class Sim_ICC_419: SimCard //* Bearshark
     {
         // Can't be targeted by spells of Hero Powers.
 

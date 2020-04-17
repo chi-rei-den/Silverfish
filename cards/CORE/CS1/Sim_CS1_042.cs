@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_042 : SimTemplate //goldshirefootman
+	class Sim_CS1_042 : SimCard //goldshirefootman
 	{
 
 //    spott/

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_694 : SimTemplate //* Shadow Sensei
+	class Sim_CFM_694 : SimCard //* Shadow Sensei
 	{
 		// Battlecry: Give a Stealth minion +2/+2.
 

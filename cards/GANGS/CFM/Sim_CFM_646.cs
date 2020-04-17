@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_646 : SimTemplate //* Backstreet Leper
+	class Sim_CFM_646 : SimCard //* Backstreet Leper
 	{
 		// Deathrattle: Deal 2 damage to the enemy hero.
 

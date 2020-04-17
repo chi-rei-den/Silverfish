@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_366 : SimTemplate //swordofjustice
+	class Sim_EX1_366 : SimCard //swordofjustice
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_366);
 

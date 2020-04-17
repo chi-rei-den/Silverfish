@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_934 : SimTemplate //* Fire Plume's Heart
+	class Sim_UNG_934 : SimCard //* Fire Plume's Heart
 	{
 		//Quest: Play 7 Taunt minions. Reward: Sulfuras.
 

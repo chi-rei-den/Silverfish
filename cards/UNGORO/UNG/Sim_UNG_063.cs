@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_063 : SimTemplate //* Biteweed
+	class Sim_UNG_063 : SimCard //* Biteweed
 	{
 		//Combo: Gain +1/+1 for each other card you've played this turn.
 

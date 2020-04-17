@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_150 : SimTemplate //* Aberrant Berserker
+	class Sim_OG_150 : SimCard //* Aberrant Berserker
 	{
 		//Enrage: +2 Attack.
 		

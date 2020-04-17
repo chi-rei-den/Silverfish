@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_004 : SimTemplate //vanish
+	class Sim_NEW1_004 : SimCard //vanish
 	{
 
 //    lasst alle diener auf die hand ihrer besitzer zurückkehren.

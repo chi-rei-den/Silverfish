@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_409 : SimTemplate //* Upgrade!
+    class Sim_EX1_409 : SimCard //* Upgrade!
 	{
         // If you have a weapon, give it +1/+1. Otherwise equip a 1/3 weapon.
 

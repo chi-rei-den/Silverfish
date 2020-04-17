@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_016 : SimTemplate //captainsparrot
+	class Sim_NEW1_016 : SimCard //captainsparrot
 	{
 
 //    kampfschrei:/ fügt eurer hand einen zufälligen piraten aus eurem deck hinzu.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_003 : SimTemplate//Mind Vision
+    class Sim_CS2_003 : SimCard//Mind Vision
     {
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

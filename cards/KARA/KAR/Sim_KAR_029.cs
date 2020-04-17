@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_029 : SimTemplate //* Runic Egg
+	class Sim_KAR_029 : SimCard //* Runic Egg
 	{
 		//Deathrattle: Draw a card.
 

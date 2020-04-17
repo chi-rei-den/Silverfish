@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_614 : SimTemplate //* Mark of the Lotus
+	class Sim_CFM_614 : SimCard //* Mark of the Lotus
 	{
 		// Give your minions +1/+1.
 

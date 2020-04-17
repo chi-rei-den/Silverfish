@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_037 : SimTemplate //* Tortollan Shellraiser
+	class Sim_UNG_037 : SimCard //* Tortollan Shellraiser
 	{
 		//Taunt. Deathrattle: Give a random friendly minion +1/+1.
 

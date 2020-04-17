@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_099 : SimTemplate //Bomb Lobber
+    class Sim_GVG_099 : SimCard //Bomb Lobber
     {
 
         // Battlecry: Deal 4 damage to a random enemy minion.  

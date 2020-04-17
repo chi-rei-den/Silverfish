@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_111 : SimTemplate //* Living Mana
+	class Sim_UNG_111 : SimCard //* Living Mana
 	{
 		//Transform your Mana Crystals into 2/2 minions. Recover the mana when they die.
 

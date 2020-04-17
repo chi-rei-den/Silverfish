@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_345 : SimTemplate //* Mindgames
+	class Sim_EX1_345 : SimCard //* Mindgames
 	{
         // Put a copy of a random minion from your opponent's deck into the battlefield.
 

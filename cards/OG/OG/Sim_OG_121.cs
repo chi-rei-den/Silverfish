@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_121 : SimTemplate //* Cho'Gall
+    class Sim_OG_121 : SimCard //* Cho'Gall
     {
         //Battlecry: The next spell you cast this turn costs Health instead of Mana.
 

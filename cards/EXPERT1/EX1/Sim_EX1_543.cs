@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_543 : SimTemplate //kingkrush
+	class Sim_EX1_543 : SimCard //kingkrush
 	{
 
 //    ansturm/

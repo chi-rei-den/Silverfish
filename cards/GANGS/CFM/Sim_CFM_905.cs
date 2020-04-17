@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_905 : SimTemplate //* Small-Time Recruits
+	class Sim_CFM_905 : SimCard //* Small-Time Recruits
 	{
 		// Draw three 1-Cost minions from your deck.
 

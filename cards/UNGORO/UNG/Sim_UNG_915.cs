@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_915 : SimTemplate //* Crackling Razormaw
+	class Sim_UNG_915 : SimCard //* Crackling Razormaw
 	{
 		//Battlecry: Adapt a friendly Beast.
 

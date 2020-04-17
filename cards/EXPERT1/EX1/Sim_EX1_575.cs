@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_575 : SimTemplate //manatidetotem
+	class Sim_EX1_575 : SimCard //manatidetotem
 	{
 
 //    zieht am ende eures zuges eine karte.

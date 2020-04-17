@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_014 : SimTemplate //* Vol'jin
+    class Sim_GVG_014 : SimCard //* Vol'jin
     {
        //Battlecry: Swap Health with another minion.
 

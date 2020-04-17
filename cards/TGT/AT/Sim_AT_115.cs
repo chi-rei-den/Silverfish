@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_115 : SimTemplate //* Fencing Coach
+	class Sim_AT_115 : SimCard //* Fencing Coach
 	{
 		//Battlecry: The next time you use your Hero Power, it costs (2) less.
 

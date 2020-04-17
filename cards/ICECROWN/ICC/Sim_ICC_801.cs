@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_801: SimTemplate //* Howling Commander
+    class Sim_ICC_801: SimCard //* Howling Commander
     {
         // Battlecry: Draw a Divine Shield minion from your deck.
 

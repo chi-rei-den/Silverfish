@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_901: SimTemplate //* Drakkari Enchanter
+    class Sim_ICC_901: SimCard //* Drakkari Enchanter
     {
         // Your end of turn effects trigger twice.
 

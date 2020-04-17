@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t6 : SimTemplate //* Obliterate
+    class Sim_ICC_314t6 : SimCard //* Obliterate
     {
         // Destroy a minion. Your hero takes damage equal to its Health.
 

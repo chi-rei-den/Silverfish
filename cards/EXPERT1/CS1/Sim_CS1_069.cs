@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_069 : SimTemplate //fencreeper
+	class Sim_CS1_069 : SimCard //fencreeper
 	{
 
 //    spott/

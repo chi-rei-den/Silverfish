@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_03 : SimTemplate //* 鱼人成群 Fishy
+	class Sim_DALA_Shaman_03 : SimCard //* 鱼人成群 Fishy
 	{
 		//
 		//

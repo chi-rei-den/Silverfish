@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA17_5H : SimTemplate //* Bone Minions
+	class Sim_BRMA17_5H : SimCard //* Bone Minions
 	{
 		// Hero Power: Summon two 4/2 Bone Constructs.
 

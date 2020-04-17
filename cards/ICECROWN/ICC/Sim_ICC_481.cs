@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_481: SimTemplate //* Thrall, Deathseer
+    class Sim_ICC_481: SimCard //* Thrall, Deathseer
     {
         // Battlecry: Transform your minions into random ones that cost (2) more.
         

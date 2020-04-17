@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_155 : SimTemplate //* markofnature
+	class Sim_EX1_155 : SimCard //* markofnature
 	{
         //Choose One - Give a minion +4 Attack; or +4 Health and Taunt.
 

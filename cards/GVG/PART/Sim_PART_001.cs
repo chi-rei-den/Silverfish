@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_001 : SimTemplate //Armor Plating
+    class Sim_PART_001 : SimCard //Armor Plating
     {
 
         //   Give a minion +1 Health.

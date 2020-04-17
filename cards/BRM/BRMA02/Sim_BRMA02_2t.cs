@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA02_2t : SimTemplate //* Dark Iron Spectator
+	class Sim_BRMA02_2t : SimCard //* Dark Iron Spectator
 	{
 		//Taunt
 	}

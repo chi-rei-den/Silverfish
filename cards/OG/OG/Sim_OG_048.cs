@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_048 : SimTemplate //* Mark of Y'Shaarj
+	class Sim_OG_048 : SimCard //* Mark of Y'Shaarj
 	{
 		//Give a minion +2/+2. If it's a Beast, draw a card.
 

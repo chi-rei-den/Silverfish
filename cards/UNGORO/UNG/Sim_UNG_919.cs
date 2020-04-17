@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_919 : SimTemplate //* Swamp King Dred
+	class Sim_UNG_919 : SimCard //* Swamp King Dred
 	{
 		//After your opponent plays a minion, attack it.
 

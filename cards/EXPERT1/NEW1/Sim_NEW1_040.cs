@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_040 : SimTemplate //hogger
+	class Sim_NEW1_040 : SimCard //hogger
 	{
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NEW1_040t);//gnoll
 //    ruft am ende eures zuges einen gnoll (2/2) mit spott/ herbei.

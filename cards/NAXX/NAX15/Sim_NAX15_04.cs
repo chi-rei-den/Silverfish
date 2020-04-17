@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX15_04 : SimTemplate //* Chains
+	class Sim_NAX15_04 : SimCard //* Chains
 	{
 		// Hero Power: Take control of a random enemy minion until end of turn.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_032: SimTemplate //* Venomancer
+    class Sim_ICC_032: SimCard //* Venomancer
     {
         // Poisonous
     }

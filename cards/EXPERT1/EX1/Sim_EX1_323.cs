@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_323 : SimTemplate //* Lord Jaraxxus
+    class Sim_EX1_323 : SimCard //* Lord Jaraxxus
 	{
         // Battlecry: Destroy your hero and replace it with Lord Jaraxxus.
 

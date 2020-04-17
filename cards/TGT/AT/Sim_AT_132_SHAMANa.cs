@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_SHAMANa : SimTemplate //* Healing Totem
+	class Sim_AT_132_SHAMANa : SimCard //* Healing Totem
 	{
 		//At the end of your turn, restore 1 Health to all friendly minions.
 

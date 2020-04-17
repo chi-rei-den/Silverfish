@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_334 : SimTemplate //* Hooded Acolyte
+	class Sim_OG_334 : SimCard //* Hooded Acolyte
 	{
 		// Whenever a character is healed, give your C'Thun +1/+1 (wherever it is)
 

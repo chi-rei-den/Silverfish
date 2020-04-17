@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_659 : SimTemplate //* Gadgetzan Socialite
+	class Sim_CFM_659 : SimCard //* Gadgetzan Socialite
 	{
 		// Battlecry: Restore 2 Health.
 

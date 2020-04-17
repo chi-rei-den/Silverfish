@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_120 : SimTemplate //* Mistress of Mixtures
+	class Sim_CFM_120 : SimCard //* Mistress of Mixtures
 	{
 		// Deathrattle: Restore 4 Health to both players.
 

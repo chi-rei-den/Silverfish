@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_161 : SimTemplate //* Corrupted Seer
+    class Sim_OG_161 : SimCard //* Corrupted Seer
     {
         //Battlecry: Deal 2 damage to all non-Murloc minions.
 

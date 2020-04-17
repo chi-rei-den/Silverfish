@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t3 : SimTemplate //* Flaming Claws
+	class Sim_UNG_999t3 : SimCard //* Flaming Claws
 	{
 		//+3 Attack
 

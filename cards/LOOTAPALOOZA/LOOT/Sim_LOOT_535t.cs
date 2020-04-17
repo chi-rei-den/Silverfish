@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOT_535t : SimTemplate //* 火龙 Fire Dragon
+	class Sim_LOOT_535t : SimCard //* 火龙 Fire Dragon
 	{
 		//
 		//

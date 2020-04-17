@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_090: SimTemplate //* Snowfury Giant
+    class Sim_ICC_090: SimCard //* Snowfury Giant
     {
         // Costs (1) less for each Mana Crystal you've Overloaded this game.
 

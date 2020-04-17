@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Mage_29 : SimTemplate //* 失落奥秘 Lost Secrets
+	class Sim_LOOTA_Mage_29 : SimCard //* 失落奥秘 Lost Secrets
 	{
 		//
 		//

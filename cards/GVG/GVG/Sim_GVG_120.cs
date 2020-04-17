@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_120 : SimTemplate //Hemet Nesingwary
+    class Sim_GVG_120 : SimCard //Hemet Nesingwary
     {
 
         //   Battlecry: Destroy a Beast.

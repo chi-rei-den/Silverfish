@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_111 : SimTemplate //* Refreshment Vendor
+	class Sim_AT_111 : SimCard //* Refreshment Vendor
 	{
 		//Battlecry: Restore 4 Health to each hero.
 

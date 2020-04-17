@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_034 : SimTemplate //* Arrogant Crusader
+    class Sim_ICC_034 : SimCard //* Arrogant Crusader
     {
         // Deathrattle: If it's your opponent's turn, summon a 2/2 Ghoul.
 

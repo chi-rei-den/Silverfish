@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_025 : SimTemplate//dragonling mechanic
+    class Sim_EX1_025 : SimCard//dragonling mechanic
     {
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_025t);//mechanicaldragonling
 

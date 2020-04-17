@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX11_02H_2_TB : SimTemplate //* Poison Cloud
+	class Sim_NAX11_02H_2_TB : SimCard //* Poison Cloud
 	{
 		// Hero Power: Deal 2 damage to all enemies. If any die, summon a slime.
 		

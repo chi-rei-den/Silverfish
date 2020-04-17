@@ -27,7 +27,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 { 
 
-public class Sim_ULD_616 : SimTemplate 
+public class Sim_ULD_616 : SimCard 
 { 
 
 public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice) 

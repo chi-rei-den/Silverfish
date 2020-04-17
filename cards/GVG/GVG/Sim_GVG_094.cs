@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_094 : SimTemplate //Jeeves
+    class Sim_GVG_094 : SimCard //Jeeves
     {
 
         //   At the end of each player's turn, that player draws until they have 3 cards.

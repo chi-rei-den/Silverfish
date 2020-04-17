@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_067 : SimTemplate //argentcommander
+	class Sim_EX1_067 : SimCard //argentcommander
 	{
 
 //    ansturm/, gottesschild/

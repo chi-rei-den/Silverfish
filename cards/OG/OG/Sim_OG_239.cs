@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_239 : SimTemplate //* DOOM!
+	class Sim_OG_239 : SimCard //* DOOM!
 	{
 		//Destroy all minions. Draw a card for each.
 		

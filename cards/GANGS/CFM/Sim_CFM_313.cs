@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_313 : SimTemplate //* Finders Keepers
+	class Sim_CFM_313 : SimCard //* Finders Keepers
 	{
 		// Discover a card with Overload. Overload: (1)
 

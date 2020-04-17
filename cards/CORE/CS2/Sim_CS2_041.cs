@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_041 : SimTemplate //* ancestralhealing
+	class Sim_CS2_041 : SimCard //* ancestralhealing
 	{
 
 //    Restore a minion to full Health and give it Taunt.

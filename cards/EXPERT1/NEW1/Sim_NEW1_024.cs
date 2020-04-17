@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_024 : SimTemplate //captaingreenskin
+	class Sim_NEW1_024 : SimCard //captaingreenskin
 	{
 //    kampfschrei:/ verleiht eurer waffe +1/+1.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

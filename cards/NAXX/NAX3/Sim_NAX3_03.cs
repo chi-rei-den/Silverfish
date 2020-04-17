@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX3_03 : SimTemplate //* Necrotic Poison
+	class Sim_NAX3_03 : SimCard //* Necrotic Poison
 	{
 		// Destroy a minion.
 		

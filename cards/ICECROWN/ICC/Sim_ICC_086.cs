@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_086: SimTemplate //* Glacial Mysteries
+    class Sim_ICC_086: SimCard //* Glacial Mysteries
     {
         // Put one of each Secret from your deck into the battlefield.
 

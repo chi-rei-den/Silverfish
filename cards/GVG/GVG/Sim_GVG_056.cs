@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_056 : SimTemplate //Iron Juggernaut
+    class Sim_GVG_056 : SimCard //Iron Juggernaut
     {
 
         //   Battlecry:&lt;/b&gt; Shuffle a Mine into your opponent's deck. When drawn, it explodes for 10 damage.

@@ -26,7 +26,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
 
-    class Sim_NEW1_019 : SimTemplate //knifejuggler
+    class Sim_NEW1_019 : SimCard //knifejuggler
     {
 
         //    fügt einem zufälligen feind 1 schaden zu, nachdem ihr einen diener herbeigerufen habt.

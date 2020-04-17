@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_007 : SimTemplate //* Starfall
+    class Sim_NEW1_007 : SimCard //* Starfall
 	{
         // Choose One - Deal $5 damage to a minion; or $2 damage to all enemy minions.
 

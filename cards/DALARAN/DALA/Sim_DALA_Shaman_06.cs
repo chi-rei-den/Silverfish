@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_06 : SimTemplate //* 元素之怒 Elemental Wrath
+	class Sim_DALA_Shaman_06 : SimCard //* 元素之怒 Elemental Wrath
 	{
 		//
 		//

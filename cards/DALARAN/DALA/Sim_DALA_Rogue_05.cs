@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Rogue_05 : SimTemplate //* 亡语不断 Deathrattle
+	class Sim_DALA_Rogue_05 : SimCard //* 亡语不断 Deathrattle
 	{
 		//
 		//

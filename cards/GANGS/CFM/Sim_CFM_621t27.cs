@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t27 : SimTemplate //* Icecap
+	class Sim_CFM_621t27 : SimCard //* Icecap
 	{
 		// Freeze: 3 random enemy minions.
 

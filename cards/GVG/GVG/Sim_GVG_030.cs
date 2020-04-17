@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_030 : SimTemplate //* Anodized Robo Cub
+    class Sim_GVG_030 : SimCard //* Anodized Robo Cub
     {
         // Taunt. Choose One - +1 Attack; or +1 Health.
 

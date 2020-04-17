@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_02d : SimTemplate //* 萨尔大酋长 Warchief Thrall
+	class Sim_HERO_02d : SimCard //* 萨尔大酋长 Warchief Thrall
 	{
 		//
 		//

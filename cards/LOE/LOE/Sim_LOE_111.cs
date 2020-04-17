@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_111 : SimTemplate //* Excavated Evil
+	class Sim_LOE_111 : SimCard //* Excavated Evil
 	{
 		//Deal 3 damage to all minions. Shuffle this card into your opponent's deck.
 		

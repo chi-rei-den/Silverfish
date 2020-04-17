@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_648 : SimTemplate //* Big-Time Racketeer
+	class Sim_CFM_648 : SimCard //* Big-Time Racketeer
 	{
 		// Battlecry: Summon a 6/6 Ogre.
 

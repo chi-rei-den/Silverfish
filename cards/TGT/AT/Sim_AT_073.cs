@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_073 : SimTemplate //* Competitive spirit
+	class Sim_AT_073 : SimCard //* Competitive spirit
 	{
 		//Secret: When your turn starts, give your minions +1/+1.
 

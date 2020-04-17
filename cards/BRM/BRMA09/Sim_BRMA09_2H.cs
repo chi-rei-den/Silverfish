@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA09_2H : SimTemplate //* Open the Gates
+	class Sim_BRMA09_2H : SimCard //* Open the Gates
 	{
 		// Hero Power: Summon three 2/2 Whelps. Get a new Hero Power.
 

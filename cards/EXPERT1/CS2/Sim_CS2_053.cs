@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_053 : SimTemplate//far sight
+    class Sim_CS2_053 : SimCard//far sight
     {
 
         //todo: bonus for it?

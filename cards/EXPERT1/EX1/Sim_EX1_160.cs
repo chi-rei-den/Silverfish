@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_160 : SimTemplate //* powerofthewild
+	class Sim_EX1_160 : SimCard //* powerofthewild
 	{
         //Choose One - Give your minions +1/+1; or Summon a 3/2 Panther.
 

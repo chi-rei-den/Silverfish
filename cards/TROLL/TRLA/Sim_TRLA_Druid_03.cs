@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Druid_03 : SimTemplate //* 自然祝福 Nature's Blessing
+	class Sim_TRLA_Druid_03 : SimCard //* 自然祝福 Nature's Blessing
 	{
 		//
 		//

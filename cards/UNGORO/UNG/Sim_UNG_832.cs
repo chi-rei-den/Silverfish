@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_832 : SimTemplate //* Bloodbloom
+	class Sim_UNG_832 : SimCard //* Bloodbloom
 	{
 		//The next spell you cast this turn costs Health instead of Mana.
 

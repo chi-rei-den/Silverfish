@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_078 : SimTemplate //* Tortollan Forager
+	class Sim_UNG_078 : SimCard //* Tortollan Forager
 	{
 		//Battlecry: Add a random minion with 5 or more Attack to your hand.
 

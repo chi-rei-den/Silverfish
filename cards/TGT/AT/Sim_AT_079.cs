@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_079 : SimTemplate //* Mysterious Challenger
+	class Sim_AT_079 : SimCard //* Mysterious Challenger
 	{
 		//Battlecry: Put one of each Secret from your deck into the battlefield.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_301 : SimTemplate //* Ancient Shieldbearer
+	class Sim_OG_301 : SimCard //* Ancient Shieldbearer
 	{
 		//Battlecry: If your C'Thun has at least 10 Attack, gain 10 Armor
 		

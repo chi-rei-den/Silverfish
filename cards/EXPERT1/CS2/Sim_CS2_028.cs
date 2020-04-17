@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_028 : SimTemplate //* blizzard
+	class Sim_CS2_028 : SimCard //* blizzard
 	{
         //Deal 2 damage to all enemy minions and Freeze them.
 

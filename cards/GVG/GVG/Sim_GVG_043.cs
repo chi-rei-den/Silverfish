@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_043 : SimTemplate //Glaivezooka
+    class Sim_GVG_043 : SimCard //Glaivezooka
     {
 
         //   Battlecry: Give a random friendly minion +1 Attack.

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Toki_05 : SimTemplate //* 传说之力 Legends
+	class Sim_GILA_Toki_05 : SimCard //* 传说之力 Legends
 	{
 		//
 		//

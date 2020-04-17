@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA13_4 : SimTemplate //* Wild Magic
+	class Sim_BRMA13_4 : SimCard //* Wild Magic
 	{
 		// Hero Power: Put a random spell from your opponent's class into your hand.
 		

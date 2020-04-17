@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_073 : SimTemplate //* Rockpool Hunter
+	class Sim_UNG_073 : SimCard //* Rockpool Hunter
 	{
 		//Battlecry: Give a friendly Murloc +1/+1.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_567 : SimTemplate //doomhammer
+	class Sim_EX1_567 : SimCard //doomhammer
 	{
 
 //    windzorn/, überladung:/ (2)

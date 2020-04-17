@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_130 : SimTemplate //* noblesacrifice
+    class Sim_EX1_130 : SimCard //* noblesacrifice
     {
         //Secret: When an enemy attacks, summon a 2/1 Defender as the new target.
 

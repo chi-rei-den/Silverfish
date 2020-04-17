@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_249 : SimTemplate //* Baron Geddon
+    class Sim_EX1_249 : SimCard //* Baron Geddon
 	{
         // At the end of your turn, deal 2 damage to ALL other characters.
 

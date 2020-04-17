@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_04 : SimTemplate //* 燃烧之焰 Fire
+	class Sim_TRLA_Mage_04 : SimCard //* 燃烧之焰 Fire
 	{
 		//
 		//

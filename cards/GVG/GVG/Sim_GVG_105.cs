@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_105 : SimTemplate //* Piloted Sky Golem
+    class Sim_GVG_105 : SimCard //* Piloted Sky Golem
     {
 
         // Deathrattle: Summon a random 4-Cost minion.  

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_961 : SimTemplate //* Adaptation
+	class Sim_UNG_961 : SimCard //* Adaptation
 	{
 		//Adapt a friendly minion.
 

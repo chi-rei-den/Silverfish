@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_682t : SimTemplate //* 泥沼怪 Muckling
+	class Sim_GIL_682t : SimCard //* 泥沼怪 Muckling
 	{
 		//
 		//

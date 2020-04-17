@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_096 : SimTemplate //* Clockwork Knight
+    class Sim_AT_096 : SimCard //* Clockwork Knight
     {
 		//Battlecry: Give a friendly Mech +1/+1.
 		

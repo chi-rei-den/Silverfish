@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_577 : SimTemplate //* thebeast
+	class Sim_EX1_577 : SimCard //* thebeast
 	{
         //Deathrattle: Summon a 3/3 Finkle Einhorn for your opponent.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_014 : SimTemplate //* Core Rager
+    class Sim_BRM_014 : SimCard //* Core Rager
     {
         // Battlecry: If your hand is empty, gain +3/+3.
 

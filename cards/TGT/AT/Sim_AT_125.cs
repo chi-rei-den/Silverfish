@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_125 : SimTemplate //* Icehowl
+	class Sim_AT_125 : SimCard //* Icehowl
 	{
 		//Charge. Can't attack heroes.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_856: SimTemplate //* Spellweaver
+    class Sim_ICC_856: SimCard //* Spellweaver
     {
         // Spell Damage +2
 

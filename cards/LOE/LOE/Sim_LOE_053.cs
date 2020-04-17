@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_053 : SimTemplate //* Djinni of Zephyrs
+	class Sim_LOE_053 : SimCard //* Djinni of Zephyrs
 	{
 		//Whenever you cast a spell on another friendly minion, cast a copy of it on this one.
 

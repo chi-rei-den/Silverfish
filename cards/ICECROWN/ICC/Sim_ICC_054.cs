@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_054: SimTemplate //* Spreading Plague
+    class Sim_ICC_054: SimCard //* Spreading Plague
     {
         // Summon a 1/5 Scarab with Taunt. If your opponent has more minions, cast this again.
 

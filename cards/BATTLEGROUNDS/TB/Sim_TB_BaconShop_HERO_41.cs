@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_BaconShop_HERO_41 : SimTemplate
+	class Sim_TB_BaconShop_HERO_41 : SimCard
 	{
 	}
 }

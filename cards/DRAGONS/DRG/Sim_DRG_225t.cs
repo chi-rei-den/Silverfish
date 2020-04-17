@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_225t : SimTemplate //* 微型旋翼机 Microcopter
+	class Sim_DRG_225t : SimCard //* 微型旋翼机 Microcopter
 	{
 		//
 		//

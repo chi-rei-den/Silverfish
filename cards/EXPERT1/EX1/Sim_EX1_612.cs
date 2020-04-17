@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_612 : SimTemplate //kirintormage
+	class Sim_EX1_612 : SimCard //kirintormage
 	{
 
 //    kampfschrei:/ das nächste geheimnis/, das ihr in diesem zug ausspielt, kostet (0).

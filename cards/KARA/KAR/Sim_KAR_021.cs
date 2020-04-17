@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_021 : SimTemplate // Wicked Witchdoctor
+	class Sim_KAR_021 : SimCard // Wicked Witchdoctor
 	{
 		//Whenever you cast a spell, summon a random basic Totem.
 

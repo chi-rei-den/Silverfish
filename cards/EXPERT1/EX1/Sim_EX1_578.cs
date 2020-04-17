@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_578 : SimTemplate //savagery
+	class Sim_EX1_578 : SimCard //savagery
 	{
 
 //    fügt einem diener schaden zu, der dem angriff eures helden entspricht.

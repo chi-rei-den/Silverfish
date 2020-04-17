@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_073 : SimTemplate //coldblood
+	class Sim_CS2_073 : SimCard //coldblood
 	{
 
 //    verleiht einem diener +2 angriff. combo:/ stattdessen +4 angriff.

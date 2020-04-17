@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_065 : SimTemplate //* King's Defender
+	class Sim_AT_065 : SimCard //* King's Defender
 	{
 		//Battlecry: If you have a minion with Taunt, gain +1 Durability.
 

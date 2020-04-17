@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warrior_01 : SimTemplate //* 坚壁 Tank Up!
+	class Sim_TRLA_Warrior_01 : SimCard //* 坚壁 Tank Up!
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_934t1 : SimTemplate //* Sulfuras
+	class Sim_UNG_934t1 : SimCard //* Sulfuras
 	{
 		//Battlecry: Your Hero Power: becomes 'Deal 8 damage to a random enemy.'
 

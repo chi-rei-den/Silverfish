@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_091 : SimTemplate //* Ironforge Portal
+	class Sim_KAR_091 : SimCard //* Ironforge Portal
 	{
 		//Gain 4 Armor. Summon a random 4-Cost minion.
 		

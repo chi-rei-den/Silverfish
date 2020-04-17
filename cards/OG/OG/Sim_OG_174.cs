@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_174 : SimTemplate //* Faceless Shambler
+	class Sim_OG_174 : SimCard //* Faceless Shambler
 	{
 		//Battlecry: Copy a friendly minion's Attack and Health.
 		

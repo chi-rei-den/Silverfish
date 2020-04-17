@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_skele21 : SimTemplate //damagedgolem
+	class Sim_skele21 : SimCard //damagedgolem
 	{
 
 //

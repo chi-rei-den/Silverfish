@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_229 : SimTemplate //* Ragnaros, Lightlord
+    class Sim_OG_229 : SimCard //* Ragnaros, Lightlord
     {
         //At the end of your turn, restore 8 health to a damaged friendly character.
 

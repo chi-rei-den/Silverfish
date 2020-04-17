@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_06 : SimTemplate //* 复制随从 Copy Minions
+	class Sim_ULDA_Elise_06 : SimCard //* 复制随从 Copy Minions
 	{
 		//
 		//

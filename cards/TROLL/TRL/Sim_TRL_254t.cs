@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_254t : SimTemplate //* 迅猛龙 Raptor
+	class Sim_TRL_254t : SimCard //* 迅猛龙 Raptor
 	{
 		//
 		//

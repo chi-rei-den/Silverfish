@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Priest_10 : SimTemplate //* 内心潜能 Strength Within
+	class Sim_DALA_Priest_10 : SimCard //* 内心潜能 Strength Within
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_058: SimTemplate //* Brrrloc
+    class Sim_ICC_058: SimCard //* Brrrloc
     {
         // Battlecry: Freeze an enemy.
 

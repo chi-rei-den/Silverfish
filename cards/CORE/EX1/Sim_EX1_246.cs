@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_246 : SimTemplate //hex
+	class Sim_EX1_246 : SimCard //hex
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.hexfrog);
 //    verwandelt einen diener in einen frosch (0/1) mit spott/.

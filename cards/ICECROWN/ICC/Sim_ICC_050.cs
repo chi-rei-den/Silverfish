@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_050: SimTemplate //* Webweave
+    class Sim_ICC_050: SimCard //* Webweave
     {
         // Summon two 1/2 Poisonous Spiders
 

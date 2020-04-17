@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_002 : SimTemplate //* Flamewaker
+    class Sim_BRM_002 : SimCard //* Flamewaker
     {
         // After you cast a spell, deal 2 damage randomly split among all enemies.
 

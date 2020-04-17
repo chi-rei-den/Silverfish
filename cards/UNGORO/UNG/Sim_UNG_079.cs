@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_079 : SimTemplate //* Frozen Crusher
+	class Sim_UNG_079 : SimCard //* Frozen Crusher
 	{
 		//After this minion attacks, Freeze it.
 

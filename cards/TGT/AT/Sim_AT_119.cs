@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_119 : SimTemplate //* Kvaldir Raider
+	class Sim_AT_119 : SimCard //* Kvaldir Raider
 	{
 		//Inspire: Gain +2/+2.
 

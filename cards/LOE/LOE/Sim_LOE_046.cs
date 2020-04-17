@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_046 : SimTemplate //* Huge Toad
+	class Sim_LOE_046 : SimCard //* Huge Toad
 	{
 		//Deathrattle: Deal 1 damage to a random enemy.
 		

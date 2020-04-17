@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_300 : SimTemplate //* The Boogeymonster
+	class Sim_OG_300 : SimCard //* The Boogeymonster
 	{
 		//Whenever this minion attacks and kills another minion, gain +2/+2.
 		

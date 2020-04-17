@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_328 : SimTemplate //* Master of Evolution
+    class Sim_OG_328 : SimCard //* Master of Evolution
     {
         //Battlecry: Transform a friendly minion into a random one that costs (1) more.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_047 : SimTemplate //* Feral Rage
+    class Sim_OG_047 : SimCard //* Feral Rage
     {
         //Choose One - Give your hero +4 attack this turn; or Gain 8 armor.
 

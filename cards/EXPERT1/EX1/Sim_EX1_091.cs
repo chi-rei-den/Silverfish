@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_091 : SimTemplate //* Cabal Shadow Priest
+    class Sim_EX1_091 : SimCard //* Cabal Shadow Priest
 	{
         //Battlecry: Take control of an enemy minion that has 2 or less Attack.
 

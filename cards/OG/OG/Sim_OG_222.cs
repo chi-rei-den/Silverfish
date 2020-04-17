@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_222 : SimTemplate //* Rallying Blade
+    class Sim_OG_222 : SimCard //* Rallying Blade
     {
         //Battlecry: Give +1/+1 to your minions with Divine Shield.
 

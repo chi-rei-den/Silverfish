@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_019 : SimTemplate //poisonseeds
+	class Sim_FP1_019 : SimCard //poisonseeds
 	{
         CardDB.Card d = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_158t);
 //    vernichtet alle diener und ruft für jeden einen treant (2/2) als ersatz herbei.

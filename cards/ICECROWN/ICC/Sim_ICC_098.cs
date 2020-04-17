@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_098: SimTemplate //* Tomb Lurker
+    class Sim_ICC_098: SimCard //* Tomb Lurker
     {
         // Battlecry: Add a random Deathrattle minion that died this game to your hand.
 

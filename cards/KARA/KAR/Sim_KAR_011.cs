@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_011 : SimTemplate //* Pompous Thespian
+	class Sim_KAR_011 : SimCard //* Pompous Thespian
 	{
 		//Taunt
 	}

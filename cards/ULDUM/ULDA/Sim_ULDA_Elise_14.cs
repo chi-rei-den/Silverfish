@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_14 : SimTemplate //* 卡牌抽取 Card Draw
+	class Sim_ULDA_Elise_14 : SimCard //* 卡牌抽取 Card Draw
 	{
 		//
 		//

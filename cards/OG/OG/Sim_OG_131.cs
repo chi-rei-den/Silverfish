@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_131 : SimTemplate //* Twin Emperor Vek'lor
+	class Sim_OG_131 : SimCard //* Twin Emperor Vek'lor
 	{
 		//Taunt Battlecry:If your C'Thun has at least 10 attack, summon another Emperor.
 

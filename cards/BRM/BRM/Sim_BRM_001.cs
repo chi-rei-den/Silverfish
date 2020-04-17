@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_001 : SimTemplate //* Solemn Vigil
+	class Sim_BRM_001 : SimCard //* Solemn Vigil
 	{
 		// Draw 2 cards. Costs (1) less for each minion that died this turn.
 		

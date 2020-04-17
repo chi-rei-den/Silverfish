@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NAX5_03 : SimTemplate //* Mindpocalypse
+    class Sim_NAX5_03 : SimCard //* Mindpocalypse
     {
         // Both players draw 2 cards and gain a Mana Crystal.
 

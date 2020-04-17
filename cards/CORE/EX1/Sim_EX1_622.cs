@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_622 : SimTemplate //shadowworddeath
+	class Sim_EX1_622 : SimCard //shadowworddeath
 	{
 
 //    vernichtet einen diener mit mind. 5 angriff.

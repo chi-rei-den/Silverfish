@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_064 : SimTemplate //Puddlestomper
+    class Sim_GVG_064 : SimCard //Puddlestomper
     {
 
         //   just a murloc

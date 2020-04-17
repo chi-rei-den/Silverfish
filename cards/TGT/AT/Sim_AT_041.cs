@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_041 : SimTemplate //* Knight of the Wild
+	class Sim_AT_041 : SimCard //* Knight of the Wild
 	{
 		//Whenever you summon a Beast, reduce the cost of this card by (1).
 

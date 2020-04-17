@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_084 : SimTemplate //* huntersmark
+	class Sim_CS2_084 : SimCard //* huntersmark
 	{
         //Change a minion's Health to 1.
 

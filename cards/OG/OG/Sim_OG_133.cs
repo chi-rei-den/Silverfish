@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_133 : SimTemplate //* N'Zoth, the Corruptor
+    class Sim_OG_133 : SimCard //* N'Zoth, the Corruptor
     {
         //Battlecry: Summon your Deathrattle minions that died this game.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_109 : SimTemplate //* Argent Watchman
+	class Sim_AT_109 : SimCard //* Argent Watchman
 	{
 		//Can't Attack. Inspire: Can attack as normal this turn.
 

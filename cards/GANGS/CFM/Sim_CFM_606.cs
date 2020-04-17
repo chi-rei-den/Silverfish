@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_606 : SimTemplate //* Mana Geode
+	class Sim_CFM_606 : SimCard //* Mana Geode
 	{
 		// Whenever this minion is healed, summon a 2/2 Crystal.
 

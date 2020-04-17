@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_249 : SimTemplate //* Infested Tauren
+	class Sim_OG_249 : SimCard //* Infested Tauren
 	{
 		//Taunt. Deathrattle: Summon a 2/2 Slime.
 		

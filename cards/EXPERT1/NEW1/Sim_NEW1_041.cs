@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_041 : SimTemplate //Stampeding Kodo
+    class Sim_NEW1_041 : SimCard //Stampeding Kodo
     {
         //Battlecry: Destroy a random enemy minion with 2 or less Attack.
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

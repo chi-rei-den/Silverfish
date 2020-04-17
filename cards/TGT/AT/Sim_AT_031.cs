@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_031 : SimTemplate //* Cutpurse
+	class Sim_AT_031 : SimCard //* Cutpurse
 	{
 		//When this minion attacks the enemy hero, put a Coin into your hand.
 		//done in triggerAMinionIsGoingToAttack

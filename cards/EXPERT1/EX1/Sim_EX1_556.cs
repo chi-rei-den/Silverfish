@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_556 : SimTemplate //* harvestgolem
+	class Sim_EX1_556 : SimCard //* harvestgolem
 	{
         //Deathrattle: Summon a 2/1 Damaged Golem.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_507 : SimTemplate //* Murloc Warleader
+    class Sim_EX1_507 : SimCard //* Murloc Warleader
 	{
         // Your other Murlocs have +2 Attack.
 

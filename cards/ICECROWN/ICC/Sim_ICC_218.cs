@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_218: SimTemplate //* Howlfiend
+    class Sim_ICC_218: SimCard //* Howlfiend
     {
         // Whenever this minion takes damage, discard a random card.
 

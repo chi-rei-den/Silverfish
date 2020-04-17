@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_830 : SimTemplate //* Cruel Dinomancer
+	class Sim_UNG_830 : SimCard //* Cruel Dinomancer
 	{
 		//Deathrattle: Summon a random minion you discarded this game.
 

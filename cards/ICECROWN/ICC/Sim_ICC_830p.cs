@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_830p: SimTemplate //* Voidform
+    class Sim_ICC_830p: SimCard //* Voidform
     {
         // Hero Power: Deal 2 damage. After you play a card, refresh this.
 

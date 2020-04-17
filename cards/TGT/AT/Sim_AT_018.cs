@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_018 : SimTemplate //* Confessor Paletress
+	class Sim_AT_018 : SimCard //* Confessor Paletress
 	{
 		//Inspire: Summon a random Legendary minion.
 

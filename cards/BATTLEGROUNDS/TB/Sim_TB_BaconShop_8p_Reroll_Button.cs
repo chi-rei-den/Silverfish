@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_BaconShop_8p_Reroll_Button : SimTemplate
+	class Sim_TB_BaconShop_8p_Reroll_Button : SimCard
 	{
 	}
 }

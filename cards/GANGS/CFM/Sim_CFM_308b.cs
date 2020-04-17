@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_308b : SimTemplate //* Forgotten Mana
+	class Sim_CFM_308b : SimCard //* Forgotten Mana
 	{
 		// Refresh your Mana Crystals.
 

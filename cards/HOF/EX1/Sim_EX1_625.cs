@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_625 : SimTemplate //* Shadowform
+    class Sim_EX1_625 : SimCard //* Shadowform
     {
         // Your Hero Power becomes 'Deal 2 damage'. If already in Shadowform: 3 damage.
 

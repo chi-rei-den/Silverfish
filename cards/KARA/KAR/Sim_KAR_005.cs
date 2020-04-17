@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_005 : SimTemplate //* Kindly Grandmother
+	class Sim_KAR_005 : SimCard //* Kindly Grandmother
 	{
 		//Deathrattle: Summon a 3/2 Big Bad Wolf.
 		

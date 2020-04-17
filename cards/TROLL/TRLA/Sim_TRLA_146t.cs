@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_146t : SimTemplate //* 邦桑迪的秘典 Bwonsamdi's Tome
+	class Sim_TRLA_146t : SimCard //* 邦桑迪的秘典 Bwonsamdi's Tome
 	{
 		//
 		//

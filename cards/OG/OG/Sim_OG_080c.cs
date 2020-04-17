@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080c : SimTemplate //* Bloodthistle Toxin
+	class Sim_OG_080c : SimCard //* Bloodthistle Toxin
 	{
         //Return a friendly minion to your hand. It costs (2) less.
 

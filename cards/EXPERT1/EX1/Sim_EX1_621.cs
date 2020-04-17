@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_621 : SimTemplate //circleofhealing
+	class Sim_EX1_621 : SimCard //circleofhealing
 	{
 
 //    stellt bei allen dienern #4 leben wieder her.

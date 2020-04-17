@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_008a : SimTemplate //* Ancient Teachings
+    class Sim_NEW1_008a : SimCard //* Ancient Teachings
 	{
         //Draw a card.
 

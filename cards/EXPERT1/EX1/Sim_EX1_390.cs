@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_390 : SimTemplate //taurenwarrior
+	class Sim_EX1_390 : SimCard //taurenwarrior
 	{
 
 //    spott/, wutanfall:/ +3 angriff

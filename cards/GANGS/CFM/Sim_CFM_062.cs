@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_062 : SimTemplate //* Grimestreet Protector
+	class Sim_CFM_062 : SimCard //* Grimestreet Protector
 	{
 		// Battlecry: Give adjacent minions Divine Shield.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_064 : SimTemplate //* Vilespine Slayer
+	class Sim_UNG_064 : SimCard //* Vilespine Slayer
 	{
 		//Combo: Destroy a minion.
 

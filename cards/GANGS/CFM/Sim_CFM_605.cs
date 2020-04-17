@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_605 : SimTemplate //* Drakonid Operative
+	class Sim_CFM_605 : SimCard //* Drakonid Operative
 	{
 		// Battlecry: If you're holding a Dragon, Discover a card in your opponent's deck.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_075 : SimTemplate //sinisterstrike
+    class Sim_CS2_075 : SimCard //sinisterstrike
     {
 
         //    fügt dem feindlichen helden $3 schaden zu.

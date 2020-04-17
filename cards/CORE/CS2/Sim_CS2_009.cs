@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_009 : SimTemplate //* Mark of the Wild
+    class Sim_CS2_009 : SimCard //* Mark of the Wild
     {
         //Give a minion Taunt and +2/+2. (+2 Attack/+2 Health)
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_22 : SimTemplate //* 妖术变形 Transformations
+	class Sim_ULDA_Finley_22 : SimCard //* 妖术变形 Transformations
 	{
 		//
 		//

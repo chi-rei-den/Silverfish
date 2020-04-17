@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_051 : SimTemplate //* Jungle Moonkin
+	class Sim_LOE_051 : SimCard //* Jungle Moonkin
 	{
 		//Both players have Spell Damage +2.
 

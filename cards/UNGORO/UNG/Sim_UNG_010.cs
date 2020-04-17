@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_010 : SimTemplate //* Sated Threshadon
+	class Sim_UNG_010 : SimCard //* Sated Threshadon
 	{
 		//Deathrattle: Summon three 1/1 Murlocs.
 

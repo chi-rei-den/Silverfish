@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_031 : SimTemplate //* Recycle
+    class Sim_GVG_031 : SimCard //* Recycle
     {
         //   Shuffle an enemy minion into your opponent's deck.
 

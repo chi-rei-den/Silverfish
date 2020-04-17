@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_LOE_119 : SimTemplate //* Animated Armor
+    class Sim_LOE_119 : SimCard //* Animated Armor
 	{
 		//Your hero can only take 1 damage at a time.
 		

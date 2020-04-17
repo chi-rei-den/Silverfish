@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_912 : SimTemplate //* Jeweled Macaw
+	class Sim_UNG_912 : SimCard //* Jeweled Macaw
 	{
 		//Battlecry: Add a random Beast to your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_617 : SimTemplate //* Deadly Shot
+    class Sim_EX1_617 : SimCard //* Deadly Shot
 	{
         // Destroy a random enemy minion.
 

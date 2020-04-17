@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_039: SimTemplate //* Dark Conviction
+    class Sim_ICC_039: SimCard //* Dark Conviction
     {
         // Set a minion's Attack and Health to 3.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_308 : SimTemplate //* Soulfire
+    class Sim_EX1_308 : SimCard //* Soulfire
 	{
         // Deal $4 damage. Discard a random card.
 

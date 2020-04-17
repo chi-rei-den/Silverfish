@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_852 : SimTemplate //* Tyrantus
+	class Sim_UNG_852 : SimCard //* Tyrantus
 	{
 		//Can't be targeted by spells or Hero Powers.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_382 : SimTemplate //* Aldor Peacekeeper
+    class Sim_EX1_382 : SimCard //* Aldor Peacekeeper
 	{
         //Battlecry: Change an enemy minion's Attack to 1.
 

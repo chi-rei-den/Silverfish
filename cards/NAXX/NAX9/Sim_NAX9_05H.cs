@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_05H : SimTemplate //* Runeblade
+	class Sim_NAX9_05H : SimCard //* Runeblade
 	{
 		//Has +6 Attack if the other Horsemen are dead.
 		//Handled in Horsemen

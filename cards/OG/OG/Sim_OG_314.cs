@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_314 : SimTemplate //* Blood to Ichor
+	class Sim_OG_314 : SimCard //* Blood to Ichor
 	{
 		//Deal 1 damage to a minion. If it survives, summon a 2/2 Slime.
 

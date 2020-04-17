@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Shaman_03 : SimTemplate //* 先祖恢复 Restoration
+	class Sim_LOOTA_Shaman_03 : SimCard //* 先祖恢复 Restoration
 	{
 		//
 		//

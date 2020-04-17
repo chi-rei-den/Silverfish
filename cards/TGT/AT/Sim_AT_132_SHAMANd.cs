@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_SHAMANd : SimTemplate //* Wrath of Air Totem
+	class Sim_AT_132_SHAMANd : SimCard //* Wrath of Air Totem
 	{
 		//Spell Damage +1
 		

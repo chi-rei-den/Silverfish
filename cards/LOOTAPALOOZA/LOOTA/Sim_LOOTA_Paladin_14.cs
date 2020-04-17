@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Paladin_14 : SimTemplate //* 白银之手 Silver Hand
+	class Sim_LOOTA_Paladin_14 : SimCard //* 白银之手 Silver Hand
 	{
 		//
 		//

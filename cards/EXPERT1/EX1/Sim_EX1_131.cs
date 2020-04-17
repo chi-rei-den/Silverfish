@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_131 : SimTemplate //defiasringleader
+	class Sim_EX1_131 : SimCard //defiasringleader
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_131t);
 //    combo:/ ruft einen banditen der defias (2/1) herbei.

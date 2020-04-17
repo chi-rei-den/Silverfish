@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_118 : SimTemplate //magmarager
+	class Sim_CS2_118 : SimCard //magmarager
 	{
 
 //

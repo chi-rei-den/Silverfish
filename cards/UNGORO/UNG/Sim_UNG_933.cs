@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_933 : SimTemplate //* King Mosh
+	class Sim_UNG_933 : SimCard //* King Mosh
 	{
 		//Battlecry: Destroy all damaged minions.
 

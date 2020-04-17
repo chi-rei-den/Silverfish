@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_014t : SimTemplate //bananas
+	class Sim_EX1_014t : SimCard //bananas
 	{
 
 //    verleiht einem diener +1/+1.

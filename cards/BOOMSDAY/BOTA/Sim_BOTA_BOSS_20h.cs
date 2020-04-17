@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_20h : SimTemplate //* 砰砰博士 Dr. Boom
+	class Sim_BOTA_BOSS_20h : SimCard //* 砰砰博士 Dr. Boom
 	{
 		//
 		//

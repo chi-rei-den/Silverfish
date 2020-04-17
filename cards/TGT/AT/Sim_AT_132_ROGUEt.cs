@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_ROGUEt : SimTemplate //* Poisoned Dagger
+	class Sim_AT_132_ROGUEt : SimCard //* Poisoned Dagger
 	{
         CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_132_ROGUEt);
 

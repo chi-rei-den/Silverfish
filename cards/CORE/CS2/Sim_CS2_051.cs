@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_051 : SimTemplate //stoneclawtotem
+	class Sim_CS2_051 : SimCard //stoneclawtotem
 	{
 
 //    spott/

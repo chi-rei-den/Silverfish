@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_DS1_233 : SimTemplate //mindblast
+    class Sim_DS1_233 : SimCard //mindblast
     {
 
         //    fügt dem feindlichen helden $5 schaden zu.

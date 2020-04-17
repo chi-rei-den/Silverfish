@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_042 : SimTemplate //* Neptulon
+    class Sim_GVG_042 : SimCard //* Neptulon
     {
         // Battlecry: Add 4 random Murlocs to your hand. Overload: (3)
 

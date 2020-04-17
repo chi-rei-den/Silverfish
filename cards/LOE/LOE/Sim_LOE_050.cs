@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_050 : SimTemplate //* Mounted Raptor
+	class Sim_LOE_050 : SimCard //* Mounted Raptor
 	{
         //Deathrattle: Summon a random 1-Cost minion.
 

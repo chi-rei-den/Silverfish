@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_176 : SimTemplate //* Shadow Strike
+	class Sim_OG_176 : SimCard //* Shadow Strike
 	{
 		//Deal 5 damage to an undamaged character.
 		

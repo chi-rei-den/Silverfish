@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_024 : SimTemplate //* Cogmaster's Wrench
+    class Sim_GVG_024 : SimCard //* Cogmaster's Wrench
     {
 
         //    Has +2 Attack while you have a Mech.

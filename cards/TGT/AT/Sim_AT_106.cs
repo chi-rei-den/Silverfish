@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_106 : SimTemplate //* Light's Champion
+	class Sim_AT_106 : SimCard //* Light's Champion
 	{
 		//Battlecry: Silence a Demon.
 

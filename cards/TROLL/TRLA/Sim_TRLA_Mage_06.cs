@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_06 : SimTemplate //* 魔法之友 Magical Friends
+	class Sim_TRLA_Mage_06 : SimCard //* 魔法之友 Magical Friends
 	{
 		//
 		//

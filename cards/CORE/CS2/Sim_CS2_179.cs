@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_179 : SimTemplate//senjien shieldmasta
+    class Sim_CS2_179 : SimCard//senjien shieldmasta
     {
         
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_095 : SimTemplate //* Zoobot
+	class Sim_KAR_095 : SimCard //* Zoobot
 	{
 		//Battlecry: Give a random friendly Beast, Dragon and Murloc +1/+1.
 		

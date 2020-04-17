@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_110 : SimTemplate //Dr. Boom
+    class Sim_GVG_110 : SimCard //Dr. Boom
     {
 
         //  Battlecry: Summon two 1/1 Boom Bots. WARNING: Bots may explode. 

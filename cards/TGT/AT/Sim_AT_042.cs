@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042 : SimTemplate //* Druid of the Saber
+	class Sim_AT_042 : SimCard //* Druid of the Saber
 	{
 		//Choose One - Charge or +1/+1 and Stealth.
         

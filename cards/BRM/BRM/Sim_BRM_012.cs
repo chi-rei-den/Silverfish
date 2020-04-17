@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_012 : SimTemplate //* Fireguard Destroyer
+    class Sim_BRM_012 : SimCard //* Fireguard Destroyer
     {
         // Battlecry: Gain 1-4 Attack. Overload: (1)
 

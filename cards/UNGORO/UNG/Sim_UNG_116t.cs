@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_116t : SimTemplate //* Barnabus the Stomper
+	class Sim_UNG_116t : SimCard //* Barnabus the Stomper
 	{
 		//Battlecry: Reduce the Cost of minions in your deck to (0).
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_030a : SimTemplate //Attack Mode
+    class Sim_GVG_030a : SimCard //Attack Mode
 	{
 
         //    +1 Attack.

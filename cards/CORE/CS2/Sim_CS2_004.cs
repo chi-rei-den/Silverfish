@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_004 : SimTemplate //powerwordshield
+	class Sim_CS2_004 : SimCard //powerwordshield
 	{
 
 //    verleiht einem diener +2 leben.\nzieht eine karte.

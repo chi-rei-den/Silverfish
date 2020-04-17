@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_501 : SimTemplate //* 烧焦的盾牌 Smoldering Shield
+	class Sim_BOTA_501 : SimCard //* 烧焦的盾牌 Smoldering Shield
 	{
 		//Start Mirror Puzzle 1-2.
 		//Start Mirror Puzzle 1-2.

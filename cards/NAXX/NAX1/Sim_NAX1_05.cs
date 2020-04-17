@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NAX1_05 : SimTemplate//* Locust Swarm
+    class Sim_NAX1_05 : SimCard//* Locust Swarm
     {
         //Deal $3 damage to all enemy minions. Restore #3 Health to your hero.
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

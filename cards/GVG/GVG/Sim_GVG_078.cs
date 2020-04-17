@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_078 : SimTemplate //* Mechanical Yeti
+    class Sim_GVG_078 : SimCard //* Mechanical Yeti
     {
 
         //   Deathrattle: Give each player a Spare Part

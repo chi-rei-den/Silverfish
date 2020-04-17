@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_044 : SimTemplate //* Moroes
+	class Sim_KAR_044 : SimCard //* Moroes
 	{
 		//Stealth. At the end of your turn, summon a 1/1 Steward.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_025 : SimTemplate //One-eyed Cheat
+    class Sim_GVG_025 : SimCard //One-eyed Cheat
     {
 
         //    Whenever you summon a Pirate, gain Stealth.

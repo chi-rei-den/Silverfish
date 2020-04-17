@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_037 : SimTemplate //Whirling Zap-o-matic
+    class Sim_GVG_037 : SimCard //Whirling Zap-o-matic
     {
 
         //    Windfury

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_315 : SimTemplate //summoningportal
+	class Sim_EX1_315 : SimCard //summoningportal
 	{
 
 //    eure diener kosten (2) weniger, aber nicht weniger als (1).

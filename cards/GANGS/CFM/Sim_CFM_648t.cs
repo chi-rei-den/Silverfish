@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_648t : SimTemplate //* Little Friend
+	class Sim_CFM_648t : SimCard //* Little Friend
 	{
 		// -
 	}

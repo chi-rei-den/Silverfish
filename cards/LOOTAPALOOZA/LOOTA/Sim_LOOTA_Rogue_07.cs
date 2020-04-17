@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Rogue_07 : SimTemplate //* 无穷贪婪 Greed
+	class Sim_LOOTA_Rogue_07 : SimCard //* 无穷贪婪 Greed
 	{
 		//
 		//

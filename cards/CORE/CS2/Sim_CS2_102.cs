@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_102 : SimTemplate //armorup
+	class Sim_CS2_102 : SimCard //armorup
 	{
 
 //    heldenfähigkeit/\nerhaltet 2 rüstung.

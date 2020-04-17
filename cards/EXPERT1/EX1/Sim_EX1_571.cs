@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_571 : SimTemplate //* Force of Nature
+    class Sim_EX1_571 : SimCard //* Force of Nature
 	{
         //Summon three 2/2 Treants.
 

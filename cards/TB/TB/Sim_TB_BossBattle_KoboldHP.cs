@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_BossBattle_KoboldHP : SimTemplate
+	class Sim_TB_BossBattle_KoboldHP : SimCard
 	{
 	}
 }

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_019 : SimTemplate //shatteredsuncleric
+    class Sim_EX1_019 : SimCard //shatteredsuncleric
     {
 
         //    kampfschrei:/ verleiht einem befreundeten diener +1/+1.

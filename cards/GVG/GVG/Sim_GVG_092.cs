@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_092 : SimTemplate //Gnomish Experimenter
+    class Sim_GVG_092 : SimCard //Gnomish Experimenter
     {
 
         //  Battlecry: Draw a card. If it's a minion, transform it into a Chicken. 

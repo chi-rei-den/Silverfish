@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_12 : SimTemplate //* 手牌即一切 Huge Hand
+	class Sim_LOOTA_Warlock_12 : SimCard //* 手牌即一切 Huge Hand
 	{
 		//
 		//

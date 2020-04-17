@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_060 : SimTemplate //* Bear Trap
+	class Sim_AT_060 : SimCard //* Bear Trap
 	{
 		//Secret: After your hero is attacked, summon a 3/3 Bear with Taunt.
 

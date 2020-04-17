@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_663t : SimTemplate //* 树人 Treant
+	class Sim_GIL_663t : SimCard //* 树人 Treant
 	{
 		//
 		//

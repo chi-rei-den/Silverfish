@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_408 : SimTemplate //mortalstrike
+	class Sim_EX1_408 : SimCard //mortalstrike
 	{
 
 //    verursacht $4 schaden. verursacht stattdessen $6 schaden, wenn euer held max. 12 leben hat.

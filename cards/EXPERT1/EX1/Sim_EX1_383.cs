@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_383 : SimTemplate //tirionfordring
+	class Sim_EX1_383 : SimCard //tirionfordring
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_383t);
 //    gottesschild/. spott/. todesröcheln:/ legt einen aschenbringer (5/3) an.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t14 : SimTemplate //* Volcanic Might
+	class Sim_UNG_999t14 : SimCard //* Volcanic Might
 	{
 		//+1/+1
 

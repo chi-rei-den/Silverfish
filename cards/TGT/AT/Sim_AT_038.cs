@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_038 : SimTemplate //* Darnassus Aspirant
+    class Sim_AT_038 : SimCard //* Darnassus Aspirant
     {
 		//Battlecry: Gain an empty mana crystal.
 		//Deathrattle: Destroy a mana crystal.

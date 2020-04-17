@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_196 : SimTemplate //* razorfenhunter
+	class Sim_CS2_196 : SimCard //* razorfenhunter
 	{
         //Battlecry: Summon a 1/1 Boar.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_boar); //boar

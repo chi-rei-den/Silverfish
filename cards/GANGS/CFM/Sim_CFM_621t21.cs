@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t21 : SimTemplate //* Mystic Wool
+	class Sim_CFM_621t21 : SimCard //* Mystic Wool
 	{
 		// Transform a random enemy minion into a 1/1 Sheep.
 		

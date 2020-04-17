@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_409t : SimTemplate //* Heavy Axe
+    class Sim_EX1_409t : SimCard //* Heavy Axe
 	{
         CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_409t);
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_049 : SimTemplate // totemiccall
+    class Sim_CS2_049 : SimCard // totemiccall
     {
         //Hero Power: Summon a random Totem.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_072 : SimTemplate //* Stonehill Defender
+	class Sim_UNG_072 : SimCard //* Stonehill Defender
 	{
 		//Taunt. Battlecry: Discover a Taunt minion.
 

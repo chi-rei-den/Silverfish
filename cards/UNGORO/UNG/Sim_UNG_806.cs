@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_806 : SimTemplate //* Ultrasaur
+	class Sim_UNG_806 : SimCard //* Ultrasaur
 	{
 		
 

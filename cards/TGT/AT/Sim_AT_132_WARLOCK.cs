@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_WARLOCK : SimTemplate //* Soul Tap
+	class Sim_AT_132_WARLOCK : SimCard //* Soul Tap
 	{
 		//Hero Power. Draw a card (without the Health penalty)
 

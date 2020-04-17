@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Hunter_06 : SimTemplate //* 小小危机 Tiny Trouble
+	class Sim_DALA_Hunter_06 : SimCard //* 小小危机 Tiny Trouble
 	{
 		//
 		//

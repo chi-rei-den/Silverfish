@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Blizzcon2016_GoonsEnchant : SimTemplate
+	class Sim_TB_Blizzcon2016_GoonsEnchant : SimCard
 	{
 	}
 }

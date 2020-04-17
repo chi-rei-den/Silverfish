@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_WARRIOR : SimTemplate //* Tank Up!
+	class Sim_AT_132_WARRIOR : SimCard //* Tank Up!
 	{
 		//Hero Power. Gain 4 Armor.
 		

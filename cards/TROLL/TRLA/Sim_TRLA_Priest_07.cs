@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Priest_07 : SimTemplate //* 坚韧之心 Resilient
+	class Sim_TRLA_Priest_07 : SimCard //* 坚韧之心 Resilient
 	{
 		//
 		//

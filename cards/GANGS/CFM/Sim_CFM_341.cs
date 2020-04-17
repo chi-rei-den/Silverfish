@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_341 : SimTemplate //* Sergeant Sally
+	class Sim_CFM_341 : SimCard //* Sergeant Sally
 	{
 		// Deathrattle: Deal damage equal to the minion's Attack to all enemy minions.
 

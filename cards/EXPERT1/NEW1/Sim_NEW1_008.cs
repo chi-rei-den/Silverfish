@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_008 : SimTemplate //* Ancient of Lore
+    class Sim_NEW1_008 : SimCard //* Ancient of Lore
     {
         //Choose One - Draw a card; or Restore 5 Health.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_096 : SimTemplate //* Piloted Shredder
+    class Sim_GVG_096 : SimCard //* Piloted Shredder
     {
 
         // Deathrattle: Summon a random 2-Cost minion.

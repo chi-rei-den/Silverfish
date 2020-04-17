@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_286 : SimTemplate //* Twilight Elder
+	class Sim_OG_286 : SimCard //* Twilight Elder
 	{
 		//At the end of your turn, give your C'Thun +1/+1 (wherever it is).
 		

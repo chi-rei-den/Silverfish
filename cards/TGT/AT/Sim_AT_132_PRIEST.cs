@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_PRIEST : SimTemplate //* Heal
+	class Sim_AT_132_PRIEST : SimCard //* Heal
 	{
 		//Hero Power. Restore 4 Health.
 		

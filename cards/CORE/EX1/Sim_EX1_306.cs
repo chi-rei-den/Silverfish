@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_306 : SimTemplate //* Succubus
+    class Sim_EX1_306 : SimCard //* Succubus
 	{
         // Battlecry: Discard a random card.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_371 : SimTemplate //handofprotection
+	class Sim_EX1_371 : SimCard //handofprotection
 	{
 
 //    verleiht einem diener gottesschild/.

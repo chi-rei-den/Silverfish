@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_Mekka2 : SimTemplate //repairbot
+    class Sim_Mekka2 : SimCard //repairbot
     {
 
         //    stellt am ende eures zuges bei einem verletzten charakter 6 leben wieder her.

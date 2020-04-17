@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_508t : SimTemplate //* 蝙蝠 Bat
+	class Sim_GIL_508t : SimCard //* 蝙蝠 Bat
 	{
 		//
 		//

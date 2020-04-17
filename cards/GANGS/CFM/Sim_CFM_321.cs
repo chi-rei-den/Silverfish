@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_321 : SimTemplate //* Grimestreet Informant
+	class Sim_CFM_321 : SimCard //* Grimestreet Informant
 	{
 		// Battlecry: Discover a Hunter, Paladin or Warrior card.
 

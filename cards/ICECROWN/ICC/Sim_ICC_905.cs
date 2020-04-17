@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_905: SimTemplate //* Bloodworm
+    class Sim_ICC_905: SimCard //* Bloodworm
     {
         // Lifesteal
     }

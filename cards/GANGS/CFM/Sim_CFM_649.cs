@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_649 : SimTemplate //* Kabal Courier
+	class Sim_CFM_649 : SimCard //* Kabal Courier
 	{
 		// Battlecry: Discover a Mage, Priest or Warlock card.
 

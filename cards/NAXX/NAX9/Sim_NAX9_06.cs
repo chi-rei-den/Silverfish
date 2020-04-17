@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_06 : SimTemplate //* Unholy Shadow
+	class Sim_NAX9_06 : SimCard //* Unholy Shadow
 	{
 		// Hero Power: Draw 2 cards.
 		

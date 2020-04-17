@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_831 : SimTemplate //* Corrupting Mist
+	class Sim_UNG_831 : SimCard //* Corrupting Mist
 	{
 		//Corrupt every minion. Destroy them at the start of your next turn.
 

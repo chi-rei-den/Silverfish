@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_200 : SimTemplate //* Validated Doomsayer
+    class Sim_OG_200 : SimCard //* Validated Doomsayer
     {
         //At the start of your turn, set this minion's Attack to 7.
 

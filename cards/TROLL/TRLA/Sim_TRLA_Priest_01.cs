@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Priest_01 : SimTemplate //* 亡者低语 Dying Words
+	class Sim_TRLA_Priest_01 : SimCard //* 亡者低语 Dying Words
 	{
 		//
 		//

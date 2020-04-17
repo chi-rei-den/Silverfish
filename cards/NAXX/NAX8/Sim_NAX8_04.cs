@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX8_04 : SimTemplate //* Unrelenting Warrior
+	class Sim_NAX8_04 : SimCard //* Unrelenting Warrior
 	{
 //    Deathrattle:: Summon a Spectral Warrior for your opponent.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX8_04t); //Spectral Warrior

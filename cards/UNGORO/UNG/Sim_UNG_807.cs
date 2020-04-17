@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_807 : SimTemplate //* Golakka Crawler
+	class Sim_UNG_807 : SimCard //* Golakka Crawler
 	{
 		//Battlecry: Destroy a Pirate and gain +1/+1.
 

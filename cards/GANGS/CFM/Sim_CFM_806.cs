@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_806 : SimTemplate //* Wrathion
+	class Sim_CFM_806 : SimCard //* Wrathion
 	{
 		// Taunt. Battlecry: Draw cards until you draw one that isn't a Dragon.
 

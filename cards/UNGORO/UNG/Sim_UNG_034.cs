@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_034 : SimTemplate //* Radiant Elemental
+	class Sim_UNG_034 : SimCard //* Radiant Elemental
 	{
 		// Your spells cost (1) less.
 

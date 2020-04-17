@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_099t3 : SimTemplate //* 统御 Domination
+	class Sim_DRG_099t3 : SimCard //* 统御 Domination
 	{
 		//Give your other minions +2/+2.
 		//使你的所有其他随从获得+2/+2。

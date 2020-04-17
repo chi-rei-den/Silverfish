@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_011 : SimTemplate //voodoodoctor
+	class Sim_EX1_011 : SimCard //voodoodoctor
 	{
 
 //    kampfschrei:/ stellt 2 leben wieder her.

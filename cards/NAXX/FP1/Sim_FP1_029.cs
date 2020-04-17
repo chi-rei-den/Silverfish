@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_029 : SimTemplate //dancingswords
+	class Sim_FP1_029 : SimCard //dancingswords
 	{
 
 //    todesröcheln:/ euer gegner zieht eine karte.

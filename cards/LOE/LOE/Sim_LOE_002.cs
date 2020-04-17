@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_002 : SimTemplate //* Forgotten Torch
+	class Sim_LOE_002 : SimCard //* Forgotten Torch
 	{
 		//Deal 3 damage. Shuffle a 'Roaring Torch' into your deck that deals 6 damage.
 		

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOT_285t4t : SimTemplate //* 尖刺盾牌 Spiked Shield
+	class Sim_LOOT_285t4t : SimCard //* 尖刺盾牌 Spiked Shield
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_614 : SimTemplate //illidanstormrage
+	class Sim_EX1_614 : SimCard //illidanstormrage
 	{
         CardDB.Card d = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_614t);//flameofazzinoth
 //    beschwört jedes mal eine flamme von azzinoth (2/1), wenn ihr eine karte ausspielt.

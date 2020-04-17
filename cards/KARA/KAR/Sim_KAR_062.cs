@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_062 : SimTemplate //* Netherspite Historian
+	class Sim_KAR_062 : SimCard //* Netherspite Historian
 	{
 		//Battlecry: If you're holding a Dragon, Discover a Dragon.
 		

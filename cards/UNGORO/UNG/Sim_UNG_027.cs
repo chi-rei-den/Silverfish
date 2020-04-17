@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_027 : SimTemplate //* Pyros
+	class Sim_UNG_027 : SimCard //* Pyros
 	{
 		//Deathrattle: Return this to your hand as a 6/6 that costs (6).
 

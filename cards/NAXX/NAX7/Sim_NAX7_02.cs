@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX7_02 : SimTemplate //* Understudy
+	class Sim_NAX7_02 : SimCard //* Understudy
 	{
 		//Taunt
 	}

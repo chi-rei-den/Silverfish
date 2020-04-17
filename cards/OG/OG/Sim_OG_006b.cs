@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_006b : SimTemplate //* The Tidal Hand
+    class Sim_OG_006b : SimCard //* The Tidal Hand
     {
         //Hero Power Summon a 1/1 Silver Hand Murloc.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_048 : SimTemplate //* Metaltooth Leaper
+    class Sim_GVG_048 : SimCard //* Metaltooth Leaper
     {
         //Battlecry: Give your other Mechs +2 Attack.
 

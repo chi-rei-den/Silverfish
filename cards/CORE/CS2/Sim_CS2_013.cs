@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_013 : SimTemplate //wildgrowth
+	class Sim_CS2_013 : SimCard //wildgrowth
 	{
 
 //    erhaltet einen leeren manakristall.

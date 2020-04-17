@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_011 : SimTemplate //* Holy Champion
+	class Sim_AT_011 : SimCard //* Holy Champion
 	{
 		// Whenever a character is healed, gain +2 attack.
         

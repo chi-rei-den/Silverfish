@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_161 : SimTemplate //ravenholdtassassin
+	class Sim_CS2_161 : SimCard //ravenholdtassassin
 	{
 
 //    verstohlenheit/

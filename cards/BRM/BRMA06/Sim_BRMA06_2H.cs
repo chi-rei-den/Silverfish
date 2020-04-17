@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA06_2H : SimTemplate //* The Majordomo
+	class Sim_BRMA06_2H : SimCard //* The Majordomo
 	{
 		// Hero Power: Summon a 3/3 Flamewaker Acolyte.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_560 : SimTemplate //nozdormu
+	class Sim_EX1_560 : SimCard //nozdormu
 	{
 
 //    spieler haben nur jeweils 15 sekunden für ihren zug.

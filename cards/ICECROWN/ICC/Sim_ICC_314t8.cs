@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t8 : SimTemplate //* Death and Decay
+    class Sim_ICC_314t8 : SimCard //* Death and Decay
     {
         // Deal $3 damage to all enemies.
 

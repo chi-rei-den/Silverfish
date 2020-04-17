@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_702 : SimTemplate //* Menagerie Magician
+	class Sim_KAR_702 : SimCard //* Menagerie Magician
 	{
 		//Battlecry: Give a random Beast, Dragon and Murloc +2/+2.
 		

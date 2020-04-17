@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_667 : SimTemplate //* Bomb Squad
+	class Sim_CFM_667 : SimCard //* Bomb Squad
 	{
 		// Battlecry: Deal 5 damage to an enemy minion. Deathrattle: Deal 5 damage to your hero.
 

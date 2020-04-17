@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_17 : SimTemplate //* 寻找法术 Spell Searching
+	class Sim_ULDA_Reno_17 : SimCard //* 寻找法术 Spell Searching
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_538 : SimTemplate //* unleashthehounds
+	class Sim_EX1_538 : SimCard //* unleashthehounds
 	{
         // For each enemy minion, summon a 1/1 Hound with Charge.
         

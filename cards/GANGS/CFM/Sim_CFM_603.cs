@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_603 : SimTemplate //* Potion of Madness
+	class Sim_CFM_603 : SimCard //* Potion of Madness
 	{
 		// Gain control of an enemy minion with 2 or less Attack until the end of the turn.
 

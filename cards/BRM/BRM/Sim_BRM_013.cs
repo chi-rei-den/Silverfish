@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_013 : SimTemplate //* Quick Shot
+	class Sim_BRM_013 : SimCard //* Quick Shot
 	{
 		// Deal 3 damage. If your hand is empty, draw a card.
 		

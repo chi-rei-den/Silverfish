@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_345t : SimTemplate //shadowofnothing
+	class Sim_EX1_345t : SimCard //shadowofnothing
 	{
 
 //    gedankenspiele verpufft! euer gegner hat keine diener!

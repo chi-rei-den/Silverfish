@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_050 : SimTemplate //Bouncing Blade
+    class Sim_GVG_050 : SimCard //Bouncing Blade
     {
 
         //   Deal $1 damage to a random minion. Repeat until a minion dies.

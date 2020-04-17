@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_308 : SimTemplate //* Kun the Forgotten King
+	class Sim_CFM_308 : SimCard //* Kun the Forgotten King
 	{
 		// Choose One - Gain 10 Armor; or Refresh your Mana Crystals.
 

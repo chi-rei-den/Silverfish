@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_073 : SimTemplate //* Maelstrom Portal
+	class Sim_KAR_073 : SimCard //* Maelstrom Portal
 	{
 		//Deal 1 damage to all enemy minions. Summon a random 1-Cost minion.
 		

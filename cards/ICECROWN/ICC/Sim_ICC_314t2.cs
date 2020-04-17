@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ICC_314t2 : SimTemplate //* Army of the Dead
+	class Sim_ICC_314t2 : SimCard //* Army of the Dead
     {
         // Remove the top 5 cards of your deck. Summon any minions removed.
 

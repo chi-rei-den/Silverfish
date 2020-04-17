@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_084 : SimTemplate //Flying Machine<
+    class Sim_GVG_084 : SimCard //Flying Machine<
     {
 
         //   Windfury

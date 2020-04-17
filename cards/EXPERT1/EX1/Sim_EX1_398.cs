@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_398 : SimTemplate//Arathi Weaponsmith
+    class Sim_EX1_398 : SimCard//Arathi Weaponsmith
     {
         CardDB.Card wcard = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_398t);//battleaxe
 

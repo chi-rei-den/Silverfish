@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_084 : SimTemplate //* Warsong Commander
+    class Sim_EX1_084 : SimCard //* Warsong Commander
     {
 		//Your Charge minions have +1 Attack.
 

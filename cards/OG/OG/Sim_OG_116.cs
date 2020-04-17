@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_116 : SimTemplate //* Spreading Madness
+	class Sim_OG_116 : SimCard //* Spreading Madness
 	{
 		//Deal 9 damage randomly split among ALL characters.
 

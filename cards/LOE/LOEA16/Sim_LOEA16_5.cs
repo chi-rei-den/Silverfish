@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOEA16_5 : SimTemplate //* Mirror of Doom
+	class Sim_LOEA16_5 : SimCard //* Mirror of Doom
 	{
 		// Fill your board with 3/3 Mummy Zombies.
 		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.LOEA16_5t);//Mummy Zombie

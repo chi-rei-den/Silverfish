@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_101 : SimTemplate //* reinforce
+	class Sim_CS2_101 : SimCard //* reinforce
 	{
         //Hero Power: Summon a 1/1 Silver Hand Recruit.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_101t);//silverhandrecruit

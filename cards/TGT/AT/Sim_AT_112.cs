@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_112 : SimTemplate //* Master Jouster
+	class Sim_AT_112 : SimCard //* Master Jouster
 	{
 		//Battlecry : Reveal a minion in each deck. If yours costs more, gain Taunt and Divine Shield.
 			

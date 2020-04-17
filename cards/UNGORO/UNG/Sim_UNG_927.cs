@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_927 : SimTemplate //* Sudden Genesis
+	class Sim_UNG_927 : SimCard //* Sudden Genesis
 	{
 		//Summon copies of your damaged minions.
 

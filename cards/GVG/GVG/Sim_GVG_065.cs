@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_065 : SimTemplate //Ogre Brute
+    class Sim_GVG_065 : SimCard //Ogre Brute
     {
 
         //   50% chance to attack the wrong enemy.

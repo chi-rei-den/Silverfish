@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_650 : SimTemplate //* Grimscale Chum
+	class Sim_CFM_650 : SimCard //* Grimscale Chum
 	{
 		// Battlecry: Give a random Murloc in your hand +1/+1.
 

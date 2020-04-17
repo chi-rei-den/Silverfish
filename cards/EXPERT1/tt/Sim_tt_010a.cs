@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_tt_010a : SimTemplate //spellbender
+	class Sim_tt_010a : SimCard //spellbender
 	{
 
 //    zauberformerin

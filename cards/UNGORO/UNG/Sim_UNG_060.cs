@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_060 : SimTemplate //* Mimic Pod
+	class Sim_UNG_060 : SimCard //* Mimic Pod
 	{
 		//Draw a card, then add a copy of it to your hand.
 

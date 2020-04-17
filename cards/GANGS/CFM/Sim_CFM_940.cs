@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_940 : SimTemplate //* I Know a Guy
+	class Sim_CFM_940 : SimCard //* I Know a Guy
 	{
 		// Discover a Taunt minion.
 

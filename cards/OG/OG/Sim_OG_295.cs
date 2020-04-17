@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_295 : SimTemplate //* Cult Apothecary
+	class Sim_OG_295 : SimCard //* Cult Apothecary
 	{
 		//Battlecry: For each enemy minion, restore 2 Health to your hero.
 		

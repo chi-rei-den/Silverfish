@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_010 : SimTemplate //Velen's Chosen
+    class Sim_GVG_010 : SimCard //Velen's Chosen
     {
 
         //    Give a minion +2/+4 and Spell Damage +1.

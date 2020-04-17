@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_597 : SimTemplate //impmaster
+	class Sim_EX1_597 : SimCard //impmaster
 	{
 
 //    fügt am ende eures zuges diesem diener 1 schaden zu und beschwört einen wichtel (1/1).

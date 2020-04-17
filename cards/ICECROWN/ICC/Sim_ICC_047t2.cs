@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_047t2 : SimTemplate //* Fatespinner on board 2x
+    class Sim_ICC_047t2 : SimCard //* Fatespinner on board 2x
     {
         // Deathrattle: Give all minions +2/+2, then deal 3 damage to them.
 

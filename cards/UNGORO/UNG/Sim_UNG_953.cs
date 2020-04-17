@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_953 : SimTemplate //* Primalfin Champion
+	class Sim_UNG_953 : SimCard //* Primalfin Champion
 	{
 		//Deathrattle: Return any spells you cast on this minion to your hand.
 

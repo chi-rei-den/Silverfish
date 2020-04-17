@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_077 : SimTemplate //* Silvermoon Portal
+	class Sim_KAR_077 : SimCard //* Silvermoon Portal
 	{
 		//Give a minion +2/+2. Summon a random 2-Cost minion.
 		

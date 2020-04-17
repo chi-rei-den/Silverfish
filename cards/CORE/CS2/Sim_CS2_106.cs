@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_106 : SimTemplate //fierywaraxe
+	class Sim_CS2_106 : SimCard //fierywaraxe
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_106);
 //

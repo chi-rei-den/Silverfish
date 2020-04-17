@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_104 : SimTemplate //rampage
+	class Sim_CS2_104 : SimCard //rampage
 	{
 
 //    verleiht einem verletzten diener +3/+3.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX13_02 : SimTemplate //* Polarity Shift
+	class Sim_NAX13_02 : SimCard //* Polarity Shift
 	{
 		//Hero Power: Swap the Attack and Health of all minions.
 		

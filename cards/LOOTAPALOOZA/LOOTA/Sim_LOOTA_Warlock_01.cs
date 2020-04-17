@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_01 : SimTemplate //* 卑微即强大 Little Legion
+	class Sim_LOOTA_Warlock_01 : SimCard //* 卑微即强大 Little Legion
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_045 : SimTemplate //* Aviana
+	class Sim_AT_045 : SimCard //* Aviana
 	{
 		//Your minions cost (1).
 

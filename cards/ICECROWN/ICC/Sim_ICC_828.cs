@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_828: SimTemplate //* Deathstalker Rexxar
+    class Sim_ICC_828: SimCard //* Deathstalker Rexxar
     {
         // Battlecry: Deal 2 damage to all enemy minions.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_800 : SimTemplate //* Getaway Kodo
+	class Sim_CFM_800 : SimCard //* Getaway Kodo
 	{
 		// Secret: When a friendly minion dies, return it to your hand.
 	}

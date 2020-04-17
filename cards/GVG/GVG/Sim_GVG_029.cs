@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_029 : SimTemplate //* Ancestor's Call
+    class Sim_GVG_029 : SimCard //* Ancestor's Call
     {
 
         //    Put a random minion from each player's hand into the battlefield.

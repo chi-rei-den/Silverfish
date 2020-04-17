@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Priest_06 : SimTemplate //* 暗影交织 Shadow
+	class Sim_LOOTA_Priest_06 : SimCard //* 暗影交织 Shadow
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMC_94 : SimTemplate //* Sulfuras
+	class Sim_BRMC_94 : SimCard //* Sulfuras
 	{
 		// Deathrattle:: Your Hero Power becomes 'Deal 8 damage to a random enemy'.
 		

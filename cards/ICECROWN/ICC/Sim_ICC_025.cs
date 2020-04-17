@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_025: SimTemplate //* Rattling Rascal
+    class Sim_ICC_025: SimCard //* Rattling Rascal
     {
         // Battlecry: Summon a 5/5 Skeleton. Deathrattle: Summon a 5/5 Skeleton for your opponent.
 

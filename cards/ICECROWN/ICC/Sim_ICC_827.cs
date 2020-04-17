@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_827: SimTemplate //* Valeera the Hollow
+    class Sim_ICC_827: SimCard //* Valeera the Hollow
     {
         // Battlecry: Gain Stealth until your next turn.
         

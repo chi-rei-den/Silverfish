@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_235 : SimTemplate //* Shadow Essence
+    class Sim_ICC_235 : SimCard //* Shadow Essence
     {
         // Summon a 5/5 copy of a random minion in your deck.
 

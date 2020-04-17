@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_019 : SimTemplate //Demonheart
+    class Sim_GVG_019 : SimCard //Demonheart
     {
 
         //    Deal $5 damage to a minion.  If it's a friendly Demon, give it +5/+5 instead.

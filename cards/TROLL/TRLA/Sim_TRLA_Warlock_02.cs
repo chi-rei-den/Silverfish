@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warlock_02 : SimTemplate //* 放弃即索取 Discard
+	class Sim_TRLA_Warlock_02 : SimCard //* 放弃即索取 Discard
 	{
 		//
 		//

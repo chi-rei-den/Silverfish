@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_320 : SimTemplate //* 腐化之魂 A Corrupted Spirit
+	class Sim_BOTA_320 : SimCard //* 腐化之魂 A Corrupted Spirit
 	{
 		//Start Lethal Puzzle 3-3.
 		//Start Lethal Puzzle 3-3.

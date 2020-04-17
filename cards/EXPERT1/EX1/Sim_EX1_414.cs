@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_414 : SimTemplate //grommashhellscream
+	class Sim_EX1_414 : SimCard //grommashhellscream
 	{
 
 //    ansturm/, wutanfall:/ +6 angriff

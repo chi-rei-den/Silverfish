@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_233: SimTemplate //* Doomerang
+    class Sim_ICC_233: SimCard //* Doomerang
     {
         // Throw your weapon at a minion. It deals it's damage, then returns to your hand.
 

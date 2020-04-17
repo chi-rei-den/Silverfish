@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_584 : SimTemplate //* Ancient Mage
+    class Sim_EX1_584 : SimCard //* Ancient Mage
 	{
         //Battlecry: Give adjacent minions Spell Damage +1.
 

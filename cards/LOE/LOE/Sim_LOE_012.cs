@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_012 : SimTemplate //* Tomb Pillager
+	class Sim_LOE_012 : SimCard //* Tomb Pillager
 	{
 		//Deathrattle: Put a Coin into your hand.
 		

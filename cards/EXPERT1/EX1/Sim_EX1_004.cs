@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_004 : SimTemplate //* Young Priestess
+    class Sim_EX1_004 : SimCard //* Young Priestess
 	{
         //At the end of your turn, give another random friendly minion +1 Health.
 

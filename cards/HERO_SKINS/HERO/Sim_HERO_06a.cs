@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_06a : SimTemplate //* 露娜拉 Lunara
+	class Sim_HERO_06a : SimCard //* 露娜拉 Lunara
 	{
 		//
 		//

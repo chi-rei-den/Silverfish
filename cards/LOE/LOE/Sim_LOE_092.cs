@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_092 : SimTemplate //* Arch-Thief Rafaam
+	class Sim_LOE_092 : SimCard //* Arch-Thief Rafaam
 	{
 		//Battlecry: Discover a powerful Artifact.
 		

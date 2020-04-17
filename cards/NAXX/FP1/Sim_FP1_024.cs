@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_024 : SimTemplate //unstableghoul
+	class Sim_FP1_024 : SimCard //unstableghoul
 	{
 
 //    spott/. todesröcheln:/ fügt allen dienern 1 schaden zu.

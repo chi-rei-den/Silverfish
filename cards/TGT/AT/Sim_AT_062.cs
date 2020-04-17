@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_062 : SimTemplate //* Ball of Spiders
+    class Sim_AT_062 : SimCard //* Ball of Spiders
     {
 		//Summon three 1/1 Webspinners.
 		

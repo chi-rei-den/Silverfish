@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_223 : SimTemplate //* Divine Strength
+	class Sim_OG_223 : SimCard //* Divine Strength
 	{
 		//Give a minion +1/+2.
 		

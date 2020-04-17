@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_074 : SimTemplate //* Seal of Champions
+	class Sim_AT_074 : SimCard //* Seal of Champions
 	{
 		//Give a minion +3 Attack and Divine Shield.
 

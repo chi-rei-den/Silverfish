@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX1h_03 : SimTemplate //* Nerubian
+	class Sim_NAX1h_03 : SimCard //* Nerubian
 	{
 		//-
 	}

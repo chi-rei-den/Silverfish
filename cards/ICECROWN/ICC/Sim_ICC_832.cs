@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_832: SimTemplate //* Malfurion the Pestilent
+    class Sim_ICC_832: SimCard //* Malfurion the Pestilent
     {
         // Choose One - Summon 2 Poisonous Spiders; or 2 Scarabs with Taunt.
 

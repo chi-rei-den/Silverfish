@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_020 : SimTemplate //scarletcrusader
+	class Sim_EX1_020 : SimCard //scarletcrusader
 	{
 
 //    gottesschild/

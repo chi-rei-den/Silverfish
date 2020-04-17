@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_023 : SimTemplate //* Primal Fusion
+    class Sim_OG_023 : SimCard //* Primal Fusion
     {
         //Give a minion +1/+1 for each of your Totems.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_086 : SimTemplate //* Summoning Stone
+	class Sim_LOE_086 : SimCard //* Summoning Stone
 	{
 		//Whenever you cast a spell, summon a random minion of the same Cost.
 		

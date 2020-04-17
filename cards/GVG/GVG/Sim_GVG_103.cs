@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_103 : SimTemplate //Micro Machine
+    class Sim_GVG_103 : SimCard //Micro Machine
     {
 
         //   At the start of each turn, gain +1 Attack.

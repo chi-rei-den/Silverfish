@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_BOSS_72p : SimTemplate //* 铁皮 Steelskin
+	class Sim_DALA_BOSS_72p : SimCard //* 铁皮 Steelskin
 	{
 		//<b>Passive Hero Power</b>You can't damage yourself.
 		//<b>被动英雄技能</b>你无法伤害自己。

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Shaman_08 : SimTemplate //* 蛇人秘法 Sssspells
+	class Sim_DALA_Shaman_08 : SimCard //* 蛇人秘法 Sssspells
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_311 : SimTemplate //* A Light in the Darkness
+    class Sim_OG_311 : SimCard //* A Light in the Darkness
     {
         //Discover a minion. Give it +1/+1.
 

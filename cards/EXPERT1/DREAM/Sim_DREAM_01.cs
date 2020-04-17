@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DREAM_01 : SimTemplate //laughingsister
+	class Sim_DREAM_01 : SimCard //laughingsister
 	{
 
 //    kann nicht als ziel von zaubern oder heldenfähigkeiten gewählt werden.

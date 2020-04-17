@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_001 : SimTemplate //Flamecannon
+    class Sim_GVG_001 : SimCard //Flamecannon
     {
 
         //    Deal $4 damage to a random enemy minion.

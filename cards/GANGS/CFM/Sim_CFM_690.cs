@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_690 : SimTemplate //* Jade Shuriken
+	class Sim_CFM_690 : SimCard //* Jade Shuriken
 	{
         // Deal 2 damage. Combo: Summon a Jade Golem.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_250 : SimTemplate //earthelemental
+	class Sim_EX1_250 : SimCard //earthelemental
 	{
 
 //    spott/, überladung:/ (3)

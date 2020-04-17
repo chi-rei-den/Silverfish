@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_029: SimTemplate //* Cobalt Scalebane
+    class Sim_ICC_029: SimCard //* Cobalt Scalebane
     {
         // At the end of your turn, give another random friendly minion +3 Attack.
 

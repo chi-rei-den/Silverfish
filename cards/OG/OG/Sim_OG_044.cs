@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_044 : SimTemplate //* Fandral Staghelm
+	class Sim_OG_044 : SimCard //* Fandral Staghelm
 	{
 		//Your Choose One cards have both effects combine.
 

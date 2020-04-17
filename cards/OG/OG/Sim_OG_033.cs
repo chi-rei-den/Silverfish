@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_033 : SimTemplate //* Tentacles for Arms
+    class Sim_OG_033 : SimCard //* Tentacles for Arms
     {
         //Deathrattle: Return this to your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka1 : SimTemplate //homingchicken
+	class Sim_Mekka1 : SimCard //homingchicken
 	{
 
 //    vernichtet zu beginn eures zuges diesen diener und zieht 3 karten.

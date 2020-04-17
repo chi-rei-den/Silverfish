@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_001 : SimTemplate //* Pterrordax Hatchling
+	class Sim_UNG_001 : SimCard //* Pterrordax Hatchling
 	{
 		//Battlecry: Adapt.
 

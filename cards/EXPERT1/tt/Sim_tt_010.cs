@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_tt_010 : SimTemplate //spellbender
+    class Sim_tt_010 : SimCard //spellbender
     {
         //todo secret
         //    geheimnis:/ wenn ein feind einen zauber auf einen diener wirkt, ruft ihr einen diener (1/3) als neues ziel herbei.

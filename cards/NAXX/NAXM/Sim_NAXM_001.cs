@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAXM_001 : SimTemplate //* Necroknight
+	class Sim_NAXM_001 : SimCard //* Necroknight
 	{
 	//    Deathrattle: Destroy the minions next to this one as well.
 

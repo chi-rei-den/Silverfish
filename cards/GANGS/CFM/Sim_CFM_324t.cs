@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_324t : SimTemplate //* The Storm Guardian
+	class Sim_CFM_324t : SimCard //* The Storm Guardian
 	{
 		// Taunt
 	}

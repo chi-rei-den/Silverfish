@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_960 : SimTemplate //* Lost in the Jungle
+	class Sim_UNG_960 : SimCard //* Lost in the Jungle
 	{
 		//Summon two 1/1 Silver Hand Recruits.
 

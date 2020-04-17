@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_05h : SimTemplate //* 克隆大师泽里克 Zerek, Master Cloner
+	class Sim_BOTA_BOSS_05h : SimCard //* 克隆大师泽里克 Zerek, Master Cloner
 	{
 		//
 		//

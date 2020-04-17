@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_188 : SimTemplate //abusivesergeant
+	class Sim_CS2_188 : SimCard //abusivesergeant
 	{
 
 //    kampfschrei:/ verleiht einem diener +2 angriff in diesem zug.

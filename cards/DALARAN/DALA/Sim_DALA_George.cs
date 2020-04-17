@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_George : SimTemplate //* 堕落的乔治 George the Fallen
+	class Sim_DALA_George : SimCard //* 堕落的乔治 George the Fallen
 	{
 		//
 		//

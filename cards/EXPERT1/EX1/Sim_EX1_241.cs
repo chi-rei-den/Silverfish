@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_241 : SimTemplate //lavaburst
+	class Sim_EX1_241 : SimCard //lavaburst
 	{
 
 //    verursacht $5 schaden. überladung:/ (2)

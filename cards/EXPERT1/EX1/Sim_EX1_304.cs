@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_304 : SimTemplate //* Void Terror
+    class Sim_EX1_304 : SimCard //* Void Terror
 	{
         //Battlecry: Destroy the minions on either side of this minion and gain their Attack and Health.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_032 : SimTemplate //* Crystalline Oracle
+	class Sim_UNG_032 : SimCard //* Crystalline Oracle
 	{
 		//Deathrattle: Copy a card from your opponent's deck and add it to your hand.
 

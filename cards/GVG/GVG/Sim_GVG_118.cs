@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_118 : SimTemplate //Troggzor the Earthinator
+    class Sim_GVG_118 : SimCard //Troggzor the Earthinator
     {
 
         // Whenever your opponent casts a spell, summon a Burly Rockjaw Trogg.

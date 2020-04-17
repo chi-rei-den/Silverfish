@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_028 : SimTemplate //* Shado-Pan Rider
+    class Sim_AT_028 : SimCard //* Shado-Pan Rider
     {
 		//Combo: +3 Attack
 			

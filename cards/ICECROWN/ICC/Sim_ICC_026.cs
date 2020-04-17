@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_026: SimTemplate //* Grim Necromancer
+    class Sim_ICC_026: SimCard //* Grim Necromancer
     {
         // Battlecry: Summon two 1/1 Skeletons.
 

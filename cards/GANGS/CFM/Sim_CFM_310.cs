@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_310 : SimTemplate //* Call in the Finishers
+	class Sim_CFM_310 : SimCard //* Call in the Finishers
 	{
 		// Summon four 1/1 Murlocs.
 

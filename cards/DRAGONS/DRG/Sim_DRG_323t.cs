@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_323t : SimTemplate //* 龙族使者 Draconic Emissary
+	class Sim_DRG_323t : SimCard //* 龙族使者 Draconic Emissary
 	{
 		//
 		//

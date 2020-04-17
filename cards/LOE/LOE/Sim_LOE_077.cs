@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_077 : SimTemplate //* Brann Bronzebeard
+	class Sim_LOE_077 : SimCard //* Brann Bronzebeard
 	{
 		//Your Battlecries trigger twice.
 		

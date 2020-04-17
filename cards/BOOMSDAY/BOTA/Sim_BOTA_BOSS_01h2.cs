@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_01h2 : SimTemplate //* 实验体 Test Subject
+	class Sim_BOTA_BOSS_01h2 : SimCard //* 实验体 Test Subject
 	{
 		//
 		//

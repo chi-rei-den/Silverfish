@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_055 : SimTemplate //manaaddict
+	class Sim_EX1_055 : SimCard //manaaddict
 	{
 
 //    erhält jedes mal +2 angriff in diesem zug, wenn ihr einen zauber wirkt.

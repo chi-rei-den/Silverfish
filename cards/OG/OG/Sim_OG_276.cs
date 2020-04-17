@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_276 : SimTemplate //* Blood Warriors
+	class Sim_OG_276 : SimCard //* Blood Warriors
 	{
 		//Add a copy of each damaged friendly minion to your hand.
 

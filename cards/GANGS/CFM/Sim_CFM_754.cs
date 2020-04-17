@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_754 : SimTemplate //* Grimy Gadgeteer
+	class Sim_CFM_754 : SimCard //* Grimy Gadgeteer
 	{
 		// At the end of your turn, give a random minion in your hand +2/+2.
 

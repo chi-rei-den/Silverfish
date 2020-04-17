@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_15 : SimTemplate //* 法力横流 Mana
+	class Sim_ULDA_Elise_15 : SimCard //* 法力横流 Mana
 	{
 		//
 		//

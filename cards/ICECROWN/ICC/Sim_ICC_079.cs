@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_079 : SimTemplate //* Gnash
+    class Sim_ICC_079 : SimCard //* Gnash
     {
         // Give your hero +3 Attack this turn. Gain 3 Armor.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_111 : SimTemplate //* Mimiron's Head
+    class Sim_GVG_111 : SimCard //* Mimiron's Head
     {
         //   At the start of your turn, if you have at least 3 Mechs, destroy them all and form V-07-TR-0N.
 

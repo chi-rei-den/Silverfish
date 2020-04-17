@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_076 : SimTemplate //* Eggnapper
+	class Sim_UNG_076 : SimCard //* Eggnapper
 	{
 		//Deathrattle: Summon two 1/1 Raptors.
 

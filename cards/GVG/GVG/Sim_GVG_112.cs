@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_112 : SimTemplate //Mogor the Ogre
+    class Sim_GVG_112 : SimCard //Mogor the Ogre
     {
 
         //   All minions have a 50% chance to attack the wrong enemy.

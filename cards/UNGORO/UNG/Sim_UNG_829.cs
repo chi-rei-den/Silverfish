@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829 : SimTemplate //* Lakkari Sacrifice
+	class Sim_UNG_829 : SimCard //* Lakkari Sacrifice
 	{
 		//Quest: Discard 6 cards. Reward: Nether Portal.
 

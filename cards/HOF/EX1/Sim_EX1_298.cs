@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_298 : SimTemplate //* Ragnaros the Firelord
+    class Sim_EX1_298 : SimCard //* Ragnaros the Firelord
     {
         // Can't Attack. At the end of your turn, deal 8 damage to a random enemy.
 

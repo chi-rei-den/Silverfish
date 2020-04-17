@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_070 : SimTemplate //* Tol'vir Stoneshaper
+	class Sim_UNG_070 : SimCard //* Tol'vir Stoneshaper
 	{
 		//Battlecry: If you played an Elemental last turn, gain Taunt and Divine Shield.
 

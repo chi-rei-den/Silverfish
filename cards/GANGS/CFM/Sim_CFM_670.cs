@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_670 : SimTemplate //* Mayor Noggenfogger
+	class Sim_CFM_670 : SimCard //* Mayor Noggenfogger
 	{
 		// All targets are chosen randomly.
 	}

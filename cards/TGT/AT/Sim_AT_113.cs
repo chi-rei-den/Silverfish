@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_113 : SimTemplate //* Recruiter
+	class Sim_AT_113 : SimCard //* Recruiter
 	{
 		//Inspire: Add a 2/2 Squire to your hand.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_069 : SimTemplate //Antique Healbot
+    class Sim_GVG_069 : SimCard //Antique Healbot
     {
 
         //   Battlecry: Restore 8 Health to your hero.

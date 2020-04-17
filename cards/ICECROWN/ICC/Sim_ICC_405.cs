@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_405: SimTemplate //* Rotface
+    class Sim_ICC_405: SimCard //* Rotface
     {
         // Whenever this minion survives damage, summon a random Legendary minion.
 

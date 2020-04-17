@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Rogue_01 : SimTemplate //* 巧取豪夺 Burgle
+	class Sim_TRLA_Rogue_01 : SimCard //* 巧取豪夺 Burgle
 	{
 		//
 		//

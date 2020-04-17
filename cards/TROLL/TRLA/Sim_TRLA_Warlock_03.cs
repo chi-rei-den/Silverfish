@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warlock_03 : SimTemplate //* 生命即滋养 Life Takers
+	class Sim_TRLA_Warlock_03 : SimCard //* 生命即滋养 Life Takers
 	{
 		//
 		//

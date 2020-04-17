@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_051 : SimTemplate //* Elemental Destruction
+	class Sim_AT_051 : SimCard //* Elemental Destruction
 	{
 		//Deal 4-5 damage to all minions. Overload: (5)
 

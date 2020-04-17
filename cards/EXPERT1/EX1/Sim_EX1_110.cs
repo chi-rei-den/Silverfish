@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_110 : SimTemplate //* cairnebloodhoof
+	class Sim_EX1_110 : SimCard //* cairnebloodhoof
 	{
         //Deathrattle: Summon a 4/5 Baine Bloodhoof.
 

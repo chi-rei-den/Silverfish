@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_019 : SimTemplate //* Dreadsteed
+	class Sim_AT_019 : SimCard //* Dreadsteed
 	{
 		//Deathrattle: Summon a Dreadsteed.
 

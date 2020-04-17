@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_294 : SimTemplate //* mirrorentity
+    class Sim_EX1_294 : SimCard //* mirrorentity
     {
         //Secret: When your opponent plays a minion, summon a copy of it.
 

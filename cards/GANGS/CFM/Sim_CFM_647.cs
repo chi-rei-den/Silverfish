@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_647 : SimTemplate //* Blowgill Sniper
+	class Sim_CFM_647 : SimCard //* Blowgill Sniper
 	{
 		// Battlecry: Deal 1 damage.
 

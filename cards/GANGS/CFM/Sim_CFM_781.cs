@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_781 : SimTemplate //* Shaku, the Collector
+	class Sim_CFM_781 : SimCard //* Shaku, the Collector
 	{
 		// Stealth. Whenever this minions attacks, add a random card to your hand (from your opponent's class).
         //handled

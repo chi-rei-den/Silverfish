@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_052 : SimTemplate //* Totem Golem
+	class Sim_AT_052 : SimCard //* Totem Golem
 	{
 		//Overload: (1)
 		

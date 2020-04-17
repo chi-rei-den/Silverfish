@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_MechWar_Boss2_HeroPower : SimTemplate
+	class Sim_TB_MechWar_Boss2_HeroPower : SimCard
 	{
 	}
 }

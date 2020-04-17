@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_065 : SimTemplate //* Sherazin, Corpse Flower
+	class Sim_UNG_065 : SimCard //* Sherazin, Corpse Flower
 	{
 		//Deathrattle: Go dormant. Play 4 cards in a turn to revive this minion.
 

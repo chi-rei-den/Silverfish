@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_061 : SimTemplate //* Anubisath Sentinel
+	class Sim_LOE_061 : SimCard //* Anubisath Sentinel
 	{
 		//Deathrattle: Give a random friendly minion +3/+3.
 		

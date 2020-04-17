@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_018 : SimTemplate //* Flame Geyser
+	class Sim_UNG_018 : SimCard //* Flame Geyser
 	{
 		//Deal $2 damage. Add a 1/2 Elemental to your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_067 : SimTemplate //* Hozen Healer
+	class Sim_CFM_067 : SimCard //* Hozen Healer
 	{
 		// Battlecry: Restore a minion to full Health.
 

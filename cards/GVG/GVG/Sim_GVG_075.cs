@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    internal class Sim_GVG_075 : SimTemplate //* Ship's Cannon
+    internal class Sim_GVG_075 : SimCard //* Ship's Cannon
     {
 
         //   Whenever you summon a Pirate, deal 2 damage to a random enemy.

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_235d : SimTemplate //* Dragonrider Talritha Effect Dummy Dragonrider Talritha Effect Dummy
+	class Sim_DRG_235d : SimCard //* Dragonrider Talritha Effect Dummy Dragonrider Talritha Effect Dummy
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_179 : SimTemplate //* Fiery Bat
+	class Sim_OG_179 : SimCard //* Fiery Bat
 	{
 		//Deathrattle: Deal 1 damage to a random enemy.
 		

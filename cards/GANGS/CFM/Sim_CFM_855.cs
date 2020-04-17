@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_855 : SimTemplate //* Defias Cleaner
+	class Sim_CFM_855 : SimCard //* Defias Cleaner
 	{
 		// Battlecry: Silence a minion with Deathrattle.
         

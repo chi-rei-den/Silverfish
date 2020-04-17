@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_412 : SimTemplate //ragingworgen
+	class Sim_EX1_412 : SimCard //ragingworgen
 	{
 
 //    wutanfall:/ windzorn/ und +1 angriff

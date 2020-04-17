@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Toki_04 : SimTemplate //* 冰霜之心 Frosty
+	class Sim_GILA_Toki_04 : SimCard //* 冰霜之心 Frosty
 	{
 		//
 		//

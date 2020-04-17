@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_065: SimTemplate //* Bone Baron
+    class Sim_ICC_065: SimCard //* Bone Baron
     {
         // Deathrattle: Add two 1/1 Skeletons to your hand.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_051 : SimTemplate //* Druid of the Swarm
+    class Sim_ICC_051 : SimCard //* Druid of the Swarm
     {
         // Choose One - Transform into a 1/2 with Poisonous; or a 1/5 with Taunt.
 

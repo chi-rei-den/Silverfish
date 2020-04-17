@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_07 : SimTemplate //* 数量即优势 Swarm
+	class Sim_LOOTA_Warlock_07 : SimCard //* 数量即优势 Swarm
 	{
 		//
 		//

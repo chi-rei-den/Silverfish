@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_121 : SimTemplate //* Crowd Favorite
+	class Sim_AT_121 : SimCard //* Crowd Favorite
 	{
 		//Whenever you play a card with Battlecry, gain +1/+1.
 

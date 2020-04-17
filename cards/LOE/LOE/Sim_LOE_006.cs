@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_006 : SimTemplate //* Museum Curator
+	class Sim_LOE_006 : SimCard //* Museum Curator
 	{
 		//Battlecry: Discover a Deathrattle card.
 		

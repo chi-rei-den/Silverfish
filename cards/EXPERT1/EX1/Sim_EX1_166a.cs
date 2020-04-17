@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_166a : SimTemplate //* moonfire
+	class Sim_EX1_166a : SimCard //* moonfire
 	{
         //Deal 2 damage.
 

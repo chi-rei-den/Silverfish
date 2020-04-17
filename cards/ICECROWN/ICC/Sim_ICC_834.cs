@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_834: SimTemplate //* Scourgelord Garrosh
+    class Sim_ICC_834: SimCard //* Scourgelord Garrosh
     {
         // Battlecry: Equip a 4/3 Shadowmourne that also damages adjacent minions.
 

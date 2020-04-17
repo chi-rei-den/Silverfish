@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_154a : SimTemplate //wrath
+	class Sim_EX1_154a : SimCard //wrath
 	{
 
 //    fügt einem diener $3 schaden zu.

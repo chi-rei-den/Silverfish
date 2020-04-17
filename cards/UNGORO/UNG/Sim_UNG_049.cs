@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_049 : SimTemplate //* Tar Lurker
+	class Sim_UNG_049 : SimCard //* Tar Lurker
 	{
 		//Taunt. Has +3 Attack during your opponent's turn.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_011 : SimTemplate //* webspinner
+	class Sim_FP1_011 : SimCard //* webspinner
 	{
 
 //    todesröcheln:/ fügt eurer hand ein zufälliges wildtier hinzu.

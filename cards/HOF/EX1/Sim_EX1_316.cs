@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_316 : SimTemplate //poweroverwhelming
+	class Sim_EX1_316 : SimCard //poweroverwhelming
 	{
         //Give a friendly minion +4/+4 until end of turn. Then, it dies. Horribly.
 

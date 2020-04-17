@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_360 : SimTemplate //* Humility
+    class Sim_EX1_360 : SimCard //* Humility
     {
         //Change a minion's Attack to 1.
 

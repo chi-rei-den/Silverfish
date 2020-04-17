@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_028 : SimTemplate //Trade Prince Gallywix
+    class Sim_GVG_028 : SimCard //Trade Prince Gallywix
     {
 
         //    Whenever your opponent casts a spell, gain a copy of it and give them a Coin.

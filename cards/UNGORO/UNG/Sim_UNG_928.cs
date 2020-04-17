@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_928 : SimTemplate //* Tar Creeper
+	class Sim_UNG_928 : SimCard //* Tar Creeper
 	{
 		//Taunt. Has +2 Attack during your opponent's turn.
 

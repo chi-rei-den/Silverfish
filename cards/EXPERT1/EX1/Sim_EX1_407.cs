@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_407 : SimTemplate //* Brawl
+	class Sim_EX1_407 : SimCard //* Brawl
 	{
         // Destroy all minions except one. (chosen randomly)
 

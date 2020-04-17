@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_281 : SimTemplate //* Beckoner of Evil
+	class Sim_OG_281 : SimCard //* Beckoner of Evil
 	{
 		//Battlecry: Give your C'Thun +2/+2 (wherever it is).
 		

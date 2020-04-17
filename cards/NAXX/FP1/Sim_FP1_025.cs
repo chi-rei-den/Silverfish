@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_025 : SimTemplate //reincarnate
+	class Sim_FP1_025 : SimCard //reincarnate
 	{
 
 //    vernichtet einen diener und bringt ihn dann mit vollem leben wieder auf das schlachtfeld zurück.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX10_03H : SimTemplate //* Hateful Strike
+	class Sim_NAX10_03H : SimCard //* Hateful Strike
 	{
 		// Hero Power: Destroy a minion.
 		

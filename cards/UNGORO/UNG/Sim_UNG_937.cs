@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_937 : SimTemplate //* Primalfin Lookout
+	class Sim_UNG_937 : SimCard //* Primalfin Lookout
 	{
 		//Battlecry: If you control another Murloc, Discover a Murloc.
 

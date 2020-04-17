@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_030 : SimTemplate //* Binding Heal
+	class Sim_UNG_030 : SimCard //* Binding Heal
 	{
 		//Restore #5 Health to a minion and your hero.
 

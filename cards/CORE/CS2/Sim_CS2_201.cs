@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_201 : SimTemplate //corehound
+	class Sim_CS2_201 : SimCard //corehound
 	{
 
 //

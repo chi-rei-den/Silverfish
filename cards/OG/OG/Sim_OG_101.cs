@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_101 : SimTemplate //* Forbidden Shaping
+	class Sim_OG_101 : SimCard //* Forbidden Shaping
 	{
 		//Spend all your Mana. Summon a random minion that costs that much.
 		

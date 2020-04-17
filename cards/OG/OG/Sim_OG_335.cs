@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_335 : SimTemplate //* Shifting Shade
+	class Sim_OG_335 : SimCard //* Shifting Shade
 	{
 		//Deathrattle: Copy a card from your opponent's deck and add it to your hand.
 		

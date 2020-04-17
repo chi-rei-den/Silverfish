@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX8_02 : SimTemplate //* Harvest
+	class Sim_NAX8_02 : SimCard //* Harvest
 	{
 
 //    Hero PowerDraw a card.

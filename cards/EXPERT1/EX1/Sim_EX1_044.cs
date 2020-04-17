@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_044 : SimTemplate //questingadventurer
+	class Sim_EX1_044 : SimCard //questingadventurer
 	{
 
 //    erhält jedes mal +1/+1, wenn ihr eine karte ausspielt.

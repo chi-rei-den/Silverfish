@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_844 : SimTemplate //* Humongous Razorleaf
+	class Sim_UNG_844 : SimCard //* Humongous Razorleaf
 	{
 		//Can't attack.
 

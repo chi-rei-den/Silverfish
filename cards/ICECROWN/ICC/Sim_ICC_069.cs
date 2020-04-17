@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_069: SimTemplate //* Ghastly Conjurer
+    class Sim_ICC_069: SimCard //* Ghastly Conjurer
     {
         // Battlecry: Add a 'Mirror Image' spell to your hand.
 

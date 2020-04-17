@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_110t : SimTemplate //* Boom Bot
+    class Sim_GVG_110t : SimCard //* Boom Bot
     {
         //  Deathrattle: Deal 1-4 damage to a random enemy.
 

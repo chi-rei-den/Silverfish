@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_849: SimTemplate //* Embrace Darkness
+    class Sim_ICC_849: SimCard //* Embrace Darkness
     {
         // Choose an enemy minion. At the start of your turn, gain control of it.
 

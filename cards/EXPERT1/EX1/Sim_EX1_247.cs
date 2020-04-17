@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_247 : SimTemplate //stormforgedaxe
+	class Sim_EX1_247 : SimCard //stormforgedaxe
 	{
         CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_247);
         //

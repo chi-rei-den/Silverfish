@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_034 : SimTemplate //* Poisoned Blade
+	class Sim_AT_034 : SimCard //* Poisoned Blade
 	{
 		//Your Hero Power gives this weapon +1 attack instead of replacing it.
 		

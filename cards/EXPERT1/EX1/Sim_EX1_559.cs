@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_559 : SimTemplate //archmageantonidas
+	class Sim_EX1_559 : SimCard //archmageantonidas
 	{
 
 //    erhaltet jedes mal einen „feuerball“-zauber auf eure hand, wenn ihr einen zauber wirkt.

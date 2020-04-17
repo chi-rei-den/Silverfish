@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_168 : SimTemplate //murlocraider
+	class Sim_CS2_168 : SimCard //murlocraider
 	{
 
 //

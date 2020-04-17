@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_126 : SimTemplate //betrayal
+	class Sim_EX1_126 : SimCard //betrayal
 	{
 
 //    zwingt einen feindlichen diener, seinen schaden benachbarten dienern zuzufügen.

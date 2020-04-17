@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_037 : SimTemplate //* Avian Watcher
+	class Sim_KAR_037 : SimCard //* Avian Watcher
 	{
 		//Battlecry: If you control a Secret, gain +1/+1 and Taunt.
 		

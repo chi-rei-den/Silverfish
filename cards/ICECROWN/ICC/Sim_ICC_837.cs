@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_837 : SimTemplate //* Bring It On!
+    class Sim_ICC_837 : SimCard //* Bring It On!
     {
         // Gain 10 Armor. Reduce the Cost of minions in your opponent's hand by (2)
 

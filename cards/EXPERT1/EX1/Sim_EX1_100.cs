@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_100 : SimTemplate //lorewalkercho
+	class Sim_EX1_100 : SimCard //lorewalkercho
 	{
 
 //    wenn ein spieler einen zauber wirkt, erhält der andere spieler eine kopie desselben auf seine hand.

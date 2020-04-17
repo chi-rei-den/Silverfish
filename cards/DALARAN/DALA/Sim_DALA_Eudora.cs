@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Eudora : SimTemplate //* 尤朵拉船长 Captain Eudora
+	class Sim_DALA_Eudora : SimCard //* 尤朵拉船长 Captain Eudora
 	{
 		//
 		//

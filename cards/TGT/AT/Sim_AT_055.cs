@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_055 : SimTemplate //* Flash Heal
+	class Sim_AT_055 : SimCard //* Flash Heal
 	{
 		//Restore 5 Health.
 

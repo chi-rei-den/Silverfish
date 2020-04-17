@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_004 : SimTemplate //* Goblin Blastmage
+    class Sim_GVG_004 : SimCard //* Goblin Blastmage
     {
         //Battlecry: If you have a Mech, deal 4 damage randomly split among all enemies.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Hunter_07 : SimTemplate //* 武器掌握 Weapons
+	class Sim_LOOTA_Hunter_07 : SimCard //* 武器掌握 Weapons
 	{
 		//
 		//

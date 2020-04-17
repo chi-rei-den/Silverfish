@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Toki_11 : SimTemplate //* 狂轰滥炸 BOOM!
+	class Sim_GILA_Toki_11 : SimCard //* 狂轰滥炸 BOOM!
 	{
 		//
 		//

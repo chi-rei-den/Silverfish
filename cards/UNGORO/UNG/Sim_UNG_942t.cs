@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_942t : SimTemplate //* Megafin
+	class Sim_UNG_942t : SimCard //* Megafin
 	{
 		//Battlecry: Fill your hand with random Murlocs.
 

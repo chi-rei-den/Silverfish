@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_023 : SimTemplate //faeriedragon
+	class Sim_NEW1_023 : SimCard //faeriedragon
 	{
 
 //    kann nicht als ziel von zaubern oder heldenfähigkeiten gewählt werden.

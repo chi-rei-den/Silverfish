@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_057 : SimTemplate //Seal of Light
+    class Sim_GVG_057 : SimCard //Seal of Light
     {
 
         //   Restore #4 Health to your hero and gain +2 Attack this turn.

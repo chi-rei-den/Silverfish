@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_505 : SimTemplate //* 全猪宴 Brazed Pork
+	class Sim_BOTA_505 : SimCard //* 全猪宴 Brazed Pork
 	{
 		//Start Mirror Puzzle 1-6.
 		//Start Mirror Puzzle 1-6.

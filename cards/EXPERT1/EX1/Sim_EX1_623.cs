@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_623 : SimTemplate //templeenforcer
+	class Sim_EX1_623 : SimCard //templeenforcer
 	{
 
 //    kampfschrei:/ verleiht einem befreundeten diener +3 leben.

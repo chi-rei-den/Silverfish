@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_284 : SimTemplate //* Twilight Geomancer
+	class Sim_OG_284 : SimCard //* Twilight Geomancer
 	{
 		//Taunt. Battlecry: Give your C'Thun Taunt (wherever it is).
 		

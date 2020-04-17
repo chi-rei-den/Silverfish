@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_662 : SimTemplate //* Dragonfire Potion
+	class Sim_CFM_662 : SimCard //* Dragonfire Potion
 	{
 		// Deal 5 damage to all minions except Dragons.
 

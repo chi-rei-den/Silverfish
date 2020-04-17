@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_019 : SimTemplate //* Grim Patron
+	class Sim_BRM_019 : SimCard //* Grim Patron
 	{
 		// Whenever this minion survives damage, summon another Grim Patron.
 

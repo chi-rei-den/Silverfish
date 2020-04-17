@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_023: SimTemplate //* Snowflipper Penguin
+    class Sim_ICC_023: SimCard //* Snowflipper Penguin
     {
         
     }

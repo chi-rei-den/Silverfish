@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_716 : SimTemplate //* Sleep with the Fishes
+	class Sim_CFM_716 : SimCard //* Sleep with the Fishes
 	{
 		// Deal 3 damage to all damaged minions.
 

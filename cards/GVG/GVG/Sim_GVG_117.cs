@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_117 : SimTemplate //* Gazlowe
+    class Sim_GVG_117 : SimCard //* Gazlowe
     {
 
         //   Whenever you cast a 1-mana spell, add a random Mech to your hand.

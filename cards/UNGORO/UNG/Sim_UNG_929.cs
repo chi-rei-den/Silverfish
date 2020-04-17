@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_929 : SimTemplate //* Molten Blade
+	class Sim_UNG_929 : SimCard //* Molten Blade
 	{
 		//Each turn this is in your hand, transform it into a new weapon.
 

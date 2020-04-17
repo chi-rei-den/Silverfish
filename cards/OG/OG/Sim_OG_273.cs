@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_273 : SimTemplate //* Stand Against Darkness
+	class Sim_OG_273 : SimCard //* Stand Against Darkness
 	{
 		//Summon five 1/1 Silver Hand Recruits.
 		

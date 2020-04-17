@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_118 : SimTemplate //* Grand Crusader
+	class Sim_AT_118 : SimCard //* Grand Crusader
 	{
 		//Battlecry: Add a random Paladin card to your hand.
 

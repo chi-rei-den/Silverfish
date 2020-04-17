@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_630 : SimTemplate //* Counterfeit Coin
+	class Sim_CFM_630 : SimCard //* Counterfeit Coin
 	{
 		// Gain 1 Mana Crystal this turn only.
 

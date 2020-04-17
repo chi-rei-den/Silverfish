@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_123 : SimTemplate //* Shifter Zerus
+	class Sim_OG_123 : SimCard //* Shifter Zerus
 	{
 		//Each turn this is in your hand, transform it into a different minion.
 	}

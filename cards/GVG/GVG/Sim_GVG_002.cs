@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_002 : SimTemplate //Snowchugger
+    class Sim_GVG_002 : SimCard //Snowchugger
     {
 
         //    Freeze any character damaged by this minion.

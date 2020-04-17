@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NAX8_04t : SimTemplate //* Spectral Warrior
+    class Sim_NAX8_04t : SimCard //* Spectral Warrior
     {
         //    At the start of your turn, deal 1 damage to your hero.
 

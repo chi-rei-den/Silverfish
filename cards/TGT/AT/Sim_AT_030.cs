@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_030 : SimTemplate //* Undercity Valiant
+	class Sim_AT_030 : SimCard //* Undercity Valiant
 	{
 		//Combo: deal 1 damage.
 

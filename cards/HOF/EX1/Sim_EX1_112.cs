@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_112 : SimTemplate //gelbinmekkatorque
+	class Sim_EX1_112 : SimCard //gelbinmekkatorque
 	{
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.Mekka1);//homingchicken
 //    kampfschrei:/ konstruiert eine fantastische erfindung.

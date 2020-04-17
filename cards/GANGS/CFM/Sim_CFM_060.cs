@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_060 : SimTemplate //* Red Mana Wyrm
+	class Sim_CFM_060 : SimCard //* Red Mana Wyrm
 	{
 		// Whenever you cast a spell, gain +2 Attack.
 

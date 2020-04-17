@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_mirror : SimTemplate //mirrorimage
+	class Sim_CS2_mirror : SimCard //mirrorimage
 	{
 
 //    spott/

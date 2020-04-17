@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_04h : SimTemplate //* 观星者露娜 Stargazer Luna
+	class Sim_BOTA_BOSS_04h : SimCard //* 观星者露娜 Stargazer Luna
 	{
 		//
 		//

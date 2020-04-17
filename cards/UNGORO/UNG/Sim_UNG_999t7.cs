@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t7 : SimTemplate //* Lightning Speed
+	class Sim_UNG_999t7 : SimCard //* Lightning Speed
 	{
 		//Windfury
 

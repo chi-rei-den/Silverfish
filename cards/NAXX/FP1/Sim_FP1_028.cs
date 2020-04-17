@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_028 : SimTemplate //undertaker
+	class Sim_FP1_028 : SimCard //undertaker
 	{
 
 //    Whenever you summon a minion with Deathrattle, gain +1 Attack.

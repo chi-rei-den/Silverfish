@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_035 : SimTemplate //* Priest of the Feast
+	class Sim_KAR_035 : SimCard //* Priest of the Feast
 	{
 		//Whenever you cast a spell, restore 3 Health to your hero.
 

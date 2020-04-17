@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_320 : SimTemplate //* Midnight Drake
+	class Sim_OG_320 : SimCard //* Midnight Drake
 	{
 		// Battlecry: Gain +1 attack for each other card in your hand.
 		

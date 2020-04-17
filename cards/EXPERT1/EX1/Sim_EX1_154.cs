@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_154 : SimTemplate //* Wrath
+    class Sim_EX1_154 : SimCard //* Wrath
 	{
         // Choose One - Deal $3 damage to a minion; or $1 damage and draw a card.
 

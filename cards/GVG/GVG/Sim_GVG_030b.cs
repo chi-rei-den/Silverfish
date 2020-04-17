@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_030b : SimTemplate //Tank Mode
+    class Sim_GVG_030b : SimCard //Tank Mode
 	{
 
         //   +1 Health.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_097 : SimTemplate //* Medivh, the Guardian
+	class Sim_KAR_097 : SimCard //* Medivh, the Guardian
 	{
 		//Battlecry: Equip Atiesh, Greatstaff of the Guardian.
 		

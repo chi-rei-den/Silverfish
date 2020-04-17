@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_109 : SimTemplate //* Elder Longneck
+	class Sim_UNG_109 : SimCard //* Elder Longneck
 	{
 		//Battlecry: If you're holding a minion with 5 or more Attack, Adapt.
 

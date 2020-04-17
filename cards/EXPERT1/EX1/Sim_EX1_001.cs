@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_001 : SimTemplate //* lightwarden
+	class Sim_EX1_001 : SimCard //* lightwarden
 	{
         // Whenever a character is healed, gain +2 Attack.
 

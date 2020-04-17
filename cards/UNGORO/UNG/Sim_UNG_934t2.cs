@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_934t2 : SimTemplate //* DIE, INSECT!
+	class Sim_UNG_934t2 : SimCard //* DIE, INSECT!
 	{
 		// Hero Power: Deal 8 damage to a random enemy.
 		

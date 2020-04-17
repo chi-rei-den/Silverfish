@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_530 : SimTemplate //* 缩小方案 Shrinking Solutions
+	class Sim_BOTA_530 : SimCard //* 缩小方案 Shrinking Solutions
 	{
 		//Start Mirror Puzzle 4-2.
 		//Start Mirror Puzzle 4-2.

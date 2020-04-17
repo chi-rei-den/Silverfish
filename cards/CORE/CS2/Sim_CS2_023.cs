@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_023 : SimTemplate //arcaneintellect
+	class Sim_CS2_023 : SimCard //arcaneintellect
 	{
 
 //    zieht 2 karten.

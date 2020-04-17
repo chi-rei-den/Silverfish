@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_203 : SimTemplate //ironbeakowl
+	class Sim_CS2_203 : SimCard //ironbeakowl
 	{
 
 //    kampfschrei:/ bringt einen diener zum schweigen/.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_034 : SimTemplate //* Blackwing Corruptor
+    class Sim_BRM_034 : SimCard //* Blackwing Corruptor
     {
         // Battlecry: If you're holding a Dragon, deal 3 damage.
 

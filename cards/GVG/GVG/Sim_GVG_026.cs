@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_026 : SimTemplate //Feign Death
+    class Sim_GVG_026 : SimCard //Feign Death
     {
 
         //   Trigger all Deathrattles on your minions.

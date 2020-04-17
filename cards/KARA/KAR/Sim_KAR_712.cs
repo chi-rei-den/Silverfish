@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_712 : SimTemplate //* Violet Illusionist
+	class Sim_KAR_712 : SimCard //* Violet Illusionist
 	{
 		//During your turn, your hero is Immune.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_024 : SimTemplate //* Flamewreathed Faceless
+	class Sim_OG_024 : SimCard //* Flamewreathed Faceless
 	{
 		//Overload: (2)
 		

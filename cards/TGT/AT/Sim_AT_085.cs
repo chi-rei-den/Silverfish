@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_085 : SimTemplate //* Maiden of the Lake
+	class Sim_AT_085 : SimCard //* Maiden of the Lake
 	{
 		//Your Hero Power costs (1).
 		

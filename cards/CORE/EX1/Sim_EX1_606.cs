@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_606 : SimTemplate //shieldblock
+	class Sim_EX1_606 : SimCard //shieldblock
 	{
 
 //    erhaltet 5 rüstung. zieht eine karte.

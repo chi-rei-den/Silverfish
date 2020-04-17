@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132 : SimTemplate //* Justicar Trueheart
+	class Sim_AT_132 : SimCard //* Justicar Trueheart
 	{
 		//Battlecry: Replace your starting Hero Power with a better one.
 		

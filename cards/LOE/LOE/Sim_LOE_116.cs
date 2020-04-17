@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_116 : SimTemplate //* Reliquary Seeker
+	class Sim_LOE_116 : SimCard //* Reliquary Seeker
 	{
 		//Battlecry: If you have 6 other minions, gain +4/+4.
 

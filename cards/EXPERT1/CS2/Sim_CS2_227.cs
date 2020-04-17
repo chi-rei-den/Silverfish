@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_227 : SimTemplate //* Venture Co. Mercenary
+	class Sim_CS2_227 : SimCard //* Venture Co. Mercenary
 	{
         //Your minions cost (3) more.
 

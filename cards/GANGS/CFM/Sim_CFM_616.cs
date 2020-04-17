@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_616 : SimTemplate //* Pilfered Power
+	class Sim_CFM_616 : SimCard //* Pilfered Power
 	{
 		// Gain an empty Mana Crystal for each friendly minion.
 

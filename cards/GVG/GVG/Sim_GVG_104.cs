@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_104 : SimTemplate //* Hobgoblin
+    class Sim_GVG_104 : SimCard //* Hobgoblin
     {
         //  Whenever you play a 1-Attack minion, give it +2/+2 
 

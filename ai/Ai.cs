@@ -1,9 +1,9 @@
-﻿namespace HREngine.Bots
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
+namespace HREngine.Bots
+{
     public class Ai
     {
 
@@ -171,7 +171,7 @@
                 help.logg("missing dmg to lethal " + this.lethalMissing);
             }
         }
-        
+
         public void doNextCalcedMove()
         {
             help.logg("noRecalcNeeded!!!-----------------------------------");
@@ -271,9 +271,9 @@
             //help.logging(true);
 
         }
-        
 
 
+        /*
         public List<double> autoTester(bool printstuff, string data = "", int mode = 0) //-mode: 0-all, 1-lethalcheck, 2-normal
         {
             List<double> retval = new List<double>();
@@ -344,6 +344,7 @@
 
             return retval;
         }
+        */
 
         public void simmulateWholeTurn()
         {

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_063 : SimTemplate //corruption
+	class Sim_CS2_063 : SimCard //corruption
 	{
 
 //    wählt einen feindlichen diener aus. vernichtet ihn zu beginn eures zuges.

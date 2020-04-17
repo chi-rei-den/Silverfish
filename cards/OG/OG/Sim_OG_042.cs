@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_042 : SimTemplate //* Y'Shaarj, Rage Unbound
+	class Sim_OG_042 : SimCard //* Y'Shaarj, Rage Unbound
 	{
 		//At the end of your turn, put a minion from your deck into the battlefield.
 		

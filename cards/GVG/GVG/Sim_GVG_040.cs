@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_040 : SimTemplate //* Siltfin Spiritwalker
+    class Sim_GVG_040 : SimCard //* Siltfin Spiritwalker
     {
 //    Whenever another friendly Murloc dies, draw a card. Overload: (1)
 

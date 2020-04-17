@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_611 : SimTemplate //* Bloodfury Potion
+	class Sim_CFM_611 : SimCard //* Bloodfury Potion
 	{
 		// Give a minion +3 Attack. If it's a Demon, also give it +3 Health.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_333 : SimTemplate //* Knuckles
+	class Sim_CFM_333 : SimCard //* Knuckles
 	{
 		// After this attacks a minion, it also hits the enemy hero.
         //handled

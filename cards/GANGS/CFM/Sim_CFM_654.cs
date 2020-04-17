@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_654 : SimTemplate //* Friendly Bartender
+	class Sim_CFM_654 : SimCard //* Friendly Bartender
 	{
 		// At the end of your turn, restore 1 Health to your Hero.
 

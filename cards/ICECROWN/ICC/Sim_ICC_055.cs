@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_055: SimTemplate //* Drain Soul
+    class Sim_ICC_055: SimCard //* Drain Soul
     {
         // Lifesteal. Deal 2 damage to a minion.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_063 : SimTemplate //* Acidmaw
+	class Sim_AT_063 : SimCard //* Acidmaw
 	{
 		//Whenever another minion takes damage, destroy it.
 

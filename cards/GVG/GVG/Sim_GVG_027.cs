@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_027 : SimTemplate //* Iron Sensei
+    class Sim_GVG_027 : SimCard //* Iron Sensei
     {
         //At the end of your turn, give another friendly Mech +2/+2.
 

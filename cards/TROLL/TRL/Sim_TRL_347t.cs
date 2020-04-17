@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_347t : SimTemplate //* 魔暴龙 Devilsaur
+	class Sim_TRL_347t : SimCard //* 魔暴龙 Devilsaur
 	{
 		//
 		//

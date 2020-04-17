@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_tk29 : SimTemplate //devilsaur
+	class Sim_EX1_tk29 : SimCard //devilsaur
 	{
 
 //    teufelssaurier

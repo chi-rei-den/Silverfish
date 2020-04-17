@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX6_03 : SimTemplate //* Deathbloom
+	class Sim_NAX6_03 : SimCard //* Deathbloom
 	{
 		// Deal $5 damage to a minion. Summon a Spore.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAXM_002 : SimTemplate //* Skeletal Smith
+	class Sim_NAXM_002 : SimCard //* Skeletal Smith
 	{
 		// Deathrattle: Destroy your opponent's weapon.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_011 : SimTemplate //* Reno Jackson
+	class Sim_LOE_011 : SimCard //* Reno Jackson
 	{
 		//Battlecry: If your deck contains no more than 1 of any card, fully heal your hero.
 		

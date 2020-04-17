@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_123 : SimTemplate //* Chillmaw
+	class Sim_AT_123 : SimCard //* Chillmaw
 	{
 		//Taunt Deathrattle: If you're holding a Dragon, deal 3 damage to all minions.
 

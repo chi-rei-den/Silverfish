@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_206: SimTemplate //* Treachery
+    class Sim_ICC_206: SimCard //* Treachery
     {
         // Choose a friendly minion. Your opponent gains control of it.
 

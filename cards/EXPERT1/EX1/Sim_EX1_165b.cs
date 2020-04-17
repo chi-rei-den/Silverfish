@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_165b : SimTemplate //bearform
+	class Sim_EX1_165b : SimCard //bearform
 	{
 
 //    +2 leben und spott/.

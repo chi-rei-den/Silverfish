@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_195 : SimTemplate //* Wisps of the Old Gods
+	class Sim_OG_195 : SimCard //* Wisps of the Old Gods
 	{
 		//Choose One - Summon seven 1/1 Wisps; or Give your minions +2/+2.
 		

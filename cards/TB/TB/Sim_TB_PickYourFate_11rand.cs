@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_PickYourFate_11rand : SimTemplate
+	class Sim_TB_PickYourFate_11rand : SimCard
 	{
 	}
 }

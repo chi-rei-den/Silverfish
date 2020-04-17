@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_165a : SimTemplate //* Cat Form
+    class Sim_EX1_165a : SimCard //* Cat Form
 	{
         //Charge
 

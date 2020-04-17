@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_109 : SimTemplate //* Darkshire Librarian
+    class Sim_OG_109 : SimCard //* Darkshire Librarian
     {
         //Battlecry: Discard a random card. Deathrattle: Draw a card.
 

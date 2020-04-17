@@ -1,11 +1,11 @@
-﻿namespace HREngine.Bots
+﻿using Silverfish;
+using System;
+using System.Collections.Generic;
+using System.IO;
+
+namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-
-
-    public class ComboBreaker
+     public class ComboBreaker
     {
 
         enum combotype
@@ -15,7 +15,7 @@
             weaponuse
         }
 
-        private Dictionary<CardDB.cardIDEnum, int> playByValue = new Dictionary<CardDB.cardIDEnum, int>();
+        private Dictionary<SimCard, int> playByValue = new Dictionary<CardDB.cardIDEnum, int>();
         private List<combo> combos = new List<combo>();
         public int attackFaceHP = -1;
 
@@ -376,7 +376,7 @@
             }
 
         }
-        
+
         private ComboBreaker()
         {
             if (attackFaceHP != -1)
@@ -403,7 +403,7 @@
                 help.ErrorLog(behavName + ": 没有特定的“连招”.");
                 return;
             }
-            
+
             help.ErrorLog("[连招功能] 成功加载“连招” " + behavName);
             string[] lines = new string[0] { };
             combos.Clear();

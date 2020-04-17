@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_572 : SimTemplate //ysera
+	class Sim_EX1_572 : SimCard //ysera
 	{
 
 //    zieht am ende eures zuges eine traumkarte.

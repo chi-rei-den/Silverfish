@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_06 : SimTemplate //* 防御即攻击 Taunt
+	class Sim_LOOTA_Warlock_06 : SimCard //* 防御即攻击 Taunt
 	{
 		//
 		//

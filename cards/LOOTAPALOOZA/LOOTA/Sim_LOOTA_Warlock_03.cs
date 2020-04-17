@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_03 : SimTemplate //* 唯一即永恒 Unique
+	class Sim_LOOTA_Warlock_03 : SimCard //* 唯一即永恒 Unique
 	{
 		//
 		//

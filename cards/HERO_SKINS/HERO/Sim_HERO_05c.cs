@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_05c : SimTemplate //* 希尔瓦娜斯·风行者 Sylvanas Windrunner
+	class Sim_HERO_05c : SimCard //* 希尔瓦娜斯·风行者 Sylvanas Windrunner
 	{
 		//
 		//

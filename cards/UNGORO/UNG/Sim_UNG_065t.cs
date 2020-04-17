@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_065t : SimTemplate //* Sherazin, Seed
+	class Sim_UNG_065t : SimCard //* Sherazin, Seed
 	{
 		//When you play 4 cards in a turn, revive this minion.
 

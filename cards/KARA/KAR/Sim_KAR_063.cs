@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_063 : SimTemplate //* Spirit Claws
+	class Sim_KAR_063 : SimCard //* Spirit Claws
 	{
 		//Has +2 Attack while you have Spell Damage.
 

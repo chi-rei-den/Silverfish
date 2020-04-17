@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_619 : SimTemplate //* Kabal Chemist
+	class Sim_CFM_619 : SimCard //* Kabal Chemist
 	{
 		// Battlecry: Add a random Potion to your hand.
 

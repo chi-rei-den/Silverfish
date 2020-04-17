@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_587 : SimTemplate //windspeaker
+	class Sim_EX1_587 : SimCard //windspeaker
 	{
 
 //    kampfschrei:/ verleiht einem befreundeten diener windzorn/.

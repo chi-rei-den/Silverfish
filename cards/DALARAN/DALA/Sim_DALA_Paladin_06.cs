@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Paladin_06 : SimTemplate //* 强化手牌 Handbuff
+	class Sim_DALA_Paladin_06 : SimCard //* 强化手牌 Handbuff
 	{
 		//
 		//

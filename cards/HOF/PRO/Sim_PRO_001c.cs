@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_PRO_001c : SimTemplate //* powerofthehorde
+	class Sim_PRO_001c : SimCard //* powerofthehorde
 	{
         //Summon a random Horde Warrior.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_390);

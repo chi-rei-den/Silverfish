@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_280 : SimTemplate //* C'Thun
+    class Sim_OG_280 : SimCard //* C'Thun
     {
         //Battlecry: Deal damage equal to this minion's Attack randomly split among all enemies.
 

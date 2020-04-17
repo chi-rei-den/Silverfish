@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EVILBRM_DALA_Warlock_02 : SimTemplate
+	class Sim_EVILBRM_DALA_Warlock_02 : SimCard
 	{
 	}
 }

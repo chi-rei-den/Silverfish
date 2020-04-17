@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_272 : SimTemplate //* Twilight Summoner
+	class Sim_OG_272 : SimCard //* Twilight Summoner
 	{
 		//Deathrattle: Summon a 5/5 Faceless Destroyer.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_DRUID : SimTemplate //* Dire Shapeshift
+	class Sim_AT_132_DRUID : SimCard //* Dire Shapeshift
 	{
 		//Hero Power. Gain 2 Armor and +2 Attack this turn.
 		

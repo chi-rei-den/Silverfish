@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warlock_09 : SimTemplate //* 小巧即灵活 Lil' Demons
+	class Sim_DALA_Warlock_09 : SimCard //* 小巧即灵活 Lil' Demons
 	{
 		//
 		//

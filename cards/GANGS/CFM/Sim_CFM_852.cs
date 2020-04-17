@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_852 : SimTemplate //* Lotus Agents
+	class Sim_CFM_852 : SimCard //* Lotus Agents
 	{
 		// Battlecry: Discover a Druid, Rogue or Shaman card.
 

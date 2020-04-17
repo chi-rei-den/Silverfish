@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t5 : SimTemplate //* Liquid Membrane
+	class Sim_UNG_999t5 : SimCard //* Liquid Membrane
 	{
 		//Can't be targeted by spells or Hero Powers.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_085 : SimTemplate //mindcontroltech
+	class Sim_EX1_085 : SimCard //mindcontroltech
 	{
         //todo list
 //    kampfschrei:/ falls euer gegner mind. 4 diener hat, übernehmt zufällig die kontrolle über einen davon.

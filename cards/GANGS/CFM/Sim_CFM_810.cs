@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_810 : SimTemplate //* Leatherclad Hogleader
+	class Sim_CFM_810 : SimCard //* Leatherclad Hogleader
 	{
 		// Battlecry: If your opponent has 6 or more cards in hand, gain Charge.
 

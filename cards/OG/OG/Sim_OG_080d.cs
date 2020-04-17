@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080d : SimTemplate //* Briarthorn Toxin
+	class Sim_OG_080d : SimCard //* Briarthorn Toxin
 	{
 		//Give a minion +3 Attack.
 		

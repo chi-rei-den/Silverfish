@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_116 : SimTemplate //* Wyrmrest Agent
+	class Sim_AT_116 : SimCard //* Wyrmrest Agent
 	{
 		//Battlecry: If you're holding a Dragon, gain +1 Attack and Taunt.
 

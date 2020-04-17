@@ -26,7 +26,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
 
-    class Sim_EX1_133 : SimTemplate//pertitions blade
+    class Sim_EX1_133 : SimCard//pertitions blade
     {
         CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_133);
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_011 : SimTemplate //* Lava Shock
+	class Sim_BRM_011 : SimCard //* Lava Shock
 	{
 		// Deal 2 damage. Unlock your Overloaded Mana Crystals.
 		

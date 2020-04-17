@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_096 : SimTemplate //* Twilight Darkmender
+	class Sim_OG_096 : SimCard //* Twilight Darkmender
 	{
 		//Battlecry: If your C'Thun has at least 10 Attack, restore 10 Health to your hero.
 		

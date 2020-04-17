@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_076 : SimTemplate //* Sir Finley Mrrgglton
+	class Sim_LOE_076 : SimCard //* Sir Finley Mrrgglton
 	{
 		//Battlecry: Discover a new Basic Hero Power.
 		

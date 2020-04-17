@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_124 : SimTemplate //eviscerate
+	class Sim_EX1_124 : SimCard //eviscerate
 	{
 
 //    verursacht $2 schaden. combo:/ verursacht stattdessen $4 schaden.

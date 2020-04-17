@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_TagTeam_Rogue : SimTemplate
+	class Sim_TB_TagTeam_Rogue : SimCard
 	{
 	}
 }

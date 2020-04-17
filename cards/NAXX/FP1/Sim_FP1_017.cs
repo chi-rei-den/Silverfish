@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_017 : SimTemplate //nerubarweblord
+	class Sim_FP1_017 : SimCard //nerubarweblord
 	{
 
 //    diener mit kampfschrei/ kosten (2) mehr.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_079 : SimTemplate //* Elise Starseeker
+	class Sim_LOE_079 : SimCard //* Elise Starseeker
 	{
 		//Battlecry: Shuffle the 'Map to the Golden Monkey' into your deck.
 

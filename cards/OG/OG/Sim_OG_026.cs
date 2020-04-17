@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_026 : SimTemplate //* Eternal Sentinel
+	class Sim_OG_026 : SimCard //* Eternal Sentinel
 	{
 		//Battlecry: Unlock your Overloaded Mana Crystals.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_103 : SimTemplate //* North Sea Kraken
+	class Sim_AT_103 : SimCard //* North Sea Kraken
 	{
 		//Battlecry: Deal 4 damage.
 		

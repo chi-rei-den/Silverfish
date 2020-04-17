@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_121 : SimTemplate //Clockwork Giant
+    class Sim_GVG_121 : SimCard //Clockwork Giant
     {
 
         //   Costs (1) less for each card in your opponent's hand.

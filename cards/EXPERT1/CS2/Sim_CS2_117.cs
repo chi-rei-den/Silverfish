@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_117 : SimTemplate //earthenringfarseer
+	class Sim_CS2_117 : SimCard //earthenringfarseer
 	{
 
 //    kampfschrei:/ stellt 3 leben wieder her.

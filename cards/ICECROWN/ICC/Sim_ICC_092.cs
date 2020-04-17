@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_092: SimTemplate //* Acherus Veteran
+    class Sim_ICC_092: SimCard //* Acherus Veteran
     {
         // Battlecry: Give a friendly minion +1 Attack.
 

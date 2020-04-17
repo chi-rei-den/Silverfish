@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_02 : SimTemplate //* 野兽成群 Swarming Beasts
+	class Sim_ULDA_Brann_02 : SimCard //* 野兽成群 Swarming Beasts
 	{
 		//
 		//

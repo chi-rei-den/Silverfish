@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_204 : SimTemplate //* Professor Putricide
+    class Sim_ICC_204 : SimCard //* Professor Putricide
     {
         // After you play a Secret, put another random Hunter secret into play.
 

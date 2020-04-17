@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_19 : SimTemplate //* 盗亦有道 Honor Among Thieves
+	class Sim_ULDA_Reno_19 : SimCard //* 盗亦有道 Honor Among Thieves
 	{
 		//
 		//

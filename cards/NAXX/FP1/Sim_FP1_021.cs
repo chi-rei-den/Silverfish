@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_021 : SimTemplate//* Death's Bite
+    class Sim_FP1_021 : SimCard//* Death's Bite
     {
         //Deathrattle: Deal 1 damage to all minions.
 

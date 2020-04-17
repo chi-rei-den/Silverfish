@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_097 : SimTemplate //Lil' Exorcist
+    class Sim_GVG_097 : SimCard //Lil' Exorcist
     {
 
         //   Taunt Battlecry: Gain +1/+1 for each enemy Deathrattle minion.

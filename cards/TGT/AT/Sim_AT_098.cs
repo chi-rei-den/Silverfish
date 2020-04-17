@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_098 : SimTemplate //* Sideshow Spelleater
+	class Sim_AT_098 : SimCard //* Sideshow Spelleater
 	{
 		//Battlecry: Copy your opoonent's Hero Power.
 

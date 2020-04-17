@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_019t : SimTemplate //* Map to the Golden Monkey
+	class Sim_LOE_019t : SimCard //* Map to the Golden Monkey
 	{
 		//Shuffle the Golden Monkey into your deck. Draw a card.
 		

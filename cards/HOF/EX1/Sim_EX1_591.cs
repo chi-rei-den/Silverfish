@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_591 : SimTemplate //auchenaisoulpriest
+	class Sim_EX1_591 : SimCard //auchenaisoulpriest
 	{
 
 //    eure karten und fähigkeiten, die leben wiederherstellen, verursachen stattdessen nun schaden.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_037 : SimTemplate //* Master Swordsmith
+    class Sim_NEW1_037 : SimCard //* Master Swordsmith
 	{
         //At the end of your turn, give another random friendly minion +1 Attack.
 

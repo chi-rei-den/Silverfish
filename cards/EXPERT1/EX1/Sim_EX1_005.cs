@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_005 : SimTemplate //biggamehunter
+	class Sim_EX1_005 : SimCard //biggamehunter
 	{
 
 //    kampfschrei:/ vernichtet einen diener mit mind. 7 angriff.

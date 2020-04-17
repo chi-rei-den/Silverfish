@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_687 : SimTemplate //* Inkmaster Solia
+	class Sim_CFM_687 : SimCard //* Inkmaster Solia
 	{
 		// Battlecry: If your deck has no duplicates, the next spell you cast this turn costs (0).
 

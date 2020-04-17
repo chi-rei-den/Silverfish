@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_BRM_007 : SimTemplate //* Gang Up
+    class Sim_BRM_007 : SimCard //* Gang Up
     {
         // Choose a minion. Shuffle 3 copies of it into your deck.
 

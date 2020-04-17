@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_144 : SimTemplate //* shadowstep
+	class Sim_EX1_144 : SimCard //* shadowstep
 	{
         //Return a friendly minion to your hand. It costs (2) less.
 

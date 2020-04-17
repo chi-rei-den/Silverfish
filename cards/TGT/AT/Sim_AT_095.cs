@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_095 : SimTemplate //* Silent Knight
+	class Sim_AT_095 : SimCard //* Silent Knight
 	{
 		//Stealth. Divine Shield
 	}

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_006 : SimTemplate //Reversing Switch
+    class Sim_PART_006 : SimCard //Reversing Switch
     {
         //   Swap a minion's Attack and Health.
 

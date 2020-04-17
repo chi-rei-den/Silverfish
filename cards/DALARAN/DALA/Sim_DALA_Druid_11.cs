@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Druid_11 : SimTemplate //* 巨型伙伴 Big Friends
+	class Sim_DALA_Druid_11 : SimCard //* 巨型伙伴 Big Friends
 	{
 		//
 		//

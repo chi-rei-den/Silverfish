@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Lunar_OxEe : SimTemplate
+	class Sim_TB_Lunar_OxEe : SimCard
 	{
 	}
 }

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_188 : SimTemplate //gladiatorslongbow
+	class Sim_DS1_188 : SimCard //gladiatorslongbow
 	{
         CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.DS1_188);
 //    euer held ist immun/, während er angreift.

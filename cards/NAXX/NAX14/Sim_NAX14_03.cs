@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX14_03 : SimTemplate //* Frozen Champion
+	class Sim_NAX14_03 : SimCard //* Frozen Champion
 	{
 		//Permanently Frozen.  Adjacent minions are Immune to Frost Breath.
 		// Handled in Frost Breath

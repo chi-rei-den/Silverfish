@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_020 : SimTemplate //* Wild Pyromancer
+	class Sim_NEW1_020 : SimCard //* Wild Pyromancer
 	{
 		// After you cast a spell, deal 1 damage to ALL minions.
 

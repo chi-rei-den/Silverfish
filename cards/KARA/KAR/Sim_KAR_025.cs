@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_025 : SimTemplate //* Kara Kazham!
+	class Sim_KAR_025 : SimCard //* Kara Kazham!
 	{
 		//Summon a 1/1 Candle, 2/2 Broom, and 3/3 Teapot.
 		

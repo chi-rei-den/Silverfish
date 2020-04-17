@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PART_003 : SimTemplate //* Rusty Horn
+    class Sim_PART_003 : SimCard //* Rusty Horn
     {
         // Give a minion Taunt.  
 

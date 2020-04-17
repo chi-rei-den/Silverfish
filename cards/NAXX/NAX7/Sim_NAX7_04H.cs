@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX7_04H : SimTemplate //* 10/2 Massive Runeblade
+	class Sim_NAX7_04H : SimCard //* 10/2 Massive Runeblade
 	{
 		//Deals double damage to heroes.
 		//Handled in minionAttacksMinion()

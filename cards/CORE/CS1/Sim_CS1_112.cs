@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS1_112 : SimTemplate//holy nova
+    class Sim_CS1_112 : SimCard//holy nova
     {
         //todo make it better :D
         //FÃ¼gt allen Feinden $2 Schaden zu. Stellt bei allen befreundeten Charakteren #2 Leben wieder her.

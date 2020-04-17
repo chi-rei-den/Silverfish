@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_205 : SimTemplate //* Silverware Golem
+	class Sim_KAR_205 : SimCard //* Silverware Golem
 	{
 		//If you discard this minion, summon it.
 

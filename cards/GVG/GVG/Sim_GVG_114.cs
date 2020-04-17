@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_114 : SimTemplate //* Sneed's Old Shredder
+    class Sim_GVG_114 : SimCard //* Sneed's Old Shredder
     {
 
         // Deathrattle: Summon a random legendary minion.

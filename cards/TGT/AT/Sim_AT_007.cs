@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_007 : SimTemplate //* Spellslinger
+	class Sim_AT_007 : SimCard //* Spellslinger
 	{
 		//Battlecry: Add a random spell card to each player's hand.
 		

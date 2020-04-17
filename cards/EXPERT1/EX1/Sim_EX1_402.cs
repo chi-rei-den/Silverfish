@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_402 : SimTemplate //* armorsmith
+	class Sim_EX1_402 : SimCard //* armorsmith
 	{
     // Whenever a friendly minion takes damage, gain 1 Armor.
 

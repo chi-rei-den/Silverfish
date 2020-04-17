@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_823: SimTemplate //* Simulacrum
+    class Sim_ICC_823: SimCard //* Simulacrum
     {
         // Copy the lowest Cost minion in your hand.
 

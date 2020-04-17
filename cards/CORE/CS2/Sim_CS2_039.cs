@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_039 : SimTemplate //windfury
+	class Sim_CS2_039 : SimCard //windfury
 	{
 
 //    verleiht einem diener windzorn/.

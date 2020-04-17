@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_808 : SimTemplate //* Stubborn Gastropod
+	class Sim_UNG_808 : SimCard //* Stubborn Gastropod
 	{
 		//Taunt. Poisonous
 

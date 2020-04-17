@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_702: SimTemplate //* Shallow Gravedigger
+    class Sim_ICC_702: SimCard //* Shallow Gravedigger
     {
         // Deathrattle: Add a random Deathrattle minion to your hand.
 

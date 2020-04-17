@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_537 : SimTemplate // Explosive Shot
+    class Sim_EX1_537 : SimCard // Explosive Shot
 	{
         // Deal $5 damage to a minion and $2 damage to adjacent ones.
 

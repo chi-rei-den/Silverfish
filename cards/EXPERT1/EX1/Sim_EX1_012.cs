@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_012 : SimTemplate//* bloodmage thalnos
+    class Sim_EX1_012 : SimCard//* bloodmage thalnos
     {
         public override void onAuraStarts(Playfield p, Minion own)
         {

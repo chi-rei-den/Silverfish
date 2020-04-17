@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_710 : SimTemplate //* Arcanosmith
+	class Sim_KAR_710 : SimCard //* Arcanosmith
 	{
 		//Battlecry: Summon a 0/5 minion with Taunt.
 		

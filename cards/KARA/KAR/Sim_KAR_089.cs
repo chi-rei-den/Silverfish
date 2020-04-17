@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_089 : SimTemplate //* Malchezaar's Imp
+	class Sim_KAR_089 : SimCard //* Malchezaar's Imp
 	{
 		//Whenever you discard a card, draw a card.
 

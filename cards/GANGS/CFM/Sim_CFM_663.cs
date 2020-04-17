@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_663 : SimTemplate //* Kabal Trafficker
+	class Sim_CFM_663 : SimCard //* Kabal Trafficker
 	{
 		// At the end of your turn, add a random Demon to your hand.
 

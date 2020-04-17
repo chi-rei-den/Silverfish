@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX14_04 : SimTemplate //* purecold
+	class Sim_NAX14_04 : SimCard //* purecold
 	{
 		//Deal 8 damage to the enemy hero, and and Freeze it.
 

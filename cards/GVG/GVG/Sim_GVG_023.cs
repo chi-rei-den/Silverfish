@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_023 : SimTemplate //Goblin Auto-Barber
+    class Sim_GVG_023 : SimCard //Goblin Auto-Barber
     {
 
         //    Battlecry: Give your weapon +1 Attack.

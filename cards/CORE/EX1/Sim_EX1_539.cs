@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_539 : SimTemplate //killcommand
+	class Sim_EX1_539 : SimCard //killcommand
 	{
 
 //    verursacht $3 schaden. verursacht stattdessen $5 schaden, wenn ihr ein wildtier besitzt.

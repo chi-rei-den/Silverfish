@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_593 : SimTemplate //* 来去自如 Resourceful
+	class Sim_GILA_593 : SimCard //* 来去自如 Resourceful
 	{
 		//Add to your deck:'{0}''{1}''{2}'
 		//加入你的牌库：“{0}”“{1}”“{2}”

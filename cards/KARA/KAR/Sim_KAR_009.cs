@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_009 : SimTemplate //* Babbling Book
+	class Sim_KAR_009 : SimCard //* Babbling Book
 	{
 		//Battlecry: Add a random Mage spell to your hand.
 		

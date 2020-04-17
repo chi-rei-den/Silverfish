@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_324t : SimTemplate //* 游荡小鬼 Worthless Imp
+	class Sim_ULD_324t : SimCard //* 游荡小鬼 Worthless Imp
 	{
 		//
 		//

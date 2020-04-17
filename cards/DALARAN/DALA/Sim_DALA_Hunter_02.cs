@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Hunter_02 : SimTemplate //* 隐秘行动 Secretive
+	class Sim_DALA_Hunter_02 : SimCard //* 隐秘行动 Secretive
 	{
 		//
 		//

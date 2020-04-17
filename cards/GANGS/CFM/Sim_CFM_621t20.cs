@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t20 : SimTemplate //* Netherbloom
+	class Sim_CFM_621t20 : SimCard //* Netherbloom
 	{
 		// Summon a 5/5 Demon.
 

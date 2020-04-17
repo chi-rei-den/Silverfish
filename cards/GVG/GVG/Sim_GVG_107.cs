@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_107 : SimTemplate //* Enhance-o Mechano
+    class Sim_GVG_107 : SimCard //* Enhance-o Mechano
     {
         //  Battlecry: Give your other minions Windfury Taunt or Divine Shield
 

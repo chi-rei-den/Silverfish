@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_099: SimTemplate //* Ticking Abomination
+    class Sim_ICC_099: SimCard //* Ticking Abomination
     {
         // Deathrattle: Deal 5 damage to your minions.
 

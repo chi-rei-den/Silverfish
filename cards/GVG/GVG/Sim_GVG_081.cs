@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_081 : SimTemplate //Gilblin Stalker
+    class Sim_GVG_081 : SimCard //Gilblin Stalker
     {
 
         //  Stealth 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_005 : SimTemplate //* Polymorph: Boar
+	class Sim_AT_005 : SimCard //* Polymorph: Boar
 	{
 		//Transform a minion into a 4/2 Boar with Charge.
 

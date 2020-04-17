@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_014 : SimTemplate //* stalagg
+	class Sim_FP1_014 : SimCard //* stalagg
 	{
         //todesröcheln:/ ruft thaddius herbei, wenn feugen in diesem duell bereits gestorben ist.
 

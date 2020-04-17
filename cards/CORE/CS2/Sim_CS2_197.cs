@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_197 : SimTemplate //ogremagi
+	class Sim_CS2_197 : SimCard //ogremagi
 	{
 
 //    zauberschaden +1/

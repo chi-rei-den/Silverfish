@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_100 : SimTemplate //* Verdant Longneck
+	class Sim_UNG_100 : SimCard //* Verdant Longneck
 	{
 		//Battlecry: Adapt.
 

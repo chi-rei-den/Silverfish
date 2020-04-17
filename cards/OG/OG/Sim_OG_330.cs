@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_330 : SimTemplate //* Undercity Huckster
+	class Sim_OG_330 : SimCard //* Undercity Huckster
 	{
 		//Deathrattle: Add a random class card to your hand (from your opponent's class).
 

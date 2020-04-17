@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_076 : SimTemplate //* Firelands Portal
+	class Sim_KAR_076 : SimCard //* Firelands Portal
 	{
 		//Deal 5 damage. Summon a random 5-Cost minion.
 		

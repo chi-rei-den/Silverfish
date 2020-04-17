@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_035 : SimTemplate //* Curious Glimmerroot
+	class Sim_UNG_035 : SimCard //* Curious Glimmerroot
 	{
 		//Battlecry: Look at 3 cards. Guess which one started in your opponent's deck to get a copy of it.
 

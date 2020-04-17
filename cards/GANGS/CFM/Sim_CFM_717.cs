@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_717 : SimTemplate //* Jade Claws
+	class Sim_CFM_717 : SimCard //* Jade Claws
 	{
 		// Battlecry: Summon a Jade Golem. Overload: (1)
 

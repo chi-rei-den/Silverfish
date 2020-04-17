@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_305 : SimTemplate //* Smuggler's Run
+	class Sim_CFM_305 : SimCard //* Smuggler's Run
 	{
 		// Gige all minions in your hand +1/+1.
 

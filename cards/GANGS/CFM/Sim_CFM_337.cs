@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_337 : SimTemplate //* Piranha Launcher
+	class Sim_CFM_337 : SimCard //* Piranha Launcher
 	{
 		// Whenever your hero attacks, summon a 1/1 Piranha.
 

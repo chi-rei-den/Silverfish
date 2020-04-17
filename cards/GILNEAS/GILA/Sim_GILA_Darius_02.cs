@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_02 : SimTemplate //* 海盗 Pirates
+	class Sim_GILA_Darius_02 : SimCard //* 海盗 Pirates
 	{
 		//
 		//

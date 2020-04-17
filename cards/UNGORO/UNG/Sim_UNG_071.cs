@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_071 : SimTemplate //* Giant Mastodon
+	class Sim_UNG_071 : SimCard //* Giant Mastodon
 	{
 		//Taunt
 

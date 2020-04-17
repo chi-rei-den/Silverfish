@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_573a : SimTemplate //* Demigod's Favor
+    class Sim_EX1_573a : SimCard //* Demigod's Favor
 	{
         //Give your other minions +2/+2.
 

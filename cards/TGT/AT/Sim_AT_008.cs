@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_008 : SimTemplate //* Coldarra Drake
+	class Sim_AT_008 : SimCard //* Coldarra Drake
 	{
 		//You can use your Hero Power any number of times.
 	

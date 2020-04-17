@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_310 : SimTemplate //* Steward of Darkshire
+	class Sim_OG_310 : SimCard //* Steward of Darkshire
 	{
 		//Whenever you summon a 1-Health minion, give it Divine Shield.
 

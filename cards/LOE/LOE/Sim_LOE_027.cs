@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_027 : SimTemplate //* Sacred Trial
+	class Sim_LOE_027 : SimCard //* Sacred Trial
 	{
 		//Secret: When your opponent has at least 3 minions and plays another, destroy it.
 

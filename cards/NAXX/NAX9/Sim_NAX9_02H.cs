@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_02H : SimTemplate //* Lady Blaumeux
+	class Sim_NAX9_02H : SimCard //* Lady Blaumeux
 	{
         // Your hero is Immune.
 

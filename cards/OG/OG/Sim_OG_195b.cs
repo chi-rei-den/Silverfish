@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_195b : SimTemplate //* Big Wisps
+    class Sim_OG_195b : SimCard //* Big Wisps
     {
         // Give your minions +2/+2.
 

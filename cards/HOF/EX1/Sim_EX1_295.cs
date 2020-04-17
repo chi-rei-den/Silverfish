@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_295 : SimTemplate //iceblock
+	class Sim_EX1_295 : SimCard //iceblock
 	{
         //todo secret
 //    geheimnis:/ wenn euer held tödlichen schaden erleidet, wird dieser verhindert und der held wird immun/ in diesem zug.

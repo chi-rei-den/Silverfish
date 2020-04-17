@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_016 : SimTemplate //* Confuse
+	class Sim_AT_016 : SimCard //* Confuse
 	{
 		//Swap the Attack and Health of all minions.
 

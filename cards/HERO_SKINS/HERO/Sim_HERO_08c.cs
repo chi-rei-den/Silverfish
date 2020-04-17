@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_08c : SimTemplate //* 火法师吉安娜 Fire Mage Jaina
+	class Sim_HERO_08c : SimCard //* 火法师吉安娜 Fire Mage Jaina
 	{
 		//
 		//

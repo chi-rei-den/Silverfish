@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_603 : SimTemplate //* Cruel Taskmaster
+    class Sim_EX1_603 : SimCard //* Cruel Taskmaster
 	{
         // Battlecry: Deal 1 damage to a minion and give it +2 
 

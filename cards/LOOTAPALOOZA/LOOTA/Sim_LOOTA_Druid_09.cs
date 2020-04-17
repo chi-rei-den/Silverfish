@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Druid_09 : SimTemplate //* 平衡之力 Balance
+	class Sim_LOOTA_Druid_09 : SimCard //* 平衡之力 Balance
 	{
 		//
 		//

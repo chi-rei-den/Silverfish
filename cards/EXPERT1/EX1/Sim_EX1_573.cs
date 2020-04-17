@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_573 : SimTemplate //* Cenarius
+	class Sim_EX1_573 : SimCard //* Cenarius
     {
         //Choose One - Give your other minions +2/+2; or Summon two 2/2 Treants with Taunt.
 

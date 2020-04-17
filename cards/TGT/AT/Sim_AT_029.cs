@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_029 : SimTemplate //* Buccaneer
+	class Sim_AT_029 : SimCard //* Buccaneer
 	{
 		//Whenevr you equip a weapon, give it +1 Attack.
 	}

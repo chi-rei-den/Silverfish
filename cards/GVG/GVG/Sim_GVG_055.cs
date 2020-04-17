@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_055 : SimTemplate //Screwjank Clunker
+    class Sim_GVG_055 : SimCard //Screwjank Clunker
     {
 
         //   Battlecry&lt;/b&gt;: Give a friendly Mech +2/+2.

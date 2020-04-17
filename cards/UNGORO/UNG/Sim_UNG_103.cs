@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_103 : SimTemplate //* Evolving Spores
+	class Sim_UNG_103 : SimCard //* Evolving Spores
 	{
 		//Adapt your minions.
 

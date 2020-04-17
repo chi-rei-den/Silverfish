@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_320 : SimTemplate //baneofdoom
+	class Sim_EX1_320 : SimCard //baneofdoom
 	{
 
 //    fügt einem charakter $2 schaden zu. beschwört einen zufälligen dämon, wenn der schaden tödlich ist.

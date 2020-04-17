@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_060 : SimTemplate //Quartermaster
+    class Sim_GVG_060 : SimCard //Quartermaster
     {
 
         //   Battlecry: Give your Silver Hand Recruits +2/+2.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_020 : SimTemplate //* Fearsome Doomguard
+	class Sim_AT_020 : SimCard //* Fearsome Doomguard
 	{
 		//-
 	}

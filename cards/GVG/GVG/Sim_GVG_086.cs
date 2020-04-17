@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_086 : SimTemplate //Siege Engine
+    class Sim_GVG_086 : SimCard //Siege Engine
     {
 
         //  Whenever you gain Armor, give this minion +1 Attack. 

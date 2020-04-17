@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_399 : SimTemplate //* gurubashiberserker
+	class Sim_EX1_399 : SimCard //* gurubashiberserker
 	{
     // Whenever this minion takes damage, gain +3 Attack.
 

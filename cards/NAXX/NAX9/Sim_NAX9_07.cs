@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_07 : SimTemplate //* Mark of the Horsemen
+	class Sim_NAX9_07 : SimCard //* Mark of the Horsemen
 	{
 		// Give your minions and your weapon +1/+1.
 		

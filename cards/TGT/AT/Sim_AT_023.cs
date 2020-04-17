@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_023 : SimTemplate //* Void Crusher
+	class Sim_AT_023 : SimCard //* Void Crusher
 	{
 		//Inspire: Destroy a random minion for each player.
 

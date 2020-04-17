@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_050 : SimTemplate //searingtotem
+	class Sim_CS2_050 : SimCard //searingtotem
 	{
 
 // fire totem of shaman ability

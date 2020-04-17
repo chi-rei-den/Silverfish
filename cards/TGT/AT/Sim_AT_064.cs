@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_064 : SimTemplate //* Bash
+	class Sim_AT_064 : SimCard //* Bash
 	{
 		//Deal 3 Damage. Gain 3 Armor.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_162 : SimTemplate //direwolfalpha
+	class Sim_EX1_162 : SimCard //direwolfalpha
 	{
 
         //    benachbarte diener haben +1 angriff.

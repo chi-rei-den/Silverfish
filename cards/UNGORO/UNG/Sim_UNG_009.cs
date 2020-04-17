@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_009 : SimTemplate //* Ravasaur Runt
+	class Sim_UNG_009 : SimCard //* Ravasaur Runt
 	{
 		//Battlecry: If you control at least 2 other minions, Adapt.
 

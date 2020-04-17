@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_018 : SimTemplate //* Tunnel Trogg
+	class Sim_LOE_018 : SimCard //* Tunnel Trogg
 	{
 		//Whenether you Overloaded, gain +1 Attack per locked Mana Crystal.
 

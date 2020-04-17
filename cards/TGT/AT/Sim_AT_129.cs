@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_129 : SimTemplate //* Fjola Lightbane
+	class Sim_AT_129 : SimCard //* Fjola Lightbane
 	{
 		//Whenever you target this minion with a spell, gain Divine Shield.
 		// handled in public void playACard

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_084 : SimTemplate //* Fire Plume Phoenix
+	class Sim_UNG_084 : SimCard //* Fire Plume Phoenix
 	{
 		//Battlecry: Deal 2 damage.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_185 : SimTemplate //arcaneshot
+	class Sim_DS1_185 : SimCard //arcaneshot
 	{
 
 //    verursacht $2 schaden.

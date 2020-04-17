@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_209 : SimTemplate //* Hallazeal the Ascended
+	class Sim_OG_209 : SimCard //* Hallazeal the Ascended
 	{
 		//Whenever your spells deal damage, restore that much Health to your hero.
 		

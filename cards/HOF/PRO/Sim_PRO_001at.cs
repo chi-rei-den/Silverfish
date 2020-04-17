@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_PRO_001at : SimTemplate //murloc
+	class Sim_PRO_001at : SimCard //murloc
 	{
 
 //

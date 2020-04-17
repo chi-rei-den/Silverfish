@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_274 : SimTemplate //etherealarcanist
+	class Sim_EX1_274 : SimCard //etherealarcanist
 	{
 
 //    erhält +2/+2, wenn ihr am ende eures zuges über ein aktives geheimnis/ verfügt.

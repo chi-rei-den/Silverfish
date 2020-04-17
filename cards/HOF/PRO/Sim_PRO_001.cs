@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_PRO_001 : SimTemplate //elitetaurenchieftain
+	class Sim_PRO_001 : SimCard //elitetaurenchieftain
 	{
 
 //    kampfschrei:/ verleiht beiden spielern die macht des rock! (durch eine powerakkordkarte)

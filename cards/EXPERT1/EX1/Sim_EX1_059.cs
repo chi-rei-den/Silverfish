@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_059 : SimTemplate //* Crazed Alchemist
+    class Sim_EX1_059 : SimCard //* Crazed Alchemist
 	{
         // Battlecry: Swap the Attack and Health of a minion.
 

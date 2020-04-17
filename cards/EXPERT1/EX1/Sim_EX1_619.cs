@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_619 : SimTemplate //* equality
+	class Sim_EX1_619 : SimCard //* equality
 	{
         //Change the Health of ALL minions to 1.
 

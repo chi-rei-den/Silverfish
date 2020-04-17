@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_046 : SimTemplate//Dark Iron Dwarf
+    class Sim_EX1_046 : SimCard//Dark Iron Dwarf
     {
         // +2 tempattack
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

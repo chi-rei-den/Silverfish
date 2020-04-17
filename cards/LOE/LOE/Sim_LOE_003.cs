@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_003 : SimTemplate //* Ethereal Conjurer
+	class Sim_LOE_003 : SimCard //* Ethereal Conjurer
 	{
 		//Battlecry: Discover a spell.
 		

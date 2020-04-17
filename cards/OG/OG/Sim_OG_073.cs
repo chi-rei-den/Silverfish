@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_073 : SimTemplate //* Thistle Tea
+	class Sim_OG_073 : SimCard //* Thistle Tea
 	{
 		//Draw a card. Add 2 extra copies of it to your hand.
 		

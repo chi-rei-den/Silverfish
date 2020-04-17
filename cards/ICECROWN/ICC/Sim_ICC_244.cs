@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_244: SimTemplate //* Desperate Stand
+    class Sim_ICC_244: SimCard //* Desperate Stand
     {
         // Give a minion: "Deathrattle: Revive this minion with one Health."
 

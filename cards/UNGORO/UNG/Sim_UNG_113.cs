@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_113 : SimTemplate //* Bright-Eyed Scout
+	class Sim_UNG_113 : SimCard //* Bright-Eyed Scout
 	{
 		//Battlecry: Draw a card. Change its Cost to (5).
 

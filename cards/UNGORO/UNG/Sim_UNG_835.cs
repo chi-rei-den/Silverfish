@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_835 : SimTemplate //* Chittering Tunneler
+	class Sim_UNG_835 : SimCard //* Chittering Tunneler
 	{
 		//Battlecry: Discover a spell. Deal damage to your hero equal to its Cost.
 

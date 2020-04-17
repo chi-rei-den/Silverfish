@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_008 : SimTemplate //Lightbomb
+    class Sim_GVG_008 : SimCard //Lightbomb
     {
 
         //    Deal damage to each minion equal to its Attack.

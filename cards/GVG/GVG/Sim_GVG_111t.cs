@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_111t : SimTemplate //V-07-TR-0N
+    class Sim_GVG_111t : SimCard //V-07-TR-0N
     {
 
         //   Charge Mega-Windfury(Can attack four times a turn.)

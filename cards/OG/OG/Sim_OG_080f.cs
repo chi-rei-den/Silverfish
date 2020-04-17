@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080f : SimTemplate //* Firebloom Toxin
+	class Sim_OG_080f : SimCard //* Firebloom Toxin
 	{
 		//Deal 2 damage.
 		

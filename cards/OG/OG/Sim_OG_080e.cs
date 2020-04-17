@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080e : SimTemplate //* Fadeleaf Toxin
+	class Sim_OG_080e : SimCard //* Fadeleaf Toxin
 	{
 		//Give a friendly minion Stealth until your next turn.
 		

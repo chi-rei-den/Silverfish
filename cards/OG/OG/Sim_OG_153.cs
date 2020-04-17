@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_153 : SimTemplate //* Bog Creeper
+	class Sim_OG_153 : SimCard //* Bog Creeper
 	{
 		//Taunt
 	}

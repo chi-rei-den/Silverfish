@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_832pb: SimTemplate //* Spider Fangs
+    class Sim_ICC_832pb: SimCard //* Spider Fangs
     {
         // +3 Attack.
 

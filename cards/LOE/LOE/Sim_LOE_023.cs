@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_023 : SimTemplate //* Dark Peddler
+	class Sim_LOE_023 : SimCard //* Dark Peddler
 	{
 		//Battlecry: Discover a (1)-cost card.
 		

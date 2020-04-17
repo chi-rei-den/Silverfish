@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_082 : SimTemplate //* Evolved Kobold
+	class Sim_OG_082 : SimCard //* Evolved Kobold
 	{
 		//Spell Damage +2
 		

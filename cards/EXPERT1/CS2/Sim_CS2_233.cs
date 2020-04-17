@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_233 : SimTemplate //* Blade Flurry
+    class Sim_CS2_233 : SimCard //* Blade Flurry
     {
         //Destroy your weapon and deal its damage to all enemy minions.
 

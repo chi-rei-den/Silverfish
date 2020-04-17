@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_089 : SimTemplate //* Boneguard Lieutenant
+	class Sim_AT_089 : SimCard //* Boneguard Lieutenant
 	{
 		//Inspire: Gain +1 Health
 

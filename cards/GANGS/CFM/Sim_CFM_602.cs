@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_602 : SimTemplate //* Jade Idol
+	class Sim_CFM_602 : SimCard //* Jade Idol
 	{
 		// Choose One - Summon a Jade Golem; or Shuffle 3 copies of this card into your deck.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_007t : SimTemplate //* Cursed!
+	class Sim_LOE_007t : SimCard //* Cursed!
 	{
 		//While this is in your hand, take 2 damage at the start of your turn.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_923 : SimTemplate //* Iron Hide
+	class Sim_UNG_923 : SimCard //* Iron Hide
 	{
 		//Gain 5 Armor.
 

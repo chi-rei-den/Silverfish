@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_025 : SimTemplate //* Dark Bargain
+	class Sim_AT_025 : SimCard //* Dark Bargain
 	{
 		//Destroy 2 random enemy minion. Discard 2 random cards.
 

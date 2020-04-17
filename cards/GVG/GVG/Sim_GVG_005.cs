@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_005 : SimTemplate //Echo of Medivh
+    class Sim_GVG_005 : SimCard //Echo of Medivh
     {
 
         //    Put a copy of each friendly minion into your hand.

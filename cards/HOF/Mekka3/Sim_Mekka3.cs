@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka3 : SimTemplate //emboldener3000
+	class Sim_Mekka3 : SimCard //emboldener3000
 	{
 
 //    verleiht am ende eures zuges einem zufälligen diener +1/+1.

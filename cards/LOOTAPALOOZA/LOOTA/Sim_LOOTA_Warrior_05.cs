@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warrior_05 : SimTemplate //* 护甲 Armor
+	class Sim_LOOTA_Warrior_05 : SimCard //* 护甲 Armor
 	{
 		//
 		//

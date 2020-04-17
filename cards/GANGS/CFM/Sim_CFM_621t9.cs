@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t9 : SimTemplate //* Shadow Oil
+	class Sim_CFM_621t9 : SimCard //* Shadow Oil
 	{
 		// Add a random Demon to your hand.
 		

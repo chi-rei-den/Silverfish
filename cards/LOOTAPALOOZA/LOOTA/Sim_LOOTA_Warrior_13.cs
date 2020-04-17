@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warrior_13 : SimTemplate //* 征募 Recruiter
+	class Sim_LOOTA_Warrior_13 : SimCard //* 征募 Recruiter
 	{
 		//
 		//

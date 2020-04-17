@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PRO_001b : SimTemplate //* Rogues Do It...
+    class Sim_PRO_001b : SimCard //* Rogues Do It...
     {
         //Deal $4 damage. Draw a card.
 

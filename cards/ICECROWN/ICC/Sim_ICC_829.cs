@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_829: SimTemplate //* Uther of the Ebon Blade
+    class Sim_ICC_829: SimCard //* Uther of the Ebon Blade
     {
         // Battlecry: Equip a 5/3 Lifesteal weapon.
 

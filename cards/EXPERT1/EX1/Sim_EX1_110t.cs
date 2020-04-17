@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_110t : SimTemplate //bainebloodhoof
+	class Sim_EX1_110t : SimCard //bainebloodhoof
 	{
 
 //

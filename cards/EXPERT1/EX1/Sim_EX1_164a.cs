@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_164a : SimTemplate //* nourish
+    class Sim_EX1_164a : SimCard //* nourish
     {
         //    Gain 2 Mana Crystals
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

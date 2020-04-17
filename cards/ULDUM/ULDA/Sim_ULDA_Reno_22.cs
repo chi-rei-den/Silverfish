@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_22 : SimTemplate //* 致命连击 Combo
+	class Sim_ULDA_Reno_22 : SimCard //* 致命连击 Combo
 	{
 		//
 		//

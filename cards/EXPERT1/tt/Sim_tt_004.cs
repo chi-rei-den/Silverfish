@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_tt_004 : SimTemplate //* flesheatingghoul
+	class Sim_tt_004 : SimCard //* flesheatingghoul
 	{
 //    Whenever a minion dies, gain +1 Attack.
 

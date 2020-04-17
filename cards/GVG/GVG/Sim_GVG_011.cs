@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_011 : SimTemplate //Shrinkmeister
+    class Sim_GVG_011 : SimCard //Shrinkmeister
     {
         // Battlecry: Give a minion -2 Attack this turn.
 

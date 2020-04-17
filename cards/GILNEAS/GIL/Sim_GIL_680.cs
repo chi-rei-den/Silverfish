@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_680 : SimTemplate //* 胡桃精 Walnut Sprite
+	class Sim_GIL_680 : SimCard //* 胡桃精 Walnut Sprite
 	{
 		//<b>Echo</b>
 		//<b>回响</b>

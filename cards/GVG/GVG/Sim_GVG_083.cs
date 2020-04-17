@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_083 : SimTemplate //Upgraded Repair Bot
+    class Sim_GVG_083 : SimCard //Upgraded Repair Bot
     {
 
         //   Battlecry:&lt;/b&gt; Give a friendly Mech +4 Health.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_912: SimTemplate //* Corpsetaker
+    class Sim_ICC_912: SimCard //* Corpsetaker
     {
         // Battlecry: Gain Taunt if your deck has a Taunt minion. Repeat for Divine Shield, Lifesteal, Windfury.
 

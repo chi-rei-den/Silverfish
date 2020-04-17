@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_037 : SimTemplate //* Frost Shock
+    class Sim_CS2_037 : SimCard //* Frost Shock
 	{
         //Deal $1 damage to an enemy character and Freeze it.
 

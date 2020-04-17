@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_022 : SimTemplate //* Fierce Monkey
+	class Sim_LOE_022 : SimCard //* Fierce Monkey
 	{
 		//Taunt
 	}

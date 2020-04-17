@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_LOEA16_4 : SimTemplate //* Timepiece of Horror
+    class Sim_LOEA16_4 : SimCard //* Timepiece of Horror
 	{
         //Deal $10 damage randomly split among all enemies.
 

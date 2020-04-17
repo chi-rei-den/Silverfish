@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_026 : SimTemplate //* Anyfin Can Happen
+	class Sim_LOE_026 : SimCard //* Anyfin Can Happen
 	{
 		//Summon 7 Murlocs that died this game.
 

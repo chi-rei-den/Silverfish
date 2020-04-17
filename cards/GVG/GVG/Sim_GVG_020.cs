@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_020 : SimTemplate //Fel Cannon
+    class Sim_GVG_020 : SimCard //Fel Cannon
     {
 
         //    At the end of your turn, deal 2 damage to a non-Mech minion.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_009 : SimTemplate //Shadowbomber
+    class Sim_GVG_009 : SimCard //Shadowbomber
     {
 
         //   Battlecry: Deal 3 damage to each hero.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_817 : SimTemplate //* Tidal Surge
+	class Sim_UNG_817 : SimCard //* Tidal Surge
 	{
 		//Deal $4 damage to a minion. Restore #4 Health to your hero.
 

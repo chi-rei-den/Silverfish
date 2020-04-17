@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Druid_05 : SimTemplate //* 自然之怒 Nature's Wrath
+	class Sim_DALA_Druid_05 : SimCard //* 自然之怒 Nature's Wrath
 	{
 		//
 		//

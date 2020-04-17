@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_036 : SimTemplate //* Arcane Anomaly
+	class Sim_KAR_036 : SimCard //* Arcane Anomaly
 	{
 		//Whenever you cast a spell, give this minion +1 Health.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_095 : SimTemplate //* Weasel Tunneler
+	class Sim_CFM_095 : SimCard //* Weasel Tunneler
 	{
 		// Deathrattle: Shuffle this minion into your opponent's deck.
 

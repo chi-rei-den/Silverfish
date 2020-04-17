@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_18 : SimTemplate //* 炸弹来了 Bombs Away!
+	class Sim_ULDA_Brann_18 : SimCard //* 炸弹来了 Bombs Away!
 	{
 		//
 		//

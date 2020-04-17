@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA06_4H : SimTemplate //* Flamewaker Acolyte
+	class Sim_BRMA06_4H : SimCard //* Flamewaker Acolyte
 	{
 		//-
 	}

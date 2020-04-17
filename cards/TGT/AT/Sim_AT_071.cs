@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_071 : SimTemplate //* Alexstrasza's Champion
+	class Sim_AT_071 : SimCard //* Alexstrasza's Champion
 	{
 		//Battlecry: If you're holding a Dragon, gain +1 Attack and Charge.
 

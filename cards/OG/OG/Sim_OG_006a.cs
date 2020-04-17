@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_006a : SimTemplate //* Silver Hand Murloc
+	class Sim_OG_006a : SimCard //* Silver Hand Murloc
 	{
 		// -
 	}

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_082 : SimTemplate //* Thunder Lizard
+	class Sim_UNG_082 : SimCard //* Thunder Lizard
 	{
 		//Battlecry: If you played an Elemental last turn, Adapt.
 

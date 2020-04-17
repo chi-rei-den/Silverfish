@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_182 : SimTemplate//Chillwind Yeti
+    class Sim_CS2_182 : SimCard//Chillwind Yeti
     {
 
     }

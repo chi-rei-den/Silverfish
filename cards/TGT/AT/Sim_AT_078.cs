@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_078 : SimTemplate //* Enter the Coliseum
+	class Sim_AT_078 : SimCard //* Enter the Coliseum
 	{
 		//Destroy all minions except each player's highest Attack minion.
 

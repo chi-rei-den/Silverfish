@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_657 : SimTemplate //* Kabal Songstealer
+	class Sim_CFM_657 : SimCard //* Kabal Songstealer
 	{
 		// Battlecry: Silence a minion.
 

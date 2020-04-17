@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_080 : SimTemplate //* Xaril, Poisoned Mind
+	class Sim_OG_080 : SimCard //* Xaril, Poisoned Mind
 	{
 		//Battlecry and Deathrattle: Add a random Toxin card to your hand.
 		

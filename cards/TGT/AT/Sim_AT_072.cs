@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_072 : SimTemplate //* Varian Wrynn
+	class Sim_AT_072 : SimCard //* Varian Wrynn
 	{
 		//Battlecry: Draw 3 cards. Put any minion you drew directly into the battlefield.
 

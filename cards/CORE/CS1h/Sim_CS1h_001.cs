@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1h_001 : SimTemplate //lesserheal
+	class Sim_CS1h_001 : SimCard //lesserheal
 	{
 
 //    heldenfähigkeit/\nstellt 2 leben wieder her.

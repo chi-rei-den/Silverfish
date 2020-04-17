@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_303 : SimTemplate //shadowflame
+	class Sim_EX1_303 : SimCard //shadowflame
 	{
 
 //    vernichtet einen befreundeten diener und fügt allen feindlichen dienern schaden zu, der seinem angriff entspricht.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_047 : SimTemplate //* Ravenous Pterrordax
+	class Sim_UNG_047 : SimCard //* Ravenous Pterrordax
 	{
 		//Battlecry: Destroy a friendly minion to Adapt twice.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_848 : SimTemplate //* Primordial Drake
+	class Sim_UNG_848 : SimCard //* Primordial Drake
 	{
 		//Taunt Battlecry: Deal 2 damage to all other minions.
 

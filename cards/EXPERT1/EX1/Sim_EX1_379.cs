@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_379 : SimTemplate //repentance
+	class Sim_EX1_379 : SimCard //repentance
 	{
 //    geheimnis:/ wenn euer gegner einen diener ausspielt, wird dessen leben auf 1 verringert.
 

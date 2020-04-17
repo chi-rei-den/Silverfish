@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA01_2H : SimTemplate //* Pile On!
+	class Sim_BRMA01_2H : SimCard //* Pile On!
 	{
 		// Hero Power: Put two minions from your deck and one from your opponent's into the battlefield.
 		

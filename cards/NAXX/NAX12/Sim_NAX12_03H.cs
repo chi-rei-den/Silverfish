@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX12_03H : SimTemplate //* 3/5 Jaws
+	class Sim_NAX12_03H : SimCard //* 3/5 Jaws
 	{
 		//Whenever a minion with Deathrattle dies, gain +2
 		//Handled in triggerAMinionDied()

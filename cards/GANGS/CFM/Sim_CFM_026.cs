@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_026 : SimTemplate //* Hidden Cache
+	class Sim_CFM_026 : SimCard //* Hidden Cache
 	{
 		// Secret: After your opponent plays a minion, give a random minion in your hand +2/+2.
 	}

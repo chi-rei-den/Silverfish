@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Hunter_08 : SimTemplate //* 侵略如火 Aggression
+	class Sim_DALA_Hunter_08 : SimCard //* 侵略如火 Aggression
 	{
 		//
 		//

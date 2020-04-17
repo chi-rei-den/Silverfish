@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t5 : SimTemplate //* Death Coil
+    class Sim_ICC_314t5 : SimCard //* Death Coil
     {
         // Deal $5 damage to an enemy, or restore #5 Health to a friendly character.
 

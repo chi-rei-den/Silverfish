@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_100 : SimTemplate //* Floating Watcher
+    class Sim_GVG_100 : SimCard //* Floating Watcher
     {
         // Whenever your hero takes damage on your turn, gain +2/+2.  
 

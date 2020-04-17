@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_23 : SimTemplate //* 瘟疫使者 Plaguebringer
+	class Sim_ULDA_Elise_23 : SimCard //* 瘟疫使者 Plaguebringer
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_813 : SimTemplate //* Stormwatcher
+	class Sim_UNG_813 : SimCard //* Stormwatcher
 	{
 		//Windfury
 

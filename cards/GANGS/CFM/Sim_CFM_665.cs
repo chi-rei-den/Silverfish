@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_665 : SimTemplate //* Worgen Greaser
+	class Sim_CFM_665 : SimCard //* Worgen Greaser
 	{
 		// -
 	}

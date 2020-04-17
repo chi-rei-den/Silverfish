@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_319 : SimTemplate //* Twin Emperor Vek'nilash
+	class Sim_OG_319 : SimCard //* Twin Emperor Vek'nilash
 	{
 		//Taunt
 	}

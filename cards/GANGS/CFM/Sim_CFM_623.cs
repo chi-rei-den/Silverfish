@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_623 : SimTemplate //* Greater Arcane Missiles
+	class Sim_CFM_623 : SimCard //* Greater Arcane Missiles
 	{
 		// Shoot three missiles at random enemies that deal 3 damage each.
 

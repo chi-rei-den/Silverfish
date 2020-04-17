@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_100th_BananaPlayerEnchant : SimTemplate
+	class Sim_TB_100th_BananaPlayerEnchant : SimCard
 	{
 	}
 }

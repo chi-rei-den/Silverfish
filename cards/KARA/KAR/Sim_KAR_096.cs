@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_096 : SimTemplate //* Prince Malchezaar
+	class Sim_KAR_096 : SimCard //* Prince Malchezaar
 	{
 		//At the start of the game, shuffle 5 extra Legendary minions into your deck.
 	}

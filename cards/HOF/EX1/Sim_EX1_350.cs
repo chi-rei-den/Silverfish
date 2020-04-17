@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_350 : SimTemplate //prophetvelen
+	class Sim_EX1_350 : SimCard //prophetvelen
 	{
 
 //    verdoppelt den schaden und die heilung eurer zauber und heldenfähigkeiten.

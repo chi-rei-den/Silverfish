@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_162 : SimTemplate//Lord of the Arena
+    class Sim_CS2_162 : SimCard//Lord of the Arena
     {
 
      

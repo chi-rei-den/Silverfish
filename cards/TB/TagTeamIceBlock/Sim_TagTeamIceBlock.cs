@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TagTeamIceBlock : SimTemplate
+	class Sim_TagTeamIceBlock : SimCard
 	{
 	}
 }

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_303 : SimTemplate //* Cult Sorcerer
+	class Sim_OG_303 : SimCard //* Cult Sorcerer
 	{
 		//Spell Damage +1. After you cast a spell, give your C'Thun +1/+1 (wherever it is).
 		

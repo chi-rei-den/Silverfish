@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_088 : SimTemplate //guardianofkings
+    class Sim_CS2_088 : SimCard //guardianofkings
     {
 
         //    kampfschrei:/ stellt bei eurem helden 6 leben wieder her.

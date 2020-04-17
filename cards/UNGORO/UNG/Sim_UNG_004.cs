@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_004 : SimTemplate //* Dinosize
+	class Sim_UNG_004 : SimCard //* Dinosize
 	{
 		//Set a minion's Attack and Health to 10.
 

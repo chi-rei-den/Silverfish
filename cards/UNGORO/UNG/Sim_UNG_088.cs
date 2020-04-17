@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_088 : SimTemplate //* Tortollan Primalist
+	class Sim_UNG_088 : SimCard //* Tortollan Primalist
 	{
 		//Battlecry: Discover a spell and cast it with random targets.
 

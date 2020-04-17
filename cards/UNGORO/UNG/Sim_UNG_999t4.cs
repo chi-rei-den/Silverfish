@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t4 : SimTemplate //* Rocky Carapace
+	class Sim_UNG_999t4 : SimCard //* Rocky Carapace
 	{
 		//+3 Health
 

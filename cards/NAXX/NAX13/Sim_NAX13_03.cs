@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX13_03 : SimTemplate //* Supercharge
+	class Sim_NAX13_03 : SimCard //* Supercharge
 	{
 		// Give your minions +2 Health.
 		

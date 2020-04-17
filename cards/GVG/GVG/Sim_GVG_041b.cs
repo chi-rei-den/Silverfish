@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_041b : SimTemplate //* Dark Wispers
+    class Sim_GVG_041b : SimCard //* Dark Wispers
     {
         //   Summon 5 Wisps;
 

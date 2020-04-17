@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_005 : SimTemplate //* Demonwrath
+	class Sim_BRM_005 : SimCard //* Demonwrath
 	{
 		// Deal 2 damage to all non-Demon minions.
 		

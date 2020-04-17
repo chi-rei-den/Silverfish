@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_AT_117 : SimTemplate //* Master of Ceremonies
+    class Sim_AT_117 : SimCard //* Master of Ceremonies
     {
 		//Battlecry: If you have a minion with Spell Damage, gain +2/+2.
 		

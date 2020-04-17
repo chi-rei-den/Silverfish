@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Mage_04 : SimTemplate //* 充能完毕 Powered Up
+	class Sim_DALA_Mage_04 : SimCard //* 充能完毕 Powered Up
 	{
 		//
 		//

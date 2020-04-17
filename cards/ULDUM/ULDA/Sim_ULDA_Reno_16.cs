@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_16 : SimTemplate //* 洗牌抽牌 Shuffle and Draw
+	class Sim_ULDA_Reno_16 : SimCard //* 洗牌抽牌 Shuffle and Draw
 	{
 		//
 		//

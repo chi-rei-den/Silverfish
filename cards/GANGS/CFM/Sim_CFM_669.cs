@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_669 : SimTemplate //* Burgly Bully
+	class Sim_CFM_669 : SimCard //* Burgly Bully
 	{
 		// Whenever your opponent casts a spell, add a Coin to your hand.
 

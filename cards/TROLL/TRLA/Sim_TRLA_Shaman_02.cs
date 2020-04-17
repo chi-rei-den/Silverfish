@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Shaman_02 : SimTemplate //* 追逐魔咒 Spellchasers
+	class Sim_TRLA_Shaman_02 : SimCard //* 追逐魔咒 Spellchasers
 	{
 		//
 		//

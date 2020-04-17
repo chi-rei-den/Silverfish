@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_339 : SimTemplate //thoughtsteal
+	class Sim_EX1_339 : SimCard //thoughtsteal
 	{
 
 //    kopiert 2 karten aus dem deck eures gegners und fügt sie eurer hand hinzu.

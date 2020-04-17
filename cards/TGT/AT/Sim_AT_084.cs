@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_084 : SimTemplate //* Lance Carrier
+	class Sim_AT_084 : SimCard //* Lance Carrier
 	{
 		//Battlecry: Give a friendly minion +2 Attack.
 

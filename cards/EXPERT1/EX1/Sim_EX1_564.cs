@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_564 : SimTemplate //facelessmanipulator
+    class Sim_EX1_564 : SimCard //facelessmanipulator
     {
 
         //    kampfschrei:/ wählt einen diener aus, um gesichtsloser manipulator in eine kopie desselben zu verwandeln.

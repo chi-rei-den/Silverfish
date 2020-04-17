@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_922 : SimTemplate //* Explore Un'Goro
+	class Sim_UNG_922 : SimCard //* Explore Un'Goro
 	{
 		//Replace your deck with copies of "Discover a card."
 

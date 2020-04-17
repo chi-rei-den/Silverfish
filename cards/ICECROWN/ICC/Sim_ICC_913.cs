@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_913: SimTemplate //* Tainted Zealot
+    class Sim_ICC_913: SimCard //* Tainted Zealot
     {
         // Divine Shield. Spell Damage + 1.
 

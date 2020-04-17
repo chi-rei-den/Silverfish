@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_074 : SimTemplate //Kezan Mystic
+    class Sim_GVG_074 : SimCard //Kezan Mystic
     {
         //todo better!
         //  Battlecry: Take control of a random enemy Secret;. 

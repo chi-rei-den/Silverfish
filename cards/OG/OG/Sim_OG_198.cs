@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_198 : SimTemplate //* Forbidden Healing
+	class Sim_OG_198 : SimCard //* Forbidden Healing
 	{
 		//Spend all your Mana. Heal for double the mana you spent.
 		

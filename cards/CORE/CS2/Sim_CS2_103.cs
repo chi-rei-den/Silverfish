@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_103 : SimTemplate //* Charge
+    class Sim_CS2_103 : SimCard //* Charge
     {
         //Give a friendly minion Charge. It can't attack heroes this turn.
 

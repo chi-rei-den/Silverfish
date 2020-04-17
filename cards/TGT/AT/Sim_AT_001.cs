@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_001 : SimTemplate //* Flame Lance
+	class Sim_AT_001 : SimCard //* Flame Lance
 	{
 		//Deal 8 damage to a minion.
 		

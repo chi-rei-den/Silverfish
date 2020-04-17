@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_342 : SimTemplate //* Luckydo Buccaneer
+	class Sim_CFM_342 : SimCard //* Luckydo Buccaneer
 	{
 		// Battlecry: If your weapon has at least 3 Attack, gain +4/+4.
 

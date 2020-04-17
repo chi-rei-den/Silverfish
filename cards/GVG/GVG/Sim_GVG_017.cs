@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_017 : SimTemplate //* Call Pet
+    class Sim_GVG_017 : SimCard //* Call Pet
     {
 
         //    Draw a card. If it's a Beast, it costs (4) less.

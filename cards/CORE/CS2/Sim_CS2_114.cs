@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_114 : SimTemplate //cleave
+	class Sim_CS2_114 : SimCard //cleave
 	{
 
 //    fügt zwei zufälligen feindlichen dienern $2 schaden zu.

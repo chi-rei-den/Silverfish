@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_DREAM_05 : SimTemplate//Nightmare
+    class Sim_DREAM_05 : SimCard//Nightmare
     {
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

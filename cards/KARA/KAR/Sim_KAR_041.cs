@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_041 : SimTemplate //* Moat Lurker
+	class Sim_KAR_041 : SimCard //* Moat Lurker
 	{
 		//Battlecry: Destroy a minion. Deathrattle: Resummon it.
 

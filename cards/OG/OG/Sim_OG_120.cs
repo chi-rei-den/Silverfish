@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_120 : SimTemplate //* Anomalus
+	class Sim_OG_120 : SimCard //* Anomalus
 	{
 		//Deathrattle: Deal 8 damage to all minions.
 		

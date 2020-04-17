@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_907 : SimTemplate //* Ozruk
+	class Sim_UNG_907 : SimCard //* Ozruk
 	{
 		//Taunt. Battlecry: Gain +5 Health for each Elemental you played last turn.
 

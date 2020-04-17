@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Druid_14 : SimTemplate //* 奔向狂野 Going Wild
+	class Sim_TRLA_Druid_14 : SimCard //* 奔向狂野 Going Wild
 	{
 		//
 		//

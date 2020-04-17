@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_030a : SimTemplate //* Pantry Spider
+	class Sim_KAR_030a : SimCard //* Pantry Spider
 	{
 		//Battlecry: Summon a 1/3 Spider.
 		

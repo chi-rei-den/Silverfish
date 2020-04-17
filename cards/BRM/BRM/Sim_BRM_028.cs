@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_028 : SimTemplate //* Emperor Thaurissan
+	class Sim_BRM_028 : SimCard //* Emperor Thaurissan
 	{
 		// At the end of your turn, reduce the Cost of cards in your hand by (1).
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_008 : SimTemplate //* Dark Iron Skulker
+	class Sim_BRM_008 : SimCard //* Dark Iron Skulker
 	{
 		//	Battlecry: Deal 2 damage to all undamaged enemy minions.
 	

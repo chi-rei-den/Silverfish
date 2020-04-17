@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_025 : SimTemplate //arcaneexplosion
+	class Sim_CS2_025 : SimCard //arcaneexplosion
 	{
 
 //    fügt allen feindlichen dienern $1 schaden zu.

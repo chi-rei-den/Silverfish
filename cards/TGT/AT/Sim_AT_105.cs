@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_105 : SimTemplate //* Injured Kvaldir
+	class Sim_AT_105 : SimCard //* Injured Kvaldir
 	{
 		//Battlecry: Deal 3 damage to this minion
 		

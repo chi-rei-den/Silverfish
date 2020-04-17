@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_073 : SimTemplate //Cobra Shot
+    class Sim_GVG_073 : SimCard //Cobra Shot
     {
 
         //   Deal $3 damage to a minion and the enemy hero.

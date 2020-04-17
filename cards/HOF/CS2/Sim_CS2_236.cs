@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_236 : SimTemplate //divinespirit
+	class Sim_CS2_236 : SimCard //divinespirit
 	{
 
 //    verdoppelt das leben eines dieners.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_383t : SimTemplate //ashbringer
+	class Sim_EX1_383t : SimCard //ashbringer
 	{
 
 //

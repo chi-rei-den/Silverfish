@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_039 : SimTemplate //* Savage Combatant
+	class Sim_AT_039 : SimCard //* Savage Combatant
 	{
 		//Inspire: Give your hero +2 Attack this turn.
 

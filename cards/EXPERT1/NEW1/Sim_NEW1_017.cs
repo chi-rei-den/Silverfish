@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_017 : SimTemplate//Hungry Crab
+    class Sim_NEW1_017 : SimCard//Hungry Crab
     {
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_04 : SimTemplate //* Sir Zeliek
+	class Sim_NAX9_04 : SimCard //* Sir Zeliek
 	{
         // Your hero is Immune.
 

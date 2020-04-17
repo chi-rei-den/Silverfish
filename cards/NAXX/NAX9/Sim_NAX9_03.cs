@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_03 : SimTemplate //* Thane Korth'azz
+	class Sim_NAX9_03 : SimCard //* Thane Korth'azz
 	{
         // Your hero is Immune.
 

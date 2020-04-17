@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_061 : SimTemplate //* The Curator
+	class Sim_KAR_061 : SimCard //* The Curator
 	{
 		//Taunt. Battlecry: Draw a Beast, Dragon, and Murloc from your deck.
 		

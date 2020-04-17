@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_054 : SimTemplate //* The Mistcaller
+	class Sim_AT_054 : SimCard //* The Mistcaller
 	{
 		//Battlecry: Give all minions in your hand and deck +1/+1.
 

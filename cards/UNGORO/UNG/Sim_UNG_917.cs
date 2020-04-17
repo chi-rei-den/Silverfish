@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_917 : SimTemplate //* Dinomancy
+	class Sim_UNG_917 : SimCard //* Dinomancy
 	{
 		//Your Hero Power: becomes 'Give a Beast +2/+2.'
 

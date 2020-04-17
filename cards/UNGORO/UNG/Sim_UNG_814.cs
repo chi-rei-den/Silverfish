@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_814 : SimTemplate //* Giant Wasp
+	class Sim_UNG_814 : SimCard //* Giant Wasp
 	{
 		//Stealth Poisonous
 

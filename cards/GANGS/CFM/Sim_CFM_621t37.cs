@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t37 : SimTemplate //* Ichor of Undeath
+	class Sim_CFM_621t37 : SimCard //* Ichor of Undeath
 	{
 		// Summon a friendly minion that died this game.
 

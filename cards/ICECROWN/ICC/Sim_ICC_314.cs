@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314 : SimTemplate //* The Lich King
+    class Sim_ICC_314 : SimCard //* The Lich King
     {
         // Taunt. At the end of your turn, add a random Death Knight card to your hand.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX10_02 : SimTemplate //* Hook
+	class Sim_NAX10_02 : SimCard //* Hook
 	{
 		//Deathrattle: Put this weapon into your hand.
 

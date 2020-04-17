@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_811 : SimTemplate //* Lunar Visions
+	class Sim_CFM_811 : SimCard //* Lunar Visions
 	{
 		// Draw 2 cards. Minions drawn costs (2) less.
 

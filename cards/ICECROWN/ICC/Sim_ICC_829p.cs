@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_829p: SimTemplate //* The Four Horsemen
+    class Sim_ICC_829p: SimCard //* The Four Horsemen
     {
         // Hero Power: Summon a 2/2 Horseman. If you have all 4, destroy the enemy hero.
 

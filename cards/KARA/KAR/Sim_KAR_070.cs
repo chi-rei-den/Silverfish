@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_070 : SimTemplate //* Ethereal Peddler
+	class Sim_KAR_070 : SimCard //* Ethereal Peddler
 	{
 		//Battlecry: Reduce the Cost of cards in your hand from other classes by (2).
 		

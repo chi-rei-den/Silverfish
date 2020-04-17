@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_017 : SimTemplate //* Keeper of Uldaman
+	class Sim_LOE_017 : SimCard //* Keeper of Uldaman
 	{
 		//Battlecry: Set a minion's Attack and Health to 3.
 

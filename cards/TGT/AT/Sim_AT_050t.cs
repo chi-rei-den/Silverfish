@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_050t : SimTemplate //* Lightning Jolt
+	class Sim_AT_050t : SimCard //* Lightning Jolt
 	{
 		//Hero Power: Deal $2 damage.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_058 : SimTemplate //* King's Elekk
+	class Sim_AT_058 : SimCard //* King's Elekk
 	{
 		//Battlecry: Reveal a minion in each deck. If yours costs more, draw it.
 

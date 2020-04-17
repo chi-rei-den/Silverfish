@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_208 : SimTemplate //* Stone Sentinel
+	class Sim_UNG_208 : SimCard //* Stone Sentinel
 	{
 		//Battlecry: If you played an Elemental last turn, summon two 2/3 Elementals with Taunt.
 

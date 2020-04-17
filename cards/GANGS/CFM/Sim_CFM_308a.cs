@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_308a : SimTemplate //* Forgotten Armor
+	class Sim_CFM_308a : SimCard //* Forgotten Armor
 	{
 		// Gain 10 Armor.
 

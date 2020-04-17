@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_170 : SimTemplate //emperorcobra
+	class Sim_EX1_170 : SimCard //emperorcobra
 	{
 
 //    vernichtet jeden diener, der von diesem diener verletzt wurde.

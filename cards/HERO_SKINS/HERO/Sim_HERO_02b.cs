@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_02b : SimTemplate //* 拉斯塔哈大王 King Rastakhan
+	class Sim_HERO_02b : SimCard //* 拉斯塔哈大王 King Rastakhan
 	{
 		//
 		//

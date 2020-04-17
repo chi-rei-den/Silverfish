@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_209t : SimTemplate //* 虚空幼龙 Nether Drake
+	class Sim_DRG_209t : SimCard //* 虚空幼龙 Nether Drake
 	{
 		//
 		//

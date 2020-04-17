@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_335 : SimTemplate //lightspawn
+	class Sim_EX1_335 : SimCard //lightspawn
 	{
 
 //    der angriff dieses dieners entspricht immer seinem leben.

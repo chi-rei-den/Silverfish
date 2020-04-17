@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_056 : SimTemplate //* Powershot
+	class Sim_AT_056 : SimCard //* Powershot
 	{
 		//Deal 2 damage to a minion and the minions next to it.
 

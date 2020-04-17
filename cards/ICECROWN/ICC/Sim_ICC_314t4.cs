@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t4 : SimTemplate //* Death Grip
+    class Sim_ICC_314t4 : SimCard //* Death Grip
     {
         // Steal a minion from your opponent's deck and add it to your hand.
 

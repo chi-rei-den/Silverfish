@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_169 : SimTemplate //youngdragonhawk
+	class Sim_CS2_169 : SimCard //youngdragonhawk
 	{
 
 //    windzorn/

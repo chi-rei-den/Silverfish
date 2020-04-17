@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_HPe : SimTemplate
+	class Sim_ULDA_Finley_HPe : SimCard
 	{
 	}
 }

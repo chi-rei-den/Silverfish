@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_OG_292 : SimTemplate //* Forlorn Stalker
+    class Sim_OG_292 : SimCard //* Forlorn Stalker
     {
         //Battlecry: Give all minions with Deathrattle in your hand +1/+1.
 

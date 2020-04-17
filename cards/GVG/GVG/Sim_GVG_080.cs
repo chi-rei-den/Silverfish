@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_080 : SimTemplate //* Druid of the Fang
+    class Sim_GVG_080 : SimCard //* Druid of the Fang
     {
         //   Battlecry:If you have a Beast, transform this minion into a 7/7.
         CardDB.Card betterguy = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_080t);

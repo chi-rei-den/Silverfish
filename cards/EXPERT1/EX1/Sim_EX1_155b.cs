@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_155b : SimTemplate //* markofnature
+	class Sim_EX1_155b : SimCard //* markofnature
 	{
         //+4 Health and Taunt.
 

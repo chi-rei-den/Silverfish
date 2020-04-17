@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_021 : SimTemplate //* Freezing Potion
+	class Sim_CFM_021 : SimCard //* Freezing Potion
 	{
 		// Freeze an enemy.
 

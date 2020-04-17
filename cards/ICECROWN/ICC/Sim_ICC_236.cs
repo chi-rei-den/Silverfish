@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_236: SimTemplate //* Ice Breaker
+    class Sim_ICC_236: SimCard //* Ice Breaker
     {
         // Destroy any Frozen minion damaged by this.
         //done in Playfield

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_083b : SimTemplate //daggermastery
+	class Sim_CS2_083b : SimCard //daggermastery
 	{
 
 //    heldenfähigkeit/\nlegt einen dolch (1/2) an.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_948 : SimTemplate //* Molten Reflection
+	class Sim_UNG_948 : SimCard //* Molten Reflection
 	{
 		//Choose a friendly minion. Summon a copy of it.
 

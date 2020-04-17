@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_069 : SimTemplate //* Swashburglar
+	class Sim_KAR_069 : SimCard //* Swashburglar
 	{
 		//Battlecry: Add a random class card to your hand (from your opponent's class).
 		

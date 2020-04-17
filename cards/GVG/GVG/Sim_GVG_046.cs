@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_046 : SimTemplate //* King of Beasts
+    class Sim_GVG_046 : SimCard //* King of Beasts
     {
         //   Taunt Battlecry: Gain +1 Attack for each other Beast you have.
 

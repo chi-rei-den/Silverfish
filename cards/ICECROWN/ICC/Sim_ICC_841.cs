@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_841 : SimTemplate //* Blood-Queen Lana'thel
+    class Sim_ICC_841 : SimCard //* Blood-Queen Lana'thel
     {
         // Lifesteal. Has +1 Attack for each card you've discarded this game.
         //Only on the board

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_853: SimTemplate //* Prince Valanar
+    class Sim_ICC_853: SimCard //* Prince Valanar
     {
         // Battlecry: If your deck has no 4-Cost cards, gain Lifesteal and Taunt.
 

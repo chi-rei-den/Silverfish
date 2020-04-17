@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_024 : SimTemplate //* Drakonid Crusher
+	class Sim_BRM_024 : SimCard //* Drakonid Crusher
 	{
 		//	Battlecry: If your opponent has 15 or less Health, gain +3/+3.
 	

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_751 : SimTemplate //* Abyssal Enforcer
+	class Sim_CFM_751 : SimCard //* Abyssal Enforcer
 	{
 		// Battlecry: Deal 3 damage to all other characters.
 

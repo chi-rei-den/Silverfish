@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX13_05H : SimTemplate //* Stalagg
+	class Sim_NAX13_05H : SimCard //* Stalagg
 	{
 		//-
 	}

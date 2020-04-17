@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_023 : SimTemplate//Silvermoon Guardian
+    class Sim_EX1_023 : SimCard//Silvermoon Guardian
     {
 
 

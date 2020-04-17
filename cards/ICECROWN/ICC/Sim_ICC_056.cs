@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_056: SimTemplate //* Cryostasis
+    class Sim_ICC_056: SimCard //* Cryostasis
     {
         // Give a minion +3/+3 and Freeze it.
 

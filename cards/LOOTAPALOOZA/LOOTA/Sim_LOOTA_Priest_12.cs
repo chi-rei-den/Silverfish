@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Priest_12 : SimTemplate //* 元素皈依 Elementals
+	class Sim_LOOTA_Priest_12 : SimCard //* 元素皈依 Elementals
 	{
 		//
 		//

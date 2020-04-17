@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ICC_829t : SimTemplate //* 5/3 Grave Vengeance
+	class Sim_ICC_829t : SimCard //* 5/3 Grave Vengeance
 	{
 		//Lifesteal
 		//Handled in minionAttacksMinion()

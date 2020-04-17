@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_10 : SimTemplate //* 混乱之法 Chaos
+	class Sim_TRLA_Mage_10 : SimCard //* 混乱之法 Chaos
 	{
 		//
 		//

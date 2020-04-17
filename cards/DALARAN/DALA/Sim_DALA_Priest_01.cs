@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Priest_01 : SimTemplate //* 神奇药剂 Curatives
+	class Sim_DALA_Priest_01 : SimCard //* 神奇药剂 Curatives
 	{
 		//
 		//

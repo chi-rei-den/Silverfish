@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1h_292_H1 : SimTemplate //* Steady Shot
+	class Sim_DS1h_292_H1 : SimCard //* Steady Shot
 	{
 		//Hero Power: Deal 2 damage to the enemy hero.
 		

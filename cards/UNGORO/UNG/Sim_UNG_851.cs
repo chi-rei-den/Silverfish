@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_851 : SimTemplate //* Elise the Trailblazer
+	class Sim_UNG_851 : SimCard //* Elise the Trailblazer
 	{
 		//Battlecry: Shuffle a sealed Un'Goro pack into your deck.
 

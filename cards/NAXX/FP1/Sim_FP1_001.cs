@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_001 : SimTemplate //zombiechow
+    class Sim_FP1_001 : SimCard //zombiechow
     {
 
         //    todesröcheln:/ stellt beim feindlichen helden 5 leben wieder her.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_068: SimTemplate //* Ice Walker
+    class Sim_ICC_068: SimCard //* Ice Walker
     {
         // Your Hero Power also Freezes the target.
 

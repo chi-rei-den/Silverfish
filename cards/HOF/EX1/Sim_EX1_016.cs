@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_016 : SimTemplate //* Sylvanas Windrunner
+    class Sim_EX1_016 : SimCard //* Sylvanas Windrunner
 	{
         //Deathrattle: Take control of a random enemy minion.
 

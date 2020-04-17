@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_113 : SimTemplate //mindcontrol
+	class Sim_CS1_113 : SimCard //mindcontrol
 	{
 
 //    übernehmt die kontrolle über einen feindlichen diener.

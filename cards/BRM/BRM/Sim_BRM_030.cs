@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_030 : SimTemplate //* Nefarian
+	class Sim_BRM_030 : SimCard //* Nefarian
 	{
 		// Battlecry: Add 2 random spells to your hand (from your opponent's class).
 		

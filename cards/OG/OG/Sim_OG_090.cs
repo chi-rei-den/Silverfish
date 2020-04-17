@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_090 : SimTemplate //* Cabalist's Tome
+	class Sim_OG_090 : SimCard //* Cabalist's Tome
 	{
 		//Add 3 random Mage spells to your hand.
 		

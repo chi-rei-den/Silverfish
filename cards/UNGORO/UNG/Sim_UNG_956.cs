@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_956 : SimTemplate //* Spirit Echo
+	class Sim_UNG_956 : SimCard //* Spirit Echo
 	{
 		//Give your minions "Deathrattle: Return this to your hand."
 

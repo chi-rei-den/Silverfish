@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_071 : SimTemplate //Lost Tallstrider
+    class Sim_GVG_071 : SimCard //Lost Tallstrider
     {
 
         //   a tallstrider

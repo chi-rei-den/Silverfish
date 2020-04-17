@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t33 : SimTemplate //* Felbloom
+	class Sim_CFM_621t33 : SimCard //* Felbloom
 	{
 		// Deal $6 damage to all minions.
 

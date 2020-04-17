@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_027 : SimTemplate //* Wilfred Fizzlebang
+	class Sim_AT_027 : SimCard //* Wilfred Fizzlebang
 	{
 		//Cards you draw from your Hero Power cost (0).
 		//handled in PenalityManager

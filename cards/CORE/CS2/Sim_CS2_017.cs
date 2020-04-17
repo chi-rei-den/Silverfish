@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_017 : SimTemplate //shapeshift
+	class Sim_CS2_017 : SimCard //shapeshift
 	{
 
 //    heldenfähigkeit/\n+1 angriff in diesem zug.\n+1 rüstung.

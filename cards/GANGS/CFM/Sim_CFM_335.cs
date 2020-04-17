@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_335 : SimTemplate //* Dispatch Kodo
+	class Sim_CFM_335 : SimCard //* Dispatch Kodo
 	{
         // Battlecry: Deal damage equal to this minion's Attack.
 

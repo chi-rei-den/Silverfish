@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_643 : SimTemplate //* Hobart Grapplehammer
+	class Sim_CFM_643 : SimCard //* Hobart Grapplehammer
 	{
 		// Battlecry: Give all weapons in your hand and deck +1 Attack.
 

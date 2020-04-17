@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_838 : SimTemplate //* Sindragosa
+    class Sim_ICC_838 : SimCard //* Sindragosa
     {
         // Battlecry: Summon two 0/1 Frozen Champions.
 

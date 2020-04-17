@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_086 : SimTemplate //* Saboteur
+	class Sim_AT_086 : SimCard //* Saboteur
 	{
 		//Battlecry: Your opponent's Hero Power costs (5) more next turn.
 

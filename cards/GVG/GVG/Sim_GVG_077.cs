@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_077 : SimTemplate //Anima Golem
+    class Sim_GVG_077 : SimCard //Anima Golem
     {
 
         //  At the end of each turn, destroy this minion if it's your only one. 

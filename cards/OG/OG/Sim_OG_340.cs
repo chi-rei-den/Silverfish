@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_340 : SimTemplate //* Soggoth the Slitherer
+	class Sim_OG_340 : SimCard //* Soggoth the Slitherer
 	{
 		//Taunt. Can't be targeted by spells or Hero Powers.
 		

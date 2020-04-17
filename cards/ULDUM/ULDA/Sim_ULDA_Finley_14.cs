@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_14 : SimTemplate //* 圣光之刃 Noble Weaponry
+	class Sim_ULDA_Finley_14 : SimCard //* 圣光之刃 Noble Weaponry
 	{
 		//
 		//

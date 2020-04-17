@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_819t : SimTemplate //* 阴郁的幽灵 Weeping Ghost
+	class Sim_GILA_819t : SimCard //* 阴郁的幽灵 Weeping Ghost
 	{
 		//<b>Lifesteal</b>
 		//<b>吸血</b>

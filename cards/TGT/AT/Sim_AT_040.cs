@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_040 : SimTemplate //* Wildwalker
+	class Sim_AT_040 : SimCard //* Wildwalker
 	{
 		//Battlecry: Give a friendly Beast +3 Health.
 

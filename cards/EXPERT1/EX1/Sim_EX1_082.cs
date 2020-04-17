@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_082 : SimTemplate //* Mad Bomber
+    class Sim_EX1_082 : SimCard //* Mad Bomber
 	{
         // Battlecry: Deal 3 damage randomly split between all other characters.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_941 : SimTemplate //* Primordial Glyph
+	class Sim_UNG_941 : SimCard //* Primordial Glyph
 	{
 		//Discover a spell. Reduce its Cost by (2).
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_747t : SimTemplate //* 狮鹫 Gryphon
+	class Sim_DAL_747t : SimCard //* 狮鹫 Gryphon
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_181 : SimTemplate//Injured Blademaster
+    class Sim_CS2_181 : SimCard//Injured Blademaster
     {
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

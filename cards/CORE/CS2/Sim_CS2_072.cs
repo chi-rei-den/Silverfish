@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_072 : SimTemplate //backstab
+	class Sim_CS2_072 : SimCard //backstab
 	{
 
 //    fügt einem unverletzten diener $2 schaden zu.

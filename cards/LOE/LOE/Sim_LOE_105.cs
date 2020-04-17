@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_105 : SimTemplate //* Explorer's Hat
+	class Sim_LOE_105 : SimCard //* Explorer's Hat
 	{
 		//Give a minion +1/+1 and "Deathrattle: Add an Explorer's Hat to your hand."
 

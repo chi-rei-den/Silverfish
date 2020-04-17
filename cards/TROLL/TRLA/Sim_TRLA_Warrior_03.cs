@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Warrior_03 : SimTemplate //* 传说 Legendary
+	class Sim_TRLA_Warrior_03 : SimCard //* 传说 Legendary
 	{
 		//
 		//

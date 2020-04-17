@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_835: SimTemplate //* Hadronox
+    class Sim_ICC_835: SimCard //* Hadronox
     {
         // Deathrattle: Summon your taunt minions that died this game.
 

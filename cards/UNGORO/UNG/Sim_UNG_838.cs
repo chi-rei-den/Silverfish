@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_838 : SimTemplate //* Tar Lord
+	class Sim_UNG_838 : SimCard //* Tar Lord
 	{
 		//Taunt. Has +4 Attack during your opponent’s turn.
 

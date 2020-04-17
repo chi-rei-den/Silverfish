@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_660 : SimTemplate //* Manic Soulcaster
+	class Sim_CFM_660 : SimCard //* Manic Soulcaster
 	{
 		// Battlecry: Choose a friendly minion. Shuffle a copy into your deck.
 

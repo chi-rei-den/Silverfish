@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_095 : SimTemplate //Goblin Sapper
+    class Sim_GVG_095 : SimCard //Goblin Sapper
     {
 
         //  Has +4 Attack while your opponent has 6 or more cards in hand. 

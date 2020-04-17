@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_554 : SimTemplate //* snaketrap
+	class Sim_EX1_554 : SimCard //* snaketrap
 	{
         //Secret: When one of your minions is attacked, summon three 1/1 Snakes.
 

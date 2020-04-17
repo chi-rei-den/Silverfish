@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_093 : SimTemplate //* defenderofargus
+	class Sim_EX1_093 : SimCard //* defenderofargus
 	{
         //Battlecry: Give adjacent minions +1/+1 and Taunt.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_624 : SimTemplate //holyfire
+    class Sim_EX1_624 : SimCard //holyfire
     {
 
         //    verursacht $5 schaden. stellt bei eurem helden #5 leben wieder her.

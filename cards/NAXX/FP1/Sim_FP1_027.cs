@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_027 : SimTemplate //stoneskingargoyle
+	class Sim_FP1_027 : SimCard //stoneskingargoyle
 	{
 
 //    stellt zu beginn eures zuges das volle leben dieses dieners wieder her.

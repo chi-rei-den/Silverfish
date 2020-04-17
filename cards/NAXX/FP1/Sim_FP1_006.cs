@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_006 : SimTemplate //deathcharger
+    class Sim_FP1_006 : SimCard //deathcharger
     {
 
         //    ansturm. todesröcheln:/ fügt eurem helden 3 schaden zu.

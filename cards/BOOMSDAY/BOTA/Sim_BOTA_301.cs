@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_301 : SimTemplate //* 冷血杀手 Cold Blooded
+	class Sim_BOTA_301 : SimCard //* 冷血杀手 Cold Blooded
 	{
 		//Start Lethal Puzzle 1-1.
 		//Start Lethal Puzzle 1-1.

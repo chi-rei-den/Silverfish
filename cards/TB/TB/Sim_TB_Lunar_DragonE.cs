@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Lunar_DragonE : SimTemplate
+	class Sim_TB_Lunar_DragonE : SimCard
 	{
 	}
 }

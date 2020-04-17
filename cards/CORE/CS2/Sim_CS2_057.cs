@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_057 : SimTemplate //shadowbolt
+	class Sim_CS2_057 : SimCard //shadowbolt
 	{
 
 //    fügt einem diener $4 schaden zu.

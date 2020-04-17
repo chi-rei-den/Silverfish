@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_047 : SimTemplate //* Draenei Totemcarver
+	class Sim_AT_047 : SimCard //* Draenei Totemcarver
 	{
 		//Battlecry: Gain +1/+1 for each friendly Totem.
 

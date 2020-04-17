@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_070 : SimTemplate //* houndmaster
+	class Sim_DS1_070 : SimCard //* houndmaster
 	{
         //Battlecry: Give a friendly Beast +2/+2 and Taunt.
 

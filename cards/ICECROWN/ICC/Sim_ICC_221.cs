@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_221 : SimTemplate //* Leeching Poison
+    class Sim_ICC_221 : SimCard //* Leeching Poison
     {
         //Give your weapon Lifesteal.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_161 : SimTemplate //naturalize
+	class Sim_EX1_161 : SimCard //naturalize
 	{
 
 //    vernichtet einen diener. euer gegner zieht 2 karten.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_846 : SimTemplate //* Shimmering Tempest
+	class Sim_UNG_846 : SimCard //* Shimmering Tempest
 	{
 		//Deathrattle: Add a random Mage spell to your hand.
 

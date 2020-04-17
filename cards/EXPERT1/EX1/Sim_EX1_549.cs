@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_549 : SimTemplate //bestialwrath
+	class Sim_EX1_549 : SimCard //bestialwrath
 	{
 
 //    verleiht einem wildtier +2 angriff und immunität/ in diesem zug.

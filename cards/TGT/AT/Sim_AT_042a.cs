@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042a : SimTemplate //* Lion Form
+	class Sim_AT_042a : SimCard //* Lion Form
 	{
 		//Transform into a Charge
 		

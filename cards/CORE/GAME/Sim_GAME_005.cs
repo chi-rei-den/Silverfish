@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GAME_005 : SimTemplate //thecoin
+	class Sim_GAME_005 : SimCard //thecoin
 	{
 
 //    erhaltet 1 manakristall nur für diesen zug.

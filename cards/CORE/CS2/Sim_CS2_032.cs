@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_032 : SimTemplate //flamestrike
+	class Sim_CS2_032 : SimCard //flamestrike
 	{
 
 //    fügt allen feindlichen dienern $4 schaden zu.

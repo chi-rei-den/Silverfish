@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_012 : SimTemplate // Swipe
+    class Sim_CS2_012 : SimCard // Swipe
 	{
         // Deal $4 damage to an enemy and $1 damage to all other enemies.
 

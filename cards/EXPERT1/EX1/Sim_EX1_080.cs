@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_080 : SimTemplate //* Secretkeeper
+	class Sim_EX1_080 : SimCard //* Secretkeeper
 	{
 		// Whenever a Secret: is played, gain +1/+1.
 

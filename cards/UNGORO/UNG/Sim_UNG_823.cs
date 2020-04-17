@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_823 : SimTemplate //* Envenom Weapon
+	class Sim_UNG_823 : SimCard //* Envenom Weapon
 	{
 		//Give your weapon Poisonous.
 

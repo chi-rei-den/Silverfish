@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t13 : SimTemplate //* Poison Spit
+	class Sim_UNG_999t13 : SimCard //* Poison Spit
 	{
 		//Poisonous
 

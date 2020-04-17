@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_061 : SimTemplate //drainlife
+    class Sim_CS2_061 : SimCard //drainlife
     {
 
         //    verursacht $2 schaden. stellt bei eurem helden #2 leben wieder her.

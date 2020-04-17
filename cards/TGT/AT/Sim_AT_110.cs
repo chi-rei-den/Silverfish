@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_110 : SimTemplate //* Coliseum Manager
+	class Sim_AT_110 : SimCard //* Coliseum Manager
 	{
 		//Inspire: Return this minion to your hand.
 

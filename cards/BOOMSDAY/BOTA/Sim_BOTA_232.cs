@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_232 : SimTemplate //* 斗转星移 Cosmic Projection
+	class Sim_BOTA_232 : SimCard //* 斗转星移 Cosmic Projection
 	{
 		//Swap hands with your opponent.
 		//与你的对手交换手牌。

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_042 : SimTemplate //fireelemental
+	class Sim_CS2_042 : SimCard //fireelemental
 	{
 
 //    kampfschrei:/ verursacht 3 schaden.

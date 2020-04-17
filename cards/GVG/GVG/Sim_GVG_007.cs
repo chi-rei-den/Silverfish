@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_007 : SimTemplate //Flame Leviathan
+    class Sim_GVG_007 : SimCard //Flame Leviathan
     {
 
         //    When you draw this, deal 2 damage to all characters.

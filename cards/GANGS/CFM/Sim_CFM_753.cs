@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_753 : SimTemplate //* Grimestreet Outfitter
+	class Sim_CFM_753 : SimCard //* Grimestreet Outfitter
 	{
 		// Battlecry: Give all minions in your hand +1/+1.
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

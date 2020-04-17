@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX6_04 : SimTemplate //* Sporeburst
+	class Sim_NAX6_04 : SimCard //* Sporeburst
 	{
 		// Deal $1 damage to all enemy minions. Summon a Spore.
 		

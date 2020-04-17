@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_254 : SimTemplate //* Eater of Secrets
+	class Sim_OG_254 : SimCard //* Eater of Secrets
 	{
 		//Destroy all enemy Secrets. Gain +1/+1 for each.
 		

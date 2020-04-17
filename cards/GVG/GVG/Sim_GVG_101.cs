@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_101 : SimTemplate //* Scarlet Purifier
+    class Sim_GVG_101 : SimCard //* Scarlet Purifier
     {
         //   Battlecry: Deal 2 damage to all minions with Deathrattle.
 

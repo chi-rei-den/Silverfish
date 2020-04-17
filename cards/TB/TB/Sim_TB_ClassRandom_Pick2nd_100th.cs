@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_ClassRandom_Pick2nd_100th : SimTemplate
+	class Sim_TB_ClassRandom_Pick2nd_100th : SimCard
 	{
 	}
 }

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Rogue_16 : SimTemplate //* 精疲力竭 Exhaustion
+	class Sim_LOOTA_Rogue_16 : SimCard //* 精疲力竭 Exhaustion
 	{
 		//
 		//

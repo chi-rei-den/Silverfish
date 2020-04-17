@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_079 : SimTemplate //Force-Tank MAX
+    class Sim_GVG_079 : SimCard //Force-Tank MAX
     {
 
         //  Divine Shield 

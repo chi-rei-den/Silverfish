@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_072 : SimTemplate //* Shadowboxer
+    class Sim_GVG_072 : SimCard //* Shadowboxer
     {
         // Whenever a character is healed, deal 1 damage to a random enemy.  
 

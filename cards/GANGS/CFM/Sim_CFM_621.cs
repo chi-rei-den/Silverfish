@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621 : SimTemplate //* Kazakus
+	class Sim_CFM_621 : SimCard //* Kazakus
 	{
 		// Battlecry: If your deck has no duplicates, create a custom spell.
 

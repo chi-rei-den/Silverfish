@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_06 : SimTemplate //* 钢铁 Iron and Steel
+	class Sim_DALA_Warrior_06 : SimCard //* 钢铁 Iron and Steel
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_658 : SimTemplate //* Backroom Bouncer
+	class Sim_CFM_658 : SimCard //* Backroom Bouncer
 	{
 		// Whenever a friendly minion dies, gain +1 Attack.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_015 : SimTemplate //* Sunkeeper Tarim
+	class Sim_UNG_015 : SimCard //* Sunkeeper Tarim
 	{
 		//Taunt. Battlecry: Set all other minions' Attack and Health to 3.
 

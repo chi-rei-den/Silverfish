@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX15_02H : SimTemplate //* frostblast heroic
+	class Sim_NAX15_02H : SimCard //* frostblast heroic
 	{
         //Hero Power: Deal 3 damage to the enemy hero and Freeze it.
 

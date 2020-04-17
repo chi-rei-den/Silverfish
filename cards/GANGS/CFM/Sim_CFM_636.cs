@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_636 : SimTemplate //* Shadow Rager
+	class Sim_CFM_636 : SimCard //* Shadow Rager
 	{
 		// Stealth
 	}

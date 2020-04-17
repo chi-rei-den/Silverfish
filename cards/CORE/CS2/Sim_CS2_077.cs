@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_077 : SimTemplate //sprint
+	class Sim_CS2_077 : SimCard //sprint
 	{
 
 //    zieht 4 karten.

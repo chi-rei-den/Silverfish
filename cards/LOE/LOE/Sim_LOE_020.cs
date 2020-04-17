@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_020 : SimTemplate //* Desert Camel
+	class Sim_LOE_020 : SimCard //* Desert Camel
 	{
         //Battlecry: Put a 1-Cost minion from each deck into the battlefield.
 		

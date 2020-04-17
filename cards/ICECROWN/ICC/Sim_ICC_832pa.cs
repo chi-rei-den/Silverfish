@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_832pa: SimTemplate //* Scarab Shell
+    class Sim_ICC_832pa: SimCard //* Scarab Shell
     {
         // +3 Armor.
 

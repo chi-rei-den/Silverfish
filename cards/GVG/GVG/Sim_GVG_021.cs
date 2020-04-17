@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_021 : SimTemplate //Mal'Ganis
+    class Sim_GVG_021 : SimCard //Mal'Ganis
     {
 
         //    Your other Demons have +2/+2.Your hero is Immune;

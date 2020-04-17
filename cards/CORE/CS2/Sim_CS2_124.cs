@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_124 : SimTemplate //wolfrider
+	class Sim_CS2_124 : SimCard //wolfrider
 	{
 
 //    ansturm/

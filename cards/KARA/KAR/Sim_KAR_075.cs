@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_075 : SimTemplate //* Moonglade Portal
+	class Sim_KAR_075 : SimCard //* Moonglade Portal
 	{
 		//Restore 6 Health. Summon a random 6-Cost minion.
 		

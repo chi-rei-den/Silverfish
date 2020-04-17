@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_PALADIN : SimTemplate //* The Silver Hand
+	class Sim_AT_132_PALADIN : SimCard //* The Silver Hand
 	{
 		//Hero Power. Summon two 1/1 Recruits.
 

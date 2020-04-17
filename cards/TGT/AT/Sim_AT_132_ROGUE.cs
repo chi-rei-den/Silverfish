@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_ROGUE : SimTemplate //* Poisoned Daggers
+	class Sim_AT_132_ROGUE : SimCard //* Poisoned Daggers
 	{
 		//Hero Power. Equip a 2/2 Weapon.
 

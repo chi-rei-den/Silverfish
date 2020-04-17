@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_061 : SimTemplate //* Jinyu Waterspeaker
+	class Sim_CFM_061 : SimCard //* Jinyu Waterspeaker
 	{
 		// Battlecry: Restore 6 Health. Overload: (1)
 

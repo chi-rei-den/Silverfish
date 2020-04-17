@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_033 : SimTemplate //leokk
+	class Sim_NEW1_033 : SimCard //leokk
 	{
 
 //    andere befreundete diener haben +1 angriff.

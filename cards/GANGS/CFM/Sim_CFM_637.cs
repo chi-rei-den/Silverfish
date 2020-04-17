@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_637 : SimTemplate //* Patches the Pirate
+	class Sim_CFM_637 : SimCard //* Patches the Pirate
 	{
 		// Charge. After you play a Pirate, summon this minion from your deck.
 	}

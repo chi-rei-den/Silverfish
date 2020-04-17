@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_610 : SimTemplate //* Crystalweaver
+	class Sim_CFM_610 : SimCard //* Crystalweaver
 	{
 		// Battlecry: Give your Demons +1/+1.
 

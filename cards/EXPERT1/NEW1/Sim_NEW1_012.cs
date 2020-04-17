@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_012 : SimTemplate //* Mana Wyrm
+	class Sim_NEW1_012 : SimCard //* Mana Wyrm
 	{
 		//Whenever you cast a spell, gain +1 Attack.
 

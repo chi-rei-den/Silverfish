@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_836 : SimTemplate //* Clutchmother Zavas
+	class Sim_UNG_836 : SimCard //* Clutchmother Zavas
 	{
 		//Whenever you discard this, give it +2/+2 and return it to your hand.
 

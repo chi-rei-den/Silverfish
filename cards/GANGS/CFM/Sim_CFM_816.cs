@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_816 : SimTemplate //* Virmen Sensei
+	class Sim_CFM_816 : SimCard //* Virmen Sensei
 	{
 		// Battlecry: Give a friendly Beast +2/+2.
 

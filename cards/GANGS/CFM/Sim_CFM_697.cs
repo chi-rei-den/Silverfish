@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_697 : SimTemplate //* Lotus Illusionist
+	class Sim_CFM_697 : SimCard //* Lotus Illusionist
 	{
 		// After this minion attacks a hero, transform it into a random 6-Cost minion.
         //handled

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_583 : SimTemplate //priestessofelune
+    class Sim_EX1_583 : SimCard //priestessofelune
     {
 
         //    kampfschrei:/ stellt bei eurem helden 4 leben wieder her.

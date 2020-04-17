@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_327 : SimTemplate //* Squirming tentacle
+	class Sim_OG_327 : SimCard //* Squirming tentacle
 	{
 		//Taunt
 	}

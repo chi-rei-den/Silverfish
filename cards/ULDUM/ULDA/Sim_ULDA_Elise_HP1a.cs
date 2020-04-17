@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_HP1a : SimTemplate //* 防御姿态 Defensive Posture
+	class Sim_ULDA_Elise_HP1a : SimCard //* 防御姿态 Defensive Posture
 	{
 		//+2 Armor.
 		//+2护甲值。

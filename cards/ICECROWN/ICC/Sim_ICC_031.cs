@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_031: SimTemplate //* Night Howler
+    class Sim_ICC_031: SimCard //* Night Howler
     {
         // Whenever this minion takes damage, gain +2 Attack.
 

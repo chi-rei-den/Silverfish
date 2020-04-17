@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_142 : SimTemplate //koboldgeomancer
+	class Sim_CS2_142 : SimCard //koboldgeomancer
 	{
 
 //    zauberschaden +1/

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_209 : SimTemplate //* 狐人恶棍 Vulpera Scoundrel
+	class Sim_ULD_209 : SimCard //* 狐人恶棍 Vulpera Scoundrel
 	{
 		//<b>Battlecry</b>: <b>Discover</b> a spell or pick a mystery choice.
 		//<b>战吼：发现</b>一张法术牌或选择一个神秘选项。

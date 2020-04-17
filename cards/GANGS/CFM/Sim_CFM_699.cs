@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_699 : SimTemplate //* Seadevil Stinger
+	class Sim_CFM_699 : SimCard //* Seadevil Stinger
 	{
 		// Battlecry: The next Murloc you play this turn costs Health instead of Mana.
 

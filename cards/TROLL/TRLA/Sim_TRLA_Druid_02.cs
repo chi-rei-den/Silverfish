@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Druid_02 : SimTemplate //* 野性之力 Feral
+	class Sim_TRLA_Druid_02 : SimCard //* 野性之力 Feral
 	{
 		//
 		//

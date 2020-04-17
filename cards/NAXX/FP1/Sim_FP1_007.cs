@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_007 : SimTemplate //* nerubianegg
+	class Sim_FP1_007 : SimCard //* nerubianegg
 	{
         //todesröcheln:/ ruft einen neruber (4/4) herbei.
         CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.FP1_007t);//nerubian

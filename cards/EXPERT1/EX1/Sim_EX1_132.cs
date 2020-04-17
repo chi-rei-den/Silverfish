@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_132 : SimTemplate //eyeforaneye
+    class Sim_EX1_132 : SimCard //eyeforaneye
     {
         //todo secret
         //    geheimnis:/ wenn euer held schaden erleidet, wird dem feindlichen helden ebenso viel schaden zugefügt.

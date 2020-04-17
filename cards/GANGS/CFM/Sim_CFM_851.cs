@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_851 : SimTemplate //* Daring Reporter
+	class Sim_CFM_851 : SimCard //* Daring Reporter
 	{
 		// Whenever your opponent draws a card, gain +1/+1.
 

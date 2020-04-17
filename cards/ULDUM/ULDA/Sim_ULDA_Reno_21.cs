@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_21 : SimTemplate //* 安全措施 Safety Measures
+	class Sim_ULDA_Reno_21 : SimCard //* 安全措施 Safety Measures
 	{
 		//
 		//

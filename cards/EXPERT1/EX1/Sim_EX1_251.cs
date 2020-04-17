@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_251 : SimTemplate //forkedlightning
+	class Sim_EX1_251 : SimCard //forkedlightning
 	{
 
 //    fügt zwei zufälligen feindlichen dienern $2 schaden zu. überladung:/ (2)

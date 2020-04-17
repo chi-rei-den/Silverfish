@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_PRO_001a : SimTemplate//I Am Murloc
+    class Sim_PRO_001a : SimCard//I Am Murloc
     {
         //Summon three, four, or five 1/1 Murlocs.
         CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.PRO_001at);

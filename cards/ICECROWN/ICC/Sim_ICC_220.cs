@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_220: SimTemplate //* Deadscale Knight
+    class Sim_ICC_220: SimCard //* Deadscale Knight
     {
         // Lifesteal
     }

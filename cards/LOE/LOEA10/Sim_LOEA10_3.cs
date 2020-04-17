@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOEA10_3 : SimTemplate //* Murloc Tinyfin
+	class Sim_LOEA10_3 : SimCard //* Murloc Tinyfin
 	{
 		//-
 	}

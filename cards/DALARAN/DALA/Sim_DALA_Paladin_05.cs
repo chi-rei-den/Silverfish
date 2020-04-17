@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Paladin_05 : SimTemplate //* 治疗之手 Healing Hands
+	class Sim_DALA_Paladin_05 : SimCard //* 治疗之手 Healing Hands
 	{
 		//
 		//

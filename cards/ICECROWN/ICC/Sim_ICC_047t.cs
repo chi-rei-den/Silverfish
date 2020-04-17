@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_047t : SimTemplate //* Fatespinner on board
+    class Sim_ICC_047t : SimCard //* Fatespinner on board
     {
         // Choose a Deathrattle (Secretly) - Deal 3 damage to all minions; or Give them +2/+2.
         

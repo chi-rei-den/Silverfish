@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_107 : SimTemplate //* Eerie Statue
+	class Sim_LOE_107 : SimCard //* Eerie Statue
 	{
 		//Can't attack unless it's the only minion on the battlefield.
 		

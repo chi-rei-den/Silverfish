@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_061 : SimTemplate //* On the Hunt
+	class Sim_OG_061 : SimCard //* On the Hunt
 	{
 		//Deal 1 damage. Summon a 1/1 Mastiff.
 

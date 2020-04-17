@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_029 : SimTemplate //* Jeweled Scarab
+	class Sim_LOE_029 : SimCard //* Jeweled Scarab
 	{
 		//Battlecry: Discover a (3)-Cost card.
 		

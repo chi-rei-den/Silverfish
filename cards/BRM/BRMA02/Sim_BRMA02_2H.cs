@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA02_2H : SimTemplate //* Jeering Crowd
+	class Sim_BRMA02_2H : SimCard //* Jeering Crowd
 	{
 		// Hero Power: Summon a 1/1 Spectator with Taunt.
 		

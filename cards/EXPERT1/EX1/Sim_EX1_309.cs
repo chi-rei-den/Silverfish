@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_309 : SimTemplate//Siphon Soul
+    class Sim_EX1_309 : SimCard//Siphon Soul
     {
         //Vernichtet einen Diener. Stellt bei Eurem Helden #3 Leben wieder her.
 

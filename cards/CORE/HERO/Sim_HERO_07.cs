@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_07 : SimTemplate //guldan
+	class Sim_HERO_07 : SimCard //guldan
 	{
 
 //

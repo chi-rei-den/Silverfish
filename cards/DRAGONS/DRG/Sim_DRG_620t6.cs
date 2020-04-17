@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_620t6 : SimTemplate //* 狂怒风暴 Raging Storm
+	class Sim_DRG_620t6 : SimCard //* 狂怒风暴 Raging Storm
 	{
 		//<b>Rush</b>
 		//<b>突袭</b>

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Shaman_01 : SimTemplate //* 毁灭风暴 Destruction
+	class Sim_LOOTA_Shaman_01 : SimCard //* 毁灭风暴 Destruction
 	{
 		//
 		//

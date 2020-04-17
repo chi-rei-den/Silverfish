@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_033 : SimTemplate //* Book Wyrm
+	class Sim_KAR_033 : SimCard //* Book Wyrm
 	{
 		//Battlecry: If you're holding a Dragon, destroy an enemy minion with 3 Attack or less.
 

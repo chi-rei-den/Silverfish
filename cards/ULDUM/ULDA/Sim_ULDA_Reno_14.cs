@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_14 : SimTemplate //* 法力倾泻 Slinging Spells
+	class Sim_ULDA_Reno_14 : SimCard //* 法力倾泻 Slinging Spells
 	{
 		//
 		//

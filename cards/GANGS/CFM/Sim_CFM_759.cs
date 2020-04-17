@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_759 : SimTemplate //* Meanstreet Marshal
+	class Sim_CFM_759 : SimCard //* Meanstreet Marshal
 	{
 		// Deathrattle: If this minion has 2 or more Attack, draw a card.
 

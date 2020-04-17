@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_08b : SimTemplate //* 卡德加 Khadgar
+	class Sim_HERO_08b : SimCard //* 卡德加 Khadgar
 	{
 		//
 		//

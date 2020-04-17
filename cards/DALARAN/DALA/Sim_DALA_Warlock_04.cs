@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warlock_04 : SimTemplate //* 牺牲即胜利 Sacrifice
+	class Sim_DALA_Warlock_04 : SimCard //* 牺牲即胜利 Sacrifice
 	{
 		//
 		//

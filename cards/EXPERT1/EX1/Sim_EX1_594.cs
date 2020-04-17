@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_594 : SimTemplate //vaporize
+	class Sim_EX1_594 : SimCard //vaporize
 	{
         //todo secret
 //    geheimnis:/ wenn ein diener euren helden angreift, wird er vernichtet.

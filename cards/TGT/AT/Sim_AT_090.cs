@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_090 : SimTemplate //* Mukla's Champion
+	class Sim_AT_090 : SimCard //* Mukla's Champion
 	{
 		//Inspire: Give your other minions +1/+1.
 

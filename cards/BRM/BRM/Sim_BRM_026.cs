@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_026 : SimTemplate //* Hungry Dragon
+	class Sim_BRM_026 : SimCard //* Hungry Dragon
 	{
 		// Battlecry: Summon a random 1-Cost minion for your opponent.
         		

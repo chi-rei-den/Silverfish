@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_026 : SimTemplate //anubarambusher
+	class Sim_FP1_026 : SimCard //anubarambusher
 	{
 
 //    todesröcheln:/ lasst einen zufälligen befreundeten diener auf eure hand zurückkehren.

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_833h: SimTemplate //* Icy Touch
+    class Sim_ICC_833h: SimCard //* Icy Touch
     {
         // Hero Power: Deal 1 damage. If this kills a minion, summon a Water Elemental.
 

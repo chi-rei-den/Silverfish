@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_022 : SimTemplate //* Dragon Egg
+	class Sim_BRM_022 : SimCard //* Dragon Egg
 	{
 		// Whenever this minion takes damage, summon a 2/1 Whelp.
 

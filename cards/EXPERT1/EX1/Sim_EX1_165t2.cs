@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_165t2 : SimTemplate //druidoftheclaw
+	class Sim_EX1_165t2 : SimCard //druidoftheclaw
 	{
 
 //    spott/

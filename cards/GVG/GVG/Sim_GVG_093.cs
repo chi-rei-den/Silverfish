@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_093 : SimTemplate //Target Dummy
+    class Sim_GVG_093 : SimCard //Target Dummy
     {
         //   Taunt
     }

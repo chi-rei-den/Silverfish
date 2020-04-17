@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_696 : SimTemplate //* Devolve
+	class Sim_CFM_696 : SimCard //* Devolve
 	{
 		// Transform all enemy minions into random ones that cost (1) less.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_068 : SimTemplate //* Bolster
+	class Sim_AT_068 : SimCard //* Bolster
 	{
 		//Give your Taunt minions +2/+2.
 

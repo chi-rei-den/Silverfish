@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_365 : SimTemplate //holywrath
+	class Sim_EX1_365 : SimCard //holywrath
 	{
         // todo ask the posibility manager!
 //    zieht eine karte und verursacht schaden, der ihren kosten entspricht.

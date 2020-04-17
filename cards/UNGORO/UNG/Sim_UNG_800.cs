@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_800 : SimTemplate //* Terrorscale Stalker
+	class Sim_UNG_800 : SimCard //* Terrorscale Stalker
 	{
 		//Battlecry: Trigger a friendly minion's Deathrattle.
 

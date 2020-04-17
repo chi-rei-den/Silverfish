@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_149 : SimTemplate //* Ravaging Ghoul
+	class Sim_OG_149 : SimCard //* Ravaging Ghoul
 	{
 		//Battlecry: Deal 1 damage to all other minions.
 		

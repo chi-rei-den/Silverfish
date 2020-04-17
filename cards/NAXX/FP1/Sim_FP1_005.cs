@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_005 : SimTemplate //shadeofnaxxramas
+	class Sim_FP1_005 : SimCard //shadeofnaxxramas
 	{
 
 //    verstohlenheit/. erhält zu beginn eures zuges +1/+1.

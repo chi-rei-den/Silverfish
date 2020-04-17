@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t24 : SimTemplate //* Goldthorn
+	class Sim_CFM_621t24 : SimCard //* Goldthorn
 	{
 		// Give your minions +4 Health.
 		

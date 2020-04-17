@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_087 : SimTemplate//Blessing of Might
+    class Sim_CS2_087 : SimCard//Blessing of Might
     {
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

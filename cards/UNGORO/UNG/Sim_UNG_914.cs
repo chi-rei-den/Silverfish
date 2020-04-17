@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_914 : SimTemplate //* Raptor Hatchling
+	class Sim_UNG_914 : SimCard //* Raptor Hatchling
 	{
 		//Deathrattle: Shuffle a 4/3 Raptor into your deck.
 

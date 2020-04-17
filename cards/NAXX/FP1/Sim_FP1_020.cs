@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_020 : SimTemplate //avenge
+    class Sim_FP1_020 : SimCard //avenge
     {
         //todo secret
         //    geheimnis:/ wenn einer eurer diener stirbt, erhält ein zufälliger befreundeter diener +3/+2.

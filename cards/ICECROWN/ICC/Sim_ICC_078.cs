@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_078: SimTemplate //* Avalanche
+    class Sim_ICC_078: SimCard //* Avalanche
     {
         // Freeze a minion and deal 3 damage to Adjacent ones
 

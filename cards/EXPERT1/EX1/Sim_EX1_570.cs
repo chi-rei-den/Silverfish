@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_570 : SimTemplate //bite
+	class Sim_EX1_570 : SimCard //bite
 	{
 
 //    verleiht eurem helden +4 angriff in diesem zug und 4 rüstung.

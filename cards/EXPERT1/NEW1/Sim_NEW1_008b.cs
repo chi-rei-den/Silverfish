@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_008b : SimTemplate //* Ancient Secrets
+	class Sim_NEW1_008b : SimCard //* Ancient Secrets
 	{
 		//Restore 5 Health.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_810 : SimTemplate //* Stegodon
+	class Sim_UNG_810 : SimCard //* Stegodon
 	{
 		//Taunt
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_058 : SimTemplate //* Razorpetal Lasher
+	class Sim_UNG_058 : SimCard //* Razorpetal Lasher
 	{
 		//Battlecry: Add a Razorpetal to your hand that deals 1 damage.
 

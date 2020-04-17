@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_01b : SimTemplate //* 腐化督军加尔鲁什 Corrupt Garrosh
+	class Sim_HERO_01b : SimCard //* 腐化督军加尔鲁什 Corrupt Garrosh
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042b : SimTemplate //* Panther Form
+	class Sim_AT_042b : SimCard //* Panther Form
 	{
 		//Transform into a +1/+1 and Stealth
 		

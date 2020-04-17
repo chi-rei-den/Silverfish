@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_SHAMAN : SimTemplate //* Totemic Slam
+	class Sim_AT_132_SHAMAN : SimCard //* Totemic Slam
 	{
 		//Hero Power. Summon a Totem of your choice.
 

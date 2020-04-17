@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_314t1 : SimTemplate //* Frostmourne
+    class Sim_ICC_314t1 : SimCard //* Frostmourne
     {
         // Deathrattle: Summon every minion killed by this weapon.
 

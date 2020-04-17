@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_315 : SimTemplate //* Alleycat
+	class Sim_CFM_315 : SimCard //* Alleycat
 	{
 		// Battlecry: Summon a 1/1 Cat.
 

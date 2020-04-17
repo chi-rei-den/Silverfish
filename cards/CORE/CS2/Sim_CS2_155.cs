@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_155 : SimTemplate //archmage
+	class Sim_CS2_155 : SimCard //archmage
 	{
 
 //    zauberschaden +1/

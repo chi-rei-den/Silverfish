@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_521 : SimTemplate //* 炼魂术 Ectomancy
+	class Sim_BOT_521 : SimCard //* 炼魂术 Ectomancy
 	{
 		//Summon copies of all Demons you control.
 		//召唤你控制的所有恶魔的复制。

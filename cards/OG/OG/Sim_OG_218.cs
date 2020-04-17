@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_218 : SimTemplate //* Bloodhoof Brave
+	class Sim_OG_218 : SimCard //* Bloodhoof Brave
 	{
 		//Taunt. Enrage:+3 Attack.
 		

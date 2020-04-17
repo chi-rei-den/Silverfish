@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_069 : SimTemplate //* Sparring Partner
+	class Sim_AT_069 : SimCard //* Sparring Partner
 	{
 		//Taunt Battlecry: Give a minion Taunt.
 

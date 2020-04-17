@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_018 : SimTemplate //* Dragon Consort
+	class Sim_BRM_018 : SimCard //* Dragon Consort
 	{
 		// Battlecry: The next Dragon you play costs (2) less.
 

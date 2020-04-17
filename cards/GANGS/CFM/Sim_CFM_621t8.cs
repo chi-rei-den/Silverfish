@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t8 : SimTemplate //* Kingsblood
+	class Sim_CFM_621t8 : SimCard //* Kingsblood
 	{
 		// Draw a card.
 		

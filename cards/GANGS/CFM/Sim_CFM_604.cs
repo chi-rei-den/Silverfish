@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_604 : SimTemplate //* Greater Healing Potion
+	class Sim_CFM_604 : SimCard //* Greater Healing Potion
 	{
 		// Restore 12 health to a friendly character.
 

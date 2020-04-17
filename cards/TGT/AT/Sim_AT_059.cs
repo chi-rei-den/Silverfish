@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_059 : SimTemplate //* Brave Archer
+	class Sim_AT_059 : SimCard //* Brave Archer
 	{
 		//Inspire: If your hand is empty, deal 2 damage to the enemy hero.
 		

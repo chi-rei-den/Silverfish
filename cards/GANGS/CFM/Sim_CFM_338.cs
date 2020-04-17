@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_338 : SimTemplate //* Trogg Beastrager
+	class Sim_CFM_338 : SimCard //* Trogg Beastrager
 	{
         // Battlecry: Give a random Beast in your hand +1/+1.
 

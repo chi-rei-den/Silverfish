@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_752 : SimTemplate //* Stolen Goods
+	class Sim_CFM_752 : SimCard //* Stolen Goods
 	{
         // Give a random Taunt minion in your hand +3/+3.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_123 : SimTemplate //Soot Spewer
+    class Sim_GVG_123 : SimCard //Soot Spewer
     {
 
         //   Spell Damage +1

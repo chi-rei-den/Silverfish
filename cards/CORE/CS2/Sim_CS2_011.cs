@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_011 : SimTemplate //savageroar
+    class Sim_CS2_011 : SimCard //savageroar
     {
 
         //    verleiht euren charakteren +2 angriff in diesem zug.

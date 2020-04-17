@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_302 : SimTemplate //* Usher of Souls
+	class Sim_OG_302 : SimCard //* Usher of Souls
 	{
 		//Whenever a friendly minion dies, give your C'Thun +1/+1 (wherever it is).
 		

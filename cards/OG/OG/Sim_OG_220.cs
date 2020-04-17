@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_220 : SimTemplate //* Malkorok
+	class Sim_OG_220 : SimCard //* Malkorok
 	{
 		//Battlecry: Equip a random weapon.
 		

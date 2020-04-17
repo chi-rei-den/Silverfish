@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warrior_03 : SimTemplate //* 冲锋 Charge!
+	class Sim_LOOTA_Warrior_03 : SimCard //* 冲锋 Charge!
 	{
 		//
 		//

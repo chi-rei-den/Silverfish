@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX5_02H : SimTemplate //* Eruption
+	class Sim_NAX5_02H : SimCard //* Eruption
 	{
 		//Hero Power: Deal 3 damage to the left-most enemy 
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_243 : SimTemplate //dustdevil
+	class Sim_EX1_243 : SimCard //dustdevil
 	{
 
 //    windzorn/, überladung:/ (2)

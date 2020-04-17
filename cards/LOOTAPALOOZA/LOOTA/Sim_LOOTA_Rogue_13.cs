@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Rogue_13 : SimTemplate //* 袋里乾坤 Bag of Tricks
+	class Sim_LOOTA_Rogue_13 : SimCard //* 袋里乾坤 Bag of Tricks
 	{
 		//
 		//

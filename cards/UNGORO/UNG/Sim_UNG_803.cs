@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_803 : SimTemplate //* Emerald Reaver
+	class Sim_UNG_803 : SimCard //* Emerald Reaver
 	{
 		//Battlecry: Deal 1 damage to each hero.
 

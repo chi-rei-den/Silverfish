@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_097 : SimTemplate //abomination
+	class Sim_EX1_097 : SimCard //abomination
 	{
 
 //    spott/. todesröcheln:/ fügt allen charakteren 2 schaden zu.

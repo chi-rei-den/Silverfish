@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_062 : SimTemplate //hellfire
+	class Sim_CS2_062 : SimCard //hellfire
 	{
 
 //    fügt allen charakteren $3 schaden zu.

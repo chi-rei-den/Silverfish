@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_173 : SimTemplate //starfire
+	class Sim_EX1_173 : SimCard //starfire
 	{
 
 //    verursacht $5 schaden. zieht eine karte.

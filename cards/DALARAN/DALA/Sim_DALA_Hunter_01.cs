@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Hunter_01 : SimTemplate //* 狩猎法术 Spells
+	class Sim_DALA_Hunter_01 : SimCard //* 狩猎法术 Spells
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_104 : SimTemplate //* Tuskarr Jouster
+	class Sim_AT_104 : SimCard //* Tuskarr Jouster
 	{
 		//Battlecry: Reveal a minion in each deck. If yours costs more, restore 7 Health to your hero.
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_206 : SimTemplate //* Stormcrack
+	class Sim_OG_206 : SimCard //* Stormcrack
 	{
 		//Deal 4 damage to a minion. Overload: (1)
 		

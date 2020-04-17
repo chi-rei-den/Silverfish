@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_NEW1_026 : SimTemplate //* Violet Teacher
+    class Sim_NEW1_026 : SimCard //* Violet Teacher
     {
         //Whenever you cast a spell, summon a 1/1 Violet Apprentice.
 

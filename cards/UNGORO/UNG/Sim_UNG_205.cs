@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_205 : SimTemplate //* Glacial Shard
+	class Sim_UNG_205 : SimCard //* Glacial Shard
 	{
 		//Battlecry: Freeze an enemy.
 

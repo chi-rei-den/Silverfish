@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_03 : SimTemplate //* 战术 Tactical
+	class Sim_GILA_Darius_03 : SimCard //* 战术 Tactical
 	{
 		//
 		//

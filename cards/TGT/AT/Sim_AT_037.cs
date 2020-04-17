@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_037 : SimTemplate //* Living Roots
+	class Sim_AT_037 : SimCard //* Living Roots
 	{
 		//Choose One - Deal 2 damage; or Summon two 1/1 Saplings.
 

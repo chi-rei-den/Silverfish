@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_089 : SimTemplate //Illuminator
+    class Sim_GVG_089 : SimCard //Illuminator
     {
 
         //  if you control a Secret at the end of your turn, restore 4 health to your hero. 

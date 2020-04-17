@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_114 : SimTemplate //* Forbidden Ritual
+	class Sim_OG_114 : SimCard //* Forbidden Ritual
 	{
 		//Spend all your Mana. Summon that many 1/1 Tentacles.
 

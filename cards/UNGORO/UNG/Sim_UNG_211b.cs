@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211b : SimTemplate //* Invocation of Water
+	class Sim_UNG_211b : SimCard //* Invocation of Water
 	{
 		//Restore 12 Health to your hero.
 

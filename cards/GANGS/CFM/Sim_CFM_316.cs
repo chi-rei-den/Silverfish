@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_316 : SimTemplate //* Rat Pack
+	class Sim_CFM_316 : SimCard //* Rat Pack
 	{
 		// Deathrattle: Summon a number of 1/1 Rats equal to this minion's Attack.
 

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Priest_03 : SimTemplate //* 绝对统御 Domination
+	class Sim_LOOTA_Priest_03 : SimCard //* 绝对统御 Domination
 	{
 		//
 		//

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_056t : SimTemplate //burrowing mine
+    class Sim_GVG_056t : SimCard //burrowing mine
     {
 
         //  explode

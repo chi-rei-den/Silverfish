@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_711t : SimTemplate //* 石头魔像 Stone Golem
+	class Sim_ULD_711t : SimCard //* 石头魔像 Stone Golem
 	{
 		//
 		//

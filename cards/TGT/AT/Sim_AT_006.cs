@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_006 : SimTemplate //* Dalaran Aspirant
+	class Sim_AT_006 : SimCard //* Dalaran Aspirant
 	{
 		//Inspire: Gain Spell Damage +1.
 

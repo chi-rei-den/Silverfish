@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_033 : SimTemplate //* Burgle
+	class Sim_AT_033 : SimCard //* Burgle
 	{
 		//Add 2 random class cards to your hand (From your opponent's class).
 		

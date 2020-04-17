@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_653 : SimTemplate //* Hired Gun
+	class Sim_CFM_653 : SimCard //* Hired Gun
 	{
 		// Taunt
 	}

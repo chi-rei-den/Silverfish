@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_152 : SimTemplate //squire
+	class Sim_CS2_152 : SimCard //squire
 	{
 
 //

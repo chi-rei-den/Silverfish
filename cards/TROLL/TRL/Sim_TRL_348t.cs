@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_348t : SimTemplate //* 山猫 Lynx
+	class Sim_TRL_348t : SimCard //* 山猫 Lynx
 	{
 		//<b>Rush</b>
 		//<b>突袭</b>

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_070 : SimTemplate //Salty Dog
+    class Sim_GVG_070 : SimCard //Salty Dog
     {
 
         //   just a pirate

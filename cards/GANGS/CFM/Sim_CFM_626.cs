@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_626 : SimTemplate //* Kabal Talonpriest
+	class Sim_CFM_626 : SimCard //* Kabal Talonpriest
 	{
 		// Battlecry: Give a friendly minion +3 Health.
 

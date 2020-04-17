@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_01 : SimTemplate //* 微型军团 Feeble Squires
+	class Sim_ULDA_Finley_01 : SimCard //* 微型军团 Feeble Squires
 	{
 		//
 		//

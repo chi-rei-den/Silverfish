@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_807: SimTemplate //* Strongshell Scavenger
+    class Sim_ICC_807: SimCard //* Strongshell Scavenger
     {
         // Battlecry: Give your Taunt minions +2/+2.
 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_020 : SimTemplate //* Arcanologist
+	class Sim_UNG_020 : SimCard //* Arcanologist
 	{
 		//Battlecry: Draw a Secret from your deck.
 

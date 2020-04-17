@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_06 : SimTemplate //* 重装 Armory
+	class Sim_GILA_Darius_06 : SimCard //* 重装 Armory
 	{
 		//
 		//

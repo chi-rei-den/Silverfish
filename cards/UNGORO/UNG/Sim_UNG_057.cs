@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_057 : SimTemplate //* Razorpetal Volley
+	class Sim_UNG_057 : SimCard //* Razorpetal Volley
 	{
 		//Add two Razorpetals to your hand that deal 1 damage.
 

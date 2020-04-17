@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_083 : SimTemplate //* Devilsaur Egg
+	class Sim_UNG_083 : SimCard //* Devilsaur Egg
 	{
 		//Deathrattle: Summon a 5/5 Devilsaur.
 

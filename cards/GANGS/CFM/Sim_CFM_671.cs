@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_671 : SimTemplate //* Cryomancer
+	class Sim_CFM_671 : SimCard //* Cryomancer
 	{
 		// Battlecry: Gain +2/+2 if an enemy is Frozen.
 

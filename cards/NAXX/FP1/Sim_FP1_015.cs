@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_015 : SimTemplate //* feugen
+	class Sim_FP1_015 : SimCard //* feugen
 	{
         //Deathrattle: If Stalagg also died this game, summon Thaddius.
 

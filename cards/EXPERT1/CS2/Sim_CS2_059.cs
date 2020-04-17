@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_059 : SimTemplate //* Blood Imp
+    class Sim_CS2_059 : SimCard //* Blood Imp
 	{
         // Stealth. At the end of your turn, give another random friendly minion +1 Health.
 

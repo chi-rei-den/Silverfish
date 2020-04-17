@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_120 : SimTemplate //* Frost Giant
+	class Sim_AT_120 : SimCard //* Frost Giant
 	{
 		//Costs (1) less for each time you used your Hero Power this game.
 	}

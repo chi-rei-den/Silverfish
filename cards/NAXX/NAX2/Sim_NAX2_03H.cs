@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX2_03H : SimTemplate //Rain of Fire
+	class Sim_NAX2_03H : SimCard //Rain of Fire
 	{
 
 //  Hero Power (Heroic): Fire a missile for each card in your opponent's hand.

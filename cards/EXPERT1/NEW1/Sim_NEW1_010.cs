@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_010 : SimTemplate //alakirthewindlord
+	class Sim_NEW1_010 : SimCard //alakirthewindlord
 	{
 
 //    windzorn/, ansturm/, gottesschild/, spott/

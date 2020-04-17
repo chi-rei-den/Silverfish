@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_BOSS_48t : SimTemplate //* 锯齿利刃 Sawblade
+	class Sim_LOOTA_BOSS_48t : SimCard //* 锯齿利刃 Sawblade
 	{
 		//
 		//

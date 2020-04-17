@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_855: SimTemplate //* Hyldnir Frostrider
+    class Sim_ICC_855: SimCard //* Hyldnir Frostrider
     {
         // Battlecry: Freeze your other minions.
 

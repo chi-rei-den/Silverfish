@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_134t : SimTemplate //* 蜜蜂 Bee
+	class Sim_ULD_134t : SimCard //* 蜜蜂 Bee
 	{
 		//
 		//

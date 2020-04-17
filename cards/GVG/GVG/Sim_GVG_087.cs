@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_087 : SimTemplate //* Steamwheedle Sniper
+    class Sim_GVG_087 : SimCard //* Steamwheedle Sniper
     {
 
         //  Your Hero Power can target minions. 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_006 : SimTemplate //* Cloaked Huntress
+	class Sim_KAR_006 : SimCard //* Cloaked Huntress
 	{
 		//Your Secrets cost (0).
 

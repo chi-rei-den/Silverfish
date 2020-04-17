@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_563 : SimTemplate //malygos
+	class Sim_EX1_563 : SimCard //malygos
 	{
 
 //    zauberschaden +5/

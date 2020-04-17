@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_018 : SimTemplate //duplicate
+	class Sim_FP1_018 : SimCard //duplicate
 	{
         //todo secret
 //    geheimnis:/ wenn ein befreundeter diener stirbt, erhaltet ihr 2 kopien dieses dieners auf eure hand.

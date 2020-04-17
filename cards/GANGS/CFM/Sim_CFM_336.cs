@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_336 : SimTemplate //* Shaky Zipgunner
+	class Sim_CFM_336 : SimCard //* Shaky Zipgunner
 	{
 		// Deathrattle: Give a random minion in your hand +2/+2.
 

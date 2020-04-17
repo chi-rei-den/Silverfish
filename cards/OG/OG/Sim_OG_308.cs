@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_308 : SimTemplate //* Giant Sand Worm
+	class Sim_OG_308 : SimCard //* Giant Sand Worm
 	{
         //Whenever this minion kills another minion, it may attack again.
         

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_013 : SimTemplate //* Purify
+	class Sim_KAR_013 : SimCard //* Purify
 	{
 		//Silence a friendly minion. Draw a card.
 

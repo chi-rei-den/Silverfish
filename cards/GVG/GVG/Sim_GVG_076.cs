@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_076 : SimTemplate //Explosive Sheep
+    class Sim_GVG_076 : SimCard //Explosive Sheep
     {
 
         //  Deathrattle: Deal 2 damage to all minions. 

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_005 : SimTemplate //claw
+	class Sim_CS2_005 : SimCard //claw
 	{
 
 //    verleiht eurem helden +2 angriff in diesem zug und 2 rüstung.

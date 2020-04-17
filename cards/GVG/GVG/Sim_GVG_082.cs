@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_082 : SimTemplate //* Clockwork Gnome
+    class Sim_GVG_082 : SimCard //* Clockwork Gnome
     {
 
         //Deathrattle: Add a Spare Part card to your hand.

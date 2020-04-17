@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_UNG_057t1 : SimTemplate //* Razorpetal
+    class Sim_UNG_057t1 : SimCard //* Razorpetal
 	{
         //Deal $1 damage.
 

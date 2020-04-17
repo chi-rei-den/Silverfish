@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_820: SimTemplate //* Chillblade Champion
+    class Sim_ICC_820: SimCard //* Chillblade Champion
     {
         // Charge. Lifesteal.
 

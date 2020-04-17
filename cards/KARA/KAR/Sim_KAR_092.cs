@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_092 : SimTemplate //* Medivh's Valet
+	class Sim_KAR_092 : SimCard //* Medivh's Valet
 	{
 		//Battlecry: If you control a Secret, deal 3 damage.
 		

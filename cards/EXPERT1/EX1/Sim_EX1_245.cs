@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_245 : SimTemplate //earthshock
+	class Sim_EX1_245 : SimCard //earthshock
 	{
 
 //    bringt einen diener zum schweigen/ und fügt ihm dann $1 schaden zu.

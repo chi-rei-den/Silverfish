@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_081: SimTemplate //* Drakkari Defender
+    class Sim_ICC_081: SimCard //* Drakkari Defender
     {
         // Taunt Overload: (3)
 

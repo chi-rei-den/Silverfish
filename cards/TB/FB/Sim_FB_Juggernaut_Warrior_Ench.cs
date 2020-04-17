@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_Juggernaut_Warrior_Ench : SimTemplate
+	class Sim_FB_Juggernaut_Warrior_Ench : SimCard
 	{
 	}
 }

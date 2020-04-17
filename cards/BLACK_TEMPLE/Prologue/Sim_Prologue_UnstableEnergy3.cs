@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Prologue_UnstableEnergy3 : SimTemplate
+	class Sim_Prologue_UnstableEnergy3 : SimCard
 	{
 	}
 }

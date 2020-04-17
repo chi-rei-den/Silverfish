@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_620 : SimTemplate //moltengiant
+	class Sim_EX1_620 : SimCard //moltengiant
 	{
 
 //    kostet (1) weniger für jeden schadenspunkt, den euer held erlitten hat.

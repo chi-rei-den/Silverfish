@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_651 : SimTemplate //* Naga Corsair
+	class Sim_CFM_651 : SimCard //* Naga Corsair
 	{
 		// Battlecry: Give your weapon +1 Attack.
 

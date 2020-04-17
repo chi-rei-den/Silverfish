@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_087tw : SimTemplate //* 融合怪 Amalgam
+	class Sim_DAL_087tw : SimCard //* 融合怪 Amalgam
 	{
 		//
 		//

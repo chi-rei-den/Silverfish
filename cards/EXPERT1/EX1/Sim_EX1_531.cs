@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_531 : SimTemplate //* scavenginghyena
+	class Sim_EX1_531 : SimCard //* scavenginghyena
 	{
 //    Whenever a friendly Beast dies, gain +2/+1.
 

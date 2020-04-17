@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_GVG_098 : SimTemplate //Gnomeregan Infantry
+    class Sim_GVG_098 : SimCard //Gnomeregan Infantry
     {
 
         //   Charge Taunt

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_282 : SimTemplate //* Blade of C'Thun
+	class Sim_OG_282 : SimCard //* Blade of C'Thun
 	{
 		//Battlecry: Destroy a minion. Add its Attack and Health to C'Thun's (wherever it is).
 		

@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_057 : SimTemplate //ancientbrewmaster
+	class Sim_EX1_057 : SimCard //ancientbrewmaster
 	{
 
 //    kampfschrei:/ lasst einen befreundeten diener vom schlachtfeld auf eure hand zurückkehren.

@@ -24,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
- class Sim_DAL_739 : SimTemplate //地精跟班
+ class Sim_DAL_739 : SimCard //地精跟班
  {
  // 战吼：使一个友方随从获得+1攻击力和突袭。
  public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

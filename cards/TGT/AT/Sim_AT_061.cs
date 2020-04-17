@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_061 : SimTemplate //* Lock and Load
+	class Sim_AT_061 : SimCard //* Lock and Load
 	{
 		//Each time you cast a spell this turn, add a random Hunter card to your hand.
 		

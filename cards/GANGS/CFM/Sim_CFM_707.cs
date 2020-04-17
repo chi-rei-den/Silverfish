@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_707 : SimTemplate //* Jade Lightning
+	class Sim_CFM_707 : SimCard //* Jade Lightning
 	{
 		// Deal 4 damage. Summon a Jade Golem.
         

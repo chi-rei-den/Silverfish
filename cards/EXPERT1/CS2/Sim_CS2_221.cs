@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_221 : SimTemplate //spitefulsmith
+	class Sim_CS2_221 : SimCard //spitefulsmith
 	{
 
 //    wutanfall:/ eure waffe hat +2 angriff.

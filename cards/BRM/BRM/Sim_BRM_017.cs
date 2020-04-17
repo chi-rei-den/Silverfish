@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_017 : SimTemplate //* Resurrect
+	class Sim_BRM_017 : SimCard //* Resurrect
 	{
 		// Summon a random friendly minion that died this game.
 		

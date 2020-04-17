@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_536 : SimTemplate //eaglehornbow
+	class Sim_EX1_536 : SimCard //eaglehornbow
 	{
 
 //    erhält jedes mal +1 haltbarkeit, wenn ein eigenes geheimnis/ aufgedeckt wird.

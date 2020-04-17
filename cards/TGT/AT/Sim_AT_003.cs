@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_003 : SimTemplate //* Fallen Hero
+	class Sim_AT_003 : SimCard //* Fallen Hero
 	{
 		//Your Hero Power deals 1 extra damage.
 

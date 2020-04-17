@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_038 : SimTemplate //* Righteous Protector
+    class Sim_ICC_038 : SimCard //* Righteous Protector
     {
         // Taunt. Divine Shield.
 

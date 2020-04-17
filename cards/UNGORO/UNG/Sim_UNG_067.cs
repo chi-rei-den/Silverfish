@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_067 : SimTemplate //* The Caverns Below
+	class Sim_UNG_067 : SimCard //* The Caverns Below
 	{
 		//Quest: Play four minions with the same name. Reward: Crystal Core.
 

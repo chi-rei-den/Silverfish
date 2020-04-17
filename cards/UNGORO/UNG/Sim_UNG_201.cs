@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_201 : SimTemplate //* Primalfin Totem
+	class Sim_UNG_201 : SimCard //* Primalfin Totem
 	{
 		//At the end of your turn, summon a 1/1 Murloc.
 

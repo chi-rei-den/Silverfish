@@ -25,7 +25,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_586 : SimTemplate //seagiant
+	class Sim_EX1_586 : SimCard //seagiant
 	{
 
 //    kostet (1) weniger für jeden anderen diener auf dem schlachtfeld.
