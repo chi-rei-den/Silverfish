@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_323w : SimTemplate //* Blood Fury
 	{
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_323w);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

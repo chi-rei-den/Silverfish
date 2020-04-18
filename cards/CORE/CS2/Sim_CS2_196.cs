@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_CS2_196 : SimTemplate //* razorfenhunter
 	{
         //Battlecry: Summon a 1/1 Boar.
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_boar); //boar
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Boar; //boar
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

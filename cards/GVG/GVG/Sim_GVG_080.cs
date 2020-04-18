@@ -28,7 +28,7 @@ namespace HREngine.Bots
     class Sim_GVG_080 : SimTemplate //* Druid of the Fang
     {
         //   Battlecry:If you have a Beast, transform this minion into a 7/7.
-        Chireiden.Silverfish.SimCard betterguy = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_080t);
+        Chireiden.Silverfish.SimCard betterguy = CardIds.NonCollectible.Druid.DruidoftheFang_DruidOfTheFangToken;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

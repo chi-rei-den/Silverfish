@@ -39,7 +39,7 @@ namespace HREngine.Bots
                 if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
                 {
                     p.minionGetBuffed(own, 1, 1);
-                    p.drawACard(Chireiden.Silverfish.SimCard.armorplating, own.own, true);
+                    p.drawACard(CardIds.NonCollectible.Neutral.ArmorPlating, own.own, true);
                     return;
                 }
             }

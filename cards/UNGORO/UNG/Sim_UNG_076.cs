@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon two 1/1 Raptors.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_076t1); //1/1 Raptor
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Eggnapper_RaptorToken; //1/1 Raptor
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

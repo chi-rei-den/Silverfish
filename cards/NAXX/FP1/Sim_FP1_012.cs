@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Taunt. Deathrattle: Summon a 1/2 Slime with Taunt.
 		
-        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_012t);
+        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.SludgeBelcher_PutridSlimeToken;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

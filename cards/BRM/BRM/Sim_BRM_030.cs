@@ -36,40 +36,40 @@ namespace HREngine.Bots
             switch (opponentHeroClass)
             {
                 case TAG_CLASS.WARRIOR:
-					p.drawACard(Chireiden.Silverfish.SimCard.shieldblock, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.shieldblock, m.own, true);
+					p.drawACard(CardIds.Collectible.Warrior.ShieldBlock, m.own, true);
+					p.drawACard(CardIds.Collectible.Warrior.ShieldBlock, m.own, true);
 					break;
                 case TAG_CLASS.WARLOCK:
-					p.drawACard(Chireiden.Silverfish.SimCard.baneofdoom, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.baneofdoom, m.own, true);
+					p.drawACard(CardIds.Collectible.Warlock.BaneOfDoom, m.own, true);
+					p.drawACard(CardIds.Collectible.Warlock.BaneOfDoom, m.own, true);
                     break;
                 case TAG_CLASS.ROGUE:
-					p.drawACard(Chireiden.Silverfish.SimCard.sprint, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.sprint, m.own, true);
+					p.drawACard(CardIds.Collectible.Rogue.Sprint, m.own, true);
+					p.drawACard(CardIds.Collectible.Rogue.Sprint, m.own, true);
 					break;
                 case TAG_CLASS.SHAMAN:
-					p.drawACard(Chireiden.Silverfish.SimCard.farsight, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.farsight, m.own, true);
+					p.drawACard(CardIds.Collectible.Shaman.FarSight, m.own, true);
+					p.drawACard(CardIds.Collectible.Shaman.FarSight, m.own, true);
 					break;
                 case TAG_CLASS.PRIEST:
-					p.drawACard(Chireiden.Silverfish.SimCard.thoughtsteal, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.thoughtsteal, m.own, true);
+					p.drawACard(CardIds.Collectible.Priest.Thoughtsteal, m.own, true);
+					p.drawACard(CardIds.Collectible.Priest.Thoughtsteal, m.own, true);
 					break;
                 case TAG_CLASS.PALADIN:
-					p.drawACard(Chireiden.Silverfish.SimCard.hammerofwrath, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.hammerofwrath, m.own, true);
+					p.drawACard(CardIds.Collectible.Paladin.HammerOfWrath, m.own, true);
+					p.drawACard(CardIds.Collectible.Paladin.HammerOfWrath, m.own, true);
 					break;
                 case TAG_CLASS.MAGE:
-					p.drawACard(Chireiden.Silverfish.SimCard.frostnova, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.frostnova, m.own, true);
+					p.drawACard(CardIds.Collectible.Mage.FrostNova, m.own, true);
+					p.drawACard(CardIds.Collectible.Mage.FrostNova, m.own, true);
 					break;
                 case TAG_CLASS.HUNTER:
-					p.drawACard(Chireiden.Silverfish.SimCard.cobrashot, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.cobrashot, m.own, true);
+					p.drawACard(CardIds.Collectible.Hunter.CobraShot, m.own, true);
+					p.drawACard(CardIds.Collectible.Hunter.CobraShot, m.own, true);
 					break;
                 case TAG_CLASS.DRUID:
-					p.drawACard(Chireiden.Silverfish.SimCard.wildgrowth, m.own, true);
-					p.drawACard(Chireiden.Silverfish.SimCard.wildgrowth, m.own, true);
+					p.drawACard(CardIds.Collectible.Druid.WildGrowth, m.own, true);
+					p.drawACard(CardIds.Collectible.Druid.WildGrowth, m.own, true);
                     break;
 				//default:
 			}

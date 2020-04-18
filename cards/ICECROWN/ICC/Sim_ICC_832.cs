@@ -29,12 +29,12 @@ namespace HREngine.Bots
     {
         // Choose One - Summon 2 Poisonous Spiders; or 2 Scarabs with Taunt.
 
-        Chireiden.Silverfish.SimCard kidSpider = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_832t3); //Frost Widow
-        Chireiden.Silverfish.SimCard kidScarab = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_832t4); //Scarab Beetle
+        Chireiden.Silverfish.SimCard kidSpider = CardIds.NonCollectible.Druid.MalfurionthePestilent_FrostWidowToken; //Frost Widow
+        Chireiden.Silverfish.SimCard kidScarab = CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabBeetleToken; //Scarab Beetle
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_832p, ownplay); // Plague Lord
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.MalfurionthePestilent_PlagueLord, ownplay); // Plague Lord
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 

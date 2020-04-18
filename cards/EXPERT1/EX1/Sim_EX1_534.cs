@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon two 2/2 Hyenas.
 
-        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_534t);//hyena
+        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Hunter.SavannahHighmane_HyenaToken;//hyena
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

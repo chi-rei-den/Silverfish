@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Equip Atiesh, Greatstaff of the Guardian.
 		
-        Chireiden.Silverfish.SimCard wcard = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_097t);//Atiesh
+        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Neutral.MedivhtheGuardian_AtieshToken;//Atiesh
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

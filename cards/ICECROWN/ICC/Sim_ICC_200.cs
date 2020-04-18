@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Secret: When one of your minions is attacked, summon a 2/3 Poisonous Cobra.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_170); //Emperor Cobra
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.EmperorCobra; //Emperor Cobra
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //    fügt einem charakter $2 schaden zu. beschwört einen zufälligen dämon, wenn der schaden tödlich ist.
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_059);//bloodimp
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Warlock.BloodImp;//bloodimp
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
 

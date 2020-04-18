@@ -29,8 +29,8 @@ namespace HREngine.Bots
     {
         // Summon three 1/1 Silver Hand Recruits. Equip a 1/4 Weapon.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t);
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_091);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken;
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Paladin.LightsJustice;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Secret: When one of your minions is attacked, summon three 1/1 Snakes.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_554t);//snake
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.SnakeTrap_SnakeToken;//snake
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

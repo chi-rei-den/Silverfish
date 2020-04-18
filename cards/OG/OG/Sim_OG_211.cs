@@ -29,9 +29,9 @@ namespace HREngine.Bots
 	{
 		//Summon all 3 Animal Companions.
 		
-        Chireiden.Silverfish.SimCard c1 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_034);//Huffer
-        Chireiden.Silverfish.SimCard c2 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_033);//Leokk
-        Chireiden.Silverfish.SimCard c3 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_032);//Misha
+        Chireiden.Silverfish.SimCard c1 = CardIds.NonCollectible.Hunter.Huffer;//Huffer
+        Chireiden.Silverfish.SimCard c2 = CardIds.NonCollectible.Hunter.Leokk;//Leokk
+        Chireiden.Silverfish.SimCard c3 = CardIds.NonCollectible.Hunter.Misha;//Misha
         
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

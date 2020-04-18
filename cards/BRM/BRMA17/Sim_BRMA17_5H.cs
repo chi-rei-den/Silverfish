@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon two 4/2 Bone Constructs.
 
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA17_6H);//4/2Bone Construct
+		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.BoneConstructHeroic;//4/2Bone Construct
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

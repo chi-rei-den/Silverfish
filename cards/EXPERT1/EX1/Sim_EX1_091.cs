@@ -40,7 +40,7 @@ namespace HREngine.Bots
                 {
                     foreach (Minion m in temp)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.knifejuggler && !m.silenced) m.handcard.card.sim_card.onMinionWasSummoned(p, m, temp[num]);
+                        if (m.name == CardIds.Collectible.Neutral.KnifeJuggler && !m.silenced) m.handcard.card.sim_card.onMinionWasSummoned(p, m, temp[num]);
                     }
                 }
             }

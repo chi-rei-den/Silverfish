@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.pompousthespian, ownplay, true);
+            p.drawACard(CardIds.Collectible.Neutral.PompousThespian, ownplay, true);
         }
     }
 }

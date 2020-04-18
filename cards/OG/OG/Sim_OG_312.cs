@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Equip a 1/3 Rusty Hook.
 
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_058);
+        Chireiden.Silverfish.SimCard w = CardIds.NonCollectible.Warrior.RustyHook;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

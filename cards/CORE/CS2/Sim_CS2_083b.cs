@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //    heldenfähigkeit/\nlegt einen dolch (1/2) an.
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_082);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Rogue.WickedKnife;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(weapon, ownplay);

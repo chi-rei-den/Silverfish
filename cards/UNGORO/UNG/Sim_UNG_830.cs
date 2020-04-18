@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_205), m.zonepos-1, m.own); //Silverware Golem.
+			p.callKid(CardIds.Collectible.Warlock.SilverwareGolem, m.zonepos-1, m.own); //Silverware Golem.
         }
 	}
 }

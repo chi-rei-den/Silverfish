@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Whenever this minion survives damage, summon another Grim Patron.
 
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_019);//Grim Patron
+		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.GrimPatron;//Grim Patron
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {

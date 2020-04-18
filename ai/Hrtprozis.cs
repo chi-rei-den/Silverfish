@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System;
     using System.Collections.Generic;
@@ -436,7 +436,7 @@
 
         public void updateHero(Weapon w, string heron, Chireiden.Silverfish.SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
         {
-            if (w.name == Chireiden.Silverfish.SimCard.foolsbane) w.cantAttackHeroes = true;
+            if (w.name == CardIds.Collectible.Warrior.FoolsBane) w.cantAttackHeroes = true;
 
             if (hero.own)
             {
@@ -448,7 +448,7 @@
                 if (this.ownHeroStartClass == TAG_CLASS.INVALID) this.ownHeroStartClass = hero.cardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
-                if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.gladiatorslongbow) this.ownHero.immuneWhileAttacking = true;
+                if (this.ownWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.ownHero.immuneWhileAttacking = true;
 
                 this.heroAbility = ability;
                 this.ownHeroPowerCost = abCost;
@@ -464,7 +464,7 @@
                 if (this.enemyHeroStartClass == TAG_CLASS.INVALID) this.enemyHeroStartClass = enemyHero.cardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
-                if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.gladiatorslongbow) this.enemyHero.immuneWhileAttacking = true;
+                if (this.enemyWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.enemyHero.immuneWhileAttacking = true;
 
                 this.enemyAbility = ability;
                 this.enemyHeroPowerCost = abCost;
@@ -560,7 +560,7 @@
 
             if (hc.card.Stealth) m.stealth = true;
 
-            if (m.name == Chireiden.Silverfish.SimCard.lightspawn && !m.silenced)
+            if (m.name == CardIds.Collectible.Priest.Lightspawn && !m.silenced)
             {
                 m.Angr = m.Hp;
             }
@@ -643,7 +643,7 @@
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
                 if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
-                if (m.name == Chireiden.Silverfish.SimCard.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
+                if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
                 }
@@ -699,7 +699,7 @@
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
                 if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
-                if (m.name == Chireiden.Silverfish.SimCard.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
+                if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
                 }

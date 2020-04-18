@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 5/5 Faceless Destroyer.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_272t);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.TwilightSummoner_FacelessDestroyerToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

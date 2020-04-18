@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//<b>Battlecry:</b> Summon copies of your Totems.
 		//<b>战吼：</b>召唤你的图腾的复制。
-		Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ULD_413);
+		Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.SplittingAxe;
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
 			p.equipWeapon(weapon, ownplay);

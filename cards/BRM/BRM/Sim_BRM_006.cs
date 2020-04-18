@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Whenever this minion takes damage, summon a 1/1 Imp.
 
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_006t); //imp
+		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.ImpGangBoss_ImpToken; //imp
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {

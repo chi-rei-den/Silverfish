@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Secret: When an enemy attacks, summon a 2/1 Defender as the new target.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_130a);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.NobleSacrifice_Defender;
 
         public override void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
         {

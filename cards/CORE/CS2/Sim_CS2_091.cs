@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_091);
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Paladin.LightsJustice;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

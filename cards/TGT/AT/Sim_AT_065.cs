@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: If you have a minion with Taunt, gain +1 Durability.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_065);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Warrior.KingsDefender;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

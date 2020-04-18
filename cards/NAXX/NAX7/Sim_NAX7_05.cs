@@ -33,7 +33,7 @@ namespace HREngine.Bots
 		{
             foreach (Minion m in ownplay ? p.enemyMinions : p.ownMinions)
             {
-				if (m.name == Chireiden.Silverfish.SimCard.understudy) p.minionGetControlled(m, ownplay, true);
+				if (m.name == CardIds.NonCollectible.Neutral.Understudy) p.minionGetControlled(m, ownplay, true);
 			}
 		}
 	}

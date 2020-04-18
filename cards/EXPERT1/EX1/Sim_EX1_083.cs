@@ -27,8 +27,8 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_083 : SimTemplate //tinkmasteroverspark
 	{
-        Chireiden.Silverfish.SimCard card1 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_tk29); // rex
-        Chireiden.Silverfish.SimCard card2 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_tk28); // squirrel
+        Chireiden.Silverfish.SimCard card1 = CardIds.NonCollectible.Neutral.Devilsaur; // rex
+        Chireiden.Silverfish.SimCard card2 = CardIds.NonCollectible.Neutral.Squirrel; // squirrel
         //todo better
 //    kampfschrei:/ verwandelt einen anderen zufälligen diener in einen teufelssaurier (5/5) oder ein eichhörnchen (1/1).
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

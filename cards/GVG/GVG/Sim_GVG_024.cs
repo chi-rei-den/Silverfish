@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //    Has +2 Attack while you have a Mech.
 
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_024);
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Rogue.CogmastersWrench;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

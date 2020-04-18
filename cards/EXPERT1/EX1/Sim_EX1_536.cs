@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
 //    erhält jedes mal +1 haltbarkeit, wenn ein eigenes geheimnis/ aufgedeckt wird.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_536);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Hunter.EaglehornBow;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

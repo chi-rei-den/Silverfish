@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System;
     using System.Collections.Generic;
@@ -20,7 +20,6 @@
         public int attackFaceHP = -1;
 
         Helpfunctions help;
-        CardDB cdb;
 
         private static ComboBreaker instance;
 
@@ -59,14 +58,14 @@
             public int bonusForPlaying = 0;
             public int bonusForPlayingT0 = 0;
             public int bonusForPlayingT1 = 0;
-            public Chireiden.Silverfish.SimCardName requiredWeapon = Chireiden.Silverfish.SimCardName.unknown;
+            public Chireiden.Silverfish.SimCard requiredWeapon = Chireiden.Silverfish.SimCard.unknown;
             public HeroEnum oHero = HeroEnum.None;
 
             public combo(string s)
             {
                 int i = 0;
                 this.neededMana = 0;
-                requiredWeapon = Chireiden.Silverfish.SimCardName.unknown;
+                requiredWeapon = Chireiden.Silverfish.SimCard.unknown;
                 this.type = combotype.combo;
                 this.twoTurnCombo = false;
                 bool fixmana = false;
@@ -239,7 +238,7 @@
                 return 0;
             }
 
-            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, Chireiden.Silverfish.SimCardName weapon)
+            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, Chireiden.Silverfish.SimCard weapon)
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
@@ -270,7 +269,7 @@
                         }
                     }
 
-                    if (requiredWeapon != Chireiden.Silverfish.SimCardName.unknown && requiredWeapon != weapon) return 1;
+                    if (requiredWeapon != Chireiden.Silverfish.SimCard.unknown && requiredWeapon != weapon) return 1;
 
                     if (turn0requires >= combot0len) return 2;
 
@@ -508,7 +507,7 @@
             if (this.combos.Count == 0) return 0;
 
             List<Action> alist = p.playactions;
-            Chireiden.Silverfish.SimCardName weapon = p.ownWeapon.name;
+            Chireiden.Silverfish.SimCard weapon = p.ownWeapon.name;
             HeroEnum heroname = p.ownHeroName;
 
             //returns a penalty only if the combo could be played, but is not played completely

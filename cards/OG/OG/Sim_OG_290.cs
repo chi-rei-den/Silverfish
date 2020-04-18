@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnStartOfOwner)
             {
-				p.drawACard(Chireiden.Silverfish.SimCard.varianwrynn, turnStartOfOwner);
+				p.drawACard(CardIds.Collectible.Warrior.VarianWrynn, turnStartOfOwner);
             }
         }
 	}

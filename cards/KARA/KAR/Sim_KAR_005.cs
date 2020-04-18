@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 3/2 Big Bad Wolf.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_005a);//Big Bad Wolf
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.KindlyGrandmother_BigBadWolf;//Big Bad Wolf
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -898,7 +898,7 @@ namespace HREngine.Bots
                 HSCard entity = allcards[i];
                 if (entity.Id == null || entity.Id == "") continue;
 
-                if (CardDB.Instance.cardIdstringToEnum(entity.Id) == Chireiden.Silverfish.SimCard.UNG_116t) ownMinionsCost0 = true;
+                if (CardDB.Instance.cardIdstringToEnum(entity.Id) == CardIds.NonCollectible.Druid.JungleGiants_BarnabusTheStomperToken) ownMinionsCost0 = true;
 
                 if (entity.GetZone() == Triton.Game.Mapping.TAG_ZONE.GRAVEYARD)
                 {
@@ -916,7 +916,7 @@ namespace HREngine.Bots
                         if (eg.ContainsKey(cide)) eg[cide]++;
                         else eg.Add(cide, 1);
                     }
-                    if (cide == Chireiden.Silverfish.SimCard.UNG_067t1) ownCrystalCore = 5;
+                    if (cide == CardIds.NonCollectible.Rogue.TheCavernsBelow_CrystalCoreTokenUNGORO) ownCrystalCore = 5;
                 }
 
                 string entityId = entity.Id;
@@ -958,14 +958,14 @@ namespace HREngine.Bots
                             case actionEnum.playcard:
                                 switch (a.card.card.cardIDenum)
                                 {
-                                    case Chireiden.Silverfish.SimCard.LOE_104: goto case Chireiden.Silverfish.SimCard.BRM_007; 
-                                    case Chireiden.Silverfish.SimCard.BRM_007: 
+                                    case CardIds.Collectible.Priest.Entomb: goto case CardIds.Collectible.Rogue.GangUp; 
+                                    case CardIds.Collectible.Rogue.GangUp: 
                                         if (a.target != null) entityId = a.target.handcard.card.cardIDenum.ToString();
                                         break;
-                                    case Chireiden.Silverfish.SimCard.LOE_002: entityId = "LOE_002t"; break; 
-                                    case Chireiden.Silverfish.SimCard.LOE_079: entityId = "LOE_019t"; break; 
-                                    case Chireiden.Silverfish.SimCard.LOE_019t: entityId = "LOE_019t2"; break;
-                                    case Chireiden.Silverfish.SimCard.LOE_110: entityId = "LOE_110t"; break; 
+                                    case CardIds.Collectible.Mage.ForgottenTorch: entityId = "LOE_002t"; break; 
+                                    case CardIds.Collectible.Neutral.EliseStarseeker: entityId = "LOE_019t"; break; 
+                                    case CardIds.NonCollectible.Neutral.EliseStarseeker_MapToTheGoldenMonkeyToken: entityId = "LOE_019t2"; break;
+                                    case CardIds.Collectible.Neutral.AncientShade: entityId = "LOE_110t"; break; 
                                 }
                                 break;
                         }
@@ -978,9 +978,9 @@ namespace HREngine.Bots
                             if (oldCardsOut.ContainsKey(tmp.Key) && tmp.Value == oldCardsOut[tmp.Key]) continue;
                             switch (tmp.Key)
                             {
-                                case Chireiden.Silverfish.SimCard.AT_035: entityId = "AT_035t"; break; 
-                                case Chireiden.Silverfish.SimCard.GVG_031: entityId = "aiextra1"; break; 
-                                case Chireiden.Silverfish.SimCard.LOE_111: entityId = "LOE_111"; break; 
+                                case CardIds.Collectible.Rogue.BeneathTheGrounds: entityId = "AT_035t"; break; 
+                                case CardIds.Collectible.Druid.Recycle: entityId = "aiextra1"; break; 
+                                case CardIds.Collectible.Priest.ExcavatedEvil: entityId = "LOE_111"; break; 
                             }
                         }
                         if (entityId == "" && lastpf != null)
@@ -988,13 +988,13 @@ namespace HREngine.Bots
                             int num = 0;
                             foreach (Minion m in this.enemyMinions)
                             {
-                                if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_056) num++; 
+                                if (m.handcard.card.cardIDenum == CardIds.Collectible.Warrior.IronJuggernaut) num++; 
                             }
                             if (num > 0)
                             {
                                 foreach (Minion m in lastpf.enemyMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_056) num--;
+                                    if (m.handcard.card.cardIDenum == CardIds.Collectible.Warrior.IronJuggernaut) num--;
                                 }
                             }
                             if (num > 0) entityId = "GVG_056t";
@@ -1003,13 +1003,13 @@ namespace HREngine.Bots
                                 num = 0;
                                 foreach (Minion m in lastpf.ownMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_035) num++; 
+                                    if (m.handcard.card.cardIDenum == CardIds.Collectible.Druid.Malorne) num++; 
                                 }
                                 if (num > 0)
                                 {
                                     foreach (Minion m in this.ownMinions)
                                     {
-                                        if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_035) num--;
+                                        if (m.handcard.card.cardIDenum == CardIds.Collectible.Druid.Malorne) num--;
                                     }
                                 }
                                 if (num > 0) entityId = "GVG_035";
@@ -1120,7 +1120,7 @@ namespace HREngine.Bots
             bool found = false;
             foreach (Handmanager.Handcard hc in this.handCards)
             {
-                if (hc.card.name == Chireiden.Silverfish.SimCard.cthun)
+                if (hc.card.name == CardIds.Collectible.Neutral.Cthun)
                 {
                     this.anzOgOwnCThunAngrBonus = hc.addattack;
                     this.anzOgOwnCThunHpBonus = hc.addHp;
@@ -1133,7 +1133,7 @@ namespace HREngine.Bots
             {
                 foreach (Minion m in this.ownMinions)
                 {
-                    if (m.name == Chireiden.Silverfish.SimCard.cthun)
+                    if (m.name == CardIds.Collectible.Neutral.Cthun)
                     {
                         if (this.anzOgOwnCThunAngrBonus < m.Angr - 6) this.anzOgOwnCThunAngrBonus = m.Angr - 6;
                         if (this.anzOgOwnCThunHpBonus < m.Hp - 6) this.anzOgOwnCThunHpBonus = m.Angr - 6;

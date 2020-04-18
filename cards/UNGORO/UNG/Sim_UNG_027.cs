@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-		    p.drawACard(Chireiden.Silverfish.SimCard.UNG_027t2, m.own, true);
+		    p.drawACard(CardIds.NonCollectible.Mage.Pyros_PyrosToken1, m.own, true);
         }
 	}
 }

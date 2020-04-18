@@ -1,5 +1,6 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
+    using HearthDb;
     using System;
     using System.Collections.Generic;
 
@@ -33,7 +34,7 @@
                 posmoves.Clear();
 
                 posmoves.Add(new Playfield(rootfield));
-                posmoves[0].isLethalCheck = false; 
+                posmoves[0].isLethalCheck = false;
                 posmoves[0].startTurn();
                 rootfield.guessingHeroHP = posmoves[0].guessingHeroHP;
                 List<Playfield> temp = new List<Playfield>();
@@ -47,7 +48,7 @@
                     enemMana = posmoves[0].EnemyCardPlaying(rootfield.enemyHeroStartClass, enemMana, rootfield.enemyAnzCards, pprob, pprob2);
                     if (posmoves[0].wehaveCounterspell > 1)
                     {
-                        posmoves[0].ownSecretsIDList.Remove(Chireiden.Silverfish.SimCard.EX1_287);
+                        posmoves[0].ownSecretsIDList.Remove(CardIds.Collectible.Mage.Counterspell);
                         posmoves[0].evaluatePenality -= 7;
                     }
                     float newval = Ai.Instance.botBase.getPlayfieldValue(posmoves[0]);
@@ -61,7 +62,7 @@
                         posmoves[0].startTurn();
                     }
                 }
-                
+
                 if (posmoves[0].ownHeroHasDirectLethal())
                 {
                     if (posmoves[0].value >= -2000000) rootfield.value -= 10000;
@@ -110,7 +111,7 @@
                         {
                             continue;
                         }
-                        List<Action> actions = movegen.getMoveList(p, false, true, false); 
+                        List<Action> actions = movegen.getMoveList(p, false, true, false);
 
                         foreach (Action a in actions)
                         {
@@ -179,11 +180,11 @@
                         }
                     }
                 }
-                bestplay.startTurn();      
+                bestplay.startTurn();
                 bestplay.ownAbilityReady = false;
                 bestplay.owncarddraw = rootfield.owncarddraw;
                 bestplay.complete = true;
-				bestplay.isLethalCheck = rootfield.isLethalCheck;
+                bestplay.isLethalCheck = rootfield.isLethalCheck;
                 Ai.Instance.botBase.getPlayfieldValue(bestplay);
                 bestval = bestplay.value;
                 rootfield.value = bestplay.value;
@@ -213,7 +214,7 @@
 
             }
         }
-        
+
         public void cuttingposibilitiesET()
         {
             Dictionary<Int64, Playfield> tempDict = new Dictionary<Int64, Playfield>();
@@ -234,14 +235,13 @@
             tempDict.Clear();
         }
 
-        Chireiden.Silverfish.SimCard flame = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_614t);
-        Chireiden.Silverfish.SimCard spellbreaker43 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_048);
+        Chireiden.Silverfish.SimCard spellbreaker43 = CardIds.Collectible.Neutral.Spellbreaker;
 
         private void doSomeBasicEnemyAi(Playfield p)
         {
             if (p.enemyHeroName == HeroEnum.mage)
             {
-                if (Probabilitymaker.Instance.enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_561)) p.ownHero.Hp = Math.Max(5, p.ownHero.Hp - 7);
+                if (Probabilitymaker.Instance.enemyCardsOut.ContainsKey(CardIds.Collectible.Neutral.Alexstrasza)) p.ownHero.Hp = Math.Max(5, p.ownHero.Hp - 7);
             }
 
             //play some cards (to not overdraw)
@@ -260,11 +260,11 @@
                 p.enemyAnzCards--;
                 p.triggerCardsChanged(false);
             }
-            
+
             foreach (Minion m in p.enemyMinions.ToArray())
             {
                 if (m.silenced) continue;
-                if (p.enemyAnzCards >= 2 && (m.name == Chireiden.Silverfish.SimCard.gadgetzanauctioneer || m.name == Chireiden.Silverfish.SimCard.starvingbuzzard))
+                if (p.enemyAnzCards >= 2 && (m.name == CardIds.Collectible.Neutral.GadgetzanAuctioneer || m.name == CardIds.Collectible.Hunter.StarvingBuzzard))
                 {
                     if (p.enemyDeckSize >= 1)
                     {
@@ -272,10 +272,10 @@
                     }
                 }
                 int anz = 0;
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     //****************************************heal
-                    case Chireiden.Silverfish.SimCard.northshirecleric:
+                    case CardIds.Collectible.Priest.NorthshireCleric:
                         anz = 0;
                         foreach (Minion mnn in p.enemyMinions)
                         {
@@ -287,7 +287,7 @@
                             if (p.enemyDeckSize >= 1) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.shadowboxer:
+                    case CardIds.Collectible.Priest.Shadowboxer:
                         anz = 0;
                         foreach (Minion mnn in p.enemyMinions)
                         {
@@ -305,7 +305,7 @@
                             }
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.lightwarden:
+                    case CardIds.Collectible.Neutral.Lightwarden:
                         anz = 0;
                         foreach (Minion mnn in p.enemyMinions)
                         {
@@ -314,47 +314,49 @@
                         if (p.enemyHero.wounded) anz++;
                         if (anz >= 2) p.minionGetBuffed(m, 2, 0);
                         continue;
-                        //****************************************
+                    //****************************************
                     //****************************************spell
-                    case Chireiden.Silverfish.SimCard.manaaddict:
+                    case CardIds.Collectible.Neutral.ManaAddict:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.minionGetTempBuff(m, 2, 0);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.minionGetTempBuff(m, 2, 0);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.manawyrm:
+                    case CardIds.Collectible.Mage.ManaWyrm:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.minionGetBuffed(m, 1, 0);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.minionGetBuffed(m, 1, 0);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.dragonkinsorcerer:
+                    case CardIds.Collectible.Neutral.DragonkinSorcerer:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.minionGetTempBuff(m, 1, 1);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.minionGetBuffed(m, 1, 1);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.violetteacher:
+                    case CardIds.Collectible.Neutral.VioletTeacher:
                         if (p.enemyAnzCards >= 1)
                         {
-                            p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_026t), p.enemyMinions.Count, false);
-                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_026t), p.enemyMinions.Count, false);
+                            p.callKid(CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken, p.enemyMinions.Count, false);
+                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.callKid(CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken, p.enemyMinions.Count, false);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.warsongcommander:
-                        p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_165t1), p.enemyMinions.Count, false, false);
+                    case CardIds.Collectible.Warrior.WarsongCommander:
+                        // Druid of the Claw 利爪德鲁伊
+                        // Why?
+                        p.callKid("EX1_165t1", p.enemyMinions.Count, false, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.gadgetzanauctioneer:
+                    case CardIds.Collectible.Neutral.GadgetzanAuctioneer:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.archmageantonidas:
+                    case CardIds.Collectible.Mage.ArchmageAntonidas:
                         if (p.ownMinions.Count < 1) p.minionGetDamageOrHeal(p.ownHero, 6);
                         else
                         {
@@ -366,14 +368,14 @@
                             p.minionGetDamageOrHeal(target, 6);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.gazlowe:
+                    case CardIds.Collectible.Neutral.Gazlowe:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.flamewaker:
+                    case CardIds.Collectible.Mage.Flamewaker:
                         anz = 0;
                         if (p.enemyAnzCards >= 1) anz++;
                         if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) anz++;
@@ -390,56 +392,58 @@
                             }
                         }
                         continue;
-                        //****************************************
+                    //****************************************
                     //****************************************secret
-                    case Chireiden.Silverfish.SimCard.secretkeeper:
+                    case CardIds.Collectible.Neutral.Secretkeeper:
                         if (p.enemyAnzCards >= 3) p.minionGetBuffed(m, 1, 1);
                         continue;
-                    case Chireiden.Silverfish.SimCard.etherealarcanist:
+                    case CardIds.Collectible.Mage.EtherealArcanist:
                         if (p.enemyAnzCards >= 3 || p.enemySecretCount > 0) p.minionGetBuffed(m, 2, 2);
                         continue;
-                        //****************************************
+                    //****************************************
                     //****************************************play
-                    case Chireiden.Silverfish.SimCard.illidanstormrage:
-                        if (p.enemyAnzCards >= 1) p.callKid(flame, p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Neutral.Xavius:
+                        // Illidan -> Xavius
+                        // 可怜的一粒蛋
+                        if (p.enemyAnzCards >= 1) p.callKid(CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken, p.enemyMinions.Count, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.questingadventurer:
+                    case CardIds.Collectible.Neutral.QuestingAdventurer:
                         if (p.enemyAnzCards >= 1)
                         {
                             p.minionGetBuffed(m, 1, 1);
                             if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.minionGetBuffed(m, 1, 1);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.unboundelemental:
-                        if (p.enemyAnzCards >= 2)p.minionGetBuffed(m, 1, 1);
+                    case CardIds.Collectible.Shaman.UnboundElemental:
+                        if (p.enemyAnzCards >= 2) p.minionGetBuffed(m, 1, 1);
                         continue;
-                        //****************************************
+                    //****************************************
                     //****************************************turn
                     //****************************************armor
-                    case Chireiden.Silverfish.SimCard.siegeengine:
+                    case CardIds.Collectible.Warrior.SiegeEngine:
                         anz = 0;
                         foreach (Minion mnn in p.enemyMinions)
                         {
-                            if (mnn.name == Chireiden.Silverfish.SimCard.armorsmith) anz++;
+                            if (mnn.name == CardIds.Collectible.Warrior.Armorsmith) anz++;
                         }
                         if (p.enemyAnzCards >= 3) anz++;
                         if (anz > 0) p.minionGetBuffed(m, anz, 0);
                         continue;
                     //****************************************summon
-                    case Chireiden.Silverfish.SimCard.murloctidecaller:
+                    case CardIds.Collectible.Neutral.MurlocTidecaller:
                         if (p.enemyAnzCards >= 2) p.minionGetBuffed(m, 1, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.undertaker:
+                    case CardIds.Collectible.Neutral.Undertaker:
                         if (p.enemyAnzCards >= 2) p.minionGetBuffed(m, 1, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.starvingbuzzard:
+                    case CardIds.Collectible.Hunter.StarvingBuzzard:
                         if (p.enemyAnzCards >= 2) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.cobaltguardian:
+                    case CardIds.Collectible.Paladin.CobaltGuardian:
                         if (p.enemyAnzCards >= 2) m.divineshild = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.knifejuggler:
-                        anz = Math.Min(p.enemyAnzCards, (int)p.enemyMaxMana/2);
+                    case CardIds.Collectible.Neutral.KnifeJuggler:
+                        anz = Math.Min(p.enemyAnzCards, (int)p.enemyMaxMana / 2);
                         if (anz > 0)
                         {
                             Minion target = p.ownHero;
@@ -451,7 +455,7 @@
                             }
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.shipscannon:
+                    case CardIds.Collectible.Neutral.ShipsCannon:
                         if (p.enemyAnzCards >= 2)
                         {
                             Minion target = p.ownHero;
@@ -460,65 +464,62 @@
                             p.minionGetDamageOrHeal(target, 1);
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.tundrarhino:
-                        p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_125), p.enemyMinions.Count, false, true, true);
+                    case CardIds.Collectible.Hunter.TundraRhino:
+                        p.callKid(CardIds.Collectible.Neutral.IronfurGrizzly, p.enemyMinions.Count, false, true, true);
                         continue;
-                        //****************************************
+                    //****************************************
                     //****************************************damage
-                    case Chireiden.Silverfish.SimCard.frothingberserker:
+                    case CardIds.Collectible.Warrior.FrothingBerserker:
                         if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.minionGetBuffed(m, 1, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.gurubashiberserker:
+                    case CardIds.Collectible.Neutral.GurubashiBerserker:
                         if (m.Hp >= 4 && p.enemyAnzCards >= 3) p.minionGetBuffed(m, 3, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.floatingwatcher:
+                    case CardIds.Collectible.Warlock.FloatingWatcher:
                         if (p.enemyMaxMana >= p.enemyAnzCards * 2) p.minionGetBuffed(m, 2, 2);
                         continue;
-                    case Chireiden.Silverfish.SimCard.armorsmith:
+                    case CardIds.Collectible.Warrior.Armorsmith:
                         if (p.enemyMinions.Count >= 3) p.minionGetArmor(p.enemyHero, 1);
                         continue;
-                    case Chireiden.Silverfish.SimCard.gahzrilla:
+                    case CardIds.Collectible.Hunter.Gahzrilla:
                         if (m.Hp >= 4 && p.enemyAnzCards >= 3) p.minionGetBuffed(m, m.Angr * 2, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.acolyteofpain:
+                    case CardIds.Collectible.Neutral.AcolyteOfPain:
                         if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.mechbearcat:
+                    case CardIds.Collectible.Druid.MechBearCat:
                         if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.grimpatron:
-                        if (m.Hp >= 3 && p.enemyAnzCards >= 3)  p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_019), p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Neutral.GrimPatron:
+                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.callKid(CardIds.Collectible.Neutral.GrimPatron, p.enemyMinions.Count, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.dragonegg:
-                        if (p.enemyAnzCards >= 3) p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_022t), p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Neutral.DragonEgg:
+                        if (p.enemyAnzCards >= 3) p.callKid(CardIds.NonCollectible.Neutral.DragonEgg_BlackWhelpToken, p.enemyMinions.Count, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.impgangboss:
-                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_006t), p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Warlock.ImpGangBoss:
+                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.callKid(CardIds.NonCollectible.Warlock.ImpGangBoss_ImpToken, p.enemyMinions.Count, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.axeflinger:
+                    case CardIds.Collectible.Warrior.AxeFlinger:
                         if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.minionGetDamageOrHeal(p.ownHero, 2);
                         continue;
-                    case Chireiden.Silverfish.SimCard.brannbronzebeard:
+                    case CardIds.Collectible.Neutral.BrannBronzebeard:
                         p.minionGetBuffed(m, 0, 6);
                         continue;
-                    case Chireiden.Silverfish.SimCard.obsidiandestroyer:
-                        if (p.enemyMinions.Count < 6) p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_009t), p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Warrior.ObsidianDestroyer:
+                        if (p.enemyMinions.Count < 6) p.callKid(CardIds.NonCollectible.Warrior.ObsidianDestroyer_ScarabToken, p.enemyMinions.Count, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.tunneltrogg:                        
+                    case CardIds.Collectible.Shaman.TunnelTrogg:
                         p.minionGetBuffed(m, 1, 0);
                         continue;
-                    case Chireiden.Silverfish.SimCard.summoningstone:
-                        if (p.enemyMinions.Count < 6) p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_017), p.enemyMinions.Count, false);
+                    case CardIds.Collectible.Neutral.SummoningStone:
+                        if (p.enemyMinions.Count < 6) p.callKid(CardIds.Collectible.Paladin.KeeperOfUldaman, p.enemyMinions.Count, false);
                         continue;
                         //****************************************
-                    //****************************************dies (rough approximation)
-                    //****************************************
+                        //****************************************dies (rough approximation)
+                        //****************************************
                 }
             }
             p.doDmgTriggers();
         }
-
-
     }
-
 }

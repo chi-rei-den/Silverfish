@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 if (m.entitiyID == own.entitiyID) continue;
                 if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
 				{
-					p.drawACard(Chireiden.Silverfish.SimCard.spidertank, own.own, true);
+					p.drawACard(CardIds.Collectible.Neutral.SpiderTank, own.own, true);
 					break;
 				}
             }

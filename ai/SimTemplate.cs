@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
 
     public class SimTemplate

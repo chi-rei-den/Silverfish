@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 if (m.entitiyID == own.entitiyID) continue;
                 if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC)
 				{
-					p.drawACard(Chireiden.Silverfish.SimCard.bluegillwarrior, own.own, true);
+					p.drawACard(CardIds.Collectible.Neutral.BluegillWarrior, own.own, true);
 					break;
 				}
             }

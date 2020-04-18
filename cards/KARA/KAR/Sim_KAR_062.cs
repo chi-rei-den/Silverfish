@@ -44,14 +44,14 @@ namespace HREngine.Bots
 				}
 				if(dragonInHand)
 				{
-					p.drawACard(Chireiden.Silverfish.SimCard.drakonidcrusher, own.own, true);
+					p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
                 }
 			}
 			else
 			{
 				if (p.enemyAnzCards >= 2)
 				{
-					p.drawACard(Chireiden.Silverfish.SimCard.drakonidcrusher, own.own, true);
+					p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
                 }					
 			}
         }

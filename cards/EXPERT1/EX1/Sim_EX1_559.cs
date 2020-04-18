@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.fireball, wasOwnCard, true);
+                p.drawACard(CardIds.Collectible.Mage.Fireball, wasOwnCard, true);
             }
         }
 

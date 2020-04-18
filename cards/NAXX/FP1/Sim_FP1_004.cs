@@ -35,15 +35,15 @@ namespace HREngine.Bots
             {
                 if (p.ownHeroStartClass == TAG_CLASS.MAGE)
                 {
-                    p.ownSecretsIDList.Add(Chireiden.Silverfish.SimCard.EX1_289);
+                    p.ownSecretsIDList.Add(CardIds.Collectible.Mage.IceBarrier);
                 }
                 if (p.ownHeroStartClass == TAG_CLASS.HUNTER)
                 {
-                    p.ownSecretsIDList.Add(Chireiden.Silverfish.SimCard.EX1_554);
+                    p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.SnakeTrap);
                 }
                 if (p.ownHeroStartClass == TAG_CLASS.PALADIN)
                 {
-                    p.ownSecretsIDList.Add(Chireiden.Silverfish.SimCard.EX1_130);
+                    p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
                 }
             }
             else

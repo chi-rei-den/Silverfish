@@ -31,8 +31,8 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.UNG_057t1,ownplay, true);
-            p.drawACard(Chireiden.Silverfish.SimCard.UNG_057t1, ownplay, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.RazorpetalVolley_RazorpetalToken,ownplay, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.RazorpetalVolley_RazorpetalToken, ownplay, true);
         }
     }
 }

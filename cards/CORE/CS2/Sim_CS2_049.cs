@@ -29,10 +29,10 @@ namespace HREngine.Bots
     {
         //Hero Power: Summon a random Totem.
 
-        Chireiden.Silverfish.SimCard searing = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_050);
-        Chireiden.Silverfish.SimCard healing = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_009);
-        Chireiden.Silverfish.SimCard wrathofair = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_052);
-        Chireiden.Silverfish.SimCard stoneclaw = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_051);
+        Chireiden.Silverfish.SimCard searing = CardIds.NonCollectible.Shaman.SearingTotem;
+        Chireiden.Silverfish.SimCard healing = CardIds.NonCollectible.Shaman.HealingTotem;
+        Chireiden.Silverfish.SimCard wrathofair = CardIds.NonCollectible.Shaman.WrathOfAirTotem;
+        Chireiden.Silverfish.SimCard stoneclaw = CardIds.NonCollectible.Shaman.StoneclawTotem;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -44,10 +44,10 @@ namespace HREngine.Bots
             {
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.searingtotem: otherTotems++; continue;
-                    case Chireiden.Silverfish.SimCard.stoneclawtotem: otherTotems++; continue;
-                    case Chireiden.Silverfish.SimCard.healingtotem: otherTotems++; continue;
-                    case Chireiden.Silverfish.SimCard.wrathofairtotem: wrath = true; continue;
+                    case CardIds.NonCollectible.Shaman.SearingTotem: otherTotems++; continue;
+                    case CardIds.NonCollectible.Shaman.StoneclawTotem: otherTotems++; continue;
+                    case CardIds.NonCollectible.Shaman.HealingTotem: otherTotems++; continue;
+                    case CardIds.NonCollectible.Shaman.WrathOfAirTotem: wrath = true; continue;
                 }
             }
             if (p.isLethalCheck)

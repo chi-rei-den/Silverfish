@@ -1,5 +1,6 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
+    using HearthDb;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -155,8 +156,8 @@
                 lines = data.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             }
 
-            Chireiden.Silverfish.SimCard heroability = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_034);
-            Chireiden.Silverfish.SimCard enemyability = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_034);
+            Chireiden.Silverfish.SimCard heroability = CardIds.NonCollectible.Mage.Fireblast;
+            Chireiden.Silverfish.SimCard enemyability = CardIds.NonCollectible.Mage.Fireblast;
             bool abilityReady = false;
 
             int readstate = 0;
@@ -1125,7 +1126,7 @@
 
             m.updateReadyness();
 
-            if (m.name == Chireiden.Silverfish.SimCard.lightspawn)
+            if (m.name == CardIds.Collectible.Priest.Lightspawn)
             {
                 m.Angr = m.Hp;
             }

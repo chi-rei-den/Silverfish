@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Transform into a 5/2 minion.
 		
-        Chireiden.Silverfish.SimCard cat = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_010t);
+        Chireiden.Silverfish.SimCard cat = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken1;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

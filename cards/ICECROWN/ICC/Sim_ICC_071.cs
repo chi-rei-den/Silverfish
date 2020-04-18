@@ -30,7 +30,7 @@ namespace HREngine.Bots
         // After a friendly minion loses Divine Shield, gain +1 Attack.
         // Handled in triggerAMinionLosesDivineShield()
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_071);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Paladin.LightsSorrow;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

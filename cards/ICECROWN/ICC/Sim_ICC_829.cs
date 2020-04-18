@@ -29,11 +29,11 @@ namespace HREngine.Bots
     {
         // Battlecry: Equip a 5/3 Lifesteal weapon.
 
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_829t); //Grave Vengeance
+        Chireiden.Silverfish.SimCard w = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_GraveVengeanceToken; //Grave Vengeance
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_829p, ownplay); // The Four Horsemen
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.UtheroftheEbonBlade_TheFourHorsemen, ownplay); // The Four Horsemen
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 

@@ -33,11 +33,11 @@ namespace HREngine.Bots
 		{
             if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.lepergnome, ownplay, true);
+                p.drawACard(CardIds.Collectible.Neutral.LeperGnome, ownplay, true);
             }
             if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.thecoin, ownplay, true);
+                p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, ownplay, true);
             }
 		}
 	}

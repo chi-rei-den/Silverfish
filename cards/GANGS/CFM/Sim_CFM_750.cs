@@ -57,7 +57,7 @@ namespace HREngine.Bots
                 if (p.enemyAnzCards > 1)
                 {
                     int pos = p.enemyMinions.Count;
-                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_306), pos, false); //Succubus
+                    p.callKid(CardIds.Collectible.Warlock.Felstalker, pos, false); //Succubus
                     p.enemyAnzCards--;
                     p.triggerCardsChanged(false);
                     if (p.ownHeroHasDirectLethal())

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Summon two 2/3 Spirit Wolves with Taunt. Overload: (2)
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_tk11);//spiritwolf
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Shaman.SpiritWolf;//spiritwolf
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

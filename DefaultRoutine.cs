@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -761,7 +761,7 @@ def Execute():
                         {
                             foreach (Handmanager.Handcard hc in lastChancePl.owncards)
                             {
-                                if (hc.card.name == Chireiden.Silverfish.SimCardName.unknown) lastChance = true;
+                                if (hc.card.name == Chireiden.Silverfish.SimCard.unknown) lastChance = true;
                             }
                             if (!lastChance) doConcede = true;
                         }
@@ -774,12 +774,12 @@ def Execute():
                                 if (!m.playedThisTurn) continue;
                                 switch (m.handcard.card.name)
                                 {
-                                    case Chireiden.Silverfish.SimCardName.cthun: lastChance = true; break;
-                                    case Chireiden.Silverfish.SimCardName.nzoththecorruptor: lastChance = true; break;
-                                    case Chireiden.Silverfish.SimCardName.yoggsaronhopesend: lastChance = true; break;
-                                    case Chireiden.Silverfish.SimCardName.sirfinleymrrgglton: lastChance = true; break;
-                                    case Chireiden.Silverfish.SimCardName.ragnarosthefirelord: if (lastChancePl.enemyHero.Hp < 9) lastChance = true; break;
-                                    case Chireiden.Silverfish.SimCardName.barongeddon: if (lastChancePl.enemyHero.Hp < 3) lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.Cthun: lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.NzothTheCorruptor: lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.YoggSaronHopesEnd: lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.SirFinleyMrrgglton: lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.RagnarosTheFirelord: if (lastChancePl.enemyHero.Hp < 9) lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.BaronGeddon: if (lastChancePl.enemyHero.Hp < 3) lastChance = true; break;
                                 }
                             }
                         }
@@ -1067,7 +1067,7 @@ def Execute():
 
                 int sirFinleyChoice = -1;
                 if (ai.bestmove == null) Log.ErrorFormat("[提示] 没有获得卡牌数据");
-                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.name == Chireiden.Silverfish.SimCardName.sirfinleymrrgglton)
+                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.name == CardIds.Collectible.Neutral.SirFinleyMrrgglton)
                 {
                     sirFinleyChoice = ai.botBase.getSirFinleyPriority(discoverCards);
                 }
@@ -1094,8 +1094,8 @@ def Execute():
                                 case GAME_TAG.DISCOVER:
                                     switch (ai.bestmove.card.card.name)
                                     {
-                                        case Chireiden.Silverfish.SimCardName.eternalservitude:
-                                        case Chireiden.Silverfish.SimCardName.freefromamber:
+                                        case CardIds.Collectible.Priest.EternalServitude:
+                                        case CardIds.Collectible.Priest.FreeFromAmber:
                                             Minion m = tmpPlf.createNewMinion(discoverCards[i], tmpPlf.ownMinions.Count, true);
                                             tmpPlf.ownMinions[tmpPlf.ownMinions.Count - 1] = m;
                                             break;
@@ -1104,7 +1104,7 @@ def Execute():
                                             break;
                                     }
                                     bestval = ai.mainTurnSimulator.doallmoves(tmpPlf);
-                                    if (discoverCards[i].card.name == Chireiden.Silverfish.SimCardName.bloodimp) bestval -= 20;
+                                    if (discoverCards[i].card.name == CardIds.Collectible.Warlock.BloodImp) bestval -= 20;
                                     break;
                                 case GAME_TAG.ADAPT:
                                     bool found = false;
@@ -1115,12 +1115,12 @@ def Execute():
                                             bool forbidden = false;
                                             switch (discoverCards[i].card.cardIDenum)
                                             {
-                                                case Chireiden.Silverfish.SimCard.UNG_999t5: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
-                                                case Chireiden.Silverfish.SimCard.UNG_999t6: if (m.taunt) forbidden = true; break;
-                                                case Chireiden.Silverfish.SimCard.UNG_999t7: if (m.windfury) forbidden = true; break;
-                                                case Chireiden.Silverfish.SimCard.UNG_999t8: if (m.divineshild) forbidden = true; break;
-                                                case Chireiden.Silverfish.SimCard.UNG_999t10: if (m.stealth) forbidden = true; break;
-                                                case Chireiden.Silverfish.SimCard.UNG_999t13: if (m.poisonous) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.LiquidMembraneToken1: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.MassiveToken1: if (m.taunt) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.LightningSpeedToken1: if (m.windfury) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.CracklingShieldToken1: if (m.divineshild) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.ShroudingMistToken1: if (m.stealth) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.PoisonSpitToken1: if (m.poisonous) forbidden = true; break;
                                             }
                                             if (forbidden) bestval = -2000000;
                                             else
@@ -1144,7 +1144,7 @@ def Execute():
                     }
                     ai.mainTurnSimulator.setSecondTurnSimu(true, dirtyTwoTurnSim);
                 }
-                if (sourceEntityCId == Chireiden.Silverfish.SimCard.UNG_035) dirtychoice = new Random().Next(0, 2);
+                if (sourceEntityCId == CardIds.Collectible.Priest.CuriousGlimmerroot) dirtychoice = new Random().Next(0, 2);
                 if (dirtychoice == 0) dirtychoice = 1;
                 else if (dirtychoice == 1) dirtychoice = 0;
                 int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;

@@ -54,7 +54,7 @@ namespace HREngine.Bots
 				if (p.enemyAnzCards > 1)
                 {
                     int pos = p.enemyMinions.Count;
-                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_561), pos, false); //Alexstrasza
+                    p.callKid(CardIds.Collectible.Neutral.Alexstrasza, pos, false); //Alexstrasza
 					p.enemyAnzCards--;
                     p.triggerCardsChanged(false);
                     if (p.ownHeroHasDirectLethal())

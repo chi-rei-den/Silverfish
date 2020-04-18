@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry : Reveal a minion in each deck. If yours costs more, gain +1 durability.
 
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_077);
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Paladin.ArgentLance;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -29,9 +29,9 @@ namespace HREngine.Bots
     {
         // Choose One - Transform into a 1/2 with Poisonous; or a 1/5 with Taunt.
 
-        Chireiden.Silverfish.SimCard kid12 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_051t);
-        Chireiden.Silverfish.SimCard kid15 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_051t2);
-        Chireiden.Silverfish.SimCard kidMix = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_051t3);
+        Chireiden.Silverfish.SimCard kid12 = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1;
+        Chireiden.Silverfish.SimCard kid15 = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken12;
+        Chireiden.Silverfish.SimCard kidMix = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken13;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

@@ -36,7 +36,7 @@ namespace HREngine.Bots
             {
                 if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET)
                 {
-                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_120), temp.Count, own.own);//river crocolisk
+                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, temp.Count, own.own);//river crocolisk
                     break;
                 }
             }

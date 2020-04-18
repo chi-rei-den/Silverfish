@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
 namespace HREngine.Bots
 {
@@ -115,12 +115,12 @@ namespace HREngine.Bots
                 //if (m.poisonous) retval += 1;
                 if (m.lifesteal) retval += m.Angr/2;
                 if (m.divineshild && m.taunt) retval += 4;
-                //if (m.taunt && m.handcard.card.name == Chireiden.Silverfish.SimCard.frog) owntaunt++;
+                //if (m.taunt && m.handcard.card.name == CardIds.NonCollectible.Neutral.Frog) owntaunt++;
                 //if (m.handcard.card.isToken && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
                 //if (!penman.specialMinions.ContainsKey(m.name) && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
-                if (p.ownMinions.Count > 2 && (m.handcard.card.name == Chireiden.Silverfish.SimCard.direwolfalpha || m.handcard.card.name == Chireiden.Silverfish.SimCard.flametonguetotem || m.handcard.card.name == Chireiden.Silverfish.SimCard.stormwindchampion || m.handcard.card.name == Chireiden.Silverfish.SimCard.raidleader)) retval += 10;
-                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.bloodmagethalnos) retval += 10;
-                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.nerubianegg)
+                if (p.ownMinions.Count > 2 && (m.handcard.card.name == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.name == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.name == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.name == CardIds.Collectible.Neutral.RaidLeader)) retval += 10;
+                if (m.handcard.card.name == CardIds.Collectible.Neutral.BloodmageThalnos) retval += 10;
+                if (m.handcard.card.name == CardIds.Collectible.Neutral.NerubianEgg)
                 {
                     if (m.Angr >= 1) retval += 2;
                     if ((!m.taunt && m.Angr == 0) && (m.divineshild || m.maxHp > 2)) retval -= 10;
@@ -168,16 +168,16 @@ namespace HREngine.Bots
                 }
                 switch (a.card.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.innervate:
-                    case Chireiden.Silverfish.SimCard.thecoin:
+                    case CardIds.Collectible.Druid.Innervate:
+                    case CardIds.NonCollectible.Neutral.TheCoin:
                         usecoin++;
                         if (i == count - 1) retval -= 10;
                         goto default;
-                    case Chireiden.Silverfish.SimCard.darkshirelibrarian: goto case Chireiden.Silverfish.SimCard.soulfire;
-                    case Chireiden.Silverfish.SimCard.darkbargain: goto case Chireiden.Silverfish.SimCard.soulfire;
-                    case Chireiden.Silverfish.SimCard.doomguard: goto case Chireiden.Silverfish.SimCard.soulfire;
-                    case Chireiden.Silverfish.SimCard.succubus: goto case Chireiden.Silverfish.SimCard.soulfire;
-                    case Chireiden.Silverfish.SimCard.soulfire: deletecardsAtLast = 1; break;
+                    case CardIds.Collectible.Warlock.DarkshireLibrarian: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case CardIds.Collectible.Warlock.DarkBargain: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case CardIds.Collectible.Warlock.Doomguard: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case Chireiden.Silverfish.SimCard.succubus: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case CardIds.Collectible.Warlock.Soulfire: deletecardsAtLast = 1; break;
                     default:
                         if (deletecardsAtLast == 1) retval -= 20;
                         break;
@@ -205,8 +205,8 @@ namespace HREngine.Bots
             {
                 switch (p.ownHeroAblility.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.heal: goto case Chireiden.Silverfish.SimCard.lesserheal;
-                    case Chireiden.Silverfish.SimCard.lesserheal:
+                    case Chireiden.Silverfish.SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
+                    case CardIds.NonCollectible.Priest.LesserHeal:
                         bool wereTarget = false;
                         if (p.ownHero.Hp < p.ownHero.maxHp) wereTarget = true;
                         if (!wereTarget)
@@ -218,17 +218,17 @@ namespace HREngine.Bots
                         }
                         if (wereTarget && !(p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0)) retval -= 10;
                         break;
-                    case Chireiden.Silverfish.SimCard.poisoneddaggers: goto case Chireiden.Silverfish.SimCard.daggermastery;
-                    case Chireiden.Silverfish.SimCard.daggermastery:
+                    case Chireiden.Silverfish.SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
+                    case CardIds.NonCollectible.Rogue.DaggerMastery:
                          if (!(p.ownWeapon.Durability > 1 || p.ownWeapon.Angr > 1)) retval -= 10;
                          break;
-                    case Chireiden.Silverfish.SimCard.totemicslam: goto case Chireiden.Silverfish.SimCard.totemiccall;
-                    case Chireiden.Silverfish.SimCard.totemiccall:
+                    case Chireiden.Silverfish.SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
+                    case CardIds.NonCollectible.Shaman.TotemicCall:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
                     case Chireiden.Silverfish.SimCard.thetidalhand: goto case Chireiden.Silverfish.SimCard.reinforce;
-                    case Chireiden.Silverfish.SimCard.thesilverhand: goto case Chireiden.Silverfish.SimCard.reinforce;
+                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case Chireiden.Silverfish.SimCard.reinforce;
                     case Chireiden.Silverfish.SimCard.reinforce:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
@@ -236,7 +236,7 @@ namespace HREngine.Bots
                     case Chireiden.Silverfish.SimCard.soultap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
-                    case Chireiden.Silverfish.SimCard.lifetap: 
+                    case CardIds.NonCollectible.Warlock.LifeTap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0)
                         {
                             retval -= 10;
@@ -321,7 +321,7 @@ namespace HREngine.Bots
         {
             int retval = 5;
             retval += m.Hp * 2;
-            if (!m.frozen && !(m.cantAttack && m.name != Chireiden.Silverfish.SimCard.argentwatchman))
+            if (!m.frozen && !(m.cantAttack && m.name != CardIds.Collectible.Neutral.ArgentWatchman))
             {
                 retval += m.Angr * 2;
                 if (m.windfury) retval += m.Angr * 2;
@@ -352,7 +352,7 @@ namespace HREngine.Bots
             {
                 retval += m.handcard.card.targetPriority;
             }
-            if (m.name == Chireiden.Silverfish.SimCard.nerubianegg && m.Angr <= 3 && !m.taunt) retval = 0;
+            if (m.name == CardIds.Collectible.Neutral.NerubianEgg && m.Angr <= 3 && !m.taunt) retval = 0;
             retval += m.synergy;
             return retval;
         }
@@ -379,15 +379,15 @@ namespace HREngine.Bots
         private Dictionary<Chireiden.Silverfish.SimCard, int> SirFinleyPriorityList = new Dictionary<Chireiden.Silverfish.SimCard, int>
         {
             //{HeroPowerName, Priority}, where 0-9 = manual priority
-            { Chireiden.Silverfish.SimCard.lesserheal, 0 }, 
-            { Chireiden.Silverfish.SimCard.shapeshift, 6 },
-            { Chireiden.Silverfish.SimCard.fireblast, 7 },
-            { Chireiden.Silverfish.SimCard.totemiccall, 1 },
-            { Chireiden.Silverfish.SimCard.lifetap, 9 },
-            { Chireiden.Silverfish.SimCard.daggermastery, 5 },
+            { CardIds.NonCollectible.Priest.LesserHeal, 0 }, 
+            { CardIds.NonCollectible.Druid.Shapeshift, 6 },
+            { CardIds.NonCollectible.Mage.Fireblast, 7 },
+            { CardIds.NonCollectible.Shaman.TotemicCall, 1 },
+            { CardIds.NonCollectible.Warlock.LifeTap, 9 },
+            { CardIds.NonCollectible.Rogue.DaggerMastery, 5 },
             { Chireiden.Silverfish.SimCard.reinforce, 4 },
             { Chireiden.Silverfish.SimCard.armorup, 2 },
-            { Chireiden.Silverfish.SimCard.steadyshot, 8 }
+            { CardIds.NonCollectible.Hunter.SteadyShot, 8 }
         };
 		
     }

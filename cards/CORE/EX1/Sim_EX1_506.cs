@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_506 : SimTemplate //murloctidehunter
 	{
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_506a);//murlocscout
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.MurlocTidehunter_MurlocScout;//murlocscout
 //    kampfschrei:/ ruft einen murlocspäher (1/1) herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

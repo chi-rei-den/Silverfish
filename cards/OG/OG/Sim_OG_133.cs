@@ -28,10 +28,6 @@ namespace HREngine.Bots
 {
     class Sim_OG_133 : SimTemplate //* N'Zoth, the Corruptor
     {
-        //Battlecry: Summon your Deathrattle minions that died this game.
-
-        Chireiden.Silverfish.SimCard kid = null;
-
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             int kids = 7 - p.ownMinions.Count;
@@ -40,7 +36,7 @@ namespace HREngine.Bots
             {
                 foreach (var e in Probabilitymaker.Instance.ownCardsOut)
                 {
-                    kid = e.Key;
+                    var kid = e.Key;
                     if (kid.Deathrattle)
                     {
                         for (int i = 0; i < e.Value; i++)

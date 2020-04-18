@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Deal $1 damage to all enemy minions. Summon a Spore.
 		
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX6_03t);//Spore
+		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Deathbloom_SporeToken;//Spore
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

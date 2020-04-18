@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: If it's your opponent's turn, summon an 8/8 Skeleton.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_019t); //Skeletal Flayer
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Skelemancer_SkeletalFlayerToken; //Skeletal Flayer
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

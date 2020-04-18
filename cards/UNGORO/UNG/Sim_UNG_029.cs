@@ -31,8 +31,8 @@ namespace HREngine.Bots
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
-            p.drawACard(Chireiden.Silverfish.SimCard.shadowworddeath, ownplay, true);
-            p.drawACard(Chireiden.Silverfish.SimCard.holynova, ownplay, true);
+            p.drawACard(CardIds.Collectible.Priest.ShadowWordDeath, ownplay, true);
+            p.drawACard(CardIds.Collectible.Priest.HolyNova, ownplay, true);
 			p.owncarddraw--;
 		}
 	}

@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: Summon a random friendly Beast that died this game.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_172); //3/2 Bloodfen Raptor
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.BloodfenRaptor; //3/2 Bloodfen Raptor
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

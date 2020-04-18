@@ -44,10 +44,10 @@ namespace HREngine.Bots
                     bool found = false;
                     foreach (Minion m in temp)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.nerubianegg && m.Hp >= 2) continue; //dont attack nerubianegg!
+                        if (m.name == CardIds.Collectible.Neutral.NerubianEgg && m.Hp >= 2) continue; //dont attack nerubianegg!
                         if (m.handcard.card.isToken && m.Hp == 1) continue;
                         if (m.name == Chireiden.Silverfish.SimCard.defender) continue;
-                        if (m.name == Chireiden.Silverfish.SimCard.spellbender) continue;
+                        if (m.name == CardIds.Collectible.Mage.Spellbender) continue;
                         if (m.Hp >= 2 && minhp > m.Hp)
                         {
                             enemy = m;

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Taunt. Deathrattle: Summon a 2/2 Slime.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX11_03);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

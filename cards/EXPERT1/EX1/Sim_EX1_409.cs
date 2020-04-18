@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         // If you have a weapon, give it +1/+1. Otherwise equip a 1/3 weapon.
 
-        Chireiden.Silverfish.SimCard wcard = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_409t);//Heavy Axe
+        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken;//Heavy Axe
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -28,7 +28,7 @@ namespace HREngine.Bots
     class Sim_GVG_116 : SimTemplate //* Mekgineer Thermaplugg
     {
         //   Whenever an enemy minion dies, summon a Leper Gnome.
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_029);//lepergnome
+		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.LeperGnome;//lepergnome
 		
         public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {

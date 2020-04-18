@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 1/3 Flamewaker Acolyte.
 		
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA06_4);//1/3Flamewaker Acolyte
+		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.FlamewakerAcolyte;//1/3Flamewaker Acolyte
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

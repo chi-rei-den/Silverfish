@@ -1,5 +1,7 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
+    using Chireiden.Silverfish;
+    using HearthDb;
     using System;
     using System.Collections.Generic;
     using System.Text;
@@ -171,7 +173,7 @@
                 help.logg("missing dmg to lethal " + this.lethalMissing);
             }
         }
-        
+
         public void doNextCalcedMove()
         {
             help.logg("noRecalcNeeded!!!-----------------------------------");
@@ -214,7 +216,7 @@
                 int twilightelderBonus = 0;
                 foreach (Minion m in this.nextMoveGuess.ownMinions)
                 {
-                    if (m.name == Chireiden.Silverfish.SimCardName.twilightelder && !m.silenced) twilightelderBonus++;
+                    if (m.name == CardIds.Collectible.Neutral.TwilightElder && !m.silenced) twilightelderBonus++;
                 }
                 if (twilightelderBonus > 0)
                 {
@@ -271,7 +273,7 @@
             //help.logging(true);
 
         }
-        
+
 
 
         public List<double> autoTester(bool printstuff, string data = "", int mode = 0) //-mode: 0-all, 1-lethalcheck, 2-normal

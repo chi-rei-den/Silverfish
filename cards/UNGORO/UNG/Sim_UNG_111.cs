@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Transform your Mana Crystals into 2/2 minions. Recover the mana when they die.
 
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_111t1); //Mana Treant
+		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken; //Mana Treant
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

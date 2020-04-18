@@ -1,4 +1,4 @@
-﻿using log4net;
+using log4net;
 using Triton.Common.LogUtilities;
 
 namespace HREngine.Bots

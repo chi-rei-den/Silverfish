@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Deathrattle:: Your Hero Power becomes 'Deal 8 damage to a random enemy'.
 		
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMC_94);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.Sulfuras;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.BRM_027p, m.own); // DIE, INSECT!
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower, m.own); // DIE, INSECT!
         }
     }
 }

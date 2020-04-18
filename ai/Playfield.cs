@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System;
     using System.Collections.Generic;
@@ -36,7 +36,7 @@
         public Chireiden.Silverfish.SimCard IDEnum;
         public bool own;
     }
-	
+
     //todo save "started" variables outside (they doesnt change)
 
     public class Playfield
@@ -54,7 +54,7 @@
         public int nextEntity = 70;
         public int pID = 0;
         public bool isLethalCheck = false;
-        public int enemyTurnsCount = 0; 
+        public int enemyTurnsCount = 0;
 
         public triggerCounter tempTrigger = new triggerCounter();
         public Hrtprozis prozis = Hrtprozis.Instance;
@@ -159,7 +159,7 @@
         public int ownBaronRivendare = 0;
         public int enemyBaronRivendare = 0;
         public int ownBrannBronzebeard = 0;
-        public int enemyBrannBronzebeard = 0;        
+        public int enemyBrannBronzebeard = 0;
         public int ownTurnEndEffectsTriggerTwice = 0;
         public int enemyTurnEndEffectsTriggerTwice = 0;
         public int ownFandralStaghelm = 0;
@@ -250,8 +250,8 @@
         public int ownSpelsCostMoreAtStart = 0;
         public int ownDRcardsCostMore = 0;
         public int ownDRcardsCostMoreAtStart = 0;
-        
-        
+
+
 
         public int beschwoerungsportal = 0;
         public int startedWithbeschwoerungsportal = 0;
@@ -279,7 +279,7 @@
 
         public int optionsPlayedThisTurn = 0;
         public int cardsPlayedThisTurn = 0;
-        public int ueberladung = 0; 
+        public int ueberladung = 0;
         public int lockedMana = 0;
 
         public int enemyOptionsDoneThisTurn = 0;
@@ -310,7 +310,7 @@
         public Chireiden.Silverfish.SimCard OwnLastDiedMinion = Chireiden.Silverfish.SimCard.None;
 
         public int shadowmadnessed = 0; //minions has switched controllers this turn.
-        
+
 
 
         private void addMinionsReal(List<Minion> source, List<Minion> trgt)
@@ -372,10 +372,10 @@
             this.enemyHero = new Minion(prozis.enemyHero);
             this.ownWeapon = new Weapon(prozis.ownWeapon);
             this.enemyWeapon = new Weapon(prozis.enemyWeapon);
-                 
+
             addMinionsReal(prozis.ownMinions, ownMinions);
             addMinionsReal(prozis.enemyMinions, enemyMinions);
-            addCardsReal(Handmanager.Instance.handCards);            
+            addCardsReal(Handmanager.Instance.handCards);
             this.LurkersDB = new Dictionary<int, IDEnumOwner>(prozis.LurkersDB);
 
             this.enemySecretList.Clear();
@@ -515,7 +515,7 @@
             this.startedWithbeschwoerungsportal = 0;
             this.startedWithManagespenst = 0;
             this.startedWithWinzigebeschwoererin = 0;
-            
+
             this.blackwaterpirate = 0;
             this.blackwaterpirateStarted = 0;
             this.embracetheshadow = 0;
@@ -543,184 +543,184 @@
 
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.blackwaterpirate:
+                    case CardIds.Collectible.Neutral.BlackwaterPirate:
                         this.blackwaterpirate++;
                         this.blackwaterpirateStarted++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.chogall:
-                        if (m.playedThisTurn && this.cardsPlayedThisTurn == this.mobsplayedThisTurn) this.nextSpellThisTurnCostHealth = true; 
+                    case CardIds.Collectible.Warlock.Chogall:
+                        if (m.playedThisTurn && this.cardsPlayedThisTurn == this.mobsplayedThisTurn) this.nextSpellThisTurnCostHealth = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.seadevilstinger:
-                        if (m.playedThisTurn && this.cardsPlayedThisTurn == this.mobsplayedThisTurn) this.nextMurlocThisTurnCostHealth = true; 
+                    case CardIds.Collectible.Warlock.SeadevilStinger:
+                        if (m.playedThisTurn && this.cardsPlayedThisTurn == this.mobsplayedThisTurn) this.nextMurlocThisTurnCostHealth = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.prophetvelen:
+                    case CardIds.Collectible.Priest.ProphetVelen:
                         this.doublepriest++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.themistcaller:
+                    case CardIds.Collectible.Shaman.TheMistcaller:
                         this.ownMistcaller++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.pintsizedsummoner:
+                    case CardIds.Collectible.Neutral.PintSizedSummoner:
                         this.winzigebeschwoererin++;
                         this.startedWithWinzigebeschwoererin++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.manawraith:
+                    case CardIds.Collectible.Neutral.ManaWraith:
                         this.managespenst++;
                         this.startedWithManagespenst++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.nerubarweblord:
+                    case CardIds.Collectible.Neutral.NerubarWeblord:
                         this.nerubarweblord++;
                         this.startedWithnerubarweblord++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.venturecomercenary:                        
+                    case CardIds.Collectible.Neutral.VentureCoMercenary:
                         this.ownMinionsCostMore += 3;
                         this.ownMinionsCostMoreAtStart += 3;
                         continue;
-                    case Chireiden.Silverfish.SimCard.corpsewidow:
+                    case CardIds.Collectible.Hunter.CorpseWidow:
                         this.ownDRcardsCostMore -= 2;
                         this.ownDRcardsCostMoreAtStart -= 2;
                         continue;
-                    case Chireiden.Silverfish.SimCard.summoningportal:
+                    case CardIds.Collectible.Warlock.SummoningPortal:
                         this.beschwoerungsportal++;
                         this.startedWithbeschwoerungsportal++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.vaelastrasz:
+                    case CardIds.NonCollectible.Neutral.Vaelastrasz:
                         this.myCardsCostLess += 3;
                         this.startedWithmyCardsCostLess += 3;
                         continue;
-                    case Chireiden.Silverfish.SimCard.aviana:
+                    case CardIds.Collectible.Druid.Aviana:
                         this.anzOwnAviana++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.cloakedhuntress:
+                    case CardIds.Collectible.Hunter.CloakedHuntress:
                         this.anzOwnCloakedHuntress++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.baronrivendare:
+                    case CardIds.Collectible.Neutral.BaronRivendare:
                         this.ownBaronRivendare++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.brannbronzebeard:
+                    case CardIds.Collectible.Neutral.BrannBronzebeard:
                         this.ownBrannBronzebeard++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.drakkarienchanter:
+                    case CardIds.Collectible.Neutral.DrakkariEnchanter:
                         this.ownTurnEndEffectsTriggerTwice++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.fandralstaghelm:
+                    case CardIds.Collectible.Druid.FandralStaghelm:
                         this.ownFandralStaghelm++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.loatheb:
+                    case CardIds.Collectible.Neutral.Loatheb:
                         if (m.playedThisTurn) this.loatheb = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.kelthuzad:
+                    case CardIds.Collectible.Neutral.Kelthuzad:
                         this.needGraveyard = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.leokk:
+                    case CardIds.NonCollectible.Hunter.Leokk:
                         this.anzOwnRaidleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.raidleader:
+                    case CardIds.Collectible.Neutral.RaidLeader:
                         this.anzOwnRaidleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.warhorsetrainer:
+                    case CardIds.Collectible.Paladin.WarhorseTrainer:
                         this.anzOwnWarhorseTrainer++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.fallenhero:
+                    case CardIds.Collectible.Mage.FallenHero:
                         this.ownHeroPowerExtraDamage++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.garrisoncommander:
+                    case CardIds.Collectible.Neutral.GarrisonCommander:
                         bool another = false;
                         foreach (Minion mnn in this.ownMinions)
                         {
-                            if (mnn.name == Chireiden.Silverfish.SimCard.garrisoncommander && mnn.entitiyID != m.entitiyID) another = true;
+                            if (mnn.name == CardIds.Collectible.Neutral.GarrisonCommander && mnn.entitiyID != m.entitiyID) another = true;
                         }
                         if (!another) this.ownHeroPowerAllowedQuantity++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.coldarradrake:
+                    case CardIds.Collectible.Mage.ColdarraDrake:
                         this.ownHeroPowerAllowedQuantity += 100;
                         continue;
-                    case Chireiden.Silverfish.SimCard.mindbreaker:
+                    case CardIds.Collectible.Neutral.Mindbreaker:
                         this.ownHeroAblility.manacost = 100;
                         this.enemyHeroAblility.manacost = 100;
                         this.ownAbilityReady = false;
                         this.ownAbilityReady = false;
                         continue;
-                    case Chireiden.Silverfish.SimCard.malganis:
+                    case CardIds.Collectible.Warlock.Malganis:
                         this.anzOwnMalGanis++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.bolframshield:
+                    case CardIds.Collectible.Neutral.BolfRamshield:
                         this.anzOwnBolfRamshield++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.ladyblaumeux:
+                    case CardIds.NonCollectible.Neutral.LadyBlaumeux:
                         this.anzOwnHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.thanekorthazz:
+                    case CardIds.NonCollectible.Neutral.ThaneKorthazz:
                         this.anzOwnHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.sirzeliek:
+                    case CardIds.NonCollectible.Neutral.SirZeliek:
                         this.anzOwnHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.stormwindchampion:
+                    case CardIds.Collectible.Neutral.StormwindChampion:
                         this.anzOwnStormwindChamps++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.animatedarmor:
+                    case CardIds.Collectible.Mage.AnimatedArmor:
                         this.anzOwnAnimatedArmor++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.moorabi:
+                    case CardIds.Collectible.Shaman.Moorabi:
                         this.anzMoorabi++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.tundrarhino:
+                    case CardIds.Collectible.Hunter.TundraRhino:
                         this.anzOwnTundrarhino++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.timberwolf:
+                    case CardIds.Collectible.Hunter.TimberWolf:
                         this.anzOwnTimberWolfs++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.murlocwarleader:
+                    case CardIds.Collectible.Neutral.MurlocWarleader:
                         this.anzOwnMurlocWarleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.acidmaw:
+                    case CardIds.Collectible.Hunter.Acidmaw:
                         this.anzAcidmaw++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.grimscaleoracle:
+                    case CardIds.Collectible.Neutral.GrimscaleOracle:
                         this.anzOwnGrimscaleOracle++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.shadowfiend:
+                    case CardIds.Collectible.Priest.Shadowfiend:
                         this.anzOwnShadowfiend++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.auchenaisoulpriest:
+                    case CardIds.Collectible.Priest.AuchenaiSoulpriest:
                         this.anzOwnAuchenaiSoulpriest++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.radiantelemental: goto case Chireiden.Silverfish.SimCard.sorcerersapprentice;
-                    case Chireiden.Silverfish.SimCard.sorcerersapprentice:
+                    case CardIds.Collectible.Priest.RadiantElemental: goto case CardIds.Collectible.Mage.SorcerersApprentice;
+                    case CardIds.Collectible.Mage.SorcerersApprentice:
                         this.ownSpelsCostMore--;
                         this.ownSpelsCostMoreAtStart--;
                         continue;
-                    case Chireiden.Silverfish.SimCard.nerubianunraveler:                        
+                    case CardIds.Collectible.Neutral.NerubianUnraveler:
                         this.ownSpelsCostMore += 2;
                         this.ownSpelsCostMoreAtStart += 2;
                         continue;
-                    case Chireiden.Silverfish.SimCard.electron:
+                    case CardIds.NonCollectible.Neutral.Electron:
                         this.ownSpelsCostMore -= 3;
                         this.ownSpelsCostMoreAtStart -= 3;
-                        
-                        
+
+
                         continue;
-                    case Chireiden.Silverfish.SimCard.icewalker:
+                    case CardIds.Collectible.Mage.IceWalker:
                         this.ownAbilityFreezesTarget++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.southseacaptain:
+                    case CardIds.Collectible.Neutral.SouthseaCaptain:
                         this.anzOwnSouthseacaptain++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.chromaggus:
+                    case CardIds.Collectible.Neutral.Chromaggus:
                         this.anzOwnChromaggus++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.mechwarper:
+                    case CardIds.Collectible.Neutral.Mechwarper:
                         this.anzOwnMechwarper++;
                         this.anzOwnMechwarperStarted++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.steamwheedlesniper:
+                    case CardIds.Collectible.Hunter.SteamwheedleSniper:
                         this.weHaveSteamwheedleSniper = true;
                         continue;
                     default:
                         break;
                 }
 
-                if (m.name == Chireiden.Silverfish.SimCard.dragonconsort && anzOwnDragonConsort > 0) this.anzOwnDragonConsortStarted++;
+                if (m.name == CardIds.Collectible.Paladin.DragonConsort && anzOwnDragonConsort > 0) this.anzOwnDragonConsortStarted++;
                 if (m.handcard.card.Race == 23) this.anzOwnPiratesStarted++;
                 if (m.handcard.card.Race == 14) this.anzOwnMurlocStarted++;
 
@@ -729,7 +729,7 @@
             foreach (Handmanager.Handcard hc in this.owncards)
             {
 
-                if (hc.card.name == Chireiden.Silverfish.SimCard.kelthuzad)
+                if (hc.card.name == CardIds.Collectible.Neutral.Kelthuzad)
                 {
                     this.needGraveyard = true;
                 }
@@ -742,127 +742,127 @@
                 this.enemyspellpowerStarted += m.handcard.card.spellpowervalue;
                 this.enemyspellpower = this.enemyspellpowerStarted;
                 if (m.taunt) anzEnemyTaunt++;
-                
+
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.baronrivendare:
+                    case CardIds.Collectible.Neutral.BaronRivendare:
                         this.enemyBaronRivendare++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.brannbronzebeard:
+                    case CardIds.Collectible.Neutral.BrannBronzebeard:
                         this.enemyBrannBronzebeard++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.drakkarienchanter:
+                    case CardIds.Collectible.Neutral.DrakkariEnchanter:
                         this.enemyTurnEndEffectsTriggerTwice++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.kelthuzad:
+                    case CardIds.Collectible.Neutral.Kelthuzad:
                         this.needGraveyard = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.prophetvelen:
+                    case CardIds.Collectible.Priest.ProphetVelen:
                         this.enemydoublepriest++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.manawraith:
+                    case CardIds.Collectible.Neutral.ManaWraith:
                         this.managespenst++;
                         this.startedWithManagespenst++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.electron:
+                    case CardIds.NonCollectible.Neutral.Electron:
                         this.ownSpelsCostMore -= 3;
                         this.ownSpelsCostMoreAtStart -= 3;
-                        
-                        
+
+
                         continue;
-                    case Chireiden.Silverfish.SimCard.doomedapprentice:
+                    case CardIds.Collectible.Mage.DoomedApprentice:
                         this.ownSpelsCostMore++;
                         this.ownSpelsCostMoreAtStart++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.nerubarweblord:
+                    case CardIds.Collectible.Neutral.NerubarWeblord:
                         this.nerubarweblord++;
                         this.startedWithnerubarweblord++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.garrisoncommander:
+                    case CardIds.Collectible.Neutral.GarrisonCommander:
                         bool another = false;
                         foreach (Minion mnn in this.enemyMinions)
                         {
-                            if (mnn.name == Chireiden.Silverfish.SimCard.garrisoncommander && mnn.entitiyID != m.entitiyID) another = true;
+                            if (mnn.name == CardIds.Collectible.Neutral.GarrisonCommander && mnn.entitiyID != m.entitiyID) another = true;
                         }
                         if (!another) this.enemyHeroPowerAllowedQuantity++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.coldarradrake:
+                    case CardIds.Collectible.Mage.ColdarraDrake:
                         this.enemyHeroPowerAllowedQuantity += 100;
                         continue;
-                    case Chireiden.Silverfish.SimCard.mindbreaker:
+                    case CardIds.Collectible.Neutral.Mindbreaker:
                         this.ownHeroAblility.manacost = 100;
                         this.enemyHeroAblility.manacost = 100;
                         this.ownAbilityReady = false;
                         this.ownAbilityReady = false;
                         continue;
-                    case Chireiden.Silverfish.SimCard.fallenhero:
+                    case CardIds.Collectible.Mage.FallenHero:
                         this.enemyHeroPowerExtraDamage++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.leokk:
+                    case CardIds.NonCollectible.Hunter.Leokk:
                         this.anzEnemyRaidleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.raidleader:
+                    case CardIds.Collectible.Neutral.RaidLeader:
                         this.anzEnemyRaidleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.warhorsetrainer:
+                    case CardIds.Collectible.Paladin.WarhorseTrainer:
                         this.anzEnemyWarhorseTrainer++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.malganis:
+                    case CardIds.Collectible.Warlock.Malganis:
                         this.anzEnemyMalGanis++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.bolframshield:
+                    case CardIds.Collectible.Neutral.BolfRamshield:
                         this.anzEnemyBolfRamshield++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.ladyblaumeux:
+                    case CardIds.NonCollectible.Neutral.LadyBlaumeux:
                         this.anzEnemyHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.thanekorthazz:
+                    case CardIds.NonCollectible.Neutral.ThaneKorthazz:
                         this.anzEnemyHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.sirzeliek:
+                    case CardIds.NonCollectible.Neutral.SirZeliek:
                         this.anzEnemyHorsemen++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.stormwindchampion:
+                    case CardIds.Collectible.Neutral.StormwindChampion:
                         this.anzEnemyStormwindChamps++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.animatedarmor:
+                    case CardIds.Collectible.Mage.AnimatedArmor:
                         this.anzEnemyAnimatedArmor++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.moorabi:
+                    case CardIds.Collectible.Shaman.Moorabi:
                         this.anzMoorabi++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.tundrarhino:
+                    case CardIds.Collectible.Hunter.TundraRhino:
                         this.anzEnemyTundrarhino++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.timberwolf:
+                    case CardIds.Collectible.Hunter.TimberWolf:
                         this.anzEnemyTimberWolfs++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.murlocwarleader:
+                    case CardIds.Collectible.Neutral.MurlocWarleader:
                         this.anzEnemyMurlocWarleader++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.acidmaw:
+                    case CardIds.Collectible.Hunter.Acidmaw:
                         this.anzAcidmaw++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.grimscaleoracle:
+                    case CardIds.Collectible.Neutral.GrimscaleOracle:
                         this.anzEnemyGrimscaleOracle++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.auchenaisoulpriest:
+                    case CardIds.Collectible.Priest.AuchenaiSoulpriest:
                         this.anzEnemyAuchenaiSoulpriest++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.steamwheedlesniper:
+                    case CardIds.Collectible.Hunter.SteamwheedleSniper:
                         this.enemyHaveSteamwheedleSniper = true;
                         continue;
-                    
-                    case Chireiden.Silverfish.SimCard.icewalker:
+
+                    case CardIds.Collectible.Mage.IceWalker:
                         this.enemyAbilityFreezesTarget++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.southseacaptain:
+                    case CardIds.Collectible.Neutral.SouthseaCaptain:
                         this.anzEnemySouthseacaptain++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.chromaggus:
+                    case CardIds.Collectible.Neutral.Chromaggus:
                         this.anzEnemyChromaggus++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.mechwarper:
+                    case CardIds.Collectible.Neutral.Mechwarper:
                         this.anzEnemyMechwarper++;
                         this.anzEnemyMechwarperStarted++;
                         continue;
@@ -958,7 +958,7 @@
             this.owncarddraw = p.owncarddraw;
             this.enemycarddraw = p.enemycarddraw;
             this.enemyAnzCards = p.enemyAnzCards;
-            
+
             this.lostDamage = p.lostDamage;
             this.lostWeaponDamage = p.lostWeaponDamage;
             this.lostHeal = p.lostHeal;
@@ -1004,13 +1004,13 @@
             this.ownMinionsInDeckCost0 = p.ownMinionsInDeckCost0;
 
             this.playedPreparation = p.playedPreparation;
-            
+
             this.winzigebeschwoererin = p.winzigebeschwoererin;
             this.startedWithWinzigebeschwoererin = p.startedWithWinzigebeschwoererin;
             this.managespenst = p.managespenst;
             this.startedWithManagespenst = p.startedWithManagespenst;
 
-            
+
             this.ownSpelsCostMore = p.ownSpelsCostMore;
             this.ownSpelsCostMoreAtStart = p.ownSpelsCostMoreAtStart;
             this.ownMinionsCostMore = p.ownMinionsCostMore;
@@ -1201,7 +1201,7 @@
                 return false;
             }
 
-            
+
 
             if (this.ownHeroAblility.card.name != p.ownHeroAblility.card.name)
             {
@@ -1236,7 +1236,7 @@
                 if (dis.ownPowerWordGlory != pis.ownPowerWordGlory || dis.enemyPowerWordGlory != pis.enemyPowerWordGlory) minionbool = false;
                 if (dis.destroyOnEnemyTurnStart != pis.destroyOnEnemyTurnStart || dis.destroyOnEnemyTurnEnd != pis.destroyOnEnemyTurnEnd || dis.destroyOnOwnTurnEnd != pis.destroyOnOwnTurnEnd || dis.destroyOnOwnTurnStart != pis.destroyOnOwnTurnStart) minionbool = false;
                 if (dis.ancestralspirit != pis.ancestralspirit || dis.desperatestand != pis.desperatestand || dis.souloftheforest != pis.souloftheforest || dis.stegodon != pis.stegodon || dis.livingspores != pis.livingspores) minionbool = false;
-                if (dis.explorershat != pis.explorershat || dis.returnToHand != pis.returnToHand|| dis.infest != pis.infest || dis.deathrattle2 != pis.deathrattle2) minionbool = false;
+                if (dis.explorershat != pis.explorershat || dis.returnToHand != pis.returnToHand || dis.infest != pis.infest || dis.deathrattle2 != pis.deathrattle2) minionbool = false;
                 if (dis.hChoice != pis.hChoice || dis.cantBeTargetedBySpellsOrHeroPowers != pis.cantBeTargetedBySpellsOrHeroPowers || dis.poisonous != pis.poisonous || dis.lifesteal != pis.lifesteal) minionbool = false;
             }
             if (minionbool == false)
@@ -1324,7 +1324,7 @@
             if (this.ownHero.Ready != p.ownHero.Ready || !this.ownWeapon.isEqual(p.ownWeapon) || this.ownHero.numAttacksThisTurn != p.ownHero.numAttacksThisTurn || this.ownHero.windfury != p.ownHero.windfury) return false;
 
             if (this.enemyHero.Hp != p.enemyHero.Hp || !this.enemyWeapon.isEqual(p.enemyWeapon) || this.enemyHero.armor != p.enemyHero.armor || this.enemyHero.frozen != p.enemyHero.frozen || this.enemyHero.immune != p.enemyHero.immune) return false;
-            
+
 
 
 
@@ -1519,7 +1519,7 @@
 
                 if (usewhirlwind)
                 {
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.whirlwind, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Warrior.Whirlwind, mana, playAroundProb, pap2);
                 }
             }
 
@@ -1528,24 +1528,24 @@
             switch (enemyHeroStrtClass)
             {
                 case TAG_CLASS.MAGE:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.flamestrike, mana, playAroundProb, pap2);
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.blizzard, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Mage.Flamestrike, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Mage.Blizzard, mana, playAroundProb, pap2);
                     break;
                 case TAG_CLASS.HUNTER:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.unleashthehounds, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Hunter.UnleashTheHounds, mana, playAroundProb, pap2);
                     break;
                 case TAG_CLASS.PRIEST:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.holynova, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Priest.HolyNova, mana, playAroundProb, pap2);
                     break;
                 case TAG_CLASS.SHAMAN:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.lightningstorm, mana, playAroundProb, pap2);
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.maelstromportal, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Shaman.LightningStorm, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Shaman.MaelstromPortal, mana, playAroundProb, pap2);
                     break;
                 case TAG_CLASS.PALADIN:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.consecration, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Paladin.Consecration, mana, playAroundProb, pap2);
                     break;
                 case TAG_CLASS.DRUID:
-                    mana = EnemyPlaysACard(Chireiden.Silverfish.SimCard.swipe, mana, playAroundProb, pap2);
+                    mana = EnemyPlaysACard(CardIds.Collectible.Druid.Swipe, mana, playAroundProb, pap2);
                     break;
             }
 
@@ -1555,16 +1555,16 @@
         public int EnemyPlaysACard(Chireiden.Silverfish.SimCard cardname, int currmana, int playAroundProb, int pap2)
         {
             //todo manacosts
-            
+
             switch (cardname)
             {
-                case Chireiden.Silverfish.SimCard.flamestrike:
+                case CardIds.Collectible.Mage.Flamestrike:
                     if (currmana >= 7)
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.CS2_032, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Mage.Flamestrike, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1582,13 +1582,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.blizzard:
+                case CardIds.Collectible.Mage.Blizzard:
                     if (currmana >= 6)
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.CS2_028, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Mage.Blizzard, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1607,19 +1607,19 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.unleashthehounds:
+                case CardIds.Collectible.Hunter.UnleashTheHounds:
                     if (currmana >= 4)//3
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.EX1_538, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Hunter.UnleashTheHounds, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
                             int anz = this.ownMinions.Count;
                             int posi = this.enemyMinions.Count - 1;
-                            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_538t);//hound
+                            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.UnleashTheHoundst;//hound
                             for (int i = 0; i < anz; i++)
                             {
                                 callKid(kid, posi, false);
@@ -1630,13 +1630,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.holynova:
+                case CardIds.Collectible.Priest.HolyNova:
                     if (currmana >= 5)
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.CS1_112, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Priest.HolyNova, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1662,13 +1662,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.lightningstorm:
+                case CardIds.Collectible.Shaman.LightningStorm:
                     if (currmana >= 4)//3
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.EX1_259, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Shaman.LightningStorm, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1686,13 +1686,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.maelstromportal:
+                case CardIds.Collectible.Shaman.MaelstromPortal:
                     if (currmana >= 3)//2
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.KAR_073, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Shaman.MaelstromPortal, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1710,13 +1710,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.whirlwind:
+                case CardIds.Collectible.Warrior.Whirlwind:
                     if (currmana >= 3)//1
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.EX1_400, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Warrior.Whirlwind, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1739,13 +1739,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.consecration:
+                case CardIds.Collectible.Paladin.Consecration:
                     if (currmana >= 4)
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.CS2_093, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Paladin.Consecration, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1765,13 +1765,13 @@
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.swipe:
+                case CardIds.Collectible.Druid.Swipe:
                     if (currmana >= 4)
                     {
                         if (wehaveCounterspell == 0)
                         {
                             bool dontkill = false;
-                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard.CS2_012, this.enemyAnzCards, this.enemyDeckSize);
+                            int prob = Probabilitymaker.Instance.getProbOfEnemyHavingCardInHand(CardIds.Collectible.Druid.Swipe, this.enemyAnzCards, this.enemyDeckSize);
                             if (playAroundProb > prob) return currmana;
                             if (pap2 > prob) dontkill = true;
 
@@ -1850,8 +1850,8 @@
             if (this.ownMinions.Count == 0) return 1;
             if (this.ownMinions.Count == 1)
             {
-                if (this.ownMinions[0].handcard.card.name == Chireiden.Silverfish.SimCard.flametonguetotem || this.ownMinions[0].handcard.card.name == Chireiden.Silverfish.SimCard.direwolfalpha) return 1;
-                else if (card.name == Chireiden.Silverfish.SimCard.tuskarrtotemic) return 1;
+                if (this.ownMinions[0].handcard.card.name == CardIds.Collectible.Shaman.FlametongueTotem || this.ownMinions[0].handcard.card.name == CardIds.Collectible.Neutral.DireWolfAlpha) return 1;
+                else if (card.name == CardIds.Collectible.Shaman.TuskarrTotemic) return 1;
                 else return 2;
             }
 
@@ -1865,12 +1865,12 @@
                 bool givesBuff = false;
                 switch (card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.grimestreetprotector: givesBuff = true; break; 
-                    case Chireiden.Silverfish.SimCard.defenderofargus: givesBuff = true; break;
-                    case Chireiden.Silverfish.SimCard.flametonguetotem: givesBuff = true; break;
-                    case Chireiden.Silverfish.SimCard.direwolfalpha: givesBuff = true; break;
-                    case Chireiden.Silverfish.SimCard.ancientmage: givesBuff = true; break;
-                    case Chireiden.Silverfish.SimCard.tuskarrtotemic: givesBuff = true; break;
+                    case CardIds.Collectible.Paladin.GrimestreetProtector: givesBuff = true; break;
+                    case CardIds.Collectible.Neutral.DefenderOfArgus: givesBuff = true; break;
+                    case CardIds.Collectible.Shaman.FlametongueTotem: givesBuff = true; break;
+                    case CardIds.Collectible.Neutral.DireWolfAlpha: givesBuff = true; break;
+                    case CardIds.Collectible.Neutral.AncientMage: givesBuff = true; break;
+                    case CardIds.Collectible.Shaman.TuskarrTotemic: givesBuff = true; break;
                 }
                 if (givesBuff)
                 {
@@ -1912,7 +1912,7 @@
                 }
                 else return this.ownMinions.Count + 1;
             }
-            if (card.name == Chireiden.Silverfish.SimCard.sunfuryprotector || card.name == Chireiden.Silverfish.SimCard.defenderofargus) // bestplace, if right and left minions have no taunt + lots of hp, dont make priority-minions to taunt
+            if (card.name == CardIds.Collectible.Neutral.SunfuryProtector || card.name == CardIds.Collectible.Neutral.DefenderOfArgus) // bestplace, if right and left minions have no taunt + lots of hp, dont make priority-minions to taunt
             {
                 if (lethal) return 1;
                 if (this.ownMinions.Count == 2)
@@ -1971,17 +1971,17 @@
 
             int cardIsBuffer = 0;
             bool placebuff = false;
-            if (card.name == Chireiden.Silverfish.SimCard.flametonguetotem || card.name == Chireiden.Silverfish.SimCard.direwolfalpha || card.name == Chireiden.Silverfish.SimCard.tuskarrtotemic)
+            if (card.name == CardIds.Collectible.Shaman.FlametongueTotem || card.name == CardIds.Collectible.Neutral.DireWolfAlpha || card.name == CardIds.Collectible.Shaman.TuskarrTotemic)
             {
                 placebuff = true;
-                if (card.name == Chireiden.Silverfish.SimCard.flametonguetotem || card.name == Chireiden.Silverfish.SimCard.tuskarrtotemic) cardIsBuffer = 2;
-                if (card.name == Chireiden.Silverfish.SimCard.direwolfalpha) cardIsBuffer = 1;
+                if (card.name == CardIds.Collectible.Shaman.FlametongueTotem || card.name == CardIds.Collectible.Shaman.TuskarrTotemic) cardIsBuffer = 2;
+                if (card.name == CardIds.Collectible.Neutral.DireWolfAlpha) cardIsBuffer = 1;
             }
             bool tundrarhino = false;
             foreach (Minion m in this.ownMinions)
             {
-                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.tundrarhino) tundrarhino = true;
-                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.flametonguetotem || m.handcard.card.name == Chireiden.Silverfish.SimCard.direwolfalpha) placebuff = true;
+                if (m.handcard.card.name == CardIds.Collectible.Hunter.TundraRhino) tundrarhino = true;
+                if (m.handcard.card.name == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.name == CardIds.Collectible.Neutral.DireWolfAlpha) placebuff = true;
             }
             //max attack this turn
             if (placebuff)
@@ -1994,7 +1994,7 @@
                     cval = card.Attack;
                     if (card.Windfury) cval = card.Attack;
                 }
-                if (card.name == Chireiden.Silverfish.SimCard.nerubianegg)
+                if (card.name == CardIds.Collectible.Neutral.NerubianEgg)
                 {
                     cval += 1;
                 }
@@ -2021,12 +2021,12 @@
                     }
                     else whirlwindplaces[i] = 0;
 
-                    switch(m.handcard.card.name)
+                    switch (m.handcard.card.name)
                     {
-                        case Chireiden.Silverfish.SimCard.flametonguetotem:
+                        case CardIds.Collectible.Shaman.FlametongueTotem:
                             buffplaces[i] = 2;
                             goto case Chireiden.Silverfish.SimCard.aiextra1;
-                        case Chireiden.Silverfish.SimCard.direwolfalpha:
+                        case CardIds.Collectible.Neutral.DireWolfAlpha:
                             buffplaces[i] = 1;
                             goto case Chireiden.Silverfish.SimCard.aiextra1;
                         case Chireiden.Silverfish.SimCard.aiextra1:
@@ -2260,7 +2260,7 @@
                 }
                 else if (!m.divineshild) { m.divineshild = true; return 5; }
                 else if (!m.poisonous) { m.poisonous = true; return 6; }
-                else { this.minionGetBuffed(m, 0, 3);  return 3; }
+                else { this.minionGetBuffed(m, 0, 3); return 3; }
             }
             return 0;
         }
@@ -2289,44 +2289,44 @@
             switch (this.enemyHeroAblility.card.cardIDenum)
             {
                 //direct damage
-                case Chireiden.Silverfish.SimCard.DS1h_292: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.DS1h_292_H1: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.AT_132_HUNTER: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.DS1h_292_H1_AT_132: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.NAX15_02: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.NAX15_02H: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.NAX6_02: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.NAX6_02H: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.CS2_034: ablilityDmg += 1; break;
-                case Chireiden.Silverfish.SimCard.CS2_034_H1: ablilityDmg += 1; break;
-                case Chireiden.Silverfish.SimCard.CS2_034_H2: ablilityDmg += 1; break;
-                case Chireiden.Silverfish.SimCard.AT_050t: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.AT_132_MAGE: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.CS2_034_H1_AT_132: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.CS2_034_H2_AT_132: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.EX1_625t: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.EX1_625t2: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.TU4d_003: ablilityDmg += 1; break;
-                case Chireiden.Silverfish.SimCard.NAX7_03: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.NAX7_03H: ablilityDmg += 4; break;
-                case Chireiden.Silverfish.SimCard.ICC_830p: ablilityDmg += 2; break;
-                case Chireiden.Silverfish.SimCard.ICC_831p: ablilityDmg += 3; break;
-                case Chireiden.Silverfish.SimCard.ICC_833h: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Hunter.SteadyShot: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Hunter.SteadyShot_H1: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Hunter.SteadyShot_H1_AT_132: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Neutral.FrostBlast: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Neutral.FrostBlastH: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Neutral.NecroticAura: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Neutral.NecroticAuraH: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Mage.Fireblast: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Mage.Fireblast_H1: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Mage.Fireblast_H2: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Mage.Fireblast_H1_AT_132: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Mage.Fireblast_H2_AT_132: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken2: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Hunter.ShotgunBlast: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Neutral.UnbalancingStrike: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Neutral.UnbalancingStrikeH: ablilityDmg += 4; break;
+                case CardIds.NonCollectible.Priest.ShadowreaperAnduin_Voidform: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Neutral.BloodreaverGuldan_SiphonLife: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Neutral.IcyTouchHeroic: ablilityDmg += 1; break;
                 //condition
-                case Chireiden.Silverfish.SimCard.BRMA05_2H: if (this.mana > 0) ablilityDmg += 10; break;
-                case Chireiden.Silverfish.SimCard.BRMA05_2: if (this.mana > 0) ablilityDmg += 5; break;
-                case Chireiden.Silverfish.SimCard.BRM_027p: if (this.ownMinions.Count < 1) ablilityDmg += 8; break;
-                case Chireiden.Silverfish.SimCard.BRM_027pH: if (this.ownMinions.Count < 2) ablilityDmg += 8; break;
-                case Chireiden.Silverfish.SimCard.TB_MechWar_Boss2_HeroPower: if (this.ownMinions.Count < 2) ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Neutral.IgniteManaHeroic: if (this.mana > 0) ablilityDmg += 10; break;
+                case CardIds.NonCollectible.Neutral.IgniteMana: if (this.mana > 0) ablilityDmg += 5; break;
+                case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower: if (this.ownMinions.Count < 1) ablilityDmg += 8; break;
+                case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPowerH: if (this.ownMinions.Count < 2) ablilityDmg += 8; break;
+                case CardIds.NonCollectible.Neutral.BoomBotJrTavernBrawl: if (this.ownMinions.Count < 2) ablilityDmg += 1; break;
                 //equip weapon
-                case Chireiden.Silverfish.SimCard.LOEA09_2: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
-                case Chireiden.Silverfish.SimCard.LOEA09_2H: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 5; break;
-                case Chireiden.Silverfish.SimCard.CS2_083b: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
-                case Chireiden.Silverfish.SimCard.CS2_083b_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
-                case Chireiden.Silverfish.SimCard.AT_132_ROGUE: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
-                case Chireiden.Silverfish.SimCard.CS2_017: if (!this.enemyHero.frozen) ghd += 1; break;
-                case Chireiden.Silverfish.SimCard.AT_132_DRUID: if (!this.enemyHero.frozen) ghd += 2; break;
-                case Chireiden.Silverfish.SimCard.ICC_832p: if (!this.enemyHero.frozen) ghd += 3; break;
+                case CardIds.NonCollectible.Neutral.Enraged: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
+                case CardIds.NonCollectible.Neutral.EnragedH: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 5; break;
+                case CardIds.NonCollectible.Rogue.DaggerMastery: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
+                case CardIds.NonCollectible.Rogue.DaggerMastery_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
+                case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
+                case CardIds.NonCollectible.Druid.Shapeshift: if (!this.enemyHero.frozen) ghd += 1; break;
+                case CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift: if (!this.enemyHero.frozen) ghd += 2; break;
+                case CardIds.NonCollectible.Neutral.MalfurionthePestilent_PlagueLord: if (!this.enemyHero.frozen) ghd += 3; break;
             }
 
             ghd += ablilityDmg;
@@ -2335,10 +2335,10 @@
                 if (m.frozen) continue;
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.ancientwatcher: if (!m.silenced) continue; break;
-                    case Chireiden.Silverfish.SimCard.blackknight: if (!m.silenced) continue; break;
-                    case Chireiden.Silverfish.SimCard.whiteknight: if (!m.silenced) continue; break;
-                    case Chireiden.Silverfish.SimCard.humongousrazorleaf: if (!m.silenced) continue; break;
+                    case CardIds.Collectible.Neutral.AncientWatcher: if (!m.silenced) continue; break;
+                    case CardIds.NonCollectible.Neutral.BlackKnight: if (!m.silenced) continue; break;
+                    case CardIds.NonCollectible.Neutral.WhiteKnight: if (!m.silenced) continue; break;
+                    case CardIds.Collectible.Neutral.HumongousRazorleaf: if (!m.silenced) continue; break;
                 }
                 ghd += m.Angr;
                 if (m.windfury) ghd += m.Angr;
@@ -2367,7 +2367,7 @@
                 {
                     switch (secretID)
                     {
-                        case Chireiden.Silverfish.SimCard.EX1_130: //Noble Sacrifice
+                        case CardIds.Collectible.Paladin.NobleSacrifice: //Noble Sacrifice
                             if (this.enemyMinions.Count > 0)
                             {
                                 int mAngr = 1000;
@@ -2378,7 +2378,7 @@
                                 if (mAngr != 1000) this.guessingHeroHP += mAngr;
                             }
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_533: //Misdirection
+                        case CardIds.Collectible.Hunter.Misdirection: //Misdirection
                             if (this.enemyMinions.Count > 0)
                             {
                                 int mAngr = 1000;
@@ -2389,10 +2389,10 @@
                                 if (mAngr != 1000) this.guessingHeroHP += mAngr;
                             }
                             continue;
-                        case Chireiden.Silverfish.SimCard.AT_060: //Bear Trap
+                        case CardIds.Collectible.Hunter.BearTrap: //Bear Trap
                             if (this.enemyMinions.Count > 1) this.guessingHeroHP += 3;
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_611: //Freezing Trap
+                        case CardIds.Collectible.Hunter.FreezingTrap: //Freezing Trap
                             if (this.enemyMinions.Count > 0)
                             {
                                 int mAngr = 1000;
@@ -2408,13 +2408,13 @@
                                 if (mAngr < 1000 && mCharge < 1) this.guessingHeroHP += mAngr;
                             }
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_289: //Ice Barrier
+                        case CardIds.Collectible.Mage.IceBarrier: //Ice Barrier
                             this.guessingHeroHP += 8;
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_295: //Ice Block
+                        case CardIds.Collectible.Mage.IceBlock: //Ice Block
                             haveImmune = true;
                             break;
-                        case Chireiden.Silverfish.SimCard.EX1_594: //Vaporize
+                        case CardIds.Collectible.Mage.Vaporize: //Vaporize
                             if (this.enemyMinions.Count > 0)
                             {
                                 int mAngr = 1000;
@@ -2425,7 +2425,7 @@
                                 if (mAngr != 1000) this.guessingHeroHP += mAngr;
                             }
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_610: //Explosive Trap
+                        case CardIds.Collectible.Hunter.ExplosiveTrap: //Explosive Trap
                             if (this.enemyMinions.Count > 0)
                             {
                                 int losshd = 0;
@@ -2434,10 +2434,10 @@
                                     if (m.frozen) continue;
                                     switch (m.name)
                                     {
-                                        case Chireiden.Silverfish.SimCard.ancientwatcher: if (!m.silenced) continue; break;
-                                        case Chireiden.Silverfish.SimCard.blackknight: if (!m.silenced) continue; break;
-                                        case Chireiden.Silverfish.SimCard.whiteknight: if (!m.silenced) continue; break;
-                                        case Chireiden.Silverfish.SimCard.humongousrazorleaf: if (!m.silenced) continue; break;
+                                        case CardIds.Collectible.Neutral.AncientWatcher: if (!m.silenced) continue; break;
+                                        case CardIds.NonCollectible.Neutral.BlackKnight: if (!m.silenced) continue; break;
+                                        case CardIds.NonCollectible.Neutral.WhiteKnight: if (!m.silenced) continue; break;
+                                        case CardIds.Collectible.Neutral.HumongousRazorleaf: if (!m.silenced) continue; break;
                                     }
                                     if (m.Hp < 3)
                                     {
@@ -2454,7 +2454,7 @@
             }
             if (this.ownHero.Hp + this.ownHero.armor <= ablilityDmg && !haveImmune) this.guessingHeroHP = this.ownHero.Hp + this.ownHero.armor - ablilityDmg;
         }
-		
+
 
 
         public bool ownHeroHasDirectLethal()
@@ -2469,7 +2469,7 @@
                 {
                     switch (m.name)
                     {
-                        case Chireiden.Silverfish.SimCard.icehowl: if (!m.silenced) continue; break;
+                        case CardIds.Collectible.Neutral.Icehowl: if (!m.silenced) continue; break;
                     }
                     totalEnemyDamage += m.Angr;
                     if (m.windfury) totalEnemyDamage += m.Angr;
@@ -2481,40 +2481,40 @@
                 switch (this.enemyHeroAblility.card.cardIDenum)
                 {
                     //direct damage
-                    case Chireiden.Silverfish.SimCard.DS1h_292: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.DS1h_292_H1: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.AT_132_HUNTER: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.DS1h_292_H1_AT_132: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.NAX15_02: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.NAX15_02H: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.NAX6_02: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.NAX6_02H: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.CS2_034: totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.CS2_034_H1: totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.CS2_034_H2: totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.AT_050t: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.AT_132_MAGE: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.CS2_034_H1_AT_132: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.CS2_034_H2_AT_132: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.EX1_625t: totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.EX1_625t2: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.TU4d_003: totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.NAX7_03: totalEnemyDamage += 3; break;
-                    case Chireiden.Silverfish.SimCard.NAX7_03H: totalEnemyDamage += 4; break;
+                    case CardIds.NonCollectible.Hunter.SteadyShot: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Hunter.SteadyShot_H1: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Hunter.SteadyShot_H1_AT_132: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Neutral.FrostBlast: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Neutral.FrostBlastH: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Neutral.NecroticAura: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Neutral.NecroticAuraH: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Mage.Fireblast: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_H1: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_H2: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_H1_AT_132: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_H2_AT_132: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken2: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Hunter.ShotgunBlast: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Neutral.UnbalancingStrike: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Neutral.UnbalancingStrikeH: totalEnemyDamage += 4; break;
                     //condition
-                    case Chireiden.Silverfish.SimCard.BRMA05_2H: if (this.mana > 0) totalEnemyDamage += 10; break;
-                    case Chireiden.Silverfish.SimCard.BRMA05_2: if (this.mana > 0) totalEnemyDamage += 5; break;
-                    case Chireiden.Silverfish.SimCard.BRM_027p: if (this.ownMinions.Count < 1) totalEnemyDamage += 8; break;
-                    case Chireiden.Silverfish.SimCard.BRM_027pH: if (this.ownMinions.Count < 2) totalEnemyDamage += 8; break;
-                    case Chireiden.Silverfish.SimCard.TB_MechWar_Boss2_HeroPower: if (this.ownMinions.Count < 2) totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Neutral.IgniteManaHeroic: if (this.mana > 0) totalEnemyDamage += 10; break;
+                    case CardIds.NonCollectible.Neutral.IgniteMana: if (this.mana > 0) totalEnemyDamage += 5; break;
+                    case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower: if (this.ownMinions.Count < 1) totalEnemyDamage += 8; break;
+                    case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPowerH: if (this.ownMinions.Count < 2) totalEnemyDamage += 8; break;
+                    case CardIds.NonCollectible.Neutral.BoomBotJrTavernBrawl: if (this.ownMinions.Count < 2) totalEnemyDamage += 1; break;
                     //equip weapon
-                    case Chireiden.Silverfish.SimCard.LOEA09_2: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.LOEA09_2H: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 5; break;
-                    case Chireiden.Silverfish.SimCard.CS2_017: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.CS2_083b: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.CS2_083b_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
-                    case Chireiden.Silverfish.SimCard.AT_132_ROGUE: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
-                    case Chireiden.Silverfish.SimCard.AT_132_DRUID: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Neutral.Enraged: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Neutral.EnragedH: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 5; break;
+                    case CardIds.NonCollectible.Druid.Shapeshift: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Rogue.DaggerMastery: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Rogue.DaggerMastery_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
                 }
             }
             if (this.enemyWeapon.Durability > 0 && this.enemyHero.Ready && !this.enemyHero.frozen)
@@ -2530,27 +2530,27 @@
                 {
                     switch (secretID)
                     {
-                        case Chireiden.Silverfish.SimCard.EX1_289: //Ice Barrier
+                        case CardIds.Collectible.Mage.IceBarrier: //Ice Barrier
                             totalEnemyDamage -= 8;
                             continue;
-                        case Chireiden.Silverfish.SimCard.EX1_295: //Ice Block
+                        case CardIds.Collectible.Mage.IceBlock: //Ice Block
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_130: //Noble Sacrifice
+                        case CardIds.Collectible.Paladin.NobleSacrifice: //Noble Sacrifice
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_533: //Misdirection
+                        case CardIds.Collectible.Hunter.Misdirection: //Misdirection
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_594: //Vaporize
+                        case CardIds.Collectible.Mage.Vaporize: //Vaporize
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_611: //Freezing Trap
+                        case CardIds.Collectible.Hunter.FreezingTrap: //Freezing Trap
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_610: //Explosive Trap
+                        case CardIds.Collectible.Hunter.ExplosiveTrap: //Explosive Trap
                             return false;
-                        case Chireiden.Silverfish.SimCard.AT_060: //Bear Trap
+                        case CardIds.Collectible.Hunter.BearTrap: //Bear Trap
                             return false;
-                        case Chireiden.Silverfish.SimCard.EX1_132: //Eye for an Eye
+                        case CardIds.Collectible.Paladin.EyeForAnEye: //Eye for an Eye
                             if ((this.enemyHero.Hp + this.enemyHero.armor) <= (this.ownHero.Hp + this.ownHero.armor) && !this.enemyHero.immune) return false;
                             continue;
-                        case Chireiden.Silverfish.SimCard.LOE_021: //Dart Trap
+                        case CardIds.Collectible.Hunter.DartTrap: //Dart Trap
                             if ((this.enemyHero.Hp + this.enemyHero.armor) < 6 && !this.enemyHero.immune) return false;
                             continue;
                     }
@@ -2572,19 +2572,19 @@
             {
                 switch (secretID)
                 {
-                    
-                    
-                    case Chireiden.Silverfish.SimCard.EX1_554: //snaketrap
-                        
+
+
+                    case CardIds.Collectible.Hunter.SnakeTrap: //snaketrap
+
                         pos = this.ownMinions.Count;
                         if (pos == 0) continue;
-                        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_554t);//snake
+                        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.SnakeTrapt;//snake
                         callKid(kid, pos, true, false);
                         callKid(kid, pos, true);
                         callKid(kid, pos, true);
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_610: //explosive trap
-                        
+                    case CardIds.Collectible.Hunter.ExplosiveTrap: //explosive trap
+
                         temp = new List<Minion>(this.enemyMinions);
                         int damage = getSpellDamageDamage(2);
                         foreach (Minion m in temp)
@@ -2593,157 +2593,157 @@
                         }
                         attackEnemyHeroWithoutKill(damage);
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_611: //freezing trap
+                    case CardIds.Collectible.Hunter.FreezingTrap: //freezing trap
+                    {
+
+                        int count = this.enemyMinions.Count;
+                        if (count == 0) continue;
+                        Minion mnn = this.enemyMinions[0];
+                        for (int i = 1; i < count; i++)
                         {
-                            
-                            int count = this.enemyMinions.Count;
-                            if (count == 0) continue;
-                            Minion mnn = this.enemyMinions[0];
-                            for (int i = 1; i < count; i++ )
-                            {
-                                if (this.enemyMinions[i].Angr < mnn.Angr) mnn = this.enemyMinions[i]; //take the weakest
-                            }
-                            minionReturnToHand(mnn, false, 0);
-                            continue;
-                        }  
-                    case Chireiden.Silverfish.SimCard.AT_060: //beartrap
-                        
+                            if (this.enemyMinions[i].Angr < mnn.Angr) mnn = this.enemyMinions[i]; //take the weakest
+                        }
+                        minionReturnToHand(mnn, false, 0);
+                        continue;
+                    }
+                    case CardIds.Collectible.Hunter.BearTrap: //beartrap
+
                         if (this.enemyMinions.Count == 0 && ((this.enemyWeapon.Angr == 0 && !prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) || this.enemyHero.frozen)) continue;
                         pos = this.ownMinions.Count;
-                        callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_125), pos, true, false);
+                        callKid(CardIds.Collectible.Neutral.IronfurGrizzly, pos, true, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.LOE_021: //Dart Trap
-                        
+                    case CardIds.Collectible.Hunter.DartTrap: //Dart Trap
+
                         minionGetDamageOrHeal(this.enemyHero, getSpellDamageDamage(5), true);
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_533: // misdirection
+                    case CardIds.Collectible.Hunter.Misdirection: // misdirection
+                    {
+
+
+                        int count = this.enemyMinions.Count;
+                        if (count == 0 && ((this.enemyWeapon.Angr == 0 && !prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) || this.enemyHero.frozen)) continue;
+                        Minion mnn = this.enemyMinions[0];
+                        for (int i = 1; i < count; i++)
                         {
-                            
-                            
-                            int count = this.enemyMinions.Count;
-                            if (count == 0 && ((this.enemyWeapon.Angr == 0 && !prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) || this.enemyHero.frozen)) continue;
-                            Minion mnn = this.enemyMinions[0];
-                            for (int i = 1; i < count; i++ )
-                            {
-                                if (this.enemyMinions[i].Angr > mnn.Angr) mnn = this.enemyMinions[i]; //take the strongest
-                            }
-                            mnn.Angr = 0;
-                            this.evaluatePenality -= this.enemyMinions.Count;// the more the enemy minions has on board, the more the posibility to destroy something other :D
-                            continue;
+                            if (this.enemyMinions[i].Angr > mnn.Angr) mnn = this.enemyMinions[i]; //take the strongest
                         }
-                    case Chireiden.Silverfish.SimCard.KAR_004: //cattrick
-                        
+                        mnn.Angr = 0;
+                        this.evaluatePenality -= this.enemyMinions.Count;// the more the enemy minions has on board, the more the posibility to destroy something other :D
+                        continue;
+                    }
+                    case CardIds.Collectible.Hunter.CatTrick: //cattrick
+
                         pos = this.ownMinions.Count;
-                        callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_017), pos, true, false);
+                        callKid(CardIds.Collectible.Neutral.JunglePanther, pos, true, false);
                         continue;
 
-                    
-                    case Chireiden.Silverfish.SimCard.EX1_287: //counterspell
-                        
-                        wehaveCounterspell++; 
+
+                    case CardIds.Collectible.Mage.Counterspell: //counterspell
+
+                        wehaveCounterspell++;
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_289: //ice barrier
-                        
+                    case CardIds.Collectible.Mage.IceBarrier: //ice barrier
+
                         if (this.enemyMinions.Count == 0 && ((this.enemyWeapon.Angr == 0 && !prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) || this.enemyHero.frozen)) continue;
                         this.ownHero.armor += 8;
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_295: //ice block
-                        
+                    case CardIds.Collectible.Mage.IceBlock: //ice block
+
                         guessHeroDamage();
                         if (guessingHeroHP < 11) this.ownHero.immune = true;
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_294: //mirror entity
-                        
+                    case CardIds.Collectible.Mage.MirrorEntity: //mirror entity
+
                         if (this.ownMinions.Count < 7)
                         {
                             pos = this.ownMinions.Count - 1;
-                            callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.TU4f_007), pos, true, false); 
+                            callKid(CardIds.NonCollectible.Neutral.CrazyMonkey, pos, true, false);
                         }
                         else goto default;
                         continue;
-                    case Chireiden.Silverfish.SimCard.AT_002: //effigy
-                        
+                    case CardIds.Collectible.Mage.Effigy: //effigy
+
                         if (this.ownMinions.Count == 0) continue;
                         pos = this.ownMinions.Count - 1;
-                        callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.TU4f_007), pos, true); 
+                        callKid(CardIds.NonCollectible.Neutral.CrazyMonkey, pos, true);
                         continue;
-                    case Chireiden.Silverfish.SimCard.tt_010: //spellbender
-                        
+                    case CardIds.Collectible.Mage.Spellbender: //spellbender
+
                         this.evaluatePenality -= 4;
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_594: // vaporize
+                    case CardIds.Collectible.Mage.Vaporize: // vaporize
+                    {
+
+                        int count = this.enemyMinions.Count;
+                        if (count == 0) continue;
+                        Minion mnn = this.enemyMinions[0];
+                        for (int i = 1; i < count; i++)
                         {
-                            
-                            int count = this.enemyMinions.Count;
-                            if (count == 0) continue;
+                            if (this.enemyMinions[i].Angr < mnn.Angr) mnn = this.enemyMinions[i]; //take the weakest
+                        }
+                        minionGetDestroyed(mnn);
+                        continue;
+                    }
+                    case CardIds.Collectible.Mage.Duplicate: // duplicate
+                    {
+
+                        int count = this.ownMinions.Count;
+                        if (count == 0) continue;
+                        Minion mnn = this.ownMinions[0];
+                        for (int i = 1; i < count; i++)
+                        {
+                            if (this.ownMinions[i].Angr < mnn.Angr) mnn = this.ownMinions[i]; //take the weakest
+                        }
+                        drawACard(mnn.name, true);
+                        drawACard(mnn.name, true);
+                        continue;
+                    }
+
+
+
+
+                    case CardIds.Collectible.Paladin.EyeForAnEye: // eye for an eye
+                    {
+
+                        // todo for mage and hunter
+                        if (this.enemyHero.frozen && this.enemyMinions.Count == 0) continue;
+                        int dmg = 0;
+                        int dmgW = 0;
+
+                        int count = this.enemyMinions.Count;
+                        if (count != 0)
+                        {
                             Minion mnn = this.enemyMinions[0];
                             for (int i = 1; i < count; i++)
                             {
                                 if (this.enemyMinions[i].Angr < mnn.Angr) mnn = this.enemyMinions[i]; //take the weakest
                             }
-                            minionGetDestroyed(mnn);
-                            continue;
+                            dmg = mnn.Angr;
                         }
-                    case Chireiden.Silverfish.SimCard.FP1_018: // duplicate
+                        if (this.enemyWeapon.Angr != 0) dmgW = this.enemyWeapon.Angr;
+                        else if (prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) dmgW = prozis.penman.HeroPowerEquipWeapon[this.enemyHeroAblility.card.name];
+                        if (dmgW != 0)
                         {
-                            
-                            int count = this.ownMinions.Count;
-                            if (count == 0) continue;
-                            Minion mnn = this.ownMinions[0];
-                            for (int i = 1; i < count; i++)
+                            if (dmg != 0)
                             {
-                                if (this.ownMinions[i].Angr < mnn.Angr) mnn = this.ownMinions[i]; //take the weakest
+                                if (dmgW < dmg) dmg = dmgW;
                             }
-                            drawACard(mnn.name, true);
-                            drawACard(mnn.name, true);
-                            continue;
+                            else dmg = dmgW;
                         }
-                    
-                    
-                    
-                    
-                    case Chireiden.Silverfish.SimCard.EX1_132: // eye for an eye
-                        {
-                            
-                            // todo for mage and hunter
-                            if (this.enemyHero.frozen && this.enemyMinions.Count == 0) continue;
-                            int dmg = 0;
-                            int dmgW = 0;
+                        dmg = getSpellDamageDamage(dmg);
+                        if (dmg != 0) attackEnemyHeroWithoutKill(dmg);
+                        continue;
+                    }
+                    case CardIds.Collectible.Paladin.NobleSacrifice: // noble sacrifice
 
-                            int count = this.enemyMinions.Count;
-                            if (count != 0)
-                            {
-                                Minion mnn = this.enemyMinions[0];
-                                for (int i = 1; i < count; i++)
-                                {
-                                    if (this.enemyMinions[i].Angr < mnn.Angr) mnn = this.enemyMinions[i]; //take the weakest
-                                }
-                                dmg = mnn.Angr;
-                            }
-                            if (this.enemyWeapon.Angr != 0) dmgW = this.enemyWeapon.Angr;
-                            else if (prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) dmgW = prozis.penman.HeroPowerEquipWeapon[this.enemyHeroAblility.card.name];
-                            if (dmgW != 0)
-                            {
-                                if (dmg != 0)
-                                {
-                                    if (dmgW < dmg) dmg = dmgW;
-                                }
-                                else dmg = dmgW;
-                            }
-                            dmg = getSpellDamageDamage(dmg);
-                            if (dmg != 0) attackEnemyHeroWithoutKill(dmg);
-                            continue;
-                        }
-                    case Chireiden.Silverfish.SimCard.EX1_130: // noble sacrifice
-                        
                         if (this.enemyMinions.Count == 0 && ((this.enemyWeapon.Angr == 0 && !prozis.penman.HeroPowerEquipWeapon.ContainsKey(this.enemyHeroAblility.card.name)) || this.enemyHero.frozen)) continue;
                         if (this.ownMinions.Count == 7) continue;
                         pos = this.ownMinions.Count - 1;
-                        callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_097), pos, true, false); 
+                        callKid(CardIds.Collectible.Neutral.TournamentAttendee, pos, true, false);
                         continue;
-                    case Chireiden.Silverfish.SimCard.EX1_136: // redemption
-                        
-                        
+                    case CardIds.Collectible.Paladin.Redemption: // redemption
+
+
                         if (this.ownMinions.Count == 0) continue;
                         temp = new List<Minion>(this.ownMinions);
                         temp.Sort((a, b) => a.Hp.CompareTo(b.Hp));
@@ -2754,10 +2754,10 @@
                             break;
                         }
                         continue;
-                    case Chireiden.Silverfish.SimCard.FP1_020: // avenge
-                        
-                        
-                        if (this.ownMinions.Count < 2 || (this.ownMinions.Count == 1 && !this.ownSecretsIDList.Contains(Chireiden.Silverfish.SimCard.EX1_130))) continue;
+                    case CardIds.Collectible.Paladin.Avenge: // avenge
+
+
+                        if (this.ownMinions.Count < 2 || (this.ownMinions.Count == 1 && !this.ownSecretsIDList.Contains(CardIds.Collectible.Paladin.NobleSacrifice))) continue;
                         temp = new List<Minion>(this.ownMinions);
                         temp.Sort((a, b) => a.Hp.CompareTo(b.Hp));
                         minionGetBuffed(temp[0], 3, 2);
@@ -2779,22 +2779,22 @@
 
             List<Chireiden.Silverfish.SimCard> tmpSecretsIDList = new List<Chireiden.Silverfish.SimCard>();
             List<Minion> temp;
-            
+
             bool activate = false;
             foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
             {
                 switch (secretID)
                 {
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    case Chireiden.Silverfish.SimCard.EX1_609: //snipe
-                        
+
+
+
+
+
+
+
+
+                    case CardIds.Collectible.Hunter.Snipe: //snipe
+
                         activate = false;
                         if (this.enemyMinions.Count > 0)
                         {
@@ -2813,23 +2813,23 @@
                         if (!activate) tmpSecretsIDList.Add(secretID);
                         continue;
 
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
 
-                    
-                    
-                    
-                    
-                    
-                    case Chireiden.Silverfish.SimCard.EX1_379: // repentance
-                        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    case CardIds.Collectible.Paladin.Repentance: // repentance
+
                         activate = false;
                         if (this.enemyMinions.Count > 0)
                         {
@@ -2847,8 +2847,8 @@
                         }
                         if (!activate) tmpSecretsIDList.Add(secretID);
                         continue;
-                    case Chireiden.Silverfish.SimCard.LOE_027: // Sacred Trial
-                        
+                    case CardIds.Collectible.Paladin.SacredTrial: // Sacred Trial
+
                         activate = false;
                         if (this.enemyMinions.Count > 3)
                         {
@@ -2865,8 +2865,8 @@
                         }
                         if (!activate) tmpSecretsIDList.Add(secretID);
                         continue;
-                    case Chireiden.Silverfish.SimCard.AT_073: // competitivespirit
-                        
+                    case CardIds.Collectible.Paladin.CompetitiveSpirit: // competitivespirit
+
                         if (this.enemyMinions.Count == 0) continue;
                         foreach (Minion m in this.ownMinions)
                         {
@@ -2919,7 +2919,7 @@
             }
             else
             {
-				
+
                 this.enemyHeroPowerCostLessOnce = 0;
             }
         }
@@ -3213,7 +3213,7 @@
                         }
                         else
                         {
-                            
+
                         }
                     }
                     else
@@ -3226,7 +3226,7 @@
                     }
                 }
             }
-            
+
             if (this.isOwnTurn)
             {
                 this.optionsPlayedThisTurn++;
@@ -3251,7 +3251,7 @@
                     int dmg = attacker.Angr;
                     switch ((attacker.own ? this.ownWeapon.name : this.enemyWeapon.name))
                     {
-                        case Chireiden.Silverfish.SimCard.massiveruneblade:
+                        case CardIds.NonCollectible.Neutral.MassiveRuneblade:
                             dmg *= 2;
                             break;
                     }
@@ -3274,7 +3274,7 @@
                         {
                             switch ((attacker.own ? this.ownWeapon.name : this.enemyWeapon.name))
                             {
-                                case Chireiden.Silverfish.SimCard.icebreaker:
+                                case CardIds.Collectible.Shaman.IceBreaker:
                                     if (defender.frozen) minionGetDestroyed(defender);
                                     break;
                                 case Chireiden.Silverfish.SimCard.gravevengeance:
@@ -3293,9 +3293,9 @@
                         {
                             switch (defender.handcard.card.name)
                             {
-                                case Chireiden.Silverfish.SimCard.voodoohexxer: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                                case Chireiden.Silverfish.SimCard.snowchugger: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                                case Chireiden.Silverfish.SimCard.waterelemental: minionGetFrozen(attacker); break;
+                                case CardIds.Collectible.Shaman.VoodooHexxer: goto case CardIds.Collectible.Mage.WaterElemental;
+                                case CardIds.Collectible.Mage.Snowchugger: goto case CardIds.Collectible.Mage.WaterElemental;
+                                case CardIds.Collectible.Mage.WaterElemental: minionGetFrozen(attacker); break;
                             }
                             this.triggerAMinionDealedDmg(defender, oldHp - attacker.Hp, false);
                         }
@@ -3325,7 +3325,7 @@
 
             //trigger attack ---------------------------
             this.triggerAMinionIsGoingToAttack(attacker, defender);
-            
+
 
             //defender gets dmg
             oldHp = defender.Hp;
@@ -3335,9 +3335,9 @@
             {
                 switch (attacker.handcard.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.voodoohexxer: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                    case Chireiden.Silverfish.SimCard.snowchugger: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                    case Chireiden.Silverfish.SimCard.waterelemental:
+                    case CardIds.Collectible.Shaman.VoodooHexxer: goto case CardIds.Collectible.Mage.WaterElemental;
+                    case CardIds.Collectible.Mage.Snowchugger: goto case CardIds.Collectible.Mage.WaterElemental;
+                    case CardIds.Collectible.Mage.WaterElemental:
                         if (!attacker.silenced) minionGetFrozen(defender);
                         break;
                 }
@@ -3360,9 +3360,9 @@
                 {
                     switch (defender.handcard.card.name)
                     {
-                        case Chireiden.Silverfish.SimCard.voodoohexxer: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                        case Chireiden.Silverfish.SimCard.snowchugger: goto case Chireiden.Silverfish.SimCard.waterelemental;
-                        case Chireiden.Silverfish.SimCard.waterelemental:
+                        case CardIds.Collectible.Shaman.VoodooHexxer: goto case CardIds.Collectible.Mage.WaterElemental;
+                        case CardIds.Collectible.Mage.Snowchugger: goto case CardIds.Collectible.Mage.WaterElemental;
+                        case CardIds.Collectible.Mage.WaterElemental:
                             if (!defender.silenced) minionGetFrozen(attacker);
                             break;
                     }
@@ -3385,31 +3385,31 @@
 
             switch (attacker.name)
             {
-                case Chireiden.Silverfish.SimCard.theboogeymonster: 
+                case CardIds.Collectible.Neutral.TheBoogeymonster:
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) this.minionGetBuffed(attacker, 2, 2);
                     break;
-                case Chireiden.Silverfish.SimCard.windupburglebot: 
+                case CardIds.Collectible.Neutral.WindUpBurglebot:
                     if (!defender.isHero && attacker.Hp > 0) this.drawACard(Chireiden.Silverfish.SimCard.unknown, attacker.own);
                     break;
-                case Chireiden.Silverfish.SimCard.lotusassassin: 
+                case CardIds.Collectible.Rogue.LotusAssassin:
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) attacker.stealth = true;
                     break;
-                case Chireiden.Silverfish.SimCard.lotusillusionist: 
+                case CardIds.Collectible.Shaman.LotusIllusionist:
                     if (defender.isHero) this.minionTransform(attacker, this.getRandomCardForManaMinion(6));
                     break;
-                case Chireiden.Silverfish.SimCard.viciousfledgling: 
+                case CardIds.Collectible.Neutral.ViciousFledgling:
                     if (defender.isHero) this.getBestAdapt(attacker);
                     break;
-                case Chireiden.Silverfish.SimCard.knuckles: 
+                case CardIds.Collectible.Hunter.Knuckles:
                     if (!defender.isHero && attacker.Hp > 0) this.minionAttacksMinion(attacker, attacker.own ? this.enemyHero : this.ownHero, true);
                     break;
-                case Chireiden.Silverfish.SimCard.finjatheflyingstar: 
+                case CardIds.Collectible.Neutral.FinjaTheFlyingStar:
                     if (!defender.isHero && defender.Hp < 1)
                     {
                         if (attacker.own)
                         {
                             Chireiden.Silverfish.SimCard c;
-                            int count = 7 - this.ownMinions.Count; 
+                            int count = 7 - this.ownMinions.Count;
                             if (count > 0)
                             {
                                 if (count > 2) count = 2;
@@ -3431,21 +3431,21 @@
                         }
                         else
                         {
-                            this.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_168), this.enemyMinions.Count, false);
-                            this.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_168), this.enemyMinions.Count, false);
+                            this.callKid(CardIds.Collectible.Neutral.MurlocRaider, this.enemyMinions.Count, false);
+                            this.callKid(CardIds.Collectible.Neutral.MurlocRaider, this.enemyMinions.Count, false);
                         }
                     }
                     break;
-                case Chireiden.Silverfish.SimCard.giantsandworm: 
+                case CardIds.Collectible.Hunter.GiantSandWorm:
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0)
                     {
-                        attacker.numAttacksThisTurn = 0; 
+                        attacker.numAttacksThisTurn = 0;
                         attacker.Ready = true;
                     }
                     break;
-                case Chireiden.Silverfish.SimCard.drakonidslayer: goto case Chireiden.Silverfish.SimCard.foereaper4000;
-                case Chireiden.Silverfish.SimCard.magnatauralpha: goto case Chireiden.Silverfish.SimCard.foereaper4000;
-                case Chireiden.Silverfish.SimCard.foereaper4000:
+                case CardIds.NonCollectible.Neutral.DrakonidSlayer: goto case CardIds.Collectible.Neutral.FoeReaper4000;
+                case CardIds.Collectible.Warrior.MagnataurAlpha: goto case CardIds.Collectible.Neutral.FoeReaper4000;
+                case CardIds.Collectible.Neutral.FoeReaper4000:
                     if (!attacker.silenced && !dontcount)
                     {
                         List<Minion> temp = (attacker.own) ? this.enemyMinions : this.ownMinions;
@@ -3474,29 +3474,29 @@
 
             //hero will end his readyness
             hero.updateReadyness();
-            if (weapon.name == Chireiden.Silverfish.SimCard.foolsbane && !hero.frozen) hero.Ready = true;
+            if (weapon.name == CardIds.Collectible.Warrior.FoolsBane && !hero.frozen) hero.Ready = true;
 
             //heal whether truesilverchampion equipped
             switch (weapon.name)
             {
-                case Chireiden.Silverfish.SimCard.truesilverchampion:
-                    int heal = own ? this.getMinionHeal(2) : this.getEnemyMinionHeal(2); 
+                case CardIds.Collectible.Paladin.TruesilverChampion:
+                    int heal = own ? this.getMinionHeal(2) : this.getEnemyMinionHeal(2);
                     this.minionGetDamageOrHeal(hero, -heal);
                     doDmgTriggers();
                     break;
-                case Chireiden.Silverfish.SimCard.piranhalauncher:
+                case CardIds.Collectible.Hunter.PiranhaLauncher:
                     int pos = (own) ? this.ownMinions.Count : this.enemyMinions.Count;
-                    this.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_337t), pos, own); 
+                    this.callKid(CardIds.NonCollectible.Hunter.PiranhaLauncher_PiranhaToken, pos, own);
                     break;
-                case Chireiden.Silverfish.SimCard.vinecleaver:
+                case CardIds.Collectible.Paladin.Vinecleaver:
                     int pos2 = (own) ? this.ownMinions.Count : this.enemyMinions.Count;
-                    this.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t), pos2, own); 
-                    this.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t), pos2, own); 
+                    this.callKid(CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken, pos2, own);
+                    this.callKid(CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken, pos2, own);
                     break;
-                case Chireiden.Silverfish.SimCard.foolsbane:
+                case CardIds.Collectible.Warrior.FoolsBane:
                     if (!hero.frozen) hero.Ready = true;
                     break;
-                case Chireiden.Silverfish.SimCard.brassknuckles:
+                case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (own)
                     {
                         Handmanager.Handcard hc = this.searchRandomMinionInHand(this.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
@@ -3546,12 +3546,12 @@
 
             }
             this.minionAttacksMinion(hero, target);
-            
+
 
             //gorehowl is not killed if he attacks minions
             if (own)
             {
-                if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.gorehowl && !target.isHero)
+                if (this.ownWeapon.name == CardIds.Collectible.Warrior.Gorehowl && !target.isHero)
                 {
                     this.ownWeapon.Angr--;
                     hero.Angr--;
@@ -3563,7 +3563,7 @@
             }
             else
             {
-                if (enemyWeapon.card.name == Chireiden.Silverfish.SimCard.gorehowl && !target.isHero)
+                if (enemyWeapon.card.name == CardIds.Collectible.Warrior.Gorehowl && !target.isHero)
                 {
                     this.enemyWeapon.Angr--;
                     hero.Angr--;
@@ -3619,14 +3619,14 @@
                     {
                         switch (target.name)
                         {
-                            case Chireiden.Silverfish.SimCard.dragonkinsorcerer:
+                            case CardIds.Collectible.Neutral.DragonkinSorcerer:
                                 this.minionGetBuffed(target, 1, 1);
                                 break;
-                            case Chireiden.Silverfish.SimCard.eydisdarkbane:
+                            case CardIds.Collectible.Neutral.EydisDarkbane:
                                 Minion mTarget = this.getEnemyCharTargetForRandomSingleDamage(3);
                                 this.minionGetDamageOrHeal(mTarget, 3, true);
                                 break;
-                            case Chireiden.Silverfish.SimCard.fjolalightbane:
+                            case CardIds.Collectible.Neutral.FjolaLightbane:
                                 target.divineshild = true;
                                 break;
                             default:
@@ -3708,7 +3708,7 @@
                         this.ownHero.Angr += hc.addattack;
                     }
                     this.doDmgTriggers();
-                    
+
 
                 }
             }
@@ -3728,8 +3728,8 @@
                 if (prozis.penman.healthBuffDatabase.ContainsKey(hc.card.name)) target.justBuffed += prozis.penman.healthBuffDatabase[hc.card.name];
             }
 
-            
-            
+
+
             this.cardsPlayedThisTurn++;
 
         }
@@ -3783,7 +3783,7 @@
                     c.sim_card.onCardPlay(this, false, target, choice);
                     //lockandload
                     this.doDmgTriggers();
-                    
+
 
 
                 }
@@ -3821,7 +3821,7 @@
         }
 
 
-        //lower durability of weapon + destroy them (deathrattle) 
+        //lower durability of weapon + destroy them (deathrattle)
         public void lowerWeaponDurability(int value, bool own)
         {
             if (own)
@@ -3844,17 +3844,17 @@
                     {
                         switch (m.name)
                         {
-                            case Chireiden.Silverfish.SimCard.southseadeckhand:
+                            case CardIds.Collectible.Neutral.SouthseaDeckhand:
                                 if (m.playedThisTurn)
                                 {
                                     m.charge--;
                                     m.updateReadyness();
                                 }
                                 break;
-                            case Chireiden.Silverfish.SimCard.smalltimebuccaneer:
+                            case CardIds.Collectible.Neutral.SmallTimeBuccaneer:
                                 this.minionGetBuffed(m, -2, 0);
                                 break;
-                            case Chireiden.Silverfish.SimCard.graveshambler:
+                            case CardIds.Collectible.Neutral.GraveShambler:
                                 if (!m.silenced) minionGetBuffed(m, 1, 1);
                                 break;
                         }
@@ -3882,10 +3882,10 @@
                     {
                         switch (m.name)
                         {
-                            case Chireiden.Silverfish.SimCard.smalltimebuccaneer:
+                            case CardIds.Collectible.Neutral.SmallTimeBuccaneer:
                                 this.minionGetBuffed(m, -2, 0);
                                 break;
-                            case Chireiden.Silverfish.SimCard.graveshambler:
+                            case CardIds.Collectible.Neutral.GraveShambler:
                                 if (!m.silenced) minionGetBuffed(m, 1, 1);
                                 break;
                         }
@@ -3954,14 +3954,14 @@
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.lightwarden: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.holychampion: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.hoodedacolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Neutral.Lightwarden: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.HolyChampion: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.Shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.HoodedAcolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
                     case Chireiden.Silverfish.SimCard.aiextra1:
                         mnn.handcard.card.sim_card.onACharGotHealed(this, mnn, anz);
                         break;
-                    case Chireiden.Silverfish.SimCard.blackguard:
+                    case CardIds.Collectible.Paladin.Blackguard:
                         if (ownHero.GotHealedValue > 0) mnn.handcard.card.sim_card.onACharGotHealed(this, mnn, ownHero.GotHealedValue);
                         break;
                 }
@@ -3971,14 +3971,14 @@
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.lightwarden: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.holychampion: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.hoodedacolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Neutral.Lightwarden: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.HolyChampion: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.Shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.HoodedAcolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
                     case Chireiden.Silverfish.SimCard.aiextra1:
                         mnn.handcard.card.sim_card.onACharGotHealed(this, mnn, anz);
                         break;
-                    case Chireiden.Silverfish.SimCard.blackguard:
+                    case CardIds.Collectible.Paladin.Blackguard:
                         if (enemyHero.GotHealedValue > 0) mnn.handcard.card.sim_card.onACharGotHealed(this, mnn, enemyHero.GotHealedValue);
                         break;
                 }
@@ -3996,8 +3996,8 @@
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.northshirecleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.manageode: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.NorthshireCleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.ManaGeode: goto case Chireiden.Silverfish.SimCard.aiextra1;
                     case Chireiden.Silverfish.SimCard.aiextra1:
                         mnn.handcard.card.sim_card.onAMinionGotHealedTrigger(this, mnn, anz);
                         break;
@@ -4009,8 +4009,8 @@
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.name)
                 {
-                    case Chireiden.Silverfish.SimCard.northshirecleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.manageode: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.NorthshireCleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    case CardIds.Collectible.Priest.ManaGeode: goto case Chireiden.Silverfish.SimCard.aiextra1;
                     case Chireiden.Silverfish.SimCard.aiextra1:
                         mnn.handcard.card.sim_card.onAMinionGotHealedTrigger(this, mnn, anz);
                         break;
@@ -4055,7 +4055,7 @@
             int anzEnemy = this.tempTrigger.enemyMinionLosesDivineShield;
             this.tempTrigger.ownMinionLosesDivineShield = 0;
             this.tempTrigger.enemyMinionLosesDivineShield = 0;
-            
+
             if (anzOwn > 0)
             {
                 foreach (Minion m in this.ownMinions.ToArray())
@@ -4063,10 +4063,10 @@
                     if (m.silenced) continue;
                     m.handcard.card.sim_card.onMinionLosesDivineShield(this, m, anzOwn);
                 }
-                
-                if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.lightssorrow) this.ownWeapon.Angr += anzOwn;
+
+                if (this.ownWeapon.name == CardIds.Collectible.Paladin.LightsSorrow) this.ownWeapon.Angr += anzOwn;
             }
-            
+
             if (anzEnemy > 0)
             {
                 foreach (Minion m in this.enemyMinions.ToArray())
@@ -4074,8 +4074,8 @@
                     if (m.silenced) continue;
                     m.handcard.card.sim_card.onMinionLosesDivineShield(this, m, anzEnemy);
                 }
-                
-                if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.lightssorrow) this.enemyWeapon.Angr += anzEnemy;
+
+                if (this.enemyWeapon.name == CardIds.Collectible.Paladin.LightsSorrow) this.enemyWeapon.Angr += anzEnemy;
             }
         }
 
@@ -4088,7 +4088,7 @@
             {
                 if (m.silenced) continue;
                 if (m.Hp <= 0) continue;
-                m.handcard.card.sim_card.onMinionDiedTrigger(this, m, m); 
+                m.handcard.card.sim_card.onMinionDiedTrigger(this, m, m);
             }
             foreach (Minion m in this.enemyMinions.ToArray())
             {
@@ -4099,18 +4099,18 @@
 
             foreach (Handmanager.Handcard hc in this.owncards)
             {
-                if (hc.card.name == Chireiden.Silverfish.SimCard.bolvarfordragon) hc.addattack += this.tempTrigger.ownMinionsDied;
+                if (hc.card.name == CardIds.Collectible.Paladin.BolvarFordragon) hc.addattack += this.tempTrigger.ownMinionsDied;
             }
 
-            
-            if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.jaws)
+
+            if (this.ownWeapon.name == CardIds.NonCollectible.Neutral.Jaws)
             {
                 int bonus = 0;
                 foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
                 foreach (Minion m in this.enemyMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
                 this.ownWeapon.Angr += bonus * 2;
             }
-            if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.jaws)
+            if (this.enemyWeapon.name == CardIds.NonCollectible.Neutral.Jaws)
             {
                 int bonus = 0;
                 foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
@@ -4118,23 +4118,23 @@
                 this.enemyWeapon.Angr += bonus * 2;
             }
 
-            
-            if (this.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.raisedead)
+
+            if (this.ownHeroAblility.card.name == CardIds.NonCollectible.Neutral.RaiseDead)
             {
                 if (this.tempTrigger.enemyMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.ownHeroAblility.card.cardIDenum == Chireiden.Silverfish.SimCard.NAX4_04H) ? Chireiden.Silverfish.SimCard.NAX4_03H : Chireiden.Silverfish.SimCard.NAX4_03);
+                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.ownHeroAblility.card.cardIDenum == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.enemyMinionsDied; i++)
                     {
                         this.callKid(kid, this.ownMinions.Count, true);
                     }
                 }
             }
-            if (this.enemyHeroAblility.card.name == Chireiden.Silverfish.SimCard.raisedead)
+            if (this.enemyHeroAblility.card.name == CardIds.NonCollectible.Neutral.RaiseDead)
             {
                 if (this.tempTrigger.ownMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.enemyHeroAblility.card.cardIDenum == Chireiden.Silverfish.SimCard.NAX4_04H) ? Chireiden.Silverfish.SimCard.NAX4_03H : Chireiden.Silverfish.SimCard.NAX4_03);
+                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.enemyHeroAblility.card.cardIDenum == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.ownMinionsDied; i++)
                     {
                         this.callKid(kid, this.enemyMinions.Count, false);
@@ -4145,21 +4145,21 @@
 
         public void triggerAMinionIsGoingToAttack(Minion attacker, Minion target)
         {
-            
-            
+
+
 
             switch (attacker.name)
             {
-                case Chireiden.Silverfish.SimCard.cutpurse:
-                    if (target.isHero) this.drawACard(Chireiden.Silverfish.SimCard.thecoin, attacker.own, true);
+                case CardIds.Collectible.Rogue.Cutpurse:
+                    if (target.isHero) this.drawACard(CardIds.NonCollectible.Neutral.TheCoin, attacker.own, true);
                     break;
-                case Chireiden.Silverfish.SimCard.wretchedtiller:
+                case CardIds.Collectible.Neutral.WretchedTiller:
                     if (target.isHero) minionGetDamageOrHeal(attacker.own ? this.enemyHero : this.ownHero, 2);
                     break;
-                case Chireiden.Silverfish.SimCard.shakuthecollector: 
+                case CardIds.Collectible.Rogue.ShakuTheCollector:
                     this.drawACard(Chireiden.Silverfish.SimCard.unknown, attacker.own, true);
                     break;
-                case Chireiden.Silverfish.SimCard.genzotheshark: 
+                case CardIds.Collectible.Neutral.GenzoTheShark:
                     while (this.owncards.Count < 3 && this.ownDeckSize > 0)
                     {
                         this.drawACard(Chireiden.Silverfish.SimCard.unknown, true, true);
@@ -4209,7 +4209,7 @@
             //3 cards only has such trigger
             switch (m.name)
             {
-                case Chireiden.Silverfish.SimCard.alleyarmorsmith:
+                case CardIds.Collectible.Warrior.AlleyArmorsmith:
                     if (!m.silenced) this.minionGetArmor(m.own ? this.ownHero : this.enemyHero, m.Angr);
                     break;
             }
@@ -4242,11 +4242,11 @@
 
                 foreach (Minion m in this.enemyMinions)
                 {
-                    if (m.name == Chireiden.Silverfish.SimCard.troggzortheearthinator)
+                    if (m.name == CardIds.Collectible.Neutral.TroggzorTheEarthinator)
                     {
                         burly++;
                     }
-                    if (m.name == Chireiden.Silverfish.SimCard.felreaver)
+                    if (m.name == CardIds.Collectible.Neutral.FelReaver)
                     {
                         m.handcard.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, m);
                     }
@@ -4259,7 +4259,7 @@
                         case Chireiden.Silverfish.SimCard.shadowreflection:
                             ohc.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, ohc);
                             break;
-                        case Chireiden.Silverfish.SimCard.blubberbaron:
+                        case CardIds.Collectible.Neutral.BlubberBaron:
                             ohc.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, ohc);
                             break;
                     }
@@ -4267,7 +4267,7 @@
 
                 if (this.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.voidform) this.ownHeroAblility.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, this.ownHeroAblility);
 
-                if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.atiesh)
+                if (this.ownWeapon.name == CardIds.NonCollectible.Neutral.Atiesh)
                 {
                     this.callKid(this.getRandomCardForManaMinion(hc.manacost), this.ownMinions.Count, own);
                     this.lowerWeaponDurability(1, own);
@@ -4289,11 +4289,11 @@
                 }
                 foreach (Minion m in this.ownMinions)
                 {
-                    if (m.name == Chireiden.Silverfish.SimCard.troggzortheearthinator)
+                    if (m.name == CardIds.Collectible.Neutral.TroggzorTheEarthinator)
                     {
                         burly++;
                     }
-                    if (m.name == Chireiden.Silverfish.SimCard.felreaver)
+                    if (m.name == CardIds.Collectible.Neutral.FelReaver)
                     {
                         m.handcard.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, m);
                     }
@@ -4301,7 +4301,7 @@
 
                 if (this.enemyHeroAblility.card.name == Chireiden.Silverfish.SimCard.voidform) this.enemyHeroAblility.card.sim_card.onCardIsGoingToBePlayed(this, hc, own, this.enemyHeroAblility);
 
-                if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.atiesh)
+                if (this.enemyWeapon.name == CardIds.NonCollectible.Neutral.Atiesh)
                 {
                     this.callKid(this.getRandomCardForManaMinion(hc.manacost), this.enemyMinions.Count, own);
                     this.lowerWeaponDurability(1, own);
@@ -4351,7 +4351,7 @@
                 }
                 switch (this.ownWeapon.name)
                 {
-                    case Chireiden.Silverfish.SimCard.swordofjustice:
+                    case CardIds.Collectible.Paladin.SwordOfJustice:
                         this.minionGetBuffed(mnn, 1, 1);
                         this.lowerWeaponDurability(1, true);
                         break;
@@ -4368,7 +4368,7 @@
                 }
                 switch (this.enemyWeapon.name)
                 {
-                    case Chireiden.Silverfish.SimCard.swordofjustice:
+                    case CardIds.Collectible.Paladin.SwordOfJustice:
                         this.minionGetBuffed(mnn, 1, 1);
                         this.lowerWeaponDurability(1, false);
                         break;
@@ -4411,7 +4411,7 @@
                 if (!ownturn && m.destroyOnEnemyTurnEnd) this.minionGetDestroyed(m);
             }
 
-            
+
 
             this.doDmgTriggers();
 
@@ -4498,7 +4498,7 @@
                 m.justBuffed = 0;
                 if (!m.silenced)
                 {
-                    if (m.name == Chireiden.Silverfish.SimCard.micromachine) m.handcard.card.sim_card.onTurnStartTrigger(this, m, ownturn);
+                    if (m.name == CardIds.Collectible.Neutral.MicroMachine) m.handcard.card.sim_card.onTurnStartTrigger(this, m, ownturn);
                 }
                 if (ownturn && m.destroyOnOwnTurnStart) this.minionGetDestroyed(m);
                 if (!ownturn && m.destroyOnEnemyTurnStart) this.minionGetDestroyed(m);
@@ -4557,7 +4557,7 @@
             else
             {
                 this.enemyMaxMana = Math.Min(10, this.enemyMaxMana + 1);
-                this.mana = this.enemyMaxMana; 
+                this.mana = this.enemyMaxMana;
                 this.ownHero.frozen = false;
                 this.enemyHero.Angr = this.enemyWeapon.Angr;
                 this.enemyHero.numAttacksThisTurn = 0;
@@ -4574,7 +4574,7 @@
         {
             foreach (Minion m in ((ownHero) ? this.ownMinions : this.enemyMinions))
             {
-                if (m.name == Chireiden.Silverfish.SimCard.siegeengine && !m.silenced)
+                if (m.name == CardIds.Collectible.Warrior.SiegeEngine && !m.silenced)
                 {
                     this.minionGetBuffed(m, 1, 0);
                 }
@@ -4587,10 +4587,10 @@
             {
                 if (this.tempanzOwnCards >= 6 && this.owncards.Count <= 5)
                 {
-                    
+
                     foreach (Minion m in this.enemyMinions)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.goblinsapper && !m.silenced)
+                        if (m.name == CardIds.Collectible.Neutral.GoblinSapper && !m.silenced)
                         {
                             this.minionGetBuffed(m, -4, 0);
                         }
@@ -4598,10 +4598,10 @@
                 }
                 if (this.owncards.Count >= 6 && this.tempanzOwnCards <= 5)
                 {
-                    
+
                     foreach (Minion m in this.enemyMinions)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.goblinsapper && !m.silenced)
+                        if (m.name == CardIds.Collectible.Neutral.GoblinSapper && !m.silenced)
                         {
                             this.minionGetBuffed(m, 4, 0);
                         }
@@ -4614,10 +4614,10 @@
             {
                 if (this.tempanzEnemyCards >= 6 && this.enemyAnzCards <= 5)
                 {
-                    
+
                     foreach (Minion m in this.ownMinions)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.goblinsapper && !m.silenced)
+                        if (m.name == CardIds.Collectible.Neutral.GoblinSapper && !m.silenced)
                         {
                             this.minionGetBuffed(m, -4, 0);
                         }
@@ -4625,10 +4625,10 @@
                 }
                 if (this.enemyAnzCards >= 6 && this.tempanzEnemyCards <= 5)
                 {
-                    
+
                     foreach (Minion m in this.ownMinions)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.goblinsapper && !m.silenced)
+                        if (m.name == CardIds.Collectible.Neutral.GoblinSapper && !m.silenced)
                         {
                             this.minionGetBuffed(m, 4, 0);
                         }
@@ -4676,7 +4676,7 @@
                             {
                                 sii.canBe_explosive = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_610).sim_card.onSecretPlay(this, false, 0);
+                            CardIds.Collectible.Hunter.ExplosiveTrap.sim_card.onSecretPlay(this, false, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4687,7 +4687,7 @@
                             {
                                 sii.canBe_beartrap = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_060).sim_card.onSecretPlay(this, false, 0);
+                            CardIds.Collectible.Hunter.BearTrap.sim_card.onSecretPlay(this, false, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4698,7 +4698,7 @@
                             {
                                 sii.canBe_vaporize = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_594).sim_card.onSecretPlay(this, false, attacker, 0);
+                            CardIds.Collectible.Mage.Vaporize.sim_card.onSecretPlay(this, false, attacker, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4711,7 +4711,7 @@
                                 {
                                     sii.canBe_missdirection = false;
                                 }
-                                CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_533).sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
+                                CardIds.Collectible.Hunter.Misdirection.sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
                                 //no needDamageTrigger
                             }
                         }
@@ -4723,7 +4723,7 @@
                             {
                                 sii.canBe_icebarrier = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_289).sim_card.onSecretPlay(this, false, defender, 0);
+                            CardIds.Collectible.Mage.IceBarrier.sim_card.onSecretPlay(this, false, defender, 0);
                         }
 
                         if (needDamageTrigger) doDmgTriggers();
@@ -4741,7 +4741,7 @@
                             {
                                 sii.canBe_snaketrap = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_554).sim_card.onSecretPlay(this, false, 0);
+                            CardIds.Collectible.Hunter.SnakeTrap.sim_card.onSecretPlay(this, false, 0);
                             doDmgTriggers();
                         }
                     }
@@ -4758,7 +4758,7 @@
                             {
                                 sii.canBe_freezing = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_611).sim_card.onSecretPlay(this, false, attacker, 0);
+                            CardIds.Collectible.Hunter.FreezingTrap.sim_card.onSecretPlay(this, false, attacker, 0);
                         }
                     }
                 }
@@ -4774,7 +4774,7 @@
                         }
                         bool ishero = defender.isHero;
                         si.usedTrigger_CharIsAttacked(ishero, attacker.isHero);
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_130).sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
+                        CardIds.Collectible.Paladin.NobleSacrifice.sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
                         //no needDamageTrigger
                     }
                 }
@@ -4804,7 +4804,7 @@
                             {
                                 sii.canBe_eyeforaneye = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_132).sim_card.onSecretPlay(this, false, dmg);
+                            CardIds.Collectible.Paladin.EyeForAnEye.sim_card.onSecretPlay(this, false, dmg);
                         }
 
                         if (si.canBe_iceblock && this.enemyHero.Hp <= 0)
@@ -4814,7 +4814,7 @@
                             {
                                 sii.canBe_iceblock = false;
                             }
-                            CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_295).sim_card.onSecretPlay(this, false, this.enemyHero, dmg);
+                            CardIds.Collectible.Mage.IceBlock.sim_card.onSecretPlay(this, false, this.enemyHero, dmg);
                         }
                     }
                 }
@@ -4843,7 +4843,7 @@
                         {
                             sii.canBe_mirrorentity = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_294).sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        CardIds.Collectible.Mage.MirrorEntity.sim_card.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
 
@@ -4854,7 +4854,7 @@
                         {
                             sii.canBe_repentance = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_379).sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        CardIds.Collectible.Paladin.Repentance.sim_card.onSecretPlay(this, false, playedMinion, 0);
                     }
 
                     if (si.canBe_sacredtrial && this.ownMinions.Count > 3)
@@ -4865,7 +4865,7 @@
                             sii.canBe_sacredtrial = false;
                             sii.canBe_snipe = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_027).sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        CardIds.Collectible.Paladin.SacredTrial.sim_card.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
                     else if (si.canBe_snipe)
@@ -4875,7 +4875,7 @@
                         {
                             sii.canBe_snipe = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_609).sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        CardIds.Collectible.Hunter.Snipe.sim_card.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
 
@@ -4928,7 +4928,7 @@
                         {
                             sii.canBe_cattrick = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_004).sim_card.onSecretPlay(this, false, 0);
+                        CardIds.Collectible.Hunter.CatTrick.sim_card.onSecretPlay(this, false, 0);
                         doDmgTriggers();
                     }
 
@@ -4940,7 +4940,7 @@
                             sii.canBe_spellbender = false;
                         }
                         if (target.own && prozis.penman.maycauseharmDatabase.ContainsKey(c.name)) { }
-                        else CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.tt_010).sim_card.onSecretPlay(this, false, null, target, out retval);
+                        else CardIds.Collectible.Mage.Spellbender.sim_card.onSecretPlay(this, false, null, target, out retval);
                     }
                 }
 
@@ -4971,7 +4971,7 @@
                         {
                             sii.canBe_duplicate = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_018).sim_card.onSecretPlay(this, false, 0);
+                        CardIds.Collectible.Mage.Duplicate.sim_card.onSecretPlay(this, false, 0);
                     }
 
                     if (si.canBe_redemption)
@@ -4981,7 +4981,7 @@
                         {
                             sii.canBe_redemption = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_136).sim_card.onSecretPlay(this, false, 0);
+                        CardIds.Collectible.Paladin.Redemption.sim_card.onSecretPlay(this, false, 0);
                     }
 
                     if (si.canBe_avenge)
@@ -4991,7 +4991,7 @@
                         {
                             sii.canBe_avenge = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_020).sim_card.onSecretPlay(this, false, 0);
+                        CardIds.Collectible.Paladin.Avenge.sim_card.onSecretPlay(this, false, 0);
                     }
                 }
             }
@@ -5017,7 +5017,7 @@
                         {
                             sii.canBe_darttrap = false;
                         }
-                        CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_021).sim_card.onSecretPlay(this, false, 0);
+                        CardIds.Collectible.Hunter.DartTrap.sim_card.onSecretPlay(this, false, 0);
                         doDmgTriggers();
                     }
                 }
@@ -5030,20 +5030,20 @@
         }
 
 
-        public int getSecretTriggersByType(int type, bool actedMinionOwn, bool actedMinionIsHero,  Minion target)
+        public int getSecretTriggersByType(int type, bool actedMinionOwn, bool actedMinionIsHero, Minion target)
         {
-            
-            
-            
-            
-            
-            
+
+
+
+
+
+
             int triggered = 0;
             bool isSpell = false;
 
             switch (type)
             {
-                case 0: 
+                case 0:
                     if (this.isOwnTurn && actedMinionOwn && this.enemySecretCount >= 1)
                     {
                         bool canBe_mirrorentity = false;
@@ -5060,7 +5060,7 @@
                     }
                     break;
 
-                case 1: 
+                case 1:
                     if (this.isOwnTurn && isSpell && this.enemySecretCount >= 1)
                     {
                         bool canBe_counterspell = false;
@@ -5075,7 +5075,7 @@
                     }
                     break;
 
-                case 2: 
+                case 2:
                     if (this.isOwnTurn && this.enemySecretCount >= 1)
                     {
                         if (target.isHero && !target.own)
@@ -5128,7 +5128,7 @@
                     }
                     break;
 
-                case 3: 
+                case 3:
                     if (target.own != this.isOwnTurn)
                     {
                         if (this.isOwnTurn && this.enemySecretCount >= 1)
@@ -5144,7 +5144,7 @@
                     }
                     break;
 
-                case 4: 
+                case 4:
                     if (this.isOwnTurn && !target.own && this.enemySecretCount >= 1)
                     {
                         bool canBe_duplicate = false;
@@ -5159,7 +5159,7 @@
                     }
                     break;
 
-                case 5: 
+                case 5:
                     if (this.isOwnTurn && this.enemySecretCount >= 1)
                     {
                         bool canBe_darttrap = false;
@@ -5185,7 +5185,7 @@
                 {
                     for (int i = 0; i < m.explorershat; i++)
                     {
-                        drawACard(Chireiden.Silverfish.SimCard.explorershat, m.own, true);
+                        drawACard(CardIds.Collectible.Hunter.ExplorersHat, m.own, true);
                     }
                 }
 
@@ -5193,12 +5193,12 @@
                 {
                     drawACard(m.handcard.card.cardIDenum, m.own, true);
                 }
-                
+
                 if (m.infest > 0)
                 {
                     for (int i = 0; i < m.infest; i++)
                     {
-                        drawACard(Chireiden.Silverfish.SimCard.rivercrocolisk, m.own, true);
+                        drawACard(CardIds.Collectible.Neutral.RiverCrocolisk, m.own, true);
                     }
                 }
 
@@ -5236,21 +5236,21 @@
 
                 for (int i = 0; i < m.souloftheforest; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_158t);//Treant
+                    Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                 }
-                
+
                 for (int i = 0; i < m.stegodon; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_810);//Stegodon
+                    Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                 }
 
                 for (int i = 0; i < m.livingspores; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_999t2t1);//Plant
+                    Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                     callKid(kid, pos, m.own, false, true);
@@ -5270,7 +5270,7 @@
                         {
                             for (int i = 0; i < m.explorershat; i++)
                             {
-                                drawACard(Chireiden.Silverfish.SimCard.explorershat, m.own, true);
+                                drawACard(CardIds.Collectible.Hunter.ExplorersHat, m.own, true);
                             }
                         }
 
@@ -5283,7 +5283,7 @@
                         {
                             for (int i = 0; i < m.infest; i++)
                             {
-                                drawACard(Chireiden.Silverfish.SimCard.rivercrocolisk, m.own, true);
+                                drawACard(CardIds.Collectible.Neutral.RiverCrocolisk, m.own, true);
                             }
                         }
 
@@ -5296,7 +5296,7 @@
                                 callKid(kid, pos, m.own); //because baron rivendare
                             }
                         }
-                        
+
                         if (m.desperatestand > 0)
                         {
                             for (int i = 0; i < m.desperatestand; i++)
@@ -5321,21 +5321,21 @@
 
                         for (int i = 0; i < m.souloftheforest; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_158t);//Treant
+                            Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own); //because baron rivendare
                         }
 
                         for (int i = 0; i < m.stegodon; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_810);//Stegodon
+                            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own);  //because baron rivendare
                         }
 
                         for (int i = 0; i < m.livingspores; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_999t2t1);//Plant
+                            Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own);
                             callKid(kid, pos, m.own);  //because baron rivendare
@@ -5437,11 +5437,11 @@
                 this.updateAdjacentBuffs(false);
             }
 
-            if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.spiritclaws)
+            if (this.ownWeapon.name == CardIds.Collectible.Shaman.SpiritClaws)
             {
                 int dif = 0;
                 if (this.spellpower > 0) dif += 2;
-                if (this.spellpowerStarted > 0) dif -=2;
+                if (this.spellpowerStarted > 0) dif -= 2;
                 if (dif > 0)
                 {
                     if (!this.ownSpiritclaws)
@@ -5461,7 +5461,7 @@
                     }
                 }
             }
-            if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.spiritclaws)
+            if (this.enemyWeapon.name == CardIds.Collectible.Shaman.SpiritClaws)
             {
                 int dif = 0;
                 if (this.enemyspellpower > 0) dif += 2;
@@ -5513,21 +5513,21 @@
             {
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.raidleader: angr--; break;
-                    case Chireiden.Silverfish.SimCard.leokk: angr--; break;
-                    case Chireiden.Silverfish.SimCard.timberwolf: angr--; break;
-                    case Chireiden.Silverfish.SimCard.stormwindchampion:
+                    case CardIds.Collectible.Neutral.RaidLeader: angr--; break;
+                    case CardIds.NonCollectible.Hunter.Leokk: angr--; break;
+                    case CardIds.Collectible.Hunter.TimberWolf: angr--; break;
+                    case CardIds.Collectible.Neutral.StormwindChampion:
                         angr--;
                         vert--;
                         break;
-                    case Chireiden.Silverfish.SimCard.southseacaptain:
+                    case CardIds.Collectible.Neutral.SouthseaCaptain:
                         angr--;
                         vert--;
                         break;
-                    case Chireiden.Silverfish.SimCard.grimscaleoracle:
+                    case CardIds.Collectible.Neutral.GrimscaleOracle:
                         angr--;
                         break;
-                    case Chireiden.Silverfish.SimCard.murlocwarleader:
+                    case CardIds.Collectible.Neutral.MurlocWarleader:
                         if (get)
                         {
                             angr -= 2;
@@ -5617,20 +5617,20 @@
                 {
                     switch (m.name)
                     {
-                        case Chireiden.Silverfish.SimCard.faeriedragon: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
-                        case Chireiden.Silverfish.SimCard.spectralknight: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
-                        case Chireiden.Silverfish.SimCard.laughingsister: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
-                        case Chireiden.Silverfish.SimCard.soggoththeslitherer: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
-                        case Chireiden.Silverfish.SimCard.arcanenullifierx21: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
-                        case Chireiden.Silverfish.SimCard.weespellstopper:
+                        case CardIds.Collectible.Neutral.FaerieDragon: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
+                        case CardIds.Collectible.Neutral.SpectralKnight: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
+                        case CardIds.NonCollectible.DreamCards.LaughingSister: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
+                        case CardIds.Collectible.Neutral.SoggothTheSlitherer: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
+                        case CardIds.Collectible.Neutral.ArcaneNullifierX21: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
+                        case CardIds.Collectible.Mage.WeeSpellstopper:
                             if (i > 0) temp[i - 1].cantBeTargetedBySpellsOrHeroPowers = true;
                             if (i < anz - 1) temp[i + 1].cantBeTargetedBySpellsOrHeroPowers = true;
                             continue;
-                        case Chireiden.Silverfish.SimCard.direwolfalpha:
+                        case CardIds.Collectible.Neutral.DireWolfAlpha:
                             if (i > 0) this.minionGetAdjacentBuff(temp[i - 1], 1, 0);
                             if (i < anz - 1) this.minionGetAdjacentBuff(temp[i + 1], 1, 0);
                             continue;
-                        case Chireiden.Silverfish.SimCard.flametonguetotem:
+                        case CardIds.Collectible.Shaman.FlametongueTotem:
                             if (i > 0) this.minionGetAdjacentBuff(temp[i - 1], 2, 0);
                             if (i < anz - 1) this.minionGetAdjacentBuff(temp[i + 1], 2, 0);
                             continue;
@@ -5681,13 +5681,13 @@
 
             switch (m.name)
             {
-                case Chireiden.Silverfish.SimCard.lightspawn:
+                case CardIds.Collectible.Priest.Lightspawn:
                     m.Angr = m.Hp;
                     break;
             }
             m.updateReadyness();
 
-            if (m.name == Chireiden.Silverfish.SimCard.lightspawn)
+            if (m.name == CardIds.Collectible.Priest.Lightspawn)
             {
                 m.Angr = m.Hp;
             }
@@ -5709,11 +5709,11 @@
         {
             int mobplace = zonepos;
 
-            
+
             Minion m = createNewMinion(hc, mobplace, true);
             m.playedFromHand = true;
 
-            
+
             addMinionToBattlefield(m);
 
             //trigger the battlecry!
@@ -5770,8 +5770,8 @@
                     bool calcLostWeaponDamage = true;
                     switch (c.name)
                     {
-                        case Chireiden.Silverfish.SimCard.poisoneddagger: goto case Chireiden.Silverfish.SimCard.wickedknife;
-                        case Chireiden.Silverfish.SimCard.wickedknife:
+                        case Chireiden.Silverfish.SimCard.poisoneddagger: goto case CardIds.NonCollectible.Rogue.WickedKnife;
+                        case CardIds.NonCollectible.Rogue.WickedKnife:
                             if (this.ownWeapon.Angr == c.Attack && this.ownWeapon.Durability < c.Durability) calcLostWeaponDamage = false;
                             break;
                     }
@@ -5793,21 +5793,21 @@
             hero.Angr += c.Attack;
             hero.windfury = c.Windfury;
             hero.updateReadyness();
-            hero.immuneWhileAttacking = (c.name == Chireiden.Silverfish.SimCard.gladiatorslongbow);
+            hero.immuneWhileAttacking = (c.name == CardIds.Collectible.Hunter.GladiatorsLongbow);
 
             List<Minion> temp = (own) ? this.ownMinions : this.enemyMinions;
             foreach (Minion m in temp)
             {
                 switch (m.name)
                 {
-                    case Chireiden.Silverfish.SimCard.southseadeckhand:
+                    case CardIds.Collectible.Neutral.SouthseaDeckhand:
                         if (m.playedThisTurn) minionGetCharge(m);
                         break;
-                    case Chireiden.Silverfish.SimCard.buccaneer:
+                    case CardIds.Collectible.Rogue.Buccaneer:
                         if (own) this.ownWeapon.Angr++;
                         else this.enemyWeapon.Angr++;
                         break;
-                    case Chireiden.Silverfish.SimCard.smalltimebuccaneer:
+                    case CardIds.Collectible.Neutral.SmallTimeBuccaneer:
                         this.minionGetBuffed(m, 2, 0);
                         break;
                 }
@@ -5816,10 +5816,10 @@
         }
 
 
-        
+
         public void callKid(Chireiden.Silverfish.SimCard c, int zonepos, bool own, bool spawnKid = true, bool oneMoreIsAllowed = false)
         {
-            
+
             int allowed = 7;
             allowed += (oneMoreIsAllowed) ? 1 : 0;
 
@@ -5850,7 +5850,7 @@
             addMinionToBattlefield(m);
 
         }
-        
+
         public void minionGetFrozen(Minion target)
         {
             target.frozen = true;
@@ -5861,7 +5861,7 @@
                 {
                     switch (m.name)
                     {
-                        case Chireiden.Silverfish.SimCard.moorabi:
+                        case CardIds.Collectible.Shaman.Moorabi:
                             if (m.silenced) continue;
                             this.drawACard(target.handcard.card.name, m.own, true);
                             break;
@@ -5871,7 +5871,7 @@
                 {
                     switch (m.name)
                     {
-                        case Chireiden.Silverfish.SimCard.moorabi:
+                        case CardIds.Collectible.Shaman.Moorabi:
                             if (m.silenced) continue;
                             this.drawACard(target.handcard.card.name, m.own, true);
                             break;
@@ -5901,139 +5901,10 @@
             Chireiden.Silverfish.SimCard s = ss;
 
             // cant hold more than 10 cards
-            if (own)
-            {
-
-                if (s == Chireiden.Silverfish.SimCard.unknown && !nopen) 
-                {
-                    if (ownDeckSize == 0)
-                    {
-                        this.ownHeroFatigue++;
-                        this.ownHero.getDamageOrHeal(this.ownHeroFatigue, this, false, true);
-                        return;
-                    }
-                    else
-                    {
-                        this.ownDeckSize--;
-                        if (this.owncards.Count >= 10)
-                        {
-                            this.evaluatePenality += 15;
-                            return;
-                        }
-                        this.owncarddraw++;
-                    }
-
-                }
-                else
-                {
-                    if (this.owncards.Count >= 10)
-                    {
-                        this.evaluatePenality += 5;
-                        return;
-                    }
-                    this.owncarddraw++;
-
-                }
-
-
-            }
-            else
-            {
-                if (s == Chireiden.Silverfish.SimCard.unknown && !nopen) 
-                {
-                    if (enemyDeckSize == 0)
-                    {
-                        this.enemyHeroFatigue++;
-                        this.enemyHero.getDamageOrHeal(this.enemyHeroFatigue, this, false, true);
-                        return;
-                    }
-                    else
-                    {
-                        this.enemyDeckSize--;
-                        if (this.enemyAnzCards >= 10)
-                        {
-                            this.evaluatePenality -= (this.turnCounter > 2) ? 20 : 50;
-                            return;
-                        }
-                        this.enemycarddraw++;
-                        this.enemyAnzCards++;
-                    }
-
-                }
-                else
-                {
-                    if (this.enemyAnzCards >= 10)
-                    {
-                        this.evaluatePenality -= (this.turnCounter > 2) ? 20 : 50;
-                        return;
-                    }
-                    this.enemycarddraw++;
-                    this.enemyAnzCards++;
-                }
-                this.triggerCardsChanged(false);
-
-                if (anzEnemyChromaggus > 0 && s == Chireiden.Silverfish.SimCard.unknown && !nopen)
-                {
-                    for (int i = 1; i <= anzEnemyChromaggus; i++)
-                    {
-                        if (this.enemyAnzCards >= 10)
-                        {
-                            this.evaluatePenality -= (this.turnCounter > 2) ? 20 : 50;
-                            return;
-                        }
-                        this.enemycarddraw++;
-                        this.enemyAnzCards++;
-                        this.triggerCardsChanged(false);
-
-                    }
-                }
-                return;
-            }
-
-            if (s == Chireiden.Silverfish.SimCard.unknown)
-            {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardData(s);
-                Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
-                this.owncards.Add(hc);
-                this.triggerCardsChanged(true);
-            }
-            else
-            {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardData(s);
-                Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = c.calculateManaCost(this), entity = this.getNextEntity() };
-                this.owncards.Add(hc);
-                this.triggerCardsChanged(true);
-            }
-
-            if (anzOwnChromaggus > 0 && s == Chireiden.Silverfish.SimCard.unknown && !nopen) 
-            {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardData(s);
-                for (int i = 1; i <= anzOwnChromaggus; i++)
-                {
-                    if (this.owncards.Count >= 10)
-                    {
-                        this.evaluatePenality += 15;
-                        return;
-                    }
-                    this.owncarddraw++;
-
-                    Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
-                    this.owncards.Add(hc);
-                    this.triggerCardsChanged(true);
-                }
-            }
-
-        }
-
-        public void drawACard(Chireiden.Silverfish.SimCard ss, bool own, bool nopen = false)
-        {
-            Chireiden.Silverfish.SimCard s = ss;
-
-            // cant hold more than 10 cards
 
             if (own)
             {
-                if (s == Chireiden.Silverfish.SimCard.None && !nopen) 
+                if (s == Chireiden.Silverfish.SimCard.None && !nopen)
                 {
                     if (ownDeckSize == 0)
                     {
@@ -6065,7 +5936,7 @@
             }
             else
             {
-                if (s == Chireiden.Silverfish.SimCard.None && !nopen) 
+                if (s == Chireiden.Silverfish.SimCard.None && !nopen)
                 {
                     if (enemyDeckSize == 0)
                     {
@@ -6130,7 +6001,7 @@
                 this.triggerCardsChanged(true);
             }
 
-            if (anzOwnChromaggus > 0 && s == Chireiden.Silverfish.SimCard.None && !nopen) 
+            if (anzOwnChromaggus > 0 && s == Chireiden.Silverfish.SimCard.None && !nopen)
             {
                 Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(s);
                 for (int i = 1; i <= anzOwnChromaggus; i++)
@@ -6149,7 +6020,6 @@
             }
 
         }
-
 
         public void removeCard(Handmanager.Handcard hcc)
         {
@@ -6176,7 +6046,6 @@
             int count = list.Count;
             for (int i = 0; i < count; i++) list[0].position = i + 1;
         }
-
 
         public void attackEnemyHeroWithoutKill(int dmg)
         {
@@ -6211,7 +6080,6 @@
                 minionGetDestroyed(m);
             }
         }
-
 
         public void minionGetArmor(Minion m, int armor)
         {
@@ -6260,11 +6128,11 @@
             m.handcard.card.sim_card.onAuraEnds(this, m);//end aura of the minion
 
             Handmanager.Handcard hc = new Handmanager.Handcard(c) { entity = m.entitiyID };
-            if ((m.ancestralspirit >= 1 || m.desperatestand >= 1) && !m.own) 
+            if ((m.ancestralspirit >= 1 || m.desperatestand >= 1) && !m.own)
             {
                 this.evaluatePenality -= Ai.Instance.botBase.getEnemyMinionValue(m, this) - 1;
             }
-            
+
             if (m.taunt)
             {
                 if (m.own) this.anzOwnTaunt--;
@@ -6294,22 +6162,22 @@
 
         public Chireiden.Silverfish.SimCard getRandomCardForManaMinion(int manaCost)
         {
-            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_231); 
+            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Wisp;
             if (manaCost > 0)
             {
                 if (manaCost > 10) manaCost = 10;
                 switch (manaCost)
                 {
-                    case 1: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_011); break; 
-                    case 2: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_131); break; 
-                    case 3: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_134); break; 
-                    case 4: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_074); break; 
-                    case 5: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.DS1_055); break; 
-                    case 6: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_283); break; 
-                    case 7: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_088); break; 
-                    case 8: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_038); break; 
-                    case 9: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_573); break; 
-                    case 10: kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_120); break; 
+                    case 1: kid = CardIds.Collectible.Neutral.VoodooDoctor; break;
+                    case 2: kid = CardIds.Collectible.Rogue.DefiasRingleader; break;
+                    case 3: kid = CardIds.Collectible.Rogue.Si7Agent; break;
+                    case 4: kid = CardIds.Collectible.Neutral.KezanMystic; break;
+                    case 5: kid = CardIds.Collectible.Neutral.DarkscaleHealer; break;
+                    case 6: kid = CardIds.Collectible.Neutral.FrostElemental; break;
+                    case 7: kid = CardIds.Collectible.Paladin.GuardianOfKings; break;
+                    case 8: kid = CardIds.Collectible.Neutral.Gruul; break;
+                    case 9: kid = CardIds.Collectible.Druid.Cenarius; break;
+                    case 10: kid = CardIds.Collectible.Neutral.FrostGiant; break;
                 }
             }
             return kid;
@@ -6443,7 +6311,7 @@
 
         public void minionGetTempBuff(Minion m, int tempAttack, int tempHp)
         {
-            if (!m.silenced && m.name == Chireiden.Silverfish.SimCard.lightspawn) return;
+            if (!m.silenced && m.name == CardIds.Collectible.Priest.Lightspawn) return;
             if (tempAttack < 0 && -tempAttack > m.Angr)
             {
                 tempAttack = -m.Angr;
@@ -6454,7 +6322,7 @@
 
         public void minionGetAdjacentBuff(Minion m, int angr, int vert)
         {
-            if (!m.silenced && m.name == Chireiden.Silverfish.SimCard.lightspawn) return;
+            if (!m.silenced && m.name == CardIds.Collectible.Priest.Lightspawn) return;
             m.Angr += angr;
             m.AdjacentAngr += angr;
         }
@@ -6491,12 +6359,12 @@
                 m.wounded = (m.maxHp != m.Hp);
             }
 
-            if (m.name == Chireiden.Silverfish.SimCard.lightspawn && !m.silenced)
+            if (m.name == CardIds.Collectible.Priest.Lightspawn && !m.silenced)
             {
                 m.Angr = m.Hp;
             }
         }
-        
+
         public void cthunGetBuffed(int attackbuff, int hpbuff, int tauntbuff)
         {
             this.anzOgOwnCThunAngrBonus += attackbuff;
@@ -6506,7 +6374,7 @@
             bool cthunonboard = false;
             foreach (Minion m in this.ownMinions)
             {
-                if (m.name == Chireiden.Silverfish.SimCard.cthun)
+                if (m.name == CardIds.Collectible.Neutral.Cthun)
                 {
                     this.minionGetBuffed(m, attackbuff, hpbuff);
                     if (tauntbuff > 0)
@@ -6542,7 +6410,7 @@
                 List<Handmanager.Handcard> discardedCardsBonusList = new List<Handmanager.Handcard>();
                 Handmanager.Handcard hc;
                 Chireiden.Silverfish.SimCard c;
-                Dictionary<int, int> cardsValDict = new Dictionary<int,int>();
+                Dictionary<int, int> cardsValDict = new Dictionary<int, int>();
                 for (int i = 0; i < this.owncards.Count; i++)
                 {
                     hc = this.owncards[i];
@@ -6559,12 +6427,12 @@
                             if (c.isSpecialMinion) cardValue += 10;
                             switch (c.name)
                             {
-                                case Chireiden.Silverfish.SimCard.direwolfalpha: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case Chireiden.Silverfish.SimCard.flametonguetotem: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case Chireiden.Silverfish.SimCard.stormwindchampion: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case Chireiden.Silverfish.SimCard.raidleader: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case Chireiden.Silverfish.SimCard.silverwaregolem: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
-                                case Chireiden.Silverfish.SimCard.clutchmotherzavas: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
+                                case CardIds.Collectible.Neutral.DireWolfAlpha: if (this.ownMinions.Count > 2) cardValue += 10; break;
+                                case CardIds.Collectible.Shaman.FlametongueTotem: if (this.ownMinions.Count > 2) cardValue += 10; break;
+                                case CardIds.Collectible.Neutral.StormwindChampion: if (this.ownMinions.Count > 2) cardValue += 10; break;
+                                case CardIds.Collectible.Neutral.RaidLeader: if (this.ownMinions.Count > 2) cardValue += 10; break;
+                                case CardIds.Collectible.Warlock.SilverwareGolem: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
+                                case CardIds.Collectible.Warlock.ClutchmotherZavas: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
                             }
                             break;
                         case Chireiden.Silverfish.SimCardtype.WEAPON:
@@ -6622,7 +6490,7 @@
                     this.owncards.RemoveAt(cPos);
                     anz--;
 
-                    if (removedhc.card.sim_card.onCardDicscard(this, removedhc, null, 0, true)) 
+                    if (removedhc.card.sim_card.onCardDicscard(this, removedhc, null, 0, true))
                     {
                         discardedCardsBonusList.Add(removedhc);
                         cVal = -6;
@@ -6648,26 +6516,26 @@
                     }
                     this.owncards.RemoveRange(0, anz);
                 }
-                
+
                 if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None) this.ownQuest.trigger_WasDiscard(numDiscardedCards);
 
-                
+
                 int malchezaarsimpCount = 0;
                 foreach (Minion m in this.ownMinions)
                 {
                     if (m.Hp > 0 && !m.silenced)
                     {
-                        if (m.name == Chireiden.Silverfish.SimCard.malchezaarsimp) malchezaarsimpCount++;
-                        m.handcard.card.sim_card.onCardDicscard(this, m.handcard, m, numDiscardedCards); 
+                        if (m.name == CardIds.Collectible.Warlock.MalchezaarsImp) malchezaarsimpCount++;
+                        m.handcard.card.sim_card.onCardDicscard(this, m.handcard, m, numDiscardedCards);
                     }
                 }
                 if (malchezaarsimpCount > 0) summPen = summPen / 6;
                 this.evaluatePenality += summPen;
 
-                
+
                 foreach (Handmanager.Handcard dc in discardedCardsBonusList)
                 {
-                    dc.card.sim_card.onCardDicscard(this, dc, null, 0); 
+                    dc.card.sim_card.onCardDicscard(this, dc, null, 0);
                 }
             }
             else
@@ -6777,7 +6645,7 @@
 
         public void minionSetAngrToX(Minion m, int newAngr)
         {
-            if (!m.silenced && m.name == Chireiden.Silverfish.SimCard.lightspawn) return;
+            if (!m.silenced && m.name == CardIds.Collectible.Priest.Lightspawn) return;
             m.Angr = newAngr;
             m.tempAttack = 0;
             this.minionGetOrEraseAllAreaBuffs(m, true);
@@ -6803,7 +6671,7 @@
 
         public void minionSwapAngrAndHP(Minion m)
         {
-            
+
             bool woundedbef = m.wounded;
             int temp = m.Angr;
             m.Angr = m.Hp;
@@ -6849,7 +6717,7 @@
             this.minionGetDamageOrHeal(own ? this.ownHero : this.enemyHero, damages);
         }
 
-        public void allCharsOfASideGetRandomDamage(bool ownSide, int times) 
+        public void allCharsOfASideGetRandomDamage(bool ownSide, int times)
         {
             //Deal damage randomly split among all enemies.
 
@@ -6879,7 +6747,7 @@
             }
 
             List<Minion> temp = (ownSide) ? new List<Minion>(this.ownMinions) : new List<Minion>(this.enemyMinions);
-            temp.Sort((a, b) => { int tmp = a.Hp.CompareTo(b.Hp); return tmp == 0 ? a.Angr - b.Angr : tmp; }); 
+            temp.Sort((a, b) => { int tmp = a.Hp.CompareTo(b.Hp); return tmp == 0 ? a.Angr - b.Angr : tmp; });
 
             int border = 1;
             for (int pos = 0; pos < temp.Count; pos++)
@@ -7028,7 +6896,7 @@
                 case searchmode.searchHighestAttack: value = -1; break;
                 case searchmode.searchHighAttackLowHP: value = -1; break;
                 case searchmode.searchHighHPLowAttack: value = -1; break;
-                case searchmode.searchLowestCost: value = 1000;  break;
+                case searchmode.searchLowestCost: value = 1000; break;
                 case searchmode.searchHighesCost: value = -1; break;
             }
 
@@ -7274,7 +7142,7 @@
 
         public Chireiden.Silverfish.SimCard getNextJadeGolem(bool own)
         {
-            int tmp = 0;            
+            int tmp = 0;
             if (own)
             {
                 tmp = 1 + anzOwnJadeGolem;
@@ -7287,38 +7155,38 @@
             }
             switch (tmp)
             {
-                case 1: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t01);
-                case 2: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t02);
-                case 3: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t03);
-                case 4: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t04);
-                case 5: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t05);
-                case 6: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t06);
-                case 7: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t07);
-                case 8: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t08);
-                case 9: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t09);
-                case 10: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t10);
-                case 11: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t11);
-                case 12: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t12);
-                case 13: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t13);
-                case 14: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t14);
-                case 15: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t15);
-                case 16: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t16);
-                case 17: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t17);
-                case 18: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t18);
-                case 19: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t19);
-                case 20: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t20);
-                case 21: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t21);
-                case 22: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t22);
-                case 23: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t23);
-                case 24: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t24);
-                case 25: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t25);
-                case 26: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t26);
-                case 27: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t27);
-                case 28: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t28);
-                case 29: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t29);
-                case 30: return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t30);
+                case 1: return CardIds.NonCollectible.Neutral.JadeGolem1;
+                case 2: return CardIds.NonCollectible.Neutral.JadeGolem2;
+                case 3: return CardIds.NonCollectible.Neutral.JadeGolem3;
+                case 4: return CardIds.NonCollectible.Neutral.JadeGolem4;
+                case 5: return CardIds.NonCollectible.Neutral.JadeGolem5;
+                case 6: return CardIds.NonCollectible.Neutral.JadeGolem6;
+                case 7: return CardIds.NonCollectible.Neutral.JadeGolem7;
+                case 8: return CardIds.NonCollectible.Neutral.JadeGolem8;
+                case 9: return CardIds.NonCollectible.Neutral.JadeGolem9;
+                case 10: return CardIds.NonCollectible.Neutral.JadeGolem10;
+                case 11: return CardIds.NonCollectible.Neutral.JadeGolem11;
+                case 12: return CardIds.NonCollectible.Neutral.JadeGolem12;
+                case 13: return CardIds.NonCollectible.Neutral.JadeGolem13;
+                case 14: return CardIds.NonCollectible.Neutral.JadeGolem14;
+                case 15: return CardIds.NonCollectible.Neutral.JadeGolem15;
+                case 16: return CardIds.NonCollectible.Neutral.JadeGolem16;
+                case 17: return CardIds.NonCollectible.Neutral.JadeGolem17;
+                case 18: return CardIds.NonCollectible.Neutral.JadeGolem18;
+                case 19: return CardIds.NonCollectible.Neutral.JadeGolem19;
+                case 20: return CardIds.NonCollectible.Neutral.JadeGolem20;
+                case 21: return CardIds.NonCollectible.Neutral.JadeGolem21;
+                case 22: return CardIds.NonCollectible.Neutral.JadeGolem22;
+                case 23: return CardIds.NonCollectible.Neutral.JadeGolem23;
+                case 24: return CardIds.NonCollectible.Neutral.JadeGolem24;
+                case 25: return CardIds.NonCollectible.Neutral.JadeGolem25;
+                case 26: return CardIds.NonCollectible.Neutral.JadeGolem26;
+                case 27: return CardIds.NonCollectible.Neutral.JadeGolem27;
+                case 28: return CardIds.NonCollectible.Neutral.JadeGolem28;
+                case 29: return CardIds.NonCollectible.Neutral.JadeGolem29;
+                case 30: return CardIds.NonCollectible.Neutral.JadeGolem30;
             }
-            return CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_712_t01);
+            return CardIds.NonCollectible.Neutral.JadeGolem1;
         }
 
         public void debugMinions()
@@ -7410,7 +7278,7 @@
             if (this.enemySecretCount > 0) retval += "\r\n" + ("enemySecrets\t" + Probabilitymaker.Instance.getEnemySecretData(this.enemySecretList));
             if (this.ownSecretsIDList.Count > 0)
             {
-                retval += "\r\n" + ("ownSecrets\t" );
+                retval += "\r\n" + ("ownSecrets\t");
                 foreach (Chireiden.Silverfish.SimCard s in this.ownSecretsIDList)
                 {
                     retval += " " + CardDB.Instance.getCardDataFromID(s).name;
@@ -7591,10 +7459,5 @@
             Helpfunctions.Instance.ErrorLog("");
 
         }
-
-
     }
-
-
-
 }

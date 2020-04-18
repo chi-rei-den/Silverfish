@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Has +2 Attack while you have Spell Damage.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_063);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.SpiritClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

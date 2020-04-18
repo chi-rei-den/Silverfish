@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_EX1_160a : SimTemplate //* summonapanther
 	{
         //Summon a 3/2 Panther.
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_160t);//panther
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken;//panther
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

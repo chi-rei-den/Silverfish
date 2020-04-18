@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: If you're holding a Dragon, summon two 1/1 Whelps.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_010a);//Whelp
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.NightbaneTemplar_Whelp;//Whelp
 		
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

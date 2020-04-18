@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //   50% chance to attack the wrong enemy.
         // yolo!?
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_054);
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Warrior.OgreWarmaul;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(w, ownplay);

@@ -1,3 +1,4 @@
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,16 +26,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_831: SimTemplate //* Bloodreaver Gul'dan
+    class Sim_ICC_831: SimTemplate
     {
-        // Battlecry: Summon all friendly Demons that died this game.
-
-        CardDB cdb = CardDB.Instance;
-        Chireiden.Silverfish.SimCard kid = null;
-
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_831p, ownplay); // Siphon Life
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.BloodreaverGuldan_SiphonLife, ownplay); // Siphon Life
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 
@@ -43,15 +39,15 @@ namespace HREngine.Bots
             int kids = 7 - pos;
             if (kids > 0)
             {
-                p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_301), pos, ownplay); //Felguard Taunt
+                p.callKid(CardIds.Collectible.Warlock.Felguard, pos, ownplay); //Felguard Taunt
                 kids--;
 
                 if (kids > 0)
                 {
-                    foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in Probabilitymaker.Instance.ownCardsOut)
+                    foreach (var e in Probabilitymaker.Instance.ownCardsOut)
                     {
-                        kid = cdb.getCardDataFromID(e.Key);
-                        if ((TAG_RACE)kid.Race == TAG_RACE.DEMON)
+                        var kid = e.Key;
+                        if (kid.Race == Race.DEMON)
                         {
                             for (int i = 0; i < e.Value; i++)
                             {

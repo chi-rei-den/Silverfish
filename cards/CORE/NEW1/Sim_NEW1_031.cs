@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Summon a random Beast Companion.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_032);//misha
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.Misha;//misha
         
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

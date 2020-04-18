@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Transform a random enemy minion into a 1/1 Sheep.
 		
-		private Chireiden.Silverfish.SimCard sheep = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_621_m5);
+		private CardIds.NonCollectible.Neutral.Sheep = CardIds.NonCollectible.Neutral.Kazakus_Sheep;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

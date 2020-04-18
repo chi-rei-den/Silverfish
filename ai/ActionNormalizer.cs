@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace HREngine.Bots
@@ -107,7 +107,7 @@ namespace HREngine.Bots
                     switch (aa.actionType)
                     {
                         case actionEnum.useHeroPower:
-                            if (aa.card.card.name == Chireiden.Silverfish.SimCard.totemiccall) totemiccall = true;
+                            if (aa.card.card.name == CardIds.NonCollectible.Shaman.TotemicCall) totemiccall = true;
                             break;
                         case actionEnum.playcard:
                             if (penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card.name))

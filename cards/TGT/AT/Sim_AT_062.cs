@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
 		//Summon three 1/1 Webspinners.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_011);//Webspinner
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.Webspinner;//Webspinner
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

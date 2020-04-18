@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a Dreadsteed.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_019);
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Warlock.Dreadsteed;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

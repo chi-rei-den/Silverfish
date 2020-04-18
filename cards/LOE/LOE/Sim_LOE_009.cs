@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//At the end of your turn, summon a 1/1 Scarab with Taunt.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_009t); //Scarab
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warrior.ObsidianDestroyer_ScarabToken; //Scarab
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

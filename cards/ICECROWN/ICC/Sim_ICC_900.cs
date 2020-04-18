@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Whenever one of your other minions dies, summon a 2/2 Ghoul.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_900t); //Ghoul 2/2
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.NecroticGeist_GhoulToken; //Ghoul 2/2
 
         public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {

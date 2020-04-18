@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 4/5 Baine Bloodhoof.
 
-        Chireiden.Silverfish.SimCard blaine = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_110t);
+        Chireiden.Silverfish.SimCard blaine = CardIds.NonCollectible.Neutral.CairneBloodhoof_BaineBloodhoofToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

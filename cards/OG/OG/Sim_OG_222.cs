@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Battlecry: Give +1/+1 to your minions with Divine Shield.
 
-        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_222);
+        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Paladin.RallyingBlade;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

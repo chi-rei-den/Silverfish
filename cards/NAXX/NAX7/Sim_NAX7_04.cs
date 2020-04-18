@@ -30,7 +30,7 @@ namespace HREngine.Bots
 		//Deals double damage to heroes.
 		//Handled in minionAttacksMinion()
 
-		Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX7_04);
+		Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.MassiveRuneblade;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -22,7 +22,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == Chireiden.Silverfish.SimCard.biggamehunter || hc.card.name == Chireiden.Silverfish.SimCard.shadowworddeath) return 0;
+                    if (hc.card.name == CardIds.Collectible.Neutral.BigGameHunter || hc.card.name == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
                 }
 
                 return 500;

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //-
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_082);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Rogue.WickedKnife;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

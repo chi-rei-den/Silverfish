@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Stealth. At the end of your turn, summon a 1/1 Steward.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_044a); //Steward
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Moroes_Steward; //Steward
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

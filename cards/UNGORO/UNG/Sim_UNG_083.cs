@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 5/5 Devilsaur.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_083t1); //5/5 Devilsaur
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DevilsaurEgg_DevilsaurToken; //5/5 Devilsaur
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

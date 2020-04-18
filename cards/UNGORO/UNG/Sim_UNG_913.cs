@@ -33,8 +33,8 @@ namespace HREngine.Bots
 		{
             if (own.own)
             {
-                        p.drawACard(Chireiden.Silverfish.SimCard.lepergnome, own.own);
-                        p.drawACard(Chireiden.Silverfish.SimCard.lepergnome, own.own);
+                        p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
+                        p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
             }
             else p.enemyAnzCards++;
 		}

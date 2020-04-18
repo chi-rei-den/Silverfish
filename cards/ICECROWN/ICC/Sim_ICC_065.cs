@@ -31,8 +31,8 @@ namespace HREngine.Bots
         
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.ICC_026t, m.own, true); //Skeleton 1/1
-            p.drawACard(Chireiden.Silverfish.SimCard.ICC_026t, m.own, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.GrimNecromancer_SkeletonToken, m.own, true); //Skeleton 1/1
+            p.drawACard(CardIds.NonCollectible.Neutral.GrimNecromancer_SkeletonToken, m.own, true);
         }
     }
 }

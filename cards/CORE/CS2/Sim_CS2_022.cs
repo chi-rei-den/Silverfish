@@ -28,7 +28,7 @@ namespace HREngine.Bots
     class Sim_CS2_022 : SimTemplate//Polymorph
     {
 
-        private Chireiden.Silverfish.SimCard sheep = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_tk1);
+        private CardIds.NonCollectible.Neutral.Sheep = CardIds.NonCollectible.Neutral.Sheep;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

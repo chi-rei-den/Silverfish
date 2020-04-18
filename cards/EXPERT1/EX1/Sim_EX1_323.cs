@@ -29,12 +29,12 @@ namespace HREngine.Bots
 	{
         // Battlecry: Destroy your hero and replace it with Lord Jaraxxus.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_323w);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury;
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             p.equipWeapon(weapon, own.own);
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.EX1_tk33, own.own); // INFERNO!
+            p.setNewHeroPower(CardIds.NonCollectible.Warlock.Inferno, own.own); // INFERNO!
 
             if (own.own)
             {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Choose One - Summon seven 1/1 Wisps; or Give your minions +2/+2.
 		
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_231);
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Wisp;
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

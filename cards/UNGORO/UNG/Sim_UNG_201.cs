@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//At the end of your turn, summon a 1/1 Murloc.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_201t); //Primalfin
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PrimalfinTotem_PrimalfinToken; //Primalfin
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Summon a 5/5 copy of a random minion in your deck.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_014); //King Mukla 5/5
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.KingMukla; //King Mukla 5/5
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

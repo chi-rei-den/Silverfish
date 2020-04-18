@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Summon a 1/5 Scarab with Taunt. If your opponent has more minions, cast this again.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_832t4); //Scarab Beetle
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabBeetleToken; //Scarab Beetle
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Go dormant. Play 4 cards in a turn to revive this minion.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_065t); //Sherazin, Seed
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Rogue.SherazinCorpseFlower_SherazinSeedToken; //Sherazin, Seed
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

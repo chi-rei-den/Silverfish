@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_CS2_106 : SimTemplate //fierywaraxe
 	{
-        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_106);
+        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Warrior.FieryWarAxe;
 //
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

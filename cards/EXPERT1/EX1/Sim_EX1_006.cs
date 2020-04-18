@@ -46,7 +46,7 @@ namespace HREngine.Bots
                     triggerEffectMinion.playedThisTurn = false;
                     triggerEffectMinion.Ready = true;
                     p.removeCard(mins);
-                    p.drawACard(Chireiden.Silverfish.SimCard.alarmobot, true, true);
+                    p.drawACard(CardIds.Collectible.Neutral.AlarmOBot, true, true);
                     break;
                 }
                 return;

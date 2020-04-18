@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 3/3 Finkle Einhorn for your opponent.
 
-        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_finkle);//finkleeinhorn
+        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.FinkleEinhorn;//finkleeinhorn
         public override void onDeathrattle(Playfield p, Minion m)
         {
             int pos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;

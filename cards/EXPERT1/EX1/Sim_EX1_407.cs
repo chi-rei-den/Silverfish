@@ -34,7 +34,7 @@ namespace HREngine.Bots
             bool hasWinner = false;
             foreach (Minion m in p.enemyMinions)
             {
-                if ((m.name == Chireiden.Silverfish.SimCard.darkironbouncer || m.name == Chireiden.Silverfish.SimCard.corendirebrew) && !hasWinner)
+                if ((m.name == CardIds.NonCollectible.Neutral.DarkIronBouncer || m.name == Chireiden.Silverfish.SimCard.corendirebrew) && !hasWinner)
                 {
                     hasWinner = true;
                     continue;
@@ -43,7 +43,7 @@ namespace HREngine.Bots
             }
             foreach (Minion m in p.ownMinions)
             {
-                if ((m.name == Chireiden.Silverfish.SimCard.darkironbouncer || m.name == Chireiden.Silverfish.SimCard.corendirebrew) && !hasWinner)
+                if ((m.name == CardIds.NonCollectible.Neutral.DarkIronBouncer || m.name == Chireiden.Silverfish.SimCard.corendirebrew) && !hasWinner)
                 {
                     hasWinner = true;
                     continue;

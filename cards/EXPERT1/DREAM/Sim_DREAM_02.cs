@@ -35,11 +35,11 @@ namespace HREngine.Bots
             int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             foreach (Minion m in p.ownMinions)
             {
-                if (m.name != Chireiden.Silverfish.SimCard.ysera) p.minionGetDamageOrHeal(m, dmg);
+                if (m.name != CardIds.Collectible.Neutral.Ysera) p.minionGetDamageOrHeal(m, dmg);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if (m.name != Chireiden.Silverfish.SimCard.ysera) p.minionGetDamageOrHeal(m, dmg);
+                if (m.name != CardIds.Collectible.Neutral.Ysera) p.minionGetDamageOrHeal(m, dmg);
             }
             p.minionGetDamageOrHeal(p.ownHero, dmg);
             p.minionGetDamageOrHeal(p.enemyHero, dmg);

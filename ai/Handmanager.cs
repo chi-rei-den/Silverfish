@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System.Collections.Generic;
 

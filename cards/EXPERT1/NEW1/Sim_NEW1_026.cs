@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Whenever you cast a spell, summon a 1/1 Violet Apprentice.
 
-        public Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_026t);
+        public Chireiden.Silverfish.SimCard card = CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken;
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

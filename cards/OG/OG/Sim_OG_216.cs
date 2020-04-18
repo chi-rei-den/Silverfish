@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon two 1/1 Spiders.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_216a);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.InfestedWolf_Spider;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

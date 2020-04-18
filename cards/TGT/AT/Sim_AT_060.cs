@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Secret: After your hero is attacked, summon a 3/3 Bear with Taunt.
 
-		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_125);//Ironfur Grizzly
+		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.IronfurGrizzly;//Ironfur Grizzly
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

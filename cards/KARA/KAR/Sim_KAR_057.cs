@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(Chireiden.Silverfish.SimCard.thecoin, own.own, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, own.own, true);
 			int heal = (own.own) ? p.getMinionHeal(3) : p.getEnemyMinionHeal(3);
             p.minionGetDamageOrHeal(own.own ? p.ownHero : p.enemyHero, -heal);
 		}

@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (p.anzOwnElementalsLastTurn > 0 && own.own) p.drawACard(Chireiden.Silverfish.SimCard.flamegeyser, own.own, true);
+            if (p.anzOwnElementalsLastTurn > 0 && own.own) p.drawACard(CardIds.Collectible.Mage.FlameGeyser, own.own, true);
         }
     }
 }

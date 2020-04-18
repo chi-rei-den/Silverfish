@@ -31,7 +31,7 @@ namespace HREngine.Bots
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_481p, ownplay); // Transmute Spirit
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.ThrallDeathseer_TransmuteSpirit, ownplay); // Transmute Spirit
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 

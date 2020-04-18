@@ -1,4 +1,4 @@
-﻿using Triton.Game.Mapping;
+using Triton.Game.Mapping;
 
 namespace HREngine.Bots
 {
@@ -310,7 +310,7 @@ namespace HREngine.Bots
             {
                 if (this.own)
                 {
-                    if (p.ownWeapon.name == Chireiden.Silverfish.SimCard.cursedblade) dmg += dmg;
+                    if (p.ownWeapon.name == CardIds.Collectible.Warrior.CursedBlade) dmg += dmg;
                     if (p.anzOwnAnimatedArmor > 0 && dmg > 0) dmg = 1;
                     if (p.anzOwnBolfRamshield > 0 && dmg > 0)
 
@@ -322,7 +322,7 @@ namespace HREngine.Bots
                         {
                             foreach (Minion m in p.ownMinions)
                             {
-                                if (m.name == Chireiden.Silverfish.SimCard.bolframshield)
+                                if (m.name == CardIds.Collectible.Neutral.BolfRamshield)
                                 {
                                     m.getDamageOrHeal(-rest, p, true, false);
                                     break;
@@ -335,7 +335,7 @@ namespace HREngine.Bots
                 else
                 {
                     if (p.anzEnemyAnimatedArmor > 0 && dmg > 0) dmg = 1;
-                    if (p.enemyWeapon.name == Chireiden.Silverfish.SimCard.cursedblade) dmg += dmg;
+                    if (p.enemyWeapon.name == CardIds.Collectible.Warrior.CursedBlade) dmg += dmg;
                     if (p.anzEnemyBolfRamshield > 0 && dmg > 0)
                     {
                         int rest = this.armor - dmg;
@@ -344,7 +344,7 @@ namespace HREngine.Bots
                         {
                             foreach (Minion m in p.enemyMinions)
                             {
-                                if (m.name == Chireiden.Silverfish.SimCard.bolframshield)
+                                if (m.name == CardIds.Collectible.Neutral.BolfRamshield)
                                 {
                                     m.getDamageOrHeal(-rest, p, true, false);
                                     break;
@@ -463,7 +463,7 @@ namespace HREngine.Bots
                 {
                     if (p.anzAcidmaw == 1)
                     {
-                        if (this.name != Chireiden.Silverfish.SimCard.acidmaw) this.Hp = 0;
+                        if (this.name != CardIds.Collectible.Hunter.Acidmaw) this.Hp = 0;
                     }
                     else this.Hp = 0;
                 }
@@ -483,7 +483,7 @@ namespace HREngine.Bots
 
 
 
-            if (this.name == Chireiden.Silverfish.SimCard.lightspawn && !this.silenced)
+            if (this.name == CardIds.Collectible.Priest.Lightspawn && !this.silenced)
             {
                 this.Angr = this.Hp;
             }
@@ -507,13 +507,13 @@ namespace HREngine.Bots
 
         public void minionDied(Playfield p)
         {
-            if (this.name == Chireiden.Silverfish.SimCard.stalagg)
+            if (this.name == CardIds.Collectible.Neutral.Stalagg)
             {
                 p.stalaggDead = true;
             }
             else
             {
-                if (this.name == Chireiden.Silverfish.SimCard.feugen) p.feugenDead = true;
+                if (this.name == CardIds.Collectible.Neutral.Feugen) p.feugenDead = true;
             }
 
             
@@ -615,7 +615,7 @@ namespace HREngine.Bots
             returnToHand = 0;
             infest = 0;
             deathrattle2 = null;
-            if (this.name == Chireiden.Silverfish.SimCard.moatlurker && p.LurkersDB.ContainsKey(this.entitiyID)) p.LurkersDB.Remove(this.entitiyID);
+            if (this.name == CardIds.Collectible.Neutral.MoatLurker && p.LurkersDB.ContainsKey(this.entitiyID)) p.LurkersDB.Remove(this.entitiyID);
 
             ownBlessingOfWisdom = 0;
             enemyBlessingOfWisdom = 0;
@@ -712,7 +712,7 @@ namespace HREngine.Bots
                 // reborns and destoyings----------------------------------------------
 
                 
-                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_363e || me.CARDID == Chireiden.Silverfish.SimCard.EX1_363e2) //BlessingOfWisdom
+                if (me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment1 || me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment12) //BlessingOfWisdom
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -724,7 +724,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (me.CARDID == Chireiden.Silverfish.SimCard.AT_013e) //PowerWordGlory
+                if (me.CARDID == CardIds.NonCollectible.Neutral.PowerWordGlory_PowerWordGloryEnchantment) //PowerWordGlory
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -737,7 +737,7 @@ namespace HREngine.Bots
                 }
 
 
-                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_316e) //overwhelmingpower
+                if (me.CARDID == CardIds.NonCollectible.Warlock.PowerOverwhelming_PowerOverwhelmingEnchantment) //overwhelmingpower
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -749,24 +749,24 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_334e) //Dark Command
+                if (me.CARDID == CardIds.NonCollectible.Priest.ShadowMadness_ShadowMadnessEnchantment) //Dark Command
                 {
                     this.shadowmadnessed = true;
                 }
 
-                if (me.CARDID == Chireiden.Silverfish.SimCard.FP1_030e) //Necrotic Aura
+                if (me.CARDID == CardIds.NonCollectible.Neutral.Loatheb_NecroticAuraEnchantment) //Necrotic Aura
                 {
                     //todo Eure Zauber kosten in diesem Zug (5) mehr.
                 }
-                if (me.CARDID == Chireiden.Silverfish.SimCard.NEW1_029t) //death to millhouse!
+                if (me.CARDID == CardIds.NonCollectible.Neutral.MillhouseManastorm_KillMillhouseToken) //death to millhouse!
                 {
                     // todo spells cost (0) this turn!
                 }
-                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_612o) //Power of the Kirin Tor
+                if (me.CARDID == CardIds.NonCollectible.Mage.KirinTorMage_PowerOfTheKirinTorEnchantment) //Power of the Kirin Tor
                 {
                     // todo Your next Secret costs (0).
                 }
-               // if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_084e) //warsongcommander
+               // if (me.CARDID == CardIds.NonCollectible.Warrior.WarsongCommander_ChargeEnchantment) //warsongcommander
                // {
               //      this.charge++;
               //  }
@@ -777,77 +777,77 @@ namespace HREngine.Bots
 
 
                     // destroy-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.CS2_063e:
+                    case CardIds.NonCollectible.Warlock.Corruption_CorruptionEnchantment:
                         if (me.controllerOfCreator == ownPlayerControler) this.destroyOnOwnTurnStart = true;
                         else this.destroyOnEnemyTurnStart = true;   //corruption
                         continue;
-                    case Chireiden.Silverfish.SimCard.DREAM_05e:
+                    case CardIds.NonCollectible.Neutral.Nightmare_NightmareEnchantment:
                         if (me.controllerOfCreator == ownPlayerControler) this.destroyOnOwnTurnStart = true;
                         else this.destroyOnEnemyTurnStart = true;   //nightmare
                         continue;
 
                     // deathrattles-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.LOE_105e: this.explorershat++; continue;
-                    case Chireiden.Silverfish.SimCard.UNG_956e: this.returnToHand++; continue;
+                    case CardIds.NonCollectible.Hunter.ExplorersHat_ExplorersHatEnchantment: this.explorershat++; continue;
+                    case CardIds.NonCollectible.Shaman.SpiritEcho_EchoedSpiritEnchantment: this.returnToHand++; continue;
                         
-                    case Chireiden.Silverfish.SimCard.CS2_038e: this.ancestralspirit++; continue;
-                    case Chireiden.Silverfish.SimCard.ICC_244e: this.desperatestand++; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_158e: this.souloftheforest++; continue;
-                    case Chireiden.Silverfish.SimCard.UNG_952e: this.stegodon++; continue;
-                    case Chireiden.Silverfish.SimCard.UNG_999t2e: this.livingspores++; continue;
+                    case CardIds.NonCollectible.Shaman.AncestralSpirit_AncestralSpiritEnchantment: this.ancestralspirit++; continue;
+                    case CardIds.NonCollectible.Paladin.DesperateStand_RedeemedEnchantment: this.desperatestand++; continue;
+                    case CardIds.NonCollectible.Druid.SouloftheForest_SoulOfTheForestEnchantment: this.souloftheforest++; continue;
+                    case CardIds.NonCollectible.Paladin.SpikeridgedSteed_OnAStegodonEnchantment: this.stegodon++; continue;
+                    case CardIds.NonCollectible.Neutral.LivingSporesToken2: this.livingspores++; continue;
                         
-                    case Chireiden.Silverfish.SimCard.OG_045a: this.infest++; continue;
-                    case Chireiden.Silverfish.SimCard.LOE_019e: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
+                    case CardIds.NonCollectible.Druid.Infest_NerubianSpores: this.infest++; continue;
+                    case CardIds.NonCollectible.Rogue.UnearthedRaptor_UnearthedRaptorEnchantment: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
                    // case Chireiden.Silverfish.SimCard.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
 
 
                     //conceal-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.EX1_128e: this.conceal = true; continue;
-                    case Chireiden.Silverfish.SimCard.NEW1_014e: this.conceal = true; continue;
-                    case Chireiden.Silverfish.SimCard.PART_004e: this.conceal = true; continue;
-                    case Chireiden.Silverfish.SimCard.OG_080de: this.conceal = true; continue; 
+                    case CardIds.NonCollectible.Rogue.Conceal_ConcealedEnchantment: this.conceal = true; continue;
+                    case CardIds.NonCollectible.Rogue.MasterofDisguise_DisguisedEnchantment: this.conceal = true; continue;
+                    case CardIds.NonCollectible.Neutral.FinickyCloakfield_CloakedEnchantment: this.conceal = true; continue;
+                    case CardIds.NonCollectible.Neutral.XarilPoisonedMind_Fadeleaf: this.conceal = true; continue; 
 
                     //cantLowerHPbelowONE-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.NEW1_036e: this.cantLowerHPbelowONE = true; continue; //commandingshout
-                    case Chireiden.Silverfish.SimCard.NEW1_036e2: this.cantLowerHPbelowONE = true; continue; //commandingshout
+                    case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment1: this.cantLowerHPbelowONE = true; continue; //commandingshout
+                    case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment12: this.cantLowerHPbelowONE = true; continue; //commandingshout
 
                     //spellpower-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.GVG_010b: this.spellpower++; continue; //velenschosen
-                    case Chireiden.Silverfish.SimCard.AT_006e: this.spellpower++; continue; //dalaran
-                    case Chireiden.Silverfish.SimCard.EX1_584e: this.spellpower++; continue; //ancient mage
+                    case CardIds.NonCollectible.Neutral.VelensChosen_VelensChosen: this.spellpower++; continue; //velenschosen
+                    case CardIds.NonCollectible.Mage.DalaranAspirant_PowerOfDalaranEnchantment: this.spellpower++; continue; //dalaran
+                    case CardIds.NonCollectible.Neutral.AncientMage_TeachingsOfTheKirinTorEnchantment: this.spellpower++; continue; //ancient mage
 
                     //charge-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.AT_071e: this.charge++; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_103e2: this.charge++; continue;
-                    case Chireiden.Silverfish.SimCard.TB_AllMinionsTauntCharge: this.charge++; continue;
-                    case Chireiden.Silverfish.SimCard.DS1_178e: this.charge++; continue;
+                    case CardIds.NonCollectible.Warrior.AlexstraszasChampion_AlexstraszasBoonEnchantment: this.charge++; continue;
+                    case CardIds.NonCollectible.Warrior.Charge_ChargeEnchantment: this.charge++; continue;
+                    case CardIds.NonCollectible.Neutral.GiveTauntAndChargeTavernBrawl: this.charge++; continue;
+                    case CardIds.NonCollectible.Hunter.TundraRhino_ChargeEnchantment: this.charge++; continue;
 
                     //adjacentbuffs-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.EX1_565o: this.AdjacentAngr += 2; continue; //flametongue
-                    case Chireiden.Silverfish.SimCard.EX1_162o: this.AdjacentAngr += 1; continue; //dire wolf alpha
+                    case CardIds.NonCollectible.Shaman.FlametongueTotem_FlametongueEnchantment: this.AdjacentAngr += 2; continue; //flametongue
+                    case CardIds.NonCollectible.Neutral.DireWolfAlpha_StrengthOfThePackEnchantment: this.AdjacentAngr += 1; continue; //dire wolf alpha
 
                     //tempbuffs-------------------------------------------------
-                    case Chireiden.Silverfish.SimCard.CS2_083e: this.tempAttack += 1; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_549o: this.tempAttack += 2; this.immune = true; continue;
-                    case Chireiden.Silverfish.SimCard.AT_057o: this.immune = true; continue;
-                    case Chireiden.Silverfish.SimCard.AT_039e: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.AT_132_DRUIDe: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_005o: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_011o: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_046e: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.GVG_057a: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_046e: this.tempAttack += 3; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_105e: this.tempAttack += 4; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_570e: this.tempAttack += 4; continue;
-                    case Chireiden.Silverfish.SimCard.OG_047e: this.tempAttack += 4; continue;  
-                    case Chireiden.Silverfish.SimCard.NAX12_04e: this.tempAttack += 6; continue;
-                    case Chireiden.Silverfish.SimCard.GVG_011a: this.tempAttack += -2; continue;
-                    case Chireiden.Silverfish.SimCard.CFM_661e: this.tempAttack += -3; continue;
-                    case Chireiden.Silverfish.SimCard.BRM_001e: this.tempAttack += -1000; continue;
-                    case Chireiden.Silverfish.SimCard.TU4c_008e: this.tempAttack += 8; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_045e: this.tempAttack += 3; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_188o: this.tempAttack += 2; continue;
-                    case Chireiden.Silverfish.SimCard.CS2_017o: this.tempAttack += 1; continue;
+                    case CardIds.NonCollectible.Rogue.SharpenedEnchantment: this.tempAttack += 1; continue;
+                    case CardIds.NonCollectible.Hunter.BestialWrath_BestialWrathEnchantment: this.tempAttack += 2; this.immune = true; continue;
+                    case CardIds.NonCollectible.Hunter.Stablemaster_GroomedEnchantment: this.immune = true; continue;
+                    case CardIds.NonCollectible.Druid.SavageCombatant_SavageEnchantment: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Druid.JusticarTrueheart_DireClaws: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Druid.Claw_ClawEnchantment: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Druid.SavageRoar_SavageRoarEnchantment: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Neutral.DarkIronDwarf_TemperedEnchantment: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Neutral.SealofLight_SealOfLight: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Shaman.Bloodlust_BloodlustEnchantment: this.tempAttack += 3; continue;
+                    case CardIds.NonCollectible.Warrior.HeroicStrike_HeroicStrikeEnchantment: this.tempAttack += 4; continue;
+                    case CardIds.NonCollectible.Neutral.Bite_BiteEnchantment: this.tempAttack += 4; continue;
+                    case CardIds.NonCollectible.Druid.FeralRage_SpinesEnchantment: this.tempAttack += 4; continue;  
+                    case CardIds.NonCollectible.Neutral.Enrage_EnrageEnchantment: this.tempAttack += 6; continue;
+                    case CardIds.NonCollectible.Neutral.Shrinkmeister_Shrunk: this.tempAttack += -2; continue;
+                    case CardIds.NonCollectible.Priest.PintSizePotion_ShrunkEnchantment: this.tempAttack += -3; continue;
+                    case CardIds.NonCollectible.Priest.SolemnVigil_MeltEnchantment: this.tempAttack += -1000; continue;
+                    case CardIds.NonCollectible.Neutral.WillofMukla_MightOfMuklaEnchantment: this.tempAttack += 8; continue;
+                    case CardIds.NonCollectible.Shaman.RockbiterWeapon_RockbiterWeaponEnchantment: this.tempAttack += 3; continue;
+                    case CardIds.NonCollectible.Neutral.AbusiveSergeant_InspiredEnchantment: this.tempAttack += 2; continue;
+                    case CardIds.NonCollectible.Druid.Shapeshift_ClawsEnchantment: this.tempAttack += 1; continue;
 
 
                         

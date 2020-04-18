@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Summon two 1/1 Silver Hand Recruits.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t);
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -31,9 +31,9 @@ namespace HREngine.Bots
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
-		    p.drawACard(Chireiden.Silverfish.SimCard.malchezaarsimp, ownplay, true);
-		    p.drawACard(Chireiden.Silverfish.SimCard.CFM_621_m2, ownplay, true);
-		    p.drawACard(Chireiden.Silverfish.SimCard.CFM_621_m4, ownplay, true);
+		    p.drawACard(CardIds.Collectible.Warlock.MalchezaarsImp, ownplay, true);
+		    p.drawACard(CardIds.NonCollectible.Neutral.Kazakus_KabalDemon1, ownplay, true);
+		    p.drawACard(CardIds.NonCollectible.Neutral.Kazakus_KabalDemon3, ownplay, true);
 		}
 	}
 }

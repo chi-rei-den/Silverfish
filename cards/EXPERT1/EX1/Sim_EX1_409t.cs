@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_409t : SimTemplate //* Heavy Axe
 	{
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_409t);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

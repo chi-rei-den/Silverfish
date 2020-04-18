@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.yseraawakens, turnEndOfOwner, true);
+                p.drawACard(CardIds.NonCollectible.DreamCards.YseraAwakens, turnEndOfOwner, true);
             }
         }
 

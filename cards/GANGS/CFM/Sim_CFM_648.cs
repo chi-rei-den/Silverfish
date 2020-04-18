@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a 6/6 Ogre.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_648t); //6/6 Ogre
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.BigTimeRacketeer_LittleFriendToken; //6/6 Ogre
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

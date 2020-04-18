@@ -39,14 +39,14 @@ namespace HREngine.Bots
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
-                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_120), p.ownMinions.Count, own.own, false);//river crocolisk
+                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, p.ownMinions.Count, own.own, false);//river crocolisk
 				}
 				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
 				if (tmpCard < 10)
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
-                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_048), p.ownMinions.Count, own.own, false);//spellbreaker
+                    p.callKid(CardIds.Collectible.Neutral.Spellbreaker, p.ownMinions.Count, own.own, false);//spellbreaker
 				}
 				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
 			}

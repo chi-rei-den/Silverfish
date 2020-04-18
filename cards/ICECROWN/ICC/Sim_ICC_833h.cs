@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Hero Power: Deal 1 damage. If this kills a minion, summon a Water Elemental.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_033); //Water Elemental
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Mage.WaterElemental; //Water Elemental
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

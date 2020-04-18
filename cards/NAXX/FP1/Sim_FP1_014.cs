@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //todesröcheln:/ ruft thaddius herbei, wenn feugen in diesem duell bereits gestorben ist.
 
-        Chireiden.Silverfish.SimCard thaddius = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_014t);
+        CardIds.NonCollectible.Neutral.Thaddius = CardIds.NonCollectible.Neutral.Stalagg_ThaddiusToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//When you play 4 cards in a turn, revive this minion.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_065); //Sherazin, Corpse Flower
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Rogue.SherazinCorpseFlower; //Sherazin, Corpse Flower
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.thecoin, m.own);
+            p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, m.own);
         }
     }
 }

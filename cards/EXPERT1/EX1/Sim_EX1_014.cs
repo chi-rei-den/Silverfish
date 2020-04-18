@@ -31,12 +31,12 @@ namespace HREngine.Bots
 //    kampfschrei:/ gebt eurem gegner 2 bananen.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(Chireiden.Silverfish.SimCard.bananas, !own.own, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.Bananas, !own.own, true);
             if (own.own)
             {
                 p.enemycarddraw -= 1;
             }
-            p.drawACard(Chireiden.Silverfish.SimCard.bananas, !own.own, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.Bananas, !own.own, true);
             if (own.own)
             {
                 p.enemycarddraw -= 1;

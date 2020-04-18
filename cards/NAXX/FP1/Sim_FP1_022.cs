@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_FP1_022 : SimTemplate //* voidcaller
 	{
         //Deathrattle: Put a random Demon from your hand into the battlefield.
-        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_301);//felguard
+        Chireiden.Silverfish.SimCard c = CardIds.Collectible.Warlock.Felguard;//felguard
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		        
 		public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.BRM_027p, m.own); // DIE, INSECT!
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower, m.own); // DIE, INSECT!
 
 			if (m.own)
             {

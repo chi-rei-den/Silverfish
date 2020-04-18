@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_025 : SimTemplate//dragonling mechanic
     {
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_025t);//mechanicaldragonling
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DragonlingMechanic_MechanicalDragonlingToken;//mechanicaldragonling
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

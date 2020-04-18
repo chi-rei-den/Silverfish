@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Choose One - Deal 2 damage; or Summon two 1/1 Saplings.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_037t); //Sapling
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.LivingRoots_SaplingToken; //Sapling
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

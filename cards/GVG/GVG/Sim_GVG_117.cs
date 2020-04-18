@@ -37,7 +37,7 @@ namespace HREngine.Bots
             {
                 if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL && hc.manacost == 1)
                 {
-                    p.drawACard(Chireiden.Silverfish.SimCard.shieldedminibot, wasOwnCard, true);
+                    p.drawACard(CardIds.Collectible.Paladin.ShieldedMinibot, wasOwnCard, true);
                 }
             }
         }

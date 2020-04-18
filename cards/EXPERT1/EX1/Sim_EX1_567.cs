@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //    windzorn/, überladung:/ (2)
-        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_567);
+        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Shaman.Doomhammer;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

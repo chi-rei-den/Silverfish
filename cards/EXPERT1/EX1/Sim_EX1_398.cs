@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_398 : SimTemplate//Arathi Weaponsmith
     {
-        Chireiden.Silverfish.SimCard wcard = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_398t);//battleaxe
+        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Warrior.ArathiWeaponsmith_BattleAxeToken;//battleaxe
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

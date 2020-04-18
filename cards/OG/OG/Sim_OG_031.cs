@@ -29,8 +29,8 @@ namespace HREngine.Bots
     {
         //Deathrattle: Summon a 4/2 Elemental.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_031);
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_031a);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.HammerOfTwilight;
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Shaman.HammerOfTwilighta;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

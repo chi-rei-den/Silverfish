@@ -37,31 +37,31 @@ namespace HREngine.Bots
             switch (HeroStartClass)
             {
                 case TAG_CLASS.WARRIOR:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_WARRIOR; //Tank Up!
+					tmp = CardIds.NonCollectible.Warrior.JusticarTrueheart_TankUp; //Tank Up!
 					break;
                 case TAG_CLASS.WARLOCK:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_WARLOCK; //Soul Tap
+					tmp = CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap; //Soul Tap
                     break;
                 case TAG_CLASS.ROGUE:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_ROGUE; //Poisoned Daggers
+					tmp = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers; //Poisoned Daggers
 					break;
                 case TAG_CLASS.SHAMAN:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_SHAMAN; //Totemic Slam
+					tmp = CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam; //Totemic Slam
 					break;
                 case TAG_CLASS.PRIEST:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_PRIEST; //Heal
+					tmp = CardIds.NonCollectible.Priest.JusticarTrueheart_Heal; //Heal
 					break;
                 case TAG_CLASS.PALADIN:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_PALADIN; //The Silver Hand
+					tmp = CardIds.NonCollectible.Paladin.JusticarTrueheart_TheSilverHand; //The Silver Hand
 					break;
                 case TAG_CLASS.MAGE:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_MAGE; //Fireblast Rank 2
+					tmp = CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2; //Fireblast Rank 2
 					break;
                 case TAG_CLASS.HUNTER:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_HUNTER; //Ballista Shot
+					tmp = CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot; //Ballista Shot
 					break;
                 case TAG_CLASS.DRUID:
-					tmp = Chireiden.Silverfish.SimCard.AT_132_DRUID; //Dire Shapeshift
+					tmp = CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift; //Dire Shapeshift
                     break;
 				//default:
 			}

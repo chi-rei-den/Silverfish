@@ -34,7 +34,7 @@ public class Sim_DAL_613: SimTemplate
 
 public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice) 
 { 
-Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_121);
+Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.FrostwolfGrunt;
 List<Minion> list = (m.own) ? p.ownMinions : p.enemyMinions; 
 int anz = list.Count; 
 p.callKid(kid, m.zonepos, m.own); 

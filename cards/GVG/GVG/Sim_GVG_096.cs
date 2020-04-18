@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         // Deathrattle: Summon a random 2-Cost minion.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_172);
+        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.BloodfenRaptor;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

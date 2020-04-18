@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System.Collections.Generic;
 
@@ -244,7 +244,7 @@
             {
                 if (m.Angr > strongestAttack) strongestAttack = m.Angr;
                 if (m.taunt) return true;
-                if (m.name == Chireiden.Silverfish.SimCard.dancingswords || m.name == Chireiden.Silverfish.SimCard.deathlord) return true;
+                if (m.name == CardIds.Collectible.Neutral.DancingSwords || m.name == CardIds.Collectible.Neutral.Deathlord) return true;
             }
 
             int haspets = 0;
@@ -253,36 +253,36 @@
             bool spawnminions = false;
             foreach (Minion m in ownm)
             {
-                if (m.name == Chireiden.Silverfish.SimCard.cultmaster) return true;
-                if (m.name == Chireiden.Silverfish.SimCard.knifejuggler) hasJuggler = true;
+                if (m.name == CardIds.Collectible.Neutral.CultMaster) return true;
+                if (m.name == CardIds.Collectible.Neutral.KnifeJuggler) hasJuggler = true;
                 if (m.Ready && m.Angr >= 1)
                 {
                     if (m.AdjacentAngr >= 1) return true;//wolphalfa or flametongue is in play
-                    if (m.name == Chireiden.Silverfish.SimCard.northshirecleric) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.armorsmith) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.loothoarder) return true;
-                    //if (m.name == Chireiden.Silverfish.SimCard.madscientist) return true; // dont change the tactic
-                    if (m.name == Chireiden.Silverfish.SimCard.sylvanaswindrunner) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.darkcultist) return true;
+                    if (m.name == CardIds.Collectible.Priest.NorthshireCleric) return true;
+                    if (m.name == CardIds.Collectible.Warrior.Armorsmith) return true;
+                    if (m.name == CardIds.Collectible.Neutral.LootHoarder) return true;
+                    //if (m.name == CardIds.Collectible.Neutral.MadScientist) return true; // dont change the tactic
+                    if (m.name == CardIds.Collectible.Neutral.SylvanasWindrunner) return true;
+                    if (m.name == CardIds.Collectible.Priest.DarkCultist) return true;
                     if (m.ownBlessingOfWisdom >= 1) return true;
                     if (m.ownPowerWordGlory >= 1) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.acolyteofpain) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.frothingberserker) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.flesheatingghoul) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.bloodmagethalnos) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.webspinner) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.tirionfordring) return true;
-                    if (m.name == Chireiden.Silverfish.SimCard.baronrivendare) return true;
+                    if (m.name == CardIds.Collectible.Neutral.AcolyteOfPain) return true;
+                    if (m.name == CardIds.Collectible.Warrior.FrothingBerserker) return true;
+                    if (m.name == CardIds.Collectible.Neutral.FlesheatingGhoul) return true;
+                    if (m.name == CardIds.Collectible.Neutral.BloodmageThalnos) return true;
+                    if (m.name == CardIds.Collectible.Hunter.Webspinner) return true;
+                    if (m.name == CardIds.Collectible.Paladin.TirionFordring) return true;
+                    if (m.name == CardIds.Collectible.Neutral.BaronRivendare) return true;
 
 
-                    //if (m.name == Chireiden.Silverfish.SimCard.manawraith) return true;
+                    //if (m.name == CardIds.Collectible.Neutral.ManaWraith) return true;
                     //buffing minions (attack with them last)
-                    if (m.name == Chireiden.Silverfish.SimCard.raidleader || m.name == Chireiden.Silverfish.SimCard.stormwindchampion || m.name == Chireiden.Silverfish.SimCard.timberwolf || m.name == Chireiden.Silverfish.SimCard.southseacaptain || m.name == Chireiden.Silverfish.SimCard.murlocwarleader || m.name == Chireiden.Silverfish.SimCard.grimscaleoracle || m.name == Chireiden.Silverfish.SimCard.leokk || m.name == Chireiden.Silverfish.SimCard.fallenhero || m.name == Chireiden.Silverfish.SimCard.warhorsetrainer) return true;
+                    if (m.name == CardIds.Collectible.Neutral.RaidLeader || m.name == CardIds.Collectible.Neutral.StormwindChampion || m.name == CardIds.Collectible.Hunter.TimberWolf || m.name == CardIds.Collectible.Neutral.SouthseaCaptain || m.name == CardIds.Collectible.Neutral.MurlocWarleader || m.name == CardIds.Collectible.Neutral.GrimscaleOracle || m.name == CardIds.NonCollectible.Hunter.Leokk || m.name == CardIds.Collectible.Mage.FallenHero || m.name == CardIds.Collectible.Paladin.WarhorseTrainer) return true;
 
 
-                    if (m.name == Chireiden.Silverfish.SimCard.scavenginghyena) hashyena = true;
+                    if (m.name == CardIds.Collectible.Hunter.ScavengingHyena) hashyena = true;
                     if (m.handcard.card.Race == 20) haspets++;
-                    if (m.name == Chireiden.Silverfish.SimCard.harvestgolem || m.name == Chireiden.Silverfish.SimCard.hauntedcreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == Chireiden.Silverfish.SimCard.nerubianegg || m.name == Chireiden.Silverfish.SimCard.savannahhighmane || m.name == Chireiden.Silverfish.SimCard.sludgebelcher || m.name == Chireiden.Silverfish.SimCard.cairnebloodhoof || m.name == Chireiden.Silverfish.SimCard.feugen || m.name == Chireiden.Silverfish.SimCard.stalagg || m.name == Chireiden.Silverfish.SimCard.thebeast) spawnminions = true;
+                    if (m.name == CardIds.Collectible.Neutral.HarvestGolem || m.name == CardIds.Collectible.Neutral.HauntedCreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == CardIds.Collectible.Neutral.NerubianEgg || m.name == CardIds.Collectible.Hunter.SavannahHighmane || m.name == CardIds.Collectible.Neutral.SludgeBelcher || m.name == CardIds.Collectible.Neutral.CairneBloodhoof || m.name == CardIds.Collectible.Neutral.Feugen || m.name == CardIds.Collectible.Neutral.Stalagg || m.name == CardIds.Collectible.Neutral.TheBeast) spawnminions = true;
                     
                 }
             }

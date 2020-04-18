@@ -38,7 +38,7 @@ namespace HREngine.Bots
             {
 				temp[i].extraParam = true;
                 if (temp[i].frozen) temp[i].extraParam = false;
-                if (temp[i].name == Chireiden.Silverfish.SimCard.frozenchampion && !temp[i].silenced)
+                if (temp[i].name == CardIds.NonCollectible.Neutral.FrozenChampion && !temp[i].silenced)
 				{
 					temp[i].extraParam = false;
 					if (i > 0) temp[i-1].extraParam = false;

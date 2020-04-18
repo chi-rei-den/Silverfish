@@ -29,9 +29,9 @@ namespace HREngine.Bots
 	{
 		//Choose One - Transform into a 5/3 with Stealth or a 3/5 with Taunt.
 
-        Chireiden.Silverfish.SimCard m53 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_101t);
-        Chireiden.Silverfish.SimCard m35 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_101t2);
-        Chireiden.Silverfish.SimCard m55 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_101t3);
+        Chireiden.Silverfish.SimCard m53 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken1;
+        Chireiden.Silverfish.SimCard m35 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken12;
+        Chireiden.Silverfish.SimCard m55 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken13;
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

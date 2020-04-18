@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Your hero is Immune this turn.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_850);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Rogue.Shadowblade;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

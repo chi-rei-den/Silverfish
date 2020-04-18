@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Transform into a +1/+1 and Stealth
 		
-        Chireiden.Silverfish.SimCard Stealth = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_042t2);
+        Chireiden.Silverfish.SimCard Stealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,4 +1,4 @@
-﻿using Triton.Game.Mapping;
+using Triton.Game.Mapping;
 
 namespace HREngine.Bots
 {
@@ -68,7 +68,7 @@ namespace HREngine.Bots
             this.immune = false;
             this.lifesteal = c.Lifesteal;
             this.poisonous = c.Poisonous;
-            this.cantAttackHeroes = (c.name == Chireiden.Silverfish.SimCard.foolsbane) ? true : false;
+            this.cantAttackHeroes = (c.name == CardIds.Collectible.Warrior.FoolsBane) ? true : false;
         }
 
         public string weaponToString()

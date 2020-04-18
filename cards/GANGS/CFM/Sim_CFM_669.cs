@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL && wasOwnCard != triggerEffectMinion.own)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.thecoin, triggerEffectMinion.own);
+                p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, triggerEffectMinion.own);
             }
         }
     }

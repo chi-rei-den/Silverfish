@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //
-        Chireiden.Silverfish.SimCard wcard = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_383t);
+        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Paladin.TirionFordring_AshbringerToken;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(wcard, ownplay);

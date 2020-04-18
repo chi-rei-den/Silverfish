@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System;
     using System.Text;
@@ -22,7 +22,7 @@
                 this.Id = q.Id;
                 this.questProgress = q.questProgress;
                 this.maxProgress = q.maxProgress;
-                if (Id == Chireiden.Silverfish.SimCard.UNG_067)
+                if (Id == CardIds.Collectible.Rogue.TheCavernsBelow)
                 {
                     this.mobsTurn.Clear();
                     foreach (var n in q.mobsTurn) this.mobsTurn.Add(n.Key, n.Value);
@@ -50,9 +50,9 @@
             {
                 switch (Id)
                 {
-                    case Chireiden.Silverfish.SimCard.UNG_934: if (m.taunt) questProgress++; break;
-                    case Chireiden.Silverfish.SimCard.UNG_920: if (m.handcard.card.cost == 1) questProgress++; break;
-                    case Chireiden.Silverfish.SimCard.UNG_067:                        
+                    case CardIds.Collectible.Warrior.FirePlumesHeart: if (m.taunt) questProgress++; break;
+                    case CardIds.Collectible.Hunter.TheMarshQueen: if (m.handcard.card.cost == 1) questProgress++; break;
+                    case CardIds.Collectible.Rogue.TheCavernsBelow:                        
                         if (mobsTurn.ContainsKey(m.name)) mobsTurn[m.name]++;
                         else mobsTurn.Add(m.name, 1);
                         int total = mobsTurn[m.name] + Questmanager.Instance.getPlayedCardFromHand(m.name);
@@ -65,9 +65,9 @@
             {
                 switch (Id)
                 {
-                    case Chireiden.Silverfish.SimCard.UNG_116: if (m.Angr >= 5) questProgress++; break;
-                    case Chireiden.Silverfish.SimCard.UNG_940: if (m.handcard.card.deathrattle) questProgress++; break;
-                    case Chireiden.Silverfish.SimCard.UNG_942: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) questProgress++; break;
+                    case CardIds.Collectible.Druid.JungleGiants: if (m.Angr >= 5) questProgress++; break;
+                    case CardIds.Collectible.Priest.AwakenTheMakers: if (m.handcard.card.deathrattle) questProgress++; break;
+                    case CardIds.Collectible.Shaman.UniteTheMurlocs: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) questProgress++; break;
                 }
             }
 
@@ -75,8 +75,8 @@
             {
                 switch (Id)
                 {
-                    case Chireiden.Silverfish.SimCard.UNG_954: if (target != null && target.own && !target.isHero) questProgress++; break;
-                    case Chireiden.Silverfish.SimCard.UNG_028: if (qId > 67) questProgress++; break;
+                    case CardIds.Collectible.Paladin.TheLastKaleidosaur: if (target != null && target.own && !target.isHero) questProgress++; break;
+                    case CardIds.Collectible.Mage.OpenTheWaygate: if (qId > 67) questProgress++; break;
                 }
             }
             
@@ -84,7 +84,7 @@
             {
                 switch (Id)
                 {
-                    case Chireiden.Silverfish.SimCard.UNG_829: questProgress += num; break;
+                    case CardIds.Collectible.Warlock.LakkariSacrifice: questProgress += num; break;
                 }
             }
 
@@ -92,15 +92,15 @@
             {
                 switch (Id)
                 {
-                    case Chireiden.Silverfish.SimCard.UNG_028: return Chireiden.Silverfish.SimCard.UNG_028t; //-Quest: Cast 6 spells that didn't start in your deck. Reward: Time Warp.
-                    case Chireiden.Silverfish.SimCard.UNG_067: return Chireiden.Silverfish.SimCard.UNG_067t1; //-Quest: Play four minions with the same name. Reward: Crystal Core.
-                    case Chireiden.Silverfish.SimCard.UNG_116: return Chireiden.Silverfish.SimCard.UNG_116; //-Quest: Summon 5 minions with 5 or more Attack. Reward: Barnabus.
-                    case Chireiden.Silverfish.SimCard.UNG_829: return Chireiden.Silverfish.SimCard.UNG_829t1; //-Quest: Discard 6 cards. Reward: Nether Portal.
-                    case Chireiden.Silverfish.SimCard.UNG_920: return Chireiden.Silverfish.SimCard.UNG_920t1; //-Quest: Play seven 1-Cost minions. Reward: Queen Carnassa.
-                    case Chireiden.Silverfish.SimCard.UNG_934: return Chireiden.Silverfish.SimCard.UNG_934t1; //-Quest: Play 7 Taunt minions. Reward: Sulfuras.
-                    case Chireiden.Silverfish.SimCard.UNG_940: return Chireiden.Silverfish.SimCard.UNG_940t8; //-Quest: Summon 7 Deathrattle minions. Reward: Amara, Warden of Hope.
-                    case Chireiden.Silverfish.SimCard.UNG_942: return Chireiden.Silverfish.SimCard.UNG_942t; //-Quest: Summon 10 Murlocs. Reward: Megafin.
-                    case Chireiden.Silverfish.SimCard.UNG_954: return Chireiden.Silverfish.SimCard.UNG_954t1; //-Quest: Cast 6 spells on your minions. Reward: Galvadon.
+                    case CardIds.Collectible.Mage.OpenTheWaygate: return CardIds.Collectible.Mage.OpenTheWaygatet; //-Quest: Cast 6 spells that didn't start in your deck. Reward: Time Warp.
+                    case CardIds.Collectible.Rogue.TheCavernsBelow: return CardIds.Collectible.Rogue.TheCavernsBelowt1; //-Quest: Play four minions with the same name. Reward: Crystal Core.
+                    case CardIds.Collectible.Druid.JungleGiants: return CardIds.Collectible.Druid.JungleGiants; //-Quest: Summon 5 minions with 5 or more Attack. Reward: Barnabus.
+                    case CardIds.Collectible.Warlock.LakkariSacrifice: return CardIds.Collectible.Warlock.LakkariSacrificet1; //-Quest: Discard 6 cards. Reward: Nether Portal.
+                    case CardIds.Collectible.Hunter.TheMarshQueen: return CardIds.Collectible.Hunter.TheMarshQueent1; //-Quest: Play seven 1-Cost minions. Reward: Queen Carnassa.
+                    case CardIds.Collectible.Warrior.FirePlumesHeart: return CardIds.Collectible.Warrior.FirePlumesHeartt1; //-Quest: Play 7 Taunt minions. Reward: Sulfuras.
+                    case CardIds.Collectible.Priest.AwakenTheMakers: return CardIds.Collectible.Priest.AwakenTheMakerst8; //-Quest: Summon 7 Deathrattle minions. Reward: Amara, Warden of Hope.
+                    case CardIds.Collectible.Shaman.UniteTheMurlocs: return CardIds.Collectible.Shaman.UniteTheMurlocst; //-Quest: Summon 10 Murlocs. Reward: Megafin.
+                    case CardIds.Collectible.Paladin.TheLastKaleidosaur: return CardIds.Collectible.Paladin.TheLastKaleidosaurt1; //-Quest: Cast 6 spells on your minions. Reward: Galvadon.
                 }
                 return Chireiden.Silverfish.SimCard.None;
             }

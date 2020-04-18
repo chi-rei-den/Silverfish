@@ -31,7 +31,7 @@ namespace HREngine.Bots
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_828p, ownplay); // Build-a-Beast
+            p.setNewHeroPower(CardIds.NonCollectible.Neutral.DeathstalkerRexxar_BuildABeast, ownplay); // Build-a-Beast
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 

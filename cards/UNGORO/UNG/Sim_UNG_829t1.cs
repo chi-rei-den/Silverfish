@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Open a permanent portal that summons 3/2 Imps.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_829t2); //Nether Portal
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.LakkariSacrifice_NetherPortalToken2; //Nether Portal
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

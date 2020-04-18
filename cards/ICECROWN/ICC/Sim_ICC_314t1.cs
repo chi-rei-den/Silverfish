@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: Summon every minion killed by this weapon.
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_314t1);
+        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Deathknight.TheLichKing_FrostmourneToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_110t), m.zonepos - 1, m.own);//4/5 Baine Bloodhoof
+            p.callKid(CardIds.NonCollectible.Neutral.CairneBloodhoof_BaineBloodhoofToken, m.zonepos - 1, m.own);//4/5 Baine Bloodhoof
         }
     }
 }

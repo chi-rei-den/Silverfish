@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Deal 5 damage. Draw 5 cards. Gain 5 Armor. Summon a 5/5 Ghoul.
 
-        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_085t); //Ghoul Infestor
+        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.UltimateInfestation_GhoulInfestorToken; //Ghoul Infestor
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

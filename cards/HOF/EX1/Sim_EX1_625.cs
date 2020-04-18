@@ -31,8 +31,8 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            Chireiden.Silverfish.SimCard newHeroPower = Chireiden.Silverfish.SimCard.EX1_625t; // Mind Spike
-            if ((ownplay ? p.ownHeroAblility.card.cardIDenum : p.enemyHeroAblility.card.cardIDenum) == Chireiden.Silverfish.SimCard.EX1_625t) newHeroPower = Chireiden.Silverfish.SimCard.EX1_625t2; // Mind Shatter
+            Chireiden.Silverfish.SimCard newHeroPower = CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken; // Mind Spike
+            if ((ownplay ? p.ownHeroAblility.card.cardIDenum : p.enemyHeroAblility.card.cardIDenum) == CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken) newHeroPower = CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken2; // Mind Shatter
             p.setNewHeroPower(newHeroPower, ownplay);
         }
     }

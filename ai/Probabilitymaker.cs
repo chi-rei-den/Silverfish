@@ -1,4 +1,4 @@
-﻿namespace HREngine.Bots
+namespace HREngine.Bots
 {
     using System;
     using System.Collections.Generic;
@@ -374,8 +374,8 @@
             foreach (var tmp in og)
             {
                 ownCardsOut.Add(tmp.Key, tmp.Value);
-                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_015) this.feugenDead = true;
-                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_014) this.stalaggDead = true;
+                if (tmp.Key == CardIds.Collectible.Neutral.Feugen) this.feugenDead = true;
+                if (tmp.Key == CardIds.Collectible.Neutral.Stalagg) this.stalaggDead = true;
             }
         }
         public void setEnemyCardsOut(Dictionary<Chireiden.Silverfish.SimCard, int> eg)
@@ -384,8 +384,8 @@
             foreach (var tmp in eg)
             {
                 enemyCardsOut.Add(tmp.Key, tmp.Value);
-                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_015) this.feugenDead = true;
-                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_014) this.stalaggDead = true;
+                if (tmp.Key == CardIds.Collectible.Neutral.Feugen) this.feugenDead = true;
+                if (tmp.Key == CardIds.Collectible.Neutral.Stalagg) this.stalaggDead = true;
             }
         }
 
@@ -445,12 +445,12 @@
             GraveYardItem OwnLastDiedMinion = new GraveYardItem(Chireiden.Silverfish.SimCard.None, -1, true);
             foreach (GraveYardItem ent in list)
             {
-                if (ent.cardid == Chireiden.Silverfish.SimCard.FP1_015)
+                if (ent.cardid == CardIds.Collectible.Neutral.Feugen)
                 {
                     this.feugenDead = true;
                 }
 
-                if (ent.cardid == Chireiden.Silverfish.SimCard.FP1_014)
+                if (ent.cardid == CardIds.Collectible.Neutral.Stalagg)
                 {
                     this.stalaggDead = true;
                 }
@@ -635,42 +635,42 @@
                 sec.canBe_avenge = false;
                 sec.canBe_sacredtrial = false;
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_554) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_554] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.SnakeTrap) && enemyCardsOut[CardIds.Collectible.Hunter.SnakeTrap] >= 2)
                 {
                     sec.canBe_snaketrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_609) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_609] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.Snipe) && enemyCardsOut[CardIds.Collectible.Hunter.Snipe] >= 2)
                 {
                     sec.canBe_snipe = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_610) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_610] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.ExplosiveTrap) && enemyCardsOut[CardIds.Collectible.Hunter.ExplosiveTrap] >= 2)
                 {
                     sec.canBe_explosive = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.AT_060) && enemyCardsOut[Chireiden.Silverfish.SimCard.AT_060] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.BearTrap) && enemyCardsOut[CardIds.Collectible.Hunter.BearTrap] >= 2)
                 {
                     sec.canBe_beartrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_611) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_611] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.FreezingTrap) && enemyCardsOut[CardIds.Collectible.Hunter.FreezingTrap] >= 2)
                 {
                     sec.canBe_freezing = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_533) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_533] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.Misdirection) && enemyCardsOut[CardIds.Collectible.Hunter.Misdirection] >= 2)
                 {
                     sec.canBe_missdirection = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.LOE_021) && enemyCardsOut[Chireiden.Silverfish.SimCard.LOE_021] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.DartTrap) && enemyCardsOut[CardIds.Collectible.Hunter.DartTrap] >= 2)
                 {
                     sec.canBe_darttrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.KAR_004) && enemyCardsOut[Chireiden.Silverfish.SimCard.KAR_004] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Hunter.CatTrick) && enemyCardsOut[CardIds.Collectible.Hunter.CatTrick] >= 2)
                 {
                     sec.canBe_cattrick = false;
                 }
@@ -695,42 +695,42 @@
                 sec.canBe_avenge = false;
                 sec.canBe_sacredtrial = false;
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_287) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_287] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.Counterspell) && enemyCardsOut[CardIds.Collectible.Mage.Counterspell] >= 2)
                 {
                     sec.canBe_counterspell = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_289) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_289] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.IceBarrier) && enemyCardsOut[CardIds.Collectible.Mage.IceBarrier] >= 2)
                 {
                     sec.canBe_icebarrier = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_295) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_295] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.IceBlock) && enemyCardsOut[CardIds.Collectible.Mage.IceBlock] >= 2)
                 {
                     sec.canBe_iceblock = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_294) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_294] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.MirrorEntity) && enemyCardsOut[CardIds.Collectible.Mage.MirrorEntity] >= 2)
                 {
                     sec.canBe_mirrorentity = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.tt_010) && enemyCardsOut[Chireiden.Silverfish.SimCard.tt_010] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.Spellbender) && enemyCardsOut[CardIds.Collectible.Mage.Spellbender] >= 2)
                 {
                     sec.canBe_spellbender = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_594) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_594] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.Vaporize) && enemyCardsOut[CardIds.Collectible.Mage.Vaporize] >= 2)
                 {
                     sec.canBe_vaporize = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.FP1_018) && enemyCardsOut[Chireiden.Silverfish.SimCard.FP1_018] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.Duplicate) && enemyCardsOut[CardIds.Collectible.Mage.Duplicate] >= 2)
                 {
                     sec.canBe_duplicate = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.AT_002) && enemyCardsOut[Chireiden.Silverfish.SimCard.AT_002] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Mage.Effigy) && enemyCardsOut[CardIds.Collectible.Mage.Effigy] >= 2)
                 {
                     sec.canBe_effigy = false;
                 }
@@ -756,32 +756,32 @@
                 sec.canBe_duplicate = false;
                 sec.canBe_effigy = false;
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_132) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_132] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.EyeForAnEye) && enemyCardsOut[CardIds.Collectible.Paladin.EyeForAnEye] >= 2)
                 {
                     sec.canBe_eyeforaneye = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_130) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_130] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.NobleSacrifice) && enemyCardsOut[CardIds.Collectible.Paladin.NobleSacrifice] >= 2)
                 {
                     sec.canBe_noblesacrifice = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_136) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_136] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.Redemption) && enemyCardsOut[CardIds.Collectible.Paladin.Redemption] >= 2)
                 {
                     sec.canBe_redemption = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_379) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_379] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.Repentance) && enemyCardsOut[CardIds.Collectible.Paladin.Repentance] >= 2)
                 {
                     sec.canBe_repentance = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.FP1_020) && enemyCardsOut[Chireiden.Silverfish.SimCard.FP1_020] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.Avenge) && enemyCardsOut[CardIds.Collectible.Paladin.Avenge] >= 2)
                 {
                     sec.canBe_avenge = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.LOE_027) && enemyCardsOut[Chireiden.Silverfish.SimCard.LOE_027] >= 2)
+                if (enemyCardsOut.ContainsKey(CardIds.Collectible.Paladin.SacredTrial) && enemyCardsOut[CardIds.Collectible.Paladin.SacredTrial] >= 2)
                 {
                     sec.canBe_sacredtrial = false;
                 }
@@ -915,20 +915,20 @@
                 {
                     switch (enemyMinionsDiedStep[0].cardIDenum)
                     {
-                        case Chireiden.Silverfish.SimCard.AT_019: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.AT_036: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.BRMC_87: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.EX1_110: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.EX1_534: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.EX1_556: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.FP1_002: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.FP1_007: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.FP1_012: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.GVG_096: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.GVG_105: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.GVG_114: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.LOE_050: redemption = false; effigy = false; break;
-                        case Chireiden.Silverfish.SimCard.LOE_089: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Warlock.Dreadsteed: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Rogue.Anubarak: redemption = false; effigy = false; break;
+                        case CardIds.NonCollectible.Neutral.MoiraBronzebeard2: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.CairneBloodhoof: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Hunter.SavannahHighmane: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.HarvestGolem: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.HauntedCreeper: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.NerubianEgg: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.SludgeBelcher: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.PilotedShredder: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.PilotedSkyGolem: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.SneedsOldShredder: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Druid.MountedRaptor: redemption = false; effigy = false; break;
+                        case CardIds.Collectible.Neutral.WobblingRunts: redemption = false; effigy = false; break;
                         default: redemption = true; effigy = true; break;
                     }
                 }
@@ -975,11 +975,11 @@
                     {
                         switch (id)
                         {
-                            case Chireiden.Silverfish.SimCard.AT_060:  //beartrap
+                            case CardIds.Collectible.Hunter.BearTrap:  //beartrap
                                 beartrap = true;
                                 missdirection = true;
                                 continue;
-                            case Chireiden.Silverfish.SimCard.EX1_610:  //explosivetrap
+                            case CardIds.Collectible.Hunter.ExplosiveTrap:  //explosivetrap
                                 if (enemySecretsOpenedStep.Count == 1)
                                 {
                                     missdirection = true;
@@ -990,24 +990,24 @@
                                     }
                                 }
                                 continue;
-                            case Chireiden.Silverfish.SimCard.EX1_533:  //misdirection
+                            case CardIds.Collectible.Hunter.Misdirection:  //misdirection
                                 missdirection = true;
                                 vaporize = false;
-                                if (enemySecretsOpenedStep.Contains(Chireiden.Silverfish.SimCard.EX1_554)) continue;
+                                if (enemySecretsOpenedStep.Contains(CardIds.Collectible.Hunter.SnakeTrap)) continue;
                                 int hpBalance = 0; //we need to know who has become the new target
                                 foreach (Minion m in p.enemyMinions) hpBalance += m.Hp;
                                 foreach (Minion m in old.enemyMinions) hpBalance -= m.Hp;
                                 if (hpBalance < 0) snaketrap = true;
                                 continue;
-                            case Chireiden.Silverfish.SimCard.EX1_611:  //freezingtrap
+                            case CardIds.Collectible.Hunter.FreezingTrap:  //freezingtrap
                                 freezing = true;
                                 vaporize = false;
                                 continue;
-                            case Chireiden.Silverfish.SimCard.EX1_594:   //vaporize
+                            case CardIds.Collectible.Mage.Vaporize:   //vaporize
                                 vaporize = true;
                                 freezing = false;
                                 continue;
-                            case Chireiden.Silverfish.SimCard.EX1_130:   //noblesacrifice
+                            case CardIds.Collectible.Paladin.NobleSacrifice:   //noblesacrifice
                                 noblesacrifice = true;
                                 snaketrap = true;
                                 vaporize = false;
@@ -1048,28 +1048,28 @@
             {
                 switch (id)
                 {
-                    case Chireiden.Silverfish.SimCard.AT_002: effigy = true; continue;
-                    case Chireiden.Silverfish.SimCard.AT_060: beartrap = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_130: noblesacrifice = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_132: eyeforaneye = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_136: redemption = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_287: counterspell = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_289: icebarrier = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_294: mirrorentity = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_295: iceblock = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_379: repentance = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_533: missdirection = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_554: snaketrap = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_594: vaporize = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_609: snipe = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_610: explosive = true; continue;
-                    case Chireiden.Silverfish.SimCard.EX1_611: freezing = true; continue;
-                    case Chireiden.Silverfish.SimCard.FP1_018: duplicate = true; continue;
-                    case Chireiden.Silverfish.SimCard.FP1_020: avenge = true; continue;
-                    case Chireiden.Silverfish.SimCard.LOE_021: darttrap = true; continue;
-                    case Chireiden.Silverfish.SimCard.LOE_027: sacredtrial = true; continue;
-                    case Chireiden.Silverfish.SimCard.tt_010: spellbender = true; continue;
-                    case Chireiden.Silverfish.SimCard.KAR_004: cattrick = true; continue;
+                    case CardIds.Collectible.Mage.Effigy: effigy = true; continue;
+                    case CardIds.Collectible.Hunter.BearTrap: beartrap = true; continue;
+                    case CardIds.Collectible.Paladin.NobleSacrifice: noblesacrifice = true; continue;
+                    case CardIds.Collectible.Paladin.EyeForAnEye: eyeforaneye = true; continue;
+                    case CardIds.Collectible.Paladin.Redemption: redemption = true; continue;
+                    case CardIds.Collectible.Mage.Counterspell: counterspell = true; continue;
+                    case CardIds.Collectible.Mage.IceBarrier: icebarrier = true; continue;
+                    case CardIds.Collectible.Mage.MirrorEntity: mirrorentity = true; continue;
+                    case CardIds.Collectible.Mage.IceBlock: iceblock = true; continue;
+                    case CardIds.Collectible.Paladin.Repentance: repentance = true; continue;
+                    case CardIds.Collectible.Hunter.Misdirection: missdirection = true; continue;
+                    case CardIds.Collectible.Hunter.SnakeTrap: snaketrap = true; continue;
+                    case CardIds.Collectible.Mage.Vaporize: vaporize = true; continue;
+                    case CardIds.Collectible.Hunter.Snipe: snipe = true; continue;
+                    case CardIds.Collectible.Hunter.ExplosiveTrap: explosive = true; continue;
+                    case CardIds.Collectible.Hunter.FreezingTrap: freezing = true; continue;
+                    case CardIds.Collectible.Mage.Duplicate: duplicate = true; continue;
+                    case CardIds.Collectible.Paladin.Avenge: avenge = true; continue;
+                    case CardIds.Collectible.Hunter.DartTrap: darttrap = true; continue;
+                    case CardIds.Collectible.Paladin.SacredTrial: sacredtrial = true; continue;
+                    case CardIds.Collectible.Mage.Spellbender: spellbender = true; continue;
+                    case CardIds.Collectible.Hunter.CatTrick: cattrick = true; continue;
                 }
             }
 

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a Jade Golem. Overload: (1)
 
-        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_717);
+        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.JadeClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
