@@ -64,15 +64,15 @@ namespace HREngine.Bots
         public Dictionary<Chireiden.Silverfish.SimCard, int> specialMinions = new Dictionary<Chireiden.Silverfish.SimCard, int>(); //minions with cardtext, but no battlecry
         public Dictionary<Chireiden.Silverfish.SimCard, int> ownSummonFromDeathrattle = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<Race, int> ClassRacePriorityWarloc;
-        Dictionary<Race, int> ClassRacePriorityHunter ;
-        Dictionary<Race, int> ClassRacePriorityMage = ;
-        Dictionary<Race, int> ClassRacePriorityShaman ;
-        Dictionary<Race, int> ClassRacePriorityDruid ;
-        Dictionary<Race, int> ClassRacePriorityPaladin;
-        Dictionary<Race, int> ClassRacePriorityPriest ;
-        Dictionary<Race, int> ClassRacePriorityRouge =;
-        Dictionary<Race, int> ClassRacePriorityWarrior;
+        Dictionary<Race, int> ClassRacePriorityWarloc = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityHunter = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityMage = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityShaman = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityDruid = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityPaladin = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityPriest = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityRouge = new Dictionary<Race, int>();
+        Dictionary<Race, int> ClassRacePriorityWarrior = new Dictionary<Race, int>();
 
         ComboBreaker cb;
         Hrtprozis prozis;

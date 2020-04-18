@@ -1,3 +1,4 @@
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -27,19 +28,15 @@ namespace HREngine.Bots
 {
 	class Sim_CFM_621t29 : SimTemplate //* Mystic Wool
 	{
-		// Transform all minions into 1/1 Sheep.
-		
-		private CardIds.NonCollectible.Neutral.Sheep = CardIds.NonCollectible.Neutral.Kazakus_Sheep;
-
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             foreach (Minion m in p.ownMinions)
             {
-				p.minionTransform(m, sheep);
+				p.minionTransform(m, CardIds.NonCollectible.Neutral.Kazakus_Sheep);
             }
             foreach (Minion m in p.enemyMinions)
             {
-				p.minionTransform(m, sheep);
+				p.minionTransform(m, CardIds.NonCollectible.Neutral.Kazakus_Sheep);
             }
         }
     }

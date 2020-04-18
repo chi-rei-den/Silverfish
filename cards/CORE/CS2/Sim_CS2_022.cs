@@ -1,3 +1,4 @@
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,15 +26,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_022 : SimTemplate//Polymorph
+    class Sim_CS2_022 : SimTemplate
     {
-
-        private CardIds.NonCollectible.Neutral.Sheep = CardIds.NonCollectible.Neutral.Sheep;
-
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.minionTransform(target, sheep);
+            p.minionTransform(target, CardIds.NonCollectible.Neutral.Sheep);
         }
-
     }
 }

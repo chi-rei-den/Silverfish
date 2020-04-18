@@ -1,3 +1,4 @@
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -25,17 +26,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_014 : SimTemplate //* stalagg
+	class Sim_FP1_014 : SimTemplate
 	{
-        //todesröcheln:/ ruft thaddius herbei, wenn feugen in diesem duell bereits gestorben ist.
-
-        CardIds.NonCollectible.Neutral.Thaddius = CardIds.NonCollectible.Neutral.Stalagg_ThaddiusToken;
-
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (p.feugenDead)
             {
-                p.callKid(thaddius, m.zonepos - 1, m.own);
+                p.callKid(CardIds.NonCollectible.Neutral.Stalagg_ThaddiusToken, m.zonepos - 1, m.own);
             }
         }
 	}
