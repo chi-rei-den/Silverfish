@@ -20,7 +20,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (m.handcard.card.type == Chireiden.Silverfish.SimCardtype.MOB && p.ownMinions.Count == 0) return 0;
+                if (m.handcard.card.Type == Chireiden.Silverfish.SimCardtype.MOB && p.ownMinions.Count == 0) return 0;
                 //allow it if you have biggamehunter
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {

@@ -51,7 +51,7 @@ namespace HREngine.Bots
                 switch (Id)
                 {
                     case CardIds.Collectible.Warrior.FirePlumesHeart: if (m.taunt) questProgress++; break;
-                    case CardIds.Collectible.Hunter.TheMarshQueen: if (m.handcard.card.cost == 1) questProgress++; break;
+                    case CardIds.Collectible.Hunter.TheMarshQueen: if (m.handcard.card.Cost == 1) questProgress++; break;
                     case CardIds.Collectible.Rogue.TheCavernsBelow:                        
                         if (mobsTurn.ContainsKey(m.name)) mobsTurn[m.name]++;
                         else mobsTurn.Add(m.name, 1);
@@ -159,7 +159,7 @@ namespace HREngine.Bots
         {
             nextMobName = Chireiden.Silverfish.SimCard.unknown;
             nextMobId = 0;
-            if (hc != null && hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+            if (hc != null && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
             {
                 nextMobName = hc.card.name;
                 nextMobId = hc.entity;

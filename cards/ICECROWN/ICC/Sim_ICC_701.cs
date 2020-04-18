@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards.ToArray())
                 {
-                    if (hc.manacost == 1 && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) p.owncards.Remove(hc);
+                    if (hc.manacost == 1 && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) p.owncards.Remove(hc);
                 }
                 p.renumHandCards(p.owncards);
             }

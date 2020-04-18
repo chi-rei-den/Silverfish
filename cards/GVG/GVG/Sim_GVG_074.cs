@@ -36,11 +36,11 @@ namespace HREngine.Bots
             {
                 if (p.enemySecretList.Count >= 1)
                 {
-                    if (p.enemyHeroStartClass == TAG_CLASS.HUNTER) p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.ExplosiveTrap);
-                    if (p.enemyHeroStartClass == TAG_CLASS.MAGE) p.ownSecretsIDList.Add(CardIds.Collectible.Mage.Vaporize);
-                    if (p.enemyHeroStartClass == TAG_CLASS.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
+                    if (p.enemyHeroStartClass == CardClass.HUNTER) p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.ExplosiveTrap);
+                    if (p.enemyHeroStartClass == CardClass.MAGE) p.ownSecretsIDList.Add(CardIds.Collectible.Mage.Vaporize);
+                    if (p.enemyHeroStartClass == CardClass.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
 
-                    if (p.enemyHeroStartClass != TAG_CLASS.HUNTER && p.enemyHeroStartClass != TAG_CLASS.MAGE && p.enemyHeroStartClass != TAG_CLASS.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
+                    if (p.enemyHeroStartClass != CardClass.HUNTER && p.enemyHeroStartClass != CardClass.MAGE && p.enemyHeroStartClass != CardClass.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
                     
                     p.enemySecretList.RemoveAt(0);
                 }

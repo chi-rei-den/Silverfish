@@ -572,11 +572,11 @@ namespace HREngine.Bots
             return false;
         }
 
-        public void setEnemySecretGuesses(Dictionary<int, TAG_CLASS> enemySecretList)
+        public void setEnemySecretGuesses(Dictionary<int, CardClass> enemySecretList)
         {
             List<SecretItem> newlist = new List<SecretItem>();
 
-            foreach (KeyValuePair<int, TAG_CLASS> eSec in enemySecretList)
+            foreach (KeyValuePair<int, CardClass> eSec in enemySecretList)
             {
                 if (eSec.Key >= 1000) continue;
                 Helpfunctions.Instance.logg("detect secret with id" + eSec.Key);
@@ -589,7 +589,7 @@ namespace HREngine.Bots
             this.enemySecrets.AddRange(newlist);
         }
 
-        public SecretItem getNewSecretGuessedItem(int entityid, TAG_CLASS SecClass)
+        public SecretItem getNewSecretGuessedItem(int entityid, CardClass SecClass)
         {
             foreach (SecretItem si in this.enemySecrets)
             {
@@ -598,15 +598,15 @@ namespace HREngine.Bots
 
             switch (SecClass)
             {
-                case TAG_CLASS.WARRIOR: break;
-                case TAG_CLASS.WARLOCK: break;
-                case TAG_CLASS.ROGUE: break;
-                case TAG_CLASS.SHAMAN: break;
-                case TAG_CLASS.PRIEST: break;
-                case TAG_CLASS.PALADIN: break;
-                case TAG_CLASS.MAGE: break;
-                case TAG_CLASS.HUNTER: break;
-                case TAG_CLASS.DRUID: break;
+                case CardClass.WARRIOR: break;
+                case CardClass.WARLOCK: break;
+                case CardClass.ROGUE: break;
+                case CardClass.SHAMAN: break;
+                case CardClass.PRIEST: break;
+                case CardClass.PALADIN: break;
+                case CardClass.MAGE: break;
+                case CardClass.HUNTER: break;
+                case CardClass.DRUID: break;
                 default:
                     Helpfunctions.Instance.ErrorLog("Problem is detected: undefined Secret class " + SecClass);
                     SecClass = Hrtprozis.Instance.heroEnumtoTagClass(Hrtprozis.Instance.enemyHeroname);
@@ -616,7 +616,7 @@ namespace HREngine.Bots
 
 
             SecretItem sec = new SecretItem { entityId = entityid };
-            if (SecClass == TAG_CLASS.HUNTER)
+            if (SecClass == CardClass.HUNTER)
             {
 
                 sec.canBe_counterspell = false;
@@ -677,7 +677,7 @@ namespace HREngine.Bots
 
             }
 
-            if (SecClass == TAG_CLASS.MAGE)
+            if (SecClass == CardClass.MAGE)
             {
                 sec.canBe_snaketrap = false;
                 sec.canBe_snipe = false;
@@ -736,7 +736,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (SecClass == TAG_CLASS.PALADIN)
+            if (SecClass == CardClass.PALADIN)
             {
                 sec.canBe_snaketrap = false;
                 sec.canBe_snipe = false;
@@ -871,7 +871,7 @@ namespace HREngine.Bots
                 {
                     Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(tmp.Key);
                     if (c.Secret) enemySecretsOpenedStep.Add(tmp.Key);
-                    else if (c.type == Chireiden.Silverfish.SimCardtype.MOB) enemyMinionsDiedStep.Add(c);
+                    else if (c.Type == Chireiden.Silverfish.SimCardtype.MOB) enemyMinionsDiedStep.Add(c);
                 }
             }
 
@@ -1019,7 +1019,7 @@ namespace HREngine.Bots
             }
             else if (doneMove.actionType == actionEnum.playcard)
             {
-                if (doneMove.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
+                if (doneMove.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
                 {
                     cattrick = true;
                     counterspell = true;

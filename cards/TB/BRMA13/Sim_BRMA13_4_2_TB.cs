@@ -31,35 +31,35 @@ namespace HREngine.Bots
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
-            TAG_CLASS opponentHeroClass = ownplay ? p.enemyHeroStartClass : p.ownHeroStartClass;
+            CardClass opponentHeroClass = ownplay ? p.enemyHeroStartClass : p.ownHeroStartClass;
 
             switch (opponentHeroClass)
             {
-                case TAG_CLASS.WARRIOR:
+                case CardClass.WARRIOR:
 					p.drawACard(CardIds.Collectible.Warrior.ShieldBlock, ownplay, true);
 					break;
-                case TAG_CLASS.WARLOCK:
+                case CardClass.WARLOCK:
 					p.drawACard(CardIds.Collectible.Warlock.BaneOfDoom, ownplay, true);
                     break;
-                case TAG_CLASS.ROGUE:
+                case CardClass.ROGUE:
 					p.drawACard(CardIds.Collectible.Rogue.Sprint, ownplay, true);
 					break;
-                case TAG_CLASS.SHAMAN:
+                case CardClass.SHAMAN:
 					p.drawACard(CardIds.Collectible.Shaman.FarSight, ownplay, true);
 					break;
-                case TAG_CLASS.PRIEST:
+                case CardClass.PRIEST:
 					p.drawACard(CardIds.Collectible.Priest.Thoughtsteal, ownplay, true);
 					break;
-                case TAG_CLASS.PALADIN:
+                case CardClass.PALADIN:
 					p.drawACard(CardIds.Collectible.Paladin.HammerOfWrath, ownplay, true);
 					break;
-                case TAG_CLASS.MAGE:
+                case CardClass.MAGE:
 					p.drawACard(CardIds.Collectible.Mage.FrostNova, ownplay, true);
 					break;
-                case TAG_CLASS.HUNTER:
+                case CardClass.HUNTER:
 					p.drawACard(CardIds.Collectible.Hunter.CobraShot, ownplay, true);
 					break;
-                case TAG_CLASS.DRUID:
+                case CardClass.DRUID:
 					p.drawACard(CardIds.Collectible.Druid.WildGrowth, ownplay, true);
                     break;
 				//default:

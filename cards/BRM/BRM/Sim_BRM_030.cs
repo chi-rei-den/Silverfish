@@ -31,43 +31,43 @@ namespace HREngine.Bots
 		
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
 		{
-            TAG_CLASS opponentHeroClass = (m.own) ? p.enemyHeroStartClass : p.ownHeroStartClass;
+            CardClass opponentHeroClass = (m.own) ? p.enemyHeroStartClass : p.ownHeroStartClass;
 
             switch (opponentHeroClass)
             {
-                case TAG_CLASS.WARRIOR:
+                case CardClass.WARRIOR:
 					p.drawACard(CardIds.Collectible.Warrior.ShieldBlock, m.own, true);
 					p.drawACard(CardIds.Collectible.Warrior.ShieldBlock, m.own, true);
 					break;
-                case TAG_CLASS.WARLOCK:
+                case CardClass.WARLOCK:
 					p.drawACard(CardIds.Collectible.Warlock.BaneOfDoom, m.own, true);
 					p.drawACard(CardIds.Collectible.Warlock.BaneOfDoom, m.own, true);
                     break;
-                case TAG_CLASS.ROGUE:
+                case CardClass.ROGUE:
 					p.drawACard(CardIds.Collectible.Rogue.Sprint, m.own, true);
 					p.drawACard(CardIds.Collectible.Rogue.Sprint, m.own, true);
 					break;
-                case TAG_CLASS.SHAMAN:
+                case CardClass.SHAMAN:
 					p.drawACard(CardIds.Collectible.Shaman.FarSight, m.own, true);
 					p.drawACard(CardIds.Collectible.Shaman.FarSight, m.own, true);
 					break;
-                case TAG_CLASS.PRIEST:
+                case CardClass.PRIEST:
 					p.drawACard(CardIds.Collectible.Priest.Thoughtsteal, m.own, true);
 					p.drawACard(CardIds.Collectible.Priest.Thoughtsteal, m.own, true);
 					break;
-                case TAG_CLASS.PALADIN:
+                case CardClass.PALADIN:
 					p.drawACard(CardIds.Collectible.Paladin.HammerOfWrath, m.own, true);
 					p.drawACard(CardIds.Collectible.Paladin.HammerOfWrath, m.own, true);
 					break;
-                case TAG_CLASS.MAGE:
+                case CardClass.MAGE:
 					p.drawACard(CardIds.Collectible.Mage.FrostNova, m.own, true);
 					p.drawACard(CardIds.Collectible.Mage.FrostNova, m.own, true);
 					break;
-                case TAG_CLASS.HUNTER:
+                case CardClass.HUNTER:
 					p.drawACard(CardIds.Collectible.Hunter.CobraShot, m.own, true);
 					p.drawACard(CardIds.Collectible.Hunter.CobraShot, m.own, true);
 					break;
-                case TAG_CLASS.DRUID:
+                case CardClass.DRUID:
 					p.drawACard(CardIds.Collectible.Druid.WildGrowth, m.own, true);
 					p.drawACard(CardIds.Collectible.Druid.WildGrowth, m.own, true);
                     break;

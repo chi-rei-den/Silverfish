@@ -33,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Handmanager.Handcard triggerhc)
         {
-            if (hc.card.battlecry && hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+            if (hc.card.battlecry && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
             {
                 hc.addattack++;
                 hc.addHp++;

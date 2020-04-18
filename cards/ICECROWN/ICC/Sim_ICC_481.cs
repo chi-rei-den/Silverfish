@@ -38,7 +38,7 @@ namespace HREngine.Bots
             List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                p.minionTransform(m, p.getRandomCardForManaMinion(m.handcard.card.cost + 2));
+                p.minionTransform(m, p.getRandomCardForManaMinion(m.handcard.card.Cost + 2));
             }
         }
     }

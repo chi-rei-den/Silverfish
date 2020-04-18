@@ -1134,20 +1134,20 @@ namespace HREngine.Bots
         }
 
 
-        public TAG_CLASS heroNametoClass(string s)
+        public CardClass heroNametoClass(string s)
         {
             switch (s)
             {
-                case "hunter": return TAG_CLASS.HUNTER;
-                case "priest": return TAG_CLASS.PRIEST;
-                case "druid": return TAG_CLASS.DRUID;
-                case "warlock": return TAG_CLASS.WARLOCK;
-                case "thief": return TAG_CLASS.ROGUE;
-                case "pala": return TAG_CLASS.PALADIN;
-                case "warrior": return TAG_CLASS.WARRIOR;
-                case "shaman": return TAG_CLASS.SHAMAN;
-                case "mage": return TAG_CLASS.MAGE;
-                default: return TAG_CLASS.INVALID;
+                case "hunter": return CardClass.HUNTER;
+                case "priest": return CardClass.PRIEST;
+                case "druid": return CardClass.DRUID;
+                case "warlock": return CardClass.WARLOCK;
+                case "thief": return CardClass.ROGUE;
+                case "pala": return CardClass.PALADIN;
+                case "warrior": return CardClass.WARRIOR;
+                case "shaman": return CardClass.SHAMAN;
+                case "mage": return CardClass.MAGE;
+                default: return CardClass.INVALID;
             }
         }
 

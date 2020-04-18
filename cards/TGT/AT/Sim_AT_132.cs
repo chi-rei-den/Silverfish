@@ -31,36 +31,36 @@ namespace HREngine.Bots
 		
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
 		{
-            TAG_CLASS HeroStartClass = (m.own) ? p.ownHeroStartClass : p.enemyHeroStartClass;
+            CardClass HeroStartClass = (m.own) ? p.ownHeroStartClass : p.enemyHeroStartClass;
 			Chireiden.Silverfish.SimCard tmp = Chireiden.Silverfish.SimCard.None;
 
             switch (HeroStartClass)
             {
-                case TAG_CLASS.WARRIOR:
+                case CardClass.WARRIOR:
 					tmp = CardIds.NonCollectible.Warrior.JusticarTrueheart_TankUp; //Tank Up!
 					break;
-                case TAG_CLASS.WARLOCK:
+                case CardClass.WARLOCK:
 					tmp = CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap; //Soul Tap
                     break;
-                case TAG_CLASS.ROGUE:
+                case CardClass.ROGUE:
 					tmp = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers; //Poisoned Daggers
 					break;
-                case TAG_CLASS.SHAMAN:
+                case CardClass.SHAMAN:
 					tmp = CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam; //Totemic Slam
 					break;
-                case TAG_CLASS.PRIEST:
+                case CardClass.PRIEST:
 					tmp = CardIds.NonCollectible.Priest.JusticarTrueheart_Heal; //Heal
 					break;
-                case TAG_CLASS.PALADIN:
+                case CardClass.PALADIN:
 					tmp = CardIds.NonCollectible.Paladin.JusticarTrueheart_TheSilverHand; //The Silver Hand
 					break;
-                case TAG_CLASS.MAGE:
+                case CardClass.MAGE:
 					tmp = CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2; //Fireblast Rank 2
 					break;
-                case TAG_CLASS.HUNTER:
+                case CardClass.HUNTER:
 					tmp = CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot; //Ballista Shot
 					break;
-                case TAG_CLASS.DRUID:
+                case CardClass.DRUID:
 					tmp = CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift; //Dire Shapeshift
                     break;
 				//default:

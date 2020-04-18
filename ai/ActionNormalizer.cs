@@ -114,14 +114,14 @@ namespace HREngine.Bots
                             {
                                 if (i != aoeEnNum)
                                 {
-                                    if (totemiccall && aa.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL) return;
+                                    if (totemiccall && aa.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) return;
                                     reorderedActions.RemoveAt(i);
                                     reorderedActions.Insert(aoeEnNum, aa);
                                     outOfPlace++;
                                 }
                                 aoeEnNum++;
                             }
-                            else if (rndBeforeDamageAll && aa.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL && penman.DamageRandomDatabase.ContainsKey(aa.card.card.name))
+                            else if (rndBeforeDamageAll && aa.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && penman.DamageRandomDatabase.ContainsKey(aa.card.card.name))
                             {
                                 damageRandom = true;
                                 Playfield tmp = new Playfield(tmpPlOld);
@@ -230,7 +230,7 @@ namespace HREngine.Bots
                             {
                                 if (p.ownMinions.Count > 6)
                                 {
-                                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) return false;
+                                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) return false;
                                 }
                                 actionFound = true;
                             }

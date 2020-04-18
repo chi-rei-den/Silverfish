@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 List<Handmanager.Handcard> temp2 = new List<Handmanager.Handcard>();
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) temp2.Add(hc);
+                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) temp2.Add(hc);
                 }
                 temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
                 foreach (Handmanager.Handcard mins in temp2)

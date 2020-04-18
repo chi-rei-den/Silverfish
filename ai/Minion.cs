@@ -35,7 +35,7 @@ namespace HREngine.Bots
         public int pID = 0;
 
         public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.unknown;
-        public TAG_CLASS cardClass = TAG_CLASS.INVALID;
+        public CardClass cardClass = CardClass.INVALID;
         public int synergy = 0;
         public Handmanager.Handcard handcard;
         public int entitiyID = -1;

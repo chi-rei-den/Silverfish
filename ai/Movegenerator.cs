@@ -40,7 +40,7 @@ namespace HREngine.Bots
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
                     int cardCost = hc.card.getManaCost(p, hc.manacost);
-                    if ((p.nextSpellThisTurnCostHealth && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.Race == TAG_RACE.MURLOC))
+                    if ((p.nextSpellThisTurnCostHealth && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.Race == TAG_RACE.MURLOC))
                     {
                         if (p.ownHero.Hp > cardCost || p.ownHero.immune) { }
                         else continue; // if not enough Hp
@@ -77,12 +77,12 @@ namespace HREngine.Bots
                                 }
                             }
                         }
-                        if (p.ownMinions.Count > 6 && (c.type == Chireiden.Silverfish.SimCardtype.MOB || hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)) continue;
+                        if (p.ownMinions.Count > 6 && (c.Type == Chireiden.Silverfish.SimCardtype.MOB || hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)) continue;
                         trgts = c.getTargetsForCard(p, p.isLethalCheck, true);
                         if (trgts.Count == 0) continue;
 
                         int cardplayPenality = 0;
-                        int bestplace = p.getBestPlace(c.type == Chireiden.Silverfish.SimCardtype.MOB ? c : hc.card, p.isLethalCheck);
+                        int bestplace = p.getBestPlace(c.Type == Chireiden.Silverfish.SimCardtype.MOB ? c : hc.card, p.isLethalCheck);
                         foreach (Minion trgt in trgts)
                         {
                             if (usePenalityManager) cardplayPenality = pen.getPlayCardPenality(c, trgt, p);

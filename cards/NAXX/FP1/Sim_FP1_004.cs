@@ -33,28 +33,28 @@ namespace HREngine.Bots
         {
             if (m.own)
             {
-                if (p.ownHeroStartClass == TAG_CLASS.MAGE)
+                if (p.ownHeroStartClass == CardClass.MAGE)
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Mage.IceBarrier);
                 }
-                if (p.ownHeroStartClass == TAG_CLASS.HUNTER)
+                if (p.ownHeroStartClass == CardClass.HUNTER)
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.SnakeTrap);
                 }
-                if (p.ownHeroStartClass == TAG_CLASS.PALADIN)
+                if (p.ownHeroStartClass == CardClass.PALADIN)
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
                 }
             }
             else
             {
-                if (p.enemyHeroStartClass == TAG_CLASS.MAGE || p.enemyHeroStartClass == TAG_CLASS.HUNTER || p.enemyHeroStartClass == TAG_CLASS.PALADIN)
+                if (p.enemyHeroStartClass == CardClass.MAGE || p.enemyHeroStartClass == CardClass.HUNTER || p.enemyHeroStartClass == CardClass.PALADIN)
                 {
                     if (p.enemySecretCount <= 4)
                     {
                         p.enemySecretCount++;
                         SecretItem si = Probabilitymaker.Instance.getNewSecretGuessedItem(p.getNextEntity(), p.ownHeroStartClass);
-                        if (p.enemyHeroStartClass == TAG_CLASS.PALADIN)
+                        if (p.enemyHeroStartClass == CardClass.PALADIN)
                         {
                             si.canBe_redemption = false;
                         }

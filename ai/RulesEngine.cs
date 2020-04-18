@@ -113,8 +113,8 @@ namespace HREngine.Bots
         Dictionary<TAG_RACE, List<int>> hcRaceRulesGame = new Dictionary<TAG_RACE, List<int>>();
         Dictionary<TAG_RACE, List<int>> hcRaceRulesTurn = new Dictionary<TAG_RACE, List<int>>();
         List<int> pfStateRulesGame = new List<int>();
-        Dictionary<TAG_CLASS, Dictionary<int, int>> RuleOwnClass = new Dictionary<TAG_CLASS, Dictionary<int, int>>();
-        Dictionary<TAG_CLASS, Dictionary<int, int>> RuleEnemyClass = new Dictionary<TAG_CLASS, Dictionary<int, int>>();
+        Dictionary<CardClass, Dictionary<int, int>> RuleOwnClass = new Dictionary<CardClass, Dictionary<int, int>>();
+        Dictionary<CardClass, Dictionary<int, int>> RuleEnemyClass = new Dictionary<CardClass, Dictionary<int, int>>();
         Dictionary<int, int> replacedRules = new Dictionary<int, int>();
         string pathToRules = "";
 
@@ -409,7 +409,7 @@ namespace HREngine.Bots
         {
             public param parameter = param.None;
             public int num = int.MinValue;
-            public TAG_CLASS hClass = TAG_CLASS.INVALID;
+            public CardClass hClass = CardClass.INVALID;
             public Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
             public int numCards = 0;
             public int bonus = 0;
@@ -430,7 +430,7 @@ namespace HREngine.Bots
                 this.cardID = cID;
                 this.parentRule = pRule;
             }
-            public Condition(param paramtr, TAG_CLASS hClas, string pRule)
+            public Condition(param paramtr, CardClass hClas, string pRule)
             {
                 this.parameter = paramtr;
                 this.hClass = hClas;
@@ -671,7 +671,7 @@ namespace HREngine.Bots
             return weight;
         }
 
-        public void setCardIdRulesGame(TAG_CLASS ohc, TAG_CLASS ehc)
+        public void setCardIdRulesGame(CardClass ohc, CardClass ehc)
         {
             CardIdRulesGame.Clear();
             CardIdRulesPlayGame.Clear();
@@ -692,11 +692,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(ohc) && RuleEnemyClass.ContainsKey(TAG_CLASS.ALL))
+            if (RuleOwnClass.ContainsKey(ohc) && RuleEnemyClass.ContainsKey(CardClass.ALL))
             {
                 foreach (int ruleNum in RuleOwnClass[ohc].Keys)
                 {
-                    if (RuleEnemyClass[TAG_CLASS.ALL].ContainsKey(ruleNum))
+                    if (RuleEnemyClass[CardClass.ALL].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -704,11 +704,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(TAG_CLASS.ALL) && RuleEnemyClass.ContainsKey(ehc))
+            if (RuleOwnClass.ContainsKey(CardClass.ALL) && RuleEnemyClass.ContainsKey(ehc))
             {
                 foreach (int ruleNum in RuleEnemyClass[ehc].Keys)
                 {
-                    if (RuleOwnClass[TAG_CLASS.ALL].ContainsKey(ruleNum))
+                    if (RuleOwnClass[CardClass.ALL].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -716,11 +716,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(TAG_CLASS.ALL) && RuleEnemyClass.ContainsKey(TAG_CLASS.ALL))
+            if (RuleOwnClass.ContainsKey(CardClass.ALL) && RuleEnemyClass.ContainsKey(CardClass.ALL))
             {
-                foreach (int ruleNum in RuleOwnClass[TAG_CLASS.ALL].Keys)
+                foreach (int ruleNum in RuleOwnClass[CardClass.ALL].Keys)
                 {
-                    if (RuleEnemyClass[TAG_CLASS.ALL].ContainsKey(ruleNum))
+                    if (RuleEnemyClass[CardClass.ALL].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -1023,10 +1023,10 @@ namespace HREngine.Bots
                     else heapOfRules.Add(r.Key, r.Value);
                 }
 
-                Dictionary<TAG_CLASS, int> equalOwnHeroes = new Dictionary<TAG_CLASS, int>();
-                Dictionary<TAG_CLASS, int> notequalOwnHeroes = new Dictionary<TAG_CLASS, int>();
-                Dictionary<TAG_CLASS, int> equalEnHeroes = new Dictionary<TAG_CLASS, int>();
-                Dictionary<TAG_CLASS, int> notequalEnHeroes = new Dictionary<TAG_CLASS, int>();
+                Dictionary<CardClass, int> equalOwnHeroes = new Dictionary<CardClass, int>();
+                Dictionary<CardClass, int> notequalOwnHeroes = new Dictionary<CardClass, int>();
+                Dictionary<CardClass, int> equalEnHeroes = new Dictionary<CardClass, int>();
+                Dictionary<CardClass, int> notequalEnHeroes = new Dictionary<CardClass, int>();
 
                 foreach (var r in heapOfRules)
                 {
@@ -1058,9 +1058,9 @@ namespace HREngine.Bots
                     }
                     if (equalOwnHeroes.Count > 0 || notequalOwnHeroes.Count > 0)
                     {
-                        foreach (TAG_CLASS hClass in Enum.GetValues(typeof(TAG_CLASS)))
+                        foreach (CardClass hClass in Enum.GetValues(typeof(CardClass)))
                         {
-                            if (hClass == TAG_CLASS.INVALID || hClass == TAG_CLASS.ALL) continue;
+                            if (hClass == CardClass.INVALID || hClass == CardClass.ALL) continue;
                             if (equalOwnHeroes.ContainsKey(hClass))
                             {
                                 if (equalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double own Hero class (equal): " + hClass);
@@ -1081,14 +1081,14 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleOwnClass.ContainsKey(TAG_CLASS.ALL)) RuleOwnClass[TAG_CLASS.ALL].Add(r.Key, 0); 
-                        else RuleOwnClass.Add(TAG_CLASS.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
+                        if (RuleOwnClass.ContainsKey(CardClass.ALL)) RuleOwnClass[CardClass.ALL].Add(r.Key, 0); 
+                        else RuleOwnClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                     if (equalEnHeroes.Count > 0 || notequalEnHeroes.Count > 0)
                     {
-                        foreach (TAG_CLASS hClass in Enum.GetValues(typeof(TAG_CLASS)))
+                        foreach (CardClass hClass in Enum.GetValues(typeof(CardClass)))
                         {
-                            if (hClass == TAG_CLASS.INVALID || hClass == TAG_CLASS.ALL) continue;
+                            if (hClass == CardClass.INVALID || hClass == CardClass.ALL) continue;
                             if (equalEnHeroes.ContainsKey(hClass))
                             {
                                 if (equalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double enemy Hero class (equal): " + hClass);
@@ -1109,8 +1109,8 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleEnemyClass.ContainsKey(TAG_CLASS.ALL)) RuleEnemyClass[TAG_CLASS.ALL].Add(r.Key, 0); 
-                        else RuleEnemyClass.Add(TAG_CLASS.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
+                        if (RuleEnemyClass.ContainsKey(CardClass.ALL)) RuleEnemyClass[CardClass.ALL].Add(r.Key, 0); 
+                        else RuleEnemyClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                 }
             }
@@ -1563,8 +1563,8 @@ namespace HREngine.Bots
                     }
                     break;
                 case 2:
-                    TAG_CLASS hClass = prozis.heroEnumtoTagClass(prozis.heroNametoEnum(pval.ToLower()));
-                    if (hClass == TAG_CLASS.INVALID)
+                    CardClass hClass = prozis.heroEnumtoTagClass(prozis.heroNametoEnum(pval.ToLower()));
+                    if (hClass == CardClass.INVALID)
                     {
                         condErr = "Wrong Hero Class: ";
                         returnRes = false;
@@ -1819,42 +1819,42 @@ namespace HREngine.Bots
 	                return false;
                 case param.ohc_minions_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_minions_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_minions_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_minions_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_spells_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_spells_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_spells_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_spells_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_secrets_equal:
@@ -1879,22 +1879,22 @@ namespace HREngine.Bots
                     return false;
                 case param.ohc_weapons_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_weapons_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_weapons_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_weapons_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_murlocs_equal:
@@ -2757,14 +2757,14 @@ namespace HREngine.Bots
                     if (p.enemyWeapon.card.cardIDenum != cond.cardID) return true;
                     return false;
                 case param.ownhero_equal: 
-                    if (cond.hClass == TAG_CLASS.ALL) return true;
+                    if (cond.hClass == CardClass.ALL) return true;
                     if (p.ownHeroStartClass == cond.hClass) return true;
                     return false;
                 case param.ownhero_notequal:
                     if (p.ownHeroStartClass != cond.hClass) return true;
                     return false;
                 case param.enhero_equal: 
-                    if (cond.hClass == TAG_CLASS.ALL) return true;
+                    if (cond.hClass == CardClass.ALL) return true;
                     if (p.enemyHeroStartClass == cond.hClass) return true;
                     return false;
                 case param.enhero_notequal:

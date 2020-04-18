@@ -31,7 +31,7 @@ namespace HREngine.Bots
 //    erhält jedes mal +2 angriff in diesem zug, wenn ihr einen zauber wirkt.
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (triggerEffectMinion.own == wasOwnCard && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 p.minionGetTempBuff(triggerEffectMinion, 2, 0);
             }

@@ -64,16 +64,16 @@ namespace HREngine.Bots
             _mulliganRules.Add(new Tuple<string, string>("True", "card.Entity.Cost >= 4 and card.Entity.Id != \"GVG_063\""));
 
             // Never keep Tracking.
-            _mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == TAG_CLASS.HUNTER", "card.Entity.Id == \"DS1_184\""));
+            _mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == CardClass.HUNTER", "card.Entity.Id == \"DS1_184\""));
 
             // Example rule for self.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == TAG_CLASS.MAGE", "card.Cost >= 5"));
+            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == CardClass.MAGE", "card.Cost >= 5"));
 
             // Example rule for opponents.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.OpponentClass == TAG_CLASS.MAGE", "card.Cost >= 3"));
+            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.OpponentClass == CardClass.MAGE", "card.Cost >= 3"));
 
             // Example rule for matchups.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.userClass == TAG_CLASS.HUNTER && mulliganData.OpponentClass == TAG_CLASS.DRUID", "card.Cost >= 2"));
+            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.userClass == CardClass.HUNTER && mulliganData.OpponentClass == CardClass.DRUID", "card.Cost >= 2"));
 
             bool concede = false;
             bool teststuff = false;
@@ -844,15 +844,15 @@ def Execute():
                             
                             await cardtoplay.Pickup();
 
-                            if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+                            if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
                             {
                                 await cardtoplay.UseAt(moveTodo.place);
                             }
-                            else if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) // This fixes perdition's blade
+                            else if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) // This fixes perdition's blade
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
-                            else if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
+                            else if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
@@ -884,7 +884,7 @@ def Execute():
 
                     await cardtoplay.Pickup();
 
-                    if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         await cardtoplay.UseAt(moveTodo.place);
                     }
@@ -1213,7 +1213,7 @@ def Execute():
                 // #1
                 foreach (var choice in data.Choices)
                 {
-                    if ((TAG_CLASS)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass1)
+                    if ((CardClass)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass1)
                     {
                         data.Selection = choice;
                         Log.InfoFormat(
@@ -1226,7 +1226,7 @@ def Execute():
                 // #2
                 foreach (var choice in data.Choices)
                 {
-                    if ((TAG_CLASS)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass2)
+                    if ((CardClass)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass2)
                     {
                         data.Selection = choice;
                         Log.InfoFormat(
@@ -1239,7 +1239,7 @@ def Execute():
                 // #3
                 foreach (var choice in data.Choices)
                 {
-                    if ((TAG_CLASS)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass3)
+                    if ((CardClass)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass3)
                     {
                         data.Selection = choice;
                         Log.InfoFormat(
@@ -1252,7 +1252,7 @@ def Execute():
                 // #4
                 foreach (var choice in data.Choices)
                 {
-                    if ((TAG_CLASS)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass4)
+                    if ((CardClass)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass4)
                     {
                         data.Selection = choice;
                         Log.InfoFormat(
@@ -1265,7 +1265,7 @@ def Execute():
                 // #5
                 foreach (var choice in data.Choices)
                 {
-                    if ((TAG_CLASS)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass5)
+                    if ((CardClass)choice.EntityDef.Class == DefaultRoutineSettings.Instance.ArenaPreferredClass5)
                     {
                         data.Selection = choice;
                         Log.InfoFormat(

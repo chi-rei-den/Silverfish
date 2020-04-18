@@ -276,8 +276,8 @@ as well as
             {
                 cards.Add(new CardIDEntity(mulliganData.Cards[i].Entity.Id, i));
             }
-            HeroEnum ownHeroClass = Hrtprozis.Instance.heroTAG_CLASSstringToEnum(mulliganData.UserClass.ToString());
-            HeroEnum enemyHeroClass = Hrtprozis.Instance.heroTAG_CLASSstringToEnum(mulliganData.OpponentClass.ToString());
+            HeroEnum ownHeroClass = Hrtprozis.Instance.heroCardClassstringToEnum(mulliganData.UserClass.ToString());
+            HeroEnum enemyHeroClass = Hrtprozis.Instance.heroCardClassstringToEnum(mulliganData.OpponentClass.ToString());
             
             int manaRule = 4;
             string MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, enemyHeroClass, 1);
@@ -304,15 +304,15 @@ as well as
                 Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(CardIDEntityC.id);
                 if (CardIDEntityC.hold == 0 && CardIDEntityC.holdByRule == 0)
                 {
-                    if (c.cost < manaRule)
+                    if (c.Cost < manaRule)
                     {
                         CardIDEntityC.holdByManarule = 2;
-                        CardIDEntityC.holdReason = joinSomeTxt("保留这些卡牌因为法力值消耗:", c.cost.ToString(), " 小于预定值:", manaRule.ToString());
+                        CardIDEntityC.holdReason = joinSomeTxt("保留这些卡牌因为法力值消耗:", c.Cost.ToString(), " 小于预定值:", manaRule.ToString());
                     }
                     else
                     {
                         CardIDEntityC.holdByManarule = -2;
-                        CardIDEntityC.holdReason = joinSomeTxt("弃掉这些卡牌因为法力值消耗:", c.cost.ToString(), " 没有小于预定值:", manaRule.ToString());
+                        CardIDEntityC.holdReason = joinSomeTxt("弃掉这些卡牌因为法力值消耗:", c.Cost.ToString(), " 没有小于预定值:", manaRule.ToString());
                     }
                 }
 

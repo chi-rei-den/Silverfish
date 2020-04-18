@@ -32,7 +32,7 @@ namespace HREngine.Bots
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if(target == null) return;
-            p.minionTransform(target, p.getRandomCardForManaMinion(target.handcard.card.cost + 1));
+            p.minionTransform(target, p.getRandomCardForManaMinion(target.handcard.card.Cost + 1));
         }
     }
 }

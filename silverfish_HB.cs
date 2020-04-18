@@ -32,7 +32,7 @@ namespace HREngine.Bots
         private List<Handmanager.Handcard> handCards = new List<Handmanager.Handcard>();
         private int ownPlayerController = 0;
         private List<string> ownSecretList = new List<string>();
-        private Dictionary<int, TAG_CLASS> enemySecretList = new Dictionary<int, TAG_CLASS>();
+        private Dictionary<int, CardClass> enemySecretList = new Dictionary<int, CardClass>();
         private Dictionary<int, IDEnumOwner> LurkersDB = new Dictionary<int, IDEnumOwner>();
         public Dictionary<string, Behavior> BehaviorDB = new Dictionary<string, Behavior>();
         public Dictionary<string, string> BehaviorPath = new Dictionary<string, string>();
@@ -412,14 +412,14 @@ namespace HREngine.Bots
             {
                 if (ent.IsHero == true)
                 {
-                    if (ent.ControllerId == 1 && this.ownHero.cardClass == TAG_CLASS.INVALID)
+                    if (ent.ControllerId == 1 && this.ownHero.cardClass == CardClass.INVALID)
                     {
-                        this.ownHero.cardClass = (TAG_CLASS)ent.Class;
+                        this.ownHero.cardClass = (CardClass)ent.Class;
 
                     }
-                    if (ent.ControllerId == 2 && this.enemyHero.cardClass == TAG_CLASS.INVALID)
+                    if (ent.ControllerId == 2 && this.enemyHero.cardClass == CardClass.INVALID)
                     {
-                        this.enemyHero.cardClass = (TAG_CLASS)ent.Class;
+                        this.enemyHero.cardClass = (CardClass)ent.Class;
 
                     }
                     if (ent.EntityId == enemyheroentity) enemHeroCard = ent;
@@ -440,7 +440,7 @@ namespace HREngine.Bots
             {
                 if (ent.IsSecret && ent.ControllerId != ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
                 {
-                    enemySecretList.Add(ent.EntityId, (TAG_CLASS)ent.Class);
+                    enemySecretList.Add(ent.EntityId, (CardClass)ent.Class);
                 }
                 if (ent.IsSecret && ent.ControllerId == ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
                 {

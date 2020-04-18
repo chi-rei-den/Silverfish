@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
                 foreach(Handmanager.Handcard hc in p.owncards.ToArray())
                 {
-                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON)
+                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON)
                     {
                         atkBuff += hc.card.Attack + hc.addattack;
                         hpBuff += hc.card.Durability + hc.addHp;

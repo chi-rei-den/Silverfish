@@ -170,7 +170,7 @@ namespace HREngine.Bots
                             else
                             {
                                 Chireiden.Silverfish.SimCard lolcrd = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd));
-                                if (lolcrd.type == Chireiden.Silverfish.SimCardtype.MOB)
+                                if (lolcrd.Type == Chireiden.Silverfish.SimCardtype.MOB)
                                 {
                                     if (this.combocardsTurn0Mobs.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
                                     {
@@ -182,7 +182,7 @@ namespace HREngine.Bots
                                     }
                                     this.combot0len++;
                                 }
-                                if (lolcrd.type == Chireiden.Silverfish.SimCardtype.WEAPON)
+                                if (lolcrd.Type == Chireiden.Silverfish.SimCardtype.WEAPON)
                                 {
                                     this.requiredWeapon = lolcrd.name;
                                 }

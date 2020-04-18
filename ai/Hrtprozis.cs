@@ -1,26 +1,10 @@
+using HearthDb;
+using HearthDb.Enums;
+using System;
+using System.Collections.Generic;
+
 namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-
-    public enum HeroEnum
-    {
-        None,
-        all,
-        druid,
-        hunter,
-        priest,
-        warlock,
-        thief,
-        pala,
-        warrior,
-        shaman,
-        mage,
-        lordjaraxxus,
-        ragnarosthefirelord,
-        hogger
-    }
-
     public class Hrtprozis
     {
         public int pId = 0;
@@ -62,8 +46,8 @@ namespace HREngine.Bots
 
         public HeroEnum heroname = HeroEnum.None, enemyHeroname = HeroEnum.None;
         public string heronameingame = "", enemyHeronameingame = "";
-        public TAG_CLASS ownHeroStartClass = TAG_CLASS.INVALID;
-        public TAG_CLASS enemyHeroStartClass = TAG_CLASS.INVALID;
+        public CardClass ownHeroStartClass = CardClass.INVALID;
+        public CardClass enemyHeroStartClass = CardClass.INVALID;
         public Chireiden.Silverfish.SimCard heroAbility;
         public bool ownAbilityisReady = false;
         public int ownHeroPowerCost = 2;
@@ -138,8 +122,8 @@ namespace HREngine.Bots
 
         public void clearAllNewGame()
         {
-            this.ownHeroStartClass = TAG_CLASS.INVALID;
-            this.enemyHeroStartClass = TAG_CLASS.INVALID;
+            this.ownHeroStartClass = CardClass.INVALID;
+            this.enemyHeroStartClass = CardClass.INVALID;
             this.setGameRule = false;
             this.clearAllRecalc();
         }
@@ -281,25 +265,25 @@ namespace HREngine.Bots
             }
         }
 
-        public TAG_CLASS heroEnumtoTagClass(HeroEnum he)
+        public CardClass heroEnumtoTagClass(HeroEnum he)
         {
             switch (he)
             {
-                case HeroEnum.druid: return TAG_CLASS.DRUID;
-                case HeroEnum.hunter: return TAG_CLASS.HUNTER;
-                case HeroEnum.mage: return TAG_CLASS.MAGE;
-                case HeroEnum.pala: return TAG_CLASS.PALADIN;
-                case HeroEnum.priest: return TAG_CLASS.PRIEST;
-                case HeroEnum.shaman: return TAG_CLASS.SHAMAN;
-                case HeroEnum.thief: return TAG_CLASS.ROGUE;
-                case HeroEnum.warlock: return TAG_CLASS.WARLOCK;
-                case HeroEnum.warrior: return TAG_CLASS.WARRIOR;
-                case HeroEnum.all: return TAG_CLASS.ALL;
-                default: return TAG_CLASS.INVALID;
+                case HeroEnum.druid: return CardClass.DRUID;
+                case HeroEnum.hunter: return CardClass.HUNTER;
+                case HeroEnum.mage: return CardClass.MAGE;
+                case HeroEnum.pala: return CardClass.PALADIN;
+                case HeroEnum.priest: return CardClass.PRIEST;
+                case HeroEnum.shaman: return CardClass.SHAMAN;
+                case HeroEnum.thief: return CardClass.ROGUE;
+                case HeroEnum.warlock: return CardClass.WARLOCK;
+                case HeroEnum.warrior: return CardClass.WARRIOR;
+                case HeroEnum.all: return CardClass.ALL;
+                default: return CardClass.INVALID;
             }
         }
 
-        public HeroEnum heroTAG_CLASSstringToEnum(string s)
+        public HeroEnum heroCardClassstringToEnum(string s)
         {
             switch (s)
             {
@@ -372,22 +356,22 @@ namespace HREngine.Bots
                 Chireiden.Silverfish.SimCard c;
                 foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
                 {
-                    c = CardDB.Instance.getCardDataFromID(cn.Key);
-                    if (!deckCardForCost.ContainsKey(c.cost)) deckCardForCost.Add(c.cost, c.cardIDenum);
+                    c = cn.Key;
+                    if (!deckCardForCost.ContainsKey(c.Cost)) deckCardForCost.Add(c.Cost, c);
                 }
             }
             if (deckCardForCost.ContainsKey(cost)) return deckCardForCost[cost];
             else return Chireiden.Silverfish.SimCard.None;
         }
 
-        public int numDeckCardsByTag(GAME_TAGs tag)
+        public int numDeckCardsByTag(GameTag tag)
         {
             switch (tag)
             {
-                case GAME_TAGs.TAUNT: if (numTauntCards > -1) return numTauntCards; break;
-                case GAME_TAGs.DIVINE_SHIELD: if (numDivineShieldCards > -1) return numDivineShieldCards; break;
-                case GAME_TAGs.LIFESTEAL: if (numLifestealCards > -1) return numLifestealCards; break;
-                case GAME_TAGs.WINDFURY: if (numWindfuryCards > -1) return numWindfuryCards; break;
+                case GameTag.TAUNT: if (numTauntCards > -1) return numTauntCards; break;
+                case GameTag.DIVINE_SHIELD: if (numDivineShieldCards > -1) return numDivineShieldCards; break;
+                case GameTag.LIFESTEAL: if (numLifestealCards > -1) return numLifestealCards; break;
+                case GameTag.WINDFURY: if (numWindfuryCards > -1) return numWindfuryCards; break;
             }
             numTauntCards = 0;
             numDivineShieldCards = 0;
@@ -427,7 +411,7 @@ namespace HREngine.Bots
             this.numOptionsPlayedThisTurn = optionsPlayedThisTurn;
         }
 
-        public void updateHeroStartClass(TAG_CLASS ownHSClass, TAG_CLASS enemyHSClass)
+        public void updateHeroStartClass(CardClass ownHSClass, CardClass enemyHSClass)
         {
             this.ownHeroStartClass = ownHSClass;
             this.enemyHeroStartClass = enemyHSClass;
@@ -445,7 +429,7 @@ namespace HREngine.Bots
                 this.ownHero = new Minion(hero);
                 this.heroname = this.heroNametoEnum(heron);
                 this.heronameingame = heron;
-                if (this.ownHeroStartClass == TAG_CLASS.INVALID) this.ownHeroStartClass = hero.cardClass;
+                if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.cardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
                 if (this.ownWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.ownHero.immuneWhileAttacking = true;
@@ -461,7 +445,7 @@ namespace HREngine.Bots
 
                 this.enemyHeroname = this.heroNametoEnum(heron);
                 this.enemyHeronameingame = heron;
-                if (this.enemyHeroStartClass == TAG_CLASS.INVALID) this.enemyHeroStartClass = enemyHero.cardClass;
+                if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.cardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
                 if (this.enemyWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.enemyHero.immuneWhileAttacking = true;

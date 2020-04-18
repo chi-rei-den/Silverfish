@@ -185,7 +185,7 @@ namespace HREngine.Bots
                 if (a.card.card.Combo && i > 0) wasCombo++;
                 if (a.target == null) continue;
                 //save spell for all classes
-                if (a.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL && (a.target.isHero && !a.target.own))
+                if (a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && (a.target.isHero && !a.target.own))
                 {
                     if (i == 0) firstSpellToEnHero = true;
                     retval -= 11;
@@ -254,7 +254,7 @@ namespace HREngine.Bots
             int bigMobsInHand = 0;
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     mobsInHand++;
                     if (hc.card.Attack + hc.addattack >= 3) bigMobsInHand++;

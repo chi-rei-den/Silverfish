@@ -34,18 +34,18 @@ namespace HREngine.Bots
         {
         }
 
-        private TAG_CLASS _arenaPreferredClass1;
-        private TAG_CLASS _arenaPreferredClass2;
-        private TAG_CLASS _arenaPreferredClass3;
-        private TAG_CLASS _arenaPreferredClass4;
-        private TAG_CLASS _arenaPreferredClass5;
+        private CardClass _arenaPreferredClass1;
+        private CardClass _arenaPreferredClass2;
+        private CardClass _arenaPreferredClass3;
+        private CardClass _arenaPreferredClass4;
+        private CardClass _arenaPreferredClass5;
         private string _defaultBehavior;
 
         /// <summary>
         /// The first hero choice for arena if present.
         /// </summary>
-        [DefaultValue(TAG_CLASS.HUNTER)]
-        public TAG_CLASS ArenaPreferredClass1
+        [DefaultValue(CardClass.HUNTER)]
+        public CardClass ArenaPreferredClass1
         {
             get { return _arenaPreferredClass1; }
             set
@@ -63,8 +63,8 @@ namespace HREngine.Bots
         /// <summary>
         /// The second hero choice for arena if present.
         /// </summary>
-        [DefaultValue(TAG_CLASS.WARLOCK)]
-        public TAG_CLASS ArenaPreferredClass2
+        [DefaultValue(CardClass.WARLOCK)]
+        public CardClass ArenaPreferredClass2
         {
             get { return _arenaPreferredClass2; }
             set
@@ -81,8 +81,8 @@ namespace HREngine.Bots
         /// <summary>
         /// The third hero choice for arena if present.
         /// </summary>
-        [DefaultValue(TAG_CLASS.PRIEST)]
-        public TAG_CLASS ArenaPreferredClass3
+        [DefaultValue(CardClass.PRIEST)]
+        public CardClass ArenaPreferredClass3
         {
             get { return _arenaPreferredClass3; }
             set
@@ -99,8 +99,8 @@ namespace HREngine.Bots
         /// <summary>
         /// The fourth hero choice for arena if present.
         /// </summary>
-        [DefaultValue(TAG_CLASS.ROGUE)]
-        public TAG_CLASS ArenaPreferredClass4
+        [DefaultValue(CardClass.ROGUE)]
+        public CardClass ArenaPreferredClass4
         {
             get { return _arenaPreferredClass4; }
             set
@@ -117,8 +117,8 @@ namespace HREngine.Bots
         /// <summary>
         /// The fifth hero choice for arena if present.
         /// </summary>
-        [DefaultValue(TAG_CLASS.WARRIOR)]
-        public TAG_CLASS ArenaPreferredClass5
+        [DefaultValue(CardClass.WARRIOR)]
+        public CardClass ArenaPreferredClass5
         {
             get { return _arenaPreferredClass5; }
             set
@@ -132,25 +132,25 @@ namespace HREngine.Bots
             }
         }
 
-        private ObservableCollection<TAG_CLASS> _allClasses;
+        private ObservableCollection<CardClass> _allClasses;
 
         /// <summary>All enum values for this type.</summary>
         [JsonIgnore]
-        public ObservableCollection<TAG_CLASS> AllClasses
+        public ObservableCollection<CardClass> AllClasses
         {
             get
             {
-                return _allClasses ?? (_allClasses = new ObservableCollection<TAG_CLASS>
+                return _allClasses ?? (_allClasses = new ObservableCollection<CardClass>
                 {
-                    TAG_CLASS.DRUID,
-                    TAG_CLASS.HUNTER,
-                    TAG_CLASS.MAGE,
-                    TAG_CLASS.PALADIN,
-                    TAG_CLASS.PRIEST,
-                    TAG_CLASS.ROGUE,
-                    TAG_CLASS.SHAMAN,
-                    TAG_CLASS.WARLOCK,
-                    TAG_CLASS.WARRIOR,
+                    CardClass.DRUID,
+                    CardClass.HUNTER,
+                    CardClass.MAGE,
+                    CardClass.PALADIN,
+                    CardClass.PRIEST,
+                    CardClass.ROGUE,
+                    CardClass.SHAMAN,
+                    CardClass.WARLOCK,
+                    CardClass.WARRIOR,
                 });
             }
         }

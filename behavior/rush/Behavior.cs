@@ -72,8 +72,8 @@ namespace HREngine.Bots
                 if (a.actionType != actionEnum.playcard) continue;
                 if (a.card.card.name == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.name == CardIds.Collectible.Druid.Innervate) usecoin++;
 
-                if(a.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
-                if (a.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == Chireiden.Silverfish.SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
+                if(a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
+                if (a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == Chireiden.Silverfish.SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
                 if(a.card.card.Secret) retval += 5;
             }
             if (usecoin > 0)
@@ -151,7 +151,7 @@ namespace HREngine.Bots
 
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     retval += hc.addattack + hc.addHp + hc.elemPoweredUp;
                 }

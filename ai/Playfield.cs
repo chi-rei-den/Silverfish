@@ -1,8 +1,10 @@
+using HearthDb;
+using HearthDb.Enums;
+using System;
+using System.Collections.Generic;
+
 namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-
     public struct triggerCounter
     {
         public int minionsGotHealed;
@@ -202,8 +204,8 @@ namespace HREngine.Bots
         public Minion enemyHero;
         public HeroEnum ownHeroName = HeroEnum.None;
         public HeroEnum enemyHeroName = HeroEnum.None;
-        public TAG_CLASS ownHeroStartClass = TAG_CLASS.INVALID;
-        public TAG_CLASS enemyHeroStartClass = TAG_CLASS.INVALID;
+        public CardClass ownHeroStartClass = CardClass.INVALID;
+        public CardClass enemyHeroStartClass = CardClass.INVALID;
 
         public Weapon ownWeapon = new Weapon();
         public Weapon enemyWeapon = new Weapon();
@@ -1453,7 +1455,7 @@ namespace HREngine.Bots
                                     continue;
                             }
                         }
-                        if (this.playactions[this.playactions.Count - 1].card != null && this.playactions[this.playactions.Count - 1].card.card.type == Chireiden.Silverfish.SimCardtype.MOB) retval++;
+                        if (this.playactions[this.playactions.Count - 1].card != null && this.playactions[this.playactions.Count - 1].card.card.Type == CardType.MINION) retval++;
                         retval += this.manaTurnEnd;
                     }
                 }
@@ -1494,7 +1496,7 @@ namespace HREngine.Bots
             }
         }
 
-        public int EnemyCardPlaying(TAG_CLASS enemyHeroStrtClass, int currmana, int cardcount, int playAroundProb, int pap2)
+        public int EnemyCardPlaying(CardClass enemyHeroStrtClass, int currmana, int cardcount, int playAroundProb, int pap2)
         {
             int mana = currmana;
             if (cardcount == 0) return currmana;
@@ -1508,7 +1510,7 @@ namespace HREngine.Bots
 
             if (mobscount >= 3) useAOE = true;
 
-            if (enemyHeroStrtClass == TAG_CLASS.WARRIOR)
+            if (enemyHeroStrtClass == CardClass.WARRIOR)
             {
                 bool usewhirlwind = true;
                 foreach (Minion m in this.enemyMinions)
@@ -1527,24 +1529,24 @@ namespace HREngine.Bots
 
             switch (enemyHeroStrtClass)
             {
-                case TAG_CLASS.MAGE:
+                case CardClass.MAGE:
                     mana = EnemyPlaysACard(CardIds.Collectible.Mage.Flamestrike, mana, playAroundProb, pap2);
                     mana = EnemyPlaysACard(CardIds.Collectible.Mage.Blizzard, mana, playAroundProb, pap2);
                     break;
-                case TAG_CLASS.HUNTER:
+                case CardClass.HUNTER:
                     mana = EnemyPlaysACard(CardIds.Collectible.Hunter.UnleashTheHounds, mana, playAroundProb, pap2);
                     break;
-                case TAG_CLASS.PRIEST:
+                case CardClass.PRIEST:
                     mana = EnemyPlaysACard(CardIds.Collectible.Priest.HolyNova, mana, playAroundProb, pap2);
                     break;
-                case TAG_CLASS.SHAMAN:
+                case CardClass.SHAMAN:
                     mana = EnemyPlaysACard(CardIds.Collectible.Shaman.LightningStorm, mana, playAroundProb, pap2);
                     mana = EnemyPlaysACard(CardIds.Collectible.Shaman.MaelstromPortal, mana, playAroundProb, pap2);
                     break;
-                case TAG_CLASS.PALADIN:
+                case CardClass.PALADIN:
                     mana = EnemyPlaysACard(CardIds.Collectible.Paladin.Consecration, mana, playAroundProb, pap2);
                     break;
-                case TAG_CLASS.DRUID:
+                case CardClass.DRUID:
                     mana = EnemyPlaysACard(CardIds.Collectible.Druid.Swipe, mana, playAroundProb, pap2);
                     break;
             }
@@ -1846,7 +1848,7 @@ namespace HREngine.Bots
         public int getBestPlace(Chireiden.Silverfish.SimCard card, bool lethal)
         {
             //we return the zonepos!
-            if (card.type != Chireiden.Silverfish.SimCardtype.MOB) return 1;
+            if (card.Type != Chireiden.Silverfish.SimCardtype.MOB) return 1;
             if (this.ownMinions.Count == 0) return 1;
             if (this.ownMinions.Count == 1)
             {
@@ -2286,29 +2288,29 @@ namespace HREngine.Bots
         {
             int ghd = 0;
             int ablilityDmg = 0;
-            switch (this.enemyHeroAblility.card.cardIDenum)
+            switch (this.enemyHeroAblility.card.CardId)
             {
                 //direct damage
                 case CardIds.NonCollectible.Hunter.SteadyShot: ablilityDmg += 2; break;
-                case CardIds.NonCollectible.Hunter.SteadyShot_H1: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Hunter.SteadyShot_SteadyShotHeroSkins1: ablilityDmg += 2; break;
                 case CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot: ablilityDmg += 3; break;
-                case CardIds.NonCollectible.Hunter.SteadyShot_H1_AT_132: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Hunter.BallistaShotHeroSkins1: ablilityDmg += 3; break;
                 case CardIds.NonCollectible.Neutral.FrostBlast: ablilityDmg += 2; break;
-                case CardIds.NonCollectible.Neutral.FrostBlastH: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Neutral.FrostBlastHeroic: ablilityDmg += 2; break;
                 case CardIds.NonCollectible.Neutral.NecroticAura: ablilityDmg += 3; break;
-                case CardIds.NonCollectible.Neutral.NecroticAuraH: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Neutral.NecroticAuraHeroic: ablilityDmg += 3; break;
                 case CardIds.NonCollectible.Mage.Fireblast: ablilityDmg += 1; break;
-                case CardIds.NonCollectible.Mage.Fireblast_H1: ablilityDmg += 1; break;
-                case CardIds.NonCollectible.Mage.Fireblast_H2: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Mage.Fireblast_FireblastHeroSkins1: ablilityDmg += 1; break;
+                case CardIds.NonCollectible.Mage.Fireblast_FireblastHeroSkins2: ablilityDmg += 1; break;
                 case CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken: ablilityDmg += 2; break;
                 case CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2: ablilityDmg += 2; break;
-                case CardIds.NonCollectible.Mage.Fireblast_H1_AT_132: ablilityDmg += 2; break;
-                case CardIds.NonCollectible.Mage.Fireblast_H2_AT_132: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Mage.FireblastRank2HeroSkins1: ablilityDmg += 2; break;
+                case CardIds.NonCollectible.Mage.FireblastRank2HeroSkins2: ablilityDmg += 2; break;
                 case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken: ablilityDmg += 2; break;
-                case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken2: ablilityDmg += 3; break;
+                case CardIds.NonCollectible.Priest.Shadowform_MindShatterToken: ablilityDmg += 3; break;
                 case CardIds.NonCollectible.Hunter.ShotgunBlast: ablilityDmg += 1; break;
                 case CardIds.NonCollectible.Neutral.UnbalancingStrike: ablilityDmg += 3; break;
-                case CardIds.NonCollectible.Neutral.UnbalancingStrikeH: ablilityDmg += 4; break;
+                case CardIds.NonCollectible.Neutral.UnbalancingStrikeHeroic: ablilityDmg += 4; break;
                 case CardIds.NonCollectible.Priest.ShadowreaperAnduin_Voidform: ablilityDmg += 2; break;
                 case CardIds.NonCollectible.Neutral.BloodreaverGuldan_SiphonLife: ablilityDmg += 3; break;
                 case CardIds.NonCollectible.Neutral.IcyTouchHeroic: ablilityDmg += 1; break;
@@ -2316,13 +2318,13 @@ namespace HREngine.Bots
                 case CardIds.NonCollectible.Neutral.IgniteManaHeroic: if (this.mana > 0) ablilityDmg += 10; break;
                 case CardIds.NonCollectible.Neutral.IgniteMana: if (this.mana > 0) ablilityDmg += 5; break;
                 case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower: if (this.ownMinions.Count < 1) ablilityDmg += 8; break;
-                case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPowerH: if (this.ownMinions.Count < 2) ablilityDmg += 8; break;
+                case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsects: if (this.ownMinions.Count < 2) ablilityDmg += 8; break;
                 case CardIds.NonCollectible.Neutral.BoomBotJrTavernBrawl: if (this.ownMinions.Count < 2) ablilityDmg += 1; break;
                 //equip weapon
                 case CardIds.NonCollectible.Neutral.Enraged: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
-                case CardIds.NonCollectible.Neutral.EnragedH: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 5; break;
+                case CardIds.NonCollectible.Neutral.EnragedHeroic: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 5; break;
                 case CardIds.NonCollectible.Rogue.DaggerMastery: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
-                case CardIds.NonCollectible.Rogue.DaggerMastery_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
+                case CardIds.NonCollectible.Rogue.DaggerMasteryHeroSkins1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 1; break;
                 case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) ghd += 2; break;
                 case CardIds.NonCollectible.Druid.Shapeshift: if (!this.enemyHero.frozen) ghd += 1; break;
                 case CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift: if (!this.enemyHero.frozen) ghd += 2; break;
@@ -2333,7 +2335,7 @@ namespace HREngine.Bots
             foreach (Minion m in this.enemyMinions)
             {
                 if (m.frozen) continue;
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     case CardIds.Collectible.Neutral.AncientWatcher: if (!m.silenced) continue; break;
                     case CardIds.NonCollectible.Neutral.BlackKnight: if (!m.silenced) continue; break;
@@ -3591,7 +3593,7 @@ namespace HREngine.Bots
         {
             Chireiden.Silverfish.SimCard c = hc.card;
             this.evaluatePenality += penality;
-            if (this.nextSpellThisTurnCostHealth && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (this.nextSpellThisTurnCostHealth && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 this.minionGetDamageOrHeal(this.ownHero, hc.card.getManaCost(this, hc.manacost));
                 doDmgTriggers();
@@ -3608,7 +3610,7 @@ namespace HREngine.Bots
 
             this.triggerCardsChanged(true);
 
-            if (c.type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (c.Type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 this.playedPreparation = false;
                 this.spellsplayedSinceRecalc++;
@@ -3669,13 +3671,13 @@ namespace HREngine.Bots
                 }
                 if (this.ownHero.entitiyID == newTarget) target = this.ownHero;
                 if (this.enemyHero.entitiyID == newTarget) target = this.enemyHero;
-                if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.type == Chireiden.Silverfish.SimCardtype.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
+                if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.Type == Chireiden.Silverfish.SimCardtype.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
                 hc.target = target;
             }
             if (newTarget != -2) // trigger spell-secrets!
             {
 
-                if (c.type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (c.Type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     if (this.ownMinions.Count < 7)
                     {
@@ -3692,7 +3694,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    if (this.lockandload > 0 && c.type == Chireiden.Silverfish.SimCardtype.SPELL)
+                    if (this.lockandload > 0 && c.Type == Chireiden.Silverfish.SimCardtype.SPELL)
                     {
                         for (int i = 1; i <= lockandload; i++)
                         {
@@ -3700,8 +3702,8 @@ namespace HREngine.Bots
                         }
                     }
                     c.sim_card.onCardPlay(this, true, target, choice);
-                    if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.type == Chireiden.Silverfish.SimCardtype.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
-                    else if (c.type == Chireiden.Silverfish.SimCardtype.WEAPON)
+                    if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.Type == Chireiden.Silverfish.SimCardtype.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
+                    else if (c.Type == Chireiden.Silverfish.SimCardtype.WEAPON)
                     {
                         this.ownWeapon.Angr += hc.addattack;
                         this.ownWeapon.Durability += hc.addHp;
@@ -3772,7 +3774,7 @@ namespace HREngine.Bots
             }
             if (newTarget != -2) // trigger spell-secrets!
             {
-                if (c.type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (c.Type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     //todo mob playing
                     //this.placeAmobSomewhere(hc, target, choice, position);
@@ -4894,7 +4896,7 @@ namespace HREngine.Bots
         {
             int triggered = 0;
             int retval = 0;
-            bool isSpell = (c.type == Chireiden.Silverfish.SimCardtype.SPELL);
+            bool isSpell = (c.Type == Chireiden.Silverfish.SimCardtype.SPELL);
             if (this.isOwnTurn && isSpell && this.enemySecretCount > 0) //actual secrets need a spell played!
             {
                 foreach (SecretItem si in this.enemySecretList)
@@ -6415,7 +6417,7 @@ namespace HREngine.Bots
                 {
                     hc = this.owncards[i];
                     c = hc.card;
-                    switch (c.type)
+                    switch (c.Type)
                     {
                         case Chireiden.Silverfish.SimCardtype.MOB:
                             cardValue = (c.Health + hc.addHp) * 2 + (c.Attack + hc.addattack) * 2 + c.rarity + hc.elemPoweredUp * 2;
@@ -6839,18 +6841,18 @@ namespace HREngine.Bots
                     foreach (Handmanager.Handcard hc in cards) hc.extraParam3 = true;
                     break;
                 case GAME_TAGs.Spell:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) hc.extraParam3 = true;
+                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) hc.extraParam3 = true;
                     break;
                 case GAME_TAGs.SECRET:
                     foreach (Handmanager.Handcard hc in cards) if (hc.card.Secret) hc.extraParam3 = true;
                     break;
                 case GAME_TAGs.Mob:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) hc.extraParam3 = true;
+                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) hc.extraParam3 = true;
                     break;
                 case GAME_TAGs.CARDRACE:
                     foreach (Handmanager.Handcard hc in cards)
                     {
-                        if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
+                        if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
                         {
                             if (race == TAG_RACE.INVALID) hc.extraParam3 = true;
                             else if (hc.card.Race == (int)race) hc.extraParam3 = true;
@@ -6879,7 +6881,7 @@ namespace HREngine.Bots
                     foreach (Handmanager.Handcard hc in cards) if (hc.card.Class == (int)ownHeroStartClass) hc.extraParam3 = true;
                     break;
                 case GAME_TAGs.Weapon:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) hc.extraParam3 = true;
+                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) hc.extraParam3 = true;
                     break;
             }
         }
@@ -7040,17 +7042,17 @@ namespace HREngine.Bots
                         }
                         continue;
                     case searchmode.searchLowestCost:
-                        if (m.handcard.card.cost < value)
+                        if (m.handcard.card.Cost < value)
                         {
                             ret = m;
-                            value = m.handcard.card.cost;
+                            value = m.handcard.card.Cost;
                         }
                         continue;
                     case searchmode.searchHighesCost:
-                        if (m.handcard.card.cost > value)
+                        if (m.handcard.card.Cost > value)
                         {
                             ret = m;
-                            value = m.handcard.card.cost;
+                            value = m.handcard.card.Cost;
                         }
                         continue;
                 }

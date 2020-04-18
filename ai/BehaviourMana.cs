@@ -51,7 +51,7 @@ namespace HREngine.Bots
         public override int getEnemyMinionValue(Minion m, Playfield p)
         {
             int retval = 0;
-            retval += m.handcard.card.cost;
+            retval += m.handcard.card.Cost;
             if (m.handcard.card.name == Chireiden.Silverfish.SimCard.unknown) retval = 4;
             return retval;
         }
