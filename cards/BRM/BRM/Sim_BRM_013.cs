@@ -35,7 +35,7 @@ namespace HREngine.Bots
             p.minionGetDamageOrHeal(target, dmg);
 			
 			int cardsCount = (ownplay) ? p.owncards.Count : p.enemyAnzCards;
-            if (cardsCount <= 0) p.drawACard(CardDB.cardIDEnum.None, ownplay);
+            if (cardsCount <= 0) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
 		}
 	}
 }

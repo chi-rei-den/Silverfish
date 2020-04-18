@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//After your hero attacks, summon two 1/1 Silver Hand Recruits.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_101t);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t);
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

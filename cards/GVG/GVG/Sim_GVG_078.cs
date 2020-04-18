@@ -32,8 +32,8 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardName.armorplating, false, true);
-            p.drawACard(CardDB.cardIDEnum.None, true, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.armorplating, false, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
         }
     }
 }

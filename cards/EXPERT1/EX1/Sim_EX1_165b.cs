@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //    +2 leben und spott/.
-        CardDB.Card bear = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_165t2);
+        Chireiden.Silverfish.SimCard bear = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_165t2);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

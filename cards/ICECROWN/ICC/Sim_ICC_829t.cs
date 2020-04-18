@@ -30,7 +30,7 @@ namespace HREngine.Bots
 		//Lifesteal
 		//Handled in minionAttacksMinion()
 
-		CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_829t);
+		Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_829t);
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

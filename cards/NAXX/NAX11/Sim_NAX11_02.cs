@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Deal 1 damage to all minions. If any die, summon a slime.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX11_03);//Fallout Slime
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX11_03);//Fallout Slime
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

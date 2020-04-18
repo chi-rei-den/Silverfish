@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: Summon every minion killed by this weapon.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_314t1);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_314t1);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_110t), m.zonepos - 1, m.own);//4/5 Baine Bloodhoof
+            p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_110t), m.zonepos - 1, m.own);//4/5 Baine Bloodhoof
         }
     }
 }

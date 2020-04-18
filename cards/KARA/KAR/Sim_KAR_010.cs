@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: If you're holding a Dragon, summon two 1/1 Whelps.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_010a);//Whelp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_010a);//Whelp
 		
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 				bool dragonInHand = false;
 				foreach (Handmanager.Handcard hc in p.owncards)
 				{
-					if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON)
+					if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON)
 					{
 						dragonInHand = true;
 						break;

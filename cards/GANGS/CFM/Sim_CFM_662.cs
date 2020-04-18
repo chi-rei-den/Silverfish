@@ -34,11 +34,11 @@ namespace HREngine.Bots
             int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             foreach (Minion m in p.ownMinions)
             {
-                if ((TAG_RACE)m.handcard.card.race != TAG_RACE.DRAGON) p.minionGetDamageOrHeal(m, dmg);
+                if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.DRAGON) p.minionGetDamageOrHeal(m, dmg);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if ((TAG_RACE)m.handcard.card.race != TAG_RACE.DRAGON) p.minionGetDamageOrHeal(m, dmg);
+                if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.DRAGON) p.minionGetDamageOrHeal(m, dmg);
             }
         }
     }

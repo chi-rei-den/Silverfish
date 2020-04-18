@@ -40,14 +40,14 @@
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
                     int cardCost = hc.card.getManaCost(p, hc.manacost);
-                    if ((p.nextSpellThisTurnCostHealth && hc.card.type == CardDB.cardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.race == TAG_RACE.MURLOC))
+                    if ((p.nextSpellThisTurnCostHealth && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.Race == TAG_RACE.MURLOC))
                     {
                         if (p.ownHero.Hp > cardCost || p.ownHero.immune) { }
                         else continue; // if not enough Hp
                     }
                     else if (p.mana < cardCost) continue; // if not enough manna
 
-                    CardDB.Card c = hc.card;
+                    Chireiden.Silverfish.SimCard c = hc.card;
                     cardNcost.Clear();
                     cardNcost.Append(c.name).Append(hc.manacost);
                     if (playedcards.Contains(cardNcost.ToString())) continue; // dont play the same card in one loop
@@ -65,7 +65,7 @@
                                 if (choiceDamageFound) break;
                                 for (int i = 1; i < 3; i++)
                                 {
-                                    CardDB.Card cTmp = pen.getChooseCard(hc.card, i); // do all choice
+                                    Chireiden.Silverfish.SimCard cTmp = pen.getChooseCard(hc.card, i); // do all choice
                                     if (pen.DamageTargetDatabase.ContainsKey(cTmp.name) || (p.anzOwnAuchenaiSoulpriest > 0 && pen.HealTargetDatabase.ContainsKey(cTmp.name)))
                                     {
                                         choice = i;
@@ -77,12 +77,12 @@
                                 }
                             }
                         }
-                        if (p.ownMinions.Count > 6 && (c.type == CardDB.cardtype.MOB || hc.card.type == CardDB.cardtype.MOB)) continue;
+                        if (p.ownMinions.Count > 6 && (c.type == Chireiden.Silverfish.SimCardtype.MOB || hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)) continue;
                         trgts = c.getTargetsForCard(p, p.isLethalCheck, true);
                         if (trgts.Count == 0) continue;
 
                         int cardplayPenality = 0;
-                        int bestplace = p.getBestPlace(c.type == CardDB.cardtype.MOB ? c : hc.card, p.isLethalCheck);
+                        int bestplace = p.getBestPlace(c.type == Chireiden.Silverfish.SimCardtype.MOB ? c : hc.card, p.isLethalCheck);
                         foreach (Minion trgt in trgts)
                         {
                             if (usePenalityManager) cardplayPenality = pen.getPlayCardPenality(c, trgt, p);
@@ -147,7 +147,7 @@
             {
                 if (p.ownAbilityReady && p.mana >= p.ownHeroAblility.card.getManaCost(p, p.ownHeroAblility.manacost)) // if ready and enough manna
                 {
-                    CardDB.Card c = p.ownHeroAblility.card;
+                    Chireiden.Silverfish.SimCard c = p.ownHeroAblility.card;
                     int isChoice = (c.choice) ? 1 : 0;
                     for (int choice = 0 + 1 * isChoice; choice < 1 + 2 * isChoice; choice++)
                     {
@@ -198,7 +198,7 @@
 			        bool onlyNotSpecial =(!isSpecial || (isSpecial && m.silenced)) && (!otherisSpecial || (otherisSpecial && mnn.silenced));
 			
 			        if(onlySpecial && (m.name != mnn.name)) continue; // different name -> take it
-                    if ((onlySpecial || onlyNotSpecial) && (mnn.Angr == m.Angr && mnn.Hp == m.Hp && mnn.divineshild == m.divineshild && mnn.taunt == m.taunt && mnn.poisonous == m.poisonous && mnn.lifesteal == m.lifesteal && m.handcard.card.isToken == mnn.handcard.card.isToken && mnn.handcard.card.race == m.handcard.card.race))
+                    if ((onlySpecial || onlyNotSpecial) && (mnn.Angr == m.Angr && mnn.Hp == m.Hp && mnn.divineshild == m.divineshild && mnn.taunt == m.taunt && mnn.poisonous == m.poisonous && mnn.lifesteal == m.lifesteal && m.handcard.card.isToken == mnn.handcard.card.isToken && mnn.handcard.card.Race == m.handcard.card.Race))
                     {
 				        goingtoadd = false;
 				        break;
@@ -244,7 +244,7 @@
             {
                 if (m.Angr > strongestAttack) strongestAttack = m.Angr;
                 if (m.taunt) return true;
-                if (m.name == CardDB.cardName.dancingswords || m.name == CardDB.cardName.deathlord) return true;
+                if (m.name == Chireiden.Silverfish.SimCard.dancingswords || m.name == Chireiden.Silverfish.SimCard.deathlord) return true;
             }
 
             int haspets = 0;
@@ -253,36 +253,36 @@
             bool spawnminions = false;
             foreach (Minion m in ownm)
             {
-                if (m.name == CardDB.cardName.cultmaster) return true;
-                if (m.name == CardDB.cardName.knifejuggler) hasJuggler = true;
+                if (m.name == Chireiden.Silverfish.SimCard.cultmaster) return true;
+                if (m.name == Chireiden.Silverfish.SimCard.knifejuggler) hasJuggler = true;
                 if (m.Ready && m.Angr >= 1)
                 {
                     if (m.AdjacentAngr >= 1) return true;//wolphalfa or flametongue is in play
-                    if (m.name == CardDB.cardName.northshirecleric) return true;
-                    if (m.name == CardDB.cardName.armorsmith) return true;
-                    if (m.name == CardDB.cardName.loothoarder) return true;
-                    //if (m.name == CardDB.cardName.madscientist) return true; // dont change the tactic
-                    if (m.name == CardDB.cardName.sylvanaswindrunner) return true;
-                    if (m.name == CardDB.cardName.darkcultist) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.northshirecleric) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.armorsmith) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.loothoarder) return true;
+                    //if (m.name == Chireiden.Silverfish.SimCard.madscientist) return true; // dont change the tactic
+                    if (m.name == Chireiden.Silverfish.SimCard.sylvanaswindrunner) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.darkcultist) return true;
                     if (m.ownBlessingOfWisdom >= 1) return true;
                     if (m.ownPowerWordGlory >= 1) return true;
-                    if (m.name == CardDB.cardName.acolyteofpain) return true;
-                    if (m.name == CardDB.cardName.frothingberserker) return true;
-                    if (m.name == CardDB.cardName.flesheatingghoul) return true;
-                    if (m.name == CardDB.cardName.bloodmagethalnos) return true;
-                    if (m.name == CardDB.cardName.webspinner) return true;
-                    if (m.name == CardDB.cardName.tirionfordring) return true;
-                    if (m.name == CardDB.cardName.baronrivendare) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.acolyteofpain) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.frothingberserker) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.flesheatingghoul) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.bloodmagethalnos) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.webspinner) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.tirionfordring) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.baronrivendare) return true;
 
 
-                    //if (m.name == CardDB.cardName.manawraith) return true;
+                    //if (m.name == Chireiden.Silverfish.SimCard.manawraith) return true;
                     //buffing minions (attack with them last)
-                    if (m.name == CardDB.cardName.raidleader || m.name == CardDB.cardName.stormwindchampion || m.name == CardDB.cardName.timberwolf || m.name == CardDB.cardName.southseacaptain || m.name == CardDB.cardName.murlocwarleader || m.name == CardDB.cardName.grimscaleoracle || m.name == CardDB.cardName.leokk || m.name == CardDB.cardName.fallenhero || m.name == CardDB.cardName.warhorsetrainer) return true;
+                    if (m.name == Chireiden.Silverfish.SimCard.raidleader || m.name == Chireiden.Silverfish.SimCard.stormwindchampion || m.name == Chireiden.Silverfish.SimCard.timberwolf || m.name == Chireiden.Silverfish.SimCard.southseacaptain || m.name == Chireiden.Silverfish.SimCard.murlocwarleader || m.name == Chireiden.Silverfish.SimCard.grimscaleoracle || m.name == Chireiden.Silverfish.SimCard.leokk || m.name == Chireiden.Silverfish.SimCard.fallenhero || m.name == Chireiden.Silverfish.SimCard.warhorsetrainer) return true;
 
 
-                    if (m.name == CardDB.cardName.scavenginghyena) hashyena = true;
-                    if (m.handcard.card.race == 20) haspets++;
-                    if (m.name == CardDB.cardName.harvestgolem || m.name == CardDB.cardName.hauntedcreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == CardDB.cardName.nerubianegg || m.name == CardDB.cardName.savannahhighmane || m.name == CardDB.cardName.sludgebelcher || m.name == CardDB.cardName.cairnebloodhoof || m.name == CardDB.cardName.feugen || m.name == CardDB.cardName.stalagg || m.name == CardDB.cardName.thebeast) spawnminions = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.scavenginghyena) hashyena = true;
+                    if (m.handcard.card.Race == 20) haspets++;
+                    if (m.name == Chireiden.Silverfish.SimCard.harvestgolem || m.name == Chireiden.Silverfish.SimCard.hauntedcreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == Chireiden.Silverfish.SimCard.nerubianegg || m.name == Chireiden.Silverfish.SimCard.savannahhighmane || m.name == Chireiden.Silverfish.SimCard.sludgebelcher || m.name == Chireiden.Silverfish.SimCard.cairnebloodhoof || m.name == Chireiden.Silverfish.SimCard.feugen || m.name == Chireiden.Silverfish.SimCard.stalagg || m.name == Chireiden.Silverfish.SimCard.thebeast) spawnminions = true;
                     
                 }
             }

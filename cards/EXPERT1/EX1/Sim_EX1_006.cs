@@ -36,17 +36,17 @@ namespace HREngine.Bots
                 List<Handmanager.Handcard> temp2 = new List<Handmanager.Handcard>();
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.type == CardDB.cardtype.MOB) temp2.Add(hc);
+                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) temp2.Add(hc);
                 }
                 temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
                 foreach (Handmanager.Handcard mins in temp2)
                 {
-                    CardDB.Card c = CardDB.Instance.getCardDataFromID(mins.card.cardIDenum);
+                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(mins.card.cardIDenum);
                     p.minionTransform(triggerEffectMinion, c);
                     triggerEffectMinion.playedThisTurn = false;
                     triggerEffectMinion.Ready = true;
                     p.removeCard(mins);
-                    p.drawACard(CardDB.cardName.alarmobot, true, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.alarmobot, true, true);
                     break;
                 }
                 return;

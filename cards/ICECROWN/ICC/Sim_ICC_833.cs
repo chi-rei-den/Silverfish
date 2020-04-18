@@ -29,11 +29,11 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon a 3/6 Water Elemental. Your Elementals have Lifesteal for the rest of the game.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_833t); //Water Elemental
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_833t); //Water Elemental
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.ICC_833h, ownplay); // Icy Touch
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_833h, ownplay); // Icy Touch
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
             

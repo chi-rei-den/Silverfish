@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_116 : SimTemplate //leeroyjenkins
 	{
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_116t);//whelp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_116t);//whelp
 //    ansturm/. kampfschrei:/ ruft zwei welplinge (1/1) für euren gegner herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

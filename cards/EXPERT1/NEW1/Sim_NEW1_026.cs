@@ -29,11 +29,11 @@ namespace HREngine.Bots
     {
         //Whenever you cast a spell, summon a 1/1 Violet Apprentice.
 
-        public CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NEW1_026t);
+        public Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_026t);
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (wasOwnCard == triggerEffectMinion.own && hc.card.type == CardDB.cardtype.SPELL)
+            if (wasOwnCard == triggerEffectMinion.own && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 p.callKid(card, triggerEffectMinion.zonepos, wasOwnCard);
             }

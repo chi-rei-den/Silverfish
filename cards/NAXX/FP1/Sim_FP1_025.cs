@@ -34,7 +34,7 @@ namespace HREngine.Bots
 		{
             bool own = target.own;
             int place = target.zonepos;
-            CardDB.Card d = target.handcard.card;
+            Chireiden.Silverfish.SimCard d = target.handcard.card;
             p.minionGetDestroyed(target);
             p.callKid(d, place, own);
 		}

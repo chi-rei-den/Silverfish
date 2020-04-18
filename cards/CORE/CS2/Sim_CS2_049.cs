@@ -29,25 +29,25 @@ namespace HREngine.Bots
     {
         //Hero Power: Summon a random Totem.
 
-        CardDB.Card searing = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_050);
-        CardDB.Card healing = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NEW1_009);
-        CardDB.Card wrathofair = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_052);
-        CardDB.Card stoneclaw = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_051);
+        Chireiden.Silverfish.SimCard searing = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_050);
+        Chireiden.Silverfish.SimCard healing = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NEW1_009);
+        Chireiden.Silverfish.SimCard wrathofair = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_052);
+        Chireiden.Silverfish.SimCard stoneclaw = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_051);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            CardDB.Card kid;
+            Chireiden.Silverfish.SimCard kid;
             int otherTotems = 0;
             bool wrath = false;
             foreach (Minion m in (ownplay) ? p.ownMinions : p.enemyMinions)
             {
                 switch (m.name)
                 {
-                    case CardDB.cardName.searingtotem: otherTotems++; continue;
-                    case CardDB.cardName.stoneclawtotem: otherTotems++; continue;
-                    case CardDB.cardName.healingtotem: otherTotems++; continue;
-                    case CardDB.cardName.wrathofairtotem: wrath = true; continue;
+                    case Chireiden.Silverfish.SimCard.searingtotem: otherTotems++; continue;
+                    case Chireiden.Silverfish.SimCard.stoneclawtotem: otherTotems++; continue;
+                    case Chireiden.Silverfish.SimCard.healingtotem: otherTotems++; continue;
+                    case Chireiden.Silverfish.SimCard.wrathofairtotem: wrath = true; continue;
                 }
             }
             if (p.isLethalCheck)

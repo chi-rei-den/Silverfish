@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Your Hero Power becomes 'Deal 2 damage.'
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_050);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_050);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.AT_050t, m.own); // Lightning Jolt
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.AT_050t, m.own); // Lightning Jolt
         }
     }
 }

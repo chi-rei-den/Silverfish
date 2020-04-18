@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.OG_006b, own.own); // The Tidal Hand
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.OG_006b, own.own); // The Tidal Hand
 		}
 	}
 }

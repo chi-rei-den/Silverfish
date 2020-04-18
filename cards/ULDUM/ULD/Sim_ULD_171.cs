@@ -33,7 +33,7 @@ public override void onCardPlay(Playfield p, bool ownplay, Minion target, int ch
 List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
 foreach (Minion t in temp)
 {
-if (t.handcard.card.race == 21) 
+if (t.handcard.card.Race == 21) 
 {
 p.minionGetBuffed(t, 2, 0);
 }

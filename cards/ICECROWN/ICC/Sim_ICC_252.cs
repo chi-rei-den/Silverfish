@@ -47,7 +47,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (frozen) p.drawACard(CardDB.cardIDEnum.None, m.own);
+            if (frozen) p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
         }
     }
 }

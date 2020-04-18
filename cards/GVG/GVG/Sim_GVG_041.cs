@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //   Choose One - Summon 5 Wisps; or Give a minion +5/+5 and Taunt.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_231);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_231);
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))

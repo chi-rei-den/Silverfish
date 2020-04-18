@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (triggerEffectMinion.own == wasOwnCard && hc.card.type == CardDB.cardtype.SPELL)
+            if (triggerEffectMinion.own == wasOwnCard && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 int pos = (wasOwnCard) ? p.ownMinions.Count : p.enemyMinions.Count;
                 p.callKid(p.getRandomCardForManaMinion(hc.manacost), pos, wasOwnCard);

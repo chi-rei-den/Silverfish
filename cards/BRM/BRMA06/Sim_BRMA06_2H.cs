@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 3/3 Flamewaker Acolyte.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRMA06_4H);//3/3Flamewaker Acolyte
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA06_4H);//3/3Flamewaker Acolyte
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

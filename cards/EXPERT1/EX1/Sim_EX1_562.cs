@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_EX1_562 : SimTemplate //onyxia
 	{
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_116t);//whelp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_116t);//whelp
 
 //    kampfschrei:/ ruft welplinge (1/1) herbei, bis eure seite des schlachtfelds voll ist.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

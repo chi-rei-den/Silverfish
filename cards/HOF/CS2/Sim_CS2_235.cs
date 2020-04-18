@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             for (int i = 0; i < minionsGotHealed; i++)
             {
-                p.drawACard(CardDB.cardIDEnum.None, triggerEffectMinion.own);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, triggerEffectMinion.own);
             }
         }
 	}

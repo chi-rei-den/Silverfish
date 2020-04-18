@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Has +2 Attack while you have Spell Damage.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_063);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_063);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

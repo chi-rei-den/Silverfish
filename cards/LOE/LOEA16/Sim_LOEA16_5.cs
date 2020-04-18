@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_LOEA16_5 : SimTemplate //* Mirror of Doom
 	{
 		// Fill your board with 3/3 Mummy Zombies.
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.LOEA16_5t);//Mummy Zombie
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOEA16_5t);//Mummy Zombie
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

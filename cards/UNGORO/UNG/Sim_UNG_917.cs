@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.UNG_917t1, ownplay); // Dinomancy
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.UNG_917t1, ownplay); // Dinomancy
         }
     }
 }

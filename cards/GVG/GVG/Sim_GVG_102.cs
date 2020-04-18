@@ -36,10 +36,10 @@ namespace HREngine.Bots
 
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL)
+                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
                 {
                     p.minionGetBuffed(own, 1, 1);
-                    p.drawACard(CardDB.cardName.armorplating, own.own, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.armorplating, own.own, true);
                     return;
                 }
             }

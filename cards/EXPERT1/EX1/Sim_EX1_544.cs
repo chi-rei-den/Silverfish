@@ -49,7 +49,7 @@ namespace HREngine.Bots
             {
                 p.ownSecretsIDList.Clear();
             }
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
         }
 
     }

@@ -39,7 +39,7 @@ namespace HREngine.Bots
                 Minion ownTemp = null;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race != TAG_RACE.MECHANICAL)
+                    if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.MECHANICAL)
                     {
                         if (ownTemp == null) ownTemp = m;
                         ownNonMechs++;
@@ -50,7 +50,7 @@ namespace HREngine.Bots
                 Minion enemyTemp = null;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race != TAG_RACE.MECHANICAL)
+                    if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.MECHANICAL)
                     {
                         if (enemyTemp == null) enemyTemp = m;
                         enemyNonMechs++;

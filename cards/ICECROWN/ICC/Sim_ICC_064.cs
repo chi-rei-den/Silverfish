@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Battlecry and Deathrattle: Deal 1 damage to all minions.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_064);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_064);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

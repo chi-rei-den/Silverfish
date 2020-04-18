@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 3/1 Nerubian.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX1_03);//3/1Nerubian
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX1_03);//3/1Nerubian
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

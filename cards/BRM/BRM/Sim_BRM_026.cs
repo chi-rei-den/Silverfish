@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a random 1-Cost minion for your opponent.
         		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_614t); //flameofazzinoth
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_614t); //flameofazzinoth
 
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

@@ -41,8 +41,8 @@ namespace HREngine.Bots
 
             if (choice == 2 || (p.ownFandralStaghelm > 0 && own.own))
             {
-                p.drawACard(CardDB.cardIDEnum.None, true);
-                p.drawACard(CardDB.cardIDEnum.None, false);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, true);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, false);
             }
         }
 

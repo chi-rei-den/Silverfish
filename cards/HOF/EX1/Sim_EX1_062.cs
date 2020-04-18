@@ -33,7 +33,7 @@ namespace HREngine.Bots
 		{
             foreach (Minion m in p.ownMinions)
             {
-                if (m.handcard.card.race == 14)
+                if (m.handcard.card.Race == 14)
                 {
                     if (m.entitiyID != own.entitiyID) p.minionGetBuffed(own, 1, 0);
                 }
@@ -41,7 +41,7 @@ namespace HREngine.Bots
 
             foreach (Minion m in p.enemyMinions)
             {
-                if (m.handcard.card.race == 14)
+                if (m.handcard.card.Race == 14)
                 {
                     if (m.entitiyID != own.entitiyID) p.minionGetBuffed(own, 1, 0);
                 }
@@ -50,7 +50,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (summonedMinion.handcard.card.race == 14)
+            if (summonedMinion.handcard.card.Race == 14)
             {
                 p.minionGetBuffed(triggerEffectMinion, 1, 0);
             }

@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_411 : SimTemplate//Gorehowl
     {
-        CardDB.Card wcard = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_411);
+        Chireiden.Silverfish.SimCard wcard = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_411);
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(wcard, ownplay);

@@ -31,7 +31,7 @@ namespace HREngine.Bots
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.ICC_830p, ownplay); // Voidform
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_830p, ownplay); // Voidform
             if (ownplay) p.ownHero.armor += 5;
             else p.enemyHero.armor += 5;
 

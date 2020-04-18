@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (own.own && p.prozis.getDeckCardsForCost(2) == CardDB.cardIDEnum.None) p.evaluatePenality -= 20;
+            if (own.own && p.prozis.getDeckCardsForCost(2) == Chireiden.Silverfish.SimCard.None) p.evaluatePenality -= 20;
         }
     }
 }

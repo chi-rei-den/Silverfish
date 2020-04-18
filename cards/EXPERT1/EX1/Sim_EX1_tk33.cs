@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Hero PowerSummon a 6/6 Infernal.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_tk34);//infernal
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_tk34);//infernal
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

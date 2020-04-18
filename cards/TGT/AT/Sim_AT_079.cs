@@ -33,15 +33,15 @@ namespace HREngine.Bots
         {
             if (own.own)
             {
-                List<CardDB.cardIDEnum> secrets = new List<CardDB.cardIDEnum>();
-                CardDB.Card c;
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> cid in p.prozis.turnDeck)
+                List<Chireiden.Silverfish.SimCard> secrets = new List<Chireiden.Silverfish.SimCard>();
+                Chireiden.Silverfish.SimCard c;
+                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = CardDB.Instance.getCardDataFromID(cid.Key);
                     if (c.Secret) secrets.Add(cid.Key);
                 }
 
-                foreach (CardDB.cardIDEnum cId in secrets)
+                foreach (Chireiden.Silverfish.SimCard cId in secrets)
                 {
                     if (p.ownSecretsIDList.Count < 5 && !p.ownSecretsIDList.Contains(cId)) p.ownSecretsIDList.Add(cId);
                 }

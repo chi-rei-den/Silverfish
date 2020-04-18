@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (own.own && p.prozis.getDeckCardsForCost(4) == CardDB.cardIDEnum.None)
+            if (own.own && p.prozis.getDeckCardsForCost(4) == Chireiden.Silverfish.SimCard.None)
             {
                 own.lifesteal = true;
                 own.taunt = true;

@@ -31,9 +31,9 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardName.arcanemissiles, m.own, true);
-            p.drawACard(CardDB.cardName.arcanemissiles, m.own, true);
-            p.drawACard(CardDB.cardName.arcanemissiles, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.arcanemissiles, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.arcanemissiles, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.arcanemissiles, m.own, true);
         }
 	}
 }

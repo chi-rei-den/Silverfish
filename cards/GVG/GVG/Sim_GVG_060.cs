@@ -35,7 +35,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if (m.name == CardDB.cardName.silverhandrecruit) p.minionGetBuffed(m, 2, 2);
+                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) p.minionGetBuffed(m, 2, 2);
             }
         }
 

@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_366 : SimTemplate //swordofjustice
 	{
-        CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_366);
+        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_366);
 
 //    jedes mal, wenn ihr einen diener herbeiruft, erhält dieser +1/+1 und diese waffe verliert 1 haltbarkeit.
 

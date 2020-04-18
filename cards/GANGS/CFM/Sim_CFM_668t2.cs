@@ -37,7 +37,7 @@ namespace HREngine.Bots
             int count = 0;
             foreach (Minion mnn in temp)
             {
-                if (mnn.name == CardDB.cardName.doppelgangster && m.entitiyID != mnn.entitiyID && mnn.playedThisTurn)
+                if (mnn.name == Chireiden.Silverfish.SimCard.doppelgangster && m.entitiyID != mnn.entitiyID && mnn.playedThisTurn)
                 {
                     mnn.setMinionToMinion(m);
                     count++;

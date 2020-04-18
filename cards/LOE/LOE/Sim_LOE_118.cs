@@ -30,7 +30,7 @@ namespace HREngine.Bots
 		//Double all damage dealt to your hero.
         //handled in getDamageOrHeal
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.LOE_118);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOE_118);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

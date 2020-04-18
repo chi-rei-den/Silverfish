@@ -35,7 +35,7 @@ namespace HREngine.Bots
 			p.allMinionsGetDestroyed();
             for (int i = 0; i < anz; i++)
             {
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
             }
 		}
 	}

@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardName.faeriedragon, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.faeriedragon, m.own, true);
         }
     }
 }

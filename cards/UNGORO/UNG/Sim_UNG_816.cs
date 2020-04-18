@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (p.anzOwnElementalsLastTurn > 0 && own.own) p.drawACard(CardDB.cardName.hotspringguardian, own.own, true);
+            if (p.anzOwnElementalsLastTurn > 0 && own.own) p.drawACard(Chireiden.Silverfish.SimCard.hotspringguardian, own.own, true);
         }
     }
 }

@@ -35,9 +35,9 @@ namespace HREngine.Bots
             foreach (Minion m in temp)
             {
                 if (m.entitiyID == own.entitiyID) continue;
-                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL)
+                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
 				{
-					p.drawACard(CardDB.cardName.spidertank, own.own, true);
+					p.drawACard(Chireiden.Silverfish.SimCard.spidertank, own.own, true);
 					break;
 				}
             }

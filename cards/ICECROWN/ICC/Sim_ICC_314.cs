@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 if (triggerEffectMinion.own)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, triggerEffectMinion.own, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, triggerEffectMinion.own, true);
                 }
                 else
                 {

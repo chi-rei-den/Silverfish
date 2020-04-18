@@ -7,9 +7,9 @@
     {
         public bool own;
         public int entity;
-        public CardDB.cardIDEnum cardid;
+        public Chireiden.Silverfish.SimCard cardid;
 
-        public GraveYardItem(CardDB.cardIDEnum id, int entity, bool own)
+        public GraveYardItem(Chireiden.Silverfish.SimCard id, int entity, bool own)
         {
             this.own = own;
             this.cardid = id;
@@ -340,8 +340,8 @@
 
     public class Probabilitymaker
     {
-        public Dictionary<CardDB.cardIDEnum, int> ownCardsOut = new Dictionary<CardDB.cardIDEnum, int>();
-        public Dictionary<CardDB.cardIDEnum, int> enemyCardsOut = new Dictionary<CardDB.cardIDEnum, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> ownCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> enemyCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>();
         List<GraveYardItem> graveyard = new List<GraveYardItem>();
         public List<GraveYardItem> turngraveyard = new List<GraveYardItem>();//MOBS only
         public List<GraveYardItem> turngraveyardAll = new List<GraveYardItem>();//All
@@ -366,7 +366,7 @@
 
         }
 
-        public void setOwnCardsOut(Dictionary<CardDB.cardIDEnum, int> og)
+        public void setOwnCardsOut(Dictionary<Chireiden.Silverfish.SimCard, int> og)
         {
             ownCardsOut.Clear();
             this.stalaggDead = false;
@@ -374,21 +374,21 @@
             foreach (var tmp in og)
             {
                 ownCardsOut.Add(tmp.Key, tmp.Value);
-                if (tmp.Key == CardDB.cardIDEnum.FP1_015) this.feugenDead = true;
-                if (tmp.Key == CardDB.cardIDEnum.FP1_014) this.stalaggDead = true;
+                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_015) this.feugenDead = true;
+                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_014) this.stalaggDead = true;
             }
         }
-        public void setEnemyCardsOut(Dictionary<CardDB.cardIDEnum, int> eg)
+        public void setEnemyCardsOut(Dictionary<Chireiden.Silverfish.SimCard, int> eg)
         {
             enemyCardsOut.Clear();
             foreach (var tmp in eg)
             {
                 enemyCardsOut.Add(tmp.Key, tmp.Value);
-                if (tmp.Key == CardDB.cardIDEnum.FP1_015) this.feugenDead = true;
-                if (tmp.Key == CardDB.cardIDEnum.FP1_014) this.stalaggDead = true;
+                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_015) this.feugenDead = true;
+                if (tmp.Key == Chireiden.Silverfish.SimCard.FP1_014) this.stalaggDead = true;
             }
         }
-        
+
         public void printTurnGraveYard()
         {
             /*string g = "";
@@ -442,15 +442,15 @@
             this.turngraveyard.Clear();
             this.turngraveyardAll.Clear();
 
-            GraveYardItem OwnLastDiedMinion = new GraveYardItem(CardDB.cardIDEnum.None, -1, true);
+            GraveYardItem OwnLastDiedMinion = new GraveYardItem(Chireiden.Silverfish.SimCard.None, -1, true);
             foreach (GraveYardItem ent in list)
             {
-                if (ent.cardid == CardDB.cardIDEnum.FP1_015)
+                if (ent.cardid == Chireiden.Silverfish.SimCard.FP1_015)
                 {
                     this.feugenDead = true;
                 }
 
-                if (ent.cardid == CardDB.cardIDEnum.FP1_014)
+                if (ent.cardid == Chireiden.Silverfish.SimCard.FP1_014)
                 {
                     this.stalaggDead = true;
                 }
@@ -468,13 +468,13 @@
 
                 if (!found)
                 {
-                    if (CardDB.Instance.getCardDataFromID(ent.cardid).type == CardDB.cardtype.MOB)
+                    if (CardDB.Instance.getCardDataFromID(ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         this.turngraveyard.Add(ent);
                     }
                     this.turngraveyardAll.Add(ent);
                 }
-                if (ent.own && CardDB.Instance.getCardDataFromID(ent.cardid).type == CardDB.cardtype.MOB)
+                if (ent.own && CardDB.Instance.getCardDataFromID(ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     OwnLastDiedMinion = ent;
                 }
@@ -490,7 +490,7 @@
             this.turngraveyardAll.AddRange(listAll);
         }
 
-        public bool hasEnemyThisCardInDeck(CardDB.cardIDEnum cardid)
+        public bool hasEnemyThisCardInDeck(Chireiden.Silverfish.SimCard cardid)
         {
             if (this.enemyCardsOut.ContainsKey(cardid))
             {
@@ -504,10 +504,10 @@
             return true;
         }
 
-        public int anzCardsInDeck(CardDB.cardIDEnum cardid)
+        public int anzCardsInDeck(Chireiden.Silverfish.SimCard cardid)
         {
             int ret = 2;
-            CardDB.Card c = CardDB.Instance.getCardDataFromID(cardid);
+            Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(cardid);
             if (c.rarity == 5) ret = 1;//you can have only one rare;
 
             if (this.enemyCardsOut.ContainsKey(cardid))
@@ -526,12 +526,12 @@
         public void printGraveyards()
         {
             string og = "og: ";
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> e in this.ownCardsOut)
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.ownCardsOut)
             {
                 og += e.Key + "," + e.Value + ";";
             }
             string eg = "eg: ";
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> e in this.enemyCardsOut)
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.enemyCardsOut)
             {
                 eg += e.Key + "," + e.Value + ";";
             }
@@ -539,7 +539,7 @@
             Helpfunctions.Instance.logg(eg);
         }
 
-        public int getProbOfEnemyHavingCardInHand(CardDB.cardIDEnum cardid, int handsize, int decksize)
+        public int getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard cardid, int handsize, int decksize)
         {
             //calculates probability \in [0,...,100]
 
@@ -563,7 +563,7 @@
             return (int)(100.0 * retval);
         }
 
-        public bool hasCardinGraveyard(CardDB.cardIDEnum cardid)
+        public bool hasCardinGraveyard(Chireiden.Silverfish.SimCard cardid)
         {
             foreach (GraveYardItem gyi in this.graveyard)
             {
@@ -635,42 +635,42 @@
                 sec.canBe_avenge = false;
                 sec.canBe_sacredtrial = false;
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_554) && enemyCardsOut[CardDB.cardIDEnum.EX1_554] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_554) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_554] >= 2)
                 {
                     sec.canBe_snaketrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_609) && enemyCardsOut[CardDB.cardIDEnum.EX1_609] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_609) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_609] >= 2)
                 {
                     sec.canBe_snipe = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_610) && enemyCardsOut[CardDB.cardIDEnum.EX1_610] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_610) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_610] >= 2)
                 {
                     sec.canBe_explosive = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.AT_060) && enemyCardsOut[CardDB.cardIDEnum.AT_060] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.AT_060) && enemyCardsOut[Chireiden.Silverfish.SimCard.AT_060] >= 2)
                 {
                     sec.canBe_beartrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_611) && enemyCardsOut[CardDB.cardIDEnum.EX1_611] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_611) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_611] >= 2)
                 {
                     sec.canBe_freezing = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_533) && enemyCardsOut[CardDB.cardIDEnum.EX1_533] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_533) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_533] >= 2)
                 {
                     sec.canBe_missdirection = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.LOE_021) && enemyCardsOut[CardDB.cardIDEnum.LOE_021] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.LOE_021) && enemyCardsOut[Chireiden.Silverfish.SimCard.LOE_021] >= 2)
                 {
                     sec.canBe_darttrap = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.KAR_004) && enemyCardsOut[CardDB.cardIDEnum.KAR_004] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.KAR_004) && enemyCardsOut[Chireiden.Silverfish.SimCard.KAR_004] >= 2)
                 {
                     sec.canBe_cattrick = false;
                 }
@@ -695,42 +695,42 @@
                 sec.canBe_avenge = false;
                 sec.canBe_sacredtrial = false;
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_287) && enemyCardsOut[CardDB.cardIDEnum.EX1_287] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_287) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_287] >= 2)
                 {
                     sec.canBe_counterspell = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_289) && enemyCardsOut[CardDB.cardIDEnum.EX1_289] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_289) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_289] >= 2)
                 {
                     sec.canBe_icebarrier = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_295) && enemyCardsOut[CardDB.cardIDEnum.EX1_295] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_295) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_295] >= 2)
                 {
                     sec.canBe_iceblock = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_294) && enemyCardsOut[CardDB.cardIDEnum.EX1_294] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_294) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_294] >= 2)
                 {
                     sec.canBe_mirrorentity = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.tt_010) && enemyCardsOut[CardDB.cardIDEnum.tt_010] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.tt_010) && enemyCardsOut[Chireiden.Silverfish.SimCard.tt_010] >= 2)
                 {
                     sec.canBe_spellbender = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_594) && enemyCardsOut[CardDB.cardIDEnum.EX1_594] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_594) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_594] >= 2)
                 {
                     sec.canBe_vaporize = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.FP1_018) && enemyCardsOut[CardDB.cardIDEnum.FP1_018] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.FP1_018) && enemyCardsOut[Chireiden.Silverfish.SimCard.FP1_018] >= 2)
                 {
                     sec.canBe_duplicate = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.AT_002) && enemyCardsOut[CardDB.cardIDEnum.AT_002] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.AT_002) && enemyCardsOut[Chireiden.Silverfish.SimCard.AT_002] >= 2)
                 {
                     sec.canBe_effigy = false;
                 }
@@ -756,32 +756,32 @@
                 sec.canBe_duplicate = false;
                 sec.canBe_effigy = false;
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_132) && enemyCardsOut[CardDB.cardIDEnum.EX1_132] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_132) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_132] >= 2)
                 {
                     sec.canBe_eyeforaneye = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_130) && enemyCardsOut[CardDB.cardIDEnum.EX1_130] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_130) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_130] >= 2)
                 {
                     sec.canBe_noblesacrifice = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_136) && enemyCardsOut[CardDB.cardIDEnum.EX1_136] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_136) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_136] >= 2)
                 {
                     sec.canBe_redemption = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.EX1_379) && enemyCardsOut[CardDB.cardIDEnum.EX1_379] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.EX1_379) && enemyCardsOut[Chireiden.Silverfish.SimCard.EX1_379] >= 2)
                 {
                     sec.canBe_repentance = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.FP1_020) && enemyCardsOut[CardDB.cardIDEnum.FP1_020] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.FP1_020) && enemyCardsOut[Chireiden.Silverfish.SimCard.FP1_020] >= 2)
                 {
                     sec.canBe_avenge = false;
                 }
 
-                if (enemyCardsOut.ContainsKey(CardDB.cardIDEnum.LOE_027) && enemyCardsOut[CardDB.cardIDEnum.LOE_027] >= 2)
+                if (enemyCardsOut.ContainsKey(Chireiden.Silverfish.SimCard.LOE_027) && enemyCardsOut[Chireiden.Silverfish.SimCard.LOE_027] >= 2)
                 {
                     sec.canBe_sacredtrial = false;
                 }
@@ -791,7 +791,7 @@
         }
 
 
-        public bool isAllowedSecret(CardDB.cardIDEnum cardID)
+        public bool isAllowedSecret(Chireiden.Silverfish.SimCard cardID)
         {
             if (ownCardsOut.ContainsKey(cardID) && ownCardsOut[cardID] >= 2) return false;
             return true;
@@ -863,15 +863,15 @@
             Action doneMove = Ai.Instance.bestmove;
             if (doneMove == null) return;
 
-            List<CardDB.cardIDEnum> enemySecretsOpenedStep = new List<CardDB.cardIDEnum>();
-            List<CardDB.Card> enemyMinionsDiedStep = new List<CardDB.Card>();
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> tmp in p.enemyCardsOut)
+            List<Chireiden.Silverfish.SimCard> enemySecretsOpenedStep = new List<Chireiden.Silverfish.SimCard>();
+            List<Chireiden.Silverfish.SimCard> enemyMinionsDiedStep = new List<Chireiden.Silverfish.SimCard>();
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> tmp in p.enemyCardsOut)
             {
                 if (!old.enemyCardsOut.ContainsKey(tmp.Key) || old.enemyCardsOut[tmp.Key] != tmp.Value)
                 {
-                    CardDB.Card c = CardDB.Instance.getCardDataFromID(tmp.Key);
+                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(tmp.Key);
                     if (c.Secret) enemySecretsOpenedStep.Add(tmp.Key);
-                    else if (c.type == CardDB.cardtype.MOB) enemyMinionsDiedStep.Add(c);
+                    else if (c.type == Chireiden.Silverfish.SimCardtype.MOB) enemyMinionsDiedStep.Add(c);
                 }
             }
 
@@ -903,7 +903,7 @@
             if (enemyMinionsDiedStep.Count > 0)
             {
                 duplicate = true;
-                
+
                 if (old.enemyMinions.Count > 1) avenge = true;
                 if (old.enemyMinions.Count < 7)
                 {
@@ -915,20 +915,20 @@
                 {
                     switch (enemyMinionsDiedStep[0].cardIDenum)
                     {
-                        case CardDB.cardIDEnum.AT_019: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.AT_036: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.BRMC_87: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.EX1_110: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.EX1_534: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.EX1_556: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.FP1_002: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.FP1_007: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.FP1_012: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.GVG_096: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.GVG_105: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.GVG_114: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.LOE_050: redemption = false; effigy = false; break;
-                        case CardDB.cardIDEnum.LOE_089: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.AT_019: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.AT_036: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.BRMC_87: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.EX1_110: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.EX1_534: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.EX1_556: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.FP1_002: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.FP1_007: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.FP1_012: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.GVG_096: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.GVG_105: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.GVG_114: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.LOE_050: redemption = false; effigy = false; break;
+                        case Chireiden.Silverfish.SimCard.LOE_089: redemption = false; effigy = false; break;
                         default: redemption = true; effigy = true; break;
                     }
                 }
@@ -971,15 +971,15 @@
                     if (!attackerIsHero) freezing = true;
                     if (old.enemyMinions.Count < 7) noblesacrifice = true;
 
-                    foreach (CardDB.cardIDEnum id in enemySecretsOpenedStep)
+                    foreach (Chireiden.Silverfish.SimCard id in enemySecretsOpenedStep)
                     {
                         switch (id)
                         {
-                            case CardDB.cardIDEnum.AT_060:  //beartrap
+                            case Chireiden.Silverfish.SimCard.AT_060:  //beartrap
                                 beartrap = true;
                                 missdirection = true;
                                 continue;
-                            case CardDB.cardIDEnum.EX1_610:  //explosivetrap
+                            case Chireiden.Silverfish.SimCard.EX1_610:  //explosivetrap
                                 if (enemySecretsOpenedStep.Count == 1)
                                 {
                                     missdirection = true;
@@ -990,24 +990,24 @@
                                     }
                                 }
                                 continue;
-                            case CardDB.cardIDEnum.EX1_533:  //misdirection
+                            case Chireiden.Silverfish.SimCard.EX1_533:  //misdirection
                                 missdirection = true;
                                 vaporize = false;
-                                if (enemySecretsOpenedStep.Contains(CardDB.cardIDEnum.EX1_554)) continue;
+                                if (enemySecretsOpenedStep.Contains(Chireiden.Silverfish.SimCard.EX1_554)) continue;
                                 int hpBalance = 0; //we need to know who has become the new target
                                 foreach (Minion m in p.enemyMinions) hpBalance += m.Hp;
                                 foreach (Minion m in old.enemyMinions) hpBalance -= m.Hp;
                                 if (hpBalance < 0) snaketrap = true;
                                 continue;
-                            case CardDB.cardIDEnum.EX1_611:  //freezingtrap
+                            case Chireiden.Silverfish.SimCard.EX1_611:  //freezingtrap
                                 freezing = true;
                                 vaporize = false;
                                 continue;
-                            case CardDB.cardIDEnum.EX1_594:   //vaporize
+                            case Chireiden.Silverfish.SimCard.EX1_594:   //vaporize
                                 vaporize = true;
                                 freezing = false;
                                 continue;
-                            case CardDB.cardIDEnum.EX1_130:   //noblesacrifice
+                            case Chireiden.Silverfish.SimCard.EX1_130:   //noblesacrifice
                                 noblesacrifice = true;
                                 snaketrap = true;
                                 vaporize = false;
@@ -1019,13 +1019,13 @@
             }
             else if (doneMove.actionType == actionEnum.playcard)
             {
-                if (doneMove.card.card.type == CardDB.cardtype.SPELL)
+                if (doneMove.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                 {
                     cattrick = true;
                     counterspell = true;
                     if (!targetWasHero) spellbender = true;
                 }
-                /* else if (doneMove.card.card.type == CardDB.cardtype.MOB) //we need the response from the core
+                /* else if (doneMove.card.card.type == Chireiden.Silverfish.SimCardtype.MOB) //we need the response from the core
                  {
                      mirrorentity = true;
                      snipe = true;
@@ -1044,32 +1044,32 @@
             if (p.enemyHero.Hp + p.enemyHero.armor < old.enemyHero.Hp + old.enemyHero.armor) eyeforaneye = true;
             if (doneMove.actionType == actionEnum.useHeroPower) darttrap = true;
 
-            foreach (CardDB.cardIDEnum id in enemySecretsOpenedStep)
+            foreach (Chireiden.Silverfish.SimCard id in enemySecretsOpenedStep)
             {
                 switch (id)
                 {
-                    case CardDB.cardIDEnum.AT_002: effigy = true; continue;
-                    case CardDB.cardIDEnum.AT_060: beartrap = true; continue;
-                    case CardDB.cardIDEnum.EX1_130: noblesacrifice = true; continue;
-                    case CardDB.cardIDEnum.EX1_132: eyeforaneye = true; continue;
-                    case CardDB.cardIDEnum.EX1_136: redemption = true; continue;
-                    case CardDB.cardIDEnum.EX1_287: counterspell = true; continue;
-                    case CardDB.cardIDEnum.EX1_289: icebarrier = true; continue;
-                    case CardDB.cardIDEnum.EX1_294: mirrorentity = true; continue;
-                    case CardDB.cardIDEnum.EX1_295: iceblock = true; continue;
-                    case CardDB.cardIDEnum.EX1_379: repentance = true; continue;
-                    case CardDB.cardIDEnum.EX1_533: missdirection = true; continue;
-                    case CardDB.cardIDEnum.EX1_554: snaketrap = true; continue;
-                    case CardDB.cardIDEnum.EX1_594: vaporize = true; continue;
-                    case CardDB.cardIDEnum.EX1_609: snipe = true; continue;
-                    case CardDB.cardIDEnum.EX1_610: explosive = true; continue;
-                    case CardDB.cardIDEnum.EX1_611: freezing = true; continue;
-                    case CardDB.cardIDEnum.FP1_018: duplicate = true; continue;
-                    case CardDB.cardIDEnum.FP1_020: avenge = true; continue;
-                    case CardDB.cardIDEnum.LOE_021: darttrap = true; continue;
-                    case CardDB.cardIDEnum.LOE_027: sacredtrial = true; continue;
-                    case CardDB.cardIDEnum.tt_010: spellbender = true; continue;
-                    case CardDB.cardIDEnum.KAR_004: cattrick = true; continue;
+                    case Chireiden.Silverfish.SimCard.AT_002: effigy = true; continue;
+                    case Chireiden.Silverfish.SimCard.AT_060: beartrap = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_130: noblesacrifice = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_132: eyeforaneye = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_136: redemption = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_287: counterspell = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_289: icebarrier = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_294: mirrorentity = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_295: iceblock = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_379: repentance = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_533: missdirection = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_554: snaketrap = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_594: vaporize = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_609: snipe = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_610: explosive = true; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_611: freezing = true; continue;
+                    case Chireiden.Silverfish.SimCard.FP1_018: duplicate = true; continue;
+                    case Chireiden.Silverfish.SimCard.FP1_020: avenge = true; continue;
+                    case Chireiden.Silverfish.SimCard.LOE_021: darttrap = true; continue;
+                    case Chireiden.Silverfish.SimCard.LOE_027: sacredtrial = true; continue;
+                    case Chireiden.Silverfish.SimCard.tt_010: spellbender = true; continue;
+                    case Chireiden.Silverfish.SimCard.KAR_004: cattrick = true; continue;
                 }
             }
 

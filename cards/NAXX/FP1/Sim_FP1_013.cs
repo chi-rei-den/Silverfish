@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 if (gyi.own == triggerEffectMinion.own)
                 {
-                    CardDB.Card card = CardDB.Instance.getCardDataFromID(gyi.cardid);
+                    Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(gyi.cardid);
                     int pos = triggerEffectMinion.own ? p.ownMinions.Count : p.enemyMinions.Count;
                     p.callKid(card, p.ownMinions.Count, gyi.own);
                 }

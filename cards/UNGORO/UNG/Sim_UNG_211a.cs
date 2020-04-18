@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Fill your board with 1/1 Elementals.
 
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_211aa); //Stone Elemental
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_211aa); //Stone Elemental
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

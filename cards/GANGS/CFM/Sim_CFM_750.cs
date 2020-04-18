@@ -40,7 +40,7 @@ namespace HREngine.Bots
 					    bool needTrigger = false;
 					    foreach (Handmanager.Handcard hc in p.owncards.ToArray())
 					    {
-                            if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON)
+                            if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON)
 						    {
 							    p.callKid(hc.card, p.ownMinions.Count, true);
 							    p.removeCard(hc);
@@ -57,7 +57,7 @@ namespace HREngine.Bots
                 if (p.enemyAnzCards > 1)
                 {
                     int pos = p.enemyMinions.Count;
-                    p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_306), pos, false); //Succubus
+                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_306), pos, false); //Succubus
                     p.enemyAnzCards--;
                     p.triggerCardsChanged(false);
                     if (p.ownHeroHasDirectLethal())

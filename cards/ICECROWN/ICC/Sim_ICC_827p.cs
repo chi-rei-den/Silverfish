@@ -37,14 +37,14 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == CardDB.cardName.shadowreflection)
+                    if (hc.card.name == Chireiden.Silverfish.SimCard.shadowreflection)
                     {
                         found = true;
                         break;
                     }
                 }
             }
-            if (!found) p.drawACard(CardDB.cardName.shadowreflection, turnStartOfOwner, true);
+            if (!found) p.drawACard(Chireiden.Silverfish.SimCard.shadowreflection, turnStartOfOwner, true);
         }
     }
 }

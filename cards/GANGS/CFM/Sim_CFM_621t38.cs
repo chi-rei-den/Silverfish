@@ -32,7 +32,7 @@ namespace HREngine.Bots
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-			if (p.OwnLastDiedMinion != CardDB.cardIDEnum.None)
+			if (p.OwnLastDiedMinion != Chireiden.Silverfish.SimCard.None)
 			{
 				p.callKid(CardDB.Instance.getCardDataFromID(p.OwnLastDiedMinion), pos, ownplay, false); //presurmise - OwnLastDiedMinion also for enemy
 				p.callKid(CardDB.Instance.getCardDataFromID(p.OwnLastDiedMinion), pos, ownplay);

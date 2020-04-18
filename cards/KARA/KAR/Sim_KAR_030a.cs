@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a 1/3 Spider.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_030);//Cellar Spider
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_030);//Cellar Spider
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

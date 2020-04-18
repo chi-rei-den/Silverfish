@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
 //    fügt am ende eures zuges diesem diener 1 schaden zu und beschwört einen wichtel (1/1).
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_598);//imp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_598);//imp
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

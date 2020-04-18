@@ -30,7 +30,7 @@ namespace HREngine.Bots
         // Deathrattle: Summon your taunt minions that died this game.
 
         CardDB cdb = CardDB.Instance;
-        CardDB.Card kid = null;
+        Chireiden.Silverfish.SimCard kid = null;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
@@ -38,10 +38,10 @@ namespace HREngine.Bots
             int kids = 7 - pos;
             if (kids > 0)
             {
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> e in Probabilitymaker.Instance.ownCardsOut)
+                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in Probabilitymaker.Instance.ownCardsOut)
                 {
                     kid = cdb.getCardDataFromID(e.Key);
-                    if (kid.tank)
+                    if (kid.Taunt)
                     {
                         for (int i = 0; i < e.Value; i++)
                         {

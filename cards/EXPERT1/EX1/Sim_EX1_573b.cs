@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Summon two 2/2 Treants with Taunt.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_573t); //special treant
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_573t); //special treant
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
             int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;

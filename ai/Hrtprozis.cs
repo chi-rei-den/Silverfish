@@ -20,7 +20,7 @@
         ragnarosthefirelord,
         hogger
     }
-        
+
     public class Hrtprozis
     {
         public int pId = 0;
@@ -28,7 +28,7 @@
         public int ownHeroFatigue = 0;
         public int ownDeckSize = 30;
         public int enemyDeckSize = 30;
-        public int enemyHeroFatigue = 0;        
+        public int enemyHeroFatigue = 0;
         public int gTurn = 0;
         public int gTurnStep = 0;
 
@@ -46,16 +46,16 @@
         public bool herofrozen = false;
         public bool enemyfrozen = false;
 
-        public List<CardDB.cardIDEnum> ownSecretList = new List<CardDB.cardIDEnum>();
+        public List<Chireiden.Silverfish.SimCard> ownSecretList = new List<Chireiden.Silverfish.SimCard>();
         public int enemySecretCount = 0;
-        public Dictionary<int, CardDB.cardIDEnum> DiscoverCards = new Dictionary<int, CardDB.cardIDEnum>();
-        public Dictionary<CardDB.cardIDEnum, int> turnDeck = new Dictionary<CardDB.cardIDEnum, int>();
-        private Dictionary<int, CardDB.cardIDEnum> deckCardForCost = new Dictionary<int, CardDB.cardIDEnum>();
+        public Dictionary<int, Chireiden.Silverfish.SimCard> DiscoverCards = new Dictionary<int, Chireiden.Silverfish.SimCard>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> turnDeck = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        private Dictionary<int, Chireiden.Silverfish.SimCard> deckCardForCost = new Dictionary<int, Chireiden.Silverfish.SimCard>();
         public bool noDuplicates = false;
 
         private int numTauntCards = -1;
-        private int numDivineShieldCards = -1; 
-        private int numLifestealCards = -1; 
+        private int numDivineShieldCards = -1;
+        private int numLifestealCards = -1;
         private int numWindfuryCards = -1;
 
         public bool setGameRule = false;
@@ -64,14 +64,14 @@
         public string heronameingame = "", enemyHeronameingame = "";
         public TAG_CLASS ownHeroStartClass = TAG_CLASS.INVALID;
         public TAG_CLASS enemyHeroStartClass = TAG_CLASS.INVALID;
-        public CardDB.Card heroAbility;
+        public Chireiden.Silverfish.SimCard heroAbility;
         public bool ownAbilityisReady = false;
         public int ownHeroPowerCost = 2;
-        public CardDB.Card enemyAbility;
+        public Chireiden.Silverfish.SimCard enemyAbility;
         public int enemyHeroPowerCost = 2;
         public int numOptionsPlayedThisTurn = 0;
         public int numMinionsPlayedThisTurn = 0;
-        public CardDB.cardIDEnum OwnLastDiedMinion = CardDB.cardIDEnum.None;
+        public Chireiden.Silverfish.SimCard OwnLastDiedMinion = Chireiden.Silverfish.SimCard.None;
 
         public int cardsPlayedThisTurn = 0;
         public int ueberladung = 0;
@@ -79,7 +79,7 @@
 
         public int ownMaxMana = 0;
         public int enemyMaxMana = 0;
-        
+
         public Minion ownHero = new Minion();
         public Minion enemyHero = new Minion();
         public Weapon ownWeapon = new Weapon();
@@ -99,11 +99,10 @@
         public int anzOwnElementalsLastTurn = 0;
         public int ownElementalsHaveLifesteal = 0;
         private int ownPlayerController = 0;
-        
+
         public PenalityManager penman;
         public Settings settings;
         Helpfunctions help;
-        CardDB cdb;
 
         private static Hrtprozis instance;
 
@@ -166,8 +165,8 @@
             enemyHeroname = HeroEnum.None;
             heronameingame = "";
             enemyHeronameingame = "";
-            heroAbility = new CardDB.Card();
-            enemyAbility = new CardDB.Card();
+            heroAbility = new Chireiden.Silverfish.SimCard();
+            enemyAbility = new Chireiden.Silverfish.SimCard();
             herofrozen = false;
             enemyfrozen = false;
             numMinionsPlayedThisTurn = 0;
@@ -216,7 +215,7 @@
         {
             anzOwnElementalsThisTurn = anzOwnElemTT;
             anzOwnElementalsLastTurn = anzOwnElemLT;
-            ownElementalsHaveLifesteal = ownElementalsHaveLS;  
+            ownElementalsHaveLifesteal = ownElementalsHaveLS;
         }
 
         public string heroIDtoName(string s)
@@ -332,7 +331,7 @@
             }
             //this.enemyMinions.AddRange(em);
 
-            //sort them 
+            //sort them
             updatePositions();
         }
 
@@ -344,7 +343,7 @@
                 this.LurkersDB.Add(lt.Key, lt.Value);
             }
         }
-		
+
         public void updateSecretStuff(List<string> ownsecs, int numEnemSec)
         {
             this.ownSecretList.Clear();
@@ -354,11 +353,11 @@
             }
             this.enemySecretCount = numEnemSec;
         }
-        
-        public void updateTurnDeck(Dictionary<CardDB.cardIDEnum, int> deck, bool noDupl)
+
+        public void updateTurnDeck(Dictionary<Chireiden.Silverfish.SimCard, int> deck, bool noDupl)
         {
             this.turnDeck.Clear();
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> c in deck)
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> c in deck)
             {
                 this.turnDeck.Add(c.Key, c.Value);
             }
@@ -366,19 +365,19 @@
             deckCardForCost.Clear();
         }
 
-        public CardDB.cardIDEnum getDeckCardsForCost(int cost)
+        public Chireiden.Silverfish.SimCard getDeckCardsForCost(int cost)
         {
             if (deckCardForCost.Count == 0)
             {
-                CardDB.Card c;
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> cn in turnDeck)
+                Chireiden.Silverfish.SimCard c;
+                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
                 {
                     c = CardDB.Instance.getCardDataFromID(cn.Key);
                     if (!deckCardForCost.ContainsKey(c.cost)) deckCardForCost.Add(c.cost, c.cardIDenum);
                 }
             }
             if (deckCardForCost.ContainsKey(cost)) return deckCardForCost[cost];
-            else return CardDB.cardIDEnum.None;
+            else return Chireiden.Silverfish.SimCard.None;
         }
 
         public int numDeckCardsByTag(GAME_TAGs tag)
@@ -395,14 +394,14 @@
             numLifestealCards = 0;
             numWindfuryCards = 0;
 
-            CardDB.Card c;
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> cn in turnDeck)
+            Chireiden.Silverfish.SimCard c;
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
             {
                 c = CardDB.Instance.getCardDataFromID(cn.Key);
-                if (c.tank) numTauntCards += cn.Value;
-                if (c.Shield) numDivineShieldCards += cn.Value;
-                if (c.lifesteal) numLifestealCards += cn.Value;
-                if (c.windfury) numWindfuryCards += cn.Value;
+                if (c.Taunt) numTauntCards += cn.Value;
+                if (c.DivineShield) numDivineShieldCards += cn.Value;
+                if (c.Lifesteal) numLifestealCards += cn.Value;
+                if (c.Windfury) numWindfuryCards += cn.Value;
             }
 
             switch (tag)
@@ -434,10 +433,10 @@
             this.enemyHeroStartClass = enemyHSClass;
         }
 
-        
-        public void updateHero(Weapon w, string heron, CardDB.Card ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
+
+        public void updateHero(Weapon w, string heron, Chireiden.Silverfish.SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
         {
-            if (w.name == CardDB.cardName.foolsbane) w.cantAttackHeroes = true;
+            if (w.name == Chireiden.Silverfish.SimCard.foolsbane) w.cantAttackHeroes = true;
 
             if (hero.own)
             {
@@ -449,8 +448,8 @@
                 if (this.ownHeroStartClass == TAG_CLASS.INVALID) this.ownHeroStartClass = hero.cardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
-                if (this.ownWeapon.name == CardDB.cardName.gladiatorslongbow) this.ownHero.immuneWhileAttacking = true;
-                
+                if (this.ownWeapon.name == Chireiden.Silverfish.SimCard.gladiatorslongbow) this.ownHero.immuneWhileAttacking = true;
+
                 this.heroAbility = ability;
                 this.ownHeroPowerCost = abCost;
                 this.ownAbilityisReady = abrdy;
@@ -465,8 +464,8 @@
                 if (this.enemyHeroStartClass == TAG_CLASS.INVALID) this.enemyHeroStartClass = enemyHero.cardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
-                if (this.enemyWeapon.name == CardDB.cardName.gladiatorslongbow) this.enemyHero.immuneWhileAttacking = true;
-           
+                if (this.enemyWeapon.name == Chireiden.Silverfish.SimCard.gladiatorslongbow) this.enemyHero.immuneWhileAttacking = true;
+
                 this.enemyAbility = ability;
                 this.enemyHeroPowerCost = abCost;
 
@@ -486,7 +485,7 @@
             this.anzOgOwnCThunHpBonus = OgOwnCThunHpBonus;
             this.anzOgOwnCThunTaunt = OgOwnCThunTaunt;
         }
-        
+
         public void updateFatigueStats(int ods, int ohf, int eds, int ehf)
         {
             this.ownDeckSize = ods;
@@ -527,7 +526,7 @@
             }
         }
 
-        public void updateOwnLastDiedMinion(CardDB.cardIDEnum cid)
+        public void updateOwnLastDiedMinion(Chireiden.Silverfish.SimCard cid)
         {
             this.OwnLastDiedMinion = cid;
         }
@@ -548,20 +547,20 @@
             };
 
 
-            if (hc.card.windfury) m.windfury = true;
-            if (hc.card.tank) m.taunt = true;
+            if (hc.card.Windfury) m.windfury = true;
+            if (hc.card.Taunt) m.taunt = true;
             if (hc.card.Charge)
             {
                 m.Ready = true;
                 m.charge = 1;
             }
-            if (hc.card.Shield) m.divineshild = true;
-            if (hc.card.poisonous) m.poisonous = true;
-            if (hc.card.lifesteal) m.lifesteal = true;
+            if (hc.card.DivineShield) m.divineshild = true;
+            if (hc.card.Poisonous) m.poisonous = true;
+            if (hc.card.Lifesteal) m.lifesteal = true;
 
             if (hc.card.Stealth) m.stealth = true;
 
-            if (m.name == CardDB.cardName.lightspawn && !m.silenced)
+            if (m.name == Chireiden.Silverfish.SimCard.lightspawn && !m.silenced)
             {
                 m.Angr = m.Hp;
             }
@@ -580,7 +579,7 @@
             help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.cardIDenum + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
             help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.cardIDenum);
             string secs = "";
-            foreach (CardDB.cardIDEnum sec in this.ownSecretList)
+            foreach (Chireiden.Silverfish.SimCard sec in this.ownSecretList)
             {
                 secs += sec + " ";
             }
@@ -644,7 +643,7 @@
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
                 if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
-                if (m.name == CardDB.cardName.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
+                if (m.name == Chireiden.Silverfish.SimCard.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
                 }
@@ -700,7 +699,7 @@
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
                 if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
-                if (m.name == CardDB.cardName.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
+                if (m.name == Chireiden.Silverfish.SimCard.moatlurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
                 }
@@ -713,7 +712,7 @@
         public void printOwnDeck()
         {
             string od = "od: ";
-            foreach (KeyValuePair<CardDB.cardIDEnum, int> e in this.turnDeck)
+            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.turnDeck)
             {
                 od += e.Key + "," + e.Value + ";";
             }

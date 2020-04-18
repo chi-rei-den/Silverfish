@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Has +3 Attack if the other Horsemen are dead.
 		//Handled in Horsemen
-		CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX9_05);
+		Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX9_05);
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

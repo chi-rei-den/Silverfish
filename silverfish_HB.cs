@@ -38,7 +38,7 @@ namespace HREngine.Bots
         public Dictionary<string, string> BehaviorPath = new Dictionary<string, string>();
         List<HSCard> ETallcards = new List<HSCard>();
         Dictionary<string, int> startDeck = new Dictionary<string, int>();
-        Dictionary<CardDB.cardIDEnum, int> turnDeck = new Dictionary<CardDB.cardIDEnum, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> turnDeck = new Dictionary<Chireiden.Silverfish.SimCard, int>();
         Dictionary<int, extraCard> extraDeck = new Dictionary<int, extraCard>();
         bool noDuplicates = false;
 
@@ -55,10 +55,10 @@ namespace HREngine.Bots
         private string heroname = "";
         private string enemyHeroname = "";
 
-        private CardDB.Card heroAbility = new CardDB.Card();
+        private Chireiden.Silverfish.SimCard heroAbility = new Chireiden.Silverfish.SimCard();
         private int ownHeroPowerCost = 2;
         private bool ownAbilityisReady = false;
-        private CardDB.Card enemyAbility = new CardDB.Card();
+        private Chireiden.Silverfish.SimCard enemyAbility = new Chireiden.Silverfish.SimCard();
         private int enemyHeroPowerCost = 2;
 
         private Weapon ownWeapon;
@@ -326,7 +326,7 @@ namespace HREngine.Bots
             }
 
             Playfield p = new Playfield();
-            p.enemyCardsOut = new Dictionary<CardDB.cardIDEnum, int>(Probabilitymaker.Instance.enemyCardsOut);
+            p.enemyCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>(Probabilitymaker.Instance.enemyCardsOut);
 
             if (lastpf != null)
             {
@@ -607,7 +607,7 @@ namespace HREngine.Bots
             {
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.ownHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1) 
                 {
-                    CardDB.cardIDEnum id = CardDB.Instance.cardIdstringToEnum(ent.Id);
+                    Chireiden.Silverfish.SimCard id = CardDB.Instance.cardIdstringToEnum(ent.Id);
                     int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                     int creator = ent.GetTag(GAME_TAG.CREATOR);
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -625,7 +625,7 @@ namespace HREngine.Bots
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.enemyHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
                     
                 {
-                    CardDB.cardIDEnum id = CardDB.Instance.cardIdstringToEnum(ent.Id);
+                    Chireiden.Silverfish.SimCard id = CardDB.Instance.cardIdstringToEnum(ent.Id);
                     int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                     int creator = ent.GetTag(GAME_TAG.CREATOR);
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -677,7 +677,7 @@ namespace HREngine.Bots
                     }
 
 
-                    CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(entitiy.Id));
+                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(entitiy.Id));
                     Minion m = new Minion();
                     m.name = c.name;
                     m.handcard.card = c;
@@ -757,7 +757,7 @@ namespace HREngine.Bots
                     {
                         if (ent.GetTag(GAME_TAG.ATTACHED) == m.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1) 
                         {
-                            CardDB.cardIDEnum id = CardDB.Instance.cardIdstringToEnum(ent.Id);
+                            Chireiden.Silverfish.SimCard id = CardDB.Instance.cardIdstringToEnum(ent.Id);
                             int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                             int creator = ent.GetTag(GAME_TAG.CREATOR);
                             int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -819,13 +819,13 @@ namespace HREngine.Bots
                     if (entitiy.GetTag(GAME_TAG.CONTROLLER) == this.ownPlayerController) 
                     {
                         m.own = true;                        
-                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.ownHero.cardClass, (TAG_RACE)c.race);
+                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.ownHero.cardClass, (TAG_RACE)c.Race);
                         this.ownMinions.Add(m);
                     }
                     else
                     {
                         m.own = false;
-                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.enemyHero.cardClass, (TAG_RACE)c.race);
+                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.enemyHero.cardClass, (TAG_RACE)c.Race);
                         this.enemyMinions.Add(m);
                     }
                 }
@@ -847,7 +847,7 @@ namespace HREngine.Bots
             {
                 if (entitiy.ZonePosition >= 1) 
                 {
-                    CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(entitiy.Id));
+                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(entitiy.Id));
                     
 
 
@@ -883,8 +883,8 @@ namespace HREngine.Bots
         {
             Dictionary<string, int> tmpDeck = new Dictionary<string, int>(startDeck);
             List<GraveYardItem> graveYard = new List<GraveYardItem>();
-            Dictionary<CardDB.cardIDEnum, int> og = new Dictionary<CardDB.cardIDEnum, int>();
-            Dictionary<CardDB.cardIDEnum, int> eg = new Dictionary<CardDB.cardIDEnum, int>();
+            Dictionary<Chireiden.Silverfish.SimCard, int> og = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            Dictionary<Chireiden.Silverfish.SimCard, int> eg = new Dictionary<Chireiden.Silverfish.SimCard, int>();
             int owncontroler = TritonHs.OurHero.GetTag(GAME_TAG.CONTROLLER);
             int enemycontroler = TritonHs.EnemyHero.GetTag(GAME_TAG.CONTROLLER);
             turnDeck.Clear();
@@ -898,11 +898,11 @@ namespace HREngine.Bots
                 HSCard entity = allcards[i];
                 if (entity.Id == null || entity.Id == "") continue;
 
-                if (CardDB.Instance.cardIdstringToEnum(entity.Id) == CardDB.cardIDEnum.UNG_116t) ownMinionsCost0 = true;
+                if (CardDB.Instance.cardIdstringToEnum(entity.Id) == Chireiden.Silverfish.SimCard.UNG_116t) ownMinionsCost0 = true;
 
                 if (entity.GetZone() == Triton.Game.Mapping.TAG_ZONE.GRAVEYARD)
                 {
-                    CardDB.cardIDEnum cide = CardDB.Instance.cardIdstringToEnum(entity.Id);
+                    Chireiden.Silverfish.SimCard cide = CardDB.Instance.cardIdstringToEnum(entity.Id);
                     GraveYardItem gyi = new GraveYardItem(cide, entity.EntityId, entity.GetTag(GAME_TAG.CONTROLLER) == owncontroler);
                     graveYard.Add(gyi);
 
@@ -916,7 +916,7 @@ namespace HREngine.Bots
                         if (eg.ContainsKey(cide)) eg[cide]++;
                         else eg.Add(cide, 1);
                     }
-                    if (cide == CardDB.cardIDEnum.UNG_067t1) ownCrystalCore = 5;
+                    if (cide == Chireiden.Silverfish.SimCard.UNG_067t1) ownCrystalCore = 5;
                 }
 
                 string entityId = entity.Id;
@@ -947,7 +947,7 @@ namespace HREngine.Bots
             foreach (var c in extraDeck)
             {
                 if (c.Value.isindeck == false) continue;
-                CardDB.cardIDEnum ce;
+                Chireiden.Silverfish.SimCard ce;
                 string entityId = c.Value.id;
                 if (entityId == "")
                 {
@@ -958,14 +958,14 @@ namespace HREngine.Bots
                             case actionEnum.playcard:
                                 switch (a.card.card.cardIDenum)
                                 {
-                                    case CardDB.cardIDEnum.LOE_104: goto case CardDB.cardIDEnum.BRM_007; 
-                                    case CardDB.cardIDEnum.BRM_007: 
+                                    case Chireiden.Silverfish.SimCard.LOE_104: goto case Chireiden.Silverfish.SimCard.BRM_007; 
+                                    case Chireiden.Silverfish.SimCard.BRM_007: 
                                         if (a.target != null) entityId = a.target.handcard.card.cardIDenum.ToString();
                                         break;
-                                    case CardDB.cardIDEnum.LOE_002: entityId = "LOE_002t"; break; 
-                                    case CardDB.cardIDEnum.LOE_079: entityId = "LOE_019t"; break; 
-                                    case CardDB.cardIDEnum.LOE_019t: entityId = "LOE_019t2"; break;
-                                    case CardDB.cardIDEnum.LOE_110: entityId = "LOE_110t"; break; 
+                                    case Chireiden.Silverfish.SimCard.LOE_002: entityId = "LOE_002t"; break; 
+                                    case Chireiden.Silverfish.SimCard.LOE_079: entityId = "LOE_019t"; break; 
+                                    case Chireiden.Silverfish.SimCard.LOE_019t: entityId = "LOE_019t2"; break;
+                                    case Chireiden.Silverfish.SimCard.LOE_110: entityId = "LOE_110t"; break; 
                                 }
                                 break;
                         }
@@ -978,9 +978,9 @@ namespace HREngine.Bots
                             if (oldCardsOut.ContainsKey(tmp.Key) && tmp.Value == oldCardsOut[tmp.Key]) continue;
                             switch (tmp.Key)
                             {
-                                case CardDB.cardIDEnum.AT_035: entityId = "AT_035t"; break; 
-                                case CardDB.cardIDEnum.GVG_031: entityId = "aiextra1"; break; 
-                                case CardDB.cardIDEnum.LOE_111: entityId = "LOE_111"; break; 
+                                case Chireiden.Silverfish.SimCard.AT_035: entityId = "AT_035t"; break; 
+                                case Chireiden.Silverfish.SimCard.GVG_031: entityId = "aiextra1"; break; 
+                                case Chireiden.Silverfish.SimCard.LOE_111: entityId = "LOE_111"; break; 
                             }
                         }
                         if (entityId == "" && lastpf != null)
@@ -988,13 +988,13 @@ namespace HREngine.Bots
                             int num = 0;
                             foreach (Minion m in this.enemyMinions)
                             {
-                                if (m.handcard.card.cardIDenum == CardDB.cardIDEnum.GVG_056) num++; 
+                                if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_056) num++; 
                             }
                             if (num > 0)
                             {
                                 foreach (Minion m in lastpf.enemyMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == CardDB.cardIDEnum.GVG_056) num--;
+                                    if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_056) num--;
                                 }
                             }
                             if (num > 0) entityId = "GVG_056t";
@@ -1003,13 +1003,13 @@ namespace HREngine.Bots
                                 num = 0;
                                 foreach (Minion m in lastpf.ownMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == CardDB.cardIDEnum.GVG_035) num++; 
+                                    if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_035) num++; 
                                 }
                                 if (num > 0)
                                 {
                                     foreach (Minion m in this.ownMinions)
                                     {
-                                        if (m.handcard.card.cardIDenum == CardDB.cardIDEnum.GVG_035) num--;
+                                        if (m.handcard.card.cardIDenum == Chireiden.Silverfish.SimCard.GVG_035) num--;
                                     }
                                 }
                                 if (num > 0) entityId = "GVG_035";
@@ -1026,8 +1026,8 @@ namespace HREngine.Bots
             foreach (var c in tmpDeck)
             {
                 if (c.Value < 1) continue;
-                CardDB.cardIDEnum ce = CardDB.Instance.cardIdstringToEnum(c.Key);
-                if (ce == CardDB.cardIDEnum.None) continue;
+                Chireiden.Silverfish.SimCard ce = CardDB.Instance.cardIdstringToEnum(c.Key);
+                if (ce == Chireiden.Silverfish.SimCard.None) continue;
                 if (turnDeck.ContainsKey(ce)) turnDeck[ce] += c.Value;
                 else turnDeck.Add(ce, c.Value);
             }
@@ -1120,7 +1120,7 @@ namespace HREngine.Bots
             bool found = false;
             foreach (Handmanager.Handcard hc in this.handCards)
             {
-                if (hc.card.name == CardDB.cardName.cthun)
+                if (hc.card.name == Chireiden.Silverfish.SimCard.cthun)
                 {
                     this.anzOgOwnCThunAngrBonus = hc.addattack;
                     this.anzOgOwnCThunHpBonus = hc.addHp;
@@ -1133,7 +1133,7 @@ namespace HREngine.Bots
             {
                 foreach (Minion m in this.ownMinions)
                 {
-                    if (m.name == CardDB.cardName.cthun)
+                    if (m.name == Chireiden.Silverfish.SimCard.cthun)
                     {
                         if (this.anzOgOwnCThunAngrBonus < m.Angr - 6) this.anzOgOwnCThunAngrBonus = m.Angr - 6;
                         if (this.anzOgOwnCThunHpBonus < m.Hp - 6) this.anzOgOwnCThunHpBonus = m.Angr - 6;

@@ -8,8 +8,8 @@ namespace HREngine.Bots
     public class Weapon
     {
         public int pID = 0;
-        public CardDB.cardName name = CardDB.cardName.unknown;
-        public CardDB.Card card;
+        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.unknown;
+        public Chireiden.Silverfish.SimCard card;
         public int numAttacksThisTurn = 0;
         public bool immuneWhileAttacking = false;
         
@@ -54,7 +54,7 @@ namespace HREngine.Bots
             return true;
         }
 
-        public void equip(CardDB.Card c)
+        public void equip(Chireiden.Silverfish.SimCard c)
         {
             this.name = c.name;
             this.card = c;
@@ -64,11 +64,11 @@ namespace HREngine.Bots
             this.Angr = c.Attack;
             this.Durability = c.Durability;
 
-            this.windfury = c.windfury;
+            this.windfury = c.Windfury;
             this.immune = false;
-            this.lifesteal = c.lifesteal;
-            this.poisonous = c.poisonous;
-            this.cantAttackHeroes = (c.name == CardDB.cardName.foolsbane) ? true : false;
+            this.lifesteal = c.Lifesteal;
+            this.poisonous = c.Poisonous;
+            this.cantAttackHeroes = (c.name == Chireiden.Silverfish.SimCard.foolsbane) ? true : false;
         }
 
         public string weaponToString()

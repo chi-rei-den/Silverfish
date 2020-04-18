@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a 1/1 Ooze with Taunt.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_156a);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_156a);
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

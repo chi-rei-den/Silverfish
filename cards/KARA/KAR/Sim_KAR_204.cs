@@ -33,7 +33,7 @@ namespace HREngine.Bots
 		{
             if (own.own)
             {
-                if (p.OwnLastDiedMinion != CardDB.cardIDEnum.None)
+                if (p.OwnLastDiedMinion != Chireiden.Silverfish.SimCard.None)
                 {
                     p.callKid(CardDB.Instance.getCardDataFromID(p.OwnLastDiedMinion), own.zonepos, own.own);
                 }

@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Hero Power Summon a 1/1 Silver Hand Murloc.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_006a);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_006a);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

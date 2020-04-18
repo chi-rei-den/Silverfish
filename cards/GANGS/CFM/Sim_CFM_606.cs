@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Whenever this minion is healed, summon a 2/2 Crystal.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CFM_606t); //2/2 Crystal
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_606t); //2/2 Crystal
 
         public override void onAMinionGotHealedTrigger(Playfield p, Minion triggerEffectMinion, int minionsGotHealed)
         {

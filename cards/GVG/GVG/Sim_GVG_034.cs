@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 m.anzGotDmg = 0;
                 for (int i = 0; i < tmp; i++)
                 {
-                    p.drawACard(CardDB.cardName.armorplating, m.own, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.armorplating, m.own, true);
                 }
             }
         }

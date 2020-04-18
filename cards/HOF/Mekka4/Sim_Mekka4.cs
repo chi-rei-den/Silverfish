@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_Mekka4 : SimTemplate //* poultryizer
 	{
-        CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.Mekka4t);
+        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.Mekka4t);
                                 
 //    verwandelt zu beginn eures zuges einen zufälligen diener in ein huhn (1/1).
 

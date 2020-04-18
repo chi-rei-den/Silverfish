@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //  Battlecry: Summon two 1/1 Boom Bots. WARNING: Bots may explode. 
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_110t);//chillwind
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_110t);//chillwind
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

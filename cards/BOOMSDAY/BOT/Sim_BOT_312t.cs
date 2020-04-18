@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		//
 		//
-		// CardDB.Card kid = CardDB. Instance.getCardDataFromID(CardDB.cardIDEnum.BOT_312t);
+		// Chireiden.Silverfish.SimCard kid = CardDB. Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BOT_312t);
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 {
 if (own.own) p.Magnetic(own);

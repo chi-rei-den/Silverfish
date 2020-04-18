@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(CardDB.cardName.frostbolt, ownplay, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.frostbolt, ownplay, true);
         }
     }
 }

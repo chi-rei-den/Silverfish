@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a 3/5 War Kodo.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_099t); //War Kodo
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_099t); //War Kodo
 		
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

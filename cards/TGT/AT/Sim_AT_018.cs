@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a random Legendary minion.
 
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_014);//King Mukla 5/5
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_014);//King Mukla 5/5
 		
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if ((TAG_RACE)hc.card.race == TAG_RACE.ELEMENTAL) hc.manacost--;
+                    if ((TAG_RACE)hc.card.Race == TAG_RACE.ELEMENTAL) hc.manacost--;
                 }
             }
 		}

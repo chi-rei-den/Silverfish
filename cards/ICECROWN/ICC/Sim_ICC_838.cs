@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon two 0/1 Frozen Champions.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_838t); //Frozen Champion
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_838t); //Frozen Champion
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

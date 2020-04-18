@@ -36,10 +36,10 @@ namespace HREngine.Bots
 {
 
 
-p.drawACard(CardDB.cardIDEnum.None, ownplay);
+p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
 
 
-p.drawACard(CardDB.cardIDEnum.None, ownplay);
+p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
 
 
 }

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Summon two 0/2 minions with Taunt.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_mirror);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_mirror);
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -37,7 +37,7 @@ if (own.own && p.ownMinions != null)
 {
 foreach (Handmanager.Handcard hc in p.owncards)
 {
-if (hc.card.race == 17)
+if (hc.card.Race == 17)
 {
 if (hc.manacost >= 1) hc.manacost--;
 }

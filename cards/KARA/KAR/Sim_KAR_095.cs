@@ -40,7 +40,7 @@ namespace HREngine.Bots
 				
                 foreach (Minion m in temp)
                 {
-                    switch ((TAG_RACE)m.handcard.card.race)
+                    switch ((TAG_RACE)m.handcard.card.Race)
 					{
 						case TAG_RACE.PET:
 							if (Beast == null) Beast = m;

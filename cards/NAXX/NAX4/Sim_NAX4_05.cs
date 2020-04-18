@@ -33,11 +33,11 @@ namespace HREngine.Bots
 		{
 			foreach (Minion m in p.ownMinions)
             {
-                if (m.name != CardDB.cardName.skeleton) p.minionGetDestroyed(m);
+                if (m.name != Chireiden.Silverfish.SimCard.skeleton) p.minionGetDestroyed(m);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if (m.name != CardDB.cardName.skeleton) p.minionGetDestroyed(m);
+                if (m.name != Chireiden.Silverfish.SimCard.skeleton) p.minionGetDestroyed(m);
             }
 		}
 	}

@@ -39,7 +39,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(CardDB.cardName.excessmana, true, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.excessmana, true, true);
                 }
 
             }
@@ -51,7 +51,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(CardDB.cardName.excessmana, false, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.excessmana, false, true);
                 }
             }
 		}

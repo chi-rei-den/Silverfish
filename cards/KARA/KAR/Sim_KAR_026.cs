@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//For each enemy minion, summon a 1/1 Pawn with Taunt
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_026t);//Pawn
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_026t);//Pawn
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

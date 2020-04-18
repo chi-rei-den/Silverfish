@@ -31,8 +31,8 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardIDEnum.UNG_809t1, m.own, true);
-            p.drawACard(CardDB.cardIDEnum.UNG_809t1, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.UNG_809t1, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.UNG_809t1, m.own, true);
         }
 	}
 }

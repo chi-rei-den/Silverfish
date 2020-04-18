@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_FP1_019 : SimTemplate //poisonseeds
 	{
-        CardDB.Card d = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_158t);
+        Chireiden.Silverfish.SimCard d = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_158t);
 //    vernichtet alle diener und ruft für jeden einen treant (2/2) als ersatz herbei.
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

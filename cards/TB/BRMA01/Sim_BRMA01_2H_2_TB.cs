@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Put two minions from your deck and one from your opponent's into the battlefield.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.FP1_007t);//4/4Nerubian
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_007t);//4/4Nerubian
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

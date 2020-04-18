@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Your Hero Power gives this weapon +1 attack instead of replacing it.
 		
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_034);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_034);
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

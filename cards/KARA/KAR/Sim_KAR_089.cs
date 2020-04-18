@@ -34,7 +34,7 @@ namespace HREngine.Bots
             if (own == null) return false;
             if (checkBonus) return false;
 			
-            p.drawACard(CardDB.cardIDEnum.None, own.own);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
             return false;
         }
     }

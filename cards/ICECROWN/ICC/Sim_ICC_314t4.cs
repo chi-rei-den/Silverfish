@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 if (p.enemyDeckSize > 0)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, ownplay, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
                     p.enemyDeckSize--;
                 }
             }
@@ -43,7 +43,7 @@ namespace HREngine.Bots
             {
                 if (p.ownDeckSize > 0)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, ownplay, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
                     p.ownDeckSize--;
                 }
             }

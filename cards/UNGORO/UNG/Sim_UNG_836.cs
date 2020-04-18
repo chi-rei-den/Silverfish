@@ -35,7 +35,7 @@ namespace HREngine.Bots
             if (checkBonus) return true;
 			if (own != null) return false;
 
-            p.drawACard(CardDB.cardName.clutchmotherzavas, true, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.clutchmotherzavas, true, true);
             int i = p.owncards.Count - 1;
             p.owncards[i].addattack = hc.addattack +2;
             p.owncards[i].addHp = hc.addHp + 2;

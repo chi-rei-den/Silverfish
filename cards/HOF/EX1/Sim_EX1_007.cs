@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 m.anzGotDmg = 0;
                 for (int i = 0; i < tmp; i++)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, m.own);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
                 }
             }
         }

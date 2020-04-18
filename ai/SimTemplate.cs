@@ -115,7 +115,7 @@
             return;
         }
 
-        public virtual void onCardWasPlayed(Playfield p, CardDB.Card c, bool wasOwnCard, Minion triggerEffectMinion)
+        public virtual void onCardWasPlayed(Playfield p, Chireiden.Silverfish.SimCard c, bool wasOwnCard, Minion triggerEffectMinion)
         {
             return;
         }

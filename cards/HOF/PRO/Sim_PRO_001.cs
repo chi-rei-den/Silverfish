@@ -31,8 +31,8 @@ namespace HREngine.Bots
 //    kampfschrei:/ verleiht beiden spielern die macht des rock! (durch eine powerakkordkarte)
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(CardDB.cardName.roguesdoit, true, true);
-            p.drawACard(CardDB.cardName.roguesdoit, false, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.roguesdoit, true, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.roguesdoit, false, true);
 		}
 
 	}

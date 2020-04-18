@@ -45,7 +45,7 @@ namespace HREngine.Bots
 
             if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
             {
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
             }
 		}
 	}

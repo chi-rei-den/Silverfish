@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: If Stalagg also died this game, summon Thaddius.
 
-        CardDB.Card thaddius = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.FP1_014t);
+        Chireiden.Silverfish.SimCard thaddius = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_014t);
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

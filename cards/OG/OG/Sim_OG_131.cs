@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Taunt Battlecry:If your C'Thun has at least 10 attack, summon another Emperor.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_319);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_319);
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

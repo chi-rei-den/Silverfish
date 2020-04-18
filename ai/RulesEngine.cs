@@ -93,23 +93,23 @@ namespace HREngine.Bots
     public class RulesEngine
     {
         Dictionary<int, Rule> heapOfRules = new Dictionary<int, Rule>();
-        Dictionary<int, List<CardDB.cardIDEnum>> RuleCardIdsPlay = new Dictionary<int, List<CardDB.cardIDEnum>>(); 
-        Dictionary<int, List<CardDB.cardIDEnum>> RuleCardIdsAttack = new Dictionary<int, List<CardDB.cardIDEnum>>(); 
-        Dictionary<int, List<CardDB.cardIDEnum>> RuleCardIdsHand = new Dictionary<int, List<CardDB.cardIDEnum>>(); 
-        Dictionary<int, List<CardDB.cardIDEnum>> RuleCardIdsOwnBoard = new Dictionary<int, List<CardDB.cardIDEnum>>(); 
-        Dictionary<int, List<CardDB.cardIDEnum>> RuleCardIdsEnemyBoard = new Dictionary<int, List<CardDB.cardIDEnum>>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsPlay = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsAttack = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsHand = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsOwnBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsEnemyBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
         Dictionary<int, int> BoardStateRules = new Dictionary<int, int>(); 
         Dictionary<int, int> BoardStateRulesGame = new Dictionary<int, int>(); 
         Dictionary<int, int> BoardStateRulesTurn = new Dictionary<int, int>(); 
-        Dictionary<CardDB.cardIDEnum, List<int>> CardIdRules = new Dictionary<CardDB.cardIDEnum, List<int>>();
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> CardIdRulesGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<CardDB.cardIDEnum, Dictionary<int, int>>(); 
-        Dictionary<CardDB.cardIDEnum, List<int>> CardIdRulesTurnPlay = new Dictionary<CardDB.cardIDEnum, List<int>>(); 
-        Dictionary<CardDB.cardIDEnum, List<int>> CardIdRulesTurnHand = new Dictionary<CardDB.cardIDEnum, List<int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRules = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnPlay = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnHand = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
         Dictionary<TAG_RACE, List<int>> hcRaceRulesGame = new Dictionary<TAG_RACE, List<int>>();
         Dictionary<TAG_RACE, List<int>> hcRaceRulesTurn = new Dictionary<TAG_RACE, List<int>>();
         List<int> pfStateRulesGame = new List<int>();
@@ -121,7 +121,7 @@ namespace HREngine.Bots
         public bool mulliganRulesLoaded = false;
         Dictionary<string, string> MulliganRules = new Dictionary<string, string>();
         Dictionary<string, Dictionary<string, string>> MulliganRulesDB = new Dictionary<string, Dictionary<string, string>>();
-        Dictionary<CardDB.cardIDEnum, string> MulliganRulesManual = new Dictionary<CardDB.cardIDEnum, string>();
+        Dictionary<Chireiden.Silverfish.SimCard, string> MulliganRulesManual = new Dictionary<Chireiden.Silverfish.SimCard, string>();
         Condition condTmp;
         string condErr;
         Minion target;
@@ -410,7 +410,7 @@ namespace HREngine.Bots
             public param parameter = param.None;
             public int num = int.MinValue;
             public TAG_CLASS hClass = TAG_CLASS.INVALID;
-            public CardDB.cardIDEnum cardID = CardDB.cardIDEnum.None;
+            public Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
             public int numCards = 0;
             public int bonus = 0;
             public int orCondNum = -1;
@@ -424,7 +424,7 @@ namespace HREngine.Bots
                 this.num = pnum;
                 this.parentRule = pRule;
             }
-            public Condition(param paramtr, CardDB.cardIDEnum cID, string pRule)
+            public Condition(param paramtr, Chireiden.Silverfish.SimCard cID, string pRule)
             {
                 this.parameter = paramtr;
                 this.cardID = cID;
@@ -449,11 +449,11 @@ namespace HREngine.Bots
 
         public class actUnit
         {
-            public CardDB.cardIDEnum cardID = CardDB.cardIDEnum.None;
+            public Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
             public Action action = null;
             public int entity = -1;
 
-            public actUnit(CardDB.cardIDEnum cid, Action a, int ent)
+            public actUnit(Chireiden.Silverfish.SimCard cid, Action a, int ent)
             {
                 this.cardID = cid;
                 this.action = a;
@@ -486,14 +486,14 @@ namespace HREngine.Bots
             int weight = 0;
             List<int> possibleRules = new List<int>();
             possibleRules.AddRange(this.BoardStateRulesTurn.Keys);
-            Dictionary<CardDB.cardIDEnum, int> handCardsWRule = new Dictionary<CardDB.cardIDEnum, int>();
-            Dictionary<CardDB.cardIDEnum, List<actUnit>> playedCardsWRule = new Dictionary<CardDB.cardIDEnum, List<actUnit>>();
-            Dictionary<CardDB.cardIDEnum, int> playedCardsWRulePen = new Dictionary<CardDB.cardIDEnum, int>();
-            Dictionary<CardDB.cardIDEnum, List<actUnit>> attackersWRule = new Dictionary<CardDB.cardIDEnum, List<actUnit>>();
-            Dictionary<CardDB.cardIDEnum, int> attackersWRulePen = new Dictionary<CardDB.cardIDEnum, int>();
+            Dictionary<Chireiden.Silverfish.SimCard, int> handCardsWRule = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>> playedCardsWRule = new Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>>();
+            Dictionary<Chireiden.Silverfish.SimCard, int> playedCardsWRulePen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>> attackersWRule = new Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>>();
+            Dictionary<Chireiden.Silverfish.SimCard, int> attackersWRulePen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
             foreach (Action a in p.playactions)
             {
-                CardDB.cardIDEnum cardID = CardDB.cardIDEnum.None;
+                Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
                 switch (a.actionType)
                 {
                     case actionEnum.playcard:
@@ -730,9 +730,9 @@ namespace HREngine.Bots
             }
         }
 
-        private void addCardIdRulesGame(Dictionary<int, List<CardDB.cardIDEnum>> baseDct, Dictionary<CardDB.cardIDEnum, Dictionary<int, int>> targetDct, int ruleNum)
+        private void addCardIdRulesGame(Dictionary<int, List<Chireiden.Silverfish.SimCard>> baseDct, Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> targetDct, int ruleNum)
         {
-            foreach (CardDB.cardIDEnum cid in baseDct[ruleNum])
+            foreach (Chireiden.Silverfish.SimCard cid in baseDct[ruleNum])
             {
                 if (targetDct.ContainsKey(cid))
                 {
@@ -746,7 +746,7 @@ namespace HREngine.Bots
                 else targetDct.Add(cid, new Dictionary<int, int>() { { ruleNum, 0 } });
             }
 
-            foreach (CardDB.cardIDEnum cid in baseDct[ruleNum])
+            foreach (Chireiden.Silverfish.SimCard cid in baseDct[ruleNum])
             {
                 if (CardIdRulesGame.ContainsKey(cid))
                 {
@@ -763,7 +763,7 @@ namespace HREngine.Bots
 
         private void addAttackerIdRulesGame(int ruleNum)
         {
-            foreach (CardDB.cardIDEnum cid in RuleCardIdsAttack[ruleNum])
+            foreach (Chireiden.Silverfish.SimCard cid in RuleCardIdsAttack[ruleNum])
             {
                 if (AttackerIdRulesGame.ContainsKey(cid))
                 {
@@ -1146,11 +1146,11 @@ namespace HREngine.Bots
             {
                 bool stateRule = false;
                 bool playRule = false;
-                List<CardDB.cardIDEnum> IDsListPlay = new List<CardDB.cardIDEnum>();
-                List<CardDB.cardIDEnum> IDsListHand = new List<CardDB.cardIDEnum>();
-                List<CardDB.cardIDEnum> IDsListOB = new List<CardDB.cardIDEnum>();
-                List<CardDB.cardIDEnum> IDsListEB = new List<CardDB.cardIDEnum>();
-                List<CardDB.cardIDEnum> IDsListAttack = new List<CardDB.cardIDEnum>();
+                List<Chireiden.Silverfish.SimCard> IDsListPlay = new List<Chireiden.Silverfish.SimCard>();
+                List<Chireiden.Silverfish.SimCard> IDsListHand = new List<Chireiden.Silverfish.SimCard>();
+                List<Chireiden.Silverfish.SimCard> IDsListOB = new List<Chireiden.Silverfish.SimCard>();
+                List<Chireiden.Silverfish.SimCard> IDsListEB = new List<Chireiden.Silverfish.SimCard>();
+                List<Chireiden.Silverfish.SimCard> IDsListAttack = new List<Chireiden.Silverfish.SimCard>();
                 foreach (Condition cond in getAllCondList(oneRule.Value.conditions))
                 {
                     switch (cond.parameter)
@@ -1550,8 +1550,8 @@ namespace HREngine.Bots
                     }
                     break;
                 case 1:
-                    CardDB.cardIDEnum cardId = CardDB.Instance.cardIdstringToEnum(pval);
-                    if (cardId == CardDB.cardIDEnum.None)
+                    Chireiden.Silverfish.SimCard cardId = CardDB.Instance.cardIdstringToEnum(pval);
+                    if (cardId == Chireiden.Silverfish.SimCard.None)
                     {
                         condErr = "Wrong CardID: ";
                         returnRes = false;
@@ -1585,14 +1585,14 @@ namespace HREngine.Bots
                     getSinglecond(extraParam[i], out tmp, out parameter);
                     
                     int pvalInt = 0;
-                    CardDB.cardIDEnum pvalCardId = CardDB.cardIDEnum.None;
+                    Chireiden.Silverfish.SimCard pvalCardId = Chireiden.Silverfish.SimCard.None;
                     try
                     {
                         switch (tmp[0])
                         {
                             case "tgt":
                                 pvalCardId = CardDB.Instance.cardIdstringToEnum(tmp[1]);
-                                if (pvalCardId == CardDB.cardIDEnum.None)
+                                if (pvalCardId == Chireiden.Silverfish.SimCard.None)
                                 {
                                     condErr = "Wrong CardID: ";
                                     returnRes = false;
@@ -1819,42 +1819,42 @@ namespace HREngine.Bots
 	                return false;
                 case param.ohc_minions_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_minions_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_minions_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_minions_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_spells_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_spells_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_spells_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_spells_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.SPELL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_secrets_equal:
@@ -1879,221 +1879,221 @@ namespace HREngine.Bots
                     return false;
                 case param.ohc_weapons_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_weapons_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_weapons_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_weapons_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.WEAPON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_murlocs_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_murlocs_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_murlocs_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_murlocs_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_demons_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_demons_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_demons_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_demons_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_mechs_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_mechs_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_mechs_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_mechs_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_beasts_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_beasts_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_beasts_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_beasts_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_totems_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_totems_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_totems_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_pirates_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_pirates_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_pirates_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_pirates_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_Dragons_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_Dragons_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_Dragons_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_Dragons_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_elems_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_elems_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_elems_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_elems_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if ((TAG_RACE)hc.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_shields_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Shield) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.DivineShield) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_shields_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Shield) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.DivineShield) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_shields_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Shield) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.DivineShield) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_shields_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Shield) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.DivineShield) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_taunts_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.tank) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Taunt) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_taunts_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.tank) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Taunt) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_taunts_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.tank) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Taunt) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_taunts_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.tank) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Taunt) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.aAt_equal: 
@@ -2146,362 +2146,362 @@ namespace HREngine.Bots
                     return false;
                 case param.omc_murlocs_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_murlocs_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_murlocs_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_murlocs_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_murlocs_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_murlocs_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_murlocs_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_murlocs_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_demons_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_demons_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_demons_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_demons_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_demons_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_demons_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_demons_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_demons_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_mechs_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_mechs_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_mechs_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_mechs_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_mechs_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_mechs_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_mechs_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_mechs_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_beasts_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_beasts_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_beasts_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_beasts_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_beasts_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_beasts_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_beasts_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_beasts_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_totems_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_totems_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_totems_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_totems_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_totems_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_totems_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_totems_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_totems_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_pirates_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_pirates_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_pirates_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_pirates_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_pirates_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_pirates_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_pirates_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_pirates_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_Dragons_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_Dragons_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_Dragons_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_Dragons_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_Dragons_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_Dragons_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_Dragons_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_Dragons_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_elems_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_elems_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_elems_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_elems_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_elems_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_elems_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_elems_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_elems_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.ELEMENTAL) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == CardDB.cardName.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_undamaged_equal:
@@ -2771,14 +2771,14 @@ namespace HREngine.Bots
                     if (p.enemyHeroStartClass != cond.hClass) return true;
                     return false;
                 case param.tgt_equal:
-                    if (a.target!= null && (a.target.handcard.card.cardIDenum == cond.cardID || (a.target.isHero && cond.cardID == CardDB.cardIDEnum.hero))) return true;
+                    if (a.target!= null && (a.target.handcard.card.cardIDenum == cond.cardID || (a.target.isHero && cond.cardID == Chireiden.Silverfish.SimCard.hero))) return true;
                     return false;
                 case param.tgt_notequal:
                     if (a.target != null)
                     {
                         if (a.target.isHero)
                         {
-                            if (cond.cardID != CardDB.cardIDEnum.hero) return true;
+                            if (cond.cardID != Chireiden.Silverfish.SimCard.hero) return true;
                             else return false;
                         }
                         else if (a.target.handcard.card.cardIDenum != cond.cardID) return true;

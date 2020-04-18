@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            if (m.own && p.prozis.noDuplicates) p.drawACard(CardDB.cardName.thecoin, m.own, true);
+            if (m.own && p.prozis.noDuplicates) p.drawACard(Chireiden.Silverfish.SimCard.thecoin, m.own, true);
         }
     }
 }

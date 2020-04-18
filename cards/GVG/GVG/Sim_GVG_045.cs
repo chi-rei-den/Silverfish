@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //   Deal $2-$4 damage to a minion. Summon a 1/1 Imp for each damage dealt.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_045t);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_045t);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

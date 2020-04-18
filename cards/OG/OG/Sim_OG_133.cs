@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -29,8 +30,7 @@ namespace HREngine.Bots
     {
         //Battlecry: Summon your Deathrattle minions that died this game.
 
-        CardDB CardDBI = CardDB.Instance;
-        CardDB.Card kid = null;
+        Chireiden.Silverfish.SimCard kid = null;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
@@ -38,10 +38,10 @@ namespace HREngine.Bots
 
             if (kids > 0)
             {
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> e in Probabilitymaker.Instance.ownCardsOut)
+                foreach (var e in Probabilitymaker.Instance.ownCardsOut)
                 {
-                    kid = CardDBI.getCardDataFromID(e.Key);
-                    if (kid.deathrattle)
+                    kid = e.Key;
+                    if (kid.Deathrattle)
                     {
                         for (int i = 0; i < e.Value; i++)
                         {

@@ -36,7 +36,7 @@ namespace HREngine.Bots
 			int bestAdapt = 0;
             foreach (Minion m in temp)
             {
-                if (m.name == CardDB.cardName.silverhandrecruit)
+                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit)
 				{
 					if (first )
 					{

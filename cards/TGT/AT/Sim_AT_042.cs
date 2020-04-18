@@ -29,9 +29,9 @@ namespace HREngine.Bots
 	{
 		//Choose One - Charge or +1/+1 and Stealth.
         
-        CardDB.Card cCharge = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_042t);
-        CardDB.Card cStealth = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_042t2);
-        CardDB.Card cTiger = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_044c);
+        Chireiden.Silverfish.SimCard cCharge = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_042t);
+        Chireiden.Silverfish.SimCard cStealth = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_042t2);
+        Chireiden.Silverfish.SimCard cTiger = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_044c);
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

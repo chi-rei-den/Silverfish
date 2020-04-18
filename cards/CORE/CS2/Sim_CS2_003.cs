@@ -33,7 +33,7 @@ namespace HREngine.Bots
             int anz = (ownplay) ? p.enemyAnzCards : p.owncards.Count;
             if (anz >= 1)
             {
-                p.drawACard(CardDB.cardIDEnum.None, ownplay,true);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay,true);
             }
         }
 

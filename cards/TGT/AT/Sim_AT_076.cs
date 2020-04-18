@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a random Murloc.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_050);//Coldlight Oracle 2/2
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_050);//Coldlight Oracle 2/2
 
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

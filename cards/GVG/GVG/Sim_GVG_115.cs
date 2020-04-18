@@ -32,12 +32,12 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.drawACard(CardDB.cardName.armorplating, own.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.armorplating, own.own, true);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardName.armorplating, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.armorplating, m.own, true);
         }
 
 

@@ -34,9 +34,9 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET)
+                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET)
                 {
-                    p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_120), temp.Count, own.own);//river crocolisk
+                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_120), temp.Count, own.own);//river crocolisk
                     break;
                 }
             }

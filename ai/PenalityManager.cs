@@ -8,60 +8,60 @@
         //todo acolyteofpain
         //todo better aoe-penality
 
-        public Dictionary<CardDB.cardName, int> HealTargetDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> HealHeroDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> HealAllDatabase = new Dictionary<CardDB.cardName, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> HealTargetDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> HealHeroDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> HealAllDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
 
-        Dictionary<CardDB.cardName, int> DamageAllDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> DamageHeroDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> DamageRandomDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> DamageAllEnemysDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> HeroPowerEquipWeapon = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> DamageAllDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> DamageHeroDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageRandomDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageAllEnemysDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> HeroPowerEquipWeapon = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<CardDB.cardName, int> enrageDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> silenceDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> OwnNeedSilenceDatabase = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> enrageDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> silenceDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> OwnNeedSilenceDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<CardDB.cardName, int> heroAttackBuffDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> attackBuffDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> healthBuffDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> tauntBuffDatabase = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> heroAttackBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> attackBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> healthBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> tauntBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<CardDB.cardName, int> lethalHelpers = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> lethalHelpers = new Dictionary<Chireiden.Silverfish.SimCard, int>();
         
-        Dictionary<CardDB.cardName, int> spellDependentDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> dragonDependentDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> elementalLTDependentDatabase = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> spellDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> dragonDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> elementalLTDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        public Dictionary<CardDB.cardName, int> cardDiscardDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> destroyOwnDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> destroyDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> buffingMinionsDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> buffing1TurnDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> heroDamagingAoeDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> randomEffects = new Dictionary<CardDB.cardName, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDiscardDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> destroyOwnDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> destroyDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> buffingMinionsDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> buffing1TurnDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> heroDamagingAoeDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> randomEffects = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<CardDB.cardName, int> silenceTargets = new Dictionary<CardDB.cardName, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> silenceTargets = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
-        Dictionary<CardDB.cardName, int> returnHandDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> GangUpDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> buffHandDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> equipWeaponPlayDatabase = new Dictionary<CardDB.cardName, int>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, int> returnHandDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> GangUpDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> buffHandDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> equipWeaponPlayDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>(); 
 
-        Dictionary<CardDB.cardName, int> priorityDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, int> UsefulNeedKeepDatabase = new Dictionary<CardDB.cardName, int>();
-        Dictionary<CardDB.cardName, CardDB.cardIDEnum> choose1database = new Dictionary<CardDB.cardName, CardDB.cardIDEnum>();
-        Dictionary<CardDB.cardName, CardDB.cardIDEnum> choose2database = new Dictionary<CardDB.cardName, CardDB.cardIDEnum>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> priorityDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> UsefulNeedKeepDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard> choose1database = new Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard>();
+        Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard> choose2database = new Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard>();
 
-        public Dictionary<CardDB.cardName, int> DamageTargetDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> DamageTargetSpecialDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> maycauseharmDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> cardDrawBattleCryDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> cardDrawDeathrattleDatabase = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> priorityTargets = new Dictionary<CardDB.cardName, int>();
-        public Dictionary<CardDB.cardName, int> specialMinions = new Dictionary<CardDB.cardName, int>(); //minions with cardtext, but no battlecry
-        public Dictionary<CardDB.cardName, int> ownSummonFromDeathrattle = new Dictionary<CardDB.cardName, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageTargetDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageTargetSpecialDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> maycauseharmDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDrawBattleCryDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDrawDeathrattleDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> priorityTargets = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> specialMinions = new Dictionary<Chireiden.Silverfish.SimCard, int>(); //minions with cardtext, but no battlecry
+        public Dictionary<Chireiden.Silverfish.SimCard, int> ownSummonFromDeathrattle = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
         Dictionary<TAG_RACE, int> ClassRacePriorityWarloc = new Dictionary<TAG_RACE, int>();
         Dictionary<TAG_RACE, int> ClassRacePriorityHunter = new Dictionary<TAG_RACE, int>();
@@ -135,13 +135,13 @@
             if (retval < 0 || retval > 499) return retval;
 
             retval += getAttackSecretPenality(m, p, target);
-            if (!p.isLethalCheck && m.name == CardDB.cardName.bloodimp) retval += 50;
+            if (!p.isLethalCheck && m.name == Chireiden.Silverfish.SimCard.bloodimp) retval += 50;
             switch (m.name)
             {
-                case CardDB.cardName.leeroyjenkins:
-                    if (!target.own && target.name == CardDB.cardName.whelp) return 500;
+                case Chireiden.Silverfish.SimCard.leeroyjenkins:
+                    if (!target.own && target.name == Chireiden.Silverfish.SimCard.whelp) return 500;
                     break;
-                case CardDB.cardName.bloodmagethalnos:
+                case Chireiden.Silverfish.SimCard.bloodmagethalnos:
                     if (!target.isHero && Ai.Instance.lethalMissing <= 5)
                     {
                         if (!target.taunt)
@@ -149,18 +149,18 @@
                             if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune) return 65;
                         }
                     }
-                    goto case CardDB.cardName.aiextra1;
+                    goto case Chireiden.Silverfish.SimCard.aiextra1;
                 
                 
-                case CardDB.cardName.acolyteofpain: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.clockworkgnome: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.loothoarder: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.mechanicalyeti: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.mechbearcat: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.tombpillager: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.toshley: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.webspinner: goto case CardDB.cardName.aiextra1;
-                case CardDB.cardName.aiextra1:
+                case Chireiden.Silverfish.SimCard.acolyteofpain: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.clockworkgnome: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.loothoarder: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.mechanicalyeti: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.mechbearcat: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.tombpillager: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.toshley: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.webspinner: goto case Chireiden.Silverfish.SimCard.aiextra1;
+                case Chireiden.Silverfish.SimCard.aiextra1:
                     
                     if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune)
                     {
@@ -213,32 +213,32 @@
                 }
             }
 
-            if (!isLethalCheck && p.enemyWeapon.name == CardDB.cardName.swordofjustice)
+            if (!isLethalCheck && p.enemyWeapon.name == Chireiden.Silverfish.SimCard.swordofjustice)
             {
                 return 28;
             }
 
             switch (p.ownWeapon.name)
             {
-                case CardDB.cardName.atiesh:
+                case Chireiden.Silverfish.SimCard.atiesh:
                     if (!isLethalCheck)
                     {
                         if (target.isHero) return 500;
                         else return 15;
                     }
                     break;
-                case CardDB.cardName.doomhammer:
+                case Chireiden.Silverfish.SimCard.doomhammer:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardDB.cardName.rockbiterweapon && hc.canplayCard(p, true)) return 10;
+                        if (hc.card.name == Chireiden.Silverfish.SimCard.rockbiterweapon && hc.canplayCard(p, true)) return 10;
                     }
                     break;
-                case CardDB.cardName.eaglehornbow:
+                case Chireiden.Silverfish.SimCard.eaglehornbow:
                     if (p.ownWeapon.Durability == 1)
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardDB.cardName.arcaneshot || hc.card.name == CardDB.cardName.killcommand) return -p.ownWeapon.Angr - 1;
+                            if (hc.card.name == Chireiden.Silverfish.SimCard.arcaneshot || hc.card.name == Chireiden.Silverfish.SimCard.killcommand) return -p.ownWeapon.Angr - 1;
                         }
                         if (p.ownSecretsIDList.Count >= 1) return 20;
 
@@ -248,7 +248,7 @@
                         }
                     }
                     break;
-                case CardDB.cardName.spiritclaws:
+                case Chireiden.Silverfish.SimCard.spiritclaws:
                     if (!isLethalCheck && p.ownWeapon.Angr == 1)
                     {
                         if (target.isHero) return 500;
@@ -256,10 +256,10 @@
                         else return 7;
                     }
                     break;
-                case CardDB.cardName.gorehowl:
+                case Chireiden.Silverfish.SimCard.gorehowl:
                     if (target.isHero && p.ownWeapon.Angr >= 3) return 10;
                     break;
-                case CardDB.cardName.brassknuckles:
+                case Chireiden.Silverfish.SimCard.brassknuckles:
                     if (target.own)
                     {
                         if (p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob) != null)
@@ -277,7 +277,7 @@
             if (p.ownWeapon.Durability >= 1)
             {
                 int wAttack = weaponInHandAttackNextTurn(p);
-                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card.name == CardDB.cardName.poisoneddaggers || p.ownHeroAblility.card.name == CardDB.cardName.daggermastery)) wAttack = 1;
+                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.poisoneddaggers || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.daggermastery)) wAttack = 1;
                 if (wAttack > 0) retval = -p.ownWeapon.Angr - 1; // so he doesnt "lose" the weapon in evaluation :D
             }
             if (p.ownWeapon.Angr == 1 && p.ownHeroName == HeroEnum.thief)
@@ -292,11 +292,11 @@
         {
             foreach (Handmanager.Handcard c in p.owncards)
             {
-                if (c.card.type == CardDB.cardtype.WEAPON && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
+                if (c.card.type == Chireiden.Silverfish.SimCardtype.WEAPON && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
                 {
                     return c.card.Attack;
                 }
-                if (this.equipWeaponPlayDatabase.ContainsKey(c.card.name) && c.card.name != CardDB.cardName.upgrade && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
+                if (this.equipWeaponPlayDatabase.ContainsKey(c.card.name) && c.card.name != Chireiden.Silverfish.SimCard.upgrade && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
                 {
                     return this.equipWeaponPlayDatabase[c.card.name];
                 }
@@ -304,17 +304,17 @@
             return 0;
         }
 
-        public int getPlayCardPenality(CardDB.Card card, Minion target, Playfield p)
+        public int getPlayCardPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
             int retval = ai.botBase.getPlayCardPenality(card, target, p);
             if (retval < 0 || retval > 499) return retval;
 
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
             //there is no reason to buff HP of minon (because it is not healed)
 
             int abuff = getAttackBuffPenality(card, target, p);
             int tbuff = getTauntBuffPenality(card, target, p);
-            if (name == CardDB.cardName.markofthewild && ((abuff >= 500 && tbuff == 0) || (abuff == 0 && tbuff >= 500)))
+            if (name == Chireiden.Silverfish.SimCard.markofthewild && ((abuff >= 500 && tbuff == 0) || (abuff == 0 && tbuff >= 500)))
             {
                 retval = 0;
             }
@@ -348,21 +348,21 @@
         }
 
 
-        private int getAttackBuffPenality(CardDB.Card card, Minion target, Playfield p)
+        private int getAttackBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            CardDB.cardName name = card.name;
-            if (name == CardDB.cardName.darkwispers && card.cardIDenum != CardDB.cardIDEnum.GVG_041a) return 0;
+            Chireiden.Silverfish.SimCard name = card.name;
+            if (name == Chireiden.Silverfish.SimCard.darkwispers && card.cardIDenum != Chireiden.Silverfish.SimCard.GVG_041a) return 0;
             int pen = 0;
             //buff enemy?
 
-            if (!p.isLethalCheck && (card.name == CardDB.cardName.savageroar || card.name == CardDB.cardName.bloodlust))
+            if (!p.isLethalCheck && (card.name == Chireiden.Silverfish.SimCard.savageroar || card.name == Chireiden.Silverfish.SimCard.bloodlust))
             {
                 int targets = 0;
                 foreach (Minion m in p.ownMinions)
                 {
                     if (m.Ready) targets++;
                 }
-                if ((p.ownHero.Ready || p.ownHero.numAttacksThisTurn == 0) && card.name == CardDB.cardName.savageroar) targets++;
+                if ((p.ownHero.Ready || p.ownHero.numAttacksThisTurn == 0) && card.name == Chireiden.Silverfish.SimCard.savageroar) targets++;
 
                 if (targets <= 2)
                 {
@@ -374,23 +374,23 @@
             if (target == null) return 60;
             if (!target.isHero && !target.own)
             {
-                if (card.type == CardDB.cardtype.MOB && p.ownMinions.Count == 0) return 2;
+                if (card.type == Chireiden.Silverfish.SimCardtype.MOB && p.ownMinions.Count == 0) return 2;
                 
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
                     switch (hc.card.name)
                     {
-                        case CardDB.cardName.biggamehunter:
+                        case Chireiden.Silverfish.SimCard.biggamehunter:
                             if (target.Angr + this.attackBuffDatabase[name] > 6) return 5;
                             break;
-                        case CardDB.cardName.shadowworddeath:
+                        case Chireiden.Silverfish.SimCard.shadowworddeath:
                             if (target.Angr + this.attackBuffDatabase[name] > 4) return 5;
                             break;
                         default:
                             break;
                     }
                 }
-                if (card.name == CardDB.cardName.crueltaskmaster || card.name == CardDB.cardName.innerrage)
+                if (card.name == Chireiden.Silverfish.SimCard.crueltaskmaster || card.name == Chireiden.Silverfish.SimCard.innerrage)
                 {
                     Minion m = target;
 
@@ -403,7 +403,7 @@
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardDB.cardName.execute) return 0;
+                            if (hc.card.name == Chireiden.Silverfish.SimCard.execute) return 0;
                         }
                     }
                     pen = 30;
@@ -420,13 +420,13 @@
                 {
                     switch (card.name)
                     {
-                        case CardDB.cardName.markofyshaarj:
+                        case Chireiden.Silverfish.SimCard.markofyshaarj:
                             if (target.stealth)
                             {
-                                if ((TAG_RACE)target.handcard.card.race == TAG_RACE.PET) return 3;
+                                if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) return 3;
                                 else return 7;
                             }
-                            if ((TAG_RACE)target.handcard.card.race == TAG_RACE.PET && p.owncards.Count < 2) return 3;
+                            if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET && p.owncards.Count < 2) return 3;
                             return 50;
 
                         default:
@@ -448,13 +448,13 @@
             return pen;
         }
 
-        private int getHPBuffPenality(CardDB.Card card, Minion target, Playfield p)
+        private int getHPBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
             int pen = 0;
 
             if (!this.healthBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardDB.cardName.darkwispers && card.cardIDenum != CardDB.cardIDEnum.GVG_041a) return 0;
+            if (name == Chireiden.Silverfish.SimCard.darkwispers && card.cardIDenum != Chireiden.Silverfish.SimCard.GVG_041a) return 0;
 
             if (target != null && !target.own && !this.tauntBuffDatabase.ContainsKey(name))
             {
@@ -465,14 +465,14 @@
         }
 
 
-        private int getTauntBuffPenality(CardDB.Card card, Minion target, Playfield p)
+        private int getTauntBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
             int pen = 0;
             //buff enemy?
             if (!this.tauntBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardDB.cardName.markofnature && card.cardIDenum != CardDB.cardIDEnum.EX1_155b) return 0;
-            if (name == CardDB.cardName.darkwispers && card.cardIDenum != CardDB.cardIDEnum.GVG_041a) return 0;
+            if (name == Chireiden.Silverfish.SimCard.markofnature && card.cardIDenum != Chireiden.Silverfish.SimCard.EX1_155b) return 0;
+            if (name == Chireiden.Silverfish.SimCard.darkwispers && card.cardIDenum != Chireiden.Silverfish.SimCard.GVG_041a) return 0;
             
             if (target == null) return 3;
             if (!target.isHero && !target.own)
@@ -480,7 +480,7 @@
                 //allow it if you have black knight
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == CardDB.cardName.theblackknight) return 0;
+                    if (hc.card.name == Chireiden.Silverfish.SimCard.theblackknight) return 0;
                 }
 
                 // allow taunting if target is priority and others have taunt
@@ -504,13 +504,13 @@
             return pen;
         }
 
-        private int getSilencePenality(CardDB.cardName name, Minion target, Playfield p)
+        private int getSilencePenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
         {
             int pen = 0;
 
             if (target == null)
             {
-                if (name == CardDB.cardName.ironbeakowl || name == CardDB.cardName.spellbreaker || name == CardDB.cardName.keeperofthegrove)
+                if (name == Chireiden.Silverfish.SimCard.ironbeakowl || name == Chireiden.Silverfish.SimCard.spellbreaker || name == Chireiden.Silverfish.SimCard.keeperofthegrove)
                 {
                     return 20;
                 }
@@ -535,7 +535,7 @@
             {
                 switch (target.name)
                 {
-                    case CardDB.cardName.masterchest: return 500;
+                    case Chireiden.Silverfish.SimCard.masterchest: return 500;
                 }
                 if (this.silenceDatabase.ContainsKey(name))
                 {
@@ -543,7 +543,7 @@
                     if (p.isLethalCheck)
                     {
                         //during lethal we only silence taunt, or if its a mob (owl/spellbreaker) + we can give him charge
-                        if (target.taunt || (name == CardDB.cardName.ironbeakowl && (p.ownMinions.Find(x => x.name == CardDB.cardName.tundrarhino) != null || p.owncards.Find(x => x.card.name == CardDB.cardName.charge) != null)) || (name == CardDB.cardName.spellbreaker && p.owncards.Find(x => x.card.name == CardDB.cardName.charge) != null)) return 0;
+                        if (target.taunt || (name == Chireiden.Silverfish.SimCard.ironbeakowl && (p.ownMinions.Find(x => x.name == Chireiden.Silverfish.SimCard.tundrarhino) != null || p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.charge) != null)) || (name == Chireiden.Silverfish.SimCard.spellbreaker && p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.charge) != null)) return 0;
 
                         return 500;
                     }
@@ -563,7 +563,7 @@
 
                     if (target.Angr <= target.handcard.card.Attack && target.maxHp <= target.handcard.card.Health && !target.taunt && !target.windfury && !target.divineshild && !target.poisonous && !target.lifesteal && !this.specialMinions.ContainsKey(name))
                     {
-                        if (name == CardDB.cardName.keeperofthegrove) return 500;
+                        if (name == Chireiden.Silverfish.SimCard.keeperofthegrove) return 500;
                         return 30;
                     }
 
@@ -580,13 +580,13 @@
 
         }
 
-        private int getDamagePenality(CardDB.Card card, Minion target, Playfield p)
+        private int getDamagePenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
             int pen = 0;
 
-            if (name == CardDB.cardName.shieldslam && p.ownHero.armor == 0) return 500;
-            if (name == CardDB.cardName.savagery && p.ownHero.Angr == 0) return 500;
+            if (name == Chireiden.Silverfish.SimCard.shieldslam && p.ownHero.armor == 0) return 500;
+            if (name == Chireiden.Silverfish.SimCard.savagery && p.ownHero.Angr == 0) return 500;
             
             //aoe damage *************************************************************************************
             int aoeDamageType = 0;
@@ -597,17 +597,17 @@
             {
                 if (p.enemyMinions.Count == 0)
                 {
-                    if (name == CardDB.cardName.cthun) return 0;
+                    if (name == Chireiden.Silverfish.SimCard.cthun) return 0;
                     return 300;
                 }
 
                 int aoeDamage = 0;
-                if (aoeDamageType == 1) aoeDamage = (card.type == CardDB.cardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllEnemysDatabase[name]) : this.DamageAllEnemysDatabase[name];
-                else if (aoeDamageType == 2) aoeDamage = (card.type == CardDB.cardtype.SPELL) ? p.getSpellDamageDamage(this.HealAllDatabase[name]) : this.HealAllDatabase[name];
+                if (aoeDamageType == 1) aoeDamage = (card.type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllEnemysDatabase[name]) : this.DamageAllEnemysDatabase[name];
+                else if (aoeDamageType == 2) aoeDamage = (card.type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.HealAllDatabase[name]) : this.HealAllDatabase[name];
                 else if (aoeDamageType == 3)
                 {
-                    if (name == CardDB.cardName.revenge && p.ownHero.Hp <= 12) aoeDamage = p.getSpellDamageDamage(3);
-                    else aoeDamage = (card.type == CardDB.cardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllDatabase[name]) : this.DamageAllDatabase[name];
+                    if (name == Chireiden.Silverfish.SimCard.revenge && p.ownHero.Hp <= 12) aoeDamage = p.getSpellDamageDamage(3);
+                    else aoeDamage = (card.type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllDatabase[name]) : this.DamageAllDatabase[name];
                 }
                 
                 int preventDamage = 0;
@@ -632,28 +632,28 @@
                     {
                         switch (name)
                         {
-                            case CardDB.cardName.sleepwiththefishes: 
+                            case Chireiden.Silverfish.SimCard.sleepwiththefishes: 
                                 if (!m.wounded) continue;
                                 break;
-                            case CardDB.cardName.dragonfirepotion: 
-                                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) continue;
+                            case Chireiden.Silverfish.SimCard.dragonfirepotion: 
+                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) continue;
                                 break;
-                            case CardDB.cardName.corruptedseer: 
-                                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) continue;
+                            case Chireiden.Silverfish.SimCard.corruptedseer: 
+                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) continue;
                                 break;
-                            case CardDB.cardName.shadowvolley: 
-                                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) continue;
+                            case Chireiden.Silverfish.SimCard.shadowvolley: 
+                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
                                 break;
-                            case CardDB.cardName.demonwrath: 
-                                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) continue;
+                            case Chireiden.Silverfish.SimCard.demonwrath: 
+                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
                                 break;
-                            case CardDB.cardName.scarletpurifier: 
+                            case Chireiden.Silverfish.SimCard.scarletpurifier: 
                                 if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
                                 break;
-                            case CardDB.cardName.yseraawakens: 
-                                if (m.name == CardDB.cardName.ysera) continue;
+                            case Chireiden.Silverfish.SimCard.yseraawakens: 
+                                if (m.name == Chireiden.Silverfish.SimCard.ysera) continue;
                                 break;
-                            case CardDB.cardName.lightbomb: 
+                            case Chireiden.Silverfish.SimCard.lightbomb: 
                                 if (m.Hp > m.Angr) continue;
                                 break;
                         }
@@ -661,7 +661,7 @@
                         if (this.specialMinions.ContainsKey(m.name)) numSpecialMinionsEnemy++;
                         switch (m.name)
                         {
-                            case CardDB.cardName.direwolfalpha: 
+                            case Chireiden.Silverfish.SimCard.direwolfalpha: 
                                 if (m.silenced) break;
                                 
                                 if (i > 0)
@@ -691,7 +691,7 @@
                                     }
                                 }
                                 break;
-                            case CardDB.cardName.flametonguetotem: 
+                            case Chireiden.Silverfish.SimCard.flametonguetotem: 
                                 if (m.silenced) break;
                                 if (i > 0)
                                 {
@@ -720,72 +720,72 @@
                                     }
                                 }
                                 break;
-                            case CardDB.cardName.leokk: 
+                            case Chireiden.Silverfish.SimCard.leokk: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions) if (mm.Hp > aoeDamage || mm.divineshild) preventDamage += 1;
                                 break;
-                            case CardDB.cardName.raidleader: 
+                            case Chireiden.Silverfish.SimCard.raidleader: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions) if (mm.Hp > aoeDamage || mm.divineshild) preventDamage += 1;
                                 break;
-                            case CardDB.cardName.stormwindchampion: 
+                            case Chireiden.Silverfish.SimCard.stormwindchampion: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions) if (mm.Hp > aoeDamage || mm.divineshild) preventDamage += 1;
                                 break;
-                            case CardDB.cardName.grimscaleoracle: 
+                            case Chireiden.Silverfish.SimCard.grimscaleoracle: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
                                  
-                            case CardDB.cardName.murlocwarleader: 
+                            case Chireiden.Silverfish.SimCard.murlocwarleader: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
+                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
                                 }
                                 break;
-                            case CardDB.cardName.malganis: 
+                            case Chireiden.Silverfish.SimCard.malganis: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
+                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
                                 }
                                 break;
-                            case CardDB.cardName.southseacaptain: 
+                            case Chireiden.Silverfish.SimCard.southseacaptain: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
-                            case CardDB.cardName.timberwolf: 
+                            case Chireiden.Silverfish.SimCard.timberwolf: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
-                            case CardDB.cardName.warhorsetrainer: 
+                            case Chireiden.Silverfish.SimCard.warhorsetrainer: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if (mm.name == CardDB.cardName.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
-                            case CardDB.cardName.warsongcommander: 
+                            case Chireiden.Silverfish.SimCard.warsongcommander: 
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
                                     if (mm.charge > 0 && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
-                            case CardDB.cardName.tunneltrogg:
+                            case Chireiden.Silverfish.SimCard.tunneltrogg:
                                 preventDamage++;
                                 break;
-                            case CardDB.cardName.secretkeeper:
+                            case Chireiden.Silverfish.SimCard.secretkeeper:
                                 preventDamage++;
                                 break;
                         }
@@ -796,9 +796,9 @@
                         survivedEnemyMinions++;
                         if (survivedEnemyMinionsAngr < m.Angr) survivedEnemyMinionsAngr = m.Angr;
                         if (!m.wounded && this.enrageDatabase.ContainsKey(name)) preventDamage -= this.enrageDatabase[name];
-                        else if (m.name == CardDB.cardName.gurubashiberserker) preventDamage -= 3;
-                        else if (m.name == CardDB.cardName.frothingberserker) frothingberserkerEnemy = true;
-                        else if (m.name == CardDB.cardName.grimpatron) { preventDamage -= 3; grimpatronEnemy = true; }
+                        else if (m.name == Chireiden.Silverfish.SimCard.gurubashiberserker) preventDamage -= 3;
+                        else if (m.name == Chireiden.Silverfish.SimCard.frothingberserker) frothingberserkerEnemy = true;
+                        else if (m.name == Chireiden.Silverfish.SimCard.grimpatron) { preventDamage -= 3; grimpatronEnemy = true; }
                     }
                 }
                 preventDamage += preventDamageAdd;
@@ -813,100 +813,100 @@
                         {
                             switch (name)
                             {
-                                case CardDB.cardName.sleepwiththefishes: 
+                                case Chireiden.Silverfish.SimCard.sleepwiththefishes: 
                                     if (!m.wounded) continue;
                                     break;
-                                case CardDB.cardName.dragonfirepotion: 
-                                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DRAGON) continue;
+                                case Chireiden.Silverfish.SimCard.dragonfirepotion: 
+                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) continue;
                                     break;
-                                case CardDB.cardName.corruptedseer: 
-                                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) continue;
+                                case Chireiden.Silverfish.SimCard.corruptedseer: 
+                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) continue;
                                     break;
-                                case CardDB.cardName.shadowvolley: 
-                                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) continue;
+                                case Chireiden.Silverfish.SimCard.shadowvolley: 
+                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
                                     break;
-                                case CardDB.cardName.demonwrath: 
-                                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) continue;
+                                case Chireiden.Silverfish.SimCard.demonwrath: 
+                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
                                     break;
-                                case CardDB.cardName.scarletpurifier: 
+                                case Chireiden.Silverfish.SimCard.scarletpurifier: 
                                     if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
                                     break;
-                                case CardDB.cardName.yseraawakens: 
-                                    if (m.name == CardDB.cardName.ysera) continue;
+                                case Chireiden.Silverfish.SimCard.yseraawakens: 
+                                    if (m.name == Chireiden.Silverfish.SimCard.ysera) continue;
                                     break;
-                                case CardDB.cardName.lightbomb: 
+                                case Chireiden.Silverfish.SimCard.lightbomb: 
                                     if (m.Hp > m.Angr) continue;
                                     break;
                             }
 
                             switch (m.name)
                             {
-                                case CardDB.cardName.direwolfalpha: 
+                                case Chireiden.Silverfish.SimCard.direwolfalpha: 
                                     if (m.silenced) break;
                                     if (i > 0 && (p.ownMinions[i - 1].Hp > aoeDamage || p.ownMinions[i - 1].divineshild)) lostOwnDamage += 1;
                                     if (i < anz - 1 && (p.ownMinions[i + 1].Hp > aoeDamage || p.ownMinions[i + 1].divineshild)) lostOwnDamage += 1;
                                     break;
-                                case CardDB.cardName.flametonguetotem: 
+                                case Chireiden.Silverfish.SimCard.flametonguetotem: 
                                     if (m.silenced) break;
                                     if (i > 0 && (p.ownMinions[i - 1].Hp > aoeDamage || p.ownMinions[i - 1].divineshild)) lostOwnDamage += 2;
                                     if (i < anz - 1 && (p.ownMinions[i + 1].Hp > aoeDamage || p.ownMinions[i + 1].divineshild)) lostOwnDamage += 2;
                                     break;
-                                case CardDB.cardName.leokk: 
+                                case Chireiden.Silverfish.SimCard.leokk: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions) if (mm.Hp > aoeDamage || mm.divineshild) lostOwnDamage += 1;
                                     break;
-                                case CardDB.cardName.raidleader: 
+                                case Chireiden.Silverfish.SimCard.raidleader: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions) if (mm.Hp > aoeDamage || mm.divineshild) lostOwnDamage += 1;
                                     break;
-                                case CardDB.cardName.stormwindchampion: 
+                                case Chireiden.Silverfish.SimCard.stormwindchampion: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions) if (mm.Hp > aoeDamage || mm.divineshild) lostOwnDamage += 1;
                                     break;
-                                case CardDB.cardName.grimscaleoracle: 
+                                case Chireiden.Silverfish.SimCard.grimscaleoracle: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
                                 
-                                case CardDB.cardName.murlocwarleader: 
+                                case Chireiden.Silverfish.SimCard.murlocwarleader: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
+                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
                                     }
                                     break;
-                                case CardDB.cardName.malganis: 
+                                case Chireiden.Silverfish.SimCard.malganis: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
+                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
                                     }
                                     break;
-                                case CardDB.cardName.southseacaptain: 
+                                case Chireiden.Silverfish.SimCard.southseacaptain: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
-                                case CardDB.cardName.timberwolf: 
+                                case Chireiden.Silverfish.SimCard.timberwolf: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
-                                case CardDB.cardName.warhorsetrainer: 
+                                case Chireiden.Silverfish.SimCard.warhorsetrainer: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if (mm.name == CardDB.cardName.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
-                                case CardDB.cardName.warsongcommander: 
+                                case Chireiden.Silverfish.SimCard.warsongcommander: 
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
@@ -919,9 +919,9 @@
 
                             lostOwnMinions++;
                             if (!m.wounded && this.enrageDatabase.ContainsKey(name)) lostOwnDamage += this.enrageDatabase[name];
-                            else if (m.name == CardDB.cardName.gurubashiberserker && m.Hp > 1) lostOwnDamage += 3;
-                            else if (m.name == CardDB.cardName.frothingberserker) frothingberserkerOwn = true;
-                            else if (m.name == CardDB.cardName.grimpatron) { lostOwnDamage += 3; grimpatronOwn = true; }
+                            else if (m.name == Chireiden.Silverfish.SimCard.gurubashiberserker && m.Hp > 1) lostOwnDamage += 3;
+                            else if (m.name == Chireiden.Silverfish.SimCard.frothingberserker) frothingberserkerOwn = true;
+                            else if (m.name == Chireiden.Silverfish.SimCard.grimpatron) { lostOwnDamage += 3; grimpatronOwn = true; }
                         }
                     }
                     
@@ -937,7 +937,7 @@
                         if (MinionBalance > 0 && preventDamage <= lostOwnDamage) return 80;
                         if (survivedEnemyMinions > 0)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == CardDB.cardName.execute) return 0;
+                            foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == Chireiden.Silverfish.SimCard.execute) return 0;
                         }
                         if (lostOwnHp <= preventDamage)
                         {
@@ -951,7 +951,7 @@
                 {
 
                     if (preventDamage > 5 || (p.enemyMinions.Count - survivedEnemyMinions) >= 4) return 0;
-                    else if (name == CardDB.cardName.holynova && preventDamage >= 0)
+                    else if (name == Chireiden.Silverfish.SimCard.holynova && preventDamage >= 0)
                     {
                         int ownWoundedMinions = 0;
                         foreach (Minion m in p.ownMinions) if (m.wounded) ownWoundedMinions++;
@@ -961,7 +961,7 @@
                     if (survivedEnemyMinions > 0)
                     {
                         int hasExecute = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == CardDB.cardName.execute) hasExecute++;
+                        foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == Chireiden.Silverfish.SimCard.execute) hasExecute++;
                         if (hasExecute > 0)
                         {
                             if (survivedEnemyMinions <= hasExecute) return 0;
@@ -1002,7 +1002,7 @@
 
             if (!p.isLethalCheck && !target.own && target.isHero)
             {
-                if (name == CardDB.cardName.baneofdoom)
+                if (name == Chireiden.Silverfish.SimCard.baneofdoom)
                 {
                     pen = 500;
                 }
@@ -1021,42 +1021,42 @@
                         return pen;
                     }
                     
-                    if (m.name == CardDB.cardName.madscientist && p.ownHeroStartClass == TAG_CLASS.HUNTER) return 500;
+                    if (m.name == Chireiden.Silverfish.SimCard.madscientist && p.ownHeroStartClass == TAG_CLASS.HUNTER) return 500;
 
                     // no pen if we have battlerage for example
                     int dmg = this.DamageTargetDatabase.ContainsKey(name) ? this.DamageTargetDatabase[name] : this.HealTargetDatabase[name];
                     switch (card.cardIDenum)
                     {
-                        case CardDB.cardIDEnum.EX1_166a: dmg = 2 - p.spellpower; break; 
-                        case CardDB.cardIDEnum.CS2_031: if (!target.frozen) return 0; break; 
-                        case CardDB.cardIDEnum.EX1_408: if (p.ownHero.Hp <= 12) dmg = 6; break; 
-                        case CardDB.cardIDEnum.EX1_539: 
+                        case Chireiden.Silverfish.SimCard.EX1_166a: dmg = 2 - p.spellpower; break; 
+                        case Chireiden.Silverfish.SimCard.CS2_031: if (!target.frozen) return 0; break; 
+                        case Chireiden.Silverfish.SimCard.EX1_408: if (p.ownHero.Hp <= 12) dmg = 6; break; 
+                        case Chireiden.Silverfish.SimCard.EX1_539: 
                             foreach (Minion mn in p.ownMinions)
                             {
-                                if ((TAG_RACE)mn.handcard.card.race == TAG_RACE.PET) { dmg = 5; break; }
+                                if ((TAG_RACE)mn.handcard.card.Race == TAG_RACE.PET) { dmg = 5; break; }
                             }
                             break;
                     }
-                    if (card.type == CardDB.cardtype.SPELL) dmg = p.getSpellDamageDamage(dmg);
+                    if (card.type == Chireiden.Silverfish.SimCardtype.SPELL) dmg = p.getSpellDamageDamage(dmg);
                 
                     if (m.Hp > dmg)
                     {
                         switch (m.name)
                         {
-                            case CardDB.cardName.gurubashiberserker: return 0; break;
-                            case CardDB.cardName.axeflinger: return 0; break;
-                            case CardDB.cardName.gahzrilla: return 0; break;
-                            case CardDB.cardName.garr: if (p.ownMinions.Count <= 6) return 0; break;
-                            case CardDB.cardName.hoggerdoomofelwynn: if (p.ownMinions.Count <= 6) return 0; break;
-                            case CardDB.cardName.acolyteofpain: if (p.owncards.Count <= 3) return 0; break;
-                            case CardDB.cardName.dragonegg: if (p.ownMinions.Count <= 6) return 5; break;
-                            case CardDB.cardName.impgangboss: if (p.ownMinions.Count <= 6) return 0; break;
-                            case CardDB.cardName.grimpatron: if (p.ownMinions.Count <= 6) return 0; break;
+                            case Chireiden.Silverfish.SimCard.gurubashiberserker: return 0; break;
+                            case Chireiden.Silverfish.SimCard.axeflinger: return 0; break;
+                            case Chireiden.Silverfish.SimCard.gahzrilla: return 0; break;
+                            case Chireiden.Silverfish.SimCard.garr: if (p.ownMinions.Count <= 6) return 0; break;
+                            case Chireiden.Silverfish.SimCard.hoggerdoomofelwynn: if (p.ownMinions.Count <= 6) return 0; break;
+                            case Chireiden.Silverfish.SimCard.acolyteofpain: if (p.owncards.Count <= 3) return 0; break;
+                            case Chireiden.Silverfish.SimCard.dragonegg: if (p.ownMinions.Count <= 6) return 5; break;
+                            case Chireiden.Silverfish.SimCard.impgangboss: if (p.ownMinions.Count <= 6) return 0; break;
+                            case Chireiden.Silverfish.SimCard.grimpatron: if (p.ownMinions.Count <= 6) return 0; break;
                         }
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardDB.cardName.battlerage) return pen;
-                            if (hc.card.name == CardDB.cardName.rampage) return pen;
+                            if (hc.card.name == Chireiden.Silverfish.SimCard.battlerage) return pen;
+                            if (hc.card.name == Chireiden.Silverfish.SimCard.rampage) return pen;
                         }
                     }
                     else
@@ -1065,8 +1065,8 @@
                         {
                             switch (m.name)
                             {
-                                case CardDB.cardName.lepergnome: return 0; break;
-                                case CardDB.cardName.axeflinger: return 0; break;
+                                case Chireiden.Silverfish.SimCard.lepergnome: return 0; break;
+                                case Chireiden.Silverfish.SimCard.axeflinger: return 0; break;
                             }
                         }
                         if (cardDrawDeathrattleDatabase.ContainsKey(m.name))
@@ -1088,11 +1088,11 @@
                     Minion m = target; 
                     switch (name)
                     {
-                        case CardDB.cardName.crueltaskmaster: if (m.Hp >= 2) return 0; break;
-                        case CardDB.cardName.innerrage: if (m.Hp >= 2) return 0; break;
-                        case CardDB.cardName.demonfire: if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) return 0; break;
-                        case CardDB.cardName.demonheart: if ((TAG_RACE)m.handcard.card.race == TAG_RACE.DEMON) return 0; break;
-                        case CardDB.cardName.earthshock:
+                        case Chireiden.Silverfish.SimCard.crueltaskmaster: if (m.Hp >= 2) return 0; break;
+                        case Chireiden.Silverfish.SimCard.innerrage: if (m.Hp >= 2) return 0; break;
+                        case Chireiden.Silverfish.SimCard.demonfire: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) return 0; break;
+                        case Chireiden.Silverfish.SimCard.demonheart: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) return 0; break;
+                        case Chireiden.Silverfish.SimCard.earthshock:
                             if (m.Hp >= 2)
                             {
                                 if ((!m.silenced && this.OwnNeedSilenceDatabase.ContainsKey(m.name)) 
@@ -1116,9 +1116,9 @@
                         {
                             switch (hc.card.name)
                             {
-                                case CardDB.cardName.battlerage: return pen; break;
-                                case CardDB.cardName.rampage: return pen; break;
-                                case CardDB.cardName.bloodwarriors: return pen; break;
+                                case Chireiden.Silverfish.SimCard.battlerage: return pen; break;
+                                case Chireiden.Silverfish.SimCard.rampage: return pen; break;
+                                case Chireiden.Silverfish.SimCard.bloodwarriors: return pen; break;
                             }
                         }
                     }
@@ -1130,13 +1130,13 @@
                 int realDamage = 0;
                 if (DamageTargetSpecialDatabase.ContainsKey(name))
                 {
-                    realDamage = (card.type == CardDB.cardtype.SPELL) ? p.getSpellDamageDamage(this.DamageTargetSpecialDatabase[name]) : this.DamageTargetSpecialDatabase[name];
+                    realDamage = (card.type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageTargetSpecialDatabase[name]) : this.DamageTargetSpecialDatabase[name];
                     switch (name)
                     {
-                        case CardDB.cardName.soulfire: if (target.Hp <= realDamage - 2) pen = 10; break; 
-                        case CardDB.cardName.baneofdoom: if (target.Hp > realDamage) pen = 10; break; 
-                        case CardDB.cardName.shieldslam: if (target.Hp <= 4 || target.Angr <= 4) pen = 20; break; 
-                        case CardDB.cardName.bloodtoichor: if (target.Hp <= realDamage) pen = 2; break; 
+                        case Chireiden.Silverfish.SimCard.soulfire: if (target.Hp <= realDamage - 2) pen = 10; break; 
+                        case Chireiden.Silverfish.SimCard.baneofdoom: if (target.Hp > realDamage) pen = 10; break; 
+                        case Chireiden.Silverfish.SimCard.shieldslam: if (target.Hp <= 4 || target.Angr <= 4) pen = 20; break; 
+                        case Chireiden.Silverfish.SimCard.bloodtoichor: if (target.Hp <= realDamage) pen = 2; break; 
                     }
                 }
                 else
@@ -1146,27 +1146,27 @@
                         realDamage = this.DamageTargetDatabase[name];
                         switch (card.cardIDenum)
                         {
-                            case CardDB.cardIDEnum.EX1_166a: realDamage = 2 - p.spellpower; break; 
-                            case CardDB.cardIDEnum.CS2_031: if (!target.frozen) return 0; break; 
-                            case CardDB.cardIDEnum.EX1_408: if (p.ownHero.Hp <= 12) realDamage = 6; break; 
-                            case CardDB.cardIDEnum.EX1_539: 
+                            case Chireiden.Silverfish.SimCard.EX1_166a: realDamage = 2 - p.spellpower; break; 
+                            case Chireiden.Silverfish.SimCard.CS2_031: if (!target.frozen) return 0; break; 
+                            case Chireiden.Silverfish.SimCard.EX1_408: if (p.ownHero.Hp <= 12) realDamage = 6; break; 
+                            case Chireiden.Silverfish.SimCard.EX1_539: 
                                 foreach (Minion mn in p.ownMinions)
                                 {
-                                    if ((TAG_RACE)mn.handcard.card.race == TAG_RACE.PET) { realDamage = 5; break; }
+                                    if ((TAG_RACE)mn.handcard.card.Race == TAG_RACE.PET) { realDamage = 5; break; }
                                 }
                                 break;
                         }
-                        if (card.type == CardDB.cardtype.SPELL) realDamage = p.getSpellDamageDamage(realDamage);
+                        if (card.type == Chireiden.Silverfish.SimCardtype.SPELL) realDamage = p.getSpellDamageDamage(realDamage);
                     }
                 }
                 if (realDamage == 0) realDamage = card.Attack;
-                if (target.name == CardDB.cardName.grimpatron && realDamage < target.Hp) return 500;
+                if (target.name == Chireiden.Silverfish.SimCard.grimpatron && realDamage < target.Hp) return 500;
             }
 
             return pen;
         }
 
-        private int getHealPenality(CardDB.cardName name, Minion target, Playfield p)
+        private int getHealPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
         {
             ///Todo healpenality for aoe heal
             ///todo auchenai soulpriest
@@ -1177,7 +1177,7 @@
 
             switch (name)
             {
-                case CardDB.cardName.treeoflife:
+                case Chireiden.Silverfish.SimCard.treeoflife:
                     {
                         int mheal = 0;
                         int wounded = 0;
@@ -1192,7 +1192,7 @@
                     }
                     break;
 
-                case CardDB.cardName.renojackson:
+                case Chireiden.Silverfish.SimCard.renojackson:
                     if (p.ownHero.Hp < 16)
                     {
                         int retval = p.ownHero.Hp - 16;
@@ -1213,7 +1213,7 @@
                     }
                     break;
 
-                case CardDB.cardName.circleofhealing:
+                case Chireiden.Silverfish.SimCard.circleofhealing:
                     {
                         int mheal = 0;
                         int wounded = 0;
@@ -1265,13 +1265,13 @@
                     int i = 0;
                     foreach (Minion mnn in p.ownMinions)
                     {
-                        if (mnn.name == CardDB.cardName.northshirecleric) i++;
-                        if (mnn.name == CardDB.cardName.lightwarden) i++;
+                        if (mnn.name == Chireiden.Silverfish.SimCard.northshirecleric) i++;
+                        if (mnn.name == Chireiden.Silverfish.SimCard.lightwarden) i++;
                     }
                     foreach (Minion mnn in p.enemyMinions)
                     {
-                        if (mnn.name == CardDB.cardName.northshirecleric) i--;
-                        if (mnn.name == CardDB.cardName.lightwarden) i--;
+                        if (mnn.name == Chireiden.Silverfish.SimCard.northshirecleric) i--;
+                        if (mnn.name == Chireiden.Silverfish.SimCard.lightwarden) i--;
                     }
                     if (i >= 1) return pen;
 
@@ -1279,8 +1279,8 @@
 
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardDB.cardName.slam && m.Hp < 2) return pen;
-                        if (hc.card.name == CardDB.cardName.backstab) return pen;
+                        if (hc.card.name == Chireiden.Silverfish.SimCard.slam && m.Hp < 2) return pen;
+                        if (hc.card.name == Chireiden.Silverfish.SimCard.backstab) return pen;
                     }
 
                     pen = 500;
@@ -1292,32 +1292,32 @@
             return pen;
         }
 
-        private int getCardDrawPenality(CardDB.Card card, Minion target, Playfield p)
+        private int getCardDrawPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
             // penality if carddraw is late or you have enough cards
             int pen = 0;
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
             if (!cardDrawBattleCryDatabase.ContainsKey(name)) return 0;
-            if (name == CardDB.cardName.wrath && card.cardIDenum != CardDB.cardIDEnum.EX1_154b) return 0;
-            if (name == CardDB.cardName.nourish && card.cardIDenum != CardDB.cardIDEnum.EX1_164b) return 0;
-            if (name == CardDB.cardName.tracking) return -1;            
+            if (name == Chireiden.Silverfish.SimCard.wrath && card.cardIDenum != Chireiden.Silverfish.SimCard.EX1_154b) return 0;
+            if (name == Chireiden.Silverfish.SimCard.nourish && card.cardIDenum != Chireiden.Silverfish.SimCard.EX1_164b) return 0;
+            if (name == Chireiden.Silverfish.SimCard.tracking) return -1;            
 
             int carddraw = cardDrawBattleCryDatabase[name];
             if (carddraw == 0)
             {
                 switch(name)
                 {
-                    case CardDB.cardName.harrisonjones:
+                    case Chireiden.Silverfish.SimCard.harrisonjones:
                         carddraw = p.enemyWeapon.Durability;
                         if (carddraw == 0 && (p.enemyHeroStartClass != TAG_CLASS.DRUID && p.enemyHeroStartClass != TAG_CLASS.MAGE && p.enemyHeroStartClass != TAG_CLASS.WARLOCK && p.enemyHeroStartClass != TAG_CLASS.PRIEST)) return 5;
                         break;
 
-                    case CardDB.cardName.divinefavor:
+                    case Chireiden.Silverfish.SimCard.divinefavor:
                         carddraw = p.enemyAnzCards - (p.owncards.Count);
                         if (carddraw <= 0) return 500;
                         break;
 
-                    case CardDB.cardName.battlerage:
+                    case Chireiden.Silverfish.SimCard.battlerage:
                         foreach (Minion mnn in p.ownMinions)
                         {
                             if (mnn.wounded) carddraw++;
@@ -1328,7 +1328,7 @@
                             {
                                 foreach (Handmanager.Handcard hc in p.owncards)
                                 {
-                                    if (hc.card.type == CardDB.cardtype.MOB) return 500;
+                                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) return 500;
                                 }
                                 if (p.owncards.Count < 2) return -10;
                                 else if (p.owncards.Count < 4) return -2;
@@ -1339,22 +1339,22 @@
                         }
                         break;
 
-                    case CardDB.cardName.slam:
+                    case Chireiden.Silverfish.SimCard.slam:
                         if (target != null && target.Hp >= 3) carddraw = 1;
                         if (carddraw == 0) return 4;
                         break;
 
-                    case CardDB.cardName.mortalcoil:
+                    case Chireiden.Silverfish.SimCard.mortalcoil:
                         if (target != null && target.Hp == 1) carddraw = 1;
                         if (carddraw == 0) return 15;
                         break;
 
-                    case CardDB.cardName.quickshot:
+                    case Chireiden.Silverfish.SimCard.quickshot:
                         carddraw = (p.owncards.Count > 0) ? 0 : 1;
                         if (carddraw == 0) return 4;
                         break;
 
-                    case CardDB.cardName.thoughtsteal:
+                    case Chireiden.Silverfish.SimCard.thoughtsteal:
                         carddraw = Math.Min(2, p.enemyDeckSize);
                         if (carddraw == 2) break;
                         if (carddraw == 1) pen +=4;
@@ -1368,7 +1368,7 @@
                         }
                         break;
                     
-                    case CardDB.cardName.mindvision:
+                    case Chireiden.Silverfish.SimCard.mindvision:
                         carddraw = Math.Min(1, p.enemyAnzCards);
                         if (carddraw != 1)
                         {
@@ -1376,7 +1376,7 @@
                             foreach (Minion mnn in p.ownMinions)
                             {
                                 if (this.spellDependentDatabase.ContainsKey(mnn.name))
-                                    if(mnn.name == CardDB.cardName.lorewalkercho) pen += 20; //if(spellDependentDatabase[mnn.name] == 0);
+                                    if(mnn.name == Chireiden.Silverfish.SimCard.lorewalkercho) pen += 20; //if(spellDependentDatabase[mnn.name] == 0);
                                     else scales--;
                             }
                             if (scales == 0) return 500;
@@ -1388,23 +1388,23 @@
                         }
                         break;
                         
-                    case CardDB.cardName.echoofmedivh:
+                    case Chireiden.Silverfish.SimCard.echoofmedivh:
                         if (p.ownMinions.Count == 0) return 500;
                         return 0;
                         break;
                         
-                    case CardDB.cardName.tinkertowntechnician:
+                    case Chireiden.Silverfish.SimCard.tinkertowntechnician:
                         foreach (Minion mnn in p.ownMinions)
                         {
-                            if ((TAG_RACE)mnn.handcard.card.race != TAG_RACE.MECHANICAL) pen += 4;
+                            if ((TAG_RACE)mnn.handcard.card.Race != TAG_RACE.MECHANICAL) pen += 4;
                         }
                         break;
 
-                    case CardDB.cardName.markofyshaarj:
-                        if ((TAG_RACE)target.handcard.card.race == TAG_RACE.PET) carddraw = 1;
+                    case Chireiden.Silverfish.SimCard.markofyshaarj:
+                        if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) carddraw = 1;
                         break;
 
-                    case CardDB.cardName.servantofkalimos:
+                    case Chireiden.Silverfish.SimCard.servantofkalimos:
                         if (p.anzOwnElementalsLastTurn > 0) carddraw = 1;
                         break;                        
 
@@ -1413,9 +1413,9 @@
                 }
             }
             
-            if (name == CardDB.cardName.farsight || name == CardDB.cardName.callpet) pen -= 10;
+            if (name == Chireiden.Silverfish.SimCard.farsight || name == Chireiden.Silverfish.SimCard.callpet) pen -= 10;
             
-            if (name == CardDB.cardName.lifetap)
+            if (name == Chireiden.Silverfish.SimCard.lifetap)
             {
                 if (p.isLethalCheck) return 500; //RR no benefit for lethal check
                 int minmana = 10;
@@ -1442,7 +1442,7 @@
                 {
                     foreach (Minion m in p.enemyMinions)
                     {
-                        if (m.name == CardDB.cardName.doomsayer) return 2;
+                        if (m.name == Chireiden.Silverfish.SimCard.doomsayer) return 2;
                     }
                     return 25;
                 }
@@ -1454,12 +1454,12 @@
                     {
                         if (m.playedThisTurn && cardDrawBattleCryDatabase.ContainsKey(m.name)) prevCardDraw++;
                     }
-                    CardDB.Card c;
+                    Chireiden.Silverfish.SimCard c;
                     foreach (GraveYardItem ge in Probabilitymaker.Instance.turngraveyardAll)
                     {
                         c = cdb.getCardDataFromID(ge.cardid);
                         if (cardDrawDeathrattleDatabase.ContainsKey(c.name)) prevCardDraw++;
-                        else if (c.type == CardDB.cardtype.SPELL && cardDrawBattleCryDatabase.ContainsKey(c.name)) prevCardDraw++;
+                        else if (c.type == Chireiden.Silverfish.SimCardtype.SPELL && cardDrawBattleCryDatabase.ContainsKey(c.name)) prevCardDraw++;
                     }
                 }
                 return Math.Max(-carddraw + 2 * (p.optionsPlayedThisTurn - prevCardDraw) + p.ownMaxMana - p.mana, 0);
@@ -1472,18 +1472,18 @@
             int diff = 0;
             switch (card.name)
             {
-                case CardDB.cardName.solemnvigil:
+                case Chireiden.Silverfish.SimCard.solemnvigil:
                     tmp -= 2 * p.diedMinions.Count;
                     foreach (Action a in p.playactions)
                     {
                         if (a.actionType == actionEnum.playcard && this.cardDrawBattleCryDatabase.ContainsKey(a.card.card.name)) tmp -= 2;
                     }
                     break;
-                case CardDB.cardName.echoofmedivh:
+                case Chireiden.Silverfish.SimCard.echoofmedivh:
                     diff = p.ownMinions.Count - prozis.ownMinions.Count;
                     if (diff > 0) tmp -= 2 * diff;
                     break;
-                case CardDB.cardName.bloodwarriors:
+                case Chireiden.Silverfish.SimCard.bloodwarriors:
                     foreach (Minion m in p.ownMinions) if (m.wounded) diff++;
                     foreach (Minion m in prozis.ownMinions) if (m.wounded) diff--;
                     if (diff > 0) tmp -= 2 * diff;
@@ -1498,23 +1498,23 @@
             return pen;
         }
 
-        private int getCardDrawofEffectMinions(CardDB.Card card, Playfield p)
+        private int getCardDrawofEffectMinions(Chireiden.Silverfish.SimCard card, Playfield p)
         {
             int pen = 0;
             int carddraw = 0;
-            if (card.type == CardDB.cardtype.SPELL)
+            if (card.type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
-                    if (mnn.name == CardDB.cardName.gadgetzanauctioneer) carddraw++;
+                    if (mnn.name == Chireiden.Silverfish.SimCard.gadgetzanauctioneer) carddraw++;
                 }
             }
 
-            if (card.type == CardDB.cardtype.MOB && (TAG_RACE)card.race == TAG_RACE.PET)
+            if (card.type == Chireiden.Silverfish.SimCardtype.MOB && (TAG_RACE)card.Race == TAG_RACE.PET)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
-                    if (mnn.name == CardDB.cardName.starvingbuzzard) carddraw++;
+                    if (mnn.name == Chireiden.Silverfish.SimCard.starvingbuzzard) carddraw++;
                 }
             }
 
@@ -1527,7 +1527,7 @@
             return pen;
         }
         
-        public int getCardDrawDeathrattlePenality(CardDB.cardName name, Playfield p)
+        public int getCardDrawDeathrattlePenality(Chireiden.Silverfish.SimCard name, Playfield p)
         {
             // penality if carddraw is late or you have enough cards
             if (!cardDrawDeathrattleDatabase.ContainsKey(name)) return 0;
@@ -1537,34 +1537,34 @@
             return 3 * p.optionsPlayedThisTurn;
         }
 
-        private int getRandomPenaltiy(CardDB.Card card, Playfield p, Minion target)
+        private int getRandomPenaltiy(Chireiden.Silverfish.SimCard card, Playfield p, Minion target)
         {
             if (p.turnCounter >= 1)
             {
                 return 0;
             }
 
-            if (!this.randomEffects.ContainsKey(card.name) && !(this.cardDrawBattleCryDatabase.ContainsKey(card.name) && card.type != CardDB.cardtype.SPELL))
+            if (!this.randomEffects.ContainsKey(card.name) && !(this.cardDrawBattleCryDatabase.ContainsKey(card.name) && card.type != Chireiden.Silverfish.SimCardtype.SPELL))
             {
                 return 0;
             }
 
-            if (card.name == CardDB.cardName.brawl)
+            if (card.name == Chireiden.Silverfish.SimCard.brawl)
             {
                 return 0;
             }
 
-            if ((card.name == CardDB.cardName.cleave || card.name == CardDB.cardName.multishot) && p.enemyMinions.Count == 2)
+            if ((card.name == Chireiden.Silverfish.SimCard.cleave || card.name == Chireiden.Silverfish.SimCard.multishot) && p.enemyMinions.Count == 2)
             {
                 return 0;
             }
 
-            if ((card.name == CardDB.cardName.deadlyshot) && p.enemyMinions.Count == 1)
+            if ((card.name == Chireiden.Silverfish.SimCard.deadlyshot) && p.enemyMinions.Count == 1)
             {
                 return 0;
             }
 
-            if ((card.name == CardDB.cardName.arcanemissiles || card.name == CardDB.cardName.avengingwrath)
+            if ((card.name == Chireiden.Silverfish.SimCard.arcanemissiles || card.name == Chireiden.Silverfish.SimCard.avengingwrath)
                 && p.enemyMinions.Count == 0)
             {
                 return 0;
@@ -1580,22 +1580,22 @@
             bool hasFlamewaker = false;
             foreach (Minion mnn in p.ownMinions)
             {
-                if (mnn.name == CardDB.cardName.gadgetzanauctioneer)
+                if (mnn.name == Chireiden.Silverfish.SimCard.gadgetzanauctioneer)
                 {
                     hasgadget = true;
                 }
 
-                if (mnn.name == CardDB.cardName.starvingbuzzard)
+                if (mnn.name == Chireiden.Silverfish.SimCard.starvingbuzzard)
                 {
                     hasstarving = true;
                 }
 
-                if (mnn.name == CardDB.cardName.knifejuggler)
+                if (mnn.name == Chireiden.Silverfish.SimCard.knifejuggler)
                 {
                     hasknife = true;
                 }
 
-                if (mnn.name == CardDB.cardName.flamewaker)
+                if (mnn.name == Chireiden.Silverfish.SimCard.flamewaker)
                 {
                     hasFlamewaker = true;
                 }
@@ -1610,7 +1610,7 @@
                 }
 
                 if (a.actionType == actionEnum.useHeroPower
-                    && (p.ownHeroAblility.card.name == CardDB.cardName.totemiccall || p.ownHeroAblility.card.name == CardDB.cardName.lifetap || p.ownHeroAblility.card.name == CardDB.cardName.soultap))
+                    && (p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.totemiccall || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.lifetap || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.soultap))
                 {
                     first = false;
                     continue;
@@ -1624,7 +1624,7 @@
 
                 if (a.actionType == actionEnum.playcard)
                 {
-                    if (card.name == CardDB.cardName.knifejuggler && card.type == CardDB.cardtype.MOB)
+                    if (card.name == Chireiden.Silverfish.SimCard.knifejuggler && card.type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         continue;
                     }
@@ -1639,22 +1639,22 @@
                         continue;
                     }
 
-                    if (hasgadget && card.type == CardDB.cardtype.SPELL)
+                    if (hasgadget && card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                     {
                         continue;
                     }
 
-                    if (hasFlamewaker && card.type == CardDB.cardtype.SPELL)
+                    if (hasFlamewaker && card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                     {
                         continue;
                     }
 
-                    if (hasstarving && (TAG_RACE)card.race == TAG_RACE.PET)
+                    if (hasstarving && (TAG_RACE)card.Race == TAG_RACE.PET)
                     {
                         continue;
                     }
 
-                    if (hasknife && card.type == CardDB.cardtype.MOB)
+                    if (hasknife && card.type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         continue;
                     }
@@ -1672,7 +1672,7 @@
         }
 
 
-        private int getBuffHandPenalityPlay(CardDB.cardName name, Playfield p)
+        private int getBuffHandPenalityPlay(Chireiden.Silverfish.SimCard name, Playfield p)
         {
             if (!buffHandDatabase.ContainsKey(name)) return 0;
 
@@ -1680,70 +1680,70 @@
             int anz = 0;
             switch (name)
             {
-                case CardDB.cardName.troggbeastrager: 
+                case Chireiden.Silverfish.SimCard.troggbeastrager: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.PET);
                     if (hc != null) return -5;
                     break;
-                case CardDB.cardName.grimestreetsmuggler: 
+                case Chireiden.Silverfish.SimCard.grimestreetsmuggler: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
                     if (hc != null) return -5;
                     break;
-                case CardDB.cardName.donhancho: 
+                case Chireiden.Silverfish.SimCard.donhancho: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
                     if (hc != null) return -20;
                     break;
-                case CardDB.cardName.deathaxepunisher: 
+                case Chireiden.Silverfish.SimCard.deathaxepunisher: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.LIFESTEAL);
                     if (hc != null) return -10;
                     break;
-                case CardDB.cardName.grimscalechum: 
+                case Chireiden.Silverfish.SimCard.grimscalechum: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.MURLOC);
                     if (hc == null) return -5;
                     break;
-                case CardDB.cardName.grimestreetpawnbroker: 
+                case Chireiden.Silverfish.SimCard.grimestreetpawnbroker: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Weapon);
                     if (hc == null) return -5;
                     break;
-                case CardDB.cardName.grimestreetoutfitter: 
+                case Chireiden.Silverfish.SimCard.grimestreetoutfitter: 
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.type == CardDB.cardtype.MOB) anz++;
+                        if (hc1.card.type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
                     }
                     anz--; 
                     if (anz > 0) return -1 * anz * 4;
                     else return 5;
                     break;
-                case CardDB.cardName.themistcaller: 
+                case Chireiden.Silverfish.SimCard.themistcaller: 
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.type == CardDB.cardtype.MOB) anz++;
+                        if (hc1.card.type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
                     }
                     anz--; 
                     anz += p.ownDeckSize / 4;
                     return -1 * anz * 4;
                     break;
-                case CardDB.cardName.hobartgrapplehammer: 
+                case Chireiden.Silverfish.SimCard.hobartgrapplehammer: 
                     foreach (Handmanager.Handcard hc2 in p.owncards)
                     {
-                        if (hc2.card.type == CardDB.cardtype.WEAPON) anz++;
+                        if (hc2.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) anz++;
                     }
                     if (anz == 0) return 2;
                     else return -1 * anz * 2;
                     break;
-                case CardDB.cardName.smugglerscrate: 
+                case Chireiden.Silverfish.SimCard.smugglerscrate: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.PET);
                     if (hc != null) return -10;
                     else return 10;
                     break;
-                case CardDB.cardName.stolengoods: 
+                case Chireiden.Silverfish.SimCard.stolengoods: 
                     hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.TAUNT);
                     if (hc != null) return -15;
                     else return 10;
                     break;
-                case CardDB.cardName.smugglersrun: 
+                case Chireiden.Silverfish.SimCard.smugglersrun: 
                     foreach (Handmanager.Handcard hc3 in p.owncards)
                     {
-                        if (hc3.card.type == CardDB.cardtype.MOB) anz++;
+                        if (hc3.card.type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
                     }
                     anz--; 
                     if (anz > 0) return -1 * anz * 4;
@@ -1753,7 +1753,7 @@
             return 0;
         }
 
-        private int getCardDiscardPenality(CardDB.cardName name, Playfield p)
+        private int getCardDiscardPenality(Chireiden.Silverfish.SimCard name, Playfield p)
         {
             if (p.owncards.Count <= 1) return 0;
             if (p.ownMaxMana <= 3) return 0;
@@ -1768,8 +1768,8 @@
                     if (this.cardDiscardDatabase.ContainsKey(hc.card.name)) continue;
                     switch (hc.card.name)
                     {
-                        case CardDB.cardName.silverwaregolem: pen -= 12; continue;
-                        case CardDB.cardName.fistofjaraxxus: pen -= 6; continue;
+                        case Chireiden.Silverfish.SimCard.silverwaregolem: pen -= 12; continue;
+                        case Chireiden.Silverfish.SimCard.fistofjaraxxus: pen -= 6; continue;
                     }
                     if (hc.card.getManaCost(p, hc.manacost) <= newmana)
                     {
@@ -1784,26 +1784,26 @@
             return pen;
         }
 
-        private int getDestroyOwnPenality(CardDB.cardName name, Minion target, Playfield p)
+        private int getDestroyOwnPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
         {
             if (!this.destroyOwnDatabase.ContainsKey(name)) return 0;
             
             switch (name)
             {
-                case CardDB.cardName.sanguinereveler: goto case CardDB.cardName.shadowflame;
-                case CardDB.cardName.ravenouspterrordax: goto case CardDB.cardName.shadowflame;
-                case CardDB.cardName.shadowflame:
+                case Chireiden.Silverfish.SimCard.sanguinereveler: goto case Chireiden.Silverfish.SimCard.shadowflame;
+                case Chireiden.Silverfish.SimCard.ravenouspterrordax: goto case Chireiden.Silverfish.SimCard.shadowflame;
+                case Chireiden.Silverfish.SimCard.shadowflame:
                     if (target == null || !target.Ready) return 0;
                     else return 1;
-                case CardDB.cardName.deathwing:
+                case Chireiden.Silverfish.SimCard.deathwing:
                     if (p.mobsplayedThisTurn >= 1) return 500;
                     break;
-                case CardDB.cardName.twistingnether: goto case CardDB.cardName.brawl;
-                case CardDB.cardName.doompact: goto case CardDB.cardName.brawl;
-                case CardDB.cardName.brawl:
+                case Chireiden.Silverfish.SimCard.twistingnether: goto case Chireiden.Silverfish.SimCard.brawl;
+                case Chireiden.Silverfish.SimCard.doompact: goto case Chireiden.Silverfish.SimCard.brawl;
+                case Chireiden.Silverfish.SimCard.brawl:
                     if (p.mobsplayedThisTurn >= 1) return 500;
                     
-                    if (name == CardDB.cardName.brawl && p.ownMinions.Count + p.enemyMinions.Count <= 1) return 500;
+                    if (name == Chireiden.Silverfish.SimCard.brawl && p.ownMinions.Count + p.enemyMinions.Count <= 1) return 500;
                     int highminion = 0;
                     int veryhighminion = 0;
                     foreach (Minion m in p.enemyMinions)
@@ -1833,13 +1833,13 @@
                     if (target.Ready) return 500;
                     switch (target.handcard.card.name)
                     {
-                        case CardDB.cardName.lepergnome: return -2;
-                        case CardDB.cardName.backstreetleper: return -2;
-                        case CardDB.cardName.firesworn: return -2;
-                        case CardDB.cardName.zombiechow:
+                        case Chireiden.Silverfish.SimCard.lepergnome: return -2;
+                        case Chireiden.Silverfish.SimCard.backstreetleper: return -2;
+                        case Chireiden.Silverfish.SimCard.firesworn: return -2;
+                        case Chireiden.Silverfish.SimCard.zombiechow:
                             if (p.anzOwnAuchenaiSoulpriest > 0) return -5;
                             else return 500;
-                        case CardDB.cardName.corruptedhealbot:
+                        case Chireiden.Silverfish.SimCard.corruptedhealbot:
                             if (p.anzOwnAuchenaiSoulpriest > 0) return -8;
                             else return 500;
                         default:
@@ -1848,16 +1848,16 @@
                             {
                                 switch (m.handcard.card.name)
                                 {
-                                    case CardDB.cardName.manawyrm: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.flamewaker: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.archmageantonidas: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.gadgetzanauctioneer: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.manaaddict: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.redmanawyrm: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.summoningstone: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.wickedwitchdoctor: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.holychampion: goto case CardDB.cardName.lightwarden;
-                                    case CardDB.cardName.lightwarden:
+                                    case Chireiden.Silverfish.SimCard.manawyrm: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.flamewaker: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.archmageantonidas: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.gadgetzanauctioneer: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.manaaddict: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.redmanawyrm: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.summoningstone: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.wickedwitchdoctor: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.holychampion: goto case Chireiden.Silverfish.SimCard.lightwarden;
+                                    case Chireiden.Silverfish.SimCard.lightwarden:
                                         if (m.Ready)
                                         {
                                             up++;
@@ -1875,7 +1875,7 @@
                 {
                     switch (name)
                     {
-                        case CardDB.cardName.unwillingsacrifice:
+                        case Chireiden.Silverfish.SimCard.unwillingsacrifice:
                             if (p.enemyMinions.Count > 0)
                             {
                                 if (target.handcard.card.deathrattle) return 1;
@@ -1892,7 +1892,7 @@
             return 0;
         }
 
-        private int getDestroyPenality(CardDB.cardName name, Minion target, Playfield p)
+        private int getDestroyPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
         {
             if (!this.destroyDatabase.ContainsKey(name) || p.isLethalCheck) return 0;
             int pen = 0;
@@ -1911,12 +1911,12 @@
 
                 Minion m = target;
 
-                if (m.allreadyAttacked && name != CardDB.cardName.execute)
+                if (m.allreadyAttacked && name != Chireiden.Silverfish.SimCard.execute)
                 {
                     return 50;
                 }
 
-                if (name == CardDB.cardName.shadowwordpain)
+                if (name == Chireiden.Silverfish.SimCard.shadowwordpain)
                 {
                     if (this.specialMinions.ContainsKey(m.name) || m.Angr == 3 || m.Hp >= 4)
                     {
@@ -1937,12 +1937,12 @@
                     pen = 30;
                 }
 
-                if (name == CardDB.cardName.mindcontrol && (m.name == CardDB.cardName.direwolfalpha || m.name == CardDB.cardName.raidleader || m.name == CardDB.cardName.flametonguetotem) && p.enemyMinions.Count == 1)
+                if (name == Chireiden.Silverfish.SimCard.mindcontrol && (m.name == Chireiden.Silverfish.SimCard.direwolfalpha || m.name == Chireiden.Silverfish.SimCard.raidleader || m.name == Chireiden.Silverfish.SimCard.flametonguetotem) && p.enemyMinions.Count == 1)
                 {
                     pen = 50;
                 }
 
-                if (m.name == CardDB.cardName.doomsayer)
+                if (m.name == Chireiden.Silverfish.SimCard.doomsayer)
                 {
                     pen = 5;
                 }
@@ -1952,12 +1952,12 @@
             return pen;
         }
 
-        private int getSpecialCardComboPenalitys(CardDB.Card card, Minion target, Playfield p)
+        private int getSpecialCardComboPenalitys(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
             bool lethal = p.isLethalCheck;
-            CardDB.cardName name = card.name;
+            Chireiden.Silverfish.SimCard name = card.name;
 
-            if (lethal && card.type == CardDB.cardtype.MOB)
+            if (lethal && card.type == Chireiden.Silverfish.SimCardtype.MOB)
             {
                 if (this.lethalHelpers.ContainsKey(name))
                 {
@@ -1974,25 +1974,25 @@
                         case 1:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PET && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && mm.Ready) return 0;
                             }
                             break;
                         case 2:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MECHANICAL && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MECHANICAL && mm.Ready) return 0;
                             }
                             break;
                         case 3:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.MURLOC && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && mm.Ready) return 0;
                             }
                             break;
                         case 4:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.PIRATE && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && mm.Ready) return 0;
                             }
                             break;
                         case 5:
@@ -2001,7 +2001,7 @@
                         case 6:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.name == CardDB.cardName.silverhandrecruit && mm.Ready) return 0;
+                                if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && mm.Ready) return 0;
                             }
                             break;
                         case 7:
@@ -2013,19 +2013,19 @@
                         case 8:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.DEMON && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && mm.Ready) return 0;
                             }
                             break;
                         case 9:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.race == TAG_RACE.TOTEM && mm.Ready) return 0;
+                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.TOTEM && mm.Ready) return 0;
                             }
                             break;
                         case 10:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.name == CardDB.cardName.cthun && mm.Ready) return 0;
+                                if (mm.name == Chireiden.Silverfish.SimCard.cthun && mm.Ready) return 0;
                             }
                             break;
                     }
@@ -2033,19 +2033,19 @@
                 }
                 else
                 {
-                    if ((name == CardDB.cardName.rendblackhand && target != null) && !target.own)
+                    if ((name == Chireiden.Silverfish.SimCard.rendblackhand && target != null) && !target.own)
                     {
-                        if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == CardDB.cardName.malganis)
+                        if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == Chireiden.Silverfish.SimCard.malganis)
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) return 0;
+                                if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) return 0;
                             }
                         }
                         return 500;
                     }
 
-                    if (name == CardDB.cardName.theblackknight)
+                    if (name == Chireiden.Silverfish.SimCard.theblackknight)
                     {
                         foreach (Minion mm in p.enemyMinions)
                         {
@@ -2060,13 +2060,13 @@
                             int beasts = 0;
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.Ready && (mm.handcard.card.name == CardDB.cardName.lightwarden || mm.handcard.card.name == CardDB.cardName.holychampion)) beasts++;
+                                if (mm.Ready && (mm.handcard.card.name == Chireiden.Silverfish.SimCard.lightwarden || mm.handcard.card.name == Chireiden.Silverfish.SimCard.holychampion)) beasts++;
                             }
                             if (beasts == 0) return 500;
                         }
                         else
                         {
-                            if (!(name == CardDB.cardName.nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((TAG_RACE)card.race == TAG_RACE.PET && p.ownMinions.Find(x => x.name == CardDB.cardName.tundrarhino) != null) || p.owncards.Find(x => x.card.name == CardDB.cardName.charge) != null))
+                            if (!(name == Chireiden.Silverfish.SimCard.nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((TAG_RACE)card.Race == TAG_RACE.PET && p.ownMinions.Find(x => x.name == Chireiden.Silverfish.SimCard.tundrarhino) != null) || p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.charge) != null))
                             {
                                 return 500;
                             }
@@ -2084,7 +2084,7 @@
                 pen += 10;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.race == 24)
+                    if (hc.card.Race == 24)
                     {
                         pen -= 10;
                         break;
@@ -2097,56 +2097,56 @@
             int targets = 0;
             switch(name)
             {
-                case CardDB.cardName.hobartgrapplehammer: return -5; 
-                case CardDB.cardName.bloodsailraider: if (p.ownWeapon.Durability == 0) return 5; return 0; 
-                case CardDB.cardName.captaingreenskin: if (p.ownWeapon.Durability == 0) return 10; return 0; 
-                case CardDB.cardName.luckydobuccaneer: if (!(p.ownWeapon.Durability > 0 && p.ownWeapon.Angr > 2)) return 10; return 0; 
-                case CardDB.cardName.nagacorsair: if (p.ownWeapon.Durability == 0) return 5; return 0; 
-                case CardDB.cardName.goblinautobarber: if (p.ownWeapon.Durability == 0) return 5; return 0; 
-                case CardDB.cardName.dreadcorsair: if (p.ownWeapon.Durability == 0) return 5; return 0; 
-                case CardDB.cardName.grimestreetpawnbroker: 
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == CardDB.cardtype.WEAPON) return 0;
+                case Chireiden.Silverfish.SimCard.hobartgrapplehammer: return -5; 
+                case Chireiden.Silverfish.SimCard.bloodsailraider: if (p.ownWeapon.Durability == 0) return 5; return 0; 
+                case Chireiden.Silverfish.SimCard.captaingreenskin: if (p.ownWeapon.Durability == 0) return 10; return 0; 
+                case Chireiden.Silverfish.SimCard.luckydobuccaneer: if (!(p.ownWeapon.Durability > 0 && p.ownWeapon.Angr > 2)) return 10; return 0; 
+                case Chireiden.Silverfish.SimCard.nagacorsair: if (p.ownWeapon.Durability == 0) return 5; return 0; 
+                case Chireiden.Silverfish.SimCard.goblinautobarber: if (p.ownWeapon.Durability == 0) return 5; return 0; 
+                case Chireiden.Silverfish.SimCard.dreadcorsair: if (p.ownWeapon.Durability == 0) return 5; return 0; 
+                case Chireiden.Silverfish.SimCard.grimestreetpawnbroker: 
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) return 0;
                     return 5;
-                case CardDB.cardName.bloodsailcultist: ; 
-                    if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) return 0;
+                case Chireiden.Silverfish.SimCard.bloodsailcultist: ; 
+                    if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) return 0;
                     return 8;
-                case CardDB.cardName.ravasaurrunt: 
+                case Chireiden.Silverfish.SimCard.ravasaurrunt: 
                     if (p.ownMinions.Count < 2) return 5;
                     break;
-                case CardDB.cardName.nestingroc: 
+                case Chireiden.Silverfish.SimCard.nestingroc: 
                     if (p.ownMinions.Count < 2) return 5;
                     break;
-                case CardDB.cardName.gentlemegasaur: 
+                case Chireiden.Silverfish.SimCard.gentlemegasaur: 
                     targets = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) targets++;
+                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
                     }
                     return 20 - targets * 5;
-                case CardDB.cardName.primalfinlookout: 
+                case Chireiden.Silverfish.SimCard.primalfinlookout: 
                     targets = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) targets++;
+                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
                     }
                     return 20 - targets * 5;
-                case CardDB.cardName.spiritecho: 
-                    if (p.ownQuest.Id == CardDB.cardIDEnum.UNG_942)
+                case Chireiden.Silverfish.SimCard.spiritecho: 
+                    if (p.ownQuest.Id == Chireiden.Silverfish.SimCard.UNG_942)
                     {
                         targets = 0;
                         foreach (Minion m in p.ownMinions)
                         {
-                            if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) targets++;
+                            if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
                         }
                         if (targets > 1) return -7;
                         return 10;
                     }
                     else if (p.ownMinions.Count < 2) return 7;
                     return 0;
-                case CardDB.cardName.evolvingspores: 
+                case Chireiden.Silverfish.SimCard.evolvingspores: 
                     if (p.ownMinions.Count < 3) return 15 - p.ownMinions.Count * 5;
                     return 0;
-                case CardDB.cardName.livingmana: 
+                case Chireiden.Silverfish.SimCard.livingmana: 
                     int free = 7 - p.ownMinions.Count;
                     switch (free)
                     {
@@ -2161,19 +2161,19 @@
                             return 500;
                     }
                     break;
-                case CardDB.cardName.elisethetrailblazer: return -7; 
-                case CardDB.cardName.cracklingrazormaw:   
+                case Chireiden.Silverfish.SimCard.elisethetrailblazer: return -7; 
+                case Chireiden.Silverfish.SimCard.cracklingrazormaw:   
                     if (target != null) return 0;
                     return 5;
-                case CardDB.cardName.dinomancy: return -7; 
-                case CardDB.cardName.moltenblade: return -10; 
-                case CardDB.cardName.gluttonousooze: goto case CardDB.cardName.acidicswampooze;
-                case CardDB.cardName.acidicswampooze:
+                case Chireiden.Silverfish.SimCard.dinomancy: return -7; 
+                case Chireiden.Silverfish.SimCard.moltenblade: return -10; 
+                case Chireiden.Silverfish.SimCard.gluttonousooze: goto case Chireiden.Silverfish.SimCard.acidicswampooze;
+                case Chireiden.Silverfish.SimCard.acidicswampooze:
                     if (p.enemyWeapon.Angr > 0) return 0;
                     if (p.enemyHeroName == HeroEnum.shaman || p.enemyHeroName == HeroEnum.warrior || p.enemyHeroName == HeroEnum.thief || p.enemyHeroName == HeroEnum.pala) return 10;
                     if (p.enemyHeroName == HeroEnum.hunter) return 6;
                     return 0;
-                case CardDB.cardName.darkshirecouncilman:
+                case Chireiden.Silverfish.SimCard.darkshirecouncilman:
                     if (p.enemyMinions.Count == 0)
                     {
                         List<Handmanager.Handcard> temp = new List<Handmanager.Handcard>(p.owncards);
@@ -2195,22 +2195,22 @@
                         return -3 * pcards;
                     }
                     break;
-                case CardDB.cardName.deadmanshand: 
+                case Chireiden.Silverfish.SimCard.deadmanshand: 
                     if (p.owncards.Count > 2) return -5 * p.owncards.Count;
                     break;
-                case CardDB.cardName.bringiton: 
+                case Chireiden.Silverfish.SimCard.bringiton: 
                     return 3 * p.enemyAnzCards * (11 - p.enemyMaxMana);
-                case CardDB.cardName.strongshellscavenger:
+                case Chireiden.Silverfish.SimCard.strongshellscavenger:
                     int tmp = 0;
                     foreach (Minion m in p.ownMinions) if (m.taunt) tmp++;
                     return 12 - tmp * 2;
 
             }
 
-            if (name == CardDB.cardName.unstableportal && p.owncards.Count <= 9) return -15;
-            if (name == CardDB.cardName.lunarvisions && p.owncards.Count <= 8) return -5;
+            if (name == Chireiden.Silverfish.SimCard.unstableportal && p.owncards.Count <= 9) return -15;
+            if (name == Chireiden.Silverfish.SimCard.lunarvisions && p.owncards.Count <= 8) return -5;
 
-            if (name == CardDB.cardName.azuredrake)
+            if (name == Chireiden.Silverfish.SimCard.azuredrake)
             {
                 pen = 0;
                 foreach (Minion mnn in p.enemyMinions)
@@ -2232,15 +2232,15 @@
                     bool pet = false;
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardDB.cardName.menageriewarden) { menageriewarden = true; continue; }
-                        if ((TAG_RACE)hc.card.race == TAG_RACE.PET && hc.card.cost <= p.ownMaxMana) pet = true;
+                        if (hc.card.name == Chireiden.Silverfish.SimCard.menageriewarden) { menageriewarden = true; continue; }
+                        if ((TAG_RACE)hc.card.Race == TAG_RACE.PET && hc.card.cost <= p.ownMaxMana) pet = true;
                     }
                     if (menageriewarden && pet) pen += 23;
                 }
                 return pen;
             }
 
-            if (name == CardDB.cardName.manatidetotem)
+            if (name == Chireiden.Silverfish.SimCard.manatidetotem)
             {
                 if (p.owncards.Count > 2)
                 {
@@ -2261,17 +2261,17 @@
                 return 0;
             }
 
-            if (name == CardDB.cardName.menageriewarden)
+            if (name == Chireiden.Silverfish.SimCard.menageriewarden)
             {
-                if (target != null && (TAG_RACE)target.handcard.card.race == TAG_RACE.PET) return 0;
+                if (target != null && (TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) return 0;
                 else return 10;
             }
 
-            if (name == CardDB.cardName.duplicate)
+            if (name == Chireiden.Silverfish.SimCard.duplicate)
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == CardDB.cardName.mirrorentity)
+                    if (hc.card.name == Chireiden.Silverfish.SimCard.mirrorentity)
                     {
                         foreach (Minion mnn in p.ownMinions)
                         {
@@ -2282,35 +2282,35 @@
                 }
             }
 
-            if ((name == CardDB.cardName.lifetap || name == CardDB.cardName.soultap) && p.owncards.Count <= 9)
+            if ((name == Chireiden.Silverfish.SimCard.lifetap || name == Chireiden.Silverfish.SimCard.soultap) && p.owncards.Count <= 9)
             {
                  foreach (Minion mnn in p.ownMinions)
                  {
-                     if (mnn.name == CardDB.cardName.wilfredfizzlebang && !mnn.silenced) return -20;
+                     if (mnn.name == Chireiden.Silverfish.SimCard.wilfredfizzlebang && !mnn.silenced) return -20;
                  }
             }
 
-            if (name == CardDB.cardName.forbiddenritual)
+            if (name == Chireiden.Silverfish.SimCard.forbiddenritual)
             {
                 if (p.ownMinions.Count == 7 || p.mana == 0) return 500;
                 return 7;
             }
             
-            if (name == CardDB.cardName.competitivespirit)
+            if (name == Chireiden.Silverfish.SimCard.competitivespirit)
             {
                 if (p.ownMinions.Count < 1) return 500;
                 if (p.ownMinions.Count > 2) return 0;
                 return (15 - 5 * p.ownMinions.Count);
             }
 
-            if (name == CardDB.cardName.shifterzerus) return 500;
+            if (name == Chireiden.Silverfish.SimCard.shifterzerus) return 500;
 
-            if (card.name == CardDB.cardName.daggermastery)
+            if (card.name == Chireiden.Silverfish.SimCard.daggermastery)
             {
                 if (p.ownWeapon.Angr >= 2 || p.ownWeapon.Durability >= 2) return 5;
             }
 
-            if (card.name == CardDB.cardName.upgrade)
+            if (card.name == Chireiden.Silverfish.SimCard.upgrade)
             {
                 if (p.ownWeapon.Durability == 0)
                 {
@@ -2319,22 +2319,22 @@
                 }
             }
 
-            if (card.name == CardDB.cardName.malchezaarsimp && p.owncards.Count > 2) return 5;
+            if (card.name == Chireiden.Silverfish.SimCard.malchezaarsimp && p.owncards.Count > 2) return 5;
 
-            if (card.name == CardDB.cardName.baronrivendare)
+            if (card.name == Chireiden.Silverfish.SimCard.baronrivendare)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
-                    if (mnn.name == CardDB.cardName.deathlord || mnn.name == CardDB.cardName.zombiechow || mnn.name == CardDB.cardName.dancingswords) return 30;
+                    if (mnn.name == Chireiden.Silverfish.SimCard.deathlord || mnn.name == Chireiden.Silverfish.SimCard.zombiechow || mnn.name == Chireiden.Silverfish.SimCard.dancingswords) return 30;
                 }
             }
 
             //rule for coin on early game
-            if (p.ownMaxMana < 3 && card.name == CardDB.cardName.thecoin)
+            if (p.ownMaxMana < 3 && card.name == Chireiden.Silverfish.SimCard.thecoin)
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.manacost <= p.ownMaxMana && hc.card.type == CardDB.cardtype.MOB) return 5;
+                    if (hc.manacost <= p.ownMaxMana && hc.card.type == Chireiden.Silverfish.SimCardtype.MOB) return 5;
                 }
 
             }
@@ -2343,7 +2343,7 @@
             pen = 0;
             switch (card.name)
             {
-                case CardDB.cardName.flare: 
+                case Chireiden.Silverfish.SimCard.flare: 
                     foreach (Minion mn in p.ownMinions) if (mn.stealth) pen++;
                     foreach (Minion mn in p.enemyMinions) if (mn.stealth) pen--;
                     if (p.enemySecretCount > 0)
@@ -2352,10 +2352,10 @@
                         bool canPlaySpell = false;
                         foreach(Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardDB.cardName.flare) continue;
+                            if (hc.card.name == Chireiden.Silverfish.SimCard.flare) continue;
                             if (hc.card.cost <= p.mana - 2) 
                             {
-                                if (!canPlayMinion && hc.card.type == CardDB.cardtype.MOB)
+                                if (!canPlayMinion && hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                                 {
                                     
                                     int tmp = p.getSecretTriggersByType(0, true, false, target);
@@ -2363,7 +2363,7 @@
                                     canPlayMinion = true;
                                     continue;
                                 }
-                                if (!canPlaySpell && hc.card.type == CardDB.cardtype.SPELL)
+                                if (!canPlaySpell && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                                 {
                                     int tmp = p.getSecretTriggersByType(1, true, false, target);
                                     if (tmp > 0) pen -= tmp * 50;
@@ -2385,7 +2385,7 @@
                         }
                     }
                     break;
-                case CardDB.cardName.eaterofsecrets: 
+                case Chireiden.Silverfish.SimCard.eaterofsecrets: 
                     if (p.enemySecretCount > 0)
                     {
                         pen -= p.enemySecretCount * 50;
@@ -2401,22 +2401,22 @@
                         }
                     }
                     break;
-                case CardDB.cardName.kezanmystic: 
+                case Chireiden.Silverfish.SimCard.kezanmystic: 
                     if (p.enemySecretCount == 1 && p.playactions.Count == 0) pen -= 50;
                     break;
-                case CardDB.cardName.水晶学:
+                case Chireiden.Silverfish.SimCard.水晶学:
                     if (p.owncards.Count <= 8) return -50;
                     else return 50;
                     break;
                 //风驰电掣
                 //判断手牌中随从数量，
                 //此处大于或等于2个时使用
-                case CardDB.cardName.smugglersrun:
+                case Chireiden.Silverfish.SimCard.smugglersrun:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.type == CardDB.cardtype.MOB)
+                            if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                             {
                                 iii++;
                             }
@@ -2426,18 +2426,18 @@
                     }
                     break;
                 //神恩术 divinefavor
-                case CardDB.cardName.divinefavor:
+                case Chireiden.Silverfish.SimCard.divinefavor:
                     if (p.enemycarddraw - p.owncards.Count >= 2) return -50;
                     else return 50;
                     break;
                 //污手街供货商 grimestreetoutfitter
                 //和开车一样的道理
-                case CardDB.cardName.grimestreetoutfitter:
+                case Chireiden.Silverfish.SimCard.grimestreetoutfitter:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.type == CardDB.cardtype.MOB)
+                            if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                             {
                                 iii++;
                             }
@@ -2448,12 +2448,12 @@
                     break;
                 //亮石技师
                 //原则同上
-                case CardDB.cardName.亮石技师:
+                case Chireiden.Silverfish.SimCard.亮石技师:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.type == CardDB.cardtype.MOB)
+                            if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                             {
                                 iii++;
                             }
@@ -2463,12 +2463,12 @@
                     }
                     break;
                 //通电机器人
-                case CardDB.cardName.通电机器人:
+                case Chireiden.Silverfish.SimCard.通电机器人:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.race == 17)
+                            if (hc.card.Race == 17)
                             {
                                 iii++;
                             }
@@ -2485,59 +2485,59 @@
                 * 此处要经大量测试去确定 
                 * 此处暂时确定为白板直接下
                 * */
-                case CardDB.cardName.mechwarper:
+                case Chireiden.Silverfish.SimCard.mechwarper:
                     return -25;
                     break;
 
                
 
                 //分裂战斧
-                case CardDB.cardName.分裂战斧: 
+                case Chireiden.Silverfish.SimCard.分裂战斧: 
                   int ownTotemsCount= 0;
                   foreach (Minion m in p.ownMinions)
                         {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
                         }
                     return 5 - ownTotemsCount * 5;
                 //风怒小陀螺
-                case CardDB.cardName.whirlingzapomatic:
+                case Chireiden.Silverfish.SimCard.whirlingzapomatic:
                     if (p.enemyHeroName == HeroEnum.warlock) return -10;
 
                     return 0;
 
                 //风暴聚合器
-                case CardDB.cardName.风暴聚合器:
+                case Chireiden.Silverfish.SimCard.风暴聚合器:
                     if (p.ownMinions.Count < 7) return 95 - p.ownMinions.Count * 25;
                     return 0;
 
                 //图腾之力和图腾潮涌惩罚
-                case CardDB.cardName.totemicmight:
+                case Chireiden.Silverfish.SimCard.totemicmight:
                     ownTotemsCount = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
                     }
                     return 13 - ownTotemsCount * 2;
-                case CardDB.cardName.图腾潮涌:
+                case Chireiden.Silverfish.SimCard.图腾潮涌:
                     ownTotemsCount = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
                     }
                     return 13 - ownTotemsCount * 2;
                 //怪盗图腾
-                case CardDB.cardName.怪盗图腾:
+                case Chireiden.Silverfish.SimCard.怪盗图腾:
                     return -2;
                 //暗金教侍从添加
 
-                case CardDB.cardName.kaballackey:
+                case Chireiden.Silverfish.SimCard.kaballackey:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
                         if (p.ownMaxMana == 1 && hc.card.Secret) return -50;
                     }
                     break;
                 
-                case CardDB.cardName.对空奥术法师:
+                case Chireiden.Silverfish.SimCard.对空奥术法师:
                     {
                         int KillCount = 0;
                         foreach (Minion mi in p.enemyMinions)
@@ -2584,9 +2584,9 @@
             
 
                 //疯狂的科学家
-                case CardDB.cardName.madscientist: return -6;
+                case Chireiden.Silverfish.SimCard.madscientist: return -6;
                 //厄运信天翁
-                   case CardDB.cardName.厄运信天翁:
+                   case Chireiden.Silverfish.SimCard.厄运信天翁:
                   int ownMinionsSumHp = 0;
                   if (p.enemyHero.Hp < 20) return -20;
                         foreach (Minion mm in p.ownMinions)
@@ -2595,18 +2595,18 @@
                     else return -ownMinionsSumHp;
                     break;
                 //麦迪文的男仆
-                case CardDB.cardName.medivhsvalet:
+                case Chireiden.Silverfish.SimCard.medivhsvalet:
                     if (p.ownSecretsIDList.Count < 1) return 80;
                     if (target.isHero) return -5;
                     break;
                 //爆炸符文
-                case CardDB.cardName.explosiverunes: return -8;
+                case Chireiden.Silverfish.SimCard.explosiverunes: return -8;
                 //复制
-                case CardDB.cardName.duplicate:
+                case Chireiden.Silverfish.SimCard.duplicate:
                     bool found1 = false;
                     foreach (Minion mnn1 in p.ownMinions)
                     {
-                        if (mnn1.name == CardDB.cardName.kabalcrystalrunner || mnn1.name == CardDB.cardName.云雾王子) found1 = true;
+                        if (mnn1.name == Chireiden.Silverfish.SimCard.kabalcrystalrunner || mnn1.name == Chireiden.Silverfish.SimCard.云雾王子) found1 = true;
                     
                     }
                     if (found1) return -10;
@@ -2615,14 +2615,14 @@
                     break;
                 
                  //寒冰屏障
-                case CardDB.cardName.iceblock: 
+                case Chireiden.Silverfish.SimCard.iceblock: 
                     if (p.ownHero.Hp < 20) return -8;
                     else return -3;
                     break;
                 //法术反制
-                case CardDB.cardName.counterspell: return -6;
+                case Chireiden.Silverfish.SimCard.counterspell: return -6;
                 //火焰结界
-                case CardDB.cardName.火焰结界:
+                case Chireiden.Silverfish.SimCard.火焰结界:
                     if (p.enemyMinions.Count == 2) return -8;
                     if (p.enemyMinions.Count == 3) return -12;
                     if (p.enemyMinions.Count >= 4) return -15;
@@ -2630,33 +2630,33 @@
                     break;
                 
                 //云雾王子
-                case CardDB.cardName.cloudprince:
+                case Chireiden.Silverfish.SimCard.cloudprince:
                     if (p.ownSecretsIDList.Count < 1) return 80;
                     if (target.isHero) return -5;
                     break;
                 //艾露尼斯
-                case CardDB.cardName.艾露尼斯:
+                case Chireiden.Silverfish.SimCard.艾露尼斯:
                     if (p.owncards.Count >= 6) return 500;
                     else return -90;
                     break;
                 //火冲
-                case CardDB.cardName.fireblast:
+                case Chireiden.Silverfish.SimCard.fireblast:
                     if (target.isHero) return -2;
                     else return -1;
                     break;
-                case CardDB.cardName.totemiccall:
+                case Chireiden.Silverfish.SimCard.totemiccall:
                     if (lethal) return 20;
                     break;
 
-                case CardDB.cardName.frostwolfwarlord:
+                case Chireiden.Silverfish.SimCard.frostwolfwarlord:
                     if (p.ownMinions.Count == 0) pen += 5;
                     break;
 
-                case CardDB.cardName.flametonguetotem:
+                case Chireiden.Silverfish.SimCard.flametonguetotem:
                     if (p.ownMinions.Count == 0) return 100;
                     break;
                 
-                case CardDB.cardName.stampedingkodo:
+                case Chireiden.Silverfish.SimCard.stampedingkodo:
                     bool found = false;
                     foreach (Minion mi in p.enemyMinions)
                     {
@@ -2665,18 +2665,18 @@
                     if (!found) return 20;
                     break;
 
-                case CardDB.cardName.windfury:
+                case Chireiden.Silverfish.SimCard.Windfury:
                     if (!target.own) return 500;
                     else if (!target.Ready) return 500;
                     break;
 
-                case CardDB.cardName.desperatestand: goto case CardDB.cardName.ancestralspirit;
-                case CardDB.cardName.ancestralspirit:
+                case Chireiden.Silverfish.SimCard.desperatestand: goto case Chireiden.Silverfish.SimCard.ancestralspirit;
+                case Chireiden.Silverfish.SimCard.ancestralspirit:
                     if (!target.isHero)
                     {
                         if (!target.own)
                         {
-                            if (target.name == CardDB.cardName.deathlord || target.name == CardDB.cardName.zombiechow || target.name == CardDB.cardName.dancingswords) return 0;
+                            if (target.name == Chireiden.Silverfish.SimCard.deathlord || target.name == Chireiden.Silverfish.SimCard.zombiechow || target.name == Chireiden.Silverfish.SimCard.dancingswords) return 0;
                             return 500;
                         }
                         else
@@ -2687,42 +2687,42 @@
                     }
                     break;
 
-                case CardDB.cardName.houndmaster:
+                case Chireiden.Silverfish.SimCard.houndmaster:
                     if (target == null) return 50;
                     break;
 
-                case CardDB.cardName.beneaththegrounds: return -10;
+                case Chireiden.Silverfish.SimCard.beneaththegrounds: return -10;
 
-                case CardDB.cardName.curseofrafaam: return -7;
+                case Chireiden.Silverfish.SimCard.curseofrafaam: return -7;
 
-                case CardDB.cardName.flameimp:
+                case Chireiden.Silverfish.SimCard.flameimp:
                     if (p.ownHero.Hp + p.ownHero.armor > 20) pen -= 3;
                     break;
              
 
-                case CardDB.cardName.quartermaster:
+                case Chireiden.Silverfish.SimCard.quartermaster:
                     foreach (Minion mm in p.ownMinions)
                     {
-                        if (mm.name == CardDB.cardName.silverhandrecruit) return 0;
+                        if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit) return 0;
                     }
                     return 5;
 
-                case CardDB.cardName.mysteriouschallenger: return -14;
+                case Chireiden.Silverfish.SimCard.mysteriouschallenger: return -14;
                   
 
-                case CardDB.cardName.biggamehunter:
+                case Chireiden.Silverfish.SimCard.biggamehunter:
                     if (target == null || target.own) return 40;
                     break;
                     
-                case CardDB.cardName.emergencycoolant:
+                case Chireiden.Silverfish.SimCard.emergencycoolant:
                     if (target != null && target.own) pen = 500;
                     break;
 
-                case CardDB.cardName.shatteredsuncleric:
+                case Chireiden.Silverfish.SimCard.shatteredsuncleric:
                     if (target == null) return 10;
                     break;
 
-                case CardDB.cardName.argentprotector:
+                case Chireiden.Silverfish.SimCard.argentprotector:
                     if (target == null) pen = 20;
                     else
                     {
@@ -2735,7 +2735,7 @@
                     }
                     break;
 
-                case CardDB.cardName.facelessmanipulator:
+                case Chireiden.Silverfish.SimCard.facelessmanipulator:
                     if (target == null) return 50;
                     if (target.Angr >= 5 || target.handcard.card.cost >= 5 || (target.handcard.card.rarity == 5 || target.handcard.card.cost >= 3))
                     {
@@ -2743,19 +2743,19 @@
                     }
                     return 49;
 
-                case CardDB.cardName.rendblackhand:
+                case Chireiden.Silverfish.SimCard.rendblackhand:
                     if (target == null) return 15;
                     if (target.own) return 100;
-                    if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == CardDB.cardName.malganis)
+                    if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == Chireiden.Silverfish.SimCard.malganis)
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) return 0;
+                            if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) return 0;
                         }
                     }
                     return 500;
 
-                case CardDB.cardName.theblackknight:
+                case Chireiden.Silverfish.SimCard.theblackknight:
                     if (target == null) return 50;
                     foreach (Minion mnn in p.enemyMinions)
                     {
@@ -2763,8 +2763,8 @@
                     }
                     return 20;
 
-                case CardDB.cardName.madderbomber: goto case CardDB.cardName.madbomber;
-                case CardDB.cardName.madbomber:
+                case Chireiden.Silverfish.SimCard.madderbomber: goto case Chireiden.Silverfish.SimCard.madbomber;
+                case Chireiden.Silverfish.SimCard.madbomber:
                     pen = 0;
                     foreach (Minion mnn in p.ownMinions)
                     {
@@ -2772,11 +2772,11 @@
                     }
                     return pen;
 
-                case CardDB.cardName.sylvanaswindrunner:
+                case Chireiden.Silverfish.SimCard.sylvanaswindrunner:
                     if (p.enemyMinions.Count == 0) return 10;
                     break;
 
-                case CardDB.cardName.betrayal:
+                case Chireiden.Silverfish.SimCard.betrayal:
                     if (!target.own && !target.isHero)
                     {
                         if (target.Angr == 0) return 30;
@@ -2784,14 +2784,14 @@
                     }
                     break;
 
-                case CardDB.cardName.nerubianegg:
+                case Chireiden.Silverfish.SimCard.nerubianegg:
                     if (p.owncards.Find(x => this.attackBuffDatabase.ContainsKey(x.card.name)) != null || p.owncards.Find(x => this.tauntBuffDatabase.ContainsKey(x.card.name)) != null)
                     {
                         return -6;
                     }
                     break;
 
-                case CardDB.cardName.bite:
+                case Chireiden.Silverfish.SimCard.bite:
                     if ((p.ownHero.numAttacksThisTurn == 0 || (p.ownHero.windfury && p.ownHero.numAttacksThisTurn == 1)) && !p.ownHero.frozen)
                     {
 
@@ -2799,31 +2799,31 @@
                     else return 20;
                     break;
 
-                case CardDB.cardName.deadlypoison:
+                case Chireiden.Silverfish.SimCard.deadlypoison:
                     return -(p.ownWeapon.Durability - 1) * 2;
 
-                case CardDB.cardName.coldblood:
+                case Chireiden.Silverfish.SimCard.coldblood:
                     if (lethal) return 0;
                     return 25;
 
-                case CardDB.cardName.bloodmagethalnos: return 10;
+                case Chireiden.Silverfish.SimCard.bloodmagethalnos: return 10;
 
-                case CardDB.cardName.frostbolt:
+                case Chireiden.Silverfish.SimCard.frostbolt:
                     if (!target.own && !target.isHero)
                     {
                         if (target.handcard.card.cost < 3 && !this.priorityDatabase.ContainsKey(target.handcard.card.name)) return 15;
                     }
                     return 0;
 
-                case CardDB.cardName.poweroverwhelming:
+                case Chireiden.Silverfish.SimCard.poweroverwhelming:
                     if (target.own && !target.isHero && !target.Ready) return 500;
                     break;
 
-                case CardDB.cardName.frothingberserker:
+                case Chireiden.Silverfish.SimCard.frothingberserker:
                     if (p.cardsPlayedThisTurn >= 1) pen = 5;
                     break;
 
-                case CardDB.cardName.handofprotection:
+                case Chireiden.Silverfish.SimCard.handofprotection:
                     if (!target.own)
                     {
                         foreach (Minion mm in p.ownMinions)
@@ -2834,51 +2834,51 @@
                     if (target.Hp == 1) pen = 15;
                     break;
 
-                case CardDB.cardName.wildgrowth: goto case CardDB.cardName.nourish;
-                case CardDB.cardName.nourish:
+                case Chireiden.Silverfish.SimCard.wildgrowth: goto case Chireiden.Silverfish.SimCard.nourish;
+                case Chireiden.Silverfish.SimCard.nourish:
                     if (p.ownMaxMana == 9 && !(p.ownHeroName == HeroEnum.thief && p.cardsPlayedThisTurn == 0)) return 500;
                     break;
 
-                case CardDB.cardName.resurrect:
+                case Chireiden.Silverfish.SimCard.resurrect:
                     if (p.ownMaxMana < 6) return 50;
                     if (p.ownMinions.Count == 7) return 500;
                     if (p.ownMaxMana > 8) return 0;
-                    if (p.OwnLastDiedMinion == CardDB.cardIDEnum.None) return 6;
+                    if (p.OwnLastDiedMinion == Chireiden.Silverfish.SimCard.None) return 6;
                     return 0;
 
-                case CardDB.cardName.lavashock:
+                case Chireiden.Silverfish.SimCard.lavashock:
                     if (p.ueberladung + p.lockedMana < 1) return 15;
                     return (3 - 3 * (p.ueberladung + p.lockedMana));
 
-                case CardDB.cardName.edwinvancleef:
+                case Chireiden.Silverfish.SimCard.edwinvancleef:
                     if (p.cardsPlayedThisTurn < 1) return 30;
                     else if (p.cardsPlayedThisTurn < 2) return 10;
                     else return 0;
 
-                case CardDB.cardName.enhanceomechano:
+                case Chireiden.Silverfish.SimCard.enhanceomechano:
                     if (p.ownMinions.Count == 0 && p.ownMaxMana < 5) return 500;
                     pen = 2 * (p.mana - 4 - p.mobsplayedThisTurn);
                     if (p.mobsplayedThisTurn < 1) pen += 30;
                     return pen;
 
-                case CardDB.cardName.knifejuggler:
+                case Chireiden.Silverfish.SimCard.knifejuggler:
                     if (p.mobsplayedThisTurn >= 1) return 20;
                     break;
 
-                case CardDB.cardName.flamewaker:
+                case Chireiden.Silverfish.SimCard.flamewaker:
                     foreach (Action a in p.playactions)
                     {
-                        if (a.actionType == actionEnum.playcard && a.card.card.type == CardDB.cardtype.SPELL) return 30;
+                        if (a.actionType == actionEnum.playcard && a.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL) return 30;
                     }
                     break;
 
-                case CardDB.cardName.polymorph: goto case CardDB.cardName.hex;
-                case CardDB.cardName.hex:
+                case Chireiden.Silverfish.SimCard.polymorph: goto case Chireiden.Silverfish.SimCard.hex;
+                case Chireiden.Silverfish.SimCard.hex:
                     if (!target.isHero)
                     {
                         if (target.own)
                         {
-                            if (target.name == CardDB.cardName.masterchest) return -5;
+                            if (target.name == Chireiden.Silverfish.SimCard.masterchest) return -5;
                             else return 500;
                         }
                         else
@@ -2893,11 +2893,11 @@
                     }
                     break;
 
-                case CardDB.cardName.ravagingghoul:
+                case Chireiden.Silverfish.SimCard.ravagingghoul:
                     if (p.enemyMinions.Count == 0) return 7;
                     break;
 
-                case CardDB.cardName.bookwyrm:
+                case Chireiden.Silverfish.SimCard.bookwyrm:
                     if (target == null) return 20;
                     else
                     {
@@ -2911,49 +2911,49 @@
                     }
                     break;
 
-                case CardDB.cardName.grimestreetprotector:
+                case Chireiden.Silverfish.SimCard.grimestreetprotector:
                     if (p.ownMinions.Count == 1) return 10;
                     else if (p.ownMinions.Count == 0) return 20;
                     break;
 
-                case CardDB.cardName.sunfuryprotector:
+                case Chireiden.Silverfish.SimCard.sunfuryprotector:
                     if (p.ownMinions.Count == 1) return 15;
                     else if (p.ownMinions.Count == 0) return 30;
                     break;
 
-                case CardDB.cardName.defenderofargus:
+                case Chireiden.Silverfish.SimCard.defenderofargus:
                     if (p.ownMinions.Count == 1) return 30;
                     else if (p.ownMinions.Count == 0) return 50;
                     break;
 
-                case CardDB.cardName.unearthedraptor:
+                case Chireiden.Silverfish.SimCard.unearthedraptor:
                     if (target == null) return 10;
                     break;
 
-                case CardDB.cardName.unleashthehounds:
+                case Chireiden.Silverfish.SimCard.unleashthehounds:
                     if (p.enemyMinions.Count <= 1) return 20;
                     break;
 
-                case CardDB.cardName.equality:
+                case Chireiden.Silverfish.SimCard.equality:
                     if (p.enemyMinions.Count <= 2 || (p.ownMinions.Count - p.enemyMinions.Count >= 1)) return 20;
                     break;
 
-                case CardDB.cardName.bloodsailraider:
+                case Chireiden.Silverfish.SimCard.bloodsailraider:
                     if (p.ownWeapon.Durability == 0)
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.type == CardDB.cardtype.WEAPON) return 10;
+                            if (hc.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) return 10;
                         }
                     }
                     break;
 
-                case CardDB.cardName.innerfire:
-                    if (target.name == CardDB.cardName.lightspawn) return 500;
+                case Chireiden.Silverfish.SimCard.innerfire:
+                    if (target.name == Chireiden.Silverfish.SimCard.lightspawn) return 500;
                     if (!target.Ready) return 20;
                     break;
 
-                case CardDB.cardName.huntersmark:
+                case Chireiden.Silverfish.SimCard.huntersmark:
                     if (!target.isHero)
                     {
                         if (target.own) return 500;
@@ -2964,11 +2964,11 @@
                     }
                     break;
 
-                case CardDB.cardName.crazedalchemist:
+                case Chireiden.Silverfish.SimCard.crazedalchemist:
                     if (target != null) pen -= 1;
                     break;
 
-                case CardDB.cardName.deathwing:
+                case Chireiden.Silverfish.SimCard.deathwing:
                     int prevDmg = 0;
                     foreach (Minion m1 in p.enemyMinions)
                     {
@@ -2977,27 +2977,27 @@
                     if (p.ownHero.Hp + p.ownHero.armor > prevDmg * 2) pen += p.ownMinions.Count * 10 + p.owncards.Count * 25;
                     break;
 
-                case CardDB.cardName.deathwingdragonlord:
+                case Chireiden.Silverfish.SimCard.deathwingdragonlord:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) pen -= 3;
+                        if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) pen -= 3;
                     }
                     pen += 3;
                     break;
 
-                case CardDB.cardName.humility: goto case CardDB.cardName.aldorpeacekeeper;
-                case CardDB.cardName.aldorpeacekeeper:
+                case Chireiden.Silverfish.SimCard.humility: goto case Chireiden.Silverfish.SimCard.aldorpeacekeeper;
+                case Chireiden.Silverfish.SimCard.aldorpeacekeeper:
                     if (target != null)
                     {
                         if (target.own) pen = 500;
                         else if (target.Angr <= 3) pen = 30;
-                        if (target.name == CardDB.cardName.lightspawn) pen = 500;
+                        if (target.name == Chireiden.Silverfish.SimCard.lightspawn) pen = 500;
                     }
                     else pen = 40;
                     break;
             
-                case CardDB.cardName.direwolfalpha: goto case CardDB.cardName.abusivesergeant;
-                case CardDB.cardName.abusivesergeant:
+                case Chireiden.Silverfish.SimCard.direwolfalpha: goto case Chireiden.Silverfish.SimCard.abusivesergeant;
+                case Chireiden.Silverfish.SimCard.abusivesergeant:
                     int ready = 0;
                     foreach (Minion min in p.ownMinions)
                     {
@@ -3006,18 +3006,18 @@
                     if (ready == 0) pen = 5;
                     break;
                     
-                case CardDB.cardName.gangup:
+                case Chireiden.Silverfish.SimCard.gangup:
                     if (this.GangUpDatabase.ContainsKey(target.handcard.card.name))
                     {
                         return (-5 - 1 * GangUpDatabase[target.handcard.card.name]);
                     }
                     else return 40;
                     
-                case CardDB.cardName.defiasringleader:
+                case Chireiden.Silverfish.SimCard.defiasringleader:
                     if (p.cardsPlayedThisTurn == 0) pen = 10;
                     break;
 
-                case CardDB.cardName.bloodknight:
+                case Chireiden.Silverfish.SimCard.bloodknight:
                     int shilds = 0;
                     foreach (Minion min in p.ownMinions)
                     {
@@ -3030,7 +3030,7 @@
                     if (shilds == 0) pen = 10;
                     break;
 
-                case CardDB.cardName.reincarnate:
+                case Chireiden.Silverfish.SimCard.reincarnate:
                     if (target.own)
                     {
                         if (target.handcard.card.deathrattle || target.ancestralspirit >= 1 || target.desperatestand >= 1 || target.souloftheforest >= 1 || target.stegodon >= 1 || target.livingspores >= 1 || target.infest >= 1 || target.explorershat >= 1 || target.returnToHand >= 1 || target.deathrattle2 != null || target.enemyBlessingOfWisdom >= 1 || target.enemyPowerWordGlory >= 1) return 0;
@@ -3040,24 +3040,24 @@
                         bool hasOnMinionDiesMinion = false;
                         foreach (Minion mnn in p.ownMinions)
                         {
-                            if (mnn.name == CardDB.cardName.scavenginghyena && target.handcard.card.race == 20) hasOnMinionDiesMinion = true;
-                            if (mnn.name == CardDB.cardName.flesheatingghoul || mnn.name == CardDB.cardName.cultmaster) hasOnMinionDiesMinion = true;
+                            if (mnn.name == Chireiden.Silverfish.SimCard.scavenginghyena && target.handcard.card.Race == 20) hasOnMinionDiesMinion = true;
+                            if (mnn.name == Chireiden.Silverfish.SimCard.flesheatingghoul || mnn.name == Chireiden.Silverfish.SimCard.cultmaster) hasOnMinionDiesMinion = true;
                         }
                         if (hasOnMinionDiesMinion) return 0;
                         return 500;
                     }
                     else
                     {
-                        if (target.name == CardDB.cardName.nerubianegg && target.Angr <= 4 && !target.taunt) return 500;
-                        if (target.taunt && !target.handcard.card.tank) return 0;
+                        if (target.name == Chireiden.Silverfish.SimCard.nerubianegg && target.Angr <= 4 && !target.taunt) return 500;
+                        if (target.taunt && !target.handcard.card.Taunt) return 0;
                         if (target.enemyBlessingOfWisdom >= 1 || target.enemyPowerWordGlory >= 1) return 0;
                         if (target.Angr > target.handcard.card.Attack || target.Hp > target.handcard.card.Health) return 0;
-                        if (target.name == CardDB.cardName.abomination || target.name == CardDB.cardName.zombiechow || target.name == CardDB.cardName.unstableghoul || target.name == CardDB.cardName.dancingswords) return 0;
+                        if (target.name == Chireiden.Silverfish.SimCard.abomination || target.name == Chireiden.Silverfish.SimCard.zombiechow || target.name == Chireiden.Silverfish.SimCard.unstableghoul || target.name == Chireiden.Silverfish.SimCard.dancingswords) return 0;
                         return 500;
                     }
                     break;
 
-                case CardDB.cardName.divinespirit:
+                case Chireiden.Silverfish.SimCard.divinespirit:
                     if (!target.isHero)
                     {
                         if (target.own)
@@ -3071,7 +3071,7 @@
                             else
                             {
                                 // combo for killing with innerfire and biggamehunter
-                                if (p.owncards.Find(x => x.card.name == CardDB.cardName.biggamehunter) != null && p.owncards.Find(x => x.card.name == CardDB.cardName.innerfire) != null && (target.Hp >= 4 || (p.owncards.Find(x => x.card.name == CardDB.cardName.divinespirit) != null && target.Hp >= 2)))
+                                if (p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.biggamehunter) != null && p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.innerfire) != null && (target.Hp >= 4 || (p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.divinespirit) != null && target.Hp >= 2)))
                                 {
                                     return 0;
                                 }
@@ -3081,7 +3081,7 @@
                         else
                         {
                             // combo for killing with innerfire and biggamehunter
-                            if (p.owncards.Find(x => x.card.name == CardDB.cardName.biggamehunter) != null && p.owncards.Find(x => x.card.name == CardDB.cardName.innerfire) != null && target.Hp >= 4)
+                            if (p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.biggamehunter) != null && p.owncards.Find(x => x.card.name == Chireiden.Silverfish.SimCard.innerfire) != null && target.Hp >= 4)
                             {
                                 return 0;
                             }
@@ -3095,39 +3095,39 @@
             //------------------------------------------------------------------------------------------------------
 
 
-            if ((p.ownHeroAblility.card.name == CardDB.cardName.totemiccall || p.ownHeroAblility.card.name == CardDB.cardName.totemicslam) && p.ownAbilityReady == false)
+            if ((p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.totemiccall || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.totemicslam) && p.ownAbilityReady == false)
             {
                 foreach (Action a in p.playactions)
                 {
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardDB.cardName.draeneitotemcarver) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardDB.cardName.图腾潮涌) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardDB.cardName.totemicmight) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardDB.cardName.分裂战斧) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.draeneitotemcarver) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.图腾潮涌) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.totemicmight) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.分裂战斧) return -1;
                 }
                 if (p.owncards.Count > 1)
                 {
-                    if (card.type == CardDB.cardtype.SPELL)
+                    if (card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                     {
                         if (!(DamageTargetDatabase.ContainsKey(card.name) || DamageAllEnemysDatabase.ContainsKey(card.name)
                         || DamageAllDatabase.ContainsKey(card.name) || DamageRandomDatabase.ContainsKey(card.name)
                         || DamageTargetSpecialDatabase.ContainsKey(card.name) || DamageHeroDatabase.ContainsKey(card.name))) pen += 10;
                     }
-                    else if (card.name == CardDB.cardName.frostwolfwarlord || card.name == CardDB.cardName.thingfrombelow || card.name == CardDB.cardName.draeneitotemcarver) return -1;
+                    else if (card.name == Chireiden.Silverfish.SimCard.frostwolfwarlord || card.name == Chireiden.Silverfish.SimCard.thingfrombelow || card.name == Chireiden.Silverfish.SimCard.draeneitotemcarver) return -1;
                     else pen += 10;
                 }
             }
 
 
 
-            if (target != null && (name == CardDB.cardName.sap || name == CardDB.cardName.dream || name == CardDB.cardName.kidnapper))
+            if (target != null && (name == Chireiden.Silverfish.SimCard.sap || name == Chireiden.Silverfish.SimCard.dream || name == Chireiden.Silverfish.SimCard.kidnapper))
             {
-                if (!target.own && (target.name == CardDB.cardName.theblackknight || name == CardDB.cardName.rendblackhand))
+                if (!target.own && (target.name == Chireiden.Silverfish.SimCard.theblackknight || name == Chireiden.Silverfish.SimCard.rendblackhand))
                 {
                     return 50;
                 }
             }
 
-            if (!lethal && card.cardIDenum == CardDB.cardIDEnum.EX1_165t1) //druidoftheclaw	Charge
+            if (!lethal && card.cardIDenum == Chireiden.Silverfish.SimCard.EX1_165t1) //druidoftheclaw	Charge
             {
                 return 20;
             }
@@ -3135,12 +3135,12 @@
 
             if (lethal)
             {
-                if (name == CardDB.cardName.corruption)
+                if (name == Chireiden.Silverfish.SimCard.corruption)
                 {
                     int beasts = 0;
                     foreach (Minion mm in p.ownMinions)
                     {
-                        if (mm.Ready && (mm.handcard.card.name == CardDB.cardName.questingadventurer || mm.handcard.card.name == CardDB.cardName.archmageantonidas || mm.handcard.card.name == CardDB.cardName.manaaddict || mm.handcard.card.name == CardDB.cardName.manawyrm || mm.handcard.card.name == CardDB.cardName.wildpyromancer)) beasts++;
+                        if (mm.Ready && (mm.handcard.card.name == Chireiden.Silverfish.SimCard.questingadventurer || mm.handcard.card.name == Chireiden.Silverfish.SimCard.archmageantonidas || mm.handcard.card.name == Chireiden.Silverfish.SimCard.manaaddict || mm.handcard.card.name == Chireiden.Silverfish.SimCard.manawyrm || mm.handcard.card.name == Chireiden.Silverfish.SimCard.wildpyromancer)) beasts++;
                     }
                     if (beasts == 0) return 500;
                 }
@@ -3153,12 +3153,12 @@
 
                 switch (target.name)
                 {
-                    case CardDB.cardName.masterchest: return target.own ? -21 : 5;
+                    case Chireiden.Silverfish.SimCard.masterchest: return target.own ? -21 : 5;
                 }
 
-                if (card.type == CardDB.cardtype.SPELL)
+                if (card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                 {
-                    if (name == CardDB.cardName.vanish)
+                    if (name == Chireiden.Silverfish.SimCard.vanish)
                     {
                         //dont vanish if we have minons on board wich are ready
                         bool haveready = false;
@@ -3188,44 +3188,44 @@
                             if (this.dragonDependentDatabase.ContainsKey(target.name)) DragonReq = true;
                             switch (target.name)
                             {
-                                //case CardDB.cardName.masterofceremonies:
-                                case CardDB.cardName.ramwrangler: BeastReq = true; break;
-                                case CardDB.cardName.druidofthefang: BeastReq = true; break;
-                                case CardDB.cardName.goblinblastmage: MechReq = true; break;
-                                case CardDB.cardName.tinkertowntechnician: MechReq = true; break;
-                                case CardDB.cardName.shadydealer: if (!target.Ready && target.maxHp == 3) PirateReq = true; break;
-                                case CardDB.cardName.gormoktheimpaler: if (p.ownMinions.Count > 4) return 0; break;
-                                case CardDB.cardName.corerager: if (p.owncards.Count < 1) return 0; break;
-                                case CardDB.cardName.drakonidcrusher: if (p.enemyHero.Hp < 16) return 0; break;
-                                case CardDB.cardName.mindcontroltech: if (p.enemyMinions.Count > 3) return 0; break;
-                                case CardDB.cardName.alexstraszaschampion: if (target.Ready) DragonReq = false; break;
-                                case CardDB.cardName.twilightguardian: if (target.taunt) DragonReq = false; break;
-                                case CardDB.cardName.wyrmrestagent: if (target.taunt) DragonReq = false; break;
-                                case CardDB.cardName.blackwingtechnician: if (target.maxHp > 4) DragonReq = false; break;
-                                case CardDB.cardName.twilightwhelp: if (target.maxHp > 1) DragonReq = false; break;
-                                case CardDB.cardName.kingselekk: return 0; break;
-                                case CardDB.cardName.gadgetzanjouster: if (target.maxHp == 2) return 0; break;
-                                case CardDB.cardName.armoredwarhorse: if (!target.Ready) return 0; break;
-                                case CardDB.cardName.masterjouster: if (!target.taunt) return 0; break;
-                                case CardDB.cardName.tuskarrjouster: if (!target.Ready && p.ownHero.Hp < 26) return 0; break;
+                                //case Chireiden.Silverfish.SimCard.masterofceremonies:
+                                case Chireiden.Silverfish.SimCard.ramwrangler: BeastReq = true; break;
+                                case Chireiden.Silverfish.SimCard.druidofthefang: BeastReq = true; break;
+                                case Chireiden.Silverfish.SimCard.goblinblastmage: MechReq = true; break;
+                                case Chireiden.Silverfish.SimCard.tinkertowntechnician: MechReq = true; break;
+                                case Chireiden.Silverfish.SimCard.shadydealer: if (!target.Ready && target.maxHp == 3) PirateReq = true; break;
+                                case Chireiden.Silverfish.SimCard.gormoktheimpaler: if (p.ownMinions.Count > 4) return 0; break;
+                                case Chireiden.Silverfish.SimCard.corerager: if (p.owncards.Count < 1) return 0; break;
+                                case Chireiden.Silverfish.SimCard.drakonidcrusher: if (p.enemyHero.Hp < 16) return 0; break;
+                                case Chireiden.Silverfish.SimCard.mindcontroltech: if (p.enemyMinions.Count > 3) return 0; break;
+                                case Chireiden.Silverfish.SimCard.alexstraszaschampion: if (target.Ready) DragonReq = false; break;
+                                case Chireiden.Silverfish.SimCard.twilightguardian: if (target.taunt) DragonReq = false; break;
+                                case Chireiden.Silverfish.SimCard.wyrmrestagent: if (target.taunt) DragonReq = false; break;
+                                case Chireiden.Silverfish.SimCard.blackwingtechnician: if (target.maxHp > 4) DragonReq = false; break;
+                                case Chireiden.Silverfish.SimCard.twilightwhelp: if (target.maxHp > 1) DragonReq = false; break;
+                                case Chireiden.Silverfish.SimCard.kingselekk: return 0; break;
+                                case Chireiden.Silverfish.SimCard.gadgetzanjouster: if (target.maxHp == 2) return 0; break;
+                                case Chireiden.Silverfish.SimCard.armoredwarhorse: if (!target.Ready) return 0; break;
+                                case Chireiden.Silverfish.SimCard.masterjouster: if (!target.taunt) return 0; break;
+                                case Chireiden.Silverfish.SimCard.tuskarrjouster: if (!target.Ready && p.ownHero.Hp < 26) return 0; break;
                             }
                         }
 
                         foreach (Minion mnn in p.ownMinions)
                         {
                             if (this.spellDependentDatabase.ContainsKey(mnn.name) && mnn.entitiyID != target.entitiyID) return 0;
-                            if (mnn.name == CardDB.cardName.starvingbuzzard && mnn.entitiyID != target.entitiyID && target.handcard.card.race == 20) return 0;
+                            if (mnn.name == Chireiden.Silverfish.SimCard.starvingbuzzard && mnn.entitiyID != target.entitiyID && target.handcard.card.Race == 20) return 0;
 
-                            if (BeastReq && mnn.handcard.card.race == 20) return 0;
-                            if (MechReq && mnn.handcard.card.race == 17) return 0;
-                            if (PirateReq && mnn.handcard.card.race == 23) return 0;
+                            if (BeastReq && mnn.handcard.card.Race == 20) return 0;
+                            if (MechReq && mnn.handcard.card.Race == 17) return 0;
+                            if (PirateReq && mnn.handcard.card.Race == 23) return 0;
                         }
 
                         if (DragonReq)
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if (hc.card.race == 24) return 0;
+                                if (hc.card.Race == 24) return 0;
                             }
                         }
                         return 500;
@@ -3236,7 +3236,7 @@
             return pen;
         }
 
-        private int playSecretPenality(CardDB.Card card, Playfield p)
+        private int playSecretPenality(Chireiden.Silverfish.SimCard card, Playfield p)
         {
             //penality if we play secret and have playable kirintormage
             int pen = 0;
@@ -3245,7 +3245,7 @@
                 foreach (Handmanager.Handcard hc in p.owncards)
             {
                     //肯瑞托法师
-                    if (hc.card.name == CardDB.cardName.kirintormage && p.mana >= hc.getManaCost(p))
+                    if (hc.card.name == Chireiden.Silverfish.SimCard.kirintormage && p.mana >= hc.getManaCost(p))
  
                     {
                        pen = 500;
@@ -3273,7 +3273,7 @@
         /// Then attack the mage directly with the smallest minion on your side. 
         /// If nothing triggered by that point, it’s either Spellbender or Counterspell, so hold your spells until you can (and have to!) deal with either. 
 
-        private int getPlayCardSecretPenality(CardDB.Card c, Playfield p)
+        private int getPlayCardSecretPenality(Chireiden.Silverfish.SimCard c, Playfield p)
         {
             int pen = 0;
             if (p.enemySecretCount == 0)
@@ -3283,9 +3283,9 @@
 
             switch (c.name)
             {
-                case CardDB.cardName.flare: return 0; break; 
-                case CardDB.cardName.eaterofsecrets: return 0; break; 
-                case CardDB.cardName.kezanmystic: 
+                case Chireiden.Silverfish.SimCard.flare: return 0; break; 
+                case Chireiden.Silverfish.SimCard.eaterofsecrets: return 0; break; 
+                case Chireiden.Silverfish.SimCard.kezanmystic: 
                     if (p.enemySecretCount == 1)  return 0;
                     break;
             }
@@ -3300,7 +3300,7 @@
                 }
             }
 
-            if ((c.name == CardDB.cardName.acidicswampooze || c.name == CardDB.cardName.gluttonousooze)
+            if ((c.name == Chireiden.Silverfish.SimCard.acidicswampooze || c.name == Chireiden.Silverfish.SimCard.gluttonousooze)
                 && (p.enemyHeroStartClass == TAG_CLASS.WARRIOR || p.enemyHeroStartClass == TAG_CLASS.ROGUE || p.enemyHeroStartClass == TAG_CLASS.PALADIN))
             {
                 if (p.enemyHeroStartClass == TAG_CLASS.ROGUE && p.enemyWeapon.Angr <= 2)
@@ -3318,7 +3318,7 @@
 
             if (p.enemyHeroStartClass == TAG_CLASS.HUNTER)
             {
-                if (c.type == CardDB.cardtype.MOB
+                if (c.type == Chireiden.Silverfish.SimCardtype.MOB
                     && (attackedbefore == 0 || c.Health <= 4
                         || (p.enemyHero.Hp >= p.enemyHeroHpStarted && attackedbefore >= 1)))
                 {
@@ -3328,14 +3328,14 @@
 
             if (p.enemyHeroStartClass == TAG_CLASS.MAGE)
             {
-                if (c.type == CardDB.cardtype.MOB)
+                if (c.type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     Minion m = new Minion
                     {
                         Hp = c.Health,
                         maxHp = c.Health,
                         Angr = c.Attack,
-                        taunt = c.tank,
+                        taunt = c.Taunt,
                         name = c.name
                     };
 
@@ -3347,7 +3347,7 @@
                     }
                 }
 
-                if (c.type == CardDB.cardtype.SPELL && p.cardsPlayedThisTurn == p.mobsplayedThisTurn)
+                if (c.type == Chireiden.Silverfish.SimCardtype.SPELL && p.cardsPlayedThisTurn == p.mobsplayedThisTurn)
                 {
                     pen += 10;
                 }
@@ -3355,14 +3355,14 @@
 
             if (p.enemyHeroStartClass == TAG_CLASS.PALADIN)
             {
-                if (c.type == CardDB.cardtype.MOB)
+                if (c.type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     Minion m = new Minion
                     {
                         Hp = c.Health,
                         maxHp = c.Health,
                         Angr = c.Attack,
-                        taunt = c.tank,
+                        taunt = c.Taunt,
                         name = c.name
                     };
                     if ((!this.isOwnLowestInHand(m, p) && p.mobsplayedThisTurn == 0) || attackedbefore == 0)
@@ -3410,7 +3410,7 @@
                                     if (a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS)) pen += 22;
                                     break;
                                 case actionEnum.playcard:
-                                    if (a.card.card.type == CardDB.cardtype.MOB || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
+                                    if (a.card.card.type == Chireiden.Silverfish.SimCardtype.MOB || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
                                     {
                                         pen += 20;
                                     }
@@ -3462,7 +3462,7 @@
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if (hc.card.type == CardDB.cardtype.MOB && hc.canplayCard(p, true)) { pen += 10; break; }
+                                if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB && hc.canplayCard(p, true)) { pen += 10; break; }
                             }
                         }
                     }
@@ -3482,7 +3482,7 @@
                         else
                         {
                             pen += target.handcard.card.cost;
-                            if (target.handcard.card.battlecry && target.name != CardDB.cardName.kingmukla) pen += 1;
+                            if (target.handcard.card.battlecry && target.name != Chireiden.Silverfish.SimCard.kingmukla) pen += 1;
                             return pen;
                         }
                     }
@@ -3517,7 +3517,7 @@
         }
 
 
-        public CardDB.Card getChooseCard(CardDB.Card c, int choice)
+        public Chireiden.Silverfish.SimCard getChooseCard(Chireiden.Silverfish.SimCard c, int choice)
         {
             if (choice == 1 && this.choose1database.ContainsKey(c.name))
             {
@@ -3530,7 +3530,7 @@
             return c;
         }
 
-        public int getValueOfUsefulNeedKeepPriority(CardDB.cardName name)
+        public int getValueOfUsefulNeedKeepPriority(Chireiden.Silverfish.SimCard name)
         {
             return UsefulNeedKeepDatabase.ContainsKey(name) ? UsefulNeedKeepDatabase[name] : 0;
         }
@@ -3564,12 +3564,12 @@
             int val = getValueOfMinion(mnn);
             foreach (Handmanager.Handcard card in p.owncards)
             {
-                if (card.card.type != CardDB.cardtype.MOB) continue;
-                CardDB.Card c = card.card;
+                if (card.card.type != Chireiden.Silverfish.SimCardtype.MOB) continue;
+                Chireiden.Silverfish.SimCard c = card.card;
                 m.Hp = c.Health;
                 m.maxHp = c.Health;
                 m.Angr = c.Attack;
-                m.taunt = c.tank;
+                m.taunt = c.Taunt;
                 m.name = c.name;
                 if (getValueOfMinion(m) < val) ret = false;
             }
@@ -3607,7 +3607,7 @@
             return ret;
         }
 
-        public int guessTotalSpellDamage(Playfield p, CardDB.cardName name, bool ownplay)
+        public int guessTotalSpellDamage(Playfield p, Chireiden.Silverfish.SimCard name, bool ownplay)
         {
             int dmg = 0;
             if (this.DamageTargetDatabase.ContainsKey(name)) dmg = this.DamageTargetDatabase[name];
@@ -3629,2170 +3629,2170 @@
 
         private void setupEnrageDatabase()
         {
-            enrageDatabase.Add(CardDB.cardName.aberrantberserker, 2);
-            enrageDatabase.Add(CardDB.cardName.amaniberserker, 3);
-            enrageDatabase.Add(CardDB.cardName.angrychicken, 5);
-            enrageDatabase.Add(CardDB.cardName.bloodhoofbrave, 3);
-            enrageDatabase.Add(CardDB.cardName.grommashhellscream, 6);
-            enrageDatabase.Add(CardDB.cardName.ragingworgen, 2);
-            enrageDatabase.Add(CardDB.cardName.spitefulsmith, 2);
-            enrageDatabase.Add(CardDB.cardName.taurenwarrior, 3);
-            enrageDatabase.Add(CardDB.cardName.warbot, 1);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.aberrantberserker, 2);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.amaniberserker, 3);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.angrychicken, 5);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.bloodhoofbrave, 3);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.grommashhellscream, 6);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.ragingworgen, 2);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.spitefulsmith, 2);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.taurenwarrior, 3);
+            enrageDatabase.Add(Chireiden.Silverfish.SimCard.warbot, 1);
         }
 
         private void setupHealDatabase()
         {
-            HealAllDatabase.Add(CardDB.cardName.circleofhealing, 4);//allminions
-            HealAllDatabase.Add(CardDB.cardName.darkscalehealer, 2);//all friends
-            HealAllDatabase.Add(CardDB.cardName.holynova, 2);//to all own minions
-            HealAllDatabase.Add(CardDB.cardName.treeoflife, 1000);//all friends
+            HealAllDatabase.Add(Chireiden.Silverfish.SimCard.circleofhealing, 4);//allminions
+            HealAllDatabase.Add(Chireiden.Silverfish.SimCard.darkscalehealer, 2);//all friends
+            HealAllDatabase.Add(Chireiden.Silverfish.SimCard.holynova, 2);//to all own minions
+            HealAllDatabase.Add(Chireiden.Silverfish.SimCard.treeoflife, 1000);//all friends
 
-            HealHeroDatabase.Add(CardDB.cardName.amarawardenofhope, 40);
-            HealHeroDatabase.Add(CardDB.cardName.antiquehealbot, 8); //tohero
-            HealHeroDatabase.Add(CardDB.cardName.bindingheal, 5);
-            HealHeroDatabase.Add(CardDB.cardName.cultapothecary, 2);
-            HealHeroDatabase.Add(CardDB.cardName.drainlife, 2);//tohero
-            HealHeroDatabase.Add(CardDB.cardName.guardianofkings, 6);//tohero
-            HealHeroDatabase.Add(CardDB.cardName.holyfire, 5);//tohero
-            HealHeroDatabase.Add(CardDB.cardName.invocationofwater, 12);
-            HealHeroDatabase.Add(CardDB.cardName.jinyuwaterspeaker, 6);
-            HealHeroDatabase.Add(CardDB.cardName.priestessofelune, 4);//tohero
-            HealHeroDatabase.Add(CardDB.cardName.refreshmentvendor, 4);
-            HealHeroDatabase.Add(CardDB.cardName.renojackson, 25); //tohero
-            HealHeroDatabase.Add(CardDB.cardName.sacrificialpact, 5);//tohero
-            HealHeroDatabase.Add(CardDB.cardName.sealoflight, 4); //tohero
-            HealHeroDatabase.Add(CardDB.cardName.siphonsoul, 3); //tohero
-            HealHeroDatabase.Add(CardDB.cardName.tidalsurge, 4);
-            HealHeroDatabase.Add(CardDB.cardName.tournamentmedic, 2);
-            HealHeroDatabase.Add(CardDB.cardName.tuskarrjouster, 7);
-            HealHeroDatabase.Add(CardDB.cardName.twilightdarkmender, 10);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.amarawardenofhope, 40);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.antiquehealbot, 8); //tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.bindingheal, 5);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.cultapothecary, 2);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.drainlife, 2);//tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.guardianofkings, 6);//tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.holyfire, 5);//tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.invocationofwater, 12);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.jinyuwaterspeaker, 6);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.priestessofelune, 4);//tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.refreshmentvendor, 4);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.renojackson, 25); //tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.sacrificialpact, 5);//tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.sealoflight, 4); //tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.siphonsoul, 3); //tohero
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.tidalsurge, 4);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.tournamentmedic, 2);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.tuskarrjouster, 7);
+            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.twilightdarkmender, 10);
 
-            HealTargetDatabase.Add(CardDB.cardName.ancestralhealing, 1000);
-            HealTargetDatabase.Add(CardDB.cardName.ancientoflore, 5);
-            HealTargetDatabase.Add(CardDB.cardName.ancientsecrets, 5);
-            HealTargetDatabase.Add(CardDB.cardName.bindingheal, 5);
-            HealTargetDatabase.Add(CardDB.cardName.darkshirealchemist, 5);
-            HealTargetDatabase.Add(CardDB.cardName.earthenringfarseer, 3);
-            HealTargetDatabase.Add(CardDB.cardName.flashheal, 5);
-            HealTargetDatabase.Add(CardDB.cardName.forbiddenhealing, 2);
-            HealTargetDatabase.Add(CardDB.cardName.gadgetzansocialite, 2);
-            HealTargetDatabase.Add(CardDB.cardName.heal, 4);
-            HealTargetDatabase.Add(CardDB.cardName.healingtouch, 8);
-            HealTargetDatabase.Add(CardDB.cardName.healingwave, 14);
-            HealTargetDatabase.Add(CardDB.cardName.holylight, 6);
-            HealTargetDatabase.Add(CardDB.cardName.hotspringguardian, 3);
-            HealTargetDatabase.Add(CardDB.cardName.hozenhealer, 30);
-            HealTargetDatabase.Add(CardDB.cardName.layonhands, 8);
-            HealTargetDatabase.Add(CardDB.cardName.lesserheal, 2);
-            HealTargetDatabase.Add(CardDB.cardName.lightofthenaaru, 3);
-            HealTargetDatabase.Add(CardDB.cardName.moongladeportal, 6);
-            HealTargetDatabase.Add(CardDB.cardName.voodoodoctor, 2);
-            HealTargetDatabase.Add(CardDB.cardName.willofmukla, 8);
-            //HealTargetDatabase.Add(CardDB.cardName.divinespirit, 2);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.ancestralhealing, 1000);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.ancientoflore, 5);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.ancientsecrets, 5);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.bindingheal, 5);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.darkshirealchemist, 5);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.earthenringfarseer, 3);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.flashheal, 5);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.forbiddenhealing, 2);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzansocialite, 2);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.heal, 4);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.healingtouch, 8);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.healingwave, 14);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.holylight, 6);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.hotspringguardian, 3);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.hozenhealer, 30);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.layonhands, 8);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.lesserheal, 2);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.lightofthenaaru, 3);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.moongladeportal, 6);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.voodoodoctor, 2);
+            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.willofmukla, 8);
+            //HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.divinespirit, 2);
         }
 
         private void setupDamageDatabase()
         {
-            //DamageAllDatabase.Add(CardDB.cardName.flameleviathan, 2);
-            DamageAllDatabase.Add(CardDB.cardName.abomination, 2);
-            DamageAllDatabase.Add(CardDB.cardName.abyssalenforcer, 3);
-            DamageAllDatabase.Add(CardDB.cardName.anomalus, 8);
-            DamageAllDatabase.Add(CardDB.cardName.barongeddon, 2);
-            DamageAllDatabase.Add(CardDB.cardName.corruptedseer, 2);
-            DamageAllDatabase.Add(CardDB.cardName.demonwrath, 1);
-            DamageAllDatabase.Add(CardDB.cardName.dragonfirepotion, 5);
-            DamageAllDatabase.Add(CardDB.cardName.dreadinfernal, 1);
-            DamageAllDatabase.Add(CardDB.cardName.dreadscale, 1);
-            DamageAllDatabase.Add(CardDB.cardName.elementaldestruction, 4);
-            DamageAllDatabase.Add(CardDB.cardName.excavatedevil, 3);
-            DamageAllDatabase.Add(CardDB.cardName.explosivesheep, 2);
-            DamageAllDatabase.Add(CardDB.cardName.felbloom, 4);
-            DamageAllDatabase.Add(CardDB.cardName.felfirepotion, 5);
-            DamageAllDatabase.Add(CardDB.cardName.hellfire, 3);
-            DamageAllDatabase.Add(CardDB.cardName.lava, 2);
-            DamageAllDatabase.Add(CardDB.cardName.lightbomb, 5);
-            DamageAllDatabase.Add(CardDB.cardName.magmapulse, 1);
-            DamageAllDatabase.Add(CardDB.cardName.primordialdrake, 2);
-            DamageAllDatabase.Add(CardDB.cardName.ravagingghoul, 1);
-            DamageAllDatabase.Add(CardDB.cardName.revenge, 1);
-            DamageAllDatabase.Add(CardDB.cardName.scarletpurifier, 2);
-            DamageAllDatabase.Add(CardDB.cardName.sleepwiththefishes, 3);
-            DamageAllDatabase.Add(CardDB.cardName.tentacleofnzoth, 1);
-            DamageAllDatabase.Add(CardDB.cardName.unstableghoul, 1);
-            DamageAllDatabase.Add(CardDB.cardName.volcanicpotion, 2);
-            DamageAllDatabase.Add(CardDB.cardName.whirlwind, 1);
-            DamageAllDatabase.Add(CardDB.cardName.yseraawakens, 5);
-            DamageAllDatabase.Add(CardDB.cardName.spiritlash, 1);
-            DamageAllDatabase.Add(CardDB.cardName.defile, 1);
-            DamageAllDatabase.Add(CardDB.cardName.bloodrazor, 1);
-            DamageAllDatabase.Add(CardDB.cardName.bladestorm, 1);
+            //DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.flameleviathan, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.abomination, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.abyssalenforcer, 3);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.anomalus, 8);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.barongeddon, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.corruptedseer, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.demonwrath, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.dragonfirepotion, 5);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.dreadinfernal, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.dreadscale, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.elementaldestruction, 4);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.excavatedevil, 3);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.explosivesheep, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.felbloom, 4);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.felfirepotion, 5);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.hellfire, 3);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.lava, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.lightbomb, 5);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.magmapulse, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.primordialdrake, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.ravagingghoul, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.revenge, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.scarletpurifier, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.sleepwiththefishes, 3);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.tentacleofnzoth, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.unstableghoul, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.volcanicpotion, 2);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.whirlwind, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.yseraawakens, 5);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.spiritlash, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.defile, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.bloodrazor, 1);
+            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.bladestorm, 1);
 
-            DamageAllEnemysDatabase.Add(CardDB.cardName.arcaneexplosion, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.bladeflurry, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.blizzard, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.consecration, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.cthun, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.darkironskulker, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.fanofknives, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.flamestrike, 4);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.holynova, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.invocationofair, 3);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.lightningstorm, 3);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.livingbomb, 5);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.locustswarm, 3);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.maelstromportal, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.poisoncloud, 1);//todo 1 or 2
-            DamageAllEnemysDatabase.Add(CardDB.cardName.sergeantsally, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.shadowflame, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.sporeburst, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.starfall, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.stomp, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.swipe, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.twilightflamecaller, 1);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.explodingbloatbat, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.deathstalkerrexxar, 2);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.deathanddecay, 3);
-            DamageAllEnemysDatabase.Add(CardDB.cardName.bonestorm, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.arcaneexplosion, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.bladeflurry, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.blizzard, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.consecration, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.cthun, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.darkironskulker, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.fanofknives, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.flamestrike, 4);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.holynova, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.invocationofair, 3);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.lightningstorm, 3);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.livingbomb, 5);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.locustswarm, 3);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.maelstromportal, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.poisoncloud, 1);//todo 1 or 2
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.sergeantsally, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.shadowflame, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.sporeburst, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.starfall, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.stomp, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.swipe, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.twilightflamecaller, 1);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.explodingbloatbat, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.deathstalkerrexxar, 2);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.deathanddecay, 3);
+            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.bonestorm, 1);
 
-            DamageHeroDatabase.Add(CardDB.cardName.backstreetleper, 2);
-            DamageHeroDatabase.Add(CardDB.cardName.burningadrenaline, 2);
-            DamageHeroDatabase.Add(CardDB.cardName.curseofrafaam, 2);
-            DamageHeroDatabase.Add(CardDB.cardName.emeraldreaver, 1);
-            DamageHeroDatabase.Add(CardDB.cardName.frostblast, 3);
-            DamageHeroDatabase.Add(CardDB.cardName.headcrack, 2);
-            DamageHeroDatabase.Add(CardDB.cardName.invocationoffire, 6);
-            DamageHeroDatabase.Add(CardDB.cardName.lepergnome, 2);
-            DamageHeroDatabase.Add(CardDB.cardName.mindblast, 5);
-            DamageHeroDatabase.Add(CardDB.cardName.necroticaura, 3);
-            DamageHeroDatabase.Add(CardDB.cardName.nightblade, 3);
-            DamageHeroDatabase.Add(CardDB.cardName.purecold, 8);
-            DamageHeroDatabase.Add(CardDB.cardName.shadowbomber, 3);
-            DamageHeroDatabase.Add(CardDB.cardName.sinisterstrike, 3);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.backstreetleper, 2);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.burningadrenaline, 2);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.curseofrafaam, 2);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.emeraldreaver, 1);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.frostblast, 3);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.headcrack, 2);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.invocationoffire, 6);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.lepergnome, 2);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.mindblast, 5);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.necroticaura, 3);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.nightblade, 3);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.purecold, 8);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.shadowbomber, 3);
+            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.sinisterstrike, 3);
 
-            DamageRandomDatabase.Add(CardDB.cardName.arcanemissiles, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.avengingwrath, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.bomblobber, 4);
-            DamageRandomDatabase.Add(CardDB.cardName.boombot, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.boombotjr, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.bouncingblade, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.cleave, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.demolisher, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.dieinsect, 8);
-            DamageRandomDatabase.Add(CardDB.cardName.dieinsects, 8);
-            DamageRandomDatabase.Add(CardDB.cardName.fierybat, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.flamecannon, 4);
-            DamageRandomDatabase.Add(CardDB.cardName.flamejuggler, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.flamewaker, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.forkedlightning, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.goblinblastmage, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.greaterarcanemissiles, 3);
-            DamageRandomDatabase.Add(CardDB.cardName.hugetoad, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.knifejuggler, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.madbomber, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.madderbomber, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.multishot, 3);
-            DamageRandomDatabase.Add(CardDB.cardName.ragnarosthefirelord, 8);
-            DamageRandomDatabase.Add(CardDB.cardName.rumblingelemental, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.shadowboxer, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.shipscannon, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.spreadingmadness, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.throwrocks, 3);
-            DamageRandomDatabase.Add(CardDB.cardName.timepieceofhorror, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.volatileelemental, 3);
-            DamageRandomDatabase.Add(CardDB.cardName.volcano, 1);
-            DamageRandomDatabase.Add(CardDB.cardName.breathofsindragosa, 2);
-            DamageRandomDatabase.Add(CardDB.cardName.blackguard, 3);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.arcanemissiles, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.avengingwrath, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.bomblobber, 4);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.boombot, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.boombotjr, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.bouncingblade, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.cleave, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.demolisher, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.dieinsect, 8);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.dieinsects, 8);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.fierybat, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.flamecannon, 4);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.flamejuggler, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.flamewaker, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.forkedlightning, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.goblinblastmage, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.greaterarcanemissiles, 3);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.hugetoad, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.knifejuggler, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.madbomber, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.madderbomber, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.multishot, 3);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.ragnarosthefirelord, 8);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.rumblingelemental, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.shadowboxer, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.shipscannon, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.spreadingmadness, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.throwrocks, 3);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.timepieceofhorror, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.volatileelemental, 3);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.volcano, 1);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.breathofsindragosa, 2);
+            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.blackguard, 3);
 
-            DamageTargetDatabase.Add(CardDB.cardName.arcaneblast, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.arcaneshot, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.backstab, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.ballistashot, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.barreltoss, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.betrayal, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.blackwingcorruptor, 3);//if dragon in hand
-            DamageTargetDatabase.Add(CardDB.cardName.blazecaller, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.blowgillsniper, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.bombsquad, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.cobrashot, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.coneofcold, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.crackle, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.darkbomb, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.discipleofcthun, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.dispatchkodo, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.dragonsbreath, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.drainlife, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.elvenarcher, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.eviscerate, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.explosiveshot, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.felcannon, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.fireball, 6);
-            DamageTargetDatabase.Add(CardDB.cardName.fireblast, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.fireblastrank2, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.firebloomtoxin, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.fireelemental, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.firelandsportal, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.fireplumephoenix, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.flamelance, 8);
-            DamageTargetDatabase.Add(CardDB.cardName.forbiddenflame, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.forgottentorch, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.frostbolt, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.frostshock, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.gormoktheimpaler, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.greaterhealingpotion, 12);
-            DamageTargetDatabase.Add(CardDB.cardName.grievousbite, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.heartoffire, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.hoggersmash, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.holyfire, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.holysmite, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.icelance, 4);//only if iced
-            DamageTargetDatabase.Add(CardDB.cardName.implosion, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.ironforgerifleman, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.jadelightning, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.jadeshuriken, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.keeperofthegrove, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.killcommand, 3);//or 5
-            DamageTargetDatabase.Add(CardDB.cardName.lavaburst, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.lavashock, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.lightningbolt, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.lightningjolt, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.livingroots, 2);//choice 1
-            DamageTargetDatabase.Add(CardDB.cardName.medivhsvalet, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.meteor, 15);
-            DamageTargetDatabase.Add(CardDB.cardName.mindshatter, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.mindspike, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.moonfire, 1); 
-            DamageTargetDatabase.Add(CardDB.cardName.mortalcoil, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.mortalstrike, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.northseakraken, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.onthehunt, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.perditionsblade, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.powershot, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.pyroblast, 10);
-            DamageTargetDatabase.Add(CardDB.cardName.razorpetal, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.roaringtorch, 6);
-            DamageTargetDatabase.Add(CardDB.cardName.shadowbolt, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.shadowform, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.shadowstrike, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.shotgunblast, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.si7agent, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.sonicbreath, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.sonoftheflame, 6);
-            DamageTargetDatabase.Add(CardDB.cardName.starfall, 5);//2 to all enemy
-            DamageTargetDatabase.Add(CardDB.cardName.starfire, 5);//draw a card
-            DamageTargetDatabase.Add(CardDB.cardName.steadyshot, 2);//or 1 + card
-            DamageTargetDatabase.Add(CardDB.cardName.stormcrack, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.stormpikecommando, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.swipe, 4);//1 to others
-            DamageTargetDatabase.Add(CardDB.cardName.tidalsurge, 4);
-            DamageTargetDatabase.Add(CardDB.cardName.unbalancingstrike, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.undercityvaliant, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.wrath, 1);//todo 3 or 1+card
-            DamageTargetDatabase.Add(CardDB.cardName.voidform, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.vampiricleech, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.ultimateinfestation, 5);
-            DamageTargetDatabase.Add(CardDB.cardName.toxicarrow, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.siphonlife, 3);
-            DamageTargetDatabase.Add(CardDB.cardName.icytouch, 1);
-            DamageTargetDatabase.Add(CardDB.cardName.iceclaw, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.drainsoul, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.doomerang, 2);
-            DamageTargetDatabase.Add(CardDB.cardName.avalanche, 0);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.arcaneblast, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.arcaneshot, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.backstab, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.ballistashot, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.barreltoss, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.betrayal, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.blackwingcorruptor, 3);//if dragon in hand
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.blazecaller, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.blowgillsniper, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.bombsquad, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.cobrashot, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.coneofcold, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.crackle, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.darkbomb, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.discipleofcthun, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.dispatchkodo, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.dragonsbreath, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.drainlife, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.elvenarcher, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.eviscerate, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.explosiveshot, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.felcannon, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.fireball, 6);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.fireblast, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.fireblastrank2, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.firebloomtoxin, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.fireelemental, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.firelandsportal, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.fireplumephoenix, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.flamelance, 8);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.forbiddenflame, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.forgottentorch, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.frostbolt, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.frostshock, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.gormoktheimpaler, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.greaterhealingpotion, 12);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.grievousbite, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.heartoffire, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.hoggersmash, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.holyfire, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.holysmite, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.icelance, 4);//only if iced
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.implosion, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.ironforgerifleman, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.jadelightning, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.jadeshuriken, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.keeperofthegrove, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.killcommand, 3);//or 5
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.lavaburst, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.lavashock, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.lightningbolt, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.lightningjolt, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.livingroots, 2);//choice 1
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.medivhsvalet, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.meteor, 15);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mindshatter, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mindspike, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.moonfire, 1); 
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mortalcoil, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mortalstrike, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.northseakraken, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.onthehunt, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.perditionsblade, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.powershot, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.pyroblast, 10);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.razorpetal, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.roaringtorch, 6);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.shadowbolt, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.shadowform, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.shadowstrike, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.shotgunblast, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.si7agent, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.sonicbreath, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.sonoftheflame, 6);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.starfall, 5);//2 to all enemy
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.starfire, 5);//draw a card
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.steadyshot, 2);//or 1 + card
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.stormcrack, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.stormpikecommando, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.swipe, 4);//1 to others
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.tidalsurge, 4);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.unbalancingstrike, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.undercityvaliant, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.wrath, 1);//todo 3 or 1+card
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.voidform, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.vampiricleech, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.ultimateinfestation, 5);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.toxicarrow, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.siphonlife, 3);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.icytouch, 1);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.iceclaw, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.drainsoul, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.doomerang, 2);
+            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.avalanche, 0);
 
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.baneofdoom, 2); 
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.bash, 3); //+3 armor
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.bloodtoichor, 1); 
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.crueltaskmaster, 1); // gives 2 attack
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.deathbloom, 5);
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.demonfire, 2); // friendly demon get +2/+2
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.demonheart, 5);
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.earthshock, 1); //SILENCE /good for raggy etc or iced
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.feedingtime, 3); 
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.flamegeyser, 2); 
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.hammerofwrath, 3); //draw a card
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.holywrath, 2);//draw a card
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.innerrage, 1); // gives 2 attack
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.quickshot, 3); //draw a card
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.roguesdoit, 4);//draw a card
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.savagery, 1);//dmg=herodamage
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.shieldslam, 1);//dmg=armor
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.shiv, 1);//draw a card
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.slam, 2);//draw card if it survives
-            DamageTargetSpecialDatabase.Add(CardDB.cardName.soulfire, 4);//delete a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.baneofdoom, 2); 
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.bash, 3); //+3 armor
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.bloodtoichor, 1); 
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.crueltaskmaster, 1); // gives 2 attack
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.deathbloom, 5);
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.demonfire, 2); // friendly demon get +2/+2
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.demonheart, 5);
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.earthshock, 1); //SILENCE /good for raggy etc or iced
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.feedingtime, 3); 
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.flamegeyser, 2); 
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.hammerofwrath, 3); //draw a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.holywrath, 2);//draw a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.innerrage, 1); // gives 2 attack
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.quickshot, 3); //draw a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 4);//draw a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.savagery, 1);//dmg=herodamage
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.shieldslam, 1);//dmg=armor
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.shiv, 1);//draw a card
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.slam, 2);//draw card if it survives
+            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.soulfire, 4);//delete a card
 
-            HeroPowerEquipWeapon.Add(CardDB.cardName.daggermastery, 1);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.direshapeshift, 2);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.echolocate, 0);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.enraged, 2);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.poisoneddaggers, 2);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.shapeshift, 1);
-            HeroPowerEquipWeapon.Add(CardDB.cardName.plaguelord, 3);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.daggermastery, 1);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.direshapeshift, 2);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.echolocate, 0);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.enraged, 2);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.poisoneddaggers, 2);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.shapeshift, 1);
+            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.plaguelord, 3);
 
             
-            this.maycauseharmDatabase.Add(CardDB.cardName.arcaneblast, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.arcaneshot, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.backstab, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.baneofdoom, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.barreltoss, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.bash, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.blastcrystalpotion, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.bloodthistletoxin, 3);
-            this.maycauseharmDatabase.Add(CardDB.cardName.bloodtoichor, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.chromaticmutation, 5);
-            this.maycauseharmDatabase.Add(CardDB.cardName.cobrashot, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.coneofcold, 6);
-            this.maycauseharmDatabase.Add(CardDB.cardName.crackle, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.crush, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.darkbomb, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.deathbloom, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.demonfire, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.demonheart, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.dispel, 4);
-            this.maycauseharmDatabase.Add(CardDB.cardName.dragonsbreath, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.drainlife, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.drakkisathscommand, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.dream, 3);
-            this.maycauseharmDatabase.Add(CardDB.cardName.dynamite, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.earthshock, 4);
-            this.maycauseharmDatabase.Add(CardDB.cardName.emergencycoolant, 6);
-            this.maycauseharmDatabase.Add(CardDB.cardName.eviscerate, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.explosiveshot, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.feedingtime, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.fireball, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.firebloomtoxin, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.firelandsportal, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.flamegeyser, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.flamelance, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.forbiddenflame, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.forgottentorch, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.frostbolt, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.grievousbite, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.hakkaribloodgoblet, 5);
-            this.maycauseharmDatabase.Add(CardDB.cardName.hammerofwrath, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.hex, 5);
-            this.maycauseharmDatabase.Add(CardDB.cardName.hoggersmash, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.holyfire, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.holysmite, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.holywrath, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.humility, 7);
-            this.maycauseharmDatabase.Add(CardDB.cardName.huntersmark, 7);
-            this.maycauseharmDatabase.Add(CardDB.cardName.icelance, 6);
-            this.maycauseharmDatabase.Add(CardDB.cardName.implosion, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.innerrage, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.jadelightning, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.jadeshuriken, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.keeperofthegrove, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.killcommand, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.lavaburst, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.lavashock, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.lightningbolt, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.livingroots, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.madbomber, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.madderbomber, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.meteor, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.moonfire, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.mortalcoil, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.mortalstrike, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.mulch, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.naturalize, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.necroticpoison, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.onthehunt, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.polymorph, 5);
-            this.maycauseharmDatabase.Add(CardDB.cardName.powershot, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.pyroblast, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.quickshot, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.razorpetal, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.roaringtorch, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.roguesdoit, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.rottenbanana, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.savagery, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shadowbolt, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shadowstep, 3);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shadowstrike, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shadowworddeath, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shadowwordpain, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shatter, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shieldslam, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.shiv, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.silence, 4);
-            this.maycauseharmDatabase.Add(CardDB.cardName.siphonsoul, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.slam, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.sonicbreath, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.soulfire, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.spreadingmadness, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.starfall, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.starfire, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.stormcrack, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.swipe, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.tailswipe, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.thetruewarchief, 2);
-            this.maycauseharmDatabase.Add(CardDB.cardName.tidalsurge, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.timerewinder, 3);
-            this.maycauseharmDatabase.Add(CardDB.cardName.volcano, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.wrath, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.drainsoul, 1);
-            this.maycauseharmDatabase.Add(CardDB.cardName.obliterate, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.arcaneblast, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.arcaneshot, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.backstab, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.baneofdoom, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.barreltoss, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.bash, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.blastcrystalpotion, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.bloodthistletoxin, 3);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.bloodtoichor, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.chromaticmutation, 5);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.cobrashot, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.coneofcold, 6);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.crackle, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.crush, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.darkbomb, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.deathbloom, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.demonfire, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.demonheart, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.dispel, 4);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.dragonsbreath, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.drainlife, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.drakkisathscommand, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.dream, 3);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.dynamite, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.earthshock, 4);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.emergencycoolant, 6);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.eviscerate, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.explosiveshot, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.feedingtime, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.fireball, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.firebloomtoxin, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.firelandsportal, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.flamegeyser, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.flamelance, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.forbiddenflame, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.forgottentorch, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.frostbolt, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.grievousbite, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.hakkaribloodgoblet, 5);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.hammerofwrath, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.hex, 5);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.hoggersmash, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.holyfire, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.holysmite, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.holywrath, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.humility, 7);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.huntersmark, 7);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.icelance, 6);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.implosion, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.innerrage, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.jadelightning, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.jadeshuriken, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.keeperofthegrove, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.killcommand, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.lavaburst, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.lavashock, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.lightningbolt, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.livingroots, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.madbomber, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.madderbomber, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.meteor, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.moonfire, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.mortalcoil, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.mortalstrike, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.mulch, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.naturalize, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.necroticpoison, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.onthehunt, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.polymorph, 5);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.powershot, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.pyroblast, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.quickshot, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.razorpetal, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.roaringtorch, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.rottenbanana, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.savagery, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shadowbolt, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shadowstep, 3);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shadowstrike, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shadowworddeath, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shadowwordpain, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shatter, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shieldslam, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.shiv, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.silence, 4);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.siphonsoul, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.slam, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.sonicbreath, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.soulfire, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.spreadingmadness, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.starfall, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.starfire, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.stormcrack, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.swipe, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.tailswipe, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.thetruewarchief, 2);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.tidalsurge, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.timerewinder, 3);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.volcano, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.wrath, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.drainsoul, 1);
+            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.obliterate, 2);
         }
 
         private void setupsilenceDatabase()
         {
             
-            this.silenceDatabase.Add(CardDB.cardName.defiascleaner, 1);
-            this.silenceDatabase.Add(CardDB.cardName.dispel, 1);
-            this.silenceDatabase.Add(CardDB.cardName.earthshock, 1);
-            this.silenceDatabase.Add(CardDB.cardName.ironbeakowl, 1);
-            this.silenceDatabase.Add(CardDB.cardName.kabalsongstealer, 1);
-            this.silenceDatabase.Add(CardDB.cardName.lightschampion, 1);
-            this.silenceDatabase.Add(CardDB.cardName.massdispel, 1);
-            this.silenceDatabase.Add(CardDB.cardName.purify, -1);
-            this.silenceDatabase.Add(CardDB.cardName.silence, 1);
-            this.silenceDatabase.Add(CardDB.cardName.spellbreaker, 1);
-            this.silenceDatabase.Add(CardDB.cardName.wailingsoul, -2);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.defiascleaner, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.dispel, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.earthshock, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.ironbeakowl, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.kabalsongstealer, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.lightschampion, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.massdispel, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.purify, -1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.silence, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.spellbreaker, 1);
+            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.wailingsoul, -2);
 
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.ancientwatcher, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.animagolem, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.bittertidehydra, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.blackknight, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.bombsquad, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.corruptedhealbot, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.dancingswords, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.deathcharger, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.eeriestatue, 0);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.emeraldhivequeen, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.felorcsoulfiend, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.felreaver, 3);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.frozencrusher, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.humongousrazorleaf, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.icehowl, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.mogortheogre, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.natthedarkfisher, 0);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.spectralrider, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.spectraltrainee, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.spectralwarrior, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.spore, 3);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.thebeast, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.unlicensedapothecary, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.unrelentingrider, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.unrelentingtrainee, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.unrelentingwarrior, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.venturecomercenary, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.whiteknight, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.wrathguard, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.zombiechow, 2);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.tickingabomination, 0);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.rattlingrascal, 1);
-            OwnNeedSilenceDatabase.Add(CardDB.cardName.masterchest, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.ancientwatcher, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.animagolem, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.bittertidehydra, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.blackknight, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.bombsquad, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.corruptedhealbot, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.dancingswords, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.deathcharger, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.eeriestatue, 0);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.emeraldhivequeen, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.felorcsoulfiend, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.felreaver, 3);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.frozencrusher, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.humongousrazorleaf, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.icehowl, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.mogortheogre, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.natthedarkfisher, 0);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectralrider, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectraltrainee, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectralwarrior, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spore, 3);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.thebeast, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.unlicensedapothecary, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.unrelentingrider, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.unrelentingtrainee, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.unrelentingwarrior, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.venturecomercenary, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.whiteknight, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.wrathguard, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.zombiechow, 2);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.tickingabomination, 0);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.rattlingrascal, 1);
+            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.masterchest, 1);
         }
 
 
         private void setupPriorityList()
         {
-            priorityDatabase.Add(CardDB.cardName.acidmaw, 3);
-            priorityDatabase.Add(CardDB.cardName.animatedarmor, 2);
-            priorityDatabase.Add(CardDB.cardName.archmageantonidas, 6);
-            priorityDatabase.Add(CardDB.cardName.aviana, 5);
-            priorityDatabase.Add(CardDB.cardName.brannbronzebeard, 4);
-            priorityDatabase.Add(CardDB.cardName.cloakedhuntress, 2);
-            priorityDatabase.Add(CardDB.cardName.confessorpaletress, 7);
-            priorityDatabase.Add(CardDB.cardName.crowdfavorite, 6);
-            priorityDatabase.Add(CardDB.cardName.darkshirecouncilman, 2);
-            priorityDatabase.Add(CardDB.cardName.direwolfalpha, 6);
-            priorityDatabase.Add(CardDB.cardName.emperorthaurissan, 5);
-            priorityDatabase.Add(CardDB.cardName.fandralstaghelm, 6);
-            priorityDatabase.Add(CardDB.cardName.flametonguetotem, 6);
-            priorityDatabase.Add(CardDB.cardName.flamewaker, 5);
-            priorityDatabase.Add(CardDB.cardName.frothingberserker, 1);
-            priorityDatabase.Add(CardDB.cardName.gadgetzanauctioneer, 1);
-            priorityDatabase.Add(CardDB.cardName.grimestreetenforcer, 1);
-            priorityDatabase.Add(CardDB.cardName.grimpatron, 5);
-            priorityDatabase.Add(CardDB.cardName.grimscaleoracle, 5);
-            priorityDatabase.Add(CardDB.cardName.grimygadgeteer, 1);
-            priorityDatabase.Add(CardDB.cardName.holychampion, 5);
-            priorityDatabase.Add(CardDB.cardName.knifejuggler, 2);
-            priorityDatabase.Add(CardDB.cardName.kodorider, 6);
-            priorityDatabase.Add(CardDB.cardName.kvaldirraider, 1);
-            priorityDatabase.Add(CardDB.cardName.leokk, 5);
-            priorityDatabase.Add(CardDB.cardName.lyrathesunshard, 1);
-            priorityDatabase.Add(CardDB.cardName.malchezaarsimp, 1);
-            priorityDatabase.Add(CardDB.cardName.malganis, 10);
-            priorityDatabase.Add(CardDB.cardName.manatidetotem, 5);
-            priorityDatabase.Add(CardDB.cardName.mechwarper, 1);
-            priorityDatabase.Add(CardDB.cardName.muklaschampion, 5);
-            priorityDatabase.Add(CardDB.cardName.murlocknight, 5);
-            priorityDatabase.Add(CardDB.cardName.murlocwarleader, 5);
-            priorityDatabase.Add(CardDB.cardName.nexuschampionsaraad, 6);
-            priorityDatabase.Add(CardDB.cardName.northshirecleric, 4);
-            priorityDatabase.Add(CardDB.cardName.pintsizedsummoner, 3);
-            priorityDatabase.Add(CardDB.cardName.primalfintotem, 5);
-            priorityDatabase.Add(CardDB.cardName.prophetvelen, 5);
-            priorityDatabase.Add(CardDB.cardName.questingadventurer, 1);
-            priorityDatabase.Add(CardDB.cardName.radiantelemental, 3);
-            priorityDatabase.Add(CardDB.cardName.ragnaroslightlord, 5);
-            priorityDatabase.Add(CardDB.cardName.raidleader, 5);
-            priorityDatabase.Add(CardDB.cardName.recruiter, 1);
-            priorityDatabase.Add(CardDB.cardName.scavenginghyena, 5);
-            priorityDatabase.Add(CardDB.cardName.secretkeeper, 5);
-            priorityDatabase.Add(CardDB.cardName.sorcerersapprentice, 3);
-            priorityDatabase.Add(CardDB.cardName.southseacaptain, 5);
-            priorityDatabase.Add(CardDB.cardName.spiritsingerumbra, 5);
-            priorityDatabase.Add(CardDB.cardName.stormwindchampion, 5);
-            priorityDatabase.Add(CardDB.cardName.summoningportal, 5);
-            priorityDatabase.Add(CardDB.cardName.summoningstone, 5);
-            priorityDatabase.Add(CardDB.cardName.thevoraxx, 2);
-            priorityDatabase.Add(CardDB.cardName.thunderbluffvaliant, 2);
-            priorityDatabase.Add(CardDB.cardName.timberwolf, 5);
-            priorityDatabase.Add(CardDB.cardName.tunneltrogg, 1);
-            priorityDatabase.Add(CardDB.cardName.viciousfledgling, 4);
-            priorityDatabase.Add(CardDB.cardName.violetillusionist, 10);
-            priorityDatabase.Add(CardDB.cardName.violetteacher, 1);
-            priorityDatabase.Add(CardDB.cardName.warhorsetrainer, 5);
-            priorityDatabase.Add(CardDB.cardName.warsongcommander, 5);
-            priorityDatabase.Add(CardDB.cardName.wickedwitchdoctor, 5);
-            priorityDatabase.Add(CardDB.cardName.wilfredfizzlebang, 1);
-            priorityDatabase.Add(CardDB.cardName.rotface, 1);
-            priorityDatabase.Add(CardDB.cardName.professorputricide, 1);
-            priorityDatabase.Add(CardDB.cardName.moorabi, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.acidmaw, 3);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.animatedarmor, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.aviana, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.brannbronzebeard, 4);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.cloakedhuntress, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 7);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.crowdfavorite, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.darkshirecouncilman, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.fandralstaghelm, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.flamewaker, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.frothingberserker, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.grimpatron, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.holychampion, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.knifejuggler, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.kodorider, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.kvaldirraider, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.leokk, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.malchezaarsimp, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.malganis, 10);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.manatidetotem, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.mechwarper, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.muklaschampion, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.murlocknight, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 6);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.northshirecleric, 4);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.pintsizedsummoner, 3);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.primalfintotem, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.prophetvelen, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.questingadventurer, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.radiantelemental, 3);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.ragnaroslightlord, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.raidleader, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.recruiter, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.secretkeeper, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 3);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.southseacaptain, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.spiritsingerumbra, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.summoningportal, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.summoningstone, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.thevoraxx, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 2);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.timberwolf, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.tunneltrogg, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 4);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.violetillusionist, 10);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.violetteacher, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.warsongcommander, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 5);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.wilfredfizzlebang, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.rotface, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.professorputricide, 1);
+            priorityDatabase.Add(Chireiden.Silverfish.SimCard.moorabi, 1);
         }
 
         private void setupAttackBuff()
         {
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.bite, 4);
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.claw, 2);
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.evolvespines, 4);
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.feralrage, 4);
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.heroicstrike, 4);
-            this.heroAttackBuffDatabase.Add(CardDB.cardName.gnash, 3);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.bite, 4);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.claw, 2);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.evolvespines, 4);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.feralrage, 4);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.heroicstrike, 4);
+            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.gnash, 3);
 
-            this.attackBuffDatabase.Add(CardDB.cardName.abusivesergeant, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.adaptation, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.bananas, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.bestialwrath, 2); // NEVER ON enemy MINION
-            this.attackBuffDatabase.Add(CardDB.cardName.blessingofkings, 4);
-            this.attackBuffDatabase.Add(CardDB.cardName.blessingofmight, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.bloodfurypotion, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.briarthorntoxin, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.clockworkknight, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.coldblood, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.crueltaskmaster, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.darkirondwarf, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.darkwispers, 5);//choice 2
-            this.attackBuffDatabase.Add(CardDB.cardName.demonfuse, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.dinomancy, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.dinosize, 10);
-            this.attackBuffDatabase.Add(CardDB.cardName.divinestrength, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.earthenscales, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.explorershat, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.innerrage, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.lancecarrier, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.lanternofpower, 10);
-            this.attackBuffDatabase.Add(CardDB.cardName.lightfusedstegodon, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.markofnature, 4);//choice1 
-            this.attackBuffDatabase.Add(CardDB.cardName.markofthewild, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.markofyshaarj, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.mutatinginjection, 4);
-            this.attackBuffDatabase.Add(CardDB.cardName.nightmare, 5); //destroy minion on next turn
-            this.attackBuffDatabase.Add(CardDB.cardName.powerwordtentacles, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.primalfusion, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.rampage, 3);//only damaged minion 
-            this.attackBuffDatabase.Add(CardDB.cardName.rockbiterweapon, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.rockpoolhunter, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.screwjankclunker, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.sealofchampions, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.silvermoonportal, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.spikeridgedsteed, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.velenschosen, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.whirlingblades, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.antimagicshell, 2);
-            this.attackBuffDatabase.Add(CardDB.cardName.fallensuncleric, 1);
-            this.attackBuffDatabase.Add(CardDB.cardName.cryostasis, 3);
-            this.attackBuffDatabase.Add(CardDB.cardName.bonemare, 4);
-            this.attackBuffDatabase.Add(CardDB.cardName.acherusveteran, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.abusivesergeant, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.adaptation, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.bananas, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.bestialwrath, 2); // NEVER ON enemy MINION
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.blessingofkings, 4);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.blessingofmight, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.bloodfurypotion, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.briarthorntoxin, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.clockworkknight, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.coldblood, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.crueltaskmaster, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.darkirondwarf, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.darkwispers, 5);//choice 2
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.demonfuse, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.dinomancy, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.dinosize, 10);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.divinestrength, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.earthenscales, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.explorershat, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.innerrage, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.lancecarrier, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.lanternofpower, 10);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.lightfusedstegodon, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofnature, 4);//choice1 
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofthewild, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofyshaarj, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.mutatinginjection, 4);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.nightmare, 5); //destroy minion on next turn
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.powerwordtentacles, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.primalfusion, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.rampage, 3);//only damaged minion 
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.rockbiterweapon, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.rockpoolhunter, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.screwjankclunker, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.sealofchampions, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.silvermoonportal, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.spikeridgedsteed, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.velenschosen, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.whirlingblades, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.antimagicshell, 2);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.fallensuncleric, 1);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.cryostasis, 3);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.bonemare, 4);
+            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.acherusveteran, 1);
         }
 
         private void setupHealthBuff()
         {
-            //healthBuffDatabase.Add(CardDB.cardName.ancientofwar, 5);//choice2 is only buffing himself!
-            //healthBuffDatabase.Add(CardDB.cardName.rooted, 5);
-            healthBuffDatabase.Add(CardDB.cardName.adaptation, 1);
-            healthBuffDatabase.Add(CardDB.cardName.armorplating, 1);
-            healthBuffDatabase.Add(CardDB.cardName.bananas, 1);
-            healthBuffDatabase.Add(CardDB.cardName.blessingofkings, 4);
-            healthBuffDatabase.Add(CardDB.cardName.clockworkknight, 1);
-            healthBuffDatabase.Add(CardDB.cardName.darkwispers, 5);//choice2
-            healthBuffDatabase.Add(CardDB.cardName.demonfuse, 3);
-            healthBuffDatabase.Add(CardDB.cardName.dinomancy, 2);
-            healthBuffDatabase.Add(CardDB.cardName.dinosize, 10);
-            healthBuffDatabase.Add(CardDB.cardName.divinestrength, 2);
-            healthBuffDatabase.Add(CardDB.cardName.earthenscales, 1);
-            healthBuffDatabase.Add(CardDB.cardName.explorershat, 1);
-            healthBuffDatabase.Add(CardDB.cardName.lanternofpower, 10);
-            healthBuffDatabase.Add(CardDB.cardName.lightfusedstegodon, 1);
-            healthBuffDatabase.Add(CardDB.cardName.markofnature, 4);//choice2
-            healthBuffDatabase.Add(CardDB.cardName.markofthewild, 2);
-            healthBuffDatabase.Add(CardDB.cardName.markofyshaarj, 2);
-            healthBuffDatabase.Add(CardDB.cardName.mutatinginjection, 4);
-            healthBuffDatabase.Add(CardDB.cardName.nightmare, 5);
-            healthBuffDatabase.Add(CardDB.cardName.powerwordshield, 2);
-            healthBuffDatabase.Add(CardDB.cardName.powerwordtentacles, 6);
-            healthBuffDatabase.Add(CardDB.cardName.primalfusion, 1);
-            healthBuffDatabase.Add(CardDB.cardName.rampage, 3);
-            healthBuffDatabase.Add(CardDB.cardName.rockpoolhunter, 1);
-            healthBuffDatabase.Add(CardDB.cardName.screwjankclunker, 2);
-            healthBuffDatabase.Add(CardDB.cardName.silvermoonportal, 2);
-            healthBuffDatabase.Add(CardDB.cardName.spikeridgedsteed, 6);
-            healthBuffDatabase.Add(CardDB.cardName.upgradedrepairbot, 4);
-            healthBuffDatabase.Add(CardDB.cardName.velenschosen, 4);
-            healthBuffDatabase.Add(CardDB.cardName.wildwalker, 3);
-            healthBuffDatabase.Add(CardDB.cardName.antimagicshell, 2);
-            healthBuffDatabase.Add(CardDB.cardName.sunbornevalkyr, 2);
-            healthBuffDatabase.Add(CardDB.cardName.fallensuncleric, 1);
-            healthBuffDatabase.Add(CardDB.cardName.cryostasis, 3);
-            healthBuffDatabase.Add(CardDB.cardName.bonemare, 4);
+            //healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.ancientofwar, 5);//choice2 is only buffing himself!
+            //healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.rooted, 5);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.adaptation, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.armorplating, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.bananas, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.blessingofkings, 4);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.clockworkknight, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.darkwispers, 5);//choice2
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.demonfuse, 3);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.dinomancy, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.dinosize, 10);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.divinestrength, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.earthenscales, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.explorershat, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.lanternofpower, 10);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.lightfusedstegodon, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofnature, 4);//choice2
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofthewild, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofyshaarj, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.mutatinginjection, 4);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.nightmare, 5);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.powerwordshield, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.powerwordtentacles, 6);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.primalfusion, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.rampage, 3);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.rockpoolhunter, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.screwjankclunker, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.silvermoonportal, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.spikeridgedsteed, 6);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.upgradedrepairbot, 4);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.velenschosen, 4);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.wildwalker, 3);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.antimagicshell, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.sunbornevalkyr, 2);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.fallensuncleric, 1);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.cryostasis, 3);
+            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.bonemare, 4);
 
-            tauntBuffDatabase.Add(CardDB.cardName.ancestralhealing, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.darkwispers, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.markofnature, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.markofthewild, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.mutatinginjection, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.rustyhorn, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.sparringpartner, 1);
-            tauntBuffDatabase.Add(CardDB.cardName.spikeridgedsteed, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.ancestralhealing, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.darkwispers, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofnature, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.markofthewild, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.mutatinginjection, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.rustyhorn, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.sparringpartner, 1);
+            tauntBuffDatabase.Add(Chireiden.Silverfish.SimCard.spikeridgedsteed, 1);
         }
 
         private void setupCardDrawBattlecry()
         {
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.alightinthedarkness, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ancestralknowledge, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ancientoflore, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ancientteachings, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.arcaneintellect, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.archthiefrafaam, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.azuredrake, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.babblingbook, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.battlerage, 0);//only if wounded own minions or hero
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.bloodwarriors, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.burgle, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.cabaliststome, 3);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.callpet, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.carnassasbrood, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.chitteringtunneler, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.chooseyourpath, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.coldlightoracle, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.commandingshout, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.convert, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.darkpeddler, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.darkshirelibrarian, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.desertcamel, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.divinefavor, 0);//only if enemy has more cards than you
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.drakonidoperative, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.echoofmedivh, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.elisestarseeker, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.elitetaurenchieftain, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.etherealconjurer, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.excessmana, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.fanofknives, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.farsight, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.fightpromoter, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.finderskeepers, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.firefly, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.flamegeyser, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.flameheart, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.flare, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.freefromamber, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.giftofcards, 1); //choice = 2
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.gnomishexperimenter, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.gnomishinventor, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.goldenmonkey, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.gorillabota3, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.grandcrusader, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.grimestreetinformant, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.hallucination, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.hammerofwrath, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.harrisonjones, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.harvest, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.holywrath, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.hydrologist, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.iknowaguy, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ivoryknight, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.jeweledmacaw, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.jeweledscarab, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.journeybelow, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kabalchemist, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kabalcourier, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kazakus, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kingmukla, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kingsblood, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kingsbloodtoxin, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.kingselekk, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.layonhands, 3);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.lifetap, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.lockandload, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.lotusagents, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.lunarvisions, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.maptothegoldenmonkey, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.markofyshaarj, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.massdispel, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.megafin, 9);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.mimicpod, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.mindpocalypse, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.mindvision, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.mortalcoil, 0);//only if kills
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.muklatyrantofthevale, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.museumcurator, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.nefarian, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.neptulon, 4);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.netherspitehistorian, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.nourish, 3); //choice = 2
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.noviceengineer, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.powerwordshield, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.primalfinlookout, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.primordialglyph, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.purify, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.quickshot, 0);//only if your hand is empty
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ravenidol, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.razorpetallasher, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.razorpetalvolley, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.roguesdoit, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.servantofkalimos, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.shadowcaster, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.shadowoil, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.shadowvisions, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.shieldblock, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.shiv, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.slam, 0); //if survives
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.smalltimerecruits, 3);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.solemnvigil, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.soultap, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.spellslinger, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.sprint, 4);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.stampede, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.starfire, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.stonehilldefender, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.swashburglar, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.thecurator, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.thistletea, 3);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.thoughtsteal, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tinkertowntechnician, 0); // If you have a Mech
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tolvirwarden, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tombspider, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tortollanforager, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tortollanprimalist, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.toshley, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tracking, 1); //NOT SUPPORTED YET
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ungoropack, 5);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.unholyshadow, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.unstableportal, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.varianwrynn, 3);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.wildmagic, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.wrath, 1); //choice=2
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.wrathion, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.xarilpoisonedmind, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ultimateinfestation, 5);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.tomblurker, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.ghastlyconjurer, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.deathgrip, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.stitchedtracker, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.rollthebones, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.icefishing, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.howlingcommander, 0);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.frozenclone, 1);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.forgeofsouls, 2);
-            cardDrawBattleCryDatabase.Add(CardDB.cardName.devourmind, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.alightinthedarkness, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ancestralknowledge, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ancientoflore, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ancientteachings, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.arcaneintellect, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.archthiefrafaam, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.azuredrake, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.babblingbook, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.battlerage, 0);//only if wounded own minions or hero
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.bloodwarriors, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.burgle, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.cabaliststome, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.callpet, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.carnassasbrood, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.chitteringtunneler, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.chooseyourpath, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.coldlightoracle, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.commandingshout, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.convert, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.darkpeddler, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.darkshirelibrarian, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.desertcamel, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.divinefavor, 0);//only if enemy has more cards than you
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.drakonidoperative, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.echoofmedivh, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.elisestarseeker, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.elitetaurenchieftain, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.etherealconjurer, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.excessmana, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.fanofknives, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.farsight, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.fightpromoter, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.finderskeepers, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.firefly, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.flamegeyser, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.flameheart, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.flare, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.freefromamber, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.giftofcards, 1); //choice = 2
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.gnomishexperimenter, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.gnomishinventor, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.goldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.gorillabota3, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.grandcrusader, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetinformant, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.hallucination, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.hammerofwrath, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.harrisonjones, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.harvest, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.holywrath, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.hydrologist, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.iknowaguy, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ivoryknight, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.jeweledmacaw, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.jeweledscarab, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.journeybelow, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kabalchemist, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kabalcourier, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kazakus, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingmukla, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingsblood, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingsbloodtoxin, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingselekk, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.layonhands, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.lifetap, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.lockandload, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.lotusagents, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.lunarvisions, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.maptothegoldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.markofyshaarj, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.massdispel, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.megafin, 9);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.mimicpod, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.mindpocalypse, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.mindvision, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.mortalcoil, 0);//only if kills
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.muklatyrantofthevale, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.museumcurator, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.nefarian, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.neptulon, 4);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.netherspitehistorian, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.nourish, 3); //choice = 2
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.noviceengineer, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.powerwordshield, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.primalfinlookout, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.primordialglyph, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.purify, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.quickshot, 0);//only if your hand is empty
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ravenidol, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.razorpetallasher, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.razorpetalvolley, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.servantofkalimos, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shadowcaster, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shadowoil, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shadowvisions, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shieldblock, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shiv, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.slam, 0); //if survives
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.smalltimerecruits, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.solemnvigil, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.soultap, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.spellslinger, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.sprint, 4);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.stampede, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.starfire, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.stonehilldefender, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.swashburglar, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.thecurator, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.thistletea, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.thoughtsteal, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tinkertowntechnician, 0); // If you have a Mech
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tolvirwarden, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tombspider, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tortollanforager, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tortollanprimalist, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.toshley, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tracking, 1); //NOT SUPPORTED YET
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ungoropack, 5);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.unholyshadow, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.unstableportal, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.varianwrynn, 3);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.wildmagic, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.wrath, 1); //choice=2
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.wrathion, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.xarilpoisonedmind, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ultimateinfestation, 5);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.tomblurker, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ghastlyconjurer, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.deathgrip, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.stitchedtracker, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.rollthebones, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.icefishing, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.howlingcommander, 0);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.frozenclone, 1);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.forgeofsouls, 2);
+            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.devourmind, 3);
 
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.acolyteofpain, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.anubarak, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.bloodmagethalnos, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.clockworkgnome, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.crystallineoracle, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.dancingswords, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.deadlyfork, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.hook, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.igneouselemental, 2);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.loothoarder, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.meanstreetmarshal, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.mechanicalyeti, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.mechbearcat, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.pollutedhoarder, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.pyros, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.rhonin, 3);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.runicegg, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.shiftingshade, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.shimmeringtempest, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.tentaclesforarms, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.tombpillager, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.toshley, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.undercityhuckster, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.webspinner, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.xarilpoisonedmind, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.shallowgravedigger, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.frozenchampion, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.bonedrake, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.bonebaron, 2);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.arfus, 1);
-            cardDrawDeathrattleDatabase.Add(CardDB.cardName.glacialmysteries, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.acolyteofpain, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.anubarak, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.bloodmagethalnos, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.clockworkgnome, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.crystallineoracle, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.dancingswords, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.deadlyfork, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.hook, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.igneouselemental, 2);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.loothoarder, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.meanstreetmarshal, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.mechanicalyeti, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.mechbearcat, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.pollutedhoarder, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.pyros, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.rhonin, 3);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.runicegg, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.shiftingshade, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.shimmeringtempest, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.tentaclesforarms, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.tombpillager, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.toshley, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.undercityhuckster, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.webspinner, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.xarilpoisonedmind, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.shallowgravedigger, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.frozenchampion, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.bonedrake, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.bonebaron, 2);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.arfus, 1);
+            cardDrawDeathrattleDatabase.Add(Chireiden.Silverfish.SimCard.glacialmysteries, 1);
         }
 
 
         private void setupUsefulNeedKeepDatabase()
         {
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.acidmaw, 4);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.addledgrizzly, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.airelemental, 6);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.alarmobot, 4);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.ancientharbinger, 2);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.animatedarmor, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.archmageantonidas, 7);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.armorsmith, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.aviana, 7);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.backroombouncer, 1);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.bloodimp, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.brannbronzebeard, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.burlyrockjawtrogg, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.cloakedhuntress, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.cobaltguardian, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.coldarradrake, 15);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.confessorpaletress, 32);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.cultmaster, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.cultsorcerer, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.darkshirecouncilman, 0);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.dementedfrostcaller, 15);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.demolisher, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.direwolfalpha, 30);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.dragonkinsorcerer, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.emboldener3000, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.emperorthaurissan, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.faeriedragon, 7);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.fallenhero, 15);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.masterchest, 48);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.fandralstaghelm, 15);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.felcannon, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.flametonguetotem, 30);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.flamewaker, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.flesheatingghoul, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.floatingwatcher, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.frothingberserker, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.gadgetzanauctioneer, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.garrisoncommander, 7);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.gazlowe, 6);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.grimestreetenforcer, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.grimscaleoracle, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.grimygadgeteer, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.gruul, 4);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.hallazealtheascended, 16);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.healingtotem, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.hobgoblin, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.hogger, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.homingchicken, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.illidanstormrage, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.illuminator, 2);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.impmaster, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.ironsensei, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.jeeves, 0);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.junkbot, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.kabaltrafficker, 1);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.kelthuzad, 18);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.knifejuggler, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.kodorider, 20);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.kvaldirraider, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.leokk, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.lightwarden, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.lightwell, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.lyrathesunshard, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.maidenofthelake, 18);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.malchezaarsimp, 0);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.malganis, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.manatidetotem, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.manawyrm, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.masterswordsmith, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.mechwarper, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.mekgineerthermaplugg, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.micromachine, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.moroes, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.muklaschampion, 14);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.murlocknight, 16);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.murloctidecaller, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.murlocwarleader, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.natpagle, 2);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.nexuschampionsaraad, 30);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.northshirecleric, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.obsidiandestroyer, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.pintsizedsummoner, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.priestofthefeast, 3);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.primalfintotem, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.prophetvelen, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.questingadventurer, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.radiantelemental, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.ragnaroslightlord, 19);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.ragnarosthefirelord, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.raidleader, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.recruiter, 15);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.redmanawyrm, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.repairbot, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.rumblingelemental, 7);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.scavenginghyena, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.secretkeeper, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.shadeofnaxxramas, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.shadowboxer, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.shakuthecollector, 25);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.shipscannon, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.siegeengine, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.siltfinspiritwalker, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.silverhandregent, 14);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.sorcerersapprentice, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.southseacaptain, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.spiritsingerumbra, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.starvingbuzzard, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.stonesplintertrogg, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.stormwindchampion, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.summoningportal, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.summoningstone, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.thunderbluffvaliant, 16);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.timberwolf, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.tradeprincegallywix, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.troggzortheearthinator, 4);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.twilightelder, 9);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.undertaker, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.usherofsouls, 2);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.viciousfledgling, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.violetillusionist, 14);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.violetteacher, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.vitalitytotem, 8);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.warhorsetrainer, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.warsongcommander, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.weespellstopper, 11);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.wickedwitchdoctor, 13);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.wilfredfizzlebang, 16);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.windupburglebot, 5);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.youngpriestess, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.shadowascendant, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.festergut, 25);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.drakkarienchanter, 17);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.despicabledreadlord, 14);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.cobaltscalebane, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.valkyrsoulclaimer, 10);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.runeforgehaunter, 1);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.rotface, 26);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.necroticgeist, 12);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.moorabi, 16);
-            UsefulNeedKeepDatabase.Add(CardDB.cardName.icewalker, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.acidmaw, 4);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.addledgrizzly, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.airelemental, 6);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.alarmobot, 4);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.ancientharbinger, 2);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.animatedarmor, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 7);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.armorsmith, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.aviana, 7);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.backroombouncer, 1);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.bloodimp, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.brannbronzebeard, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.burlyrockjawtrogg, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.cloakedhuntress, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.cobaltguardian, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.coldarradrake, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 32);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.cultmaster, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.darkshirecouncilman, 0);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.demolisher, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 30);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.dragonkinsorcerer, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.emboldener3000, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.faeriedragon, 7);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.fallenhero, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.masterchest, 48);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.fandralstaghelm, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.felcannon, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 30);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.flamewaker, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.flesheatingghoul, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.floatingwatcher, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.frothingberserker, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.garrisoncommander, 7);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.gazlowe, 6);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.gruul, 4);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.hallazealtheascended, 16);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.healingtotem, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.hobgoblin, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.hogger, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.homingchicken, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.illuminator, 2);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.impmaster, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.ironsensei, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.jeeves, 0);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.junkbot, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.kabaltrafficker, 1);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.kelthuzad, 18);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.knifejuggler, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.kodorider, 20);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.kvaldirraider, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.leokk, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.lightwarden, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.lightwell, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.maidenofthelake, 18);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.malchezaarsimp, 0);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.malganis, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.manatidetotem, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.manawyrm, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.masterswordsmith, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.mechwarper, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.mekgineerthermaplugg, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.micromachine, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.moroes, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.muklaschampion, 14);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.murlocknight, 16);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.murloctidecaller, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.natpagle, 2);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 30);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.northshirecleric, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.obsidiandestroyer, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.pintsizedsummoner, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.priestofthefeast, 3);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.primalfintotem, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.prophetvelen, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.questingadventurer, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.radiantelemental, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.ragnaroslightlord, 19);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.ragnarosthefirelord, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.raidleader, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.recruiter, 15);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.redmanawyrm, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.repairbot, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.rumblingelemental, 7);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.secretkeeper, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.shadeofnaxxramas, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.shadowboxer, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.shakuthecollector, 25);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.shipscannon, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.siegeengine, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.siltfinspiritwalker, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.silverhandregent, 14);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.southseacaptain, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.spiritsingerumbra, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.starvingbuzzard, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.stonesplintertrogg, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.summoningportal, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.summoningstone, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 16);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.timberwolf, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.tradeprincegallywix, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, 4);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.twilightelder, 9);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.undertaker, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.usherofsouls, 2);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.violetillusionist, 14);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.violetteacher, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.vitalitytotem, 8);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.warsongcommander, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.weespellstopper, 11);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 13);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.wilfredfizzlebang, 16);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.windupburglebot, 5);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.youngpriestess, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.shadowascendant, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.festergut, 25);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.drakkarienchanter, 17);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.despicabledreadlord, 14);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.cobaltscalebane, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.valkyrsoulclaimer, 10);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.runeforgehaunter, 1);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.rotface, 26);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.necroticgeist, 12);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.moorabi, 16);
+            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.icewalker, 15);
         }
 
         private void setupDiscardCards()
         {
-            cardDiscardDatabase.Add(CardDB.cardName.darkbargain, 6);
-            cardDiscardDatabase.Add(CardDB.cardName.darkshirelibrarian, 2);
-            cardDiscardDatabase.Add(CardDB.cardName.doomguard, 5);
-            cardDiscardDatabase.Add(CardDB.cardName.lakkarifelhound, 4);
-            cardDiscardDatabase.Add(CardDB.cardName.soulfire, 1);
-            cardDiscardDatabase.Add(CardDB.cardName.succubus, 2);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.darkbargain, 6);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.darkshirelibrarian, 2);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.doomguard, 5);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.lakkarifelhound, 4);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.soulfire, 1);
+            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.succubus, 2);
         }
 
         private void setupDestroyOwnCards()
         {
-            this.destroyOwnDatabase.Add(CardDB.cardName.brawl, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.deathwing, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.golakkacrawler, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.hungrycrab, 0);//not own mins
-            this.destroyOwnDatabase.Add(CardDB.cardName.kingmosh, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.naturalize, 0);//not own mins
-            this.destroyOwnDatabase.Add(CardDB.cardName.ravenouspterrordax, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.sacrificialpact, 0);//not own mins
-            this.destroyOwnDatabase.Add(CardDB.cardName.siphonsoul, 0);//not own mins
-            this.destroyOwnDatabase.Add(CardDB.cardName.shadowflame, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.twistingnether, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.unwillingsacrifice, 0);
-            this.destroyOwnDatabase.Add(CardDB.cardName.sanguinereveler, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.brawl, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.deathwing, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.golakkacrawler, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.hungrycrab, 0);//not own mins
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.kingmosh, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.naturalize, 0);//not own mins
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.ravenouspterrordax, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.sacrificialpact, 0);//not own mins
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.siphonsoul, 0);//not own mins
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.shadowflame, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.twistingnether, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.unwillingsacrifice, 0);
+            this.destroyOwnDatabase.Add(Chireiden.Silverfish.SimCard.sanguinereveler, 0);
 
-            this.destroyDatabase.Add(CardDB.cardName.assassinate, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.biggamehunter, 0);
-            this.destroyDatabase.Add(CardDB.cardName.bladeofcthun, 0);
-            this.destroyDatabase.Add(CardDB.cardName.blastcrystalpotion, 0);
-            this.destroyDatabase.Add(CardDB.cardName.bookwyrm, 0);
-            this.destroyDatabase.Add(CardDB.cardName.corruption, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.crush, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.darkbargain, 0);
-            this.destroyDatabase.Add(CardDB.cardName.deadlyshot, 0);
-            this.destroyDatabase.Add(CardDB.cardName.doom, 0);
-            this.destroyDatabase.Add(CardDB.cardName.drakkisathscommand, 0);
-            this.destroyDatabase.Add(CardDB.cardName.enterthecoliseum, 0);
-            this.destroyDatabase.Add(CardDB.cardName.execute, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.hemetnesingwary, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.mindcontrol, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.moatlurker, 1);
-            this.destroyDatabase.Add(CardDB.cardName.mulch, 0);
-            this.destroyDatabase.Add(CardDB.cardName.necroticpoison, 0);
-            this.destroyDatabase.Add(CardDB.cardName.rendblackhand, 0);
-            this.destroyDatabase.Add(CardDB.cardName.sabotage, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.shadowworddeath, 0);
-            this.destroyDatabase.Add(CardDB.cardName.shadowwordhorror, 0);
-            this.destroyDatabase.Add(CardDB.cardName.shadowwordpain, 0);
-            this.destroyDatabase.Add(CardDB.cardName.shatter, 0);
-            this.destroyDatabase.Add(CardDB.cardName.theblackknight, 0);//not own mins
-            this.destroyDatabase.Add(CardDB.cardName.thetruewarchief, 0);
-            this.destroyDatabase.Add(CardDB.cardName.vilespineslayer, 0);
-            this.destroyDatabase.Add(CardDB.cardName.voidcrusher, 0);
-            this.destroyDatabase.Add(CardDB.cardName.obsidianstatue, 0);
-            this.destroyDatabase.Add(CardDB.cardName.obliterate, 0);
-            this.destroyDatabase.Add(CardDB.cardName.doompact, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.assassinate, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.biggamehunter, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.bladeofcthun, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.blastcrystalpotion, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.bookwyrm, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.corruption, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.crush, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.darkbargain, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.deadlyshot, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.doom, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.drakkisathscommand, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.enterthecoliseum, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.execute, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.hemetnesingwary, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.mindcontrol, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.moatlurker, 1);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.mulch, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.necroticpoison, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.rendblackhand, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.sabotage, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.shadowworddeath, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.shadowwordhorror, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.shadowwordpain, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.shatter, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.theblackknight, 0);//not own mins
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.thetruewarchief, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.vilespineslayer, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.voidcrusher, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.obsidianstatue, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.obliterate, 0);
+            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.doompact, 0);
         }
 
         private void setupReturnBackToHandCards()
         {
-            returnHandDatabase.Add(CardDB.cardName.ancientbrewmaster, 0);
-            returnHandDatabase.Add(CardDB.cardName.bloodthistletoxin, 0);
-            returnHandDatabase.Add(CardDB.cardName.dream, 0);
-            returnHandDatabase.Add(CardDB.cardName.gadgetzanferryman, 0);
-            returnHandDatabase.Add(CardDB.cardName.kidnapper, 0);//if combo
-            returnHandDatabase.Add(CardDB.cardName.recycle, 0);
-            returnHandDatabase.Add(CardDB.cardName.shadowstep, 0);
-            returnHandDatabase.Add(CardDB.cardName.timerewinder, 0);
-            returnHandDatabase.Add(CardDB.cardName.vanish, 0);
-            returnHandDatabase.Add(CardDB.cardName.youthfulbrewmaster, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.ancientbrewmaster, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.bloodthistletoxin, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.dream, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzanferryman, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.kidnapper, 0);//if combo
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.recycle, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.shadowstep, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.timerewinder, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.vanish, 0);
+            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.youthfulbrewmaster, 0);
         }
 
         private void setupHeroDamagingAOE()
         {
-            this.heroDamagingAoeDatabase.Add(CardDB.cardName.unknown, 0);
+            this.heroDamagingAoeDatabase.Add(Chireiden.Silverfish.SimCard.unknown, 0);
         }
 
         private void setupSpecialMins()
         {
-            specialMinions.Add(CardDB.cardName.aberrantberserker, 0);
-            specialMinions.Add(CardDB.cardName.abomination, 0);
-            specialMinions.Add(CardDB.cardName.acidmaw, 0);
-            specialMinions.Add(CardDB.cardName.acolyteofpain, 0);
-            specialMinions.Add(CardDB.cardName.addledgrizzly, 0);
-            specialMinions.Add(CardDB.cardName.alarmobot, 0);
-            specialMinions.Add(CardDB.cardName.amaniberserker, 0);
-            specialMinions.Add(CardDB.cardName.ancientharbinger, 0);
-            specialMinions.Add(CardDB.cardName.angrychicken, 0);
-            specialMinions.Add(CardDB.cardName.animatedarmor, 0);
-            specialMinions.Add(CardDB.cardName.anubarak, 0);
-            specialMinions.Add(CardDB.cardName.anubarambusher, 0);
-            specialMinions.Add(CardDB.cardName.anubisathsentinel, 0);
-            specialMinions.Add(CardDB.cardName.arcaneanomaly, 0);
-            specialMinions.Add(CardDB.cardName.archmage, 0);
-            specialMinions.Add(CardDB.cardName.archmageantonidas, 0);
-            specialMinions.Add(CardDB.cardName.armorsmith, 0);
-            specialMinions.Add(CardDB.cardName.auchenaisoulpriest, 0);
-            specialMinions.Add(CardDB.cardName.aviana, 0);
-            specialMinions.Add(CardDB.cardName.axeflinger, 0);
-            specialMinions.Add(CardDB.cardName.ayablackpaw, 0);
-            specialMinions.Add(CardDB.cardName.azuredrake, 0);
-            specialMinions.Add(CardDB.cardName.backroombouncer, 0);
-            specialMinions.Add(CardDB.cardName.backstreetleper, 0);
-            specialMinions.Add(CardDB.cardName.barongeddon, 0);
-            specialMinions.Add(CardDB.cardName.baronrivendare, 0);
-            specialMinions.Add(CardDB.cardName.blackwaterpirate, 0);
-            specialMinions.Add(CardDB.cardName.bloodhoofbrave, 0);
-            specialMinions.Add(CardDB.cardName.bloodimp, 0);
-            specialMinions.Add(CardDB.cardName.bloodmagethalnos, 0);
-            specialMinions.Add(CardDB.cardName.bolframshield, 0);
-            specialMinions.Add(CardDB.cardName.boneguardlieutenant, 0);
-            specialMinions.Add(CardDB.cardName.brannbronzebeard, 0);
-            specialMinions.Add(CardDB.cardName.bravearcher, 0);
-            specialMinions.Add(CardDB.cardName.buccaneer, 0);
-            specialMinions.Add(CardDB.cardName.burglybully, 0);
-            specialMinions.Add(CardDB.cardName.burlyrockjawtrogg, 0);
-            specialMinions.Add(CardDB.cardName.cairnebloodhoof, 0);
-            specialMinions.Add(CardDB.cardName.chromaggus, 0);
-            specialMinions.Add(CardDB.cardName.chromaticdragonkin, 0);
-            specialMinions.Add(CardDB.cardName.cloakedhuntress, 0);
-            specialMinions.Add(CardDB.cardName.clockworkgnome, 0);
-            specialMinions.Add(CardDB.cardName.cobaltguardian, 0);
-            specialMinions.Add(CardDB.cardName.cogmaster, 0);
-            specialMinions.Add(CardDB.cardName.coldarradrake, 0);
-            specialMinions.Add(CardDB.cardName.coliseummanager, 0);
-            specialMinions.Add(CardDB.cardName.confessorpaletress, 0);
-            specialMinions.Add(CardDB.cardName.crazedworshipper, 0);
-            specialMinions.Add(CardDB.cardName.crowdfavorite, 0);
-            specialMinions.Add(CardDB.cardName.crueldinomancer, 0);
-            specialMinions.Add(CardDB.cardName.crystallineoracle, 0);
-            specialMinions.Add(CardDB.cardName.cthun, 0);
-            specialMinions.Add(CardDB.cardName.cultmaster, 0);
-            specialMinions.Add(CardDB.cardName.cultsorcerer, 0);
-            specialMinions.Add(CardDB.cardName.cutpurse, 0);
-            specialMinions.Add(CardDB.cardName.dalaranaspirant, 0);
-            specialMinions.Add(CardDB.cardName.dalaranmage, 0);
-            specialMinions.Add(CardDB.cardName.dancingswords, 0);
-            specialMinions.Add(CardDB.cardName.darkcultist, 0);
-            specialMinions.Add(CardDB.cardName.darkshirecouncilman, 0);
-            specialMinions.Add(CardDB.cardName.deadlyfork, 0);
-            specialMinions.Add(CardDB.cardName.deathlord, 0);
-            specialMinions.Add(CardDB.cardName.dementedfrostcaller, 0);
-            specialMinions.Add(CardDB.cardName.demolisher, 0);
-            specialMinions.Add(CardDB.cardName.direhornhatchling, 0);
-            specialMinions.Add(CardDB.cardName.direwolfalpha, 0);
-            specialMinions.Add(CardDB.cardName.djinniofzephyrs, 0);
-            specialMinions.Add(CardDB.cardName.doomsayer, 0);
-            specialMinions.Add(CardDB.cardName.dragonegg, 0);
-            specialMinions.Add(CardDB.cardName.dragonhawkrider, 0);
-            specialMinions.Add(CardDB.cardName.dragonkinsorcerer, 0);
-            specialMinions.Add(CardDB.cardName.dreadscale, 0);
-            specialMinions.Add(CardDB.cardName.dreadsteed, 0);
-            specialMinions.Add(CardDB.cardName.eggnapper, 0);
-            specialMinions.Add(CardDB.cardName.emperorcobra, 0);
-            specialMinions.Add(CardDB.cardName.emperorthaurissan, 0);
-            specialMinions.Add(CardDB.cardName.etherealarcanist, 0);
-            specialMinions.Add(CardDB.cardName.evolvedkobold, 0);
-            specialMinions.Add(CardDB.cardName.explosivesheep, 0);
-            specialMinions.Add(CardDB.cardName.eydisdarkbane, 0);
-            specialMinions.Add(CardDB.cardName.fallenhero, 0);
-            specialMinions.Add(CardDB.cardName.fandralstaghelm, 0);
-            specialMinions.Add(CardDB.cardName.felcannon, 0);
-            specialMinions.Add(CardDB.cardName.feugen, 0);
-            specialMinions.Add(CardDB.cardName.finjatheflyingstar, 0);
-            specialMinions.Add(CardDB.cardName.fjolalightbane, 0);
-            specialMinions.Add(CardDB.cardName.flametonguetotem, 0);
-            specialMinions.Add(CardDB.cardName.flamewaker, 0);
-            specialMinions.Add(CardDB.cardName.flesheatingghoul, 0);
-            specialMinions.Add(CardDB.cardName.floatingwatcher, 0);
-            specialMinions.Add(CardDB.cardName.foereaper4000, 0);
-            specialMinions.Add(CardDB.cardName.gadgetzanauctioneer, 0);
-            specialMinions.Add(CardDB.cardName.gahzrilla, 0);
-            specialMinions.Add(CardDB.cardName.garr, 0);
-            specialMinions.Add(CardDB.cardName.garrisoncommander, 0);
-            specialMinions.Add(CardDB.cardName.gazlowe, 0);
-            specialMinions.Add(CardDB.cardName.genzotheshark, 0);
-            specialMinions.Add(CardDB.cardName.giantanaconda, 0);
-            specialMinions.Add(CardDB.cardName.giantsandworm, 0);
-            specialMinions.Add(CardDB.cardName.giantwasp, 0);
-            specialMinions.Add(CardDB.cardName.goblinsapper, 0);
-            specialMinions.Add(CardDB.cardName.grimestreetenforcer, 0);
-            specialMinions.Add(CardDB.cardName.grimpatron, 0);
-            specialMinions.Add(CardDB.cardName.grimscaleoracle, 0);
-            specialMinions.Add(CardDB.cardName.grimygadgeteer, 0);
-            specialMinions.Add(CardDB.cardName.grommashhellscream, 0);
-            specialMinions.Add(CardDB.cardName.gruul, 0);
-            specialMinions.Add(CardDB.cardName.gurubashiberserker, 0);
-            specialMinions.Add(CardDB.cardName.hallazealtheascended, 0);
-            specialMinions.Add(CardDB.cardName.harvestgolem, 0);
-            specialMinions.Add(CardDB.cardName.hauntedcreeper, 0);
-            specialMinions.Add(CardDB.cardName.hobgoblin, 0);
-            specialMinions.Add(CardDB.cardName.hogger, 0);
-            specialMinions.Add(CardDB.cardName.hoggerdoomofelwynn, 0);
-            specialMinions.Add(CardDB.cardName.holychampion, 0);
-            specialMinions.Add(CardDB.cardName.hoodedacolyte, 0);
-            specialMinions.Add(CardDB.cardName.hugetoad, 0);
-            specialMinions.Add(CardDB.cardName.igneouselemental, 0);
-            specialMinions.Add(CardDB.cardName.illidanstormrage, 0);
-            specialMinions.Add(CardDB.cardName.impgangboss, 0);
-            specialMinions.Add(CardDB.cardName.impmaster, 0);
-            specialMinions.Add(CardDB.cardName.infestedtauren, 0);
-            specialMinions.Add(CardDB.cardName.infestedwolf, 0);
-            specialMinions.Add(CardDB.cardName.ironsensei, 0);
-            specialMinions.Add(CardDB.cardName.jadeswarmer, 0);
-            specialMinions.Add(CardDB.cardName.jeeves, 0);
-            specialMinions.Add(CardDB.cardName.junglemoonkin, 0);
-            specialMinions.Add(CardDB.cardName.junkbot, 0);
-            specialMinions.Add(CardDB.cardName.kabaltrafficker, 0);
-            specialMinions.Add(CardDB.cardName.kelthuzad, 0);
-            specialMinions.Add(CardDB.cardName.kindlygrandmother, 0);
-            specialMinions.Add(CardDB.cardName.knifejuggler, 0);
-            specialMinions.Add(CardDB.cardName.knuckles, 0);
-            specialMinions.Add(CardDB.cardName.koboldgeomancer, 0);
-            specialMinions.Add(CardDB.cardName.kodorider, 0);
-            specialMinions.Add(CardDB.cardName.kvaldirraider, 0);
-            specialMinions.Add(CardDB.cardName.lepergnome, 0);
-            specialMinions.Add(CardDB.cardName.lightspawn, 0);
-            specialMinions.Add(CardDB.cardName.lightwarden, 0);
-            specialMinions.Add(CardDB.cardName.lightwell, 0);
-            specialMinions.Add(CardDB.cardName.loothoarder, 0);
-            specialMinions.Add(CardDB.cardName.lorewalkercho, 0);
-            specialMinions.Add(CardDB.cardName.lotusassassin, 0);
-            specialMinions.Add(CardDB.cardName.lowlysquire, 0);
-            specialMinions.Add(CardDB.cardName.lyrathesunshard, 0);
-            specialMinions.Add(CardDB.cardName.madscientist, 0);
-            specialMinions.Add(CardDB.cardName.maexxna, 0);
-            specialMinions.Add(CardDB.cardName.magnatauralpha, 0);
-            specialMinions.Add(CardDB.cardName.maidenofthelake, 0);
-            specialMinions.Add(CardDB.cardName.majordomoexecutus, 0);
-            specialMinions.Add(CardDB.cardName.malchezaarsimp, 0);
-            specialMinions.Add(CardDB.cardName.malganis, 0);
-            specialMinions.Add(CardDB.cardName.malorne, 0);
-            specialMinions.Add(CardDB.cardName.malygos, 0);
-            specialMinions.Add(CardDB.cardName.manaaddict, 0);
-            specialMinions.Add(CardDB.cardName.manageode, 0);
-            specialMinions.Add(CardDB.cardName.manatidetotem, 0);
-            specialMinions.Add(CardDB.cardName.manatreant, 0);
-            specialMinions.Add(CardDB.cardName.manawraith, 0);
-            specialMinions.Add(CardDB.cardName.manawyrm, 0);
-            specialMinions.Add(CardDB.cardName.masterswordsmith, 0);
-            specialMinions.Add(CardDB.cardName.mechanicalyeti, 0);
-            specialMinions.Add(CardDB.cardName.mechbearcat, 0);
-            specialMinions.Add(CardDB.cardName.mechwarper, 0);
-            specialMinions.Add(CardDB.cardName.mekgineerthermaplugg, 0);
-            specialMinions.Add(CardDB.cardName.micromachine, 0);
-            specialMinions.Add(CardDB.cardName.mimironshead, 0);
-            specialMinions.Add(CardDB.cardName.mistressofpain, 0);
-            specialMinions.Add(CardDB.cardName.moroes, 0);
-            specialMinions.Add(CardDB.cardName.muklaschampion, 0);
-            specialMinions.Add(CardDB.cardName.murlocknight, 0);
-            specialMinions.Add(CardDB.cardName.murloctidecaller, 0);
-            specialMinions.Add(CardDB.cardName.murlocwarleader, 0);
-            specialMinions.Add(CardDB.cardName.natpagle, 0);
-            specialMinions.Add(CardDB.cardName.nerubarweblord, 0);
-            specialMinions.Add(CardDB.cardName.nexuschampionsaraad, 0);
-            specialMinions.Add(CardDB.cardName.northshirecleric, 0);
-            specialMinions.Add(CardDB.cardName.obsidiandestroyer, 0);
-            specialMinions.Add(CardDB.cardName.ogremagi, 0);
-            specialMinions.Add(CardDB.cardName.oldmurkeye, 0);
-            specialMinions.Add(CardDB.cardName.orgrimmaraspirant, 0);
-            specialMinions.Add(CardDB.cardName.patientassassin, 0);
-            specialMinions.Add(CardDB.cardName.pilotedshredder, 0);
-            specialMinions.Add(CardDB.cardName.pilotedskygolem, 0);
-            specialMinions.Add(CardDB.cardName.pintsizedsummoner, 0);
-            specialMinions.Add(CardDB.cardName.pitsnake, 0);
-            specialMinions.Add(CardDB.cardName.possessedvillager, 0);
-            specialMinions.Add(CardDB.cardName.priestofthefeast, 0);
-            specialMinions.Add(CardDB.cardName.primalfinchampion, 0);
-            specialMinions.Add(CardDB.cardName.primalfintotem, 0);
-            specialMinions.Add(CardDB.cardName.prophetvelen, 0);
-            specialMinions.Add(CardDB.cardName.pyros, 0);
-            specialMinions.Add(CardDB.cardName.questingadventurer, 0);
-            specialMinions.Add(CardDB.cardName.radiantelemental, 0);
-            specialMinions.Add(CardDB.cardName.ragingworgen, 0);
-            specialMinions.Add(CardDB.cardName.ragnaroslightlord, 0);
-            specialMinions.Add(CardDB.cardName.raidleader, 0);
-            specialMinions.Add(CardDB.cardName.raptorhatchling, 0);
-            specialMinions.Add(CardDB.cardName.ratpack, 0);
-            specialMinions.Add(CardDB.cardName.recruiter, 0);
-            specialMinions.Add(CardDB.cardName.redmanawyrm, 0);
-            specialMinions.Add(CardDB.cardName.rumblingelemental, 0);
-            specialMinions.Add(CardDB.cardName.satedthreshadon, 0);
-            specialMinions.Add(CardDB.cardName.savagecombatant, 0);
-            specialMinions.Add(CardDB.cardName.savannahhighmane, 0);
-            specialMinions.Add(CardDB.cardName.scalednightmare, 0);
-            specialMinions.Add(CardDB.cardName.scavenginghyena, 0);
-            specialMinions.Add(CardDB.cardName.secretkeeper, 0);
-            specialMinions.Add(CardDB.cardName.selflesshero, 0);
-            specialMinions.Add(CardDB.cardName.sergeantsally, 0);
-            specialMinions.Add(CardDB.cardName.shadeofnaxxramas, 0);
-            specialMinions.Add(CardDB.cardName.shadowboxer, 0);
-            specialMinions.Add(CardDB.cardName.shadowfiend, 0);
-            specialMinions.Add(CardDB.cardName.shakuthecollector, 0);
-            specialMinions.Add(CardDB.cardName.sherazincorpseflower, 0);
-            specialMinions.Add(CardDB.cardName.shiftingshade, 0);
-            specialMinions.Add(CardDB.cardName.shimmeringtempest, 0);
-            specialMinions.Add(CardDB.cardName.shipscannon, 0);
-            specialMinions.Add(CardDB.cardName.siltfinspiritwalker, 0);
-            specialMinions.Add(CardDB.cardName.silverhandregent, 0);
-            specialMinions.Add(CardDB.cardName.smalltimebuccaneer, 0);
-            specialMinions.Add(CardDB.cardName.sneedsoldshredder, 0);
-            specialMinions.Add(CardDB.cardName.snowchugger, 0);
-            specialMinions.Add(CardDB.cardName.sorcerersapprentice, 0);
-            specialMinions.Add(CardDB.cardName.southseacaptain, 0);
-            specialMinions.Add(CardDB.cardName.southseasquidface, 0);
-            specialMinions.Add(CardDB.cardName.spawnofnzoth, 0);
-            specialMinions.Add(CardDB.cardName.spawnofshadows, 0);
-            specialMinions.Add(CardDB.cardName.spiritsingerumbra, 0);
-            specialMinions.Add(CardDB.cardName.spitefulsmith, 0);
-            specialMinions.Add(CardDB.cardName.stalagg, 0);
-            specialMinions.Add(CardDB.cardName.starvingbuzzard, 0);
-            specialMinions.Add(CardDB.cardName.steamwheedlesniper, 0);
-            specialMinions.Add(CardDB.cardName.stewardofdarkshire, 0);
-            specialMinions.Add(CardDB.cardName.stonesplintertrogg, 0);
-            specialMinions.Add(CardDB.cardName.stormwindchampion, 0);
-            specialMinions.Add(CardDB.cardName.summoningportal, 0);
-            specialMinions.Add(CardDB.cardName.summoningstone, 0);
-            specialMinions.Add(CardDB.cardName.sylvanaswindrunner, 0);
-            specialMinions.Add(CardDB.cardName.tarcreeper, 0);
-            specialMinions.Add(CardDB.cardName.tarlord, 0);
-            specialMinions.Add(CardDB.cardName.tarlurker, 0);
-            specialMinions.Add(CardDB.cardName.taurenwarrior, 0);
-            specialMinions.Add(CardDB.cardName.tentacleofnzoth, 0);
-            specialMinions.Add(CardDB.cardName.thebeast, 0);
-            specialMinions.Add(CardDB.cardName.theboogeymonster, 0);
-            specialMinions.Add(CardDB.cardName.thevoraxx, 0);
-            specialMinions.Add(CardDB.cardName.thunderbluffvaliant, 0);
-            specialMinions.Add(CardDB.cardName.timberwolf, 0);
-            specialMinions.Add(CardDB.cardName.tinyknightofevil, 0);
-            specialMinions.Add(CardDB.cardName.tirionfordring, 0);
-            specialMinions.Add(CardDB.cardName.tortollanshellraiser, 0);
-            specialMinions.Add(CardDB.cardName.toshley, 0);
-            specialMinions.Add(CardDB.cardName.tournamentmedic, 0);
-            specialMinions.Add(CardDB.cardName.tradeprincegallywix, 0);
-            specialMinions.Add(CardDB.cardName.troggzortheearthinator, 0);
-            specialMinions.Add(CardDB.cardName.tundrarhino, 0);
-            specialMinions.Add(CardDB.cardName.tunneltrogg, 0);
-            specialMinions.Add(CardDB.cardName.twilightelder, 0);
-            specialMinions.Add(CardDB.cardName.twilightsummoner, 0);
-            specialMinions.Add(CardDB.cardName.unboundelemental, 0);
-            specialMinions.Add(CardDB.cardName.undercityhuckster, 0);
-            specialMinions.Add(CardDB.cardName.undertaker, 0);
-            specialMinions.Add(CardDB.cardName.unstableghoul, 0);
-            specialMinions.Add(CardDB.cardName.usherofsouls, 0);
-            specialMinions.Add(CardDB.cardName.viciousfledgling, 0);
-            specialMinions.Add(CardDB.cardName.violetillusionist, 0);
-            specialMinions.Add(CardDB.cardName.violetteacher, 0);
-            specialMinions.Add(CardDB.cardName.vitalitytotem, 0);
-            specialMinions.Add(CardDB.cardName.voidcaller, 0);
-            specialMinions.Add(CardDB.cardName.voidcrusher, 0);
-            specialMinions.Add(CardDB.cardName.volatileelemental, 0);
-            specialMinions.Add(CardDB.cardName.warbot, 0);
-            specialMinions.Add(CardDB.cardName.warhorsetrainer, 0);
-            specialMinions.Add(CardDB.cardName.warsongcommander, 0);
-            specialMinions.Add(CardDB.cardName.waterelemental, 0);
-            specialMinions.Add(CardDB.cardName.voodoohexxer, 0);
-            specialMinions.Add(CardDB.cardName.webspinner, 0);
-            specialMinions.Add(CardDB.cardName.whiteeyes, 0);
-            specialMinions.Add(CardDB.cardName.wickedwitchdoctor, 0);
-            specialMinions.Add(CardDB.cardName.wickerflameburnbristle, 0);
-            specialMinions.Add(CardDB.cardName.wilfredfizzlebang, 0);
-            specialMinions.Add(CardDB.cardName.windupburglebot, 0);
-            specialMinions.Add(CardDB.cardName.wobblingrunts, 0);
-            specialMinions.Add(CardDB.cardName.xarilpoisonedmind, 0);
-            specialMinions.Add(CardDB.cardName.ysera, 0);
-            specialMinions.Add(CardDB.cardName.yshaarjrageunbound, 0);
-            specialMinions.Add(CardDB.cardName.zealousinitiate, 0);
-            specialMinions.Add(CardDB.cardName.vryghoul, 0);
-            specialMinions.Add(CardDB.cardName.thelichking, 0);
-            specialMinions.Add(CardDB.cardName.skelemancer, 0);
-            specialMinions.Add(CardDB.cardName.shallowgravedigger, 0);
-            specialMinions.Add(CardDB.cardName.shadowascendant, 0);
-            specialMinions.Add(CardDB.cardName.obsidianstatue, 0);
-            specialMinions.Add(CardDB.cardName.mountainfirearmor, 0);
-            specialMinions.Add(CardDB.cardName.meatwagon, 0);
-            specialMinions.Add(CardDB.cardName.hadronox, 0);
-            specialMinions.Add(CardDB.cardName.festergut, 0);
-            specialMinions.Add(CardDB.cardName.fatespinner, 0);
-            specialMinions.Add(CardDB.cardName.explodingbloatbat, 0);
-            specialMinions.Add(CardDB.cardName.drakkarienchanter, 0);
-            specialMinions.Add(CardDB.cardName.despicabledreadlord, 0);
-            specialMinions.Add(CardDB.cardName.deadscaleknight, 0);
-            specialMinions.Add(CardDB.cardName.cobaltscalebane, 0);
-            specialMinions.Add(CardDB.cardName.chillbladechampion, 0);
-            specialMinions.Add(CardDB.cardName.bonedrake, 0);
-            specialMinions.Add(CardDB.cardName.bonebaron, 0);
-            specialMinions.Add(CardDB.cardName.bloodworm, 0);
-            specialMinions.Add(CardDB.cardName.bloodqueenlanathel, 0);
-            specialMinions.Add(CardDB.cardName.blackguard, 0);
-            specialMinions.Add(CardDB.cardName.arrogantcrusader, 0);
-            specialMinions.Add(CardDB.cardName.arfus, 0);
-            specialMinions.Add(CardDB.cardName.acolyteofagony, 0);
-            specialMinions.Add(CardDB.cardName.abominablebowman, 0);
-            specialMinions.Add(CardDB.cardName.venomancer, 0);
-            specialMinions.Add(CardDB.cardName.valkyrsoulclaimer, 0);
-            specialMinions.Add(CardDB.cardName.stubborngastropod, 0);
-            specialMinions.Add(CardDB.cardName.runeforgehaunter, 0);
-            specialMinions.Add(CardDB.cardName.rotface, 0);
-            specialMinions.Add(CardDB.cardName.professorputricide, 0);
-            specialMinions.Add(CardDB.cardName.nighthowler, 0);
-            specialMinions.Add(CardDB.cardName.nerubianunraveler, 0);
-            specialMinions.Add(CardDB.cardName.necroticgeist, 0);
-            specialMinions.Add(CardDB.cardName.moorabi, 0);
-            specialMinions.Add(CardDB.cardName.mindbreaker, 0);
-            specialMinions.Add(CardDB.cardName.icewalker, 0);
-            specialMinions.Add(CardDB.cardName.graveshambler, 0);
-            specialMinions.Add(CardDB.cardName.doomedapprentice, 0);
-            specialMinions.Add(CardDB.cardName.cryptlord, 0);
-            specialMinions.Add(CardDB.cardName.corpsewidow, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.aberrantberserker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.abomination, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.acidmaw, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.acolyteofpain, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.addledgrizzly, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.alarmobot, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.amaniberserker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ancientharbinger, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.angrychicken, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.animatedarmor, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.anubarak, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.anubarambusher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.anubisathsentinel, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.arcaneanomaly, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.archmage, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.armorsmith, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.auchenaisoulpriest, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.aviana, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.axeflinger, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ayablackpaw, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.azuredrake, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.backroombouncer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.backstreetleper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.barongeddon, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.baronrivendare, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.blackwaterpirate, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bloodhoofbrave, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bloodimp, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bloodmagethalnos, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bolframshield, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.boneguardlieutenant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.brannbronzebeard, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bravearcher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.buccaneer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.burglybully, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.burlyrockjawtrogg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cairnebloodhoof, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.chromaggus, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.chromaticdragonkin, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cloakedhuntress, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.clockworkgnome, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cobaltguardian, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cogmaster, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.coldarradrake, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.coliseummanager, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.crazedworshipper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.crowdfavorite, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.crueldinomancer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.crystallineoracle, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cthun, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cultmaster, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cutpurse, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dalaranaspirant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dalaranmage, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dancingswords, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.darkcultist, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.darkshirecouncilman, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.deadlyfork, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.deathlord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.demolisher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.direhornhatchling, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.djinniofzephyrs, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.doomsayer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dragonegg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dragonhawkrider, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dragonkinsorcerer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dreadscale, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.dreadsteed, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.eggnapper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.emperorcobra, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.etherealarcanist, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.evolvedkobold, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.explosivesheep, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.eydisdarkbane, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.fallenhero, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.fandralstaghelm, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.felcannon, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.feugen, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.finjatheflyingstar, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.fjolalightbane, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.flamewaker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.flesheatingghoul, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.floatingwatcher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.foereaper4000, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.gahzrilla, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.garr, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.garrisoncommander, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.gazlowe, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.genzotheshark, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.giantanaconda, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.giantsandworm, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.giantwasp, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.goblinsapper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.grimpatron, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.grommashhellscream, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.gruul, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.gurubashiberserker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hallazealtheascended, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.harvestgolem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hauntedcreeper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hobgoblin, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hogger, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hoggerdoomofelwynn, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.holychampion, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hoodedacolyte, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hugetoad, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.igneouselemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.impgangboss, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.impmaster, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.infestedtauren, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.infestedwolf, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ironsensei, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.jadeswarmer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.jeeves, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.junglemoonkin, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.junkbot, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.kabaltrafficker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.kelthuzad, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.kindlygrandmother, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.knifejuggler, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.knuckles, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.koboldgeomancer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.kodorider, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.kvaldirraider, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lepergnome, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lightspawn, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lightwarden, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lightwell, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.loothoarder, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lorewalkercho, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lotusassassin, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lowlysquire, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.madscientist, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.maexxna, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.magnatauralpha, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.maidenofthelake, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.majordomoexecutus, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.malchezaarsimp, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.malganis, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.malorne, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.malygos, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manaaddict, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manageode, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manatidetotem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manatreant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manawraith, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.manawyrm, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.masterswordsmith, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mechanicalyeti, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mechbearcat, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mechwarper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mekgineerthermaplugg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.micromachine, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mimironshead, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mistressofpain, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.moroes, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.muklaschampion, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.murlocknight, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.murloctidecaller, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.natpagle, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.nerubarweblord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.northshirecleric, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.obsidiandestroyer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ogremagi, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.oldmurkeye, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.orgrimmaraspirant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.patientassassin, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.pilotedshredder, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.pilotedskygolem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.pintsizedsummoner, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.pitsnake, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.possessedvillager, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.priestofthefeast, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.primalfinchampion, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.primalfintotem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.prophetvelen, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.pyros, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.questingadventurer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.radiantelemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ragingworgen, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ragnaroslightlord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.raidleader, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.raptorhatchling, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ratpack, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.recruiter, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.redmanawyrm, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.rumblingelemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.satedthreshadon, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.savagecombatant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.savannahhighmane, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.scalednightmare, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.secretkeeper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.selflesshero, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.sergeantsally, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shadeofnaxxramas, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shadowboxer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shadowfiend, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shakuthecollector, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.sherazincorpseflower, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shiftingshade, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shimmeringtempest, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shipscannon, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.siltfinspiritwalker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.silverhandregent, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.smalltimebuccaneer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.sneedsoldshredder, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.snowchugger, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.southseacaptain, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.southseasquidface, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.spawnofnzoth, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.spawnofshadows, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.spiritsingerumbra, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.spitefulsmith, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.stalagg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.starvingbuzzard, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.steamwheedlesniper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.stewardofdarkshire, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.stonesplintertrogg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.summoningportal, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.summoningstone, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.sylvanaswindrunner, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tarcreeper, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tarlord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tarlurker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.taurenwarrior, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tentacleofnzoth, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.thebeast, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.theboogeymonster, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.thevoraxx, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.timberwolf, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tinyknightofevil, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tirionfordring, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tortollanshellraiser, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.toshley, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tournamentmedic, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tradeprincegallywix, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tundrarhino, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.tunneltrogg, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.twilightelder, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.twilightsummoner, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.unboundelemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.undercityhuckster, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.undertaker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.unstableghoul, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.usherofsouls, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.violetillusionist, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.violetteacher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.vitalitytotem, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.voidcaller, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.voidcrusher, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.volatileelemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.warbot, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.warsongcommander, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.waterelemental, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.voodoohexxer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.webspinner, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.whiteeyes, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.wickerflameburnbristle, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.wilfredfizzlebang, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.windupburglebot, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.wobblingrunts, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.xarilpoisonedmind, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.ysera, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.yshaarjrageunbound, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.zealousinitiate, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.vryghoul, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.thelichking, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.skelemancer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shallowgravedigger, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.shadowascendant, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.obsidianstatue, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mountainfirearmor, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.meatwagon, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.hadronox, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.festergut, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.fatespinner, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.explodingbloatbat, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.drakkarienchanter, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.despicabledreadlord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.deadscaleknight, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cobaltscalebane, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.chillbladechampion, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bonedrake, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bonebaron, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bloodworm, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.bloodqueenlanathel, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.blackguard, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.arrogantcrusader, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.arfus, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.acolyteofagony, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.abominablebowman, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.venomancer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.valkyrsoulclaimer, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.stubborngastropod, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.runeforgehaunter, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.rotface, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.professorputricide, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.nighthowler, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.nerubianunraveler, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.necroticgeist, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.moorabi, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.mindbreaker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.icewalker, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.graveshambler, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.doomedapprentice, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.cryptlord, 0);
+            specialMinions.Add(Chireiden.Silverfish.SimCard.corpsewidow, 0);
         }
 
         private void setupOwnSummonFromDeathrattle()
         {
-            ownSummonFromDeathrattle.Add(CardDB.cardName.anubarak, -10);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.ayablackpaw, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.cairnebloodhoof, 5);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.crueldinomancer, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.devilsauregg, -20);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.dreadsteed, -1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.eggnapper, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.giantanaconda, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.harvestgolem, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.hauntedcreeper, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.infestedtauren, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.infestedwolf, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.jadeswarmer, -1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.kindlygrandmother, -10);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.moirabronzebeard, 3);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.mountedraptor, 3);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.nerubianegg, -16);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.pilotedshredder, 4);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.pilotedskygolem, 4);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.possessedvillager, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.ratpack, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.satedthreshadon, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.savannahhighmane, 8);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.sludgebelcher, 10);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.sneedsoldshredder, 5);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.twilightsummoner, -14);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.whiteeyes, -10);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.wobblingrunts, 1);
-            ownSummonFromDeathrattle.Add(CardDB.cardName.frozenchampion, -12);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.anubarak, -10);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.ayablackpaw, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.cairnebloodhoof, 5);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.crueldinomancer, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.devilsauregg, -20);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.dreadsteed, -1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.eggnapper, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.giantanaconda, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.harvestgolem, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.hauntedcreeper, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.infestedtauren, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.infestedwolf, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.jadeswarmer, -1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.kindlygrandmother, -10);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 3);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.mountedraptor, 3);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.nerubianegg, -16);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.pilotedshredder, 4);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.pilotedskygolem, 4);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.possessedvillager, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.ratpack, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.satedthreshadon, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.savannahhighmane, 8);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.sludgebelcher, 10);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.sneedsoldshredder, 5);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.twilightsummoner, -14);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.whiteeyes, -10);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.wobblingrunts, 1);
+            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.frozenchampion, -12);
         }
 
         private void setupBuffingMinions()
         {
-            buffingMinionsDatabase.Add(CardDB.cardName.abusivesergeant, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.beckonerofevil, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.bladeofcthun, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.bloodsailcultist, 5);
-            buffingMinionsDatabase.Add(CardDB.cardName.captaingreenskin, 5);
-            buffingMinionsDatabase.Add(CardDB.cardName.cenarius, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.clockworkknight, 2);
-            buffingMinionsDatabase.Add(CardDB.cardName.coldlightseer, 3);
-            buffingMinionsDatabase.Add(CardDB.cardName.crueltaskmaster, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.cthunschosen, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.cultsorcerer, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.darkarakkoa, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.darkirondwarf, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.defenderofargus, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.direwolfalpha, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.discipleofcthun, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.doomcaller, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.flametonguetotem, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.goblinautobarber, 5);
-            buffingMinionsDatabase.Add(CardDB.cardName.grimscaleoracle, 3);
-            buffingMinionsDatabase.Add(CardDB.cardName.hoodedacolyte, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.houndmaster, 1);
-            buffingMinionsDatabase.Add(CardDB.cardName.lancecarrier, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.leokk, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.malganis, 8);
-            buffingMinionsDatabase.Add(CardDB.cardName.metaltoothleaper, 2);
-            buffingMinionsDatabase.Add(CardDB.cardName.murlocwarleader, 3);
-            buffingMinionsDatabase.Add(CardDB.cardName.quartermaster, 6);
-            buffingMinionsDatabase.Add(CardDB.cardName.raidleader, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.screwjankclunker, 2);
-            buffingMinionsDatabase.Add(CardDB.cardName.shatteredsuncleric, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.skeramcultist, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.southseacaptain, 4);
-            buffingMinionsDatabase.Add(CardDB.cardName.spitefulsmith, 5);
-            buffingMinionsDatabase.Add(CardDB.cardName.stormwindchampion, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.templeenforcer, 0);
-            buffingMinionsDatabase.Add(CardDB.cardName.thunderbluffvaliant, 9);
-            buffingMinionsDatabase.Add(CardDB.cardName.timberwolf, 1);
-            buffingMinionsDatabase.Add(CardDB.cardName.upgradedrepairbot, 2);
-            buffingMinionsDatabase.Add(CardDB.cardName.usherofsouls, 10);
-            buffingMinionsDatabase.Add(CardDB.cardName.warhorsetrainer, 6);
-            buffingMinionsDatabase.Add(CardDB.cardName.warsongcommander, 7);
-            buffingMinionsDatabase.Add(CardDB.cardName.worshipper, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.abusivesergeant, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.beckonerofevil, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.bladeofcthun, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.bloodsailcultist, 5);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.captaingreenskin, 5);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.cenarius, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.clockworkknight, 2);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.coldlightseer, 3);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.crueltaskmaster, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.cthunschosen, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.darkarakkoa, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.darkirondwarf, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.defenderofargus, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.discipleofcthun, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.doomcaller, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.goblinautobarber, 5);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 3);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.hoodedacolyte, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.houndmaster, 1);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.lancecarrier, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.leokk, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.malganis, 8);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.metaltoothleaper, 2);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 3);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.quartermaster, 6);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.raidleader, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.screwjankclunker, 2);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.shatteredsuncleric, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.skeramcultist, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.southseacaptain, 4);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.spitefulsmith, 5);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.templeenforcer, 0);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 9);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.timberwolf, 1);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.upgradedrepairbot, 2);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.usherofsouls, 10);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 6);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.warsongcommander, 7);
+            buffingMinionsDatabase.Add(Chireiden.Silverfish.SimCard.worshipper, 0);
 
-            buffing1TurnDatabase.Add(CardDB.cardName.abusivesergeant, 0);
-            buffing1TurnDatabase.Add(CardDB.cardName.bloodlust, 3);
-            buffing1TurnDatabase.Add(CardDB.cardName.darkirondwarf, 0);
-            buffing1TurnDatabase.Add(CardDB.cardName.rockbiterweapon, 0);
-            buffing1TurnDatabase.Add(CardDB.cardName.worshipper, 0);
+            buffing1TurnDatabase.Add(Chireiden.Silverfish.SimCard.abusivesergeant, 0);
+            buffing1TurnDatabase.Add(Chireiden.Silverfish.SimCard.bloodlust, 3);
+            buffing1TurnDatabase.Add(Chireiden.Silverfish.SimCard.darkirondwarf, 0);
+            buffing1TurnDatabase.Add(Chireiden.Silverfish.SimCard.rockbiterweapon, 0);
+            buffing1TurnDatabase.Add(Chireiden.Silverfish.SimCard.worshipper, 0);
         }
 
         private void setupEnemyTargetPriority()
         {
-            priorityTargets.Add(CardDB.cardName.acidmaw, 10);
-            priorityTargets.Add(CardDB.cardName.acolyteofpain, 10);
-            priorityTargets.Add(CardDB.cardName.addledgrizzly, 10);
-            priorityTargets.Add(CardDB.cardName.alarmobot, 10);
-            priorityTargets.Add(CardDB.cardName.angrychicken, 10);
-            priorityTargets.Add(CardDB.cardName.animatedarmor, 10);
-            priorityTargets.Add(CardDB.cardName.anubarak, 10);
-            priorityTargets.Add(CardDB.cardName.anubisathsentinel, 10);
-            priorityTargets.Add(CardDB.cardName.archmageantonidas, 10);
-            priorityTargets.Add(CardDB.cardName.auchenaisoulpriest, 10);
-            priorityTargets.Add(CardDB.cardName.auctionmasterbeardo, 10);
-            priorityTargets.Add(CardDB.cardName.aviana, 10);
-            priorityTargets.Add(CardDB.cardName.ayablackpaw, 10);
-            priorityTargets.Add(CardDB.cardName.backroombouncer, 10);
-            priorityTargets.Add(CardDB.cardName.barongeddon, 10);
-            priorityTargets.Add(CardDB.cardName.baronrivendare, 10);
-            priorityTargets.Add(CardDB.cardName.bloodmagethalnos, 10);
-            priorityTargets.Add(CardDB.cardName.boneguardlieutenant, 10);
-            priorityTargets.Add(CardDB.cardName.brannbronzebeard, 10);
-            priorityTargets.Add(CardDB.cardName.burglybully, 10);
-            priorityTargets.Add(CardDB.cardName.chromaggus, 10);
-            priorityTargets.Add(CardDB.cardName.cloakedhuntress, 10);
-            priorityTargets.Add(CardDB.cardName.coldarradrake, 10);
-            priorityTargets.Add(CardDB.cardName.confessorpaletress, 10);
-            priorityTargets.Add(CardDB.cardName.crowdfavorite, 10);
-            priorityTargets.Add(CardDB.cardName.crueldinomancer, 10);
-            priorityTargets.Add(CardDB.cardName.crystallineoracle, 10);
-            priorityTargets.Add(CardDB.cardName.cthun, 10);
-            priorityTargets.Add(CardDB.cardName.cultmaster, 10);
-            priorityTargets.Add(CardDB.cardName.cultsorcerer, 10);
-            priorityTargets.Add(CardDB.cardName.dalaranaspirant, 10);
-            priorityTargets.Add(CardDB.cardName.daringreporter, 10);
-            priorityTargets.Add(CardDB.cardName.darkshirecouncilman, 10);
-            priorityTargets.Add(CardDB.cardName.dementedfrostcaller, 10);
-            priorityTargets.Add(CardDB.cardName.demolisher, 10);
-            priorityTargets.Add(CardDB.cardName.devilsauregg, 10);
-            priorityTargets.Add(CardDB.cardName.nerubianegg, 10);
-            priorityTargets.Add(CardDB.cardName.direhornhatchling, 10);
-            priorityTargets.Add(CardDB.cardName.direwolfalpha, 10);
-            priorityTargets.Add(CardDB.cardName.djinniofzephyrs, 10);
-            priorityTargets.Add(CardDB.cardName.doomsayer, 10);
-            priorityTargets.Add(CardDB.cardName.dragonegg, 0);
-            priorityTargets.Add(CardDB.cardName.dragonhawkrider, 10);
-            priorityTargets.Add(CardDB.cardName.dragonkinsorcerer, 4);
-            priorityTargets.Add(CardDB.cardName.dreadscale, 10);
-            priorityTargets.Add(CardDB.cardName.dustdevil, 10);
-            priorityTargets.Add(CardDB.cardName.eggnapper, 10);
-            priorityTargets.Add(CardDB.cardName.emperorthaurissan, 10);
-            priorityTargets.Add(CardDB.cardName.etherealarcanist, 10);
-            priorityTargets.Add(CardDB.cardName.eydisdarkbane, 10);
-            priorityTargets.Add(CardDB.cardName.fallenhero, 10);
-            priorityTargets.Add(CardDB.cardName.masterchest, 10);
-            priorityTargets.Add(CardDB.cardName.fandralstaghelm, 10);
-            priorityTargets.Add(CardDB.cardName.finjatheflyingstar, 10);
-            priorityTargets.Add(CardDB.cardName.flametonguetotem, 10);
-            priorityTargets.Add(CardDB.cardName.flamewaker, 10);
-            priorityTargets.Add(CardDB.cardName.flesheatingghoul, 10);
-            priorityTargets.Add(CardDB.cardName.floatingwatcher, 10);
-            priorityTargets.Add(CardDB.cardName.foereaper4000, 10);
-            priorityTargets.Add(CardDB.cardName.friendlybartender, 10);
-            priorityTargets.Add(CardDB.cardName.frothingberserker, 10);
-            priorityTargets.Add(CardDB.cardName.gadgetzanauctioneer, 10);
-            priorityTargets.Add(CardDB.cardName.gahzrilla, 10);
-            priorityTargets.Add(CardDB.cardName.garr, 10);
-            priorityTargets.Add(CardDB.cardName.garrisoncommander, 10);
-            priorityTargets.Add(CardDB.cardName.genzotheshark, 10);
-            priorityTargets.Add(CardDB.cardName.giantanaconda, 10);
-            priorityTargets.Add(CardDB.cardName.giantsandworm, 10);
-            priorityTargets.Add(CardDB.cardName.grimestreetenforcer, 10);
-            priorityTargets.Add(CardDB.cardName.grimpatron, 10);
-            priorityTargets.Add(CardDB.cardName.grimygadgeteer, 10);
-            priorityTargets.Add(CardDB.cardName.gurubashiberserker, 10);
-            priorityTargets.Add(CardDB.cardName.hobgoblin, 10);
-            priorityTargets.Add(CardDB.cardName.hogger, 10);
-            priorityTargets.Add(CardDB.cardName.hoggerdoomofelwynn, 10);
-            priorityTargets.Add(CardDB.cardName.holychampion, 10);
-            priorityTargets.Add(CardDB.cardName.hoodedacolyte, 10);
-            priorityTargets.Add(CardDB.cardName.igneouselemental, 10);
-            priorityTargets.Add(CardDB.cardName.illidanstormrage, 10);
-            priorityTargets.Add(CardDB.cardName.impgangboss, 10);
-            priorityTargets.Add(CardDB.cardName.impmaster, 10);
-            priorityTargets.Add(CardDB.cardName.ironsensei, 10);
-            priorityTargets.Add(CardDB.cardName.junglemoonkin, 10);
-            priorityTargets.Add(CardDB.cardName.kabaltrafficker, 10);
-            priorityTargets.Add(CardDB.cardName.kelthuzad, 10);
-            priorityTargets.Add(CardDB.cardName.knifejuggler, 10);
-            priorityTargets.Add(CardDB.cardName.knuckles, 10);
-            priorityTargets.Add(CardDB.cardName.koboldgeomancer, 10);
-            priorityTargets.Add(CardDB.cardName.kodorider, 10);
-            priorityTargets.Add(CardDB.cardName.kvaldirraider, 10);
-            priorityTargets.Add(CardDB.cardName.leeroyjenkins, 10);
-            priorityTargets.Add(CardDB.cardName.leokk, 10);
-            priorityTargets.Add(CardDB.cardName.lightwarden, 10);
-            priorityTargets.Add(CardDB.cardName.lightwell, 10);
-            priorityTargets.Add(CardDB.cardName.lowlysquire, 10);
-            priorityTargets.Add(CardDB.cardName.lyrathesunshard, 10);
-            priorityTargets.Add(CardDB.cardName.maexxna, 10);
-            priorityTargets.Add(CardDB.cardName.maidenofthelake, 10);
-            priorityTargets.Add(CardDB.cardName.malchezaarsimp, 10);
-            priorityTargets.Add(CardDB.cardName.malganis, 10);
-            priorityTargets.Add(CardDB.cardName.malygos, 10);
-            priorityTargets.Add(CardDB.cardName.manaaddict, 10);
-            priorityTargets.Add(CardDB.cardName.manatidetotem, 10);
-            priorityTargets.Add(CardDB.cardName.manatreant, 10);
-            priorityTargets.Add(CardDB.cardName.manawyrm, 10);
-            priorityTargets.Add(CardDB.cardName.masterswordsmith, 10);
-            priorityTargets.Add(CardDB.cardName.mechwarper, 10);
-            priorityTargets.Add(CardDB.cardName.micromachine, 10);
-            priorityTargets.Add(CardDB.cardName.mogortheogre, 10);
-            priorityTargets.Add(CardDB.cardName.moroes, 10);
-            priorityTargets.Add(CardDB.cardName.muklaschampion, 10);
-            priorityTargets.Add(CardDB.cardName.murlocknight, 10);
-            priorityTargets.Add(CardDB.cardName.natpagle, 10);
-            priorityTargets.Add(CardDB.cardName.nerubarweblord, 10);
-            priorityTargets.Add(CardDB.cardName.nexuschampionsaraad, 10);
-            priorityTargets.Add(CardDB.cardName.northshirecleric, 10);
-            priorityTargets.Add(CardDB.cardName.obsidiandestroyer, 10);
-            priorityTargets.Add(CardDB.cardName.orgrimmaraspirant, 10);
-            priorityTargets.Add(CardDB.cardName.pintsizedsummoner, 10);
-            priorityTargets.Add(CardDB.cardName.priestofthefeast, 10);
-            priorityTargets.Add(CardDB.cardName.primalfintotem, 10);
-            priorityTargets.Add(CardDB.cardName.prophetvelen, 10);
-            priorityTargets.Add(CardDB.cardName.pyros, 10);
-            priorityTargets.Add(CardDB.cardName.questingadventurer, 10);
-            priorityTargets.Add(CardDB.cardName.radiantelemental, 10);
-            priorityTargets.Add(CardDB.cardName.ragnaroslightlord, 10);
-            priorityTargets.Add(CardDB.cardName.raidleader, 10);
-            priorityTargets.Add(CardDB.cardName.raptorhatchling, 10);
-            priorityTargets.Add(CardDB.cardName.recruiter, 10);
-            priorityTargets.Add(CardDB.cardName.redmanawyrm, 10);
-            priorityTargets.Add(CardDB.cardName.rhonin, 10);
-            priorityTargets.Add(CardDB.cardName.rumblingelemental, 10);
-            priorityTargets.Add(CardDB.cardName.satedthreshadon, 10);
-            priorityTargets.Add(CardDB.cardName.savagecombatant, 10);
-            priorityTargets.Add(CardDB.cardName.scalednightmare, 10);
-            priorityTargets.Add(CardDB.cardName.scavenginghyena, 10);
-            priorityTargets.Add(CardDB.cardName.secretkeeper, 10);
-            priorityTargets.Add(CardDB.cardName.shadeofnaxxramas, 10);
-            priorityTargets.Add(CardDB.cardName.shakuthecollector, 10);
-            priorityTargets.Add(CardDB.cardName.sherazincorpseflower, 10);
-            priorityTargets.Add(CardDB.cardName.shimmeringtempest, 10);
-            priorityTargets.Add(CardDB.cardName.silverhandregent, 10);
-            priorityTargets.Add(CardDB.cardName.sorcerersapprentice, 10);
-            priorityTargets.Add(CardDB.cardName.spiritsingerumbra, 10);
-            priorityTargets.Add(CardDB.cardName.starvingbuzzard, 10);
-            priorityTargets.Add(CardDB.cardName.steamwheedlesniper, 10);
-            priorityTargets.Add(CardDB.cardName.stormwindchampion, 10);
-            priorityTargets.Add(CardDB.cardName.summoningportal, 10);
-            priorityTargets.Add(CardDB.cardName.summoningstone, 10);
-            priorityTargets.Add(CardDB.cardName.theboogeymonster, 10);
-            priorityTargets.Add(CardDB.cardName.thevoraxx, 10);
-            priorityTargets.Add(CardDB.cardName.thrallmarfarseer, 10);
-            priorityTargets.Add(CardDB.cardName.thunderbluffvaliant, 10);
-            priorityTargets.Add(CardDB.cardName.timberwolf, 10);
-            priorityTargets.Add(CardDB.cardName.troggzortheearthinator, 10);
-            priorityTargets.Add(CardDB.cardName.tundrarhino, 10);
-            priorityTargets.Add(CardDB.cardName.tunneltrogg, 10);
-            priorityTargets.Add(CardDB.cardName.twilightsummoner, 10);
-            priorityTargets.Add(CardDB.cardName.unboundelemental, 10);
-            priorityTargets.Add(CardDB.cardName.undertaker, 10);
-            priorityTargets.Add(CardDB.cardName.viciousfledgling, 10);
-            priorityTargets.Add(CardDB.cardName.violetillusionist, 10);
-            priorityTargets.Add(CardDB.cardName.violetteacher, 10);
-            priorityTargets.Add(CardDB.cardName.vitalitytotem, 10);
-            priorityTargets.Add(CardDB.cardName.warhorsetrainer, 10);
-            priorityTargets.Add(CardDB.cardName.warsongcommander, 10);
-            priorityTargets.Add(CardDB.cardName.whiteeyes, 10);
-            priorityTargets.Add(CardDB.cardName.wickedwitchdoctor, 10);
-            priorityTargets.Add(CardDB.cardName.wildpyromancer, 10);
-            priorityTargets.Add(CardDB.cardName.wilfredfizzlebang, 10);
-            priorityTargets.Add(CardDB.cardName.windupburglebot, 10);
-            priorityTargets.Add(CardDB.cardName.youngdragonhawk, 10);
-            priorityTargets.Add(CardDB.cardName.yshaarjrageunbound, 10);
-            priorityTargets.Add(CardDB.cardName.thelichking, 10);
-            priorityTargets.Add(CardDB.cardName.obsidianstatue, 10);
-            priorityTargets.Add(CardDB.cardName.moirabronzebeard, 10);
-            priorityTargets.Add(CardDB.cardName.highjusticegrimstone, 10);
-            priorityTargets.Add(CardDB.cardName.hadronox, 10);
-            priorityTargets.Add(CardDB.cardName.festergut, 10);
-            priorityTargets.Add(CardDB.cardName.despicabledreadlord, 10);
-            priorityTargets.Add(CardDB.cardName.rotface, 10);
-            priorityTargets.Add(CardDB.cardName.professorputricide, 10);
-            priorityTargets.Add(CardDB.cardName.nighthowler, 10);
-            priorityTargets.Add(CardDB.cardName.necroticgeist, 10);
-            priorityTargets.Add(CardDB.cardName.moorabi, 10);
-            priorityTargets.Add(CardDB.cardName.icewalker, 10);
-            priorityTargets.Add(CardDB.cardName.cryptlord, 10);
-            priorityTargets.Add(CardDB.cardName.corpsewidow, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.acidmaw, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.acolyteofpain, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.addledgrizzly, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.alarmobot, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.angrychicken, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.animatedarmor, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.anubarak, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.anubisathsentinel, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.auchenaisoulpriest, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.auctionmasterbeardo, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.aviana, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.ayablackpaw, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.backroombouncer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.barongeddon, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.baronrivendare, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.bloodmagethalnos, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.boneguardlieutenant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.brannbronzebeard, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.burglybully, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.chromaggus, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.cloakedhuntress, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.coldarradrake, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.crowdfavorite, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.crueldinomancer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.crystallineoracle, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.cthun, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.cultmaster, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dalaranaspirant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.daringreporter, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.darkshirecouncilman, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.demolisher, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.devilsauregg, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.nerubianegg, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.direhornhatchling, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.djinniofzephyrs, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.doomsayer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dragonegg, 0);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dragonhawkrider, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dragonkinsorcerer, 4);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dreadscale, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.dustdevil, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.eggnapper, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.etherealarcanist, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.eydisdarkbane, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.fallenhero, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.masterchest, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.fandralstaghelm, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.finjatheflyingstar, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.flamewaker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.flesheatingghoul, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.floatingwatcher, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.foereaper4000, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.friendlybartender, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.frothingberserker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.gahzrilla, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.garr, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.garrisoncommander, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.genzotheshark, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.giantanaconda, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.giantsandworm, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.grimpatron, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.gurubashiberserker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.hobgoblin, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.hogger, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.hoggerdoomofelwynn, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.holychampion, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.hoodedacolyte, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.igneouselemental, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.impgangboss, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.impmaster, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.ironsensei, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.junglemoonkin, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.kabaltrafficker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.kelthuzad, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.knifejuggler, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.knuckles, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.koboldgeomancer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.kodorider, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.kvaldirraider, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.leeroyjenkins, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.leokk, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.lightwarden, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.lightwell, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.lowlysquire, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.maexxna, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.maidenofthelake, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.malchezaarsimp, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.malganis, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.malygos, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.manaaddict, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.manatidetotem, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.manatreant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.manawyrm, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.masterswordsmith, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.mechwarper, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.micromachine, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.mogortheogre, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.moroes, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.muklaschampion, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.murlocknight, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.natpagle, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.nerubarweblord, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.northshirecleric, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.obsidiandestroyer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.orgrimmaraspirant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.pintsizedsummoner, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.priestofthefeast, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.primalfintotem, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.prophetvelen, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.pyros, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.questingadventurer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.radiantelemental, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.ragnaroslightlord, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.raidleader, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.raptorhatchling, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.recruiter, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.redmanawyrm, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.rhonin, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.rumblingelemental, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.satedthreshadon, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.savagecombatant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.scalednightmare, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.secretkeeper, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.shadeofnaxxramas, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.shakuthecollector, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.sherazincorpseflower, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.shimmeringtempest, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.silverhandregent, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.spiritsingerumbra, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.starvingbuzzard, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.steamwheedlesniper, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.summoningportal, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.summoningstone, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.theboogeymonster, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.thevoraxx, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.thrallmarfarseer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.timberwolf, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.tundrarhino, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.tunneltrogg, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.twilightsummoner, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.unboundelemental, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.undertaker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.violetillusionist, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.violetteacher, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.vitalitytotem, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.warsongcommander, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.whiteeyes, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.wildpyromancer, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.wilfredfizzlebang, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.windupburglebot, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.youngdragonhawk, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.yshaarjrageunbound, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.thelichking, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.obsidianstatue, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.hadronox, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.festergut, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.despicabledreadlord, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.rotface, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.professorputricide, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.nighthowler, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.necroticgeist, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.moorabi, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.icewalker, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.cryptlord, 10);
+            priorityTargets.Add(Chireiden.Silverfish.SimCard.corpsewidow, 10);
         }
 
         private void setupLethalHelpMinions()
         {
             //spellpower minions
-            lethalHelpers.Add(CardDB.cardName.ancientmage, 0);
-            lethalHelpers.Add(CardDB.cardName.arcanotron, 0);
-            lethalHelpers.Add(CardDB.cardName.archmage, 0);
-            lethalHelpers.Add(CardDB.cardName.auchenaisoulpriest, 0);
-            lethalHelpers.Add(CardDB.cardName.azuredrake, 0);
-            lethalHelpers.Add(CardDB.cardName.bloodmagethalnos, 0);
-            lethalHelpers.Add(CardDB.cardName.cultsorcerer, 0);
-            lethalHelpers.Add(CardDB.cardName.dalaranaspirant, 0);
-            lethalHelpers.Add(CardDB.cardName.dalaranmage, 0);
-            lethalHelpers.Add(CardDB.cardName.evolvedkobold, 0);
-            lethalHelpers.Add(CardDB.cardName.frigidsnobold, 0);
-            lethalHelpers.Add(CardDB.cardName.junglemoonkin, 0);
-            lethalHelpers.Add(CardDB.cardName.koboldgeomancer, 0);
-            lethalHelpers.Add(CardDB.cardName.malygos, 0);
-            lethalHelpers.Add(CardDB.cardName.minimage, 0);
-            lethalHelpers.Add(CardDB.cardName.ogremagi, 0);
-            lethalHelpers.Add(CardDB.cardName.prophetvelen, 0);
-            lethalHelpers.Add(CardDB.cardName.sootspewer, 0);
-            lethalHelpers.Add(CardDB.cardName.streettrickster, 0);
-            lethalHelpers.Add(CardDB.cardName.wrathofairtotem, 0);
-            lethalHelpers.Add(CardDB.cardName.tuskarrfisherman, 0);
-            lethalHelpers.Add(CardDB.cardName.taintedzealot, 1);
-            lethalHelpers.Add(CardDB.cardName.spellweaver, 2);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.ancientmage, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.arcanotron, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.archmage, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.auchenaisoulpriest, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.azuredrake, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.bloodmagethalnos, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.dalaranaspirant, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.dalaranmage, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.evolvedkobold, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.frigidsnobold, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.junglemoonkin, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.koboldgeomancer, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.malygos, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.minimage, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.ogremagi, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.prophetvelen, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.sootspewer, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.streettrickster, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.wrathofairtotem, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.tuskarrfisherman, 0);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.taintedzealot, 1);
+            lethalHelpers.Add(Chireiden.Silverfish.SimCard.spellweaver, 2);
         }
 
         private void setupRelations()
         {
-            spellDependentDatabase.Add(CardDB.cardName.arcaneanomaly, 1);
-            spellDependentDatabase.Add(CardDB.cardName.archmageantonidas, 2);
-            spellDependentDatabase.Add(CardDB.cardName.burglybully, -1);
-            spellDependentDatabase.Add(CardDB.cardName.burlyrockjawtrogg, -1);
-            spellDependentDatabase.Add(CardDB.cardName.chromaticdragonkin, -1);
-            spellDependentDatabase.Add(CardDB.cardName.cultsorcerer, 1);
-            spellDependentDatabase.Add(CardDB.cardName.dementedfrostcaller, 1);
-            spellDependentDatabase.Add(CardDB.cardName.djinniofzephyrs, 1);
-            spellDependentDatabase.Add(CardDB.cardName.flamewaker, 1);
-            spellDependentDatabase.Add(CardDB.cardName.gadgetzanauctioneer, 2);
-            spellDependentDatabase.Add(CardDB.cardName.gazlowe, 2);
-            spellDependentDatabase.Add(CardDB.cardName.hallazealtheascended, 1);
-            spellDependentDatabase.Add(CardDB.cardName.lorewalkercho, 0);
-            spellDependentDatabase.Add(CardDB.cardName.lyrathesunshard, 2);
-            spellDependentDatabase.Add(CardDB.cardName.manaaddict, 1);
-            spellDependentDatabase.Add(CardDB.cardName.manawyrm, 1);
-            spellDependentDatabase.Add(CardDB.cardName.priestofthefeast, 1);
-            spellDependentDatabase.Add(CardDB.cardName.redmanawyrm, 1);
-            spellDependentDatabase.Add(CardDB.cardName.stonesplintertrogg, -1);
-            spellDependentDatabase.Add(CardDB.cardName.summoningstone, 3);
-            spellDependentDatabase.Add(CardDB.cardName.tradeprincegallywix, -1);
-            spellDependentDatabase.Add(CardDB.cardName.troggzortheearthinator, -2);
-            spellDependentDatabase.Add(CardDB.cardName.violetteacher, 3);
-            spellDependentDatabase.Add(CardDB.cardName.wickedwitchdoctor, 3);
-            spellDependentDatabase.Add(CardDB.cardName.wildpyromancer, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.arcaneanomaly, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 2);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.burglybully, -1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.burlyrockjawtrogg, -1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.chromaticdragonkin, -1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.djinniofzephyrs, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.flamewaker, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 2);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.gazlowe, 2);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.hallazealtheascended, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.lorewalkercho, 0);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 2);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.manaaddict, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.manawyrm, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.priestofthefeast, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.redmanawyrm, 1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.stonesplintertrogg, -1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.summoningstone, 3);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.tradeprincegallywix, -1);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, -2);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.violetteacher, 3);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 3);
+            spellDependentDatabase.Add(Chireiden.Silverfish.SimCard.wildpyromancer, 1);
 
-            dragonDependentDatabase.Add(CardDB.cardName.alexstraszaschampion, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.blackwingcorruptor, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.blackwingtechnician, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.bookwyrm, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.drakonidoperative, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.netherspitehistorian, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.nightbanetemplar, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.rendblackhand, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.twilightguardian, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.twilightwhelp, 1);
-            dragonDependentDatabase.Add(CardDB.cardName.wyrmrestagent, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.alexstraszaschampion, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.blackwingcorruptor, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.blackwingtechnician, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.bookwyrm, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.drakonidoperative, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.netherspitehistorian, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.nightbanetemplar, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.rendblackhand, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.twilightguardian, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.twilightwhelp, 1);
+            dragonDependentDatabase.Add(Chireiden.Silverfish.SimCard.wyrmrestagent, 1);
 
-            elementalLTDependentDatabase.Add(CardDB.cardName.blazecaller, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.kalimosprimallord, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.ozruk, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.servantofkalimos, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.steamsurger, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.stonesentinel, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.thunderlizard, 1);
-            elementalLTDependentDatabase.Add(CardDB.cardName.tolvirstoneshaper, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.blazecaller, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.kalimosprimallord, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.ozruk, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.servantofkalimos, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.steamsurger, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.stonesentinel, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.thunderlizard, 1);
+            elementalLTDependentDatabase.Add(Chireiden.Silverfish.SimCard.tolvirstoneshaper, 1);
         }
 
         private void setupSilenceTargets()
         {
-            silenceTargets.Add(CardDB.cardName.abomination, 0);
-            silenceTargets.Add(CardDB.cardName.acidmaw, 0);
-            silenceTargets.Add(CardDB.cardName.acolyteofpain, 0);
-            silenceTargets.Add(CardDB.cardName.addledgrizzly, 0);
-            silenceTargets.Add(CardDB.cardName.ancientharbinger, 0);
-            silenceTargets.Add(CardDB.cardName.animatedarmor, 0);
-            silenceTargets.Add(CardDB.cardName.anomalus, 0);
-            silenceTargets.Add(CardDB.cardName.anubarak, 0);
-            silenceTargets.Add(CardDB.cardName.anubisathsentinel, 0);
-            silenceTargets.Add(CardDB.cardName.archmageantonidas, 0);
-            silenceTargets.Add(CardDB.cardName.armorsmith, 0);
-            silenceTargets.Add(CardDB.cardName.auchenaisoulpriest, 0);
-            silenceTargets.Add(CardDB.cardName.aviana, 0);
-            silenceTargets.Add(CardDB.cardName.axeflinger, 0);
-            silenceTargets.Add(CardDB.cardName.ayablackpaw, 0);
-            silenceTargets.Add(CardDB.cardName.backroombouncer, 0);
-            silenceTargets.Add(CardDB.cardName.barongeddon, 0);
-            silenceTargets.Add(CardDB.cardName.baronrivendare, 0);
-            silenceTargets.Add(CardDB.cardName.blackwaterpirate, 0);
-            silenceTargets.Add(CardDB.cardName.bloodimp, 0);
-            silenceTargets.Add(CardDB.cardName.blubberbaron, 0);
-            silenceTargets.Add(CardDB.cardName.bolvarfordragon, 0);
-            silenceTargets.Add(CardDB.cardName.boneguardlieutenant, 0);
-            silenceTargets.Add(CardDB.cardName.brannbronzebeard, 0);
-            silenceTargets.Add(CardDB.cardName.bravearcher, 0);
-            silenceTargets.Add(CardDB.cardName.burlyrockjawtrogg, 0);
-            silenceTargets.Add(CardDB.cardName.cairnebloodhoof, 0);
-            silenceTargets.Add(CardDB.cardName.chillmaw, 0);
-            silenceTargets.Add(CardDB.cardName.chromaggus, 0);
-            silenceTargets.Add(CardDB.cardName.cobaltguardian, 0);
-            silenceTargets.Add(CardDB.cardName.coldarradrake, 0);
-            silenceTargets.Add(CardDB.cardName.coliseummanager, 0);
-            silenceTargets.Add(CardDB.cardName.confessorpaletress, 0);
-            silenceTargets.Add(CardDB.cardName.crazedworshipper, 0);
-            silenceTargets.Add(CardDB.cardName.crowdfavorite, 0);
-            silenceTargets.Add(CardDB.cardName.crueldinomancer, 0);
-            silenceTargets.Add(CardDB.cardName.crystallineoracle, 0);
-            silenceTargets.Add(CardDB.cardName.cthun, 0);
-            silenceTargets.Add(CardDB.cardName.cultmaster, 0);
-            silenceTargets.Add(CardDB.cardName.cultsorcerer, 0);
-            silenceTargets.Add(CardDB.cardName.dalaranaspirant, 0);
-            silenceTargets.Add(CardDB.cardName.darkcultist, 0);
-            silenceTargets.Add(CardDB.cardName.darkshirecouncilman, 0);
-            silenceTargets.Add(CardDB.cardName.dementedfrostcaller, 0);
-            silenceTargets.Add(CardDB.cardName.devilsauregg, 0);
-            silenceTargets.Add(CardDB.cardName.nerubianegg, 0);
-            silenceTargets.Add(CardDB.cardName.direhornhatchling, 0);
-            silenceTargets.Add(CardDB.cardName.direwolfalpha, 0);
-            silenceTargets.Add(CardDB.cardName.djinniofzephyrs, 0);
-            silenceTargets.Add(CardDB.cardName.doomsayer, 0);
-            silenceTargets.Add(CardDB.cardName.dragonegg, 0);
-            silenceTargets.Add(CardDB.cardName.dragonhawkrider, 0);
-            silenceTargets.Add(CardDB.cardName.dragonkinsorcerer, 0);
-            silenceTargets.Add(CardDB.cardName.dreadscale, 0);
-            silenceTargets.Add(CardDB.cardName.eggnapper, 0);
-            silenceTargets.Add(CardDB.cardName.emboldener3000, 0);
-            silenceTargets.Add(CardDB.cardName.emperorcobra, 0);
-            silenceTargets.Add(CardDB.cardName.emperorthaurissan, 0);
-            silenceTargets.Add(CardDB.cardName.etherealarcanist, 0);
-            silenceTargets.Add(CardDB.cardName.evolvedkobold, 0);
-            silenceTargets.Add(CardDB.cardName.explosivesheep, 0);
-            silenceTargets.Add(CardDB.cardName.eydisdarkbane, 0);
-            silenceTargets.Add(CardDB.cardName.fallenhero, 0);
-            silenceTargets.Add(CardDB.cardName.masterchest, 0);            
-            silenceTargets.Add(CardDB.cardName.fandralstaghelm, 0);
-            silenceTargets.Add(CardDB.cardName.feugen, 0);
-            silenceTargets.Add(CardDB.cardName.finjatheflyingstar, 0);
-            silenceTargets.Add(CardDB.cardName.fjolalightbane, 0);
-            silenceTargets.Add(CardDB.cardName.flametonguetotem, 0);
-            silenceTargets.Add(CardDB.cardName.flamewaker, 0);
-            silenceTargets.Add(CardDB.cardName.flesheatingghoul, 0);
-            silenceTargets.Add(CardDB.cardName.floatingwatcher, 0);
-            silenceTargets.Add(CardDB.cardName.foereaper4000, 0);
-            silenceTargets.Add(CardDB.cardName.frothingberserker, 0);
-            silenceTargets.Add(CardDB.cardName.gadgetzanauctioneer, 10);
-            silenceTargets.Add(CardDB.cardName.gahzrilla, 0);
-            silenceTargets.Add(CardDB.cardName.garr, 0);
-            silenceTargets.Add(CardDB.cardName.garrisoncommander, 0);
-            silenceTargets.Add(CardDB.cardName.giantanaconda, 0);
-            silenceTargets.Add(CardDB.cardName.giantsandworm, 0);
-            silenceTargets.Add(CardDB.cardName.giantwasp, 0);
-            silenceTargets.Add(CardDB.cardName.grimestreetenforcer, 0);
-            silenceTargets.Add(CardDB.cardName.grimpatron, 0);
-            silenceTargets.Add(CardDB.cardName.grimscaleoracle, 0);
-            silenceTargets.Add(CardDB.cardName.grimygadgeteer, 0);
-            silenceTargets.Add(CardDB.cardName.grommashhellscream, 0);
-            silenceTargets.Add(CardDB.cardName.gruul, 0);
-            silenceTargets.Add(CardDB.cardName.gurubashiberserker, 0);
-            silenceTargets.Add(CardDB.cardName.hallazealtheascended, 0);
-            silenceTargets.Add(CardDB.cardName.hauntedcreeper, 0);
-            silenceTargets.Add(CardDB.cardName.hobgoblin, 0);
-            silenceTargets.Add(CardDB.cardName.hogger, 0);
-            silenceTargets.Add(CardDB.cardName.hoggerdoomofelwynn, 0);
-            silenceTargets.Add(CardDB.cardName.holychampion, 0);
-            silenceTargets.Add(CardDB.cardName.homingchicken, 0);
-            silenceTargets.Add(CardDB.cardName.hoodedacolyte, 0);
-            silenceTargets.Add(CardDB.cardName.igneouselemental, 0);
-            silenceTargets.Add(CardDB.cardName.illidanstormrage, 0);
-            silenceTargets.Add(CardDB.cardName.impgangboss, 0);
-            silenceTargets.Add(CardDB.cardName.impmaster, 0);
-            silenceTargets.Add(CardDB.cardName.ironsensei, 0);
-            silenceTargets.Add(CardDB.cardName.jadeswarmer, 0);
-            silenceTargets.Add(CardDB.cardName.jeeves, 0);
-            silenceTargets.Add(CardDB.cardName.junkbot, 0);
-            silenceTargets.Add(CardDB.cardName.kabaltrafficker, 0);
-            silenceTargets.Add(CardDB.cardName.kelthuzad, 10);
-            silenceTargets.Add(CardDB.cardName.kindlygrandmother, 0);
-            silenceTargets.Add(CardDB.cardName.knifejuggler, 0);
-            silenceTargets.Add(CardDB.cardName.knuckles, 0);
-            silenceTargets.Add(CardDB.cardName.kodorider, 0);
-            silenceTargets.Add(CardDB.cardName.kvaldirraider, 0);
-            silenceTargets.Add(CardDB.cardName.leokk, 0);
-            silenceTargets.Add(CardDB.cardName.lightspawn, 0);
-            silenceTargets.Add(CardDB.cardName.lightwarden, 0);
-            silenceTargets.Add(CardDB.cardName.lightwell, 0);
-            silenceTargets.Add(CardDB.cardName.lorewalkercho, 0);
-            silenceTargets.Add(CardDB.cardName.lowlysquire, 0);
-            silenceTargets.Add(CardDB.cardName.lyrathesunshard, 0);
-            silenceTargets.Add(CardDB.cardName.madscientist, 0);
-            silenceTargets.Add(CardDB.cardName.maexxna, 0);
-            silenceTargets.Add(CardDB.cardName.magnatauralpha, 0);
-            silenceTargets.Add(CardDB.cardName.maidenofthelake, 0);
-            silenceTargets.Add(CardDB.cardName.majordomoexecutus, 0);
-            silenceTargets.Add(CardDB.cardName.malganis, 0);
-            silenceTargets.Add(CardDB.cardName.malorne, 0);
-            silenceTargets.Add(CardDB.cardName.malygos, 0);
-            silenceTargets.Add(CardDB.cardName.manaaddict, 0);
-            silenceTargets.Add(CardDB.cardName.manageode, 0);
-            silenceTargets.Add(CardDB.cardName.manatidetotem, 0);
-            silenceTargets.Add(CardDB.cardName.manatreant, 0);
-            silenceTargets.Add(CardDB.cardName.manawraith, 0);
-            silenceTargets.Add(CardDB.cardName.manawyrm, 0);
-            silenceTargets.Add(CardDB.cardName.masterswordsmith, 0);
-            silenceTargets.Add(CardDB.cardName.mekgineerthermaplugg, 0);
-            silenceTargets.Add(CardDB.cardName.micromachine, 0);
-            silenceTargets.Add(CardDB.cardName.mogortheogre, 0);
-            silenceTargets.Add(CardDB.cardName.muklaschampion, 0);
-            silenceTargets.Add(CardDB.cardName.murlocknight, 0);
-            silenceTargets.Add(CardDB.cardName.murloctidecaller, 0);
-            silenceTargets.Add(CardDB.cardName.murlocwarleader, 0);
-            silenceTargets.Add(CardDB.cardName.natpagle, 0);
-            silenceTargets.Add(CardDB.cardName.nerubarweblord, 0);
-            silenceTargets.Add(CardDB.cardName.nexuschampionsaraad, 0);
-            silenceTargets.Add(CardDB.cardName.northshirecleric, 0);
-            silenceTargets.Add(CardDB.cardName.obsidiandestroyer, 0);
-            silenceTargets.Add(CardDB.cardName.oldmurkeye, 0);
-            silenceTargets.Add(CardDB.cardName.oneeyedcheat, 0);
-            silenceTargets.Add(CardDB.cardName.orgrimmaraspirant, 0);
-            silenceTargets.Add(CardDB.cardName.pilotedskygolem, 0);
-            silenceTargets.Add(CardDB.cardName.pitsnake, 0);
-            silenceTargets.Add(CardDB.cardName.primalfinchampion, 0);
-            silenceTargets.Add(CardDB.cardName.primalfintotem, 0);
-            silenceTargets.Add(CardDB.cardName.prophetvelen, 0);
-            silenceTargets.Add(CardDB.cardName.pyros, 0);
-            silenceTargets.Add(CardDB.cardName.questingadventurer, 0);
-            silenceTargets.Add(CardDB.cardName.radiantelemental, 0);
-            silenceTargets.Add(CardDB.cardName.ragingworgen, 0);
-            silenceTargets.Add(CardDB.cardName.raidleader, 0);
-            silenceTargets.Add(CardDB.cardName.raptorhatchling, 0);
-            silenceTargets.Add(CardDB.cardName.ratpack, 0);
-            silenceTargets.Add(CardDB.cardName.recruiter, 0);
-            silenceTargets.Add(CardDB.cardName.redmanawyrm, 0);
-            silenceTargets.Add(CardDB.cardName.rhonin, 0);
-            silenceTargets.Add(CardDB.cardName.rumblingelemental, 0);
-            silenceTargets.Add(CardDB.cardName.satedthreshadon, 0);
-            silenceTargets.Add(CardDB.cardName.savagecombatant, 0);
-            silenceTargets.Add(CardDB.cardName.savannahhighmane, 0);
-            silenceTargets.Add(CardDB.cardName.scalednightmare, 0);
-            silenceTargets.Add(CardDB.cardName.scavenginghyena, 0);
-            silenceTargets.Add(CardDB.cardName.secretkeeper, 0);
-            silenceTargets.Add(CardDB.cardName.selflesshero, 0);
-            silenceTargets.Add(CardDB.cardName.sergeantsally, 0);
-            silenceTargets.Add(CardDB.cardName.shadeofnaxxramas, 0);
-            silenceTargets.Add(CardDB.cardName.shadowboxer, 0);
-            silenceTargets.Add(CardDB.cardName.shakuthecollector, 0);
-            silenceTargets.Add(CardDB.cardName.sherazincorpseflower, 0);
-            silenceTargets.Add(CardDB.cardName.shiftingshade, 0);
-            silenceTargets.Add(CardDB.cardName.shimmeringtempest, 0);
-            silenceTargets.Add(CardDB.cardName.shipscannon, 0);
-            silenceTargets.Add(CardDB.cardName.siegeengine, 0);
-            silenceTargets.Add(CardDB.cardName.siltfinspiritwalker, 0);
-            silenceTargets.Add(CardDB.cardName.silverhandregent, 0);
-            silenceTargets.Add(CardDB.cardName.sneedsoldshredder, 0);
-            silenceTargets.Add(CardDB.cardName.sorcerersapprentice, 0);
-            silenceTargets.Add(CardDB.cardName.southseacaptain, 0);
-            silenceTargets.Add(CardDB.cardName.southseasquidface, 0);
-            silenceTargets.Add(CardDB.cardName.spawnofnzoth, 0);
-            silenceTargets.Add(CardDB.cardName.spawnofshadows, 0);
-            silenceTargets.Add(CardDB.cardName.spiritsingerumbra, 0);
-            silenceTargets.Add(CardDB.cardName.spitefulsmith, 0);
-            silenceTargets.Add(CardDB.cardName.stalagg, 0);
-            silenceTargets.Add(CardDB.cardName.starvingbuzzard, 0);
-            silenceTargets.Add(CardDB.cardName.steamwheedlesniper, 0);
-            silenceTargets.Add(CardDB.cardName.stewardofdarkshire, 0);
-            silenceTargets.Add(CardDB.cardName.stonesplintertrogg, 0);
-            silenceTargets.Add(CardDB.cardName.stormwindchampion, 0);
-            silenceTargets.Add(CardDB.cardName.summoningportal, 0);
-            silenceTargets.Add(CardDB.cardName.summoningstone, 0);
-            silenceTargets.Add(CardDB.cardName.sylvanaswindrunner, 0);
-            silenceTargets.Add(CardDB.cardName.tarcreeper, 0);
-            silenceTargets.Add(CardDB.cardName.tarlord, 0);
-            silenceTargets.Add(CardDB.cardName.tarlurker, 0);
-            silenceTargets.Add(CardDB.cardName.theboogeymonster, 0);
-            silenceTargets.Add(CardDB.cardName.theskeletonknight, 0);
-            silenceTargets.Add(CardDB.cardName.thevoraxx, 0);
-            silenceTargets.Add(CardDB.cardName.thunderbluffvaliant, 0);
-            silenceTargets.Add(CardDB.cardName.timberwolf, 0);
-            silenceTargets.Add(CardDB.cardName.tirionfordring, 0);
-            silenceTargets.Add(CardDB.cardName.tortollanshellraiser, 0);
-            silenceTargets.Add(CardDB.cardName.tournamentmedic, 0);
-            silenceTargets.Add(CardDB.cardName.tradeprincegallywix, 0);
-            silenceTargets.Add(CardDB.cardName.troggzortheearthinator, 0);
-            silenceTargets.Add(CardDB.cardName.tundrarhino, 0);
-            silenceTargets.Add(CardDB.cardName.twilightelder, 0);
-            silenceTargets.Add(CardDB.cardName.twilightsummoner, 0);
-            silenceTargets.Add(CardDB.cardName.unboundelemental, 0);
-            silenceTargets.Add(CardDB.cardName.undercityhuckster, 0);
-            silenceTargets.Add(CardDB.cardName.undertaker, 0);
-            silenceTargets.Add(CardDB.cardName.usherofsouls, 0);
-            silenceTargets.Add(CardDB.cardName.v07tr0n, 0);
-            silenceTargets.Add(CardDB.cardName.viciousfledgling, 0);
-            silenceTargets.Add(CardDB.cardName.violetillusionist, 0);
-            silenceTargets.Add(CardDB.cardName.violetteacher, 0);
-            silenceTargets.Add(CardDB.cardName.vitalitytotem, 0);
-            silenceTargets.Add(CardDB.cardName.voidcrusher, 0);
-            silenceTargets.Add(CardDB.cardName.volatileelemental, 0);
-            silenceTargets.Add(CardDB.cardName.warhorsetrainer, 0);
-            silenceTargets.Add(CardDB.cardName.warsongcommander, 0);
-            silenceTargets.Add(CardDB.cardName.webspinner, 0);
-            silenceTargets.Add(CardDB.cardName.whiteeyes, 0);
-            silenceTargets.Add(CardDB.cardName.wickedwitchdoctor, 0);
-            silenceTargets.Add(CardDB.cardName.wilfredfizzlebang, 0);
-            silenceTargets.Add(CardDB.cardName.windupburglebot, 0);
-            silenceTargets.Add(CardDB.cardName.wobblingrunts, 0);
-            silenceTargets.Add(CardDB.cardName.youngpriestess, 0);
-            silenceTargets.Add(CardDB.cardName.ysera, 0);
-            silenceTargets.Add(CardDB.cardName.yshaarjrageunbound, 0);
-            silenceTargets.Add(CardDB.cardName.zealousinitiate, 0);
-            silenceTargets.Add(CardDB.cardName.vryghoul, 0);
-            silenceTargets.Add(CardDB.cardName.thelichking, 0);
-            silenceTargets.Add(CardDB.cardName.skelemancer, 0);
-            silenceTargets.Add(CardDB.cardName.shallowgravedigger, 0);
-            silenceTargets.Add(CardDB.cardName.shadowascendant, 0);
-            silenceTargets.Add(CardDB.cardName.moirabronzebeard, 0);
-            silenceTargets.Add(CardDB.cardName.meatwagon, 0);
-            silenceTargets.Add(CardDB.cardName.highjusticegrimstone, 0);
-            silenceTargets.Add(CardDB.cardName.hadronox, 0);
-            silenceTargets.Add(CardDB.cardName.frozenchampion, 0);
-            silenceTargets.Add(CardDB.cardName.festergut, 0);
-            silenceTargets.Add(CardDB.cardName.fatespinner, 0);
-            silenceTargets.Add(CardDB.cardName.explodingbloatbat, 0);
-            silenceTargets.Add(CardDB.cardName.drakkarienchanter, 0);
-            silenceTargets.Add(CardDB.cardName.despicabledreadlord, 0);
-            silenceTargets.Add(CardDB.cardName.cobaltscalebane, 0);
-            silenceTargets.Add(CardDB.cardName.bonedrake, 0);
-            silenceTargets.Add(CardDB.cardName.bonebaron, 0);
-            silenceTargets.Add(CardDB.cardName.blackguard, 0);
-            silenceTargets.Add(CardDB.cardName.arrogantcrusader, 0);
-            silenceTargets.Add(CardDB.cardName.arfus, 0);
-            silenceTargets.Add(CardDB.cardName.abominablebowman, 0);
-            silenceTargets.Add(CardDB.cardName.voodoohexxer, 0);
-            silenceTargets.Add(CardDB.cardName.venomancer, 0);
-            silenceTargets.Add(CardDB.cardName.valkyrsoulclaimer, 0);
-            silenceTargets.Add(CardDB.cardName.stubborngastropod, 0);
-            silenceTargets.Add(CardDB.cardName.runeforgehaunter, 0);
-            silenceTargets.Add(CardDB.cardName.rotface, 0);
-            silenceTargets.Add(CardDB.cardName.professorputricide, 0);
-            silenceTargets.Add(CardDB.cardName.nighthowler, 0);
-            silenceTargets.Add(CardDB.cardName.nerubianunraveler, 0);
-            silenceTargets.Add(CardDB.cardName.necroticgeist, 0);
-            silenceTargets.Add(CardDB.cardName.moorabi, 0);
-            silenceTargets.Add(CardDB.cardName.icewalker, 0);
-            silenceTargets.Add(CardDB.cardName.doomedapprentice, 0);
-            silenceTargets.Add(CardDB.cardName.cryptlord, 0);
-            silenceTargets.Add(CardDB.cardName.corpsewidow, 0);
-            silenceTargets.Add(CardDB.cardName.bolvarfireblood, 0);
-            silenceTargets.Add(CardDB.cardName.bloodqueenlanathel, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.abomination, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.acidmaw, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.acolyteofpain, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.addledgrizzly, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ancientharbinger, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.animatedarmor, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.anomalus, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.anubarak, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.anubisathsentinel, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.armorsmith, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.auchenaisoulpriest, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.aviana, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.axeflinger, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ayablackpaw, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.backroombouncer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.barongeddon, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.baronrivendare, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.blackwaterpirate, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bloodimp, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.blubberbaron, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bolvarfordragon, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.boneguardlieutenant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.brannbronzebeard, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bravearcher, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.burlyrockjawtrogg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cairnebloodhoof, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.chillmaw, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.chromaggus, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cobaltguardian, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.coldarradrake, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.coliseummanager, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.crazedworshipper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.crowdfavorite, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.crueldinomancer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.crystallineoracle, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cthun, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cultmaster, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dalaranaspirant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.darkcultist, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.darkshirecouncilman, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.devilsauregg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.nerubianegg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.direhornhatchling, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.djinniofzephyrs, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.doomsayer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dragonegg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dragonhawkrider, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dragonkinsorcerer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.dreadscale, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.eggnapper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.emboldener3000, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.emperorcobra, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.etherealarcanist, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.evolvedkobold, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.explosivesheep, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.eydisdarkbane, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.fallenhero, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.masterchest, 0);            
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.fandralstaghelm, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.feugen, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.finjatheflyingstar, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.fjolalightbane, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.flamewaker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.flesheatingghoul, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.floatingwatcher, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.foereaper4000, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.frothingberserker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 10);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.gahzrilla, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.garr, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.garrisoncommander, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.giantanaconda, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.giantsandworm, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.giantwasp, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.grimpatron, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.grommashhellscream, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.gruul, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.gurubashiberserker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hallazealtheascended, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hauntedcreeper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hobgoblin, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hogger, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hoggerdoomofelwynn, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.holychampion, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.homingchicken, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hoodedacolyte, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.igneouselemental, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.impgangboss, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.impmaster, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ironsensei, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.jadeswarmer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.jeeves, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.junkbot, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.kabaltrafficker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.kelthuzad, 10);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.kindlygrandmother, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.knifejuggler, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.knuckles, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.kodorider, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.kvaldirraider, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.leokk, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lightspawn, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lightwarden, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lightwell, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lorewalkercho, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lowlysquire, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.madscientist, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.maexxna, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.magnatauralpha, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.maidenofthelake, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.majordomoexecutus, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.malganis, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.malorne, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.malygos, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manaaddict, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manageode, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manatidetotem, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manatreant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manawraith, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.manawyrm, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.masterswordsmith, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.mekgineerthermaplugg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.micromachine, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.mogortheogre, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.muklaschampion, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.murlocknight, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.murloctidecaller, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.natpagle, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.nerubarweblord, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.northshirecleric, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.obsidiandestroyer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.oldmurkeye, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.oneeyedcheat, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.orgrimmaraspirant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.pilotedskygolem, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.pitsnake, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.primalfinchampion, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.primalfintotem, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.prophetvelen, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.pyros, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.questingadventurer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.radiantelemental, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ragingworgen, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.raidleader, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.raptorhatchling, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ratpack, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.recruiter, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.redmanawyrm, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.rhonin, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.rumblingelemental, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.satedthreshadon, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.savagecombatant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.savannahhighmane, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.scalednightmare, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.secretkeeper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.selflesshero, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.sergeantsally, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shadeofnaxxramas, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shadowboxer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shakuthecollector, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.sherazincorpseflower, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shiftingshade, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shimmeringtempest, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shipscannon, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.siegeengine, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.siltfinspiritwalker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.silverhandregent, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.sneedsoldshredder, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.southseacaptain, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.southseasquidface, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.spawnofnzoth, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.spawnofshadows, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.spiritsingerumbra, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.spitefulsmith, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.stalagg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.starvingbuzzard, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.steamwheedlesniper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.stewardofdarkshire, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.stonesplintertrogg, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.summoningportal, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.summoningstone, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.sylvanaswindrunner, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tarcreeper, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tarlord, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tarlurker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.theboogeymonster, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.theskeletonknight, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.thevoraxx, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.thunderbluffvaliant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.timberwolf, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tirionfordring, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tortollanshellraiser, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tournamentmedic, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tradeprincegallywix, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.tundrarhino, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.twilightelder, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.twilightsummoner, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.unboundelemental, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.undercityhuckster, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.undertaker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.usherofsouls, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.v07tr0n, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.violetillusionist, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.violetteacher, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.vitalitytotem, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.voidcrusher, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.volatileelemental, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.warhorsetrainer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.warsongcommander, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.webspinner, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.whiteeyes, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.wilfredfizzlebang, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.windupburglebot, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.wobblingrunts, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.youngpriestess, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.ysera, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.yshaarjrageunbound, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.zealousinitiate, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.vryghoul, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.thelichking, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.skelemancer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shallowgravedigger, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.shadowascendant, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.meatwagon, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.hadronox, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.frozenchampion, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.festergut, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.fatespinner, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.explodingbloatbat, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.drakkarienchanter, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.despicabledreadlord, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cobaltscalebane, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bonedrake, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bonebaron, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.blackguard, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.arrogantcrusader, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.arfus, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.abominablebowman, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.voodoohexxer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.venomancer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.valkyrsoulclaimer, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.stubborngastropod, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.runeforgehaunter, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.rotface, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.professorputricide, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.nighthowler, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.nerubianunraveler, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.necroticgeist, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.moorabi, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.icewalker, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.doomedapprentice, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.cryptlord, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.corpsewidow, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bolvarfireblood, 0);
+            silenceTargets.Add(Chireiden.Silverfish.SimCard.bloodqueenlanathel, 0);
         }
 
         private void setupRandomCards()
         {
-            randomEffects.Add(CardDB.cardName.alightinthedarkness, 1);
-            randomEffects.Add(CardDB.cardName.ancestorscall, 1);
-            randomEffects.Add(CardDB.cardName.animalcompanion, 1);
-            randomEffects.Add(CardDB.cardName.arcanemissiles, 3);
-            randomEffects.Add(CardDB.cardName.archthiefrafaam, 1);
-            randomEffects.Add(CardDB.cardName.armoredwarhorse, 1);
-            randomEffects.Add(CardDB.cardName.avengingwrath, 8);
-            randomEffects.Add(CardDB.cardName.babblingbook, 1);
-            randomEffects.Add(CardDB.cardName.barnes, 1);
-            randomEffects.Add(CardDB.cardName.bomblobber, 1);
-            randomEffects.Add(CardDB.cardName.bouncingblade, 3);
-            randomEffects.Add(CardDB.cardName.brawl, 1);
-            randomEffects.Add(CardDB.cardName.captainsparrot, 1);
-            randomEffects.Add(CardDB.cardName.chitteringtunneler, 1);
-            randomEffects.Add(CardDB.cardName.chooseyourpath, 1);
-            randomEffects.Add(CardDB.cardName.cleave, 2);
-            randomEffects.Add(CardDB.cardName.coghammer, 1);
-            randomEffects.Add(CardDB.cardName.crackle, 1);
-            randomEffects.Add(CardDB.cardName.cthun, 10);
-            randomEffects.Add(CardDB.cardName.darkbargain, 2);
-            randomEffects.Add(CardDB.cardName.darkpeddler, 1);
-            randomEffects.Add(CardDB.cardName.deadlyshot, 1);
-            randomEffects.Add(CardDB.cardName.desertcamel, 1);
-            randomEffects.Add(CardDB.cardName.elementaldestruction, 1);
-            randomEffects.Add(CardDB.cardName.elitetaurenchieftain, 1);
-            randomEffects.Add(CardDB.cardName.enhanceomechano, 1);
-            randomEffects.Add(CardDB.cardName.etherealconjurer, 1);
-            randomEffects.Add(CardDB.cardName.fierybat, 1);
-            randomEffects.Add(CardDB.cardName.finderskeepers, 1);
-            randomEffects.Add(CardDB.cardName.firelandsportal, 1);
-            randomEffects.Add(CardDB.cardName.flamecannon, 1);
-            randomEffects.Add(CardDB.cardName.flamejuggler, 1);
-            randomEffects.Add(CardDB.cardName.flamewaker, 2);
-            randomEffects.Add(CardDB.cardName.forkedlightning, 1);
-            randomEffects.Add(CardDB.cardName.freefromamber, 1);
-            randomEffects.Add(CardDB.cardName.zarogscrown, 1);
-            randomEffects.Add(CardDB.cardName.gelbinmekkatorque, 1);
-            randomEffects.Add(CardDB.cardName.glaivezooka, 1);
-            randomEffects.Add(CardDB.cardName.grandcrusader, 1);
-            randomEffects.Add(CardDB.cardName.greaterarcanemissiles, 3);
-            randomEffects.Add(CardDB.cardName.grimestreetinformant, 1);
-            randomEffects.Add(CardDB.cardName.hallucination, 1);
-            randomEffects.Add(CardDB.cardName.harvest, 1);
-            randomEffects.Add(CardDB.cardName.hungrydragon, 1);
-            randomEffects.Add(CardDB.cardName.hydrologist, 1);
-            randomEffects.Add(CardDB.cardName.iammurloc, 3);
-            randomEffects.Add(CardDB.cardName.iknowaguy, 1);
-            randomEffects.Add(CardDB.cardName.ironforgeportal, 1);
-            randomEffects.Add(CardDB.cardName.ivoryknight, 1);
-            randomEffects.Add(CardDB.cardName.jeweledscarab, 1);
-            randomEffects.Add(CardDB.cardName.journeybelow, 1);
-            randomEffects.Add(CardDB.cardName.kabalchemist, 1);
-            randomEffects.Add(CardDB.cardName.kabalcourier, 1);
-            randomEffects.Add(CardDB.cardName.kazakus, 1);
-            randomEffects.Add(CardDB.cardName.kingsblood, 1);
-            randomEffects.Add(CardDB.cardName.lifetap, 1);
-            randomEffects.Add(CardDB.cardName.lightningstorm, 1);
-            randomEffects.Add(CardDB.cardName.lockandload, 10);
-            randomEffects.Add(CardDB.cardName.lotusagents, 1);
-            randomEffects.Add(CardDB.cardName.madbomber, 3);
-            randomEffects.Add(CardDB.cardName.madderbomber, 1);
-            randomEffects.Add(CardDB.cardName.maelstromportal, 1);
-            randomEffects.Add(CardDB.cardName.masterjouster, 1);
-            randomEffects.Add(CardDB.cardName.menageriemagician, 0);
-            randomEffects.Add(CardDB.cardName.mindcontroltech, 1);
-            randomEffects.Add(CardDB.cardName.mindgames, 1);
-            randomEffects.Add(CardDB.cardName.mindvision, 1);
-            randomEffects.Add(CardDB.cardName.mogorschampion, 1);
-            randomEffects.Add(CardDB.cardName.mogortheogre, 1);
-            randomEffects.Add(CardDB.cardName.moongladeportal, 1);
-            randomEffects.Add(CardDB.cardName.multishot, 2);
-            randomEffects.Add(CardDB.cardName.museumcurator, 1);
-            randomEffects.Add(CardDB.cardName.mysteriouschallenger, 2);
-            randomEffects.Add(CardDB.cardName.pileon, 1);
-            randomEffects.Add(CardDB.cardName.powerofthehorde, 1);
-            randomEffects.Add(CardDB.cardName.primordialglyph, 1);
-            randomEffects.Add(CardDB.cardName.ramwrangler, 1);
-            randomEffects.Add(CardDB.cardName.ravenidol, 1);
-            randomEffects.Add(CardDB.cardName.resurrect, 1);
-            randomEffects.Add(CardDB.cardName.sabotage, 0);
-            randomEffects.Add(CardDB.cardName.sensedemons, 2);
-            randomEffects.Add(CardDB.cardName.servantofkalimos, 1);
-            randomEffects.Add(CardDB.cardName.shadowoil, 1);
-            randomEffects.Add(CardDB.cardName.shadowvisions, 1);
-            randomEffects.Add(CardDB.cardName.silvermoonportal, 1);
-            randomEffects.Add(CardDB.cardName.sirfinleymrrgglton, 1);
-            randomEffects.Add(CardDB.cardName.soultap, 1);
-            randomEffects.Add(CardDB.cardName.spellslinger, 1);
-            randomEffects.Add(CardDB.cardName.spreadingmadness, 9);
-            randomEffects.Add(CardDB.cardName.stampede, 10);
-            randomEffects.Add(CardDB.cardName.stonehilldefender, 1);
-            randomEffects.Add(CardDB.cardName.swashburglar, 1);
-            randomEffects.Add(CardDB.cardName.timepieceofhorror, 10);
-            randomEffects.Add(CardDB.cardName.tinkmasteroverspark, 1);
-            randomEffects.Add(CardDB.cardName.tombspider, 1);
-            randomEffects.Add(CardDB.cardName.tortollanprimalist, 1);
-            randomEffects.Add(CardDB.cardName.totemiccall, 1);
-            randomEffects.Add(CardDB.cardName.tuskarrtotemic, 1);
-            randomEffects.Add(CardDB.cardName.unholyshadow, 2);
-            randomEffects.Add(CardDB.cardName.unstableportal, 1);
-            randomEffects.Add(CardDB.cardName.varianwrynn, 2);
-            randomEffects.Add(CardDB.cardName.volcano, 15);
-            randomEffects.Add(CardDB.cardName.xarilpoisonedmind, 1);
-            randomEffects.Add(CardDB.cardName.zoobot, 0);
-            randomEffects.Add(CardDB.cardName.tomblurker, 1);
-            randomEffects.Add(CardDB.cardName.ghastlyconjurer, 1);
-            randomEffects.Add(CardDB.cardName.shadowessence, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.alightinthedarkness, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ancestorscall, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.animalcompanion, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.arcanemissiles, 3);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.archthiefrafaam, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.armoredwarhorse, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.avengingwrath, 8);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.babblingbook, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.barnes, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.bomblobber, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.bouncingblade, 3);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.brawl, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.captainsparrot, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.chitteringtunneler, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.chooseyourpath, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.cleave, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.coghammer, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.crackle, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.cthun, 10);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.darkbargain, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.darkpeddler, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.deadlyshot, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.desertcamel, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.elementaldestruction, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.elitetaurenchieftain, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.enhanceomechano, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.etherealconjurer, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.fierybat, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.finderskeepers, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.firelandsportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.flamecannon, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.flamejuggler, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.flamewaker, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.forkedlightning, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.freefromamber, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.zarogscrown, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.gelbinmekkatorque, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.glaivezooka, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.grandcrusader, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.greaterarcanemissiles, 3);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.grimestreetinformant, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.hallucination, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.harvest, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.hungrydragon, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.hydrologist, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.iammurloc, 3);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.iknowaguy, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ironforgeportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ivoryknight, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.jeweledscarab, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.journeybelow, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.kabalchemist, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.kabalcourier, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.kazakus, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.kingsblood, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.lifetap, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.lightningstorm, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.lockandload, 10);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.lotusagents, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.madbomber, 3);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.madderbomber, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.maelstromportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.masterjouster, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.menageriemagician, 0);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mindcontroltech, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mindgames, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mindvision, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mogorschampion, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mogortheogre, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.moongladeportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.multishot, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.museumcurator, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.mysteriouschallenger, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.pileon, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.powerofthehorde, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.primordialglyph, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ramwrangler, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ravenidol, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.resurrect, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.sabotage, 0);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.sensedemons, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.servantofkalimos, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.shadowoil, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.shadowvisions, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.silvermoonportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.sirfinleymrrgglton, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.soultap, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.spellslinger, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.spreadingmadness, 9);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.stampede, 10);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.stonehilldefender, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.swashburglar, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.timepieceofhorror, 10);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.tinkmasteroverspark, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.tombspider, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.tortollanprimalist, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.totemiccall, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.tuskarrtotemic, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.unholyshadow, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.unstableportal, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.varianwrynn, 2);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.volcano, 15);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.xarilpoisonedmind, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.zoobot, 0);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.tomblurker, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.ghastlyconjurer, 1);
+            randomEffects.Add(Chireiden.Silverfish.SimCard.shadowessence, 1);
 
         }
 
 
         private void setupChooseDatabase()
         {
-            this.choose1database.Add(CardDB.cardName.ancientoflore, CardDB.cardIDEnum.NEW1_008a);
-            this.choose1database.Add(CardDB.cardName.ancientofwar, CardDB.cardIDEnum.EX1_178b);
-            this.choose1database.Add(CardDB.cardName.anodizedrobocub, CardDB.cardIDEnum.GVG_030a);
-            this.choose1database.Add(CardDB.cardName.cenarius, CardDB.cardIDEnum.EX1_573a);
-            this.choose1database.Add(CardDB.cardName.darkwispers, CardDB.cardIDEnum.GVG_041b);
-            this.choose1database.Add(CardDB.cardName.druidoftheclaw, CardDB.cardIDEnum.EX1_165t1);
-            this.choose1database.Add(CardDB.cardName.druidoftheflame, CardDB.cardIDEnum.BRM_010t);
-            this.choose1database.Add(CardDB.cardName.druidofthesaber, CardDB.cardIDEnum.AT_042t);
-            this.choose1database.Add(CardDB.cardName.feralrage, CardDB.cardIDEnum.OG_047a);
-            this.choose1database.Add(CardDB.cardName.grovetender, CardDB.cardIDEnum.GVG_032a);
-            this.choose1database.Add(CardDB.cardName.jadeidol, CardDB.cardIDEnum.CFM_602a);
-            this.choose1database.Add(CardDB.cardName.keeperofthegrove, CardDB.cardIDEnum.EX1_166a);
-            this.choose1database.Add(CardDB.cardName.kuntheforgottenking, CardDB.cardIDEnum.CFM_308a);
-            this.choose1database.Add(CardDB.cardName.livingroots, CardDB.cardIDEnum.AT_037a);
-            this.choose1database.Add(CardDB.cardName.markofnature, CardDB.cardIDEnum.EX1_155a);
-            this.choose1database.Add(CardDB.cardName.mirekeeper, CardDB.cardIDEnum.OG_202a);
-            this.choose1database.Add(CardDB.cardName.nourish, CardDB.cardIDEnum.EX1_164a);
-            this.choose1database.Add(CardDB.cardName.powerofthewild, CardDB.cardIDEnum.EX1_160b);
-            this.choose1database.Add(CardDB.cardName.ravenidol, CardDB.cardIDEnum.LOE_115a);
-            this.choose1database.Add(CardDB.cardName.shellshifter, CardDB.cardIDEnum.UNG_101t);
-            this.choose1database.Add(CardDB.cardName.starfall, CardDB.cardIDEnum.NEW1_007b);
-            this.choose1database.Add(CardDB.cardName.wispsoftheoldgods, CardDB.cardIDEnum.OG_195a);
-            this.choose1database.Add(CardDB.cardName.wrath, CardDB.cardIDEnum.EX1_154a);
-            this.choose1database.Add(CardDB.cardName.malfurionthepestilent, CardDB.cardIDEnum.ICC_832b);
-            this.choose1database.Add(CardDB.cardName.plaguelord, CardDB.cardIDEnum.ICC_832pb);
-            this.choose1database.Add(CardDB.cardName.druidoftheswarm, CardDB.cardIDEnum.ICC_051t);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.ancientoflore, Chireiden.Silverfish.SimCard.NEW1_008a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.ancientofwar, Chireiden.Silverfish.SimCard.EX1_178b);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.anodizedrobocub, Chireiden.Silverfish.SimCard.GVG_030a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.cenarius, Chireiden.Silverfish.SimCard.EX1_573a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.darkwispers, Chireiden.Silverfish.SimCard.GVG_041b);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.druidoftheclaw, Chireiden.Silverfish.SimCard.EX1_165t1);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.druidoftheflame, Chireiden.Silverfish.SimCard.BRM_010t);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.druidofthesaber, Chireiden.Silverfish.SimCard.AT_042t);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.feralrage, Chireiden.Silverfish.SimCard.OG_047a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.grovetender, Chireiden.Silverfish.SimCard.GVG_032a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.jadeidol, Chireiden.Silverfish.SimCard.CFM_602a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.keeperofthegrove, Chireiden.Silverfish.SimCard.EX1_166a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.kuntheforgottenking, Chireiden.Silverfish.SimCard.CFM_308a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.livingroots, Chireiden.Silverfish.SimCard.AT_037a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.markofnature, Chireiden.Silverfish.SimCard.EX1_155a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.mirekeeper, Chireiden.Silverfish.SimCard.OG_202a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.nourish, Chireiden.Silverfish.SimCard.EX1_164a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.powerofthewild, Chireiden.Silverfish.SimCard.EX1_160b);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.ravenidol, Chireiden.Silverfish.SimCard.LOE_115a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.shellshifter, Chireiden.Silverfish.SimCard.UNG_101t);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.starfall, Chireiden.Silverfish.SimCard.NEW1_007b);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.wispsoftheoldgods, Chireiden.Silverfish.SimCard.OG_195a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.wrath, Chireiden.Silverfish.SimCard.EX1_154a);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.malfurionthepestilent, Chireiden.Silverfish.SimCard.ICC_832b);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.plaguelord, Chireiden.Silverfish.SimCard.ICC_832pb);
+            this.choose1database.Add(Chireiden.Silverfish.SimCard.druidoftheswarm, Chireiden.Silverfish.SimCard.ICC_051t);
 
-            this.choose2database.Add(CardDB.cardName.ancientoflore, CardDB.cardIDEnum.NEW1_008b);
-            this.choose2database.Add(CardDB.cardName.ancientofwar, CardDB.cardIDEnum.EX1_178a);
-            this.choose2database.Add(CardDB.cardName.anodizedrobocub, CardDB.cardIDEnum.GVG_030b);
-            this.choose2database.Add(CardDB.cardName.cenarius, CardDB.cardIDEnum.EX1_573b);
-            this.choose2database.Add(CardDB.cardName.darkwispers, CardDB.cardIDEnum.GVG_041a);
-            this.choose2database.Add(CardDB.cardName.druidoftheclaw, CardDB.cardIDEnum.EX1_165t2);
-            this.choose2database.Add(CardDB.cardName.druidoftheflame, CardDB.cardIDEnum.BRM_010t2);
-            this.choose2database.Add(CardDB.cardName.druidofthesaber, CardDB.cardIDEnum.AT_042t2);
-            this.choose2database.Add(CardDB.cardName.feralrage, CardDB.cardIDEnum.OG_047b);
-            this.choose2database.Add(CardDB.cardName.grovetender, CardDB.cardIDEnum.GVG_032b);
-            this.choose2database.Add(CardDB.cardName.jadeidol, CardDB.cardIDEnum.CFM_602b);
-            this.choose2database.Add(CardDB.cardName.keeperofthegrove, CardDB.cardIDEnum.EX1_166b);
-            this.choose2database.Add(CardDB.cardName.kuntheforgottenking, CardDB.cardIDEnum.CFM_308b);
-            this.choose2database.Add(CardDB.cardName.livingroots, CardDB.cardIDEnum.AT_037b);
-            this.choose2database.Add(CardDB.cardName.markofnature, CardDB.cardIDEnum.EX1_155b);
-            this.choose2database.Add(CardDB.cardName.mirekeeper, CardDB.cardIDEnum.OG_202ae);
-            this.choose2database.Add(CardDB.cardName.nourish, CardDB.cardIDEnum.EX1_164b);
-            this.choose2database.Add(CardDB.cardName.powerofthewild, CardDB.cardIDEnum.EX1_160t);
-            this.choose2database.Add(CardDB.cardName.ravenidol, CardDB.cardIDEnum.LOE_115b);
-            this.choose2database.Add(CardDB.cardName.shellshifter, CardDB.cardIDEnum.UNG_101t2);
-            this.choose2database.Add(CardDB.cardName.starfall, CardDB.cardIDEnum.NEW1_007a);
-            this.choose2database.Add(CardDB.cardName.wispsoftheoldgods, CardDB.cardIDEnum.OG_195b);
-            this.choose2database.Add(CardDB.cardName.wrath, CardDB.cardIDEnum.EX1_154b);
-            this.choose2database.Add(CardDB.cardName.malfurionthepestilent, CardDB.cardIDEnum.ICC_832a);
-            this.choose2database.Add(CardDB.cardName.plaguelord, CardDB.cardIDEnum.ICC_832pa);
-            this.choose2database.Add(CardDB.cardName.druidoftheswarm, CardDB.cardIDEnum.ICC_051t2);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.ancientoflore, Chireiden.Silverfish.SimCard.NEW1_008b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.ancientofwar, Chireiden.Silverfish.SimCard.EX1_178a);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.anodizedrobocub, Chireiden.Silverfish.SimCard.GVG_030b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.cenarius, Chireiden.Silverfish.SimCard.EX1_573b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.darkwispers, Chireiden.Silverfish.SimCard.GVG_041a);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.druidoftheclaw, Chireiden.Silverfish.SimCard.EX1_165t2);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.druidoftheflame, Chireiden.Silverfish.SimCard.BRM_010t2);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.druidofthesaber, Chireiden.Silverfish.SimCard.AT_042t2);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.feralrage, Chireiden.Silverfish.SimCard.OG_047b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.grovetender, Chireiden.Silverfish.SimCard.GVG_032b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.jadeidol, Chireiden.Silverfish.SimCard.CFM_602b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.keeperofthegrove, Chireiden.Silverfish.SimCard.EX1_166b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.kuntheforgottenking, Chireiden.Silverfish.SimCard.CFM_308b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.livingroots, Chireiden.Silverfish.SimCard.AT_037b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.markofnature, Chireiden.Silverfish.SimCard.EX1_155b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.mirekeeper, Chireiden.Silverfish.SimCard.OG_202ae);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.nourish, Chireiden.Silverfish.SimCard.EX1_164b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.powerofthewild, Chireiden.Silverfish.SimCard.EX1_160t);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.ravenidol, Chireiden.Silverfish.SimCard.LOE_115b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.shellshifter, Chireiden.Silverfish.SimCard.UNG_101t2);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.starfall, Chireiden.Silverfish.SimCard.NEW1_007a);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.wispsoftheoldgods, Chireiden.Silverfish.SimCard.OG_195b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.wrath, Chireiden.Silverfish.SimCard.EX1_154b);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.malfurionthepestilent, Chireiden.Silverfish.SimCard.ICC_832a);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.plaguelord, Chireiden.Silverfish.SimCard.ICC_832pa);
+            this.choose2database.Add(Chireiden.Silverfish.SimCard.druidoftheswarm, Chireiden.Silverfish.SimCard.ICC_051t2);
         }
 
 
@@ -5897,223 +5897,223 @@
 
         private void setupGangUpDatabase()
         {
-            GangUpDatabase.Add(CardDB.cardName.addledgrizzly, 1);
-            GangUpDatabase.Add(CardDB.cardName.alakirthewindlord, 5);
-            GangUpDatabase.Add(CardDB.cardName.aldorpeacekeeper, 5);
-            GangUpDatabase.Add(CardDB.cardName.ancientoflore, 5);
-            GangUpDatabase.Add(CardDB.cardName.ancientofwar, 5);
-            GangUpDatabase.Add(CardDB.cardName.antiquehealbot, 5);
-            GangUpDatabase.Add(CardDB.cardName.anubarak, 5);
-            GangUpDatabase.Add(CardDB.cardName.archmageantonidas, 3);
-            GangUpDatabase.Add(CardDB.cardName.armorsmith, 0);
-            GangUpDatabase.Add(CardDB.cardName.ayablackpaw, 5);
-            GangUpDatabase.Add(CardDB.cardName.azuredrake, 5);
-            GangUpDatabase.Add(CardDB.cardName.baronrivendare, 1);
-            GangUpDatabase.Add(CardDB.cardName.biggamehunter, 5);
-            GangUpDatabase.Add(CardDB.cardName.biteweed, 5);
-            GangUpDatabase.Add(CardDB.cardName.bladeofcthun, 5);
-            GangUpDatabase.Add(CardDB.cardName.bloodimp, 1);
-            GangUpDatabase.Add(CardDB.cardName.bomblobber, 4);
-            GangUpDatabase.Add(CardDB.cardName.boneguardlieutenant, 3);
-            GangUpDatabase.Add(CardDB.cardName.burglybully, 0);
-            GangUpDatabase.Add(CardDB.cardName.burlyrockjawtrogg, 1);
-            GangUpDatabase.Add(CardDB.cardName.cabalshadowpriest, 5);
-            GangUpDatabase.Add(CardDB.cardName.cairnebloodhoof, 5);
-            GangUpDatabase.Add(CardDB.cardName.cenarius, 5);
-            GangUpDatabase.Add(CardDB.cardName.chromaggus, 4);
-            GangUpDatabase.Add(CardDB.cardName.cobaltguardian, 1);
-            GangUpDatabase.Add(CardDB.cardName.coldarradrake, 1);
-            GangUpDatabase.Add(CardDB.cardName.coldlightoracle, 5);
-            GangUpDatabase.Add(CardDB.cardName.confessorpaletress, 5);
-            GangUpDatabase.Add(CardDB.cardName.corendirebrew, 5);
-            GangUpDatabase.Add(CardDB.cardName.cthun, 5);
-            GangUpDatabase.Add(CardDB.cardName.cultapothecary, 1);
-            GangUpDatabase.Add(CardDB.cardName.cultmaster, 1);
-            GangUpDatabase.Add(CardDB.cardName.cultsorcerer, 5);
-            GangUpDatabase.Add(CardDB.cardName.dementedfrostcaller, 5);
-            GangUpDatabase.Add(CardDB.cardName.demolisher, 1);
-            GangUpDatabase.Add(CardDB.cardName.direwolfalpha, 1);
-            GangUpDatabase.Add(CardDB.cardName.doppelgangster, 1);
-            GangUpDatabase.Add(CardDB.cardName.dragonkinsorcerer, 0);
-            GangUpDatabase.Add(CardDB.cardName.drboom, 5);
-            GangUpDatabase.Add(CardDB.cardName.earthenringfarseer, 3);
-            GangUpDatabase.Add(CardDB.cardName.edwinvancleef, 5);
-            GangUpDatabase.Add(CardDB.cardName.emboldener3000, 1);
-            GangUpDatabase.Add(CardDB.cardName.emperorthaurissan, 5);
-            GangUpDatabase.Add(CardDB.cardName.etherealpeddler, 3);
-            GangUpDatabase.Add(CardDB.cardName.felcannon, 0);
-            GangUpDatabase.Add(CardDB.cardName.fireelemental, 5);
-            GangUpDatabase.Add(CardDB.cardName.fireguarddestroyer, 4);
-            GangUpDatabase.Add(CardDB.cardName.flametonguetotem, 4);
-            GangUpDatabase.Add(CardDB.cardName.flamewaker, 4);
-            GangUpDatabase.Add(CardDB.cardName.flesheatingghoul, 0);
-            GangUpDatabase.Add(CardDB.cardName.floatingwatcher, 0);
-            GangUpDatabase.Add(CardDB.cardName.foereaper4000, 1);
-            GangUpDatabase.Add(CardDB.cardName.friendlybartender, 3);
-            GangUpDatabase.Add(CardDB.cardName.frothingberserker, 1);
-            GangUpDatabase.Add(CardDB.cardName.gadgetzanauctioneer, 1);
-            GangUpDatabase.Add(CardDB.cardName.gahzrilla, 5);
-            GangUpDatabase.Add(CardDB.cardName.garr, 5);
-            GangUpDatabase.Add(CardDB.cardName.gazlowe, 1);
-            GangUpDatabase.Add(CardDB.cardName.gelbinmekkatorque, 3);
-            GangUpDatabase.Add(CardDB.cardName.genzotheshark, 5);
-            GangUpDatabase.Add(CardDB.cardName.grimestreetenforcer, 3);
-            GangUpDatabase.Add(CardDB.cardName.grimscaleoracle, 1);
-            GangUpDatabase.Add(CardDB.cardName.grimygadgeteer, 3);
-            GangUpDatabase.Add(CardDB.cardName.gruul, 4);
-            GangUpDatabase.Add(CardDB.cardName.harrisonjones, 1);
-            GangUpDatabase.Add(CardDB.cardName.hemetnesingwary, 1);
-            GangUpDatabase.Add(CardDB.cardName.highjusticegrimstone, 5);
-            GangUpDatabase.Add(CardDB.cardName.hobgoblin, 1);
-            GangUpDatabase.Add(CardDB.cardName.hogger, 5);
-            GangUpDatabase.Add(CardDB.cardName.hoggerdoomofelwynn, 1);
-            GangUpDatabase.Add(CardDB.cardName.igneouselemental, 1);
-            GangUpDatabase.Add(CardDB.cardName.illidanstormrage, 5);
-            GangUpDatabase.Add(CardDB.cardName.impmaster, 0);
-            GangUpDatabase.Add(CardDB.cardName.infestedtauren, 1);
-            GangUpDatabase.Add(CardDB.cardName.ironbeakowl, 4);
-            GangUpDatabase.Add(CardDB.cardName.ironjuggernaut, 2);
-            GangUpDatabase.Add(CardDB.cardName.ironsensei, 1);
-            GangUpDatabase.Add(CardDB.cardName.jadeswarmer, 5);
-            GangUpDatabase.Add(CardDB.cardName.jeeves, 0);
-            GangUpDatabase.Add(CardDB.cardName.junkbot, 1);
-            GangUpDatabase.Add(CardDB.cardName.kelthuzad, 5);
-            GangUpDatabase.Add(CardDB.cardName.kingkrush, 5);
-            GangUpDatabase.Add(CardDB.cardName.knifejuggler, 3);
-            GangUpDatabase.Add(CardDB.cardName.kodorider, 5);
-            GangUpDatabase.Add(CardDB.cardName.leeroyjenkins, 3);
-            GangUpDatabase.Add(CardDB.cardName.leokk, 3);
-            GangUpDatabase.Add(CardDB.cardName.lightwarden, 0);
-            GangUpDatabase.Add(CardDB.cardName.lightwell, 1);
-            GangUpDatabase.Add(CardDB.cardName.loatheb, 5);
-            GangUpDatabase.Add(CardDB.cardName.lucifron, 5);
-            GangUpDatabase.Add(CardDB.cardName.lyrathesunshard, 1);
-            GangUpDatabase.Add(CardDB.cardName.maexxna, 3);
-            GangUpDatabase.Add(CardDB.cardName.malganis, 4);
-            GangUpDatabase.Add(CardDB.cardName.malkorok, 2);
-            GangUpDatabase.Add(CardDB.cardName.malorne, 1);
-            GangUpDatabase.Add(CardDB.cardName.malygos, 1);
-            GangUpDatabase.Add(CardDB.cardName.manatidetotem, 0);
-            GangUpDatabase.Add(CardDB.cardName.manawyrm, 0);
-            GangUpDatabase.Add(CardDB.cardName.masterswordsmith, 1);
-            GangUpDatabase.Add(CardDB.cardName.mechwarper, 1);
-            GangUpDatabase.Add(CardDB.cardName.medivhtheguardian, 2);
-            GangUpDatabase.Add(CardDB.cardName.mekgineerthermaplugg, 4);
-            GangUpDatabase.Add(CardDB.cardName.micromachine, 1);
-            GangUpDatabase.Add(CardDB.cardName.misha, 5);
-            GangUpDatabase.Add(CardDB.cardName.moatlurker, 4);
-            GangUpDatabase.Add(CardDB.cardName.moirabronzebeard, 5);
-            GangUpDatabase.Add(CardDB.cardName.murlocknight, 5);
-            GangUpDatabase.Add(CardDB.cardName.murloctidecaller, 1);
-            GangUpDatabase.Add(CardDB.cardName.murlocwarleader, 1);
-            GangUpDatabase.Add(CardDB.cardName.nefarian, 5);
-            GangUpDatabase.Add(CardDB.cardName.nexuschampionsaraad, 5);
-            GangUpDatabase.Add(CardDB.cardName.northshirecleric, 0);
-            GangUpDatabase.Add(CardDB.cardName.obsidiandestroyer, 5);
-            GangUpDatabase.Add(CardDB.cardName.oldmurkeye, 5);
-            GangUpDatabase.Add(CardDB.cardName.onyxia, 4);
-            GangUpDatabase.Add(CardDB.cardName.pilotedshredder, 3);
-            GangUpDatabase.Add(CardDB.cardName.pintsizedsummoner, 1);
-            GangUpDatabase.Add(CardDB.cardName.prophetvelen, 1);
-            GangUpDatabase.Add(CardDB.cardName.pyros, 1);
-            GangUpDatabase.Add(CardDB.cardName.questingadventurer, 1);
-            GangUpDatabase.Add(CardDB.cardName.radiantelemental, 1);
-            GangUpDatabase.Add(CardDB.cardName.ragnaroslightlord, 3);
-            GangUpDatabase.Add(CardDB.cardName.ragnarosthefirelord, 5);
-            GangUpDatabase.Add(CardDB.cardName.raidleader, 2);
-            GangUpDatabase.Add(CardDB.cardName.ratpack, 2);
-            GangUpDatabase.Add(CardDB.cardName.razorgore, 5);
-            GangUpDatabase.Add(CardDB.cardName.recruiter, 5);
-            GangUpDatabase.Add(CardDB.cardName.repairbot, 1);
-            GangUpDatabase.Add(CardDB.cardName.satedthreshadon, 1);
-            GangUpDatabase.Add(CardDB.cardName.savagecombatant, 5);
-            GangUpDatabase.Add(CardDB.cardName.savannahhighmane, 5);
-            GangUpDatabase.Add(CardDB.cardName.scalednightmare, 3);
-            GangUpDatabase.Add(CardDB.cardName.scavenginghyena, 0);
-            GangUpDatabase.Add(CardDB.cardName.shadeofnaxxramas, 3);
-            GangUpDatabase.Add(CardDB.cardName.shadopanrider, 5);
-            GangUpDatabase.Add(CardDB.cardName.shadowboxer, 0);
-            GangUpDatabase.Add(CardDB.cardName.shadowfiend, 1);
-            GangUpDatabase.Add(CardDB.cardName.shakuthecollector, 5);
-            GangUpDatabase.Add(CardDB.cardName.shipscannon, 0);
-            GangUpDatabase.Add(CardDB.cardName.siltfinspiritwalker, 0);
-            GangUpDatabase.Add(CardDB.cardName.sludgebelcher, 5);
-            GangUpDatabase.Add(CardDB.cardName.sneedsoldshredder, 5);
-            GangUpDatabase.Add(CardDB.cardName.sorcerersapprentice, 1);
-            GangUpDatabase.Add(CardDB.cardName.southseacaptain, 0);
-            GangUpDatabase.Add(CardDB.cardName.starvingbuzzard, 0);
-            GangUpDatabase.Add(CardDB.cardName.stonesplintertrogg, 0);
-            GangUpDatabase.Add(CardDB.cardName.stormwindchampion, 4);
-            GangUpDatabase.Add(CardDB.cardName.summoningportal, 5);
-            GangUpDatabase.Add(CardDB.cardName.summoningstone, 5);
-            GangUpDatabase.Add(CardDB.cardName.swashburglar, 2);
-            GangUpDatabase.Add(CardDB.cardName.sylvanaswindrunner, 5);
-            GangUpDatabase.Add(CardDB.cardName.theblackknight, 5);
-            GangUpDatabase.Add(CardDB.cardName.theboogeymonster, 3);
-            GangUpDatabase.Add(CardDB.cardName.timberwolf, 0);
-            GangUpDatabase.Add(CardDB.cardName.tirionfordring, 5);
-            GangUpDatabase.Add(CardDB.cardName.toshley, 4);
-            GangUpDatabase.Add(CardDB.cardName.tradeprincegallywix, 3);
-            GangUpDatabase.Add(CardDB.cardName.troggzortheearthinator, 1);
-            GangUpDatabase.Add(CardDB.cardName.undercityhuckster, 2);
-            GangUpDatabase.Add(CardDB.cardName.undertaker, 0);
-            GangUpDatabase.Add(CardDB.cardName.unearthedraptor, 5);
-            GangUpDatabase.Add(CardDB.cardName.usherofsouls, 1);
-            GangUpDatabase.Add(CardDB.cardName.v07tr0n, 5);
-            GangUpDatabase.Add(CardDB.cardName.vaelastrasz, 5);
-            GangUpDatabase.Add(CardDB.cardName.viciousfledgling, 2);
-            GangUpDatabase.Add(CardDB.cardName.violetillusionist, 5);
-            GangUpDatabase.Add(CardDB.cardName.violetteacher, 0);
-            GangUpDatabase.Add(CardDB.cardName.vitalitytotem, 1);
-            GangUpDatabase.Add(CardDB.cardName.voljin, 5);
-            GangUpDatabase.Add(CardDB.cardName.warsongcommander, 3);
-            GangUpDatabase.Add(CardDB.cardName.weespellstopper, 0);
-            GangUpDatabase.Add(CardDB.cardName.wickedwitchdoctor, 5);
-            GangUpDatabase.Add(CardDB.cardName.wobblingrunts, 3);
-            GangUpDatabase.Add(CardDB.cardName.xarilpoisonedmind, 3);
-            GangUpDatabase.Add(CardDB.cardName.youngpriestess, 1);
-            GangUpDatabase.Add(CardDB.cardName.ysera, 5);
-            GangUpDatabase.Add(CardDB.cardName.yshaarjrageunbound, 5);
-            GangUpDatabase.Add(CardDB.cardName.valkyrsoulclaimer, 0);
-            GangUpDatabase.Add(CardDB.cardName.cryptlord, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.addledgrizzly, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.alakirthewindlord, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.aldorpeacekeeper, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ancientoflore, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ancientofwar, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.antiquehealbot, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.anubarak, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.archmageantonidas, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.armorsmith, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ayablackpaw, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.azuredrake, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.baronrivendare, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.biggamehunter, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.biteweed, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.bladeofcthun, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.bloodimp, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.bomblobber, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.boneguardlieutenant, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.burglybully, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.burlyrockjawtrogg, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cabalshadowpriest, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cairnebloodhoof, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cenarius, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.chromaggus, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cobaltguardian, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.coldarradrake, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.coldlightoracle, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.confessorpaletress, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.corendirebrew, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cthun, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cultapothecary, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cultmaster, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cultsorcerer, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.dementedfrostcaller, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.demolisher, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.direwolfalpha, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.doppelgangster, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.dragonkinsorcerer, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.drboom, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.earthenringfarseer, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.edwinvancleef, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.emboldener3000, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.emperorthaurissan, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.etherealpeddler, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.felcannon, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.fireelemental, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.fireguarddestroyer, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.flametonguetotem, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.flamewaker, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.flesheatingghoul, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.floatingwatcher, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.foereaper4000, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.friendlybartender, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.frothingberserker, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.gadgetzanauctioneer, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.gahzrilla, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.garr, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.gazlowe, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.gelbinmekkatorque, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.genzotheshark, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.grimscaleoracle, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.gruul, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.harrisonjones, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.hemetnesingwary, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.hobgoblin, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.hogger, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.hoggerdoomofelwynn, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.igneouselemental, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.impmaster, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.infestedtauren, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ironbeakowl, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ironjuggernaut, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ironsensei, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.jadeswarmer, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.jeeves, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.junkbot, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.kelthuzad, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.kingkrush, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.knifejuggler, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.kodorider, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.leeroyjenkins, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.leokk, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.lightwarden, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.lightwell, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.loatheb, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.lucifron, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.lyrathesunshard, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.maexxna, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.malganis, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.malkorok, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.malorne, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.malygos, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.manatidetotem, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.manawyrm, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.masterswordsmith, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.mechwarper, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.medivhtheguardian, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.mekgineerthermaplugg, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.micromachine, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.misha, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.moatlurker, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.murlocknight, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.murloctidecaller, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.murlocwarleader, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.nefarian, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.nexuschampionsaraad, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.northshirecleric, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.obsidiandestroyer, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.oldmurkeye, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.onyxia, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.pilotedshredder, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.pintsizedsummoner, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.prophetvelen, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.pyros, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.questingadventurer, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.radiantelemental, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ragnaroslightlord, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ragnarosthefirelord, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.raidleader, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ratpack, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.razorgore, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.recruiter, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.repairbot, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.satedthreshadon, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.savagecombatant, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.savannahhighmane, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.scalednightmare, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.scavenginghyena, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shadeofnaxxramas, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shadopanrider, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shadowboxer, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shadowfiend, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shakuthecollector, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.shipscannon, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.siltfinspiritwalker, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.sludgebelcher, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.sneedsoldshredder, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.sorcerersapprentice, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.southseacaptain, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.starvingbuzzard, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.stonesplintertrogg, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.stormwindchampion, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.summoningportal, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.summoningstone, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.swashburglar, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.sylvanaswindrunner, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.theblackknight, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.theboogeymonster, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.timberwolf, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.tirionfordring, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.toshley, 4);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.tradeprincegallywix, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.troggzortheearthinator, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.undercityhuckster, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.undertaker, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.unearthedraptor, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.usherofsouls, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.v07tr0n, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.vaelastrasz, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.viciousfledgling, 2);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.violetillusionist, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.violetteacher, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.vitalitytotem, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.voljin, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.warsongcommander, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.weespellstopper, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.wickedwitchdoctor, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.wobblingrunts, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.xarilpoisonedmind, 3);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.youngpriestess, 1);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.ysera, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.yshaarjrageunbound, 5);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.valkyrsoulclaimer, 0);
+            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.cryptlord, 4);
         }
 
         private void setupbuffHandDatabase()
         {
-            buffHandDatabase.Add(CardDB.cardName.brassknuckles, 1);
-            buffHandDatabase.Add(CardDB.cardName.donhancho, 5);
-            buffHandDatabase.Add(CardDB.cardName.grimestreetenforcer, 1);
-            buffHandDatabase.Add(CardDB.cardName.grimestreetoutfitter, 1);
-            buffHandDatabase.Add(CardDB.cardName.grimestreetpawnbroker, 1);
-            buffHandDatabase.Add(CardDB.cardName.grimestreetsmuggler, 1);
-            buffHandDatabase.Add(CardDB.cardName.grimscalechum, 1);
-            buffHandDatabase.Add(CardDB.cardName.grimygadgeteer, 2);
-            buffHandDatabase.Add(CardDB.cardName.hiddencache, 2);
-            buffHandDatabase.Add(CardDB.cardName.hobartgrapplehammer, 1);
-            buffHandDatabase.Add(CardDB.cardName.shakyzipgunner, 2);
-            buffHandDatabase.Add(CardDB.cardName.smugglerscrate, 2);
-            buffHandDatabase.Add(CardDB.cardName.smugglersrun, 1);
-            buffHandDatabase.Add(CardDB.cardName.stolengoods, 3);
-            buffHandDatabase.Add(CardDB.cardName.themistcaller, 1);
-            buffHandDatabase.Add(CardDB.cardName.troggbeastrager, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.brassknuckles, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.donhancho, 5);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetenforcer, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetoutfitter, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetpawnbroker, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimestreetsmuggler, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimscalechum, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.grimygadgeteer, 2);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.hiddencache, 2);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.hobartgrapplehammer, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.shakyzipgunner, 2);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.smugglerscrate, 2);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.smugglersrun, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.stolengoods, 3);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.themistcaller, 1);
+            buffHandDatabase.Add(Chireiden.Silverfish.SimCard.troggbeastrager, 1);
         }
 
         private void setupequipWeaponPlayDatabase()
         {
-            equipWeaponPlayDatabase.Add(CardDB.cardName.arathiweaponsmith, 2);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.blingtron3000, 3);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.daggermastery, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.echolocate, 2);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.instructorrazuvious, 5);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.malkorok, 3);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.medivhtheguardian, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.musterforbattle, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.nzothsfirstmate, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.poisoneddaggers, 2);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.upgrade, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.visionsoftheassassin, 1);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.utheroftheebonblade, 5);
-            equipWeaponPlayDatabase.Add(CardDB.cardName.scourgelordgarrosh, 4);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.arathiweaponsmith, 2);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.blingtron3000, 3);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.daggermastery, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.echolocate, 2);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.instructorrazuvious, 5);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.malkorok, 3);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.medivhtheguardian, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.musterforbattle, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.nzothsfirstmate, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.poisoneddaggers, 2);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.upgrade, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.visionsoftheassassin, 1);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.utheroftheebonblade, 5);
+            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.scourgelordgarrosh, 4);
         }
 
 

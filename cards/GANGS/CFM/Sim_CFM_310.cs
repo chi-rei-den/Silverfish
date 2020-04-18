@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Summon four 1/1 Murlocs.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CFM_310t); //1/1 Murloc Razorgill
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_310t); //1/1 Murloc Razorgill
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

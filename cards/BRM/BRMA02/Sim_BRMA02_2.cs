@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 1/1 Spectator with Taunt.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRMA02_2t);//Dark Iron Spectator
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA02_2t);//Dark Iron Spectator
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

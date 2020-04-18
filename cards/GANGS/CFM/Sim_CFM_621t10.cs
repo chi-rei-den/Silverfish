@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Summon a 2/2 Demon.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CFM_621_m4);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_621_m4);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

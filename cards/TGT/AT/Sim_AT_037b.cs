@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Summon two 1/1 Saplings.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_037t); //Sapling
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_037t); //Sapling
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

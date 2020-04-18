@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Return this to your hand and summon a 4/4 Nerubian.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.FP1_007t);//Nerubian
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_007t);//Nerubian
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

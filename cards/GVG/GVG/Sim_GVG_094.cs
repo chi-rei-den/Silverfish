@@ -41,7 +41,7 @@ namespace HREngine.Bots
 
             for (int i = 0; i < cardstodraw; i++)
             {
-                p.drawACard(CardDB.cardIDEnum.None, true);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, true);
             }
             cardstodraw = 0;
 
@@ -53,7 +53,7 @@ namespace HREngine.Bots
 
             for (int i = 0; i < cardstodraw; i++)
             {
-                p.drawACard(CardDB.cardIDEnum.None, false);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, false);
             }
 
         }

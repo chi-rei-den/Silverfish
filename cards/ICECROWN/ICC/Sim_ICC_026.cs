@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon two 1/1 Skeletons.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_026t); //1/1 Skeleton
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_026t); //1/1 Skeleton
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

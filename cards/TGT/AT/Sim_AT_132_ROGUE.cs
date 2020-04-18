@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Hero Power. Equip a 2/2 Weapon.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_132_ROGUEt);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_132_ROGUEt);
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

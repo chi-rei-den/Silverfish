@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 bool another = false;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (m.name == CardDB.cardName.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
                 }
                 if (!another) p.ownHeroPowerAllowedQuantity++;
             }
@@ -45,7 +45,7 @@ namespace HREngine.Bots
                 bool another = false;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (m.name == CardDB.cardName.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
                 }
                 if (!another) p.enemyHeroPowerAllowedQuantity++;
             }
@@ -58,7 +58,7 @@ namespace HREngine.Bots
                 bool another = false;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (m.name == CardDB.cardName.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
                 }
                 if (!another) p.ownHeroPowerAllowedQuantity--;
                 if (p.anzUsedOwnHeroPower >= p.ownHeroPowerAllowedQuantity) p.ownAbilityReady = false;
@@ -68,7 +68,7 @@ namespace HREngine.Bots
                 bool another = false;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (m.name == CardDB.cardName.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.garrisoncommander && own.entitiyID != m.entitiyID) another = true;
                 }
                 if (!another) p.enemyHeroPowerAllowedQuantity--;
                 if (p.anzUsedEnemyHeroPower >= p.enemyHeroPowerAllowedQuantity) p.enemyAbilityReady = false;

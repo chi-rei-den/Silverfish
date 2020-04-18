@@ -31,12 +31,12 @@ namespace HREngine.Bots
 		
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.drawACard(CardDB.cardName.briarthorntoxin, own.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.briarthorntoxin, own.own, true);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(CardDB.cardName.fadeleaftoxin, m.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.fadeleaftoxin, m.own, true);
         }
     }
 }

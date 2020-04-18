@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//At the end of your turn, summon two 3/2 Imps.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_829t3); //Nether Imp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_829t3); //Nether Imp
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

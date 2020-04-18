@@ -28,7 +28,7 @@ namespace HREngine.Bots
     class Sim_PRO_001a : SimTemplate//I Am Murloc
     {
         //Summon three, four, or five 1/1 Murlocs.
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.PRO_001at);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.PRO_001at);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

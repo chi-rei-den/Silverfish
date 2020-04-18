@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_834t1);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_834t1);
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -29,12 +29,12 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Your Hero Power: becomes 'Deal 8 damage to a random enemy.'
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_934t1);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_934t1);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(weapon, ownplay);
-            p.setNewHeroPower(CardDB.cardIDEnum.BRM_027p, ownplay); // DIE, INSECT!
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.BRM_027p, ownplay); // DIE, INSECT!
         }
     }
 }

@@ -36,8 +36,8 @@ namespace HREngine.Bots
             {
                 if (mnn.Hp >= 6)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, m.own);
-                    p.drawACard(CardDB.cardIDEnum.None, m.own);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
                     break;
                 }
             }

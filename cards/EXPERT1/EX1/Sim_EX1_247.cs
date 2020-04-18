@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_247 : SimTemplate //stormforgedaxe
 	{
-        CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_247);
+        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_247);
         //
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

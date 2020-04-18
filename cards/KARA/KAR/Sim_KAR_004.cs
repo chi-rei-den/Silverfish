@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Secret: After your opponent casts a spell, summon a 4/2 Panther with Stealth.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_004a);//Panther - Cat in a Hat
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_004a);//Panther - Cat in a Hat
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

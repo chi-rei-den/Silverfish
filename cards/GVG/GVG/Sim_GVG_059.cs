@@ -28,7 +28,7 @@ namespace HREngine.Bots
     internal class Sim_GVG_059 : SimTemplate //Coghammer
     {
         //   Battlecry: Give a random friendly minion Divine Shield and Taunt;.
-        private CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_059);
+        private Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_059);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

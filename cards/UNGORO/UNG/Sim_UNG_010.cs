@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon three 1/1 Murlocs.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_201t); //Primalfin
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_201t); //Primalfin
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

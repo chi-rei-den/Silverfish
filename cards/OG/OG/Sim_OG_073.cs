@@ -31,9 +31,9 @@ namespace HREngine.Bots
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay, true);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
         }
     }
 }

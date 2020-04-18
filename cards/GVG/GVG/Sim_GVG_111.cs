@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //   At the start of your turn, if you have at least 3 Mechs, destroy them all and form V-07-TR-0N.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_111t);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_111t);
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
             int anz =0;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL && m.Hp >=1 )
+                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL && m.Hp >=1 )
                 {
                     anz++;
                 }
@@ -48,7 +48,7 @@ namespace HREngine.Bots
                 anz = 0;
                 foreach (Minion m in temp)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL)
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
                     {
                         p.minionGetDestroyed(m);
                         anz++;

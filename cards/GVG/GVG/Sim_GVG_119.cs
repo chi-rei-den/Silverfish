@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
 
         //   Battlecry: Equip a random weapon for each player.
-        CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_080);
+        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_080);
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

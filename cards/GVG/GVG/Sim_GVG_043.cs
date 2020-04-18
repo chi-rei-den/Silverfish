@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //   Battlecry: Give a random friendly minion +1 Attack.
 
-        CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_043);
+        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_043);
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(w, ownplay);

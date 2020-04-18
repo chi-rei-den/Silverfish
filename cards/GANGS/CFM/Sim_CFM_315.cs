@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a 1/1 Cat.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CFM_315t); //1/1 Cat
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CFM_315t); //1/1 Cat
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

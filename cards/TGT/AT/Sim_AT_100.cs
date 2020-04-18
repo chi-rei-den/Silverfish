@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a 1/1 Silver Hand Recruit.
 		
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_101t);//silverhandrecruit
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t);//silverhandrecruit
 		
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

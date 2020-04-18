@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (triggerEffectMinion.own == wasOwnCard && hc.card.type == CardDB.cardtype.SPELL)
+            if (triggerEffectMinion.own == wasOwnCard && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
             {
 				int heal = (wasOwnCard) ? p.getMinionHeal(3) : p.getEnemyMinionHeal(3);
 				p.minionGetDamageOrHeal(wasOwnCard ? p.ownHero : p.enemyHero, -heal);

@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 p.anzOwnTundrarhino++;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) p.minionGetCharge(m);
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) p.minionGetCharge(m);
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace HREngine.Bots
                 p.anzEnemyTundrarhino++;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) p.minionGetCharge(m);
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) p.minionGetCharge(m);
                 }
             }
 
@@ -58,7 +58,7 @@ namespace HREngine.Bots
                 p.anzOwnTundrarhino--;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) p.minionLostCharge(m);
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) p.minionLostCharge(m);
                 }
             }
             else
@@ -66,7 +66,7 @@ namespace HREngine.Bots
                 p.anzEnemyTundrarhino--;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PET) p.minionLostCharge(m);
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) p.minionLostCharge(m);
                 }
             }
         }

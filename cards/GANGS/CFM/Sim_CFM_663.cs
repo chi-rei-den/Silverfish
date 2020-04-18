@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                p.drawACard(CardDB.cardName.malchezaarsimp, turnEndOfOwner, true);
+                p.drawACard(Chireiden.Silverfish.SimCard.malchezaarsimp, turnEndOfOwner, true);
             }
         }
     }

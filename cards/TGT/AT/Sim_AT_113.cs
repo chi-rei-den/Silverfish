@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
 			if (m.own == own)
 			{				
-				p.drawACard(CardDB.cardName.squire, own, true);
+				p.drawACard(Chireiden.Silverfish.SimCard.squire, own, true);
 			}
         }
 	}

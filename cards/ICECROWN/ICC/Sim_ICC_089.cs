@@ -33,12 +33,12 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                CardDB.Card c;
+                Chireiden.Silverfish.SimCard c;
                 int count = 0;
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> cid in p.prozis.turnDeck)
+                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = CardDB.Instance.getCardDataFromID(cid.Key);
-                    if ((TAG_RACE)c.race == TAG_RACE.MURLOC)
+                    if ((TAG_RACE)c.Race == TAG_RACE.MURLOC)
                     {
                         for (int i = 0; i < cid.Value; i++)
                         {
@@ -52,8 +52,8 @@ namespace HREngine.Bots
             }
             else
             {
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
             }
         }
     }

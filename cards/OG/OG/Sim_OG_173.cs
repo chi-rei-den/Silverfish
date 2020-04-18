@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//If you control two of these at the end of your turn, merge them into 'The Ancient One'
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_173a); //The Ancient One
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_173a); //The Ancient One
 		
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
@@ -39,14 +39,14 @@ namespace HREngine.Bots
 				int anz =0;
 				foreach (Minion m in temp)
 				{
-                    if (m.name == CardDB.cardName.bloodoftheancientone) anz++;
+                    if (m.name == Chireiden.Silverfish.SimCard.bloodoftheancientone) anz++;
 				}
 				if (anz > 1)
 				{
 					anz = 0;
 					foreach (Minion m in temp)
 					{
-                        if (m.name == CardDB.cardName.bloodoftheancientone)
+                        if (m.name == Chireiden.Silverfish.SimCard.bloodoftheancientone)
 						{
 							p.minionGetDestroyed(m);
 							anz++;

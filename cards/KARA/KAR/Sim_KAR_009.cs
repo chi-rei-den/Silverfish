@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(CardDB.cardName.frostbolt, own.own, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.frostbolt, own.own, true);
 		}
 	}
 }

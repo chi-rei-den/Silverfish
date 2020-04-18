@@ -29,9 +29,9 @@ namespace HREngine.Bots
 	{
 		//Summon a 1/1 Candle, 2/2 Broom, and 3/3 Teapot.
 		
-        CardDB.Card c1 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_025a);//Candle
-        CardDB.Card c2 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_025b);//Broom
-        CardDB.Card c3 = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_025c);//Teapot
+        Chireiden.Silverfish.SimCard c1 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_025a);//Candle
+        Chireiden.Silverfish.SimCard c2 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_025b);//Broom
+        Chireiden.Silverfish.SimCard c3 = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_025c);//Teapot
         
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

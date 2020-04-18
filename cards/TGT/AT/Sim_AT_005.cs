@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Transform a minion into a 4/2 Boar with Charge.
 
-        CardDB.Card boar = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_005t);//Boar 4/2
+        Chireiden.Silverfish.SimCard boar = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_005t);//Boar 4/2
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

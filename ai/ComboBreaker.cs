@@ -15,7 +15,7 @@
             weaponuse
         }
 
-        private Dictionary<CardDB.cardIDEnum, int> playByValue = new Dictionary<CardDB.cardIDEnum, int>();
+        private Dictionary<Chireiden.Silverfish.SimCard, int> playByValue = new Dictionary<Chireiden.Silverfish.SimCard, int>();
         private List<combo> combos = new List<combo>();
         public int attackFaceHP = -1;
 
@@ -45,11 +45,11 @@
             private ComboBreaker cb;
             public combotype type = combotype.combo;
             public int neededMana = 0;
-            public Dictionary<CardDB.cardIDEnum, int> combocards = new Dictionary<CardDB.cardIDEnum, int>();
-            public Dictionary<CardDB.cardIDEnum, int> cardspen = new Dictionary<CardDB.cardIDEnum, int>();
-            public Dictionary<CardDB.cardIDEnum, int> combocardsTurn0Mobs = new Dictionary<CardDB.cardIDEnum, int>();
-            public Dictionary<CardDB.cardIDEnum, int> combocardsTurn0All = new Dictionary<CardDB.cardIDEnum, int>();
-            public Dictionary<CardDB.cardIDEnum, int> combocardsTurn1 = new Dictionary<CardDB.cardIDEnum, int>();
+            public Dictionary<Chireiden.Silverfish.SimCard, int> combocards = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            public Dictionary<Chireiden.Silverfish.SimCard, int> cardspen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn0Mobs = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn0All = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn1 = new Dictionary<Chireiden.Silverfish.SimCard, int>();
             public int penality = 0;
             public int combolength = 0;
             public int combot0len = 0;
@@ -59,14 +59,14 @@
             public int bonusForPlaying = 0;
             public int bonusForPlayingT0 = 0;
             public int bonusForPlayingT1 = 0;
-            public CardDB.cardName requiredWeapon = CardDB.cardName.unknown;
+            public Chireiden.Silverfish.SimCardName requiredWeapon = Chireiden.Silverfish.SimCardName.unknown;
             public HeroEnum oHero = HeroEnum.None;
 
             public combo(string s)
             {
                 int i = 0;
                 this.neededMana = 0;
-                requiredWeapon = CardDB.cardName.unknown;
+                requiredWeapon = Chireiden.Silverfish.SimCardName.unknown;
                 this.type = combotype.combo;
                 this.twoTurnCombo = false;
                 bool fixmana = false;
@@ -170,8 +170,8 @@
                             }
                             else
                             {
-                                CardDB.Card lolcrd = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd));
-                                if (lolcrd.type == CardDB.cardtype.MOB)
+                                Chireiden.Silverfish.SimCard lolcrd = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd));
+                                if (lolcrd.type == Chireiden.Silverfish.SimCardtype.MOB)
                                 {
                                     if (this.combocardsTurn0Mobs.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
                                     {
@@ -183,7 +183,7 @@
                                     }
                                     this.combot0len++;
                                 }
-                                if (lolcrd.type == CardDB.cardtype.WEAPON)
+                                if (lolcrd.type == Chireiden.Silverfish.SimCardtype.WEAPON)
                                 {
                                     this.requiredWeapon = lolcrd.name;
                                 }
@@ -224,7 +224,7 @@
             public int isInCombo(List<Handmanager.Handcard> hand, int omm)
             {
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocards);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -239,11 +239,11 @@
                 return 0;
             }
 
-            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, CardDB.cardName weapon)
+            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, Chireiden.Silverfish.SimCardName weapon)
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocardsTurn1);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -258,7 +258,7 @@
                 {
                     //search for required minions on field
                     int turn0requires = 0;
-                    foreach (CardDB.cardIDEnum s in combocardsTurn0Mobs.Keys)
+                    foreach (Chireiden.Silverfish.SimCard s in combocardsTurn0Mobs.Keys)
                     {
                         foreach (Minion m in ownmins)
                         {
@@ -270,7 +270,7 @@
                         }
                     }
 
-                    if (requiredWeapon != CardDB.cardName.unknown && requiredWeapon != weapon) return 1;
+                    if (requiredWeapon != Chireiden.Silverfish.SimCardName.unknown && requiredWeapon != weapon) return 1;
 
                     if (turn0requires >= combot0len) return 2;
 
@@ -284,7 +284,7 @@
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocardsTurn0All);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -304,7 +304,7 @@
             }
 
 
-            public bool isMultiTurn1Card(CardDB.Card card)
+            public bool isMultiTurn1Card(Chireiden.Silverfish.SimCard card)
             {
                 if (this.combocardsTurn1.ContainsKey(card.cardIDenum))
                 {
@@ -313,7 +313,7 @@
                 return false;
             }
 
-            public bool isCardInCombo(CardDB.Card card)
+            public bool isCardInCombo(Chireiden.Silverfish.SimCard card)
             {
                 if (this.combocards.ContainsKey(card.cardIDenum))
                 {
@@ -325,7 +325,7 @@
             public int hasPlayedCombo(List<Handmanager.Handcard> hand)
             {
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocards);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -343,7 +343,7 @@
             {
                 if (this.combocardsTurn0All.Count == 0) return 0;
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocardsTurn0All);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -361,7 +361,7 @@
             {
                 if (this.combocardsTurn1.Count == 0) return 0;
                 int cardsincombo = 0;
-                Dictionary<CardDB.cardIDEnum, int> combocardscopy = new Dictionary<CardDB.cardIDEnum, int>(this.combocardsTurn1);
+                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.cardIDenum) && combocardscopy[hc.card.cardIDenum] >= 1)
@@ -443,7 +443,7 @@
                         try
                         {
                             string cardvalue = line.Replace("cardvalue:", "");
-                            CardDB.cardIDEnum ce = cdb.cardIdstringToEnum(cardvalue.Split(',')[0]);
+                            Chireiden.Silverfish.SimCard ce = cdb.cardIdstringToEnum(cardvalue.Split(',')[0]);
                             int val = Convert.ToInt32(cardvalue.Split(',')[1]);
                             if (this.playByValue.ContainsKey(ce)) continue;
                             this.playByValue.Add(ce, val);
@@ -474,7 +474,7 @@
             help.ErrorLog("[连招功能] " + combos.Count + " “连招”功能激活成功, " + playByValue.Count + " 个权重值已加载");
         }
 
-        public int getPenalityForDestroyingCombo(CardDB.Card crd, Playfield p)
+        public int getPenalityForDestroyingCombo(Chireiden.Silverfish.SimCard crd, Playfield p)
         {
             if (this.combos.Count == 0) return 0;
             int pen = int.MaxValue;
@@ -508,7 +508,7 @@
             if (this.combos.Count == 0) return 0;
 
             List<Action> alist = p.playactions;
-            CardDB.cardName weapon = p.ownWeapon.name;
+            Chireiden.Silverfish.SimCardName weapon = p.ownWeapon.name;
             HeroEnum heroname = p.ownHeroName;
 
             //returns a penalty only if the combo could be played, but is not played completely
@@ -519,7 +519,7 @@
             foreach (Action a in alist)
             {
                 if (a.actionType != actionEnum.playcard) continue;
-                CardDB.Card crd = a.card.card;
+                Chireiden.Silverfish.SimCard crd = a.card.card;
                 foreach (combo c in this.combos)
                 {
                     if ((c.oHero == HeroEnum.None || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
@@ -561,7 +561,7 @@
 
         }
 
-        public int getPlayValue(CardDB.cardIDEnum ce)
+        public int getPlayValue(Chireiden.Silverfish.SimCard ce)
         {
             if (this.playByValue.Count == 0) return 0;
             if (this.playByValue.ContainsKey(ce))

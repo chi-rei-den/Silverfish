@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Summon three 2/2 Treants.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_158t);//Treant
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_158t);//Treant
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

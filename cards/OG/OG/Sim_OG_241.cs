@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 1/1 Shadowbeast.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_241a);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_241a);
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

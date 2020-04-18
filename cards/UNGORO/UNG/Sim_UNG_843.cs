@@ -29,11 +29,11 @@ namespace HREngine.Bots
 	{
 		//After you cast a spell on this minion, summon a 1/1 Plant and cast another copy on it.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_999t2t1); //Plant
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_999t2t1); //Plant
         
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (hc.card.type == CardDB.cardtype.SPELL && hc.target != null && hc.target.entitiyID == triggerEffectMinion.entitiyID)
+            if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL && hc.target != null && hc.target.entitiyID == triggerEffectMinion.entitiyID)
             {
                 List<Minion> tmp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
 

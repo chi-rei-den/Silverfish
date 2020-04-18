@@ -28,7 +28,7 @@ namespace HREngine.Bots
 	class Sim_FP1_022 : SimTemplate //* voidcaller
 	{
         //Deathrattle: Put a random Demon from your hand into the battlefield.
-        CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_301);//felguard
+        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_301);//felguard
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 List<Handmanager.Handcard> temp = new List<Handmanager.Handcard>();
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if ((TAG_RACE)hc.card.race == TAG_RACE.DEMON)
+                    if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON)
                     {
                         temp.Add(hc);
                     }

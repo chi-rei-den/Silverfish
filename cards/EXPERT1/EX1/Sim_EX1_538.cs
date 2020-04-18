@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         // For each enemy minion, summon a 1/1 Hound with Charge.
         
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_538t); //hound
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_538t); //hound
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

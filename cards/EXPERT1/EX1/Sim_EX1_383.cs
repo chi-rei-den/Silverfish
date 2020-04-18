@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_383 : SimTemplate //tirionfordring
 	{
-        CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_383t);
+        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_383t);
 //    gottesschild/. spott/. todesröcheln:/ legt einen aschenbringer (5/3) an.
 
         public override void onDeathrattle(Playfield p, Minion m)

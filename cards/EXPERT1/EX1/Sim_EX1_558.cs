@@ -35,7 +35,7 @@ namespace HREngine.Bots
                 //this.owncarddraw += enemyWeaponDurability;
                 for (int i = 0; i < p.enemyWeapon.Durability; i++)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, true);
                 }
                 p.lowerWeaponDurability(1000, false);
             }
@@ -43,7 +43,7 @@ namespace HREngine.Bots
             {
                 for (int i = 0; i < p.enemyWeapon.Durability; i++)
                 {
-                    p.drawACard(CardDB.cardIDEnum.None, false);
+                    p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                 }
                 p.lowerWeaponDurability(1000, true);
             }

@@ -34,7 +34,7 @@ namespace HREngine.Bots
             if (p.ownMaxMana >= 6)
             {
                 int posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
-                CardDB.Card kid = CardDB.Instance.getCardDataFromID((p.OwnLastDiedMinion == CardDB.cardIDEnum.None) ? CardDB.cardIDEnum.EX1_345t : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
+                Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((p.OwnLastDiedMinion == Chireiden.Silverfish.SimCard.None) ? Chireiden.Silverfish.SimCard.EX1_345t : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
                 p.callKid(kid, posi, ownplay, false);
             }
 		}

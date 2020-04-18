@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Taunt. Battlecry: Your opponent summons a random minion from their hand.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_066); //acidicswampooze
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_066); //acidicswampooze
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

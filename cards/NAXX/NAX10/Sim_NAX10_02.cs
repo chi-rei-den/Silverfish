@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Put this weapon into your hand.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX10_02);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX10_02);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			p.drawACard(CardDB.cardIDEnum.NAX10_02, m.own, true);
+			p.drawACard(Chireiden.Silverfish.SimCard.NAX10_02, m.own, true);
         }
     }
 }

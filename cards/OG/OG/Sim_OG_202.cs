@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Choose One - Summon a 2/2 Slime; or Gain an empty Mana Crystal.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX11_03);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX11_03);
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

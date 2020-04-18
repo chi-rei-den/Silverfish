@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             for (int i = 0; i < 4; i++)
             {
-                p.drawACard(CardDB.cardName.murlocraider, m.own, true);
+                p.drawACard(Chireiden.Silverfish.SimCard.murlocraider, m.own, true);
             }
             if (m.own) p.ueberladung += 3;
         }

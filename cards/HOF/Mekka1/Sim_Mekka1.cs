@@ -35,9 +35,9 @@ namespace HREngine.Bots
             if (turnStartOfOwner == triggerEffectMinion.own)
             {
                 p.minionGetDestroyed(triggerEffectMinion);
-                p.drawACard(CardDB.cardIDEnum.None, turnStartOfOwner);
-                p.drawACard(CardDB.cardIDEnum.None, turnStartOfOwner);
-                p.drawACard(CardDB.cardIDEnum.None, turnStartOfOwner);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, turnStartOfOwner);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, turnStartOfOwner);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, turnStartOfOwner);
             }
         }
 

@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Give a random friendly Mech +2/+2.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_036);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_036);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -46,7 +46,7 @@ namespace HREngine.Bots
 
                 foreach (Minion mnn in temp)
                 {
-                    if ((TAG_RACE)mnn.handcard.card.race == TAG_RACE.MECHANICAL)
+                    if ((TAG_RACE)mnn.handcard.card.Race == TAG_RACE.MECHANICAL)
                     {
                         int s = mnn.maxHp + mnn.Angr;
                         if (s < sum)

@@ -5,7 +5,7 @@
 
     public class Deck
     {
-        public Dictionary<CardDB.cardIDEnum, int> deckDiff = new Dictionary<CardDB.cardIDEnum, int>();
+        public Dictionary<Chireiden.Silverfish.SimCard, int> deckDiff = new Dictionary<Chireiden.Silverfish.SimCard, int>();
         public int deckSize = 0;
         public bool deckChanged = false;
         //public int anzcards = 0;
@@ -18,14 +18,14 @@
 
         }
 
-        public Deck(Playfield p, CardDB.cardIDEnum cardId, int number, bool own)
+        public Deck(Playfield p, Chireiden.Silverfish.SimCard cardId, int number, bool own)
         {
             Deck newDeck = new Deck();
             newDeck.deckChanged = true;
             if (this.deckChanged)
             {
                 newDeck.deckSize += this.deckSize;
-                foreach (KeyValuePair<CardDB.cardIDEnum, int> diff in this.deckDiff)
+                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> diff in this.deckDiff)
                 {
                     newDeck.deckDiff.Add(diff.Key, diff.Value);
                 }

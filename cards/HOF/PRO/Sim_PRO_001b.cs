@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
             p.minionGetDamageOrHeal(target, dmg);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
         }
     }
 }

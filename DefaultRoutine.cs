@@ -761,7 +761,7 @@ def Execute():
                         {
                             foreach (Handmanager.Handcard hc in lastChancePl.owncards)
                             {
-                                if (hc.card.name == CardDB.cardName.unknown) lastChance = true;
+                                if (hc.card.name == Chireiden.Silverfish.SimCardName.unknown) lastChance = true;
                             }
                             if (!lastChance) doConcede = true;
                         }
@@ -774,12 +774,12 @@ def Execute():
                                 if (!m.playedThisTurn) continue;
                                 switch (m.handcard.card.name)
                                 {
-                                    case CardDB.cardName.cthun: lastChance = true; break;
-                                    case CardDB.cardName.nzoththecorruptor: lastChance = true; break;
-                                    case CardDB.cardName.yoggsaronhopesend: lastChance = true; break;
-                                    case CardDB.cardName.sirfinleymrrgglton: lastChance = true; break;
-                                    case CardDB.cardName.ragnarosthefirelord: if (lastChancePl.enemyHero.Hp < 9) lastChance = true; break;
-                                    case CardDB.cardName.barongeddon: if (lastChancePl.enemyHero.Hp < 3) lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.cthun: lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.nzoththecorruptor: lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.yoggsaronhopesend: lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.sirfinleymrrgglton: lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.ragnarosthefirelord: if (lastChancePl.enemyHero.Hp < 9) lastChance = true; break;
+                                    case Chireiden.Silverfish.SimCardName.barongeddon: if (lastChancePl.enemyHero.Hp < 3) lastChance = true; break;
                                 }
                             }
                         }
@@ -844,15 +844,15 @@ def Execute():
                             
                             await cardtoplay.Pickup();
 
-                            if (moveTodo.card.card.type == CardDB.cardtype.MOB)
+                            if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                             {
                                 await cardtoplay.UseAt(moveTodo.place);
                             }
-                            else if (moveTodo.card.card.type == CardDB.cardtype.WEAPON) // This fixes perdition's blade
+                            else if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.WEAPON) // This fixes perdition's blade
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
-                            else if (moveTodo.card.card.type == CardDB.cardtype.SPELL)
+                            else if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL)
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
@@ -884,7 +884,7 @@ def Execute():
 
                     await cardtoplay.Pickup();
 
-                    if (moveTodo.card.card.type == CardDB.cardtype.MOB)
+                    if (moveTodo.card.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         await cardtoplay.UseAt(moveTodo.place);
                     }
@@ -1024,7 +1024,7 @@ def Execute():
                 var lscc = ccm.m_lastShownChoiceState;
                 GAME_TAG choiceMode = GAME_TAG.CHOOSE_ONE;
                 int sourceEntityId = -1;
-                CardDB.cardIDEnum sourceEntityCId = CardDB.cardIDEnum.None;
+                Chireiden.Silverfish.SimCard sourceEntityCId = Chireiden.Silverfish.SimCard.None;
                 if (lscc != null)
                 {
                     sourceEntityId = lscc.m_sourceEntityId;
@@ -1067,7 +1067,7 @@ def Execute():
 
                 int sirFinleyChoice = -1;
                 if (ai.bestmove == null) Log.ErrorFormat("[提示] 没有获得卡牌数据");
-                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.name == CardDB.cardName.sirfinleymrrgglton)
+                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.name == Chireiden.Silverfish.SimCardName.sirfinleymrrgglton)
                 {
                     sirFinleyChoice = ai.botBase.getSirFinleyPriority(discoverCards);
                 }
@@ -1094,8 +1094,8 @@ def Execute():
                                 case GAME_TAG.DISCOVER:
                                     switch (ai.bestmove.card.card.name)
                                     {
-                                        case CardDB.cardName.eternalservitude:
-                                        case CardDB.cardName.freefromamber:
+                                        case Chireiden.Silverfish.SimCardName.eternalservitude:
+                                        case Chireiden.Silverfish.SimCardName.freefromamber:
                                             Minion m = tmpPlf.createNewMinion(discoverCards[i], tmpPlf.ownMinions.Count, true);
                                             tmpPlf.ownMinions[tmpPlf.ownMinions.Count - 1] = m;
                                             break;
@@ -1104,7 +1104,7 @@ def Execute():
                                             break;
                                     }
                                     bestval = ai.mainTurnSimulator.doallmoves(tmpPlf);
-                                    if (discoverCards[i].card.name == CardDB.cardName.bloodimp) bestval -= 20;
+                                    if (discoverCards[i].card.name == Chireiden.Silverfish.SimCardName.bloodimp) bestval -= 20;
                                     break;
                                 case GAME_TAG.ADAPT:
                                     bool found = false;
@@ -1115,12 +1115,12 @@ def Execute():
                                             bool forbidden = false;
                                             switch (discoverCards[i].card.cardIDenum)
                                             {
-                                                case CardDB.cardIDEnum.UNG_999t5: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
-                                                case CardDB.cardIDEnum.UNG_999t6: if (m.taunt) forbidden = true; break;
-                                                case CardDB.cardIDEnum.UNG_999t7: if (m.windfury) forbidden = true; break;
-                                                case CardDB.cardIDEnum.UNG_999t8: if (m.divineshild) forbidden = true; break;
-                                                case CardDB.cardIDEnum.UNG_999t10: if (m.stealth) forbidden = true; break;
-                                                case CardDB.cardIDEnum.UNG_999t13: if (m.poisonous) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t5: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t6: if (m.taunt) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t7: if (m.windfury) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t8: if (m.divineshild) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t10: if (m.stealth) forbidden = true; break;
+                                                case Chireiden.Silverfish.SimCard.UNG_999t13: if (m.poisonous) forbidden = true; break;
                                             }
                                             if (forbidden) bestval = -2000000;
                                             else
@@ -1144,7 +1144,7 @@ def Execute():
                     }
                     ai.mainTurnSimulator.setSecondTurnSimu(true, dirtyTwoTurnSim);
                 }
-                if (sourceEntityCId == CardDB.cardIDEnum.UNG_035) dirtychoice = new Random().Next(0, 2);
+                if (sourceEntityCId == Chireiden.Silverfish.SimCard.UNG_035) dirtychoice = new Random().Next(0, 2);
                 if (dirtychoice == 0) dirtychoice = 1;
                 else if (dirtychoice == 1) dirtychoice = 0;
                 int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;

@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         // Deathrattle: Summon a random 4-Cost minion.  
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_182);//chillwind
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_182);//chillwind
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

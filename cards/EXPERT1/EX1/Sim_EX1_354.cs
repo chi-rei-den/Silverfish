@@ -36,7 +36,7 @@ namespace HREngine.Bots
             for (int i = 0; i < 3; i++)
             {
                 //this.owncarddraw++;
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
             }
             
         }

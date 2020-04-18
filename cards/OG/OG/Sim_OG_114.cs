@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Spend all your Mana. Summon that many 1/1 Tentacles.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_114a); //Icky Tentacle
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_114a); //Icky Tentacle
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

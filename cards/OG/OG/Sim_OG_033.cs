@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Return this to your hand.
 
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_033);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_033);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

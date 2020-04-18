@@ -115,12 +115,12 @@ namespace HREngine.Bots
                 //if (m.poisonous) retval += 1;
                 if (m.lifesteal) retval += m.Angr/2;
                 if (m.divineshild && m.taunt) retval += 4;
-                //if (m.taunt && m.handcard.card.name == CardDB.cardName.frog) owntaunt++;
+                //if (m.taunt && m.handcard.card.name == Chireiden.Silverfish.SimCard.frog) owntaunt++;
                 //if (m.handcard.card.isToken && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
                 //if (!penman.specialMinions.ContainsKey(m.name) && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
-                if (p.ownMinions.Count > 2 && (m.handcard.card.name == CardDB.cardName.direwolfalpha || m.handcard.card.name == CardDB.cardName.flametonguetotem || m.handcard.card.name == CardDB.cardName.stormwindchampion || m.handcard.card.name == CardDB.cardName.raidleader)) retval += 10;
-                if (m.handcard.card.name == CardDB.cardName.bloodmagethalnos) retval += 10;
-                if (m.handcard.card.name == CardDB.cardName.nerubianegg)
+                if (p.ownMinions.Count > 2 && (m.handcard.card.name == Chireiden.Silverfish.SimCard.direwolfalpha || m.handcard.card.name == Chireiden.Silverfish.SimCard.flametonguetotem || m.handcard.card.name == Chireiden.Silverfish.SimCard.stormwindchampion || m.handcard.card.name == Chireiden.Silverfish.SimCard.raidleader)) retval += 10;
+                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.bloodmagethalnos) retval += 10;
+                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.nerubianegg)
                 {
                     if (m.Angr >= 1) retval += 2;
                     if ((!m.taunt && m.Angr == 0) && (m.divineshild || m.maxHp > 2)) retval -= 10;
@@ -168,16 +168,16 @@ namespace HREngine.Bots
                 }
                 switch (a.card.card.name)
                 {
-                    case CardDB.cardName.innervate:
-                    case CardDB.cardName.thecoin:
+                    case Chireiden.Silverfish.SimCard.innervate:
+                    case Chireiden.Silverfish.SimCard.thecoin:
                         usecoin++;
                         if (i == count - 1) retval -= 10;
                         goto default;
-                    case CardDB.cardName.darkshirelibrarian: goto case CardDB.cardName.soulfire;
-                    case CardDB.cardName.darkbargain: goto case CardDB.cardName.soulfire;
-                    case CardDB.cardName.doomguard: goto case CardDB.cardName.soulfire;
-                    case CardDB.cardName.succubus: goto case CardDB.cardName.soulfire;
-                    case CardDB.cardName.soulfire: deletecardsAtLast = 1; break;
+                    case Chireiden.Silverfish.SimCard.darkshirelibrarian: goto case Chireiden.Silverfish.SimCard.soulfire;
+                    case Chireiden.Silverfish.SimCard.darkbargain: goto case Chireiden.Silverfish.SimCard.soulfire;
+                    case Chireiden.Silverfish.SimCard.doomguard: goto case Chireiden.Silverfish.SimCard.soulfire;
+                    case Chireiden.Silverfish.SimCard.succubus: goto case Chireiden.Silverfish.SimCard.soulfire;
+                    case Chireiden.Silverfish.SimCard.soulfire: deletecardsAtLast = 1; break;
                     default:
                         if (deletecardsAtLast == 1) retval -= 20;
                         break;
@@ -185,7 +185,7 @@ namespace HREngine.Bots
                 if (a.card.card.Combo && i > 0) wasCombo++;
                 if (a.target == null) continue;
                 //save spell for all classes
-                if (a.card.card.type == CardDB.cardtype.SPELL && (a.target.isHero && !a.target.own))
+                if (a.card.card.type == Chireiden.Silverfish.SimCardtype.SPELL && (a.target.isHero && !a.target.own))
                 {
                     if (i == 0) firstSpellToEnHero = true;
                     retval -= 11;
@@ -205,8 +205,8 @@ namespace HREngine.Bots
             {
                 switch (p.ownHeroAblility.card.name)
                 {
-                    case CardDB.cardName.heal: goto case CardDB.cardName.lesserheal;
-                    case CardDB.cardName.lesserheal:
+                    case Chireiden.Silverfish.SimCard.heal: goto case Chireiden.Silverfish.SimCard.lesserheal;
+                    case Chireiden.Silverfish.SimCard.lesserheal:
                         bool wereTarget = false;
                         if (p.ownHero.Hp < p.ownHero.maxHp) wereTarget = true;
                         if (!wereTarget)
@@ -218,25 +218,25 @@ namespace HREngine.Bots
                         }
                         if (wereTarget && !(p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0)) retval -= 10;
                         break;
-                    case CardDB.cardName.poisoneddaggers: goto case CardDB.cardName.daggermastery;
-                    case CardDB.cardName.daggermastery:
+                    case Chireiden.Silverfish.SimCard.poisoneddaggers: goto case Chireiden.Silverfish.SimCard.daggermastery;
+                    case Chireiden.Silverfish.SimCard.daggermastery:
                          if (!(p.ownWeapon.Durability > 1 || p.ownWeapon.Angr > 1)) retval -= 10;
                          break;
-                    case CardDB.cardName.totemicslam: goto case CardDB.cardName.totemiccall;
-                    case CardDB.cardName.totemiccall:
+                    case Chireiden.Silverfish.SimCard.totemicslam: goto case Chireiden.Silverfish.SimCard.totemiccall;
+                    case Chireiden.Silverfish.SimCard.totemiccall:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case CardDB.cardName.thetidalhand: goto case CardDB.cardName.reinforce;
-                    case CardDB.cardName.thesilverhand: goto case CardDB.cardName.reinforce;
-                    case CardDB.cardName.reinforce:
+                    case Chireiden.Silverfish.SimCard.thetidalhand: goto case Chireiden.Silverfish.SimCard.reinforce;
+                    case Chireiden.Silverfish.SimCard.thesilverhand: goto case Chireiden.Silverfish.SimCard.reinforce;
+                    case Chireiden.Silverfish.SimCard.reinforce:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case CardDB.cardName.soultap: 
+                    case Chireiden.Silverfish.SimCard.soultap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
-                    case CardDB.cardName.lifetap: 
+                    case Chireiden.Silverfish.SimCard.lifetap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0)
                         {
                             retval -= 10;
@@ -254,7 +254,7 @@ namespace HREngine.Bots
             int bigMobsInHand = 0;
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.type == CardDB.cardtype.MOB)
+                if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     mobsInHand++;
                     if (hc.card.Attack + hc.addattack >= 3) bigMobsInHand++;
@@ -321,7 +321,7 @@ namespace HREngine.Bots
         {
             int retval = 5;
             retval += m.Hp * 2;
-            if (!m.frozen && !(m.cantAttack && m.name != CardDB.cardName.argentwatchman))
+            if (!m.frozen && !(m.cantAttack && m.name != Chireiden.Silverfish.SimCard.argentwatchman))
             {
                 retval += m.Angr * 2;
                 if (m.windfury) retval += m.Angr * 2;
@@ -352,7 +352,7 @@ namespace HREngine.Bots
             {
                 retval += m.handcard.card.targetPriority;
             }
-            if (m.name == CardDB.cardName.nerubianegg && m.Angr <= 3 && !m.taunt) retval = 0;
+            if (m.name == Chireiden.Silverfish.SimCard.nerubianegg && m.Angr <= 3 && !m.taunt) retval = 0;
             retval += m.synergy;
             return retval;
         }
@@ -366,7 +366,7 @@ namespace HREngine.Bots
             int tmp = int.MinValue;
             for (int i = 0; i < discoverCards.Count; i++)
             {
-                CardDB.cardName name = discoverCards[i].card.name;
+                Chireiden.Silverfish.SimCard name = discoverCards[i].card.name;
                 if (SirFinleyPriorityList.ContainsKey(name) && SirFinleyPriorityList[name] > tmp)
                 {
                     tmp = SirFinleyPriorityList[name];
@@ -376,18 +376,18 @@ namespace HREngine.Bots
             return sirFinleyChoice;
         }
 
-        private Dictionary<CardDB.cardName, int> SirFinleyPriorityList = new Dictionary<CardDB.cardName, int>
+        private Dictionary<Chireiden.Silverfish.SimCard, int> SirFinleyPriorityList = new Dictionary<Chireiden.Silverfish.SimCard, int>
         {
             //{HeroPowerName, Priority}, where 0-9 = manual priority
-            { CardDB.cardName.lesserheal, 0 }, 
-            { CardDB.cardName.shapeshift, 6 },
-            { CardDB.cardName.fireblast, 7 },
-            { CardDB.cardName.totemiccall, 1 },
-            { CardDB.cardName.lifetap, 9 },
-            { CardDB.cardName.daggermastery, 5 },
-            { CardDB.cardName.reinforce, 4 },
-            { CardDB.cardName.armorup, 2 },
-            { CardDB.cardName.steadyshot, 8 }
+            { Chireiden.Silverfish.SimCard.lesserheal, 0 }, 
+            { Chireiden.Silverfish.SimCard.shapeshift, 6 },
+            { Chireiden.Silverfish.SimCard.fireblast, 7 },
+            { Chireiden.Silverfish.SimCard.totemiccall, 1 },
+            { Chireiden.Silverfish.SimCard.lifetap, 9 },
+            { Chireiden.Silverfish.SimCard.daggermastery, 5 },
+            { Chireiden.Silverfish.SimCard.reinforce, 4 },
+            { Chireiden.Silverfish.SimCard.armorup, 2 },
+            { Chireiden.Silverfish.SimCard.steadyshot, 8 }
         };
 		
     }

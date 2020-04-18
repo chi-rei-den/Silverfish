@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Choose One - Give your minions +1/+1; or Summon a 3/2 Panther.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_160t);//panther
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_160t);//panther
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -34,21 +34,21 @@ namespace HREngine.Bots
 			if (own.own)
 			{
 				int tmpCard = p.owncards.Count;
-				p.drawACard(CardDB.cardIDEnum.None, own.own);
+				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
 				if (tmpCard < 10)
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
-                    p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_120), p.ownMinions.Count, own.own, false);//river crocolisk
+                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_120), p.ownMinions.Count, own.own, false);//river crocolisk
 				}
-				p.drawACard(CardDB.cardIDEnum.None, own.own);
+				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
 				if (tmpCard < 10)
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
-                    p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_048), p.ownMinions.Count, own.own, false);//spellbreaker
+                    p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_048), p.ownMinions.Count, own.own, false);//spellbreaker
 				}
-				p.drawACard(CardDB.cardIDEnum.None, own.own);
+				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
 			}
 		}
 	}

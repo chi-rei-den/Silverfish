@@ -29,14 +29,14 @@ namespace HREngine.Bots
 	{
 		//<b>Battlecry:</b> Summon copies of your Totems.
 		//<b>战吼：</b>召唤你的图腾的复制。
-		CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ULD_413);
+		Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ULD_413);
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
 			p.equipWeapon(weapon, ownplay);
 			List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
 			List<Minion> CopiesMinion = new List<Minion>();
 			foreach (Minion t in temp)
-				if ((TAG_RACE)t.handcard.card.race == TAG_RACE.TOTEM)
+				if ((TAG_RACE)t.handcard.card.Race == TAG_RACE.TOTEM)
 					CopiesMinion.Add(t);
 			foreach (Minion t in CopiesMinion)
 			{

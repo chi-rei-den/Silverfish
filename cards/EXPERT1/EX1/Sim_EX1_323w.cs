@@ -27,7 +27,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_323w : SimTemplate //* Blood Fury
 	{
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_323w);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_323w);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

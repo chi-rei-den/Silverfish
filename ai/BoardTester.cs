@@ -87,13 +87,13 @@
         List<Minion> ownminions = new List<Minion>();
         List<Minion> enemyminions = new List<Minion>();
         List<Handmanager.Handcard> handcards = new List<Handmanager.Handcard>();
-        List<CardDB.cardIDEnum> enemycards = new List<CardDB.cardIDEnum>();
+        List<Chireiden.Silverfish.SimCard> enemycards = new List<Chireiden.Silverfish.SimCard>();
         List<GraveYardItem> turnGraveYard = new List<GraveYardItem>();
         List<GraveYardItem> turnGraveYardAll = new List<GraveYardItem>();
         List<string> discover = new List<string>();
         Dictionary<int, IDEnumOwner> LurkersDB = new Dictionary<int, IDEnumOwner>();
-        Dictionary<CardDB.cardIDEnum, int> og = new Dictionary<CardDB.cardIDEnum, int>();
-        Dictionary<CardDB.cardIDEnum, int> eg = new Dictionary<CardDB.cardIDEnum, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> og = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<Chireiden.Silverfish.SimCard, int> eg = new Dictionary<Chireiden.Silverfish.SimCard, int>();
 
         bool feugendead = false;
         bool stalaggdead = false;
@@ -155,8 +155,8 @@
                 lines = data.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             }
 
-            CardDB.Card heroability = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_034);
-            CardDB.Card enemyability = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_034);
+            Chireiden.Silverfish.SimCard heroability = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_034);
+            Chireiden.Silverfish.SimCard enemyability = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_034);
             bool abilityReady = false;
 
             int readstate = 0;
@@ -168,7 +168,7 @@
             {
                 string s = sss + " ";
                 Helpfunctions.Instance.logg(s);
-                
+
                 if (s.StartsWith("ailoop") || s.StartsWith("deep ") || s.StartsWith("cut to len"))
                 {
                     continue;
@@ -204,7 +204,7 @@
                         string tmp = s.Split(new string[] { "face " }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         facehp = Convert.ToInt32(tmp);
                     }
-                        
+
                     if (s.Contains(" womob:"))
                     {
                         string tmp = s.Split(new string[] { " womob:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
@@ -243,7 +243,7 @@
                         string eturnsim2 = s.Split(new string[] { " ets2 " }, StringSplitOptions.RemoveEmptyEntries)[1];
                         ets2 = Convert.ToInt32(eturnsim2.Split(' ')[0]);
                     }
-                    
+
                     if (s.Contains(" ntss "))
                     {
                         string ss = s.Split(new string[] { " ntss " }, StringSplitOptions.RemoveEmptyEntries)[1];
@@ -251,7 +251,7 @@
                         ntssw = Convert.ToInt32(ss.Split(' ')[1]);
                         ntssm = Convert.ToInt32(ss.Split(' ')[2]);
                     }
-                    
+
                     if (s.Contains(" iC "))
                     {
                         string ss = s.Split(new string[] { " iC " }, StringSplitOptions.RemoveEmptyEntries)[1];
@@ -277,7 +277,7 @@
                         string alphaval = s.Split(new string[] { " weight " }, StringSplitOptions.RemoveEmptyEntries)[1];
                         alpha = Convert.ToInt32(alphaval.Split(' ')[0]);
                     }
-                    
+
                     if (s.Contains(" plcmnt:"))
                     {
                         string tmp = s.Split(new string[] { " plcmnt:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
@@ -285,7 +285,7 @@
                     }
                     continue;
                 }
-                
+
                 if (s.StartsWith("enemy secretsCount:"))
                 {
                     this.enemySecretAmount = Convert.ToInt32(s.Split(' ')[2]);
@@ -448,7 +448,7 @@
                     }
                     continue;
                 }
-                
+
                 if (s.StartsWith("og:"))
                 {
                     string temp = s.Replace("og: ", "");
@@ -457,7 +457,7 @@
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        CardDB.cardIDEnum cide = CardDB.Instance.cardIdstringToEnum(id);
+                        Chireiden.Silverfish.SimCard cide = CardDB.Instance.cardIdstringToEnum(id);
                         this.og.Add(cide, anz);
                     }
                     continue;
@@ -470,12 +470,12 @@
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        CardDB.cardIDEnum cide = CardDB.Instance.cardIdstringToEnum(id);
+                        Chireiden.Silverfish.SimCard cide = CardDB.Instance.cardIdstringToEnum(id);
                         this.eg.Add(cide, anz);
                     }
                     continue;
                 }
-                
+
                 if (s.StartsWith("discover card:"))
                 {
                     this.discover.Add(s.Split(' ')[2]);
@@ -491,7 +491,7 @@
                     this.numMinionsPlayedThisTurn = Convert.ToInt32(ss[0]);
                     this.cardsPlayedThisTurn = Convert.ToInt32(ss[1]);
                     this.overload = Convert.ToInt32(ss[2]);
-                    if (ss.Length == 5) this.ownPlayer = Convert.ToInt32(ss[3]); 
+                    if (ss.Length == 5) this.ownPlayer = Convert.ToInt32(ss[3]);
                     else
                     {
                         this.lockedMana = Convert.ToInt32(ss[3]);
@@ -676,7 +676,7 @@
 
                         int souloftheforest = 0;//adjadmg
                         if (s.Contains(" souloffrst(")) souloftheforest = Convert.ToInt32(s.Split(new string[] { " souloffrst(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
-                                                    
+
                         int stegodon = 0;//adjadmg
                         if (s.Contains(" stegodon(")) stegodon = Convert.ToInt32(s.Split(new string[] { " stegodon(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
@@ -685,14 +685,14 @@
 
                         int explorershat = 0;//adjadmg
                         if (s.Contains(" explHat(")) explorershat = Convert.ToInt32(s.Split(new string[] { " explHat(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
-                        
+
                         int returnToHand = 0;//adjadmg
                         if (s.Contains(" retHand(")) returnToHand = Convert.ToInt32(s.Split(new string[] { " retHand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
-                        
+
                         int infest = 0;//adjadmg
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
-                        CardDB.Card deathrattle2 = null;
+                        Chireiden.Silverfish.SimCard deathrattle2 = null;
                         if (s.Contains(" dethrl(")) deathrattle2 = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
@@ -831,7 +831,7 @@
 
                         int souloftheforest = 0;//adjadmg
                         if (s.Contains(" souloffrst(")) souloftheforest = Convert.ToInt32(s.Split(new string[] { " souloffrst(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
-                        
+
                         int stegodon = 0;//adjadmg
                         if (s.Contains(" stegodon(")) stegodon = Convert.ToInt32(s.Split(new string[] { " stegodon(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
@@ -843,11 +843,11 @@
 
                         int returnToHand = 0;//adjadmg
                         if (s.Contains(" retHand(")) returnToHand = Convert.ToInt32(s.Split(new string[] { " retHand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
-                        
+
                         int infest = 0;//adjadmg
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
-                        CardDB.Card deathrattle2 = null;
+                        Chireiden.Silverfish.SimCard deathrattle2 = null;
                         if (s.Contains(" dethrl(")) deathrattle2 = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
@@ -982,7 +982,7 @@
             Settings.Instance.enfacehp = facehp;
             Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp = weaponOnlyAttackMobsUntilEnfacehp;
             Settings.Instance.berserkIfCanFinishNextTour = berserkIfCanFinishNextTour;
-            Settings.Instance.concedeMode = concedeMode;            
+            Settings.Instance.concedeMode = concedeMode;
             Settings.Instance.enemyTurnMaxWide = ets;
             Settings.Instance.enemyTurnMaxWideSecondStep = ets2;
             Settings.Instance.placement = placement;
@@ -1006,7 +1006,7 @@
             Ai.Instance.setMaxWide(this.maxwide);
             Ai.Instance.setTwoTurnSimulation(false, this.twoturnsim);
             Ai.Instance.setPlayAround();
-            
+
 
             Hrtprozis.Instance.setOwnPlayer(ownPlayer);
             Handmanager.Instance.setOwnPlayer(ownPlayer);
@@ -1045,7 +1045,7 @@
             this.enemyHero.entitiyID = enemyHEntity;
             this.ownHero.cardClass = heroNametoClass(this.ownheroname);
             this.enemyHero.cardClass = heroNametoClass(this.enemyheroname);
-            
+
             this.ownHero.Angr = ownHeroAttack;
             this.ownHero.Hp = ownherohp;
             this.ownHero.armor = ownherodefence;
@@ -1101,7 +1101,7 @@
                 Angr = hc.card.Attack,
                 Hp = hc.card.Health,
                 maxHp = hc.card.Health,
-                name = hc.card.name,
+                name = hc.card,
                 playedThisTurn = true,
                 numAttacksThisTurn = 0
             };
@@ -1111,21 +1111,21 @@
             m.entitiyID = hc.entity;
             m.playedThisTurn = true;
             m.numAttacksThisTurn = 0;
-            m.windfury = hc.card.windfury;
-            m.taunt = hc.card.tank;
+            m.windfury = hc.card.Windfury;
+            m.taunt = hc.card.Taunt;
             m.charge = (hc.card.Charge) ? 1 : 0;
-            m.divineshild = hc.card.Shield;
-            m.poisonous = hc.card.poisonous;
-            m.lifesteal = hc.card.lifesteal;
+            m.divineshild = hc.card.DivineShield;
+            m.poisonous = hc.card.Poisonous;
+            m.lifesteal = hc.card.Lifesteal;
             m.stealth = hc.card.Stealth;
 
-            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.ownheroname), (TAG_RACE)hc.card.race);
-            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.enemyheroname), (TAG_RACE)hc.card.race);
+            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.ownheroname), (TAG_RACE)hc.card.Race);
+            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.enemyheroname), (TAG_RACE)hc.card.Race);
             if (m.synergy > 0 && hc.card.Stealth) m.synergy++;
 
             m.updateReadyness();
 
-            if (m.name == CardDB.cardName.lightspawn)
+            if (m.name == Chireiden.Silverfish.SimCard.lightspawn)
             {
                 m.Angr = m.Hp;
             }

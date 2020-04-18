@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (target.own == ownplay && (TAG_RACE)target.handcard.card.race == TAG_RACE.DEMON)
+            if (target.own == ownplay && (TAG_RACE)target.handcard.card.Race == TAG_RACE.DEMON)
             {
                 //give it +5/+5
                 p.minionGetBuffed(target, 5, 5);

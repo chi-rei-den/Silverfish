@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //At the end of your turn, draw 3 cards.
         //在你的回合结束时，抽三张牌。
-    CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.LOOT_108);
+    Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.LOOT_108);
  
     public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
     {

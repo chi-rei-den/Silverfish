@@ -36,7 +36,7 @@ namespace HREngine.Bots
             //this.owncarddraw++;
 
             p.minionGetDamageOrHeal(target, damage);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
         }
 
 	}

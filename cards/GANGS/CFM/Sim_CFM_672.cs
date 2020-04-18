@@ -34,7 +34,7 @@ namespace HREngine.Bots
             if (target != null)
             {
                 p.minionGetFrozen(target);
-                p.drawACard(CardDB.cardName.aberration, m.own, true);
+                p.drawACard(Chireiden.Silverfish.SimCard.aberration, m.own, true);
             }
         }
     }

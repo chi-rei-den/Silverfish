@@ -43,7 +43,7 @@ namespace HREngine.Bots
                     }
                 }
             }
-            else p.callKid(CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_586), p.enemyMinions.Count, m.own);
+            else p.callKid(CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_586), p.enemyMinions.Count, m.own);
         }
 	}
 }

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon three 1/1 Whelps. Get a new Hero Power.
 
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRMA09_2t);//1/1Whelp
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA09_2t);//1/1Whelp
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

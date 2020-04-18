@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deal 1 damage to a minion. If it survives, summon a 2/2 Slime.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_249a);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_249a);
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

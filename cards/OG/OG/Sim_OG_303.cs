@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
         {
-            if (m.own == ownplay && hc.card.type == CardDB.cardtype.SPELL) p.cthunGetBuffed(1, 1, 0);
+            if (m.own == ownplay && hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL) p.cthunGetBuffed(1, 1, 0);
         }
 		
         public override void onAuraStarts(Playfield p, Minion own)

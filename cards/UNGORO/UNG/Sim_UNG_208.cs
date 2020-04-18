@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: If you played an Elemental last turn, summon two 2/3 Elementals with Taunt.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.UNG_208t); //Rock Elemental
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.UNG_208t); //Rock Elemental
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

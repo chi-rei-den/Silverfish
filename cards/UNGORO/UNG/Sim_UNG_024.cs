@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            p.drawACard(CardDB.cardIDEnum.None, ownplay, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
         }
     }
 }

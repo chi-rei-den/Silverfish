@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 Handmanager.Handcard hcCopy = null;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.type == CardDB.cardtype.MOB)
+                    if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         if (hcCopy == null) hcCopy = hc;
                         else

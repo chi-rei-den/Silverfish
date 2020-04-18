@@ -12,7 +12,7 @@
             public int manacost = 1000;
             public int addattack = 0;
             public int addHp = 0;
-            public CardDB.Card card;
+            public Chireiden.Silverfish.SimCard card;
             public Minion target;
             public int elemPoweredUp = 0;
             public int extraParam2 = 0;
@@ -32,7 +32,7 @@
                 this.addHp = hc.addHp;
                 this.elemPoweredUp = hc.elemPoweredUp;
             }
-            public Handcard(CardDB.Card c)
+            public Handcard(Chireiden.Silverfish.SimCard c)
             {
                 this.position = 0;
                 this.entity = -1;
@@ -68,7 +68,6 @@
         private int ownPlayerController = 0;
 
         Helpfunctions help;
-        CardDB cdb = CardDB.Instance;
 
         private static Handmanager instance;
 
@@ -115,7 +114,7 @@
             this.anzcards = anzown;
             this.enemyAnzCards = anzenemy;
         }
-        
+
         public void printcards()
         {
             help.logg("Own Handcards: ");

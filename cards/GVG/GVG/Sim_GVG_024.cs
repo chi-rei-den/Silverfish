@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         //    Has +2 Attack while you have a Mech.
 
-        CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.GVG_024);
+        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.GVG_024);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -39,7 +39,7 @@ namespace HREngine.Bots
             List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL)
+                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
                 {
                     if (ownplay)
                     {
@@ -58,13 +58,13 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if ((TAG_RACE)summonedMinion.handcard.card.race == TAG_RACE.MECHANICAL)
+            if ((TAG_RACE)summonedMinion.handcard.card.Race == TAG_RACE.MECHANICAL)
             {
                 List<Minion> temp = (triggerEffectMinion.own) ? p.ownMinions : p.enemyMinions;
 
                 foreach (Minion m in temp)
                 {
-                    if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MECHANICAL) return; 
+                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) return; 
                 }
 
                 if (triggerEffectMinion.own)
@@ -93,7 +93,7 @@ namespace HREngine.Bots
 				bool hasmechanics = false;
                 foreach (Minion mTmp in temp)
                 {
-                    if (mTmp.Hp >=1 && (TAG_RACE)mTmp.handcard.card.race == TAG_RACE.MECHANICAL) hasmechanics = true;
+                    if (mTmp.Hp >=1 && (TAG_RACE)mTmp.handcard.card.Race == TAG_RACE.MECHANICAL) hasmechanics = true;
                 }
 				
                 if (!hasmechanics)

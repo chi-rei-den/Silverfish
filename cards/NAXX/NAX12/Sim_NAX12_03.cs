@@ -30,7 +30,7 @@ namespace HREngine.Bots
 		//Whenever a minion with Deathrattle dies, gain +2
 		//Handled in triggerAMinionDied()
 		
-        CardDB.Card weapon = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.NAX12_03);
+        Chireiden.Silverfish.SimCard weapon = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.NAX12_03);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

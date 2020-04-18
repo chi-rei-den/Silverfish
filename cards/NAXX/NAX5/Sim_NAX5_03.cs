@@ -31,10 +31,10 @@ namespace HREngine.Bots
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(CardDB.cardIDEnum.None, true);
-            p.drawACard(CardDB.cardIDEnum.None, true);
-            p.drawACard(CardDB.cardIDEnum.None, false);
-            p.drawACard(CardDB.cardIDEnum.None, false);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, true);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, false);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, false);
 			
 			p.mana = Math.Min(10, p.mana+1);
 			p.ownMaxMana = Math.Min(10, p.ownMaxMana+1);

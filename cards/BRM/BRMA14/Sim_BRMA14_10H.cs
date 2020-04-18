@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Activate a random Tron.
 
-		CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRMA14_5H);//4/4toxitron
+		Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRMA14_5H);//4/4toxitron
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

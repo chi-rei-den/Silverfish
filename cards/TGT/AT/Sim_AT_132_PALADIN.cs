@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Hero Power. Summon two 1/1 Recruits.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_101t);//silverhandrecruit
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_101t);//silverhandrecruit
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

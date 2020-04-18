@@ -28,7 +28,7 @@ namespace HREngine.Bots
 
     class Sim_EX1_133 : SimTemplate//pertitions blade
     {
-        CardDB.Card w = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_133);
+        Chireiden.Silverfish.SimCard w = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_133);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

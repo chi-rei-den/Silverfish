@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Battlecry: Put a 1-Cost minion from each deck into the battlefield.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRM_004); //Twilight Whelp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_004); //Twilight Whelp
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

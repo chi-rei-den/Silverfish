@@ -30,7 +30,7 @@ namespace HREngine.Bots
 
         // Deathrattle: Summon a random legendary minion.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.EX1_014);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.EX1_014);
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Transform into a Charge
 		
-        CardDB.Card Charge = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.AT_042t);
+        Chireiden.Silverfish.SimCard Charge = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.AT_042t);
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

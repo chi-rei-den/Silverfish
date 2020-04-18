@@ -35,7 +35,7 @@ namespace HREngine.Bots
 
 foreach (Handmanager.Handcard hc in p.owncards)
 {
-if (hc.card.type == CardDB.cardtype.MOB)
+if (hc.card.type == Chireiden.Silverfish.SimCardtype.MOB)
 {
 hc.addattack+=2;
 hc.addHp+=2;

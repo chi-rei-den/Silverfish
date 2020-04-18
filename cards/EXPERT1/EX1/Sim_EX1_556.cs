@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 2/1 Damaged Golem.
 
-        CardDB.Card card = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.skele21);
+        Chireiden.Silverfish.SimCard card = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.skele21);
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

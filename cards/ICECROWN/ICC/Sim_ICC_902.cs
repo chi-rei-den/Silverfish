@@ -42,13 +42,13 @@ namespace HREngine.Bots
             bool another = false;
             foreach (Minion m in p.ownMinions)
             {
-                if (m.name == CardDB.cardName.mindbreaker && own.entitiyID != m.entitiyID) another = true;
+                if (m.name == Chireiden.Silverfish.SimCard.mindbreaker && own.entitiyID != m.entitiyID) another = true;
             }
             if (!another)
             {
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (m.name == CardDB.cardName.mindbreaker && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.mindbreaker && own.entitiyID != m.entitiyID) another = true;
                 }
             }
             if (!another)

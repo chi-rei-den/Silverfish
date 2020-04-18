@@ -38,7 +38,7 @@ namespace HREngine.Bots
 			}
             else p.enemyDeckSize++;
 			
-			p.drawACard(CardDB.cardIDEnum.None, ownplay);
+			p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
 		}
 	}
 }

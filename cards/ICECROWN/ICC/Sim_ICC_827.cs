@@ -31,7 +31,7 @@ namespace HREngine.Bots
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.setNewHeroPower(CardDB.cardIDEnum.ICC_827p, ownplay); // Death's Shadow
+            p.setNewHeroPower(Chireiden.Silverfish.SimCard.ICC_827p, ownplay); // Death's Shadow
             if (ownplay)
             {
                 p.ownHero.armor += 5;

@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Deal 1 damage. Summon a 1/1 Mastiff.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.OG_061t);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.OG_061t);
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

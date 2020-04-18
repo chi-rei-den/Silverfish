@@ -7,12 +7,12 @@ namespace HREngine.Bots
 
     public class miniEnch
     {
-        public CardDB.cardIDEnum CARDID = CardDB.cardIDEnum.None;
+        public Chireiden.Silverfish.SimCard CARDID = Chireiden.Silverfish.SimCard.None;
         public int creator = 0; // the minion
         public int controllerOfCreator = 0; // own or enemys buff?
         public int copyDeathrattle = 0;
 
-        public miniEnch(CardDB.cardIDEnum id, int crtr, int controler, int copydr)
+        public miniEnch(Chireiden.Silverfish.SimCard id, int crtr, int controler, int copydr)
         {
             this.CARDID = id;
             this.creator = crtr;
@@ -34,14 +34,14 @@ namespace HREngine.Bots
         public bool own;
         public int pID = 0;
 
-        public CardDB.cardName name = CardDB.cardName.unknown;
+        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.unknown;
         public TAG_CLASS cardClass = TAG_CLASS.INVALID;
         public int synergy = 0;
         public Handmanager.Handcard handcard;
         public int entitiyID = -1;
         //public int id = -1;//delete this
         public int zonepos = 0;
-        public CardDB.Card deathrattle2;
+        public Chireiden.Silverfish.SimCard deathrattle2;
 
         public bool playedThisTurn = false;
         public bool playedPrevTurn = false;
@@ -310,7 +310,7 @@ namespace HREngine.Bots
             {
                 if (this.own)
                 {
-                    if (p.ownWeapon.name == CardDB.cardName.cursedblade) dmg += dmg;
+                    if (p.ownWeapon.name == Chireiden.Silverfish.SimCard.cursedblade) dmg += dmg;
                     if (p.anzOwnAnimatedArmor > 0 && dmg > 0) dmg = 1;
                     if (p.anzOwnBolfRamshield > 0 && dmg > 0)
 
@@ -322,7 +322,7 @@ namespace HREngine.Bots
                         {
                             foreach (Minion m in p.ownMinions)
                             {
-                                if (m.name == CardDB.cardName.bolframshield)
+                                if (m.name == Chireiden.Silverfish.SimCard.bolframshield)
                                 {
                                     m.getDamageOrHeal(-rest, p, true, false);
                                     break;
@@ -335,7 +335,7 @@ namespace HREngine.Bots
                 else
                 {
                     if (p.anzEnemyAnimatedArmor > 0 && dmg > 0) dmg = 1;
-                    if (p.enemyWeapon.name == CardDB.cardName.cursedblade) dmg += dmg;
+                    if (p.enemyWeapon.name == Chireiden.Silverfish.SimCard.cursedblade) dmg += dmg;
                     if (p.anzEnemyBolfRamshield > 0 && dmg > 0)
                     {
                         int rest = this.armor - dmg;
@@ -344,7 +344,7 @@ namespace HREngine.Bots
                         {
                             foreach (Minion m in p.enemyMinions)
                             {
-                                if (m.name == CardDB.cardName.bolframshield)
+                                if (m.name == Chireiden.Silverfish.SimCard.bolframshield)
                                 {
                                     m.getDamageOrHeal(-rest, p, true, false);
                                     break;
@@ -463,7 +463,7 @@ namespace HREngine.Bots
                 {
                     if (p.anzAcidmaw == 1)
                     {
-                        if (this.name != CardDB.cardName.acidmaw) this.Hp = 0;
+                        if (this.name != Chireiden.Silverfish.SimCard.acidmaw) this.Hp = 0;
                     }
                     else this.Hp = 0;
                 }
@@ -483,7 +483,7 @@ namespace HREngine.Bots
 
 
 
-            if (this.name == CardDB.cardName.lightspawn && !this.silenced)
+            if (this.name == Chireiden.Silverfish.SimCard.lightspawn && !this.silenced)
             {
                 this.Angr = this.Hp;
             }
@@ -507,13 +507,13 @@ namespace HREngine.Bots
 
         public void minionDied(Playfield p)
         {
-            if (this.name == CardDB.cardName.stalagg)
+            if (this.name == Chireiden.Silverfish.SimCard.stalagg)
             {
                 p.stalaggDead = true;
             }
             else
             {
-                if (this.name == CardDB.cardName.feugen) p.feugenDead = true;
+                if (this.name == Chireiden.Silverfish.SimCard.feugen) p.feugenDead = true;
             }
 
             
@@ -523,15 +523,15 @@ namespace HREngine.Bots
 
                 p.tempTrigger.ownMinionsDied++;
                 if (this.taunt) p.anzOwnTaunt--;
-                if (this.handcard.card.race == 20)
+                if (this.handcard.card.Race == 20)
                 {
                     p.tempTrigger.ownBeastDied++;
                 }
-                else if (this.handcard.card.race == 17)
+                else if (this.handcard.card.Race == 17)
                 {
                     p.tempTrigger.ownMechanicDied++;
                 }
-                else if (this.handcard.card.race == 14)
+                else if (this.handcard.card.Race == 14)
                 {
                     p.tempTrigger.ownMurlocDied++;
                 }
@@ -540,15 +540,15 @@ namespace HREngine.Bots
             {
                 p.tempTrigger.enemyMinionsDied++;
                 if (this.taunt) p.anzEnemyTaunt--;
-                if (this.handcard.card.race == 20)
+                if (this.handcard.card.Race == 20)
                 {
                     p.tempTrigger.enemyBeastDied++;
                 }
-                else if (this.handcard.card.race == 17)
+                else if (this.handcard.card.Race == 17)
                 {
                     p.tempTrigger.enemyMechanicDied++;
                 }
-                else if (this.handcard.card.race == 14)
+                else if (this.handcard.card.Race == 14)
                 {
                     p.tempTrigger.enemyMurlocDied++;
                 }
@@ -572,9 +572,9 @@ namespace HREngine.Bots
                 return;
             }
 
-            if (!frozen && ((charge >= 1 && playedThisTurn) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || ( !silenced && this.name == CardDB.cardName.v07tr0n && numAttacksThisTurn <=3 )) ) Ready = true;
-            if (!frozen && (((charge == 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == CardDB.cardName.v07tr0n && numAttacksThisTurn <= 3))) { Ready = true; cantAttackHeroes = true; }
-            if (!frozen && (((charge > 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == CardDB.cardName.v07tr0n && numAttacksThisTurn <= 3)))
+            if (!frozen && ((charge >= 1 && playedThisTurn) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || ( !silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <=3 )) ) Ready = true;
+            if (!frozen && (((charge == 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <= 3))) { Ready = true; cantAttackHeroes = true; }
+            if (!frozen && (((charge > 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <= 3)))
             {
                 Ready = true;
                 cantAttackHeroes = false;
@@ -615,7 +615,7 @@ namespace HREngine.Bots
             returnToHand = 0;
             infest = 0;
             deathrattle2 = null;
-            if (this.name == CardDB.cardName.moatlurker && p.LurkersDB.ContainsKey(this.entitiyID)) p.LurkersDB.Remove(this.entitiyID);
+            if (this.name == Chireiden.Silverfish.SimCard.moatlurker && p.LurkersDB.ContainsKey(this.entitiyID)) p.LurkersDB.Remove(this.entitiyID);
 
             ownBlessingOfWisdom = 0;
             enemyBlessingOfWisdom = 0;
@@ -712,7 +712,7 @@ namespace HREngine.Bots
                 // reborns and destoyings----------------------------------------------
 
                 
-                if (me.CARDID == CardDB.cardIDEnum.EX1_363e || me.CARDID == CardDB.cardIDEnum.EX1_363e2) //BlessingOfWisdom
+                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_363e || me.CARDID == Chireiden.Silverfish.SimCard.EX1_363e2) //BlessingOfWisdom
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -724,7 +724,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (me.CARDID == CardDB.cardIDEnum.AT_013e) //PowerWordGlory
+                if (me.CARDID == Chireiden.Silverfish.SimCard.AT_013e) //PowerWordGlory
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -737,7 +737,7 @@ namespace HREngine.Bots
                 }
 
 
-                if (me.CARDID == CardDB.cardIDEnum.EX1_316e) //overwhelmingpower
+                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_316e) //overwhelmingpower
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -749,24 +749,24 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (me.CARDID == CardDB.cardIDEnum.EX1_334e) //Dark Command
+                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_334e) //Dark Command
                 {
                     this.shadowmadnessed = true;
                 }
 
-                if (me.CARDID == CardDB.cardIDEnum.FP1_030e) //Necrotic Aura
+                if (me.CARDID == Chireiden.Silverfish.SimCard.FP1_030e) //Necrotic Aura
                 {
                     //todo Eure Zauber kosten in diesem Zug (5) mehr.
                 }
-                if (me.CARDID == CardDB.cardIDEnum.NEW1_029t) //death to millhouse!
+                if (me.CARDID == Chireiden.Silverfish.SimCard.NEW1_029t) //death to millhouse!
                 {
                     // todo spells cost (0) this turn!
                 }
-                if (me.CARDID == CardDB.cardIDEnum.EX1_612o) //Power of the Kirin Tor
+                if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_612o) //Power of the Kirin Tor
                 {
                     // todo Your next Secret costs (0).
                 }
-               // if (me.CARDID == CardDB.cardIDEnum.EX1_084e) //warsongcommander
+               // if (me.CARDID == Chireiden.Silverfish.SimCard.EX1_084e) //warsongcommander
                // {
               //      this.charge++;
               //  }
@@ -777,77 +777,77 @@ namespace HREngine.Bots
 
 
                     // destroy-------------------------------------------------
-                    case CardDB.cardIDEnum.CS2_063e:
+                    case Chireiden.Silverfish.SimCard.CS2_063e:
                         if (me.controllerOfCreator == ownPlayerControler) this.destroyOnOwnTurnStart = true;
                         else this.destroyOnEnemyTurnStart = true;   //corruption
                         continue;
-                    case CardDB.cardIDEnum.DREAM_05e:
+                    case Chireiden.Silverfish.SimCard.DREAM_05e:
                         if (me.controllerOfCreator == ownPlayerControler) this.destroyOnOwnTurnStart = true;
                         else this.destroyOnEnemyTurnStart = true;   //nightmare
                         continue;
 
                     // deathrattles-------------------------------------------------
-                    case CardDB.cardIDEnum.LOE_105e: this.explorershat++; continue;
-                    case CardDB.cardIDEnum.UNG_956e: this.returnToHand++; continue;
+                    case Chireiden.Silverfish.SimCard.LOE_105e: this.explorershat++; continue;
+                    case Chireiden.Silverfish.SimCard.UNG_956e: this.returnToHand++; continue;
                         
-                    case CardDB.cardIDEnum.CS2_038e: this.ancestralspirit++; continue;
-                    case CardDB.cardIDEnum.ICC_244e: this.desperatestand++; continue;
-                    case CardDB.cardIDEnum.EX1_158e: this.souloftheforest++; continue;
-                    case CardDB.cardIDEnum.UNG_952e: this.stegodon++; continue;
-                    case CardDB.cardIDEnum.UNG_999t2e: this.livingspores++; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_038e: this.ancestralspirit++; continue;
+                    case Chireiden.Silverfish.SimCard.ICC_244e: this.desperatestand++; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_158e: this.souloftheforest++; continue;
+                    case Chireiden.Silverfish.SimCard.UNG_952e: this.stegodon++; continue;
+                    case Chireiden.Silverfish.SimCard.UNG_999t2e: this.livingspores++; continue;
                         
-                    case CardDB.cardIDEnum.OG_045a: this.infest++; continue;
-                    case CardDB.cardIDEnum.LOE_019e: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
-                   // case CardDB.cardIDEnum.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
+                    case Chireiden.Silverfish.SimCard.OG_045a: this.infest++; continue;
+                    case Chireiden.Silverfish.SimCard.LOE_019e: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
+                   // case Chireiden.Silverfish.SimCard.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
 
 
                     //conceal-------------------------------------------------
-                    case CardDB.cardIDEnum.EX1_128e: this.conceal = true; continue;
-                    case CardDB.cardIDEnum.NEW1_014e: this.conceal = true; continue;
-                    case CardDB.cardIDEnum.PART_004e: this.conceal = true; continue;
-                    case CardDB.cardIDEnum.OG_080de: this.conceal = true; continue; 
+                    case Chireiden.Silverfish.SimCard.EX1_128e: this.conceal = true; continue;
+                    case Chireiden.Silverfish.SimCard.NEW1_014e: this.conceal = true; continue;
+                    case Chireiden.Silverfish.SimCard.PART_004e: this.conceal = true; continue;
+                    case Chireiden.Silverfish.SimCard.OG_080de: this.conceal = true; continue; 
 
                     //cantLowerHPbelowONE-------------------------------------------------
-                    case CardDB.cardIDEnum.NEW1_036e: this.cantLowerHPbelowONE = true; continue; //commandingshout
-                    case CardDB.cardIDEnum.NEW1_036e2: this.cantLowerHPbelowONE = true; continue; //commandingshout
+                    case Chireiden.Silverfish.SimCard.NEW1_036e: this.cantLowerHPbelowONE = true; continue; //commandingshout
+                    case Chireiden.Silverfish.SimCard.NEW1_036e2: this.cantLowerHPbelowONE = true; continue; //commandingshout
 
                     //spellpower-------------------------------------------------
-                    case CardDB.cardIDEnum.GVG_010b: this.spellpower++; continue; //velenschosen
-                    case CardDB.cardIDEnum.AT_006e: this.spellpower++; continue; //dalaran
-                    case CardDB.cardIDEnum.EX1_584e: this.spellpower++; continue; //ancient mage
+                    case Chireiden.Silverfish.SimCard.GVG_010b: this.spellpower++; continue; //velenschosen
+                    case Chireiden.Silverfish.SimCard.AT_006e: this.spellpower++; continue; //dalaran
+                    case Chireiden.Silverfish.SimCard.EX1_584e: this.spellpower++; continue; //ancient mage
 
                     //charge-------------------------------------------------
-                    case CardDB.cardIDEnum.AT_071e: this.charge++; continue;
-                    case CardDB.cardIDEnum.CS2_103e2: this.charge++; continue;
-                    case CardDB.cardIDEnum.TB_AllMinionsTauntCharge: this.charge++; continue;
-                    case CardDB.cardIDEnum.DS1_178e: this.charge++; continue;
+                    case Chireiden.Silverfish.SimCard.AT_071e: this.charge++; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_103e2: this.charge++; continue;
+                    case Chireiden.Silverfish.SimCard.TB_AllMinionsTauntCharge: this.charge++; continue;
+                    case Chireiden.Silverfish.SimCard.DS1_178e: this.charge++; continue;
 
                     //adjacentbuffs-------------------------------------------------
-                    case CardDB.cardIDEnum.EX1_565o: this.AdjacentAngr += 2; continue; //flametongue
-                    case CardDB.cardIDEnum.EX1_162o: this.AdjacentAngr += 1; continue; //dire wolf alpha
+                    case Chireiden.Silverfish.SimCard.EX1_565o: this.AdjacentAngr += 2; continue; //flametongue
+                    case Chireiden.Silverfish.SimCard.EX1_162o: this.AdjacentAngr += 1; continue; //dire wolf alpha
 
                     //tempbuffs-------------------------------------------------
-                    case CardDB.cardIDEnum.CS2_083e: this.tempAttack += 1; continue;
-                    case CardDB.cardIDEnum.EX1_549o: this.tempAttack += 2; this.immune = true; continue;
-                    case CardDB.cardIDEnum.AT_057o: this.immune = true; continue;
-                    case CardDB.cardIDEnum.AT_039e: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.AT_132_DRUIDe: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.CS2_005o: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.CS2_011o: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.EX1_046e: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.GVG_057a: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.CS2_046e: this.tempAttack += 3; continue;
-                    case CardDB.cardIDEnum.CS2_105e: this.tempAttack += 4; continue;
-                    case CardDB.cardIDEnum.EX1_570e: this.tempAttack += 4; continue;
-                    case CardDB.cardIDEnum.OG_047e: this.tempAttack += 4; continue;  
-                    case CardDB.cardIDEnum.NAX12_04e: this.tempAttack += 6; continue;
-                    case CardDB.cardIDEnum.GVG_011a: this.tempAttack += -2; continue;
-                    case CardDB.cardIDEnum.CFM_661e: this.tempAttack += -3; continue;
-                    case CardDB.cardIDEnum.BRM_001e: this.tempAttack += -1000; continue;
-                    case CardDB.cardIDEnum.TU4c_008e: this.tempAttack += 8; continue;
-                    case CardDB.cardIDEnum.CS2_045e: this.tempAttack += 3; continue;
-                    case CardDB.cardIDEnum.CS2_188o: this.tempAttack += 2; continue;
-                    case CardDB.cardIDEnum.CS2_017o: this.tempAttack += 1; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_083e: this.tempAttack += 1; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_549o: this.tempAttack += 2; this.immune = true; continue;
+                    case Chireiden.Silverfish.SimCard.AT_057o: this.immune = true; continue;
+                    case Chireiden.Silverfish.SimCard.AT_039e: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.AT_132_DRUIDe: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_005o: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_011o: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_046e: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.GVG_057a: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_046e: this.tempAttack += 3; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_105e: this.tempAttack += 4; continue;
+                    case Chireiden.Silverfish.SimCard.EX1_570e: this.tempAttack += 4; continue;
+                    case Chireiden.Silverfish.SimCard.OG_047e: this.tempAttack += 4; continue;  
+                    case Chireiden.Silverfish.SimCard.NAX12_04e: this.tempAttack += 6; continue;
+                    case Chireiden.Silverfish.SimCard.GVG_011a: this.tempAttack += -2; continue;
+                    case Chireiden.Silverfish.SimCard.CFM_661e: this.tempAttack += -3; continue;
+                    case Chireiden.Silverfish.SimCard.BRM_001e: this.tempAttack += -1000; continue;
+                    case Chireiden.Silverfish.SimCard.TU4c_008e: this.tempAttack += 8; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_045e: this.tempAttack += 3; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_188o: this.tempAttack += 2; continue;
+                    case Chireiden.Silverfish.SimCard.CS2_017o: this.tempAttack += 1; continue;
 
 
                         

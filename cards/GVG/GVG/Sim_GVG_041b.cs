@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //   Summon 5 Wisps;
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_231);
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_231);
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             for (int i = 0; i < 5; i++)

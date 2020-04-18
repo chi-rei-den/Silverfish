@@ -29,18 +29,18 @@ namespace HREngine.Bots
     {
         // Deal 5 damage. Draw 5 cards. Gain 5 Armor. Summon a 5/5 Ghoul.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.ICC_085t); //Ghoul Infestor
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.ICC_085t); //Ghoul Infestor
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             p.minionGetDamageOrHeal(target, dmg);
 
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
-            p.drawACard(CardDB.cardIDEnum.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
 
             p.minionGetArmor(ownplay ? p.ownHero : p.enemyHero, 5);
 

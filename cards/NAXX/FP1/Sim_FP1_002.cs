@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon two 1/1 Spectral Spiders.
 
-        CardDB.Card c = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.FP1_002t);
+        Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.FP1_002t);
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

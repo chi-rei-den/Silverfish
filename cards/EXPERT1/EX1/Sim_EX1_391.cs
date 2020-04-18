@@ -37,7 +37,7 @@ namespace HREngine.Bots
             if (target.Hp > dmg || target.immune || target.divineshild)
             {
                 //this.owncarddraw++;
-                p.drawACard(CardDB.cardIDEnum.None, ownplay);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
             }
             p.minionGetDamageOrHeal(target, dmg);
             

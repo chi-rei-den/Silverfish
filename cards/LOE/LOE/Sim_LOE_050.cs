@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a random 1-Cost minion.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.BRM_004); //Twilight Whelp
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.BRM_004); //Twilight Whelp
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

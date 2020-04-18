@@ -32,7 +32,7 @@ namespace HREngine.Bots
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
             var temp = (own.own) ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
-            CardDB.Card c;
+            Chireiden.Silverfish.SimCard c;
             bool found = false;
             foreach (var gi in temp)
             {

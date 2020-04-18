@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a 0/5 minion with Taunt.
 		
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.KAR_710m);//Animated Shield
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.KAR_710m);//Animated Shield
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

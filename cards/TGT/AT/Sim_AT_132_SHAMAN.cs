@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Hero Power. Summon a Totem of your choice.
 
-        CardDB.Card kid = CardDB.Instance.getCardDataFromID(CardDB.cardIDEnum.CS2_051);//Stoneclaw Totem
+        Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(Chireiden.Silverfish.SimCard.CS2_051);//Stoneclaw Totem
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

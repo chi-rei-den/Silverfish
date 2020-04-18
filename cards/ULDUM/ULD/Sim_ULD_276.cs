@@ -36,7 +36,7 @@ public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, 
 {
 if (turnEndOfOwner == triggerEffectMinion.own)
 {
-p.drawACard(CardDB.cardIDEnum.None, turnEndOfOwner);
+p.drawACard(Chireiden.Silverfish.SimCard.None, turnEndOfOwner);
 }
 }
 

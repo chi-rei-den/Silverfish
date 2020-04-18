@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnStartOfOwner)
             {
-                p.drawACard(CardDB.cardIDEnum.None, turnStartOfOwner);
+                p.drawACard(Chireiden.Silverfish.SimCard.None, turnStartOfOwner);
             }
         }
 

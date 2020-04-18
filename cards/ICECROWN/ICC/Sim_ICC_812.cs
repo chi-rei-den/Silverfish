@@ -31,15 +31,15 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            CardDB.cardIDEnum cId = CardDB.cardIDEnum.None;
+            Chireiden.Silverfish.SimCard cId = Chireiden.Silverfish.SimCard.None;
             for (int i = m.Angr - 1; i >= 0; i--)
             {
                 cId = p.prozis.getDeckCardsForCost(i);
-                if (cId != CardDB.cardIDEnum.None) break;
+                if (cId != Chireiden.Silverfish.SimCard.None) break;
             }
-            if (cId != CardDB.cardIDEnum.None)
+            if (cId != Chireiden.Silverfish.SimCard.None)
             {
-                CardDB.Card kid = CardDB.Instance.getCardDataFromID(cId);
+                Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(cId);
                 p.callKid(kid, m.zonepos - 1, m.own);
             }
         }

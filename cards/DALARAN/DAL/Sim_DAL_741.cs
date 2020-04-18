@@ -33,7 +33,7 @@ public class Sim_DAL_741 : SimTemplate
 
 public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice) 
 { 
-p.drawACard(CardDB.cardName.unknown, own.own, true); 
+p.drawACard(Chireiden.Silverfish.SimCard.unknown, own.own, true); 
 } 
 } 
 }

@@ -43,7 +43,7 @@ namespace HREngine.Bots
                 bool hasss = false;
                 foreach (Minion mnn in p.ownMinions)
                 {
-                    if (m.name == CardDB.cardName.steamwheedlesniper && !mnn.silenced) hasss = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.steamwheedlesniper && !mnn.silenced) hasss = true;
                 }
                 p.weHaveSteamwheedleSniper = hasss;
             }
@@ -52,7 +52,7 @@ namespace HREngine.Bots
                 bool hasss = false;
                 foreach (Minion mnn in p.enemyMinions)
                 {
-                    if (m.name == CardDB.cardName.steamwheedlesniper && !mnn.silenced) hasss = true;
+                    if (m.name == Chireiden.Silverfish.SimCard.steamwheedlesniper && !mnn.silenced) hasss = true;
                 }
                 p.enemyHaveSteamwheedleSniper = hasss;
             }

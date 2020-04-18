@@ -35,9 +35,9 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == wasOwnCard)
             {
-                if (hc.card.type == CardDB.cardtype.SPELL && hc.manacost == 1)
+                if (hc.card.type == Chireiden.Silverfish.SimCardtype.SPELL && hc.manacost == 1)
                 {
-                    p.drawACard(CardDB.cardName.shieldedminibot, wasOwnCard, true);
+                    p.drawACard(Chireiden.Silverfish.SimCard.shieldedminibot, wasOwnCard, true);
                 }
             }
         }
