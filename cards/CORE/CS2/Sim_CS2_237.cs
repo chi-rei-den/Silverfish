@@ -31,7 +31,7 @@ namespace HREngine.Bots
 //    zieht jedes mal eine karte, wenn ihr ein wildtier herbeiruft.
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (triggerEffectMinion.own == summonedMinion.own && (TAG_RACE)summonedMinion.handcard.card.Race == TAG_RACE.PET)
+            if (triggerEffectMinion.own == summonedMinion.own && (Race)summonedMinion.handcard.card.Race == Race.PET)
             {
                 p.drawACard(Chireiden.Silverfish.SimCard.None, triggerEffectMinion.own);
             }

@@ -31,9 +31,9 @@ class Sim_GIL_586 : SimTemplate //* 大地之力 Earthen Might
 public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 {
 p.minionGetBuffed(target, 2, 2);
-if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.ELEMENTAL)
-p.drawACard(Chireiden.Silverfish.SimCard.unknown, ownplay, true);
-if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.TOTEM)
+if ((Race)target.handcard.card.Race == Race.ELEMENTAL)
+p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
+if ((Race)target.handcard.card.Race == Race.TOTEM)
 p.evaluatePenality -= 5;
 }
 

@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 List<Handmanager.Handcard> temp = new List<Handmanager.Handcard>();
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if ((TAG_RACE)hc.card.Race == TAG_RACE.DEMON)
+                    if ((Race)hc.card.Race == Race.DEMON)
                     {
                         temp.Add(hc);
                     }

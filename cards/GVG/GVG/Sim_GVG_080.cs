@@ -36,7 +36,7 @@ namespace HREngine.Bots
             bool hasbeast = false;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET)
+                if ((Race)m.handcard.card.Race == Race.PET)
                 {
                     hasbeast = true;
                     break;

@@ -1,5 +1,7 @@
 namespace HREngine.Bots
 {
+    using Chireiden.Silverfish;
+    using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -58,14 +60,14 @@ namespace HREngine.Bots
             public int bonusForPlaying = 0;
             public int bonusForPlayingT0 = 0;
             public int bonusForPlayingT1 = 0;
-            public Chireiden.Silverfish.SimCard requiredWeapon = Chireiden.Silverfish.SimCard.unknown;
-            public HeroEnum oHero = HeroEnum.None;
+            public Chireiden.Silverfish.SimCard requiredWeapon = Chireiden.Silverfish.SimCard.None;
+            public CardClass oHero;
 
             public combo(string s)
             {
                 int i = 0;
                 this.neededMana = 0;
-                requiredWeapon = Chireiden.Silverfish.SimCard.unknown;
+                requiredWeapon = Chireiden.Silverfish.SimCard.None;
                 this.type = combotype.combo;
                 this.twoTurnCombo = false;
                 bool fixmana = false;
@@ -134,22 +136,22 @@ namespace HREngine.Bots
                         string crd = crdl.Split(',')[0];
                         if (t1)
                         {
-                            manat1 += CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd)).cost;
+                            manat1 += SimCard.FromName(crd).Cost;
                         }
                         else
                         {
-                            manat0 += CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd)).cost;
+                            manat0 += SimCard.FromName(crd).Cost;
                         }
                         this.combolength++;
 
-                        if (combocards.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
+                        if (combocards.ContainsKey(crd))
                         {
-                            combocards[CardDB.Instance.cardIdstringToEnum(crd)]++;
+                            combocards[crd]++;
                         }
                         else
                         {
-                            combocards.Add(CardDB.Instance.cardIdstringToEnum(crd), 1);
-                            cardspen.Add(CardDB.Instance.cardIdstringToEnum(crd), Convert.ToInt32(crdl.Split(',')[1]));
+                            combocards.Add(crd, 1);
+                            cardspen.Add(crd, Convert.ToInt32(crdl.Split(',')[1]));
                         }
 
                         if (this.twoTurnCombo)
@@ -157,34 +159,34 @@ namespace HREngine.Bots
 
                             if (t1)
                             {
-                                if (this.combocardsTurn1.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
+                                if (this.combocardsTurn1.ContainsKey(crd))
                                 {
-                                    combocardsTurn1[CardDB.Instance.cardIdstringToEnum(crd)]++;
+                                    combocardsTurn1[crd]++;
                                 }
                                 else
                                 {
-                                    combocardsTurn1.Add(CardDB.Instance.cardIdstringToEnum(crd), 1);
+                                    combocardsTurn1.Add(crd, 1);
                                 }
                                 this.combot1len++;
                             }
                             else
                             {
-                                Chireiden.Silverfish.SimCard lolcrd = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(crd));
-                                if (lolcrd.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                                Chireiden.Silverfish.SimCard lolcrd = crd;
+                                if (lolcrd.Type == CardType.MINION)
                                 {
-                                    if (this.combocardsTurn0Mobs.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
+                                    if (this.combocardsTurn0Mobs.ContainsKey(crd))
                                     {
-                                        combocardsTurn0Mobs[CardDB.Instance.cardIdstringToEnum(crd)]++;
+                                        combocardsTurn0Mobs[crd]++;
                                     }
                                     else
                                     {
-                                        combocardsTurn0Mobs.Add(CardDB.Instance.cardIdstringToEnum(crd), 1);
+                                        combocardsTurn0Mobs.Add(crd, 1);
                                     }
                                     this.combot0len++;
                                 }
-                                if (lolcrd.Type == Chireiden.Silverfish.SimCardtype.WEAPON)
+                                if (lolcrd.Type == CardType.WEAPON)
                                 {
-                                    this.requiredWeapon = lolcrd.name;
+                                    this.requiredWeapon = lolcrd.CardId;
                                 }
                                 if (this.combocardsTurn0All.ContainsKey(CardDB.Instance.cardIdstringToEnum(crd)))
                                 {
@@ -269,7 +271,7 @@ namespace HREngine.Bots
                         }
                     }
 
-                    if (requiredWeapon != Chireiden.Silverfish.SimCard.unknown && requiredWeapon != weapon) return 1;
+                    if (requiredWeapon != Chireiden.Silverfish.SimCard.None && requiredWeapon != weapon) return 1;
 
                     if (turn0requires >= combot0len) return 2;
 
@@ -375,7 +377,7 @@ namespace HREngine.Bots
             }
 
         }
-        
+
         private ComboBreaker()
         {
             if (attackFaceHP != -1)
@@ -402,7 +404,7 @@ namespace HREngine.Bots
                 help.ErrorLog(behavName + ": 没有特定的“连招”.");
                 return;
             }
-            
+
             help.ErrorLog("[连招功能] 成功加载“连招” " + behavName);
             string[] lines = new string[0] { };
             combos.Clear();
@@ -481,7 +483,7 @@ namespace HREngine.Bots
             int mana = Math.Max(p.ownMaxMana, p.mana);
             foreach (combo c in this.combos)
             {
-                if ((c.oHero == HeroEnum.None || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
+                if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
                 {
                     int iia = c.isInCombo(p.owncards, p.ownMaxMana);//check if we have all cards for a combo, and if the choosen card is one
                     int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, p.ownWeapon.name);
@@ -521,7 +523,7 @@ namespace HREngine.Bots
                 Chireiden.Silverfish.SimCard crd = a.card.card;
                 foreach (combo c in this.combos)
                 {
-                    if ((c.oHero == HeroEnum.None || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
+                    if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
                     {
                         int iia = c.isInCombo(p.owncards, p.ownMaxMana);
                         int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, weapon);

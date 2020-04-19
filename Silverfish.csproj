@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="data\CardDefs.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="GreyMagic">
       <HintPath>..\..\GreyMagic.dll</HintPath>
       <Private>false</Private>
@@ -30,6 +34,10 @@
     <Reference Include="PresentationFramework" />
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="data\" />
   </ItemGroup>
 
 </Project>

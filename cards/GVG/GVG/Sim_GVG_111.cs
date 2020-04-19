@@ -38,7 +38,7 @@ namespace HREngine.Bots
             int anz =0;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL && m.Hp >=1 )
+                if ((Race)m.handcard.card.Race == Race.MECHANICAL && m.Hp >=1 )
                 {
                     anz++;
                 }
@@ -48,7 +48,7 @@ namespace HREngine.Bots
                 anz = 0;
                 foreach (Minion m in temp)
                 {
-                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
+                    if ((Race)m.handcard.card.Race == Race.MECHANICAL)
                     {
                         p.minionGetDestroyed(m);
                         anz++;

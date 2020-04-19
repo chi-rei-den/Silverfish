@@ -40,7 +40,7 @@ namespace HREngine.Bots
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
                     int cardCost = hc.card.getManaCost(p, hc.manacost);
-                    if ((p.nextSpellThisTurnCostHealth && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.Race == TAG_RACE.MURLOC))
+                    if ((p.nextSpellThisTurnCostHealth && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (Race)hc.card.Race == Race.MURLOC))
                     {
                         if (p.ownHero.Hp > cardCost || p.ownHero.immune) { }
                         else continue; // if not enough Hp

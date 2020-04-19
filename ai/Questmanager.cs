@@ -67,7 +67,7 @@ namespace HREngine.Bots
                 {
                     case CardIds.Collectible.Druid.JungleGiants: if (m.Angr >= 5) questProgress++; break;
                     case CardIds.Collectible.Priest.AwakenTheMakers: if (m.handcard.card.deathrattle) questProgress++; break;
-                    case CardIds.Collectible.Shaman.UniteTheMurlocs: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) questProgress++; break;
+                    case CardIds.Collectible.Shaman.UniteTheMurlocs: if ((Race)m.handcard.card.Race == Race.MURLOC) questProgress++; break;
                 }
             }
 
@@ -110,7 +110,7 @@ namespace HREngine.Bots
         public QuestItem ownQuest = new QuestItem();
         public QuestItem enemyQuest = new QuestItem();
         public Dictionary<Chireiden.Silverfish.SimCard, int> mobsGame = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        private Chireiden.Silverfish.SimCard nextMobName = Chireiden.Silverfish.SimCard.unknown;
+        private Chireiden.Silverfish.SimCard nextMobName = Chireiden.Silverfish.SimCard.None;
         private int nextMobId = 0;
         private int prevMobId = 0;
         Helpfunctions help;
@@ -141,7 +141,7 @@ namespace HREngine.Bots
         {
             if (step != 0)
             {
-                if (nextMobName != Chireiden.Silverfish.SimCard.unknown && nextMobId != prevMobId)
+                if (nextMobName != Chireiden.Silverfish.SimCard.None && nextMobId != prevMobId)
                 {
                     prevMobId = nextMobId;
                     nextMobId = 0;
@@ -157,7 +157,7 @@ namespace HREngine.Bots
 
         public void updatePlayedCardFromHand(Handmanager.Handcard hc)
         {
-            nextMobName = Chireiden.Silverfish.SimCard.unknown;
+            nextMobName = Chireiden.Silverfish.SimCard.None;
             nextMobId = 0;
             if (hc != null && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
             {
@@ -178,7 +178,7 @@ namespace HREngine.Bots
             mobsGame.Clear();
             ownQuest = new QuestItem();
             enemyQuest = new QuestItem();
-            nextMobName = Chireiden.Silverfish.SimCard.unknown;
+            nextMobName = Chireiden.Silverfish.SimCard.None;
             nextMobId = 0;
             prevMobId = 0;
         }

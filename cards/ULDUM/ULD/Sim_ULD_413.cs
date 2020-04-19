@@ -36,7 +36,7 @@ namespace HREngine.Bots
 			List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
 			List<Minion> CopiesMinion = new List<Minion>();
 			foreach (Minion t in temp)
-				if ((TAG_RACE)t.handcard.card.Race == TAG_RACE.TOTEM)
+				if ((Race)t.handcard.card.Race == Race.TOTEM)
 					CopiesMinion.Add(t);
 			foreach (Minion t in CopiesMinion)
 			{

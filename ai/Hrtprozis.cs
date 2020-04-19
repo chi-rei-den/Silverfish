@@ -44,10 +44,11 @@ namespace HREngine.Bots
 
         public bool setGameRule = false;
 
-        public HeroEnum heroname = HeroEnum.None, enemyHeroname = HeroEnum.None;
+        public CardClass heroname;
+        public CardClass enemyHeroname;
         public string heronameingame = "", enemyHeronameingame = "";
-        public CardClass ownHeroStartClass = CardClass.INVALID;
-        public CardClass enemyHeroStartClass = CardClass.INVALID;
+        public CardClass ownHeroStartClass;
+        public CardClass enemyHeroStartClass;
         public Chireiden.Silverfish.SimCard heroAbility;
         public bool ownAbilityisReady = false;
         public int ownHeroPowerCost = 2;
@@ -103,7 +104,6 @@ namespace HREngine.Bots
             help = Helpfunctions.Instance;
             penman = PenalityManager.Instance;
             settings = Settings.Instance;
-            cdb = CardDB.Instance;
         }
 
         private Hrtprozis()
@@ -145,8 +145,8 @@ namespace HREngine.Bots
             ownHeroWindfury = false;
             ownSecretList.Clear();
             enemySecretCount = 0;
-            heroname = HeroEnum.None;
-            enemyHeroname = HeroEnum.None;
+            heroname = CardClass.INVALID;
+            enemyHeroname = CardClass.INVALID;
             heronameingame = "";
             enemyHeronameingame = "";
             heroAbility = new Chireiden.Silverfish.SimCard();
@@ -261,7 +261,7 @@ namespace HREngine.Bots
                 case "warrior": return HeroEnum.warrior;
                 case "lordjaraxxus": return HeroEnum.lordjaraxxus;
                 case "ragnarosthefirelord": return HeroEnum.ragnarosthefirelord;
-                default: return HeroEnum.None;
+                default: return CardClass.INVALID;
             }
         }
 
@@ -296,7 +296,7 @@ namespace HREngine.Bots
                 case "ROGUE": return HeroEnum.thief;
                 case "WARLOCK": return HeroEnum.warlock;
                 case "WARRIOR": return HeroEnum.warrior;
-                default: return HeroEnum.None;
+                default: return CardClass.INVALID;
             }
         }
 
@@ -559,7 +559,7 @@ namespace HREngine.Bots
             help.logg(this.numMinionsPlayedThisTurn + " " + this.cardsPlayedThisTurn + " " + this.ueberladung + " " + this.lockedMana + " " + this.ownPlayerController);
 
             help.logg("ownhero:");
-            help.logg((this.heroname == HeroEnum.None ? this.heronameingame : this.heroname.ToString()) + " " + this.ownHero.Hp + " " + this.ownHero.maxHp + " " + this.ownHero.armor + " " + this.ownHero.immuneWhileAttacking + " " + this.ownHero.immune + " " + this.ownHero.entitiyID + " " + this.ownHero.Ready + " " + this.ownHero.numAttacksThisTurn + " " + this.ownHero.frozen + " " + this.ownHero.Angr + " " + this.ownHero.tempAttack + " " + this.enemyHero.stealth);
+            help.logg((this.heroname == CardClass.INVALID ? this.heronameingame : this.heroname.ToString()) + " " + this.ownHero.Hp + " " + this.ownHero.maxHp + " " + this.ownHero.armor + " " + this.ownHero.immuneWhileAttacking + " " + this.ownHero.immune + " " + this.ownHero.entitiyID + " " + this.ownHero.Ready + " " + this.ownHero.numAttacksThisTurn + " " + this.ownHero.frozen + " " + this.ownHero.Angr + " " + this.ownHero.tempAttack + " " + this.enemyHero.stealth);
             help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.cardIDenum + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
             help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.cardIDenum);
             string secs = "";
@@ -574,7 +574,7 @@ namespace HREngine.Bots
             help.logg(Questmanager.Instance.getQuestsString());
             help.logg("advanced: " + this.ownCrystalCore + " " + (this.ownMinionsInDeckCost0 ? 1: 0));
             help.logg("enemyhero:");
-            help.logg((this.enemyHeroname == HeroEnum.None ? this.enemyHeronameingame : this.enemyHeroname.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
+            help.logg((this.enemyHeroname == CardClass.INVALID ? this.enemyHeronameingame : this.enemyHeroname.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
             help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.cardIDenum + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
             help.logg("ability: " + "True" + " " + this.enemyAbility.cardIDenum);
             help.logg("fatigue: " + this.ownDeckSize + " " + this.ownHeroFatigue + " " + this.enemyDeckSize + " " + this.enemyHeroFatigue);

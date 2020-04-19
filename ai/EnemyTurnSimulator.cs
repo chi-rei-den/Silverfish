@@ -268,7 +268,7 @@ namespace HREngine.Bots
                 {
                     if (p.enemyDeckSize >= 1)
                     {
-                        p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                        p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                     }
                 }
                 int anz = 0;
@@ -284,7 +284,7 @@ namespace HREngine.Bots
                         anz = Math.Min(anz, 3);
                         for (int i = 0; i < anz; i++)
                         {
-                            if (p.enemyDeckSize >= 1) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                            if (p.enemyDeckSize >= 1) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         }
                         continue;
                     case CardIds.Collectible.Priest.Shadowboxer:
@@ -352,8 +352,8 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Neutral.GadgetzanAuctioneer:
                         if (p.enemyAnzCards >= 1)
                         {
-                            p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
-                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                            p.drawACard(Chireiden.Silverfish.SimCard.None, false);
+                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         }
                         continue;
                     case CardIds.Collectible.Mage.ArchmageAntonidas:
@@ -371,8 +371,8 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Neutral.Gazlowe:
                         if (p.enemyAnzCards >= 1)
                         {
-                            p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
-                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                            p.drawACard(Chireiden.Silverfish.SimCard.None, false);
+                            if (p.enemyAnzCards >= 3 && p.enemyMaxMana >= 5) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         }
                         continue;
                     case CardIds.Collectible.Mage.Flamewaker:
@@ -437,7 +437,7 @@ namespace HREngine.Bots
                         if (p.enemyAnzCards >= 2) p.minionGetBuffed(m, 1, 0);
                         continue;
                     case CardIds.Collectible.Hunter.StarvingBuzzard:
-                        if (p.enemyAnzCards >= 2) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                        if (p.enemyAnzCards >= 2) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         continue;
                     case CardIds.Collectible.Paladin.CobaltGuardian:
                         if (p.enemyAnzCards >= 2) m.divineshild = true;
@@ -485,10 +485,10 @@ namespace HREngine.Bots
                         if (m.Hp >= 4 && p.enemyAnzCards >= 3) p.minionGetBuffed(m, m.Angr * 2, 0);
                         continue;
                     case CardIds.Collectible.Neutral.AcolyteOfPain:
-                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         continue;
                     case CardIds.Collectible.Druid.MechBearCat:
-                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                        if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
                         continue;
                     case CardIds.Collectible.Neutral.GrimPatron:
                         if (m.Hp >= 3 && p.enemyAnzCards >= 3) p.callKid(CardIds.Collectible.Neutral.GrimPatron, p.enemyMinions.Count, false);

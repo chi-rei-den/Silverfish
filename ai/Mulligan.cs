@@ -6,6 +6,8 @@ using System.Collections.Generic;
 using Triton.Game.Data;
 using log4net;
 using Logger = Triton.Common.LogUtilities.Logger;
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 
 namespace HREngine.Bots
 {
@@ -21,12 +23,12 @@ This programm allows:
     (highest priority)
     -Creating rules that allow to Hold 1 or 2 cards, depending on the presence of other cards.
     -Support different sets of rules for different behaviors.
-     
+
 as well as
 
     -Can create rules like: if I have a coin, then ...
     -Can create rules for different pairs of ownHero-enemyHero (any or all).
-    -It allowed the simultaneous existence of rules with different priorities for the same card 
+    -It allowed the simultaneous existence of rules with different priorities for the same card
      with the same hero pairs (i.e. possible 3 rules at the same time).
      */
 
@@ -50,7 +52,7 @@ as well as
             public string holdReason = "";
             public CardIDEntity(string id_string, int entt)
             {
-                this.id = CardDB.Instance.cardIdstringToEnum(id_string);
+                this.id = id_string;
                 this.entitiy = entt;
             }
         }
@@ -82,7 +84,7 @@ as well as
                 mulliganRulesLoaded = true;
                 return;
             }
-			
+
             if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
             {
                 Helpfunctions.Instance.ErrorLog(behavName + ": no special mulligan.");
@@ -245,13 +247,13 @@ as well as
         }
 
 
-        private string getMullRuleKey(Chireiden.Silverfish.SimCard cardIDM = Chireiden.Silverfish.SimCard.None, HeroEnum ownMHero = HeroEnum.None, HeroEnum enemyMHero = HeroEnum.None, int isExtraRule = 0)
+        private string getMullRuleKey(SimCard cardIDM = null, CardClass ownMHero = CardClass.INVALID, CardClass enemyMHero = CardClass.INVALID, int isExtraRule = 0)
         {
             StringBuilder MullRuleKey = new StringBuilder("", 500);
-            MullRuleKey.Append(cardIDM).Append(";").Append(ownMHero).Append(";").Append(enemyMHero).Append(";").Append(isExtraRule);
+            MullRuleKey.Append(cardIDM ?? SimCard.None).Append(";").Append(ownMHero).Append(";").Append(enemyMHero).Append(";").Append(isExtraRule);
             return MullRuleKey.ToString();
         }
-        
+
         private string joinSomeTxt(string v1 = "", string v2 = "", string v3 = "", string v4 = "", string v5 = "", string v6 = "", string v7 = "")
         {
             StringBuilder retValue = new StringBuilder("", 500);
@@ -276,9 +278,9 @@ as well as
             {
                 cards.Add(new CardIDEntity(mulliganData.Cards[i].Entity.Id, i));
             }
-            HeroEnum ownHeroClass = Hrtprozis.Instance.heroCardClassstringToEnum(mulliganData.UserClass.ToString());
-            HeroEnum enemyHeroClass = Hrtprozis.Instance.heroCardClassstringToEnum(mulliganData.OpponentClass.ToString());
-            
+            var ownHeroClass = mulliganData.UserClass.Convert();
+            var enemyHeroClass = mulliganData.OpponentClass.Convert();
+
             int manaRule = 4;
             string MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, enemyHeroClass, 1);
             if (MulliganRules.ContainsKey(MullRuleKey))
@@ -288,7 +290,7 @@ as well as
             }
             else
             {
-                MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, HeroEnum.None, 1);
+                MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, CardClass.INVALID, 1);
                 if (MulliganRules.ContainsKey(MullRuleKey))
                 {
                     string[] temp = MulliganRules[MullRuleKey].Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -301,7 +303,7 @@ as well as
 
             foreach (CardIDEntity CardIDEntityC in cards)
             {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(CardIDEntityC.id);
+                Chireiden.Silverfish.SimCard c = CardIDEntityC.id;
                 if (CardIDEntityC.hold == 0 && CardIDEntityC.holdByRule == 0)
                 {
                     if (c.Cost < manaRule)
@@ -321,11 +323,11 @@ as well as
                 bool hasRuleClassSimple = false;
 
                 bool hasRule = false;
-                string MullRuleKeySimple = getMullRuleKey(c.cardIDenum, ownHeroClass, enemyHeroClass, 0); //Simple key for Class enemy
+                string MullRuleKeySimple = getMullRuleKey(c, ownHeroClass, enemyHeroClass, 0); //Simple key for Class enemy
                 if (MulliganRules.ContainsKey(MullRuleKeySimple)) { hasRule = true; hasRuleClassSimple = true; }
                 else
                 {
-                    MullRuleKeySimple = getMullRuleKey(c.cardIDenum, ownHeroClass, HeroEnum.None, 0); //Simple key for ALL enemy
+                    MullRuleKeySimple = getMullRuleKey(c, ownHeroClass, CardClass.INVALID, 0); //Simple key for ALL enemy
                     if (MulliganRules.ContainsKey(MullRuleKeySimple)) hasRule = true;
                 }
                 if (hasRule)
@@ -333,13 +335,13 @@ as well as
                     string[] val = MulliganRules[MullRuleKeySimple].Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
                     allowedQuantitySimple = ((val[1] == "2") ? 2 : 1) * ((val[0] == "Hold") ? 1 : -1);
                 }
-                
+
                 hasRule = false;
-                string MullRuleKeyExtra = getMullRuleKey(c.cardIDenum, ownHeroClass, enemyHeroClass, 1); //Extra key for Class enemy
+                string MullRuleKeyExtra = getMullRuleKey(c, ownHeroClass, enemyHeroClass, 1); //Extra key for Class enemy
                 if (MulliganRules.ContainsKey(MullRuleKeyExtra)) hasRule = true;
                 else if (!hasRuleClassSimple)
                 {
-                    MullRuleKeyExtra = getMullRuleKey(c.cardIDenum, ownHeroClass, HeroEnum.None, 1); //Extra key for ALL enemy
+                    MullRuleKeyExtra = getMullRuleKey(c, ownHeroClass, CardClass.INVALID, 1); //Extra key for ALL enemy
                     if (MulliganRules.ContainsKey(MullRuleKeyExtra)) hasRule = true;
                 }
                 if (hasRule)
@@ -374,7 +376,7 @@ as well as
                     {
                         string[] addedCards = MullRuleValueExtra[2].Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
                         MulliganRulesManual.Clear();
-                        foreach (string s in addedCards) { MulliganRulesManual.Add(CardDB.Instance.cardIdstringToEnum(s), ""); }
+                        foreach (string s in addedCards) { MulliganRulesManual.Add(s, ""); }
 
                         foreach (CardIDEntity tmp in cards)
                         {
@@ -400,7 +402,7 @@ as well as
                     {
                         string[] addedCards = MullRuleValueExtra[2].Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
                         MulliganRulesManual.Clear();
-                        foreach (string s in addedCards) { MulliganRulesManual.Add(CardDB.Instance.cardIdstringToEnum(s), ""); }
+                        foreach (string s in addedCards) { MulliganRulesManual.Add(s, ""); }
 
                         bool foundFreeCard = false;
                         for (int i = 0; i < cards.Count; i++)

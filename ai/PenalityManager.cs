@@ -263,7 +263,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (target.own)
                     {
-                        if (p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob) != null)
+                        if (p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob) != null)
                         {
                             return -5;
                         }
@@ -424,10 +424,10 @@ namespace HREngine.Bots
                         case CardIds.Collectible.Druid.MarkOfYshaarj:
                             if (target.stealth)
                             {
-                                if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) return 3;
+                                if ((Race)target.handcard.card.Race == Race.PET) return 3;
                                 else return 7;
                             }
-                            if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET && p.owncards.Count < 2) return 3;
+                            if ((Race)target.handcard.card.Race == Race.PET && p.owncards.Count < 2) return 3;
                             return 50;
 
                         default:
@@ -637,16 +637,16 @@ namespace HREngine.Bots
                                 if (!m.wounded) continue;
                                 break;
                             case CardIds.Collectible.Priest.DragonfirePotion:
-                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) continue;
+                                if ((Race)m.handcard.card.Race == Race.DRAGON) continue;
                                 break;
                             case CardIds.Collectible.Neutral.CorruptedSeer:
-                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) continue;
+                                if ((Race)m.handcard.card.Race == Race.MURLOC) continue;
                                 break;
                             case CardIds.NonCollectible.Neutral.ShadowVolley:
-                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
+                                if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                 break;
                             case CardIds.Collectible.Warlock.Demonwrath:
-                                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
+                                if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                 break;
                             case CardIds.Collectible.Paladin.ScarletPurifier:
                                 if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
@@ -737,7 +737,7 @@ namespace HREngine.Bots
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((Race)mm.handcard.card.Race == Race.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
 
@@ -745,28 +745,28 @@ namespace HREngine.Bots
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
+                                    if ((Race)mm.handcard.card.Race == Race.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
                                 }
                                 break;
                             case CardIds.Collectible.Warlock.Malganis:
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
+                                    if ((Race)mm.handcard.card.Race == Race.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 2;
                                 }
                                 break;
                             case CardIds.Collectible.Neutral.SouthseaCaptain:
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((Race)mm.handcard.card.Race == Race.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
                             case CardIds.Collectible.Hunter.TimberWolf:
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if ((Race)mm.handcard.card.Race == Race.PET && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
                             case CardIds.Collectible.Paladin.WarhorseTrainer:
@@ -818,16 +818,16 @@ namespace HREngine.Bots
                                     if (!m.wounded) continue;
                                     break;
                                 case CardIds.Collectible.Priest.DragonfirePotion:
-                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DRAGON) continue;
+                                    if ((Race)m.handcard.card.Race == Race.DRAGON) continue;
                                     break;
                                 case CardIds.Collectible.Neutral.CorruptedSeer:
-                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) continue;
+                                    if ((Race)m.handcard.card.Race == Race.MURLOC) continue;
                                     break;
                                 case CardIds.NonCollectible.Neutral.ShadowVolley:
-                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
+                                    if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                     break;
                                 case CardIds.Collectible.Warlock.Demonwrath:
-                                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) continue;
+                                    if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                     break;
                                 case CardIds.Collectible.Paladin.ScarletPurifier:
                                     if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
@@ -868,7 +868,7 @@ namespace HREngine.Bots
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((Race)mm.handcard.card.Race == Race.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
 
@@ -876,28 +876,28 @@ namespace HREngine.Bots
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
+                                        if ((Race)mm.handcard.card.Race == Race.MURLOC && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
                                     }
                                     break;
                                 case CardIds.Collectible.Warlock.Malganis:
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
+                                        if ((Race)mm.handcard.card.Race == Race.DEMON && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 2;
                                     }
                                     break;
                                 case CardIds.Collectible.Neutral.SouthseaCaptain:
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((Race)mm.handcard.card.Race == Race.PIRATE && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
                                 case CardIds.Collectible.Hunter.TimberWolf:
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if ((Race)mm.handcard.card.Race == Race.PET && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
                                 case CardIds.Collectible.Paladin.WarhorseTrainer:
@@ -1034,7 +1034,7 @@ namespace HREngine.Bots
                         case CardIds.Collectible.Hunter.KillCommand:
                             foreach (Minion mn in p.ownMinions)
                             {
-                                if ((TAG_RACE)mn.handcard.card.Race == TAG_RACE.PET) { dmg = 5; break; }
+                                if ((Race)mn.handcard.card.Race == Race.PET) { dmg = 5; break; }
                             }
                             break;
                     }
@@ -1091,8 +1091,8 @@ namespace HREngine.Bots
                     {
                         case CardIds.Collectible.Warrior.CruelTaskmaster: if (m.Hp >= 2) return 0; break;
                         case CardIds.Collectible.Warrior.InnerRage: if (m.Hp >= 2) return 0; break;
-                        case CardIds.Collectible.Warlock.Demonfire: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) return 0; break;
-                        case CardIds.Collectible.Warlock.Demonheart: if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) return 0; break;
+                        case CardIds.Collectible.Warlock.Demonfire: if ((Race)m.handcard.card.Race == Race.DEMON) return 0; break;
+                        case CardIds.Collectible.Warlock.Demonheart: if ((Race)m.handcard.card.Race == Race.DEMON) return 0; break;
                         case CardIds.Collectible.Shaman.EarthShock:
                             if (m.Hp >= 2)
                             {
@@ -1153,7 +1153,7 @@ namespace HREngine.Bots
                             case CardIds.Collectible.Hunter.KillCommand:
                                 foreach (Minion mn in p.ownMinions)
                                 {
-                                    if ((TAG_RACE)mn.handcard.card.Race == TAG_RACE.PET) { realDamage = 5; break; }
+                                    if ((Race)mn.handcard.card.Race == Race.PET) { realDamage = 5; break; }
                                 }
                                 break;
                         }
@@ -1397,12 +1397,12 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Neutral.TinkertownTechnician:
                         foreach (Minion mnn in p.ownMinions)
                         {
-                            if ((TAG_RACE)mnn.handcard.card.Race != TAG_RACE.MECHANICAL) pen += 4;
+                            if ((Race)mnn.handcard.card.Race != Race.MECHANICAL) pen += 4;
                         }
                         break;
 
                     case CardIds.Collectible.Druid.MarkOfYshaarj:
-                        if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) carddraw = 1;
+                        if ((Race)target.handcard.card.Race == Race.PET) carddraw = 1;
                         break;
 
                     case CardIds.Collectible.Neutral.ServantOfKalimos:
@@ -1511,7 +1511,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (card.Type == Chireiden.Silverfish.SimCardtype.MOB && (TAG_RACE)card.Race == TAG_RACE.PET)
+            if (card.Type == Chireiden.Silverfish.SimCardtype.MOB && (Race)card.Race == Race.PET)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
@@ -1650,7 +1650,7 @@ namespace HREngine.Bots
                         continue;
                     }
 
-                    if (hasstarving && (TAG_RACE)card.Race == TAG_RACE.PET)
+                    if (hasstarving && (Race)card.Race == Race.PET)
                     {
                         continue;
                     }
@@ -1679,30 +1679,30 @@ namespace HREngine.Bots
 
             Handmanager.Handcard hc;
             int anz = 0;
-            switch (name)
+            switch (name.CardId)
             {
                 case CardIds.Collectible.Hunter.TroggBeastrager:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.PET);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.PET);
                     if (hc != null) return -5;
                     break;
                 case CardIds.Collectible.Neutral.GrimestreetSmuggler:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob);
                     if (hc != null) return -5;
                     break;
                 case CardIds.Collectible.Neutral.DonHancho:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob);
                     if (hc != null) return -20;
                     break;
                 case CardIds.Collectible.Neutral.DeathaxePunisher:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.LIFESTEAL);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.LIFESTEAL);
                     if (hc != null) return -10;
                     break;
                 case CardIds.Collectible.Paladin.GrimscaleChum:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.MURLOC);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.MURLOC);
                     if (hc == null) return -5;
                     break;
                 case CardIds.Collectible.Warrior.GrimestreetPawnbroker:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.Weapon);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Weapon);
                     if (hc == null) return -5;
                     break;
                 case CardIds.Collectible.Paladin.GrimestreetOutfitter:
@@ -1732,12 +1732,12 @@ namespace HREngine.Bots
                     else return -1 * anz * 2;
                     break;
                 case CardIds.Collectible.Hunter.SmugglersCrate:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.CARDRACE, TAG_RACE.PET);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.PET);
                     if (hc != null) return -10;
                     else return 10;
                     break;
                 case CardIds.Collectible.Warrior.StolenGoods:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GAME_TAGs.TAUNT);
+                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.TAUNT);
                     if (hc != null) return -15;
                     else return 10;
                     break;
@@ -1975,25 +1975,25 @@ namespace HREngine.Bots
                         case 1:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PET && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.PET && mm.Ready) return 0;
                             }
                             break;
                         case 2:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MECHANICAL && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.MECHANICAL && mm.Ready) return 0;
                             }
                             break;
                         case 3:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.MURLOC && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.MURLOC && mm.Ready) return 0;
                             }
                             break;
                         case 4:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.PIRATE && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.PIRATE && mm.Ready) return 0;
                             }
                             break;
                         case 5:
@@ -2014,13 +2014,13 @@ namespace HREngine.Bots
                         case 8:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.DEMON && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.DEMON && mm.Ready) return 0;
                             }
                             break;
                         case 9:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if ((TAG_RACE)mm.handcard.card.Race == TAG_RACE.TOTEM && mm.Ready) return 0;
+                                if ((Race)mm.handcard.card.Race == Race.TOTEM && mm.Ready) return 0;
                             }
                             break;
                         case 10:
@@ -2040,7 +2040,7 @@ namespace HREngine.Bots
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) return 0;
+                                if ((Race)hc.card.Race == Race.DRAGON) return 0;
                             }
                         }
                         return 500;
@@ -2067,7 +2067,7 @@ namespace HREngine.Bots
                         }
                         else
                         {
-                            if (!(name == CardIds.Collectible.Neutral.Nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((TAG_RACE)card.Race == TAG_RACE.PET && p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null) || p.owncards.Find(x => x.card.name == CardIds.Collectible.Warrior.Charge) != null))
+                            if (!(name == CardIds.Collectible.Neutral.Nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((Race)card.Race == Race.PET && p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null) || p.owncards.Find(x => x.card.name == CardIds.Collectible.Warrior.Charge) != null))
                             {
                                 return 500;
                             }
@@ -2109,7 +2109,7 @@ namespace HREngine.Bots
                     foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) return 0;
                     return 5;
                 case CardIds.Collectible.Warrior.BloodsailCultist: ;
-                    if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PIRATE) return 0;
+                    if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((Race)m.handcard.card.Race == Race.PIRATE) return 0;
                     return 8;
                 case CardIds.Collectible.Neutral.RavasaurRunt:
                     if (p.ownMinions.Count < 2) return 5;
@@ -2121,14 +2121,14 @@ namespace HREngine.Bots
                     targets = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
+                        if ((Race)m.handcard.card.Race == Race.MURLOC) targets++;
                     }
                     return 20 - targets * 5;
                 case CardIds.Collectible.Neutral.PrimalfinLookout:
                     targets = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
+                        if ((Race)m.handcard.card.Race == Race.MURLOC) targets++;
                     }
                     return 20 - targets * 5;
                 case CardIds.Collectible.Shaman.SpiritEcho:
@@ -2137,7 +2137,7 @@ namespace HREngine.Bots
                         targets = 0;
                         foreach (Minion m in p.ownMinions)
                         {
-                            if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC) targets++;
+                            if ((Race)m.handcard.card.Race == Race.MURLOC) targets++;
                         }
                         if (targets > 1) return -7;
                         return 10;
@@ -2234,7 +2234,7 @@ namespace HREngine.Bots
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
                         if (hc.card.name == CardIds.Collectible.Druid.MenagerieWarden) { menageriewarden = true; continue; }
-                        if ((TAG_RACE)hc.card.Race == TAG_RACE.PET && hc.card.Cost <= p.ownMaxMana) pet = true;
+                        if ((Race)hc.card.Race == Race.PET && hc.card.Cost <= p.ownMaxMana) pet = true;
                     }
                     if (menageriewarden && pet) pen += 23;
                 }
@@ -2264,7 +2264,7 @@ namespace HREngine.Bots
 
             if (name == CardIds.Collectible.Druid.MenagerieWarden)
             {
-                if (target != null && (TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) return 0;
+                if (target != null && (Race)target.handcard.card.Race == Race.PET) return 0;
                 else return 10;
             }
 
@@ -2497,7 +2497,7 @@ namespace HREngine.Bots
                   int ownTotemsCount= 0;
                   foreach (Minion m in p.ownMinions)
                         {
-                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((Race)m.handcard.card.Race == Race.TOTEM) ownTotemsCount++;
                         }
                     return 5 - ownTotemsCount * 5;
                 //风怒小陀螺
@@ -2516,14 +2516,14 @@ namespace HREngine.Bots
                     ownTotemsCount = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((Race)m.handcard.card.Race == Race.TOTEM) ownTotemsCount++;
                     }
                     return 13 - ownTotemsCount * 2;
                 case Chireiden.Silverfish.SimCard.图腾潮涌:
                     ownTotemsCount = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.TOTEM) ownTotemsCount++;
+                        if ((Race)m.handcard.card.Race == Race.TOTEM) ownTotemsCount++;
                     }
                     return 13 - ownTotemsCount * 2;
                 //怪盗图腾
@@ -2751,7 +2751,7 @@ namespace HREngine.Bots
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) return 0;
+                            if ((Race)hc.card.Race == Race.DRAGON) return 0;
                         }
                     }
                     return 500;
@@ -2981,7 +2981,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.Deathwingdragonlord:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) pen -= 3;
+                        if ((Race)hc.card.Race == Race.DRAGON) pen -= 3;
                     }
                     pen += 3;
                     break;
@@ -4652,7 +4652,7 @@ namespace HREngine.Bots
 
         private void setupHeroDamagingAOE()
         {
-            this.heroDamagingAoeDatabase.Add(Chireiden.Silverfish.SimCard.unknown, 0);
+            this.heroDamagingAoeDatabase.Add(Chireiden.Silverfish.SimCard.None, 0);
         }
 
         private void setupSpecialMins()
@@ -5797,7 +5797,7 @@ namespace HREngine.Bots
         }
 
 
-        public int getClassRacePriorityPenality(CardClass opponentHeroClass, TAG_RACE minionRace)
+        public int getClassRacePriorityPenality(CardClass opponentHeroClass, Race minionRace)
         {
             int retval = 0;
             switch (opponentHeroClass)
@@ -5837,63 +5837,63 @@ namespace HREngine.Bots
 
         private void setupClassRacePriorityDatabase()
         {
-            this.ClassRacePriorityWarloc.Add(TAG_RACE.MURLOC, 2);
-            this.ClassRacePriorityWarloc.Add(TAG_RACE.DEMON, 2);
-            this.ClassRacePriorityWarloc.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityWarloc.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityWarloc.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityWarloc.Add(Race.MURLOC, 2);
+            this.ClassRacePriorityWarloc.Add(Race.DEMON, 2);
+            this.ClassRacePriorityWarloc.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityWarloc.Add(Race.PET, 0);
+            this.ClassRacePriorityWarloc.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityHunter.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityHunter.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityHunter.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityHunter.Add(TAG_RACE.PET, 2);
-            this.ClassRacePriorityHunter.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityHunter.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityHunter.Add(Race.DEMON, 0);
+            this.ClassRacePriorityHunter.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityHunter.Add(Race.PET, 2);
+            this.ClassRacePriorityHunter.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityMage.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityMage.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityMage.Add(TAG_RACE.MECHANICAL, 2);
-            this.ClassRacePriorityMage.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityMage.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityMage.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityMage.Add(Race.DEMON, 0);
+            this.ClassRacePriorityMage.Add(Race.MECHANICAL, 2);
+            this.ClassRacePriorityMage.Add(Race.PET, 0);
+            this.ClassRacePriorityMage.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityShaman.Add(TAG_RACE.MURLOC, 2);
-            this.ClassRacePriorityShaman.Add(TAG_RACE.PIRATE, 1);
-            this.ClassRacePriorityShaman.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityShaman.Add(TAG_RACE.MECHANICAL, 2);
-            this.ClassRacePriorityShaman.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityShaman.Add(TAG_RACE.TOTEM, 2);
+            this.ClassRacePriorityShaman.Add(Race.MURLOC, 2);
+            this.ClassRacePriorityShaman.Add(Race.PIRATE, 1);
+            this.ClassRacePriorityShaman.Add(Race.DEMON, 0);
+            this.ClassRacePriorityShaman.Add(Race.MECHANICAL, 2);
+            this.ClassRacePriorityShaman.Add(Race.PET, 0);
+            this.ClassRacePriorityShaman.Add(Race.TOTEM, 2);
 
-            this.ClassRacePriorityDruid.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityDruid.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityDruid.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityDruid.Add(TAG_RACE.PET, 1);
-            this.ClassRacePriorityDruid.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityDruid.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityDruid.Add(Race.DEMON, 0);
+            this.ClassRacePriorityDruid.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityDruid.Add(Race.PET, 1);
+            this.ClassRacePriorityDruid.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.PIRATE, 1);
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityPaladin.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityPaladin.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityPaladin.Add(Race.PIRATE, 1);
+            this.ClassRacePriorityPaladin.Add(Race.DEMON, 0);
+            this.ClassRacePriorityPaladin.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityPaladin.Add(Race.PET, 0);
+            this.ClassRacePriorityPaladin.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityPriest.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityPriest.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityPriest.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityPriest.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityPriest.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityPriest.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityPriest.Add(Race.DEMON, 0);
+            this.ClassRacePriorityPriest.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityPriest.Add(Race.PET, 0);
+            this.ClassRacePriorityPriest.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityRouge.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityRouge.Add(TAG_RACE.PIRATE, 2);
-            this.ClassRacePriorityRouge.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityRouge.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityRouge.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityRouge.Add(TAG_RACE.TOTEM, 0);
+            this.ClassRacePriorityRouge.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityRouge.Add(Race.PIRATE, 2);
+            this.ClassRacePriorityRouge.Add(Race.DEMON, 0);
+            this.ClassRacePriorityRouge.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityRouge.Add(Race.PET, 0);
+            this.ClassRacePriorityRouge.Add(Race.TOTEM, 0);
 
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.MURLOC, 1);
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.DEMON, 0);
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.MECHANICAL, 1);
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.PET, 0);
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.TOTEM, 0);
-            this.ClassRacePriorityWarrior.Add(TAG_RACE.PIRATE, 2);
+            this.ClassRacePriorityWarrior.Add(Race.MURLOC, 1);
+            this.ClassRacePriorityWarrior.Add(Race.DEMON, 0);
+            this.ClassRacePriorityWarrior.Add(Race.MECHANICAL, 1);
+            this.ClassRacePriorityWarrior.Add(Race.PET, 0);
+            this.ClassRacePriorityWarrior.Add(Race.TOTEM, 0);
+            this.ClassRacePriorityWarrior.Add(Race.PIRATE, 2);
         }
 
         private void setupGangUpDatabase()

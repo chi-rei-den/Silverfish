@@ -2,6 +2,8 @@ using Triton.Game.Mapping;
 
 namespace HREngine.Bots
 {
+    using HearthDb;
+    using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
 
@@ -34,7 +36,7 @@ namespace HREngine.Bots
         public bool own;
         public int pID = 0;
 
-        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.unknown;
+        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.None;
         public CardClass cardClass = CardClass.INVALID;
         public int synergy = 0;
         public Handmanager.Handcard handcard;
@@ -50,7 +52,7 @@ namespace HREngine.Bots
 
         public bool allreadyAttacked = false;
 
-        
+
         public bool shadowmadnessed = false;//´can be silenced :D
 
         public bool destroyOnOwnTurnStart = false; // depends on own!
@@ -144,7 +146,7 @@ namespace HREngine.Bots
             this.numAttacksThisTurn = m.numAttacksThisTurn;
             this.immuneWhileAttacking = m.immuneWhileAttacking;
 
-            
+
             this.shadowmadnessed = m.shadowmadnessed;
 
             this.ancestralspirit = m.ancestralspirit;
@@ -229,7 +231,7 @@ namespace HREngine.Bots
             this.numAttacksThisTurn = m.numAttacksThisTurn;
             this.immuneWhileAttacking = m.immuneWhileAttacking;
 
-            
+
             this.shadowmadnessed = m.shadowmadnessed;
 
             this.ancestralspirit = m.ancestralspirit;
@@ -261,7 +263,7 @@ namespace HREngine.Bots
             this.Angr = m.Angr;
             this.AdjacentAngr = m.AdjacentAngr;
             this.tempAttack = m.tempAttack;
-            
+
 
             this.taunt = m.taunt;
             this.wounded = m.wounded;
@@ -301,7 +303,7 @@ namespace HREngine.Bots
             if (this.Hp <= 0) return;
 
             if (this.immune && dmg > 0 || this.untouchable) return;
-            
+
             int damage = dmg;
             int heal = 0;
             if (dmg < 0) heal = -dmg;
@@ -395,7 +397,7 @@ namespace HREngine.Bots
             }
 
             //its a Minion--------------------------------------------------------------
-            
+
             bool woundedbefore = this.wounded;
             if (damage > 0) this.allreadyAttacked = true;
 
@@ -497,7 +499,7 @@ namespace HREngine.Bots
             {
                 this.handcard.card.sim_card.onEnrageStart(p, this);
             }
-            
+
             if (this.Hp <= 0)
             {
                 this.minionDied(p);
@@ -516,7 +518,7 @@ namespace HREngine.Bots
                 if (this.name == CardIds.Collectible.Neutral.Feugen) p.feugenDead = true;
             }
 
-            
+
 
             if (own)
             {
@@ -638,7 +640,7 @@ namespace HREngine.Bots
             poisonous = false;
             cantLowerHPbelowONE = false;
             lifesteal = false;
-            
+
 
             //delete enrage (if minion is silenced the first time)
             if (wounded && handcard.card.Enrage && !silenced)
@@ -711,7 +713,7 @@ namespace HREngine.Bots
             {
                 // reborns and destoyings----------------------------------------------
 
-                
+
                 if (me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment1 || me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment12) //BlessingOfWisdom
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
@@ -770,7 +772,7 @@ namespace HREngine.Bots
                // {
               //      this.charge++;
               //  }
-                
+
                 switch(me.CARDID)
                 {
                     //ToDo: TBUD_1	Each turn, if you have less health then a your opponent, summon a free minion
@@ -789,13 +791,13 @@ namespace HREngine.Bots
                     // deathrattles-------------------------------------------------
                     case CardIds.NonCollectible.Hunter.ExplorersHat_ExplorersHatEnchantment: this.explorershat++; continue;
                     case CardIds.NonCollectible.Shaman.SpiritEcho_EchoedSpiritEnchantment: this.returnToHand++; continue;
-                        
+
                     case CardIds.NonCollectible.Shaman.AncestralSpirit_AncestralSpiritEnchantment: this.ancestralspirit++; continue;
                     case CardIds.NonCollectible.Paladin.DesperateStand_RedeemedEnchantment: this.desperatestand++; continue;
                     case CardIds.NonCollectible.Druid.SouloftheForest_SoulOfTheForestEnchantment: this.souloftheforest++; continue;
                     case CardIds.NonCollectible.Paladin.SpikeridgedSteed_OnAStegodonEnchantment: this.stegodon++; continue;
                     case CardIds.NonCollectible.Neutral.LivingSporesToken2: this.livingspores++; continue;
-                        
+
                     case CardIds.NonCollectible.Druid.Infest_NerubianSpores: this.infest++; continue;
                     case CardIds.NonCollectible.Rogue.UnearthedRaptor_UnearthedRaptorEnchantment: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
                    // case Chireiden.Silverfish.SimCard.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
@@ -805,7 +807,7 @@ namespace HREngine.Bots
                     case CardIds.NonCollectible.Rogue.Conceal_ConcealedEnchantment: this.conceal = true; continue;
                     case CardIds.NonCollectible.Rogue.MasterofDisguise_DisguisedEnchantment: this.conceal = true; continue;
                     case CardIds.NonCollectible.Neutral.FinickyCloakfield_CloakedEnchantment: this.conceal = true; continue;
-                    case CardIds.NonCollectible.Neutral.XarilPoisonedMind_Fadeleaf: this.conceal = true; continue; 
+                    case CardIds.NonCollectible.Neutral.XarilPoisonedMind_Fadeleaf: this.conceal = true; continue;
 
                     //cantLowerHPbelowONE-------------------------------------------------
                     case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment1: this.cantLowerHPbelowONE = true; continue; //commandingshout
@@ -839,7 +841,7 @@ namespace HREngine.Bots
                     case CardIds.NonCollectible.Shaman.Bloodlust_BloodlustEnchantment: this.tempAttack += 3; continue;
                     case CardIds.NonCollectible.Warrior.HeroicStrike_HeroicStrikeEnchantment: this.tempAttack += 4; continue;
                     case CardIds.NonCollectible.Neutral.Bite_BiteEnchantment: this.tempAttack += 4; continue;
-                    case CardIds.NonCollectible.Druid.FeralRage_SpinesEnchantment: this.tempAttack += 4; continue;  
+                    case CardIds.NonCollectible.Druid.FeralRage_SpinesEnchantment: this.tempAttack += 4; continue;
                     case CardIds.NonCollectible.Neutral.Enrage_EnrageEnchantment: this.tempAttack += 6; continue;
                     case CardIds.NonCollectible.Neutral.Shrinkmeister_Shrunk: this.tempAttack += -2; continue;
                     case CardIds.NonCollectible.Priest.PintSizePotion_ShrunkEnchantment: this.tempAttack += -3; continue;
@@ -850,10 +852,10 @@ namespace HREngine.Bots
                     case CardIds.NonCollectible.Druid.Shapeshift_ClawsEnchantment: this.tempAttack += 1; continue;
 
 
-                        
-                    
 
-                   
+
+
+
 
 
 

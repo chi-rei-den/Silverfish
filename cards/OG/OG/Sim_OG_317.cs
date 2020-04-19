@@ -38,7 +38,7 @@ namespace HREngine.Bots
 					bool needTrigger = false;
 					foreach (Handmanager.Handcard hc in p.owncards.ToArray())
 					{
-						if ((TAG_RACE)hc.card.Race == TAG_RACE.DRAGON)
+						if ((Race)hc.card.Race == Race.DRAGON)
 						{
 							p.callKid(hc.card, p.ownMinions.Count, true);
 							p.removeCard(hc);

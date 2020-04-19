@@ -39,7 +39,7 @@ namespace HREngine.Bots
             foreach (var gi in temp)
             {
                 c = CardDB.Instance.getCardDataFromID(gi.Key);
-                if ((TAG_RACE)c.Race == TAG_RACE.MURLOC)
+                if ((Race)c.Race == Race.MURLOC)
                 {
                     p.callKid(c, place, ownplay, false);
                     place++;
@@ -58,7 +58,7 @@ namespace HREngine.Bots
                 if (gi.own == ownplay)
                 {
                     c = CardDB.Instance.getCardDataFromID(gi.cardid);
-                    if ((TAG_RACE)c.Race == TAG_RACE.MURLOC)
+                    if ((Race)c.Race == Race.MURLOC)
                     {
                         p.callKid(c, place, ownplay, false);
                         place++;

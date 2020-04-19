@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (triggerEffectMinion.own == summonedMinion.own && (TAG_RACE)summonedMinion.handcard.card.Race == TAG_RACE.MURLOC)
+            if (triggerEffectMinion.own == summonedMinion.own && (Race)summonedMinion.handcard.card.Race == Race.MURLOC)
             {
                 p.minionGetBuffed(triggerEffectMinion, 1, 0);
             }

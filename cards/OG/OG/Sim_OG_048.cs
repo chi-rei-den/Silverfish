@@ -32,7 +32,7 @@ namespace HREngine.Bots
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionGetBuffed(target, 2, 2);
-			if ((TAG_RACE)target.handcard.card.Race == TAG_RACE.PET) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+			if ((Race)target.handcard.card.Race == Race.PET) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
         }
     }
 }

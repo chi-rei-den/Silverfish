@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if ((TAG_RACE)summonedMinion.handcard.card.Race == TAG_RACE.PIRATE && triggerEffectMinion.own == summonedMinion.own)
+            if ((Race)summonedMinion.handcard.card.Race == Race.PIRATE && triggerEffectMinion.own == summonedMinion.own)
             {
                 Minion target = null;
 

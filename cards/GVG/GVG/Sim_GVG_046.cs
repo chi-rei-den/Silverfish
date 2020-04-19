@@ -36,7 +36,7 @@ namespace HREngine.Bots
             foreach (Minion m in temp)
             {
                 if (m.entitiyID == own.entitiyID) continue;
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET) bonusattack++;
+                if ((Race)m.handcard.card.Race == Race.PET) bonusattack++;
             }
             p.minionGetBuffed(own, bonusattack, 0);
         }

@@ -33,11 +33,11 @@ namespace HREngine.Bots
 		{
             foreach (Minion m in p.ownMinions)
             {
-                if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if ((Race)m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if ((TAG_RACE)m.handcard.card.Race != TAG_RACE.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if ((Race)m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
             }
 		}
 	}

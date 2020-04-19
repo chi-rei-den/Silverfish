@@ -46,7 +46,7 @@ namespace HREngine.Bots
 
                 foreach (Minion mnn in temp)
                 {
-                    if ((TAG_RACE)mnn.handcard.card.Race == TAG_RACE.MECHANICAL)
+                    if ((Race)mnn.handcard.card.Race == Race.MECHANICAL)
                     {
                         int s = mnn.maxHp + mnn.Angr;
                         if (s < sum)

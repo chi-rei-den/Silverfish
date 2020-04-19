@@ -8,7 +8,7 @@ namespace HREngine.Bots
     public class Weapon
     {
         public int pID = 0;
-        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.unknown;
+        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.None;
         public Chireiden.Silverfish.SimCard card;
         public int numAttacksThisTurn = 0;
         public bool immuneWhileAttacking = false;

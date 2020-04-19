@@ -38,7 +38,7 @@ namespace HREngine.Bots
                 foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = CardDB.Instance.getCardDataFromID(cid.Key);
-                    if ((TAG_RACE)c.Race == TAG_RACE.MURLOC)
+                    if ((Race)c.Race == Race.MURLOC)
                     {
                         for (int i = 0; i < cid.Value; i++)
                         {

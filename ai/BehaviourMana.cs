@@ -29,7 +29,7 @@ namespace HREngine.Bots
             foreach (Handmanager.Handcard hc in p.owncards)
             {
                 int r = Math.Max(hc.getManaCost(p), 1);
-                if (hc.card.name == Chireiden.Silverfish.SimCard.unknown) r = 4;
+                if (hc.card.name == Chireiden.Silverfish.SimCard.None) r = 4;
                 retval += r;
             }
 
@@ -52,7 +52,7 @@ namespace HREngine.Bots
         {
             int retval = 0;
             retval += m.handcard.card.Cost;
-            if (m.handcard.card.name == Chireiden.Silverfish.SimCard.unknown) retval = 4;
+            if (m.handcard.card.name == Chireiden.Silverfish.SimCard.None) retval = 4;
             return retval;
         }
 

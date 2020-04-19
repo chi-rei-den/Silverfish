@@ -38,7 +38,7 @@ namespace HREngine.Bots
                 p.ownHero.immune = true;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
                 }
             }
             else
@@ -47,7 +47,7 @@ namespace HREngine.Bots
                 p.enemyHero.immune = true;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
                 }
             }
 
@@ -61,7 +61,7 @@ namespace HREngine.Bots
                 p.ownHero.immune = false;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
                 }
             }
             else
@@ -70,7 +70,7 @@ namespace HREngine.Bots
                 p.enemyHero.immune = false;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (TAG_RACE)m.handcard.card.Race == TAG_RACE.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
                 }
             }
         }

@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (triggerEffectMinion.own==summonedMinion.own && (TAG_RACE)summonedMinion.handcard.card.Race == TAG_RACE.MECHANICAL)
+            if (triggerEffectMinion.own==summonedMinion.own && (Race)summonedMinion.handcard.card.Race == Race.MECHANICAL)
             {
                 triggerEffectMinion.divineshild = true;
             }

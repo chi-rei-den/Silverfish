@@ -36,7 +36,7 @@ namespace HREngine.Bots
 
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL)
+                if ((Race)m.handcard.card.Race == Race.MECHANICAL)
                 {
                     p.minionGetBuffed(own, 1, 1);
                     p.drawACard(CardIds.NonCollectible.Neutral.ArmorPlating, own.own, true);

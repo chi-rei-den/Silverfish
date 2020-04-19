@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 p.anzOwnTimberWolfs++;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, 1, 0);
+                    if ((Race)m.handcard.card.Race == Race.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, 1, 0);
                 }
             }
             else
@@ -44,7 +44,7 @@ namespace HREngine.Bots
                 p.anzEnemyTimberWolfs++;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, 1, 0);
+                    if ((Race)m.handcard.card.Race == Race.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, 1, 0);
                 }
             }
 
@@ -57,7 +57,7 @@ namespace HREngine.Bots
                 p.anzOwnTimberWolfs--;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, -1, 0);
+                    if ((Race)m.handcard.card.Race == Race.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, -1, 0);
                 }
             }
             else
@@ -65,7 +65,7 @@ namespace HREngine.Bots
                 p.anzEnemyTimberWolfs--;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, -1, 0);
+                    if ((Race)m.handcard.card.Race == Race.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, -1, 0);
                 }
             }
         }

@@ -2,6 +2,8 @@ using HearthDb;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using Triton.Bot.Settings;
 
 namespace HREngine.Bots
 {
@@ -202,10 +204,10 @@ namespace HREngine.Bots
 
         public Minion ownHero;
         public Minion enemyHero;
-        public HeroEnum ownHeroName = HeroEnum.None;
-        public HeroEnum enemyHeroName = HeroEnum.None;
-        public CardClass ownHeroStartClass = CardClass.INVALID;
-        public CardClass enemyHeroStartClass = CardClass.INVALID;
+        public CardClass ownHeroName;
+        public CardClass enemyHeroName;
+        public CardClass ownHeroStartClass;
+        public CardClass enemyHeroStartClass;
 
         public Weapon ownWeapon = new Weapon();
         public Weapon enemyWeapon = new Weapon();
@@ -539,11 +541,11 @@ namespace HREngine.Bots
 
                 this.spellpowerStarted += m.spellpower;
                 if (m.silenced) continue;
-                this.spellpowerStarted += m.handcard.card.spellpowervalue;
+                this.spellpowerStarted += m.handcard.card.Spellpower;
                 this.spellpower = this.spellpowerStarted;
                 if (m.taunt) anzOwnTaunt++;
 
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     case CardIds.Collectible.Neutral.BlackwaterPirate:
                         this.blackwaterpirate++;
@@ -741,7 +743,7 @@ namespace HREngine.Bots
             {
                 this.enemyspellpowerStarted += m.spellpower;
                 if (m.silenced) continue;
-                this.enemyspellpowerStarted += m.handcard.card.spellpowervalue;
+                this.enemyspellpowerStarted += m.handcard.card.Spellpower;
                 this.enemyspellpower = this.enemyspellpowerStarted;
                 if (m.taunt) anzEnemyTaunt++;
 
@@ -3391,7 +3393,7 @@ namespace HREngine.Bots
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) this.minionGetBuffed(attacker, 2, 2);
                     break;
                 case CardIds.Collectible.Neutral.WindUpBurglebot:
-                    if (!defender.isHero && attacker.Hp > 0) this.drawACard(Chireiden.Silverfish.SimCard.unknown, attacker.own);
+                    if (!defender.isHero && attacker.Hp > 0) this.drawACard(Chireiden.Silverfish.SimCard.None, attacker.own);
                     break;
                 case CardIds.Collectible.Rogue.LotusAssassin:
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) attacker.stealth = true;
@@ -3418,7 +3420,7 @@ namespace HREngine.Bots
                                 foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in this.prozis.turnDeck)
                                 {
                                     c = CardDB.Instance.getCardDataFromID(cid.Key);
-                                    if ((TAG_RACE)c.Race == TAG_RACE.MURLOC)
+                                    if ((Race)c.Race == Race.MURLOC)
                                     {
                                         for (int i = 0; i < cid.Value; i++)
                                         {
@@ -3501,7 +3503,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (own)
                     {
-                        Handmanager.Handcard hc = this.searchRandomMinionInHand(this.owncards, searchmode.searchLowestCost, GAME_TAGs.Mob);
+                        Handmanager.Handcard hc = this.searchRandomMinionInHand(this.owncards, searchmode.searchLowestCost, GameTag.Mob);
                         if (hc != null)
                         {
                             hc.addattack++;
@@ -3599,7 +3601,7 @@ namespace HREngine.Bots
                 doDmgTriggers();
                 this.nextSpellThisTurnCostHealth = false;
             }
-            else if (this.nextMurlocThisTurnCostHealth && (TAG_RACE)hc.card.Race == TAG_RACE.MURLOC)
+            else if (this.nextMurlocThisTurnCostHealth && (Race)hc.card.Race == Race.MURLOC)
             {
                 this.minionGetDamageOrHeal(this.ownHero, hc.card.getManaCost(this, hc.manacost));
                 doDmgTriggers();
@@ -3684,11 +3686,11 @@ namespace HREngine.Bots
                         this.placeAmobSomewhere(hc, choice, position);
                         this.mobsplayedThisTurn++;
                     }
-                    if (this.stampede > 0 && (TAG_RACE)c.Race == TAG_RACE.PET)
+                    if (this.stampede > 0 && (Race)c.Race == Race.PET)
                     {
                         for (int i = 1; i <= stampede; i++)
                         {
-                            this.drawACard(Chireiden.Silverfish.SimCard.unknown, true, true);
+                            this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
                         }
                     }
                 }
@@ -3698,7 +3700,7 @@ namespace HREngine.Bots
                     {
                         for (int i = 1; i <= lockandload; i++)
                         {
-                            this.drawACard(Chireiden.Silverfish.SimCard.unknown, true, true);
+                            this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
                         }
                     }
                     c.sim_card.onCardPlay(this, true, target, choice);
@@ -4159,16 +4161,16 @@ namespace HREngine.Bots
                     if (target.isHero) minionGetDamageOrHeal(attacker.own ? this.enemyHero : this.ownHero, 2);
                     break;
                 case CardIds.Collectible.Rogue.ShakuTheCollector:
-                    this.drawACard(Chireiden.Silverfish.SimCard.unknown, attacker.own, true);
+                    this.drawACard(Chireiden.Silverfish.SimCard.None, attacker.own, true);
                     break;
                 case CardIds.Collectible.Neutral.GenzoTheShark:
                     while (this.owncards.Count < 3 && this.ownDeckSize > 0)
                     {
-                        this.drawACard(Chireiden.Silverfish.SimCard.unknown, true, true);
+                        this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
                     }
                     while (this.enemyAnzCards < 3 && this.enemyDeckSize > 0)
                     {
-                        this.drawACard(Chireiden.Silverfish.SimCard.unknown, false, true);
+                        this.drawACard(Chireiden.Silverfish.SimCard.None, false, true);
                     }
                     break;
             }
@@ -4177,14 +4179,14 @@ namespace HREngine.Bots
             {
                 for (int i = 0; i < attacker.ownBlessingOfWisdom; i++)
                 {
-                    this.drawACard(Chireiden.Silverfish.SimCard.unknown, true);
+                    this.drawACard(Chireiden.Silverfish.SimCard.None, true);
                 }
             }
             if (attacker.enemyBlessingOfWisdom >= 1)
             {
                 for (int i = 0; i < attacker.enemyBlessingOfWisdom; i++)
                 {
-                    this.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+                    this.drawACard(Chireiden.Silverfish.SimCard.None, false);
                 }
             }
 
@@ -4234,7 +4236,7 @@ namespace HREngine.Bots
         {
             if (own)
             {
-                if (anzOwnDragonConsort > 0 && (TAG_RACE)hc.card.Race == TAG_RACE.DRAGON) anzOwnDragonConsort = 0;
+                if (anzOwnDragonConsort > 0 && (Race)hc.card.Race == Race.DRAGON) anzOwnDragonConsort = 0;
                 int burly = 0;
                 foreach (Minion m in this.ownMinions.ToArray())
                 {
@@ -4527,7 +4529,7 @@ namespace HREngine.Bots
             if (ab.card.name == Chireiden.Silverfish.SimCard.deathsshadow) ab.card.sim_card.onTurnStartTrigger(this, null, ownturn);
 
             this.doDmgTriggers();
-            this.drawACard(Chireiden.Silverfish.SimCard.unknown, ownturn);
+            this.drawACard(Chireiden.Silverfish.SimCard.None, ownturn);
             this.doDmgTriggers();
 
 
@@ -5677,7 +5679,7 @@ namespace HREngine.Bots
             m.divineshild = hc.card.DivineShield;
             m.poisonous = hc.card.Poisonous;
             m.lifesteal = hc.card.Lifesteal;
-            if (this.prozis.ownElementalsHaveLifesteal > 0 && (TAG_RACE)m.handcard.card.Race == TAG_RACE.ELEMENTAL) m.lifesteal = true;
+            if (this.prozis.ownElementalsHaveLifesteal > 0 && (Race)m.handcard.card.Race == Race.ELEMENTAL) m.lifesteal = true;
             m.stealth = hc.card.Stealth;
             m.untouchable = hc.card.untouchable;
 
@@ -5694,8 +5696,8 @@ namespace HREngine.Bots
                 m.Angr = m.Hp;
             }
 
-            if (own) m.synergy = prozis.penman.getClassRacePriorityPenality(this.ownHeroStartClass, (TAG_RACE)m.handcard.card.Race);
-            else m.synergy = prozis.penman.getClassRacePriorityPenality(this.enemyHeroStartClass, (TAG_RACE)m.handcard.card.Race);
+            if (own) m.synergy = prozis.penman.getClassRacePriorityPenality(this.ownHeroStartClass, (Race)m.handcard.card.Race);
+            else m.synergy = prozis.penman.getClassRacePriorityPenality(this.enemyHeroStartClass, (Race)m.handcard.card.Race);
             if (m.synergy > 0 && hc.card.Stealth) m.synergy++;
 
             //trigger on summon effect!
@@ -6104,9 +6106,9 @@ namespace HREngine.Bots
                     this.owncards.Add(hc);
                     this.triggerCardsChanged(true);
                 }
-                else this.drawACard(Chireiden.Silverfish.SimCard.unknown, true);
+                else this.drawACard(Chireiden.Silverfish.SimCard.None, true);
             }
-            else this.drawACard(Chireiden.Silverfish.SimCard.unknown, false);
+            else this.drawACard(Chireiden.Silverfish.SimCard.None, false);
 
             if (m.own) this.tempTrigger.ownMinionsChanged = true;
             else this.tempTrigger.enemyMininsChanged = true;
@@ -6264,7 +6266,7 @@ namespace HREngine.Bots
             List<Minion> temp = (mOwn.own) ? this.ownMinions : this.enemyMinions;
             foreach (Minion m in temp)
             {
-                if (((TAG_RACE)m.handcard.card.Race == TAG_RACE.MECHANICAL) && m.zonepos == mOwn.zonepos + 1)
+                if (((Race)m.handcard.card.Race == Race.MECHANICAL) && m.zonepos == mOwn.zonepos + 1)
                 {
                     this.minionGetBuffed(m, mOwn.Angr, mOwn.Hp);
                     if (mOwn.taunt) m.taunt = true;
@@ -6822,242 +6824,30 @@ namespace HREngine.Bots
         {
             if (own)
             {
-                this.ownHeroAblility.card = CardDB.Instance.getCardDataFromID(newHeroPower);
+                this.ownHeroAblility.card = (newHeroPower);
                 this.ownAbilityReady = true;
             }
             else
             {
-                this.enemyHeroAblility.card = CardDB.Instance.getCardDataFromID(newHeroPower);
+                this.enemyHeroAblility.card = (newHeroPower);
                 this.enemyAbilityReady = true;
             }
         }
 
 
-        private void getHandcardsByType(List<Handmanager.Handcard> cards, GAME_TAGs tag, TAG_RACE race = TAG_RACE.INVALID)
+        private void FilterHand(List<Handmanager.Handcard> cards, Func<Handmanager.Handcard, bool> predicate)
         {
-            switch (tag)
-            {
-                case GAME_TAGs.None:
-                    foreach (Handmanager.Handcard hc in cards) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.Spell:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.SECRET:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Secret) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.Mob:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.CARDRACE:
-                    foreach (Handmanager.Handcard hc in cards)
-                    {
-                        if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
-                        {
-                            if (race == TAG_RACE.INVALID) hc.extraParam3 = true;
-                            else if (hc.card.Race == (int)race) hc.extraParam3 = true;
-                        }
-                    }
-                    break;
-                case GAME_TAGs.TAUNT:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Taunt) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.COMBO:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Combo) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.DIVINE_SHIELD:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.DivineShield) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.ENRAGED:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Enrage) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.LIFESTEAL:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Lifesteal) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.OVERLOAD:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.overload > 0) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.CLASS:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Class == (int)ownHeroStartClass) hc.extraParam3 = true;
-                    break;
-                case GAME_TAGs.Weapon:
-                    foreach (Handmanager.Handcard hc in cards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) hc.extraParam3 = true;
-                    break;
-            }
+            cards.Where(predicate).ToList().ForEach(card => card.filterPass = true);
         }
 
-        public Handmanager.Handcard searchRandomMinionInHand(List<Handmanager.Handcard> cards, searchmode mode, GAME_TAGs tag = GAME_TAGs.None, TAG_RACE race = TAG_RACE.INVALID)
+        public Handmanager.Handcard searchRandomMinionInHand(List<Handmanager.Handcard> cards, Func<Handmanager.Handcard, int> predicate)
         {
-            Handmanager.Handcard ret = null;
-            double value = 0;
-            switch (mode)
-            {
-                case searchmode.searchLowestHP: value = 1000; break;
-                case searchmode.searchHighestHP: value = -1; break;
-                case searchmode.searchLowestAttack: value = 1000; break;
-                case searchmode.searchHighestAttack: value = -1; break;
-                case searchmode.searchHighAttackLowHP: value = -1; break;
-                case searchmode.searchHighHPLowAttack: value = -1; break;
-                case searchmode.searchLowestCost: value = 1000; break;
-                case searchmode.searchHighesCost: value = -1; break;
-            }
-
-            getHandcardsByType(cards, tag, race);
-            foreach (Handmanager.Handcard hc in cards)
-            {
-                if (!hc.extraParam3) continue;
-                hc.extraParam3 = false;
-
-                switch (mode)
-                {
-                    case searchmode.searchLowestHP:
-                        if ((hc.card.Health + hc.addHp) < value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Health + hc.addHp);
-                        }
-                        break;
-                    case searchmode.searchHighestHP:
-                        if ((hc.card.Health + hc.addHp) > value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Health + hc.addHp);
-                        }
-                        break;
-                    case searchmode.searchLowestAttack:
-                        if ((hc.card.Attack + hc.addattack) < value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Attack + hc.addattack);
-                        }
-                        break;
-                    case searchmode.searchHighestAttack:
-                        if ((hc.card.Attack + hc.addattack) > value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Attack + hc.addattack);
-                        }
-                        break;
-                    case searchmode.searchHighAttackLowHP:
-                        if ((hc.card.Attack + hc.addattack) / (hc.card.Health + hc.addHp) > value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Attack + hc.addattack) / (hc.card.Health + hc.addHp);
-                        }
-                        break;
-                    case searchmode.searchHighHPLowAttack:
-                        if ((hc.card.Health + hc.addHp) / (hc.card.Attack + hc.addattack) > value)
-                        {
-                            ret = hc;
-                            value = (hc.card.Health + hc.addHp) / (hc.card.Attack + hc.addattack);
-                        }
-                        break;
-                    case searchmode.searchLowestCost:
-                        if (hc.manacost < value)
-                        {
-                            ret = hc;
-                            value = hc.manacost;
-                        }
-                        break;
-                    case searchmode.searchHighesCost:
-                        if (hc.manacost > value)
-                        {
-                            ret = hc;
-                            value = hc.manacost;
-                        }
-                        break;
-                }
-            }
-            return ret;
+            return cards.OrderBy(predicate).FirstOrDefault();
         }
 
-        public Minion searchRandomMinion(List<Minion> minions, searchmode mode)
+        public Minion searchRandomMinion(List<Minion> minions, Func<Minion, int> predicate)
         {
-            if (minions.Count == 0) return null;
-            Minion ret = null;
-            double value = 0;
-            switch (mode)
-            {
-                case searchmode.searchLowestHP: value = 1000; break;
-                case searchmode.searchHighestHP: value = -1; break;
-                case searchmode.searchLowestAttack: value = 1000; break;
-                case searchmode.searchHighestAttack: value = -1; break;
-                case searchmode.searchHighAttackLowHP: value = -1; break;
-                case searchmode.searchHighHPLowAttack: value = -1; break;
-                case searchmode.searchLowestCost: value = 1000; break;
-                case searchmode.searchHighesCost: value = -1; break;
-            }
-
-            foreach (Minion m in minions)
-            {
-                if (m.Hp <= 0) continue;
-
-                switch (mode)
-                {
-                    case searchmode.searchLowestHP:
-                        if (m.Hp < value)
-                        {
-                            ret = m;
-                            value = m.Hp;
-                        }
-                        continue;
-                    case searchmode.searchHighestHP:
-                        if (m.Hp > value)
-                        {
-                            ret = m;
-                            value = m.Hp;
-                        }
-                        continue;
-                    case searchmode.searchLowestAttack:
-                        if (m.Angr < value)
-                        {
-                            ret = m;
-                            value = m.Angr;
-                        }
-                        continue;
-                    case searchmode.searchHighestAttack:
-                        if (m.Angr > value)
-                        {
-                            ret = m;
-                            value = m.Angr;
-                        }
-                        continue;
-                    case searchmode.searchHighAttackLowHP:
-                        if (m.Angr / m.Hp > value)
-                        {
-                            ret = m;
-                            value = m.Angr / m.Hp;
-                        }
-                        continue;
-                    case searchmode.searchHighHPLowAttack:
-                        if (m.Angr == 0)
-                        {
-                            if (ret == null) ret = m;
-                            continue;
-                        }
-                        if (m.Hp / m.Angr > value)
-                        {
-                            ret = m;
-                            value = m.Hp / m.Angr;
-                        }
-                        continue;
-                    case searchmode.searchLowestCost:
-                        if (m.handcard.card.Cost < value)
-                        {
-                            ret = m;
-                            value = m.handcard.card.Cost;
-                        }
-                        continue;
-                    case searchmode.searchHighesCost:
-                        if (m.handcard.card.Cost > value)
-                        {
-                            ret = m;
-                            value = m.handcard.card.Cost;
-                        }
-                        continue;
-                }
-            }
-            return ret;
+            return minions.OrderBy(predicate).FirstOrDefault();
         }
 
         public Minion searchRandomMinionByMaxHP(List<Minion> minions, searchmode mode, int maxHP)
@@ -7147,48 +6937,13 @@ namespace HREngine.Bots
             int tmp = 0;
             if (own)
             {
-                tmp = 1 + anzOwnJadeGolem;
-                anzOwnJadeGolem++;
+                tmp = ++anzOwnJadeGolem;
             }
             else
             {
-                tmp = 1 + anzEnemyJadeGolem;
-                anzEnemyJadeGolem++;
+                tmp = ++anzEnemyJadeGolem;
             }
-            switch (tmp)
-            {
-                case 1: return CardIds.NonCollectible.Neutral.JadeGolem1;
-                case 2: return CardIds.NonCollectible.Neutral.JadeGolem2;
-                case 3: return CardIds.NonCollectible.Neutral.JadeGolem3;
-                case 4: return CardIds.NonCollectible.Neutral.JadeGolem4;
-                case 5: return CardIds.NonCollectible.Neutral.JadeGolem5;
-                case 6: return CardIds.NonCollectible.Neutral.JadeGolem6;
-                case 7: return CardIds.NonCollectible.Neutral.JadeGolem7;
-                case 8: return CardIds.NonCollectible.Neutral.JadeGolem8;
-                case 9: return CardIds.NonCollectible.Neutral.JadeGolem9;
-                case 10: return CardIds.NonCollectible.Neutral.JadeGolem10;
-                case 11: return CardIds.NonCollectible.Neutral.JadeGolem11;
-                case 12: return CardIds.NonCollectible.Neutral.JadeGolem12;
-                case 13: return CardIds.NonCollectible.Neutral.JadeGolem13;
-                case 14: return CardIds.NonCollectible.Neutral.JadeGolem14;
-                case 15: return CardIds.NonCollectible.Neutral.JadeGolem15;
-                case 16: return CardIds.NonCollectible.Neutral.JadeGolem16;
-                case 17: return CardIds.NonCollectible.Neutral.JadeGolem17;
-                case 18: return CardIds.NonCollectible.Neutral.JadeGolem18;
-                case 19: return CardIds.NonCollectible.Neutral.JadeGolem19;
-                case 20: return CardIds.NonCollectible.Neutral.JadeGolem20;
-                case 21: return CardIds.NonCollectible.Neutral.JadeGolem21;
-                case 22: return CardIds.NonCollectible.Neutral.JadeGolem22;
-                case 23: return CardIds.NonCollectible.Neutral.JadeGolem23;
-                case 24: return CardIds.NonCollectible.Neutral.JadeGolem24;
-                case 25: return CardIds.NonCollectible.Neutral.JadeGolem25;
-                case 26: return CardIds.NonCollectible.Neutral.JadeGolem26;
-                case 27: return CardIds.NonCollectible.Neutral.JadeGolem27;
-                case 28: return CardIds.NonCollectible.Neutral.JadeGolem28;
-                case 29: return CardIds.NonCollectible.Neutral.JadeGolem29;
-                case 30: return CardIds.NonCollectible.Neutral.JadeGolem30;
-            }
-            return CardIds.NonCollectible.Neutral.JadeGolem1;
+            return $"{CardIds.NonCollectible.Neutral.JadeGolem1.Substring(0, 9)}{Math.Max(Math.Min(tmp, 30), 1)}";
         }
 
         public void debugMinions()

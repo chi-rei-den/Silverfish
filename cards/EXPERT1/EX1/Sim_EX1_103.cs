@@ -34,7 +34,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 0, 2);
+                if ((Race)m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 0, 2);
             }
         }
     }

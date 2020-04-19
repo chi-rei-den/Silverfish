@@ -761,7 +761,7 @@ def Execute():
                         {
                             foreach (Handmanager.Handcard hc in lastChancePl.owncards)
                             {
-                                if (hc.card.name == Chireiden.Silverfish.SimCard.unknown) lastChance = true;
+                                if (hc.card.name == Chireiden.Silverfish.SimCard.None) lastChance = true;
                             }
                             if (!lastChance) doConcede = true;
                         }

@@ -16,7 +16,7 @@ namespace HREngine.Bots
             public Minion target;
             public int elemPoweredUp = 0;
             public int extraParam2 = 0;
-            public bool extraParam3 = false;
+            public bool filterPass = false;
 
             public Handcard()
             {

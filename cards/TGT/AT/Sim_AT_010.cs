@@ -34,7 +34,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((TAG_RACE)m.handcard.card.Race == TAG_RACE.PET)
+                if ((Race)m.handcard.card.Race == Race.PET)
                 {
                     p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, temp.Count, own.own);//river crocolisk
                     break;
