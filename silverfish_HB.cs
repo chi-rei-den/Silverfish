@@ -133,7 +133,7 @@ namespace HREngine.Bots
 
         private bool setBehavior()
         {
-            Type[] types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(Behavior)).ToArray();
+            var types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(Behavior)).ToArray();
             foreach (var t in types)
             {
                 string s = t.Name;
