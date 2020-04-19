@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (wasOwnCard == triggerEffectMinion.own && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (wasOwnCard == triggerEffectMinion.own && hc.card.Type == CardType.SPELL)
             {
                 p.drawACard(CardIds.Collectible.Mage.Fireball, wasOwnCard, true);
             }

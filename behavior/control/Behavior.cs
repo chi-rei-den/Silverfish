@@ -118,9 +118,9 @@ namespace HREngine.Bots
                 //if (m.taunt && m.handcard.card.name == CardIds.NonCollectible.Neutral.Frog) owntaunt++;
                 //if (m.handcard.card.isToken && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
                 //if (!penman.specialMinions.ContainsKey(m.name) && m.Angr <= 2 && m.Hp <= 2) retval -= 5;
-                if (p.ownMinions.Count > 2 && (m.handcard.card.name == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.name == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.name == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.name == CardIds.Collectible.Neutral.RaidLeader)) retval += 10;
-                if (m.handcard.card.name == CardIds.Collectible.Neutral.BloodmageThalnos) retval += 10;
-                if (m.handcard.card.name == CardIds.Collectible.Neutral.NerubianEgg)
+                if (p.ownMinions.Count > 2 && (m.handcard.card.CardId == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.CardId == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.CardId == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.CardId == CardIds.Collectible.Neutral.RaidLeader)) retval += 10;
+                if (m.handcard.card.CardId == CardIds.Collectible.Neutral.BloodmageThalnos) retval += 10;
+                if (m.handcard.card.CardId == CardIds.Collectible.Neutral.NerubianEgg)
                 {
                     if (m.Angr >= 1) retval += 2;
                     if ((!m.taunt && m.Angr == 0) && (m.divineshild || m.maxHp > 2)) retval -= 10;
@@ -166,7 +166,7 @@ namespace HREngine.Bots
                     default:
                         continue;
                 }
-                switch (a.card.card.name)
+                switch (a.card.card.CardId)
                 {
                     case CardIds.Collectible.Druid.Innervate:
                     case CardIds.NonCollectible.Neutral.TheCoin:
@@ -185,7 +185,7 @@ namespace HREngine.Bots
                 if (a.card.card.Combo && i > 0) wasCombo++;
                 if (a.target == null) continue;
                 //save spell for all classes
-                if (a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && (a.target.isHero && !a.target.own))
+                if (a.card.card.Type == CardType.SPELL && (a.target.isHero && !a.target.own))
                 {
                     if (i == 0) firstSpellToEnHero = true;
                     retval -= 11;
@@ -203,7 +203,7 @@ namespace HREngine.Bots
             }
             if (p.manaTurnEnd >= 2 && !useAbili && p.ownAbilityReady)
             {
-                switch (p.ownHeroAblility.card.name)
+                switch (p.ownHeroAblility.card.CardId)
                 {
                     case Chireiden.Silverfish.SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
                     case CardIds.NonCollectible.Priest.LesserHeal:
@@ -254,7 +254,7 @@ namespace HREngine.Bots
             int bigMobsInHand = 0;
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (hc.card.Type == CardType.MOB)
                 {
                     mobsInHand++;
                     if (hc.card.Attack + hc.addattack >= 3) bigMobsInHand++;
@@ -366,7 +366,7 @@ namespace HREngine.Bots
             int tmp = int.MinValue;
             for (int i = 0; i < discoverCards.Count; i++)
             {
-                Chireiden.Silverfish.SimCard name = discoverCards[i].card.name;
+                Chireiden.Silverfish.SimCard name = discoverCards[i].card.CardId;
                 if (SirFinleyPriorityList.ContainsKey(name) && SirFinleyPriorityList[name] > tmp)
                 {
                     tmp = SirFinleyPriorityList[name];

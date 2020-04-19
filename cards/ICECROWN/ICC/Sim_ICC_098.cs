@@ -39,7 +39,7 @@ namespace HREngine.Bots
                 c = (gi.Key);
                 if (c.deathrattle)
                 {
-                    p.drawACard(c.name, own.own, true);
+                    p.drawACard(c.CardId, own.own, true);
                     found = true;
                     break;
                 }
@@ -53,7 +53,7 @@ namespace HREngine.Bots
                         c = (gi.cardid);
                         if (c.deathrattle)
                         {
-                            p.drawACard(c.name, own.own, true);
+                            p.drawACard(c.CardId, own.own, true);
                             break;
                         }
                     }

@@ -35,7 +35,7 @@ namespace HREngine.Bots
 
             foreach (Minion m in temp)
             {
-                if (m.wounded) p.drawACard(m.handcard.card.name, ownplay, true);
+                if (m.wounded) p.drawACard(m.handcard.card.CardId, ownplay, true);
             }
         }
     }

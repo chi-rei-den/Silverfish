@@ -33,14 +33,14 @@ namespace HREngine.Bots
         
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && hc.target != null && hc.target.entitiyID == triggerEffectMinion.entitiyID)
+            if (hc.card.Type == CardType.SPELL && hc.target != null && hc.target.entitiyID == triggerEffectMinion.entitiyID)
             {
                 List<Minion> tmp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
 
                 if (tmp.Count < 7)
                 {
                     p.callKid(kid, triggerEffectMinion.zonepos, triggerEffectMinion.own);
-                    hc.card.sim_card.onCardPlay(p, wasOwnCard, tmp[triggerEffectMinion.zonepos], hc.extraParam2);
+                    hc.card.Simulator.onCardPlay(p, wasOwnCard, tmp[triggerEffectMinion.zonepos], hc.extraParam2);
                 }
             }
         }

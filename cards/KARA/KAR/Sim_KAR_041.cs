@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (target != null)
             {
-                p.LurkersDB.Add(own.entitiyID, new IDEnumOwner() { IDEnum = target.handcard.card.card.CardId, own = target.own });
+                p.LurkersDB.Add(own.entitiyID, new IDEnumOwner() { IDEnum = target.handcard.card.CardId, own = target.own });
                 p.minionGetDestroyed(target);
             }
         }

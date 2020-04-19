@@ -31,11 +31,11 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && hc.target != null && hc.target.own == wasOwnCard)
+            if (hc.card.Type == CardType.SPELL && hc.target != null && hc.target.own == wasOwnCard)
             {
                 if (hc.target.own == triggerEffectMinion.own && hc.target.entitiyID != triggerEffectMinion.entitiyID)
                 {
-                    hc.card.sim_card.onCardPlay(p, wasOwnCard, triggerEffectMinion, hc.extraParam2);
+                    hc.card.Simulator.onCardPlay(p, wasOwnCard, triggerEffectMinion, hc.extraParam2);
                 }
             }
         }

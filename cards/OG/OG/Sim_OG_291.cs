@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 if (m.own)
                 {
-                    p.drawACard(target.handcard.card.name, m.own, true);
+                    p.drawACard(target.handcard.card.CardId, m.own, true);
                     int i = p.owncards.Count - 1;
                     p.owncards[i].addattack = 1 - p.owncards[i].card.Attack;
                     p.owncards[i].addHp = 1 - p.owncards[i].card.Health;

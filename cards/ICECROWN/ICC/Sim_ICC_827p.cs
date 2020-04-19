@@ -37,7 +37,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == Chireiden.Silverfish.SimCard.shadowreflection)
+                    if (hc.card.CardId == Chireiden.Silverfish.SimCard.shadowreflection)
                     {
                         found = true;
                         break;

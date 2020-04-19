@@ -227,10 +227,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
                 if (cardsincombo == this.combolength && omm < this.neededMana) return 1;
@@ -246,10 +246,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
                 if (cardsincombo == this.combot1len && omm < this.neededMana) return 1;
@@ -262,7 +262,7 @@ namespace HREngine.Bots
                     {
                         foreach (Minion m in ownmins)
                         {
-                            if (!m.playedThisTurn && m.handcard.card.card.CardId == s)
+                            if (!m.playedThisTurn && m.handcard.card.CardId == s)
                             {
                                 turn0requires++;
                                 break;
@@ -287,10 +287,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
                 if (cardsincombo == this.combot0lenAll && omm < this.neededMana) return 1;
@@ -306,7 +306,7 @@ namespace HREngine.Bots
 
             public bool isMultiTurn1Card(Chireiden.Silverfish.SimCard card)
             {
-                if (this.combocardsTurn1.ContainsKey(card.card.CardId))
+                if (this.combocardsTurn1.ContainsKey(card.CardId))
                 {
                     return true;
                 }
@@ -315,7 +315,7 @@ namespace HREngine.Bots
 
             public bool isCardInCombo(Chireiden.Silverfish.SimCard card)
             {
-                if (this.combocards.ContainsKey(card.card.CardId))
+                if (this.combocards.ContainsKey(card.CardId))
                 {
                     return true;
                 }
@@ -328,10 +328,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
 
@@ -346,10 +346,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
 
@@ -364,10 +364,10 @@ namespace HREngine.Bots
                 Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
-                    if (combocardscopy.ContainsKey(hc.card.card.CardId) && combocardscopy[hc.card.card.CardId] >= 1)
+                    if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
                         cardsincombo++;
-                        combocardscopy[hc.card.card.CardId]--;
+                        combocardscopy[hc.card.CardId]--;
                     }
                 }
 
@@ -493,7 +493,7 @@ namespace HREngine.Bots
                         iic = 1;
                     }
                     if (iic == 1) found = true;
-                    if (iic == 1 && pen > c.cardspen[crd.card.CardId]) pen = c.cardspen[crd.card.CardId];//iic==1 will destroy combo
+                    if (iic == 1 && pen > c.cardspen[crd.CardId]) pen = c.cardspen[crd.CardId];//iic==1 will destroy combo
                     if (iic == 2) pen = 0;//card is ok to play
                 }
 

@@ -38,7 +38,7 @@ namespace HREngine.Bots
             List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
             p.callKid(hc.card, temp.Count, ownplay, false);
             Minion m = temp[temp.Count - 1];
-            if (m.name == hc.card.name && m.playedThisTurn)
+            if (m.name == hc.card.CardId && m.playedThisTurn)
             {
                 m.entitiyID = hc.entity;
                 m.Angr += hc.addattack;

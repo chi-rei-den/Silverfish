@@ -10,6 +10,7 @@ using Triton.Common;
 using Triton.Game;
 using Triton.Game.Mapping;
 using HearthDb.Enums;
+using HearthDb;
 
 namespace HREngine.Bots
 {
@@ -346,7 +347,7 @@ namespace HREngine.Bots
                              if (Ai.Instance.nextMoveGuess.ownMinions[i].Ready != p.ownMinions[i].Ready && !p.ownMinions[i].Ready)
                              {
                                  sleepRetry = true;
-                                 Helpfunctions.Instance.ErrorLog("[AI] 随从的准备状态 = " + p.ownMinions[i].Ready + " (" + p.ownMinions[i].entitiyID + " " + p.ownMinions[i].handcard.card.card.CardId + " " + p.ownMinions[i].name + "). 再次尝试....");
+                                 Helpfunctions.Instance.ErrorLog("[AI] 随从的准备状态 = " + p.ownMinions[i].Ready + " (" + p.ownMinions[i].entitiyID + " " + p.ownMinions[i].handcard.card.CardId + " " + p.ownMinions[i].name + "). 再次尝试....");
                                  Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
                                  return false;
                              }
@@ -675,7 +676,7 @@ namespace HREngine.Bots
 
                     Chireiden.Silverfish.SimCard c = ((entitiy.Id));
                     Minion m = new Minion();
-                    m.name = c.name;
+                    m.name = c.CardId;
                     m.handcard.card = c;
 
                     m.Angr = entitiy.GetTag(GAME_TAG.ATK);
@@ -952,11 +953,11 @@ namespace HREngine.Bots
                         switch (a.actionType)
                         {
                             case actionEnum.playcard:
-                                switch (a.card.card.card.CardId)
+                                switch (a.card.card.CardId)
                                 {
                                     case CardIds.Collectible.Priest.Entomb: goto case CardIds.Collectible.Rogue.GangUp;
                                     case CardIds.Collectible.Rogue.GangUp:
-                                        if (a.target != null) entityId = a.target.handcard.card.card.CardId.ToString();
+                                        if (a.target != null) entityId = a.target.handcard.card.CardId;
                                         break;
                                     case CardIds.Collectible.Mage.ForgottenTorch: entityId = "LOE_002t"; break;
                                     case CardIds.Collectible.Neutral.EliseStarseeker: entityId = "LOE_019t"; break;
@@ -972,7 +973,7 @@ namespace HREngine.Bots
                         foreach (var tmp in eg)
                         {
                             if (oldCardsOut.ContainsKey(tmp.Key) && tmp.Value == oldCardsOut[tmp.Key]) continue;
-                            switch (tmp.Key)
+                            switch (tmp.Key.CardId)
                             {
                                 case CardIds.Collectible.Rogue.BeneathTheGrounds: entityId = "AT_035t"; break;
                                 case CardIds.Collectible.Druid.Recycle: entityId = "aiextra1"; break;
@@ -984,13 +985,13 @@ namespace HREngine.Bots
                             int num = 0;
                             foreach (Minion m in this.enemyMinions)
                             {
-                                if (m.handcard.card.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num++;
+                                if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num++;
                             }
                             if (num > 0)
                             {
                                 foreach (Minion m in lastpf.enemyMinions)
                                 {
-                                    if (m.handcard.card.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num--;
+                                    if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num--;
                                 }
                             }
                             if (num > 0) entityId = "GVG_056t";
@@ -999,13 +1000,13 @@ namespace HREngine.Bots
                                 num = 0;
                                 foreach (Minion m in lastpf.ownMinions)
                                 {
-                                    if (m.handcard.card.card.CardId == CardIds.Collectible.Druid.Malorne) num++;
+                                    if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne) num++;
                                 }
                                 if (num > 0)
                                 {
                                     foreach (Minion m in this.ownMinions)
                                     {
-                                        if (m.handcard.card.card.CardId == CardIds.Collectible.Druid.Malorne) num--;
+                                        if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne) num--;
                                     }
                                 }
                                 if (num > 0) entityId = "GVG_035";
@@ -1116,7 +1117,7 @@ namespace HREngine.Bots
             bool found = false;
             foreach (Handmanager.Handcard hc in this.handCards)
             {
-                if (hc.card.name == CardIds.Collectible.Neutral.Cthun)
+                if (hc.card.CardId == CardIds.Collectible.Neutral.Cthun)
                 {
                     this.anzOgOwnCThunAngrBonus = hc.addattack;
                     this.anzOgOwnCThunHpBonus = hc.addHp;

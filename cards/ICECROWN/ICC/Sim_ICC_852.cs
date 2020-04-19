@@ -41,7 +41,7 @@ namespace HREngine.Bots
                     own.Angr = 3;
                     own.Hp = 3;
                     own.maxHp = 3;
-                    own.handcard.card.sim_card.onAuraStarts(p, own);
+                    own.handcard.card.Simulator.onAuraStarts(p, own);
                 }
             }
         }

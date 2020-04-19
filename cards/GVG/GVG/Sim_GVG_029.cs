@@ -36,7 +36,7 @@ namespace HREngine.Bots
             int sum = 10000;
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (hc.card.Type == CardType.MOB)
                 {
                     int s = hc.card.Health + hc.card.Attack + ((hc.card.Taunt) ? 1 : 0) + ((hc.card.DivineShield) ? 1 : 0);
                     if (s < sum)

@@ -469,13 +469,13 @@ namespace HREngine.Bots
 
                 if (!found)
                 {
-                    if ((ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if ((ent.cardid).type == CardType.MOB)
                     {
                         this.turngraveyard.Add(ent);
                     }
                     this.turngraveyardAll.Add(ent);
                 }
-                if (ent.own && (ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (ent.own && (ent.cardid).type == CardType.MOB)
                 {
                     OwnLastDiedMinion = ent;
                 }
@@ -872,7 +872,7 @@ namespace HREngine.Bots
                 {
                     Chireiden.Silverfish.SimCard c = (tmp.Key);
                     if (c.Secret) enemySecretsOpenedStep.Add(tmp.Key);
-                    else if (c.Type == Chireiden.Silverfish.SimCardtype.MOB) enemyMinionsDiedStep.Add(c);
+                    else if (c.Type == CardType.MOB) enemyMinionsDiedStep.Add(c);
                 }
             }
 
@@ -914,7 +914,7 @@ namespace HREngine.Bots
                 else if (!enemyMinionsDiedStep[0].deathrattle) { redemption = true; effigy = true; }
                 else
                 {
-                    switch (enemyMinionsDiedStep[0].card.CardId)
+                    switch (enemyMinionsDiedStep[0].CardId)
                     {
                         case CardIds.Collectible.Warlock.Dreadsteed: redemption = false; effigy = false; break;
                         case CardIds.Collectible.Rogue.Anubarak: redemption = false; effigy = false; break;
@@ -1020,13 +1020,13 @@ namespace HREngine.Bots
             }
             else if (doneMove.actionType == actionEnum.playcard)
             {
-                if (doneMove.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                if (doneMove.card.card.Type == CardType.SPELL)
                 {
                     cattrick = true;
                     counterspell = true;
                     if (!targetWasHero) spellbender = true;
                 }
-                /* else if (doneMove.card.card.type == Chireiden.Silverfish.SimCardtype.MOB) //we need the response from the core
+                /* else if (doneMove.card.card.type == CardType.MOB) //we need the response from the core
                  {
                      mirrorentity = true;
                      snipe = true;

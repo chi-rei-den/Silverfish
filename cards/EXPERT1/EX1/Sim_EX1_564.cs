@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 bool source = own.own;
                 own.setMinionToMinion(target);
                 own.own = source;
-                own.handcard.card.sim_card.onAuraStarts(p, own);
+                own.handcard.card.Simulator.onAuraStarts(p, own);
             }
         }
 

@@ -35,7 +35,7 @@ namespace HREngine.Bots
 		
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
 				Chireiden.Silverfish.SimCard kid;
 				int otherTotems = 0;

@@ -27,7 +27,7 @@ namespace HREngine.Bots
                 {
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardIds.Collectible.Neutral.BigGameHunter || hc.card.name == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
+                        if (hc.card.CardId == CardIds.Collectible.Neutral.BigGameHunter || hc.card.CardId == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
                     }
 
                     return 500;

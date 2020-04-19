@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) hc.addattack++;
+                    if (hc.card.Type == CardType.WEAPON) hc.addattack++;
                 }
             }
         }

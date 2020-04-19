@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
         {
-            if (m.own == ownplay && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) p.allMinionsGetDamage(1);
+            if (m.own == ownplay && hc.card.Type == CardType.SPELL) p.allMinionsGetDamage(1);
         }
 	}
 }

@@ -466,7 +466,7 @@ namespace HREngine.Bots
                 Angr = hc.card.Attack,
                 Hp = hc.card.Health,
                 maxHp = hc.card.Health,
-                name = hc.card.name,
+                name = hc.card,
                 playedThisTurn = true,
                 numAttacksThisTurn = 0
             };
@@ -501,8 +501,8 @@ namespace HREngine.Bots
 
             help.logg("ownhero:");
             help.logg((this.heroname == CardClass.INVALID ? this.heronameingame : this.heroname.ToString()) + " " + this.ownHero.Hp + " " + this.ownHero.maxHp + " " + this.ownHero.armor + " " + this.ownHero.immuneWhileAttacking + " " + this.ownHero.immune + " " + this.ownHero.entitiyID + " " + this.ownHero.Ready + " " + this.ownHero.numAttacksThisTurn + " " + this.ownHero.frozen + " " + this.ownHero.Angr + " " + this.ownHero.tempAttack + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.card.CardId);
+            help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
+            help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.CardId);
             string secs = "";
             foreach (Chireiden.Silverfish.SimCard sec in this.ownSecretList)
             {
@@ -516,8 +516,8 @@ namespace HREngine.Bots
             help.logg("advanced: " + this.ownCrystalCore + " " + (this.ownMinionsInDeckCost0 ? 1: 0));
             help.logg("enemyhero:");
             help.logg((this.enemyHeroname == CardClass.INVALID ? this.enemyHeronameingame : this.enemyHeroname.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + "True" + " " + this.enemyAbility.card.CardId);
+            help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
+            help.logg("ability: " + "True" + " " + this.enemyAbility.CardId);
             help.logg("fatigue: " + this.ownDeckSize + " " + this.ownHeroFatigue + " " + this.enemyDeckSize + " " + this.enemyHeroFatigue);
         }
 
@@ -527,7 +527,7 @@ namespace HREngine.Bots
             help.logg("OwnMinions:");
             foreach (Minion m in this.ownMinions)
             {
-                string mini = m.name + " " + m.handcard.card.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready + " natt:" + m.numAttacksThisTurn;
+                string mini = m.name + " " + m.handcard.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready + " natt:" + m.numAttacksThisTurn;
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -567,7 +567,7 @@ namespace HREngine.Bots
                 if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.card.CardId + ")";
+                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.CardId + ")";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
@@ -583,7 +583,7 @@ namespace HREngine.Bots
             help.logg("EnemyMinions:");
             foreach (Minion m in this.enemyMinions)
             {
-                string mini = m.name + " " + m.handcard.card.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready;// +" natt:" + m.numAttacksThisTurn;
+                string mini = m.name + " " + m.handcard.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready;// +" natt:" + m.numAttacksThisTurn;
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -623,7 +623,7 @@ namespace HREngine.Bots
                 if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.card.CardId + ")";
+                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.CardId + ")";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;

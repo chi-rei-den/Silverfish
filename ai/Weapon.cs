@@ -56,7 +56,7 @@ namespace HREngine.Bots
 
         public void equip(Chireiden.Silverfish.SimCard c)
         {
-            this.name = c.name;
+            this.name = c.CardId;
             this.card = c;
             this.numAttacksThisTurn = 0;
             this.immuneWhileAttacking = c.immuneWhileAttacking;
@@ -68,12 +68,12 @@ namespace HREngine.Bots
             this.immune = false;
             this.lifesteal = c.Lifesteal;
             this.poisonous = c.Poisonous;
-            this.cantAttackHeroes = (c.name == CardIds.Collectible.Warrior.FoolsBane) ? true : false;
+            this.cantAttackHeroes = (c.CardId == CardIds.Collectible.Warrior.FoolsBane) ? true : false;
         }
 
         public string weaponToString()
         {
-            return this.Angr + " " + this.Durability + " " + this.name + " " + this.card.card.CardId + " " + (this.poisonous ? 1 : 0) + " " + (this.lifesteal ? 1 : 0);
+            return this.Angr + " " + this.Durability + " " + this.name + " " + this.card.CardId + " " + (this.poisonous ? 1 : 0) + " " + (this.lifesteal ? 1 : 0);
         }
             
     }

@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && wasOwnCard != triggerEffectMinion.own)
+            if (hc.card.Type == CardType.SPELL && wasOwnCard != triggerEffectMinion.own)
             {
                 p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, triggerEffectMinion.own);
             }

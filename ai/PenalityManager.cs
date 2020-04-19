@@ -96,7 +96,6 @@ namespace HREngine.Bots
             cb = ComboBreaker.Instance;
             prozis = Hrtprozis.Instance;
             settings = Settings.Instance;
-            cdb = CardDB.Instance;
         }
 
         private PenalityManager()
@@ -137,7 +136,7 @@ namespace HREngine.Bots
 
             retval += getAttackSecretPenality(m, p, target);
             if (!p.isLethalCheck && m.name == CardIds.Collectible.Warlock.BloodImp) retval += 50;
-            switch (m.name)
+            switch (m.name.CardId)
             {
                 case CardIds.Collectible.Neutral.LeeroyJenkins:
                     if (!target.own && target.name == CardIds.NonCollectible.Neutral.Whelp) return 500;
@@ -150,18 +149,18 @@ namespace HREngine.Bots
                             if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune) return 65;
                         }
                     }
-                    goto case Chireiden.Silverfish.SimCard.aiextra1;
+                    goto case Chireiden.Silverfish.SimCard.None;
 
 
-                case CardIds.Collectible.Neutral.AcolyteOfPain: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Neutral.ClockworkGnome: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Neutral.LootHoarder: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Neutral.MechanicalYeti: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Druid.MechBearCat: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Rogue.TombPillager: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Neutral.Toshley: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case CardIds.Collectible.Hunter.Webspinner: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                case Chireiden.Silverfish.SimCard.aiextra1:
+                case CardIds.Collectible.Neutral.AcolyteOfPain:
+                case CardIds.Collectible.Neutral.ClockworkGnome:
+                case CardIds.Collectible.Neutral.LootHoarder:
+                case CardIds.Collectible.Neutral.MechanicalYeti:
+                case CardIds.Collectible.Druid.MechBearCat:
+                case CardIds.Collectible.Rogue.TombPillager:
+                case CardIds.Collectible.Neutral.Toshley:
+                case CardIds.Collectible.Hunter.Webspinner:
+                case Chireiden.Silverfish.SimCard.None:
 
                     if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune)
                     {
@@ -170,7 +169,6 @@ namespace HREngine.Bots
                         else retval += 3 * p.optionsPlayedThisTurn;
                     }
                     return retval;
-                    break;
             }
             if (this.specialMinions.ContainsKey(m.name) && target.Hp > m.Angr && !target.isHero) retval++;
             if (this.UsefulNeedKeepDatabase.ContainsKey(m.name) && !target.isHero && !(m.divineshild || target.Angr == 0)) retval++;
@@ -219,7 +217,7 @@ namespace HREngine.Bots
                 return 28;
             }
 
-            switch (p.ownWeapon.name)
+            switch (p.ownWeapon.name.CardId)
             {
                 case CardIds.NonCollectible.Neutral.Atiesh:
                     if (!isLethalCheck)
@@ -231,7 +229,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Shaman.Doomhammer:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardIds.Collectible.Shaman.RockbiterWeapon && hc.canplayCard(p, true)) return 10;
+                        if (hc.card == CardIds.Collectible.Shaman.RockbiterWeapon && hc.canplayCard(p, true)) return 10;
                     }
                     break;
                 case CardIds.Collectible.Hunter.EaglehornBow:
@@ -239,7 +237,7 @@ namespace HREngine.Bots
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardIds.Collectible.Hunter.ArcaneShot || hc.card.name == CardIds.Collectible.Hunter.KillCommand) return -p.ownWeapon.Angr - 1;
+                            if (hc.card == CardIds.Collectible.Hunter.ArcaneShot || hc.card == CardIds.Collectible.Hunter.KillCommand) return -p.ownWeapon.Angr - 1;
                         }
                         if (p.ownSecretsIDList.Count >= 1) return 20;
 
@@ -278,7 +276,7 @@ namespace HREngine.Bots
             if (p.ownWeapon.Durability >= 1)
             {
                 int wAttack = weaponInHandAttackNextTurn(p);
-                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.poisoneddaggers || p.ownHeroAblility.card.name == CardIds.NonCollectible.Rogue.DaggerMastery)) wAttack = 1;
+                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card == Chireiden.Silverfish.SimCard.poisoneddaggers || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Rogue.DaggerMastery)) wAttack = 1;
                 if (wAttack > 0) retval = -p.ownWeapon.Angr - 1; // so he doesnt "lose" the weapon in evaluation :D
             }
             if (p.ownWeapon.Angr == 1 && p.ownHeroName == HeroEnum.thief)
@@ -293,13 +291,13 @@ namespace HREngine.Bots
         {
             foreach (Handmanager.Handcard c in p.owncards)
             {
-                if (c.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
+                if (c.card.Type == CardType.WEAPON && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
                 {
                     return c.card.Attack;
                 }
-                if (this.equipWeaponPlayDatabase.ContainsKey(c.card.name) && c.card.name != CardIds.Collectible.Warrior.Upgrade && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
+                if (this.equipWeaponPlayDatabase.ContainsKey(c.card) && c.card != CardIds.Collectible.Warrior.Upgrade && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
                 {
-                    return this.equipWeaponPlayDatabase[c.card.name];
+                    return this.equipWeaponPlayDatabase[c.card];
                 }
             }
             return 0;
@@ -310,7 +308,7 @@ namespace HREngine.Bots
             int retval = ai.botBase.getPlayCardPenality(card, target, p);
             if (retval < 0 || retval > 499) return retval;
 
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card.CardId;
             //there is no reason to buff HP of minon (because it is not healed)
 
             int abuff = getAttackBuffPenality(card, target, p);
@@ -339,7 +337,7 @@ namespace HREngine.Bots
             if (!p.isLethalCheck)
             {
                 retval += cb.getPenalityForDestroyingCombo(card, p);
-                retval += cb.getPlayValue(card.card.CardId);
+                retval += cb.getPlayValue(card.CardId);
             }
 
             retval += playSecretPenality(card, p);
@@ -351,19 +349,19 @@ namespace HREngine.Bots
 
         private int getAttackBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.name;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            Chireiden.Silverfish.SimCard name = card.CardId;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
             int pen = 0;
             //buff enemy?
 
-            if (!p.isLethalCheck && (card.name == CardIds.Collectible.Druid.SavageRoar || card.name == CardIds.Collectible.Shaman.Bloodlust))
+            if (!p.isLethalCheck && (card.CardId == CardIds.Collectible.Druid.SavageRoar || card.CardId == CardIds.Collectible.Shaman.Bloodlust))
             {
                 int targets = 0;
                 foreach (Minion m in p.ownMinions)
                 {
                     if (m.Ready) targets++;
                 }
-                if ((p.ownHero.Ready || p.ownHero.numAttacksThisTurn == 0) && card.name == CardIds.Collectible.Druid.SavageRoar) targets++;
+                if ((p.ownHero.Ready || p.ownHero.numAttacksThisTurn == 0) && card.CardId == CardIds.Collectible.Druid.SavageRoar) targets++;
 
                 if (targets <= 2)
                 {
@@ -375,11 +373,11 @@ namespace HREngine.Bots
             if (target == null) return 60;
             if (!target.isHero && !target.own)
             {
-                if (card.Type == Chireiden.Silverfish.SimCardtype.MOB && p.ownMinions.Count == 0) return 2;
+                if (card.Type == CardType.MOB && p.ownMinions.Count == 0) return 2;
 
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    switch (hc.card.name)
+                    switch (hc.card.CardId)
                     {
                         case CardIds.Collectible.Neutral.BigGameHunter:
                             if (target.Angr + this.attackBuffDatabase[name] > 6) return 5;
@@ -391,7 +389,7 @@ namespace HREngine.Bots
                             break;
                     }
                 }
-                if (card.name == CardIds.Collectible.Warrior.CruelTaskmaster || card.name == CardIds.Collectible.Warrior.InnerRage)
+                if (card.CardId == CardIds.Collectible.Warrior.CruelTaskmaster || card.CardId == CardIds.Collectible.Warrior.InnerRage)
                 {
                     Minion m = target;
 
@@ -404,7 +402,7 @@ namespace HREngine.Bots
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardIds.Collectible.Warrior.Execute) return 0;
+                            if (hc.card.CardId == CardIds.Collectible.Warrior.Execute) return 0;
                         }
                     }
                     pen = 30;
@@ -419,7 +417,7 @@ namespace HREngine.Bots
                 Minion m = target;
                 if (!m.Ready)
                 {
-                    switch (card.name)
+                    switch (card.CardId)
                     {
                         case CardIds.Collectible.Druid.MarkOfYshaarj:
                             if (target.stealth)
@@ -451,11 +449,11 @@ namespace HREngine.Bots
 
         private int getHPBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card.CardId;
             int pen = 0;
 
             if (!this.healthBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
 
             if (target != null && !target.own && !this.tauntBuffDatabase.ContainsKey(name))
             {
@@ -468,12 +466,12 @@ namespace HREngine.Bots
 
         private int getTauntBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card.CardId;
             int pen = 0;
             //buff enemy?
             if (!this.tauntBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.MarkOfNature && card.card.CardId != CardIds.NonCollectible.Druid.MarkofNature_ThickHide) return 0;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            if (name == CardIds.Collectible.Druid.MarkOfNature && card.CardId != CardIds.NonCollectible.Druid.MarkofNature_ThickHide) return 0;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
 
             if (target == null) return 3;
             if (!target.isHero && !target.own)
@@ -481,7 +479,7 @@ namespace HREngine.Bots
                 //allow it if you have black knight
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == CardIds.Collectible.Neutral.TheBlackKnight) return 0;
+                    if (hc.card.CardId == CardIds.Collectible.Neutral.TheBlackKnight) return 0;
                 }
 
                 // allow taunting if target is priority and others have taunt
@@ -544,7 +542,7 @@ namespace HREngine.Bots
                     if (p.isLethalCheck)
                     {
                         //during lethal we only silence taunt, or if its a mob (owl/spellbreaker) + we can give him charge
-                        if (target.taunt || (name == CardIds.Collectible.Neutral.IronbeakOwl && (p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null || p.owncards.Find(x => x.card.name == CardIds.Collectible.Warrior.Charge) != null)) || (name == CardIds.Collectible.Neutral.Spellbreaker && p.owncards.Find(x => x.card.name == CardIds.Collectible.Warrior.Charge) != null)) return 0;
+                        if (target.taunt || (name == CardIds.Collectible.Neutral.IronbeakOwl && (p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null || p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Warrior.Charge) != null)) || (name == CardIds.Collectible.Neutral.Spellbreaker && p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Warrior.Charge) != null)) return 0;
 
                         return 500;
                     }
@@ -583,7 +581,7 @@ namespace HREngine.Bots
 
         private int getDamagePenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card;
             int pen = 0;
 
             if (name == CardIds.Collectible.Warrior.ShieldSlam && p.ownHero.armor == 0) return 500;
@@ -603,12 +601,12 @@ namespace HREngine.Bots
                 }
 
                 int aoeDamage = 0;
-                if (aoeDamageType == 1) aoeDamage = (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllEnemysDatabase[name]) : this.DamageAllEnemysDatabase[name];
-                else if (aoeDamageType == 2) aoeDamage = (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.HealAllDatabase[name]) : this.HealAllDatabase[name];
+                if (aoeDamageType == 1) aoeDamage = (card.Type == CardType.SPELL) ? p.getSpellDamageDamage(this.DamageAllEnemysDatabase[name]) : this.DamageAllEnemysDatabase[name];
+                else if (aoeDamageType == 2) aoeDamage = (card.Type == CardType.SPELL) ? p.getSpellDamageDamage(this.HealAllDatabase[name]) : this.HealAllDatabase[name];
                 else if (aoeDamageType == 3)
                 {
                     if (name == CardIds.Collectible.Warrior.Revenge && p.ownHero.Hp <= 12) aoeDamage = p.getSpellDamageDamage(3);
-                    else aoeDamage = (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageAllDatabase[name]) : this.DamageAllDatabase[name];
+                    else aoeDamage = (card.Type == CardType.SPELL) ? p.getSpellDamageDamage(this.DamageAllDatabase[name]) : this.DamageAllDatabase[name];
                 }
 
                 int preventDamage = 0;
@@ -812,7 +810,7 @@ namespace HREngine.Bots
                         Minion m = p.ownMinions[i];
                         if (aoeDamage >= m.Hp && !m.divineshild)
                         {
-                            switch (name)
+                            switch (name.CardId)
                             {
                                 case CardIds.Collectible.Warrior.SleepWithTheFishes:
                                     if (!m.wounded) continue;
@@ -840,7 +838,7 @@ namespace HREngine.Bots
                                     break;
                             }
 
-                            switch (m.name)
+                            switch (m.name.CardId)
                             {
                                 case CardIds.Collectible.Neutral.DireWolfAlpha:
                                     if (m.silenced) break;
@@ -904,7 +902,7 @@ namespace HREngine.Bots
                                     if (m.silenced) break;
                                     foreach (Minion mm in p.ownMinions)
                                     {
-                                        if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
+                                        if (mm.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken && (mm.Hp > aoeDamage || mm.divineshild)) lostOwnDamage += 1;
                                     }
                                     break;
                                 case CardIds.Collectible.Warrior.WarsongCommander:
@@ -938,7 +936,7 @@ namespace HREngine.Bots
                         if (MinionBalance > 0 && preventDamage <= lostOwnDamage) return 80;
                         if (survivedEnemyMinions > 0)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == CardIds.Collectible.Warrior.Execute) return 0;
+                            foreach (Handmanager.Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) return 0;
                         }
                         if (lostOwnHp <= preventDamage)
                         {
@@ -962,7 +960,7 @@ namespace HREngine.Bots
                     if (survivedEnemyMinions > 0)
                     {
                         int hasExecute = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.name == CardIds.Collectible.Warrior.Execute) hasExecute++;
+                        foreach (Handmanager.Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) hasExecute++;
                         if (hasExecute > 0)
                         {
                             if (survivedEnemyMinions <= hasExecute) return 0;
@@ -1026,7 +1024,7 @@ namespace HREngine.Bots
 
                     // no pen if we have battlerage for example
                     int dmg = this.DamageTargetDatabase.ContainsKey(name) ? this.DamageTargetDatabase[name] : this.HealTargetDatabase[name];
-                    switch (card.card.CardId)
+                    switch (card.CardId)
                     {
                         case CardIds.NonCollectible.Druid.KeeperoftheGrove_Moonfire: dmg = 2 - p.spellpower; break;
                         case CardIds.Collectible.Mage.IceLance: if (!target.frozen) return 0; break;
@@ -1038,15 +1036,15 @@ namespace HREngine.Bots
                             }
                             break;
                     }
-                    if (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) dmg = p.getSpellDamageDamage(dmg);
+                    if (card.Type == CardType.SPELL) dmg = p.getSpellDamageDamage(dmg);
 
                     if (m.Hp > dmg)
                     {
-                        switch (m.name)
+                        switch (m.name.CardId)
                         {
-                            case CardIds.Collectible.Neutral.GurubashiBerserker: return 0; break;
-                            case CardIds.Collectible.Warrior.AxeFlinger: return 0; break;
-                            case CardIds.Collectible.Hunter.Gahzrilla: return 0; break;
+                            case CardIds.Collectible.Neutral.GurubashiBerserker: return 0;
+                            case CardIds.Collectible.Warrior.AxeFlinger: return 0;
+                            case CardIds.Collectible.Hunter.Gahzrilla: return 0;
                             case Chireiden.Silverfish.SimCard.garr: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.HoggerDoomOfElwynn: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.AcolyteOfPain: if (p.owncards.Count <= 3) return 0; break;
@@ -1056,15 +1054,15 @@ namespace HREngine.Bots
                         }
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardIds.Collectible.Warrior.BattleRage) return pen;
-                            if (hc.card.name == CardIds.Collectible.Warrior.Rampage) return pen;
+                            if (hc.card == CardIds.Collectible.Warrior.BattleRage) return pen;
+                            if (hc.card == CardIds.Collectible.Warrior.Rampage) return pen;
                         }
                     }
                     else
                     {
                         if (p.isLethalCheck && dmg == 1 && p.enemyHero.Hp < 3)
                         {
-                            switch (m.name)
+                            switch (m.name.CardId)
                             {
                                 case CardIds.Collectible.Neutral.LeperGnome: return 0; break;
                                 case CardIds.Collectible.Warrior.AxeFlinger: return 0; break;
@@ -1077,7 +1075,7 @@ namespace HREngine.Bots
                             return 10;
                         }
                     }
-                    if (m.handcard.card.deathrattle) return 10;
+                    if (m.handcard.card.Deathrattle) return 10;
 
                     pen = 500;
                 }
@@ -1087,7 +1085,7 @@ namespace HREngine.Bots
                 {
                     int dmg = DamageTargetSpecialDatabase[name];
                     Minion m = target;
-                    switch (name)
+                    switch (name.CardId)
                     {
                         case CardIds.Collectible.Warrior.CruelTaskmaster: if (m.Hp >= 2) return 0; break;
                         case CardIds.Collectible.Warrior.InnerRage: if (m.Hp >= 2) return 0; break;
@@ -1115,7 +1113,7 @@ namespace HREngine.Bots
 
                         foreach (Handmanager.Handcard hc in p.owncards) // no pen if we have battlerage for example
                         {
-                            switch (hc.card.name)
+                            switch (hc.card.CardId)
                             {
                                 case CardIds.Collectible.Warrior.BattleRage: return pen; break;
                                 case CardIds.Collectible.Warrior.Rampage: return pen; break;
@@ -1131,8 +1129,8 @@ namespace HREngine.Bots
                 int realDamage = 0;
                 if (DamageTargetSpecialDatabase.ContainsKey(name))
                 {
-                    realDamage = (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) ? p.getSpellDamageDamage(this.DamageTargetSpecialDatabase[name]) : this.DamageTargetSpecialDatabase[name];
-                    switch (name)
+                    realDamage = (card.Type == CardType.SPELL) ? p.getSpellDamageDamage(this.DamageTargetSpecialDatabase[name]) : this.DamageTargetSpecialDatabase[name];
+                    switch (name.CardId)
                     {
                         case CardIds.Collectible.Warlock.Soulfire: if (target.Hp <= realDamage - 2) pen = 10; break;
                         case CardIds.Collectible.Warlock.BaneOfDoom: if (target.Hp > realDamage) pen = 10; break;
@@ -1145,7 +1143,7 @@ namespace HREngine.Bots
                     if (DamageTargetDatabase.ContainsKey(name))
                     {
                         realDamage = this.DamageTargetDatabase[name];
-                        switch (card.card.CardId)
+                        switch (card.CardId)
                         {
                             case CardIds.NonCollectible.Druid.KeeperoftheGrove_Moonfire: realDamage = 2 - p.spellpower; break;
                             case CardIds.Collectible.Mage.IceLance: if (!target.frozen) return 0; break;
@@ -1157,7 +1155,7 @@ namespace HREngine.Bots
                                 }
                                 break;
                         }
-                        if (card.Type == Chireiden.Silverfish.SimCardtype.SPELL) realDamage = p.getSpellDamageDamage(realDamage);
+                        if (card.Type == CardType.SPELL) realDamage = p.getSpellDamageDamage(realDamage);
                     }
                 }
                 if (realDamage == 0) realDamage = card.Attack;
@@ -1176,7 +1174,7 @@ namespace HREngine.Bots
             int heal = 0;
 
 
-            switch (name)
+            switch (name.CardId)
             {
                 case CardIds.Collectible.Druid.TreeOfLife:
                     {
@@ -1203,10 +1201,10 @@ namespace HREngine.Bots
                     else
                     {
                         pen = (p.ownHero.Hp - 15) / 2;
-                        if (p.ownAbilityReady && cardDrawBattleCryDatabase.ContainsKey(p.ownHeroAblility.card.name)) pen += 20;
+                        if (p.ownAbilityReady && cardDrawBattleCryDatabase.ContainsKey(p.ownHeroAblility.card.CardId)) pen += 20;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (!cardDrawBattleCryDatabase.ContainsKey(hc.card.name)) continue;
+                            if (!cardDrawBattleCryDatabase.ContainsKey(hc.card.CardId)) continue;
                             pen += 20;
                             break;
                         }
@@ -1280,8 +1278,8 @@ namespace HREngine.Bots
 
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardIds.Collectible.Warrior.Slam && m.Hp < 2) return pen;
-                        if (hc.card.name == CardIds.Collectible.Rogue.Backstab) return pen;
+                        if (hc.card == CardIds.Collectible.Warrior.Slam && m.Hp < 2) return pen;
+                        if (hc.card == CardIds.Collectible.Rogue.Backstab) return pen;
                     }
 
                     pen = 500;
@@ -1297,16 +1295,16 @@ namespace HREngine.Bots
         {
             // penality if carddraw is late or you have enough cards
             int pen = 0;
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card;
             if (!cardDrawBattleCryDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.Wrath && card.card.CardId != CardIds.NonCollectible.Druid.Wrath_NaturesWrath) return 0;
-            if (name == CardIds.Collectible.Druid.Nourish && card.card.CardId != CardIds.NonCollectible.Druid.Nourish_Enrich) return 0;
+            if (name == CardIds.Collectible.Druid.Wrath && card.CardId != CardIds.NonCollectible.Druid.Wrath_NaturesWrath) return 0;
+            if (name == CardIds.Collectible.Druid.Nourish && card.CardId != CardIds.NonCollectible.Druid.Nourish_Enrich) return 0;
             if (name == CardIds.Collectible.Hunter.Tracking) return -1;
 
             int carddraw = cardDrawBattleCryDatabase[name];
             if (carddraw == 0)
             {
-                switch(name)
+                switch(name.CardId)
                 {
                     case CardIds.Collectible.Neutral.HarrisonJones:
                         carddraw = p.enemyWeapon.Durability;
@@ -1329,7 +1327,7 @@ namespace HREngine.Bots
                             {
                                 foreach (Handmanager.Handcard hc in p.owncards)
                                 {
-                                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) return 500;
+                                    if (hc.card.Type == CardType.MOB) return 500;
                                 }
                                 if (p.owncards.Count < 2) return -10;
                                 else if (p.owncards.Count < 4) return -2;
@@ -1458,9 +1456,9 @@ namespace HREngine.Bots
                     Chireiden.Silverfish.SimCard c;
                     foreach (GraveYardItem ge in Probabilitymaker.Instance.turngraveyardAll)
                     {
-                        c = cdb.getCardDataFromID(ge.cardid);
-                        if (cardDrawDeathrattleDatabase.ContainsKey(c.name)) prevCardDraw++;
-                        else if (c.Type == Chireiden.Silverfish.SimCardtype.SPELL && cardDrawBattleCryDatabase.ContainsKey(c.name)) prevCardDraw++;
+                        c = ge.cardid;
+                        if (cardDrawDeathrattleDatabase.ContainsKey(c)) prevCardDraw++;
+                        else if (c.Type == CardType.SPELL && cardDrawBattleCryDatabase.ContainsKey(c)) prevCardDraw++;
                     }
                 }
                 return Math.Max(-carddraw + 2 * (p.optionsPlayedThisTurn - prevCardDraw) + p.ownMaxMana - p.mana, 0);
@@ -1471,13 +1469,13 @@ namespace HREngine.Bots
 
             int tmp = 2 * p.optionsPlayedThisTurn + p.ownMaxMana - p.mana;
             int diff = 0;
-            switch (card.name)
+            switch (card.CardId)
             {
                 case CardIds.Collectible.Paladin.SolemnVigil:
                     tmp -= 2 * p.diedMinions.Count;
                     foreach (Action a in p.playactions)
                     {
-                        if (a.actionType == actionEnum.playcard && this.cardDrawBattleCryDatabase.ContainsKey(a.card.card.name)) tmp -= 2;
+                        if (a.actionType == actionEnum.playcard && this.cardDrawBattleCryDatabase.ContainsKey(a.card.card.CardId)) tmp -= 2;
                     }
                     break;
                 case CardIds.Collectible.Mage.EchoOfMedivh:
@@ -1503,7 +1501,7 @@ namespace HREngine.Bots
         {
             int pen = 0;
             int carddraw = 0;
-            if (card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (card.Type == CardType.SPELL)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
@@ -1511,7 +1509,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (card.Type == Chireiden.Silverfish.SimCardtype.MOB && (Race)card.Race == Race.PET)
+            if (card.Type == CardType.MOB && (Race)card.Race == Race.PET)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
@@ -1545,34 +1543,34 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            if (!this.randomEffects.ContainsKey(card.name) && !(this.cardDrawBattleCryDatabase.ContainsKey(card.name) && card.Type != Chireiden.Silverfish.SimCardtype.SPELL))
+            if (!this.randomEffects.ContainsKey(card.CardId) && !(this.cardDrawBattleCryDatabase.ContainsKey(card.CardId) && card.Type != CardType.SPELL))
             {
                 return 0;
             }
 
-            if (card.name == CardIds.Collectible.Warrior.Brawl)
+            if (card.CardId == CardIds.Collectible.Warrior.Brawl)
             {
                 return 0;
             }
 
-            if ((card.name == CardIds.Collectible.Warrior.Cleave || card.name == CardIds.Collectible.Hunter.MultiShot) && p.enemyMinions.Count == 2)
+            if ((card.CardId == CardIds.Collectible.Warrior.Cleave || card.CardId == CardIds.Collectible.Hunter.MultiShot) && p.enemyMinions.Count == 2)
             {
                 return 0;
             }
 
-            if ((card.name == CardIds.Collectible.Hunter.DeadlyShot) && p.enemyMinions.Count == 1)
+            if ((card.CardId == CardIds.Collectible.Hunter.DeadlyShot) && p.enemyMinions.Count == 1)
             {
                 return 0;
             }
 
-            if ((card.name == CardIds.Collectible.Mage.ArcaneMissiles || card.name == CardIds.Collectible.Paladin.AvengingWrath)
+            if ((card.CardId == CardIds.Collectible.Mage.ArcaneMissiles || card.CardId == CardIds.Collectible.Paladin.AvengingWrath)
                 && p.enemyMinions.Count == 0)
             {
                 return 0;
             }
 
             int cards = 0;
-            cards = this.randomEffects.ContainsKey(card.name) ? this.randomEffects[card.name] : this.cardDrawBattleCryDatabase[card.name];
+            cards = this.randomEffects.ContainsKey(card.CardId) ? this.randomEffects[card.CardId] : this.cardDrawBattleCryDatabase[card.CardId];
 
             bool first = true;
             bool hasgadget = false;
@@ -1611,7 +1609,7 @@ namespace HREngine.Bots
                 }
 
                 if (a.actionType == actionEnum.useHeroPower
-                    && (p.ownHeroAblility.card.name == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.name == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.soultap))
+                    && (p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.soultap))
                 {
                     first = false;
                     continue;
@@ -1625,27 +1623,27 @@ namespace HREngine.Bots
 
                 if (a.actionType == actionEnum.playcard)
                 {
-                    if (card.name == CardIds.Collectible.Neutral.KnifeJuggler && card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if (card.CardId == CardIds.Collectible.Neutral.KnifeJuggler && card.Type == CardType.MOB)
                     {
                         continue;
                     }
 
-                    if (this.cardDrawBattleCryDatabase.ContainsKey(a.card.card.name))
+                    if (this.cardDrawBattleCryDatabase.ContainsKey(a.card.card.CardId))
                     {
                         continue;
                     }
 
-                    if (this.lethalHelpers.ContainsKey(a.card.card.name))
+                    if (this.lethalHelpers.ContainsKey(a.card.card.CardId))
                     {
                         continue;
                     }
 
-                    if (hasgadget && card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                    if (hasgadget && card.Type == CardType.SPELL)
                     {
                         continue;
                     }
 
-                    if (hasFlamewaker && card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                    if (hasFlamewaker && card.Type == CardType.SPELL)
                     {
                         continue;
                     }
@@ -1655,7 +1653,7 @@ namespace HREngine.Bots
                         continue;
                     }
 
-                    if (hasknife && card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if (hasknife && card.Type == CardType.MOB)
                     {
                         continue;
                     }
@@ -1708,7 +1706,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.GrimestreetOutfitter:
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.Type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
+                        if (hc1.card.Type == CardType.MOB) anz++;
                     }
                     anz--;
                     if (anz > 0) return -1 * anz * 4;
@@ -1717,7 +1715,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Shaman.TheMistcaller:
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.Type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
+                        if (hc1.card.Type == CardType.MOB) anz++;
                     }
                     anz--;
                     anz += p.ownDeckSize / 4;
@@ -1726,7 +1724,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.HobartGrapplehammer:
                     foreach (Handmanager.Handcard hc2 in p.owncards)
                     {
-                        if (hc2.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) anz++;
+                        if (hc2.card.Type == CardType.WEAPON) anz++;
                     }
                     if (anz == 0) return 2;
                     else return -1 * anz * 2;
@@ -1744,7 +1742,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.SmugglersRun:
                     foreach (Handmanager.Handcard hc3 in p.owncards)
                     {
-                        if (hc3.card.Type == Chireiden.Silverfish.SimCardtype.MOB) anz++;
+                        if (hc3.card.Type == CardType.MOB) anz++;
                     }
                     anz--;
                     if (anz > 0) return -1 * anz * 4;
@@ -1766,8 +1764,8 @@ namespace HREngine.Bots
                 bool haveChargeInHand = false;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (this.cardDiscardDatabase.ContainsKey(hc.card.name)) continue;
-                    switch (hc.card.name)
+                    if (this.cardDiscardDatabase.ContainsKey(hc.card.CardId)) continue;
+                    switch (hc.card.CardId)
                     {
                         case CardIds.Collectible.Warlock.SilverwareGolem: pen -= 12; continue;
                         case CardIds.Collectible.Warlock.FistOfJaraxxus: pen -= 6; continue;
@@ -1832,7 +1830,7 @@ namespace HREngine.Bots
                 if (p.isLethalCheck)
                 {
                     if (target.Ready) return 500;
-                    switch (target.handcard.card.name)
+                    switch (target.handcard.card.CardId)
                     {
                         case CardIds.Collectible.Neutral.LeperGnome: return -2;
                         case CardIds.Collectible.Neutral.BackstreetLeper: return -2;
@@ -1847,7 +1845,7 @@ namespace HREngine.Bots
                             int up = 0;
                             foreach (Minion m in p.ownMinions)
                             {
-                                switch (m.handcard.card.name)
+                                switch (m.handcard.card.CardId)
                                 {
                                     case CardIds.Collectible.Mage.ManaWyrm: goto case CardIds.Collectible.Neutral.Lightwarden;
                                     case CardIds.Collectible.Mage.Flamewaker: goto case CardIds.Collectible.Neutral.Lightwarden;
@@ -1956,9 +1954,9 @@ namespace HREngine.Bots
         private int getSpecialCardComboPenalitys(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
             bool lethal = p.isLethalCheck;
-            Chireiden.Silverfish.SimCard name = card.name;
+            Chireiden.Silverfish.SimCard name = card.CardId;
 
-            if (lethal && card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+            if (lethal && card.Type == CardType.MOB)
             {
                 if (this.lethalHelpers.ContainsKey(name))
                 {
@@ -2036,7 +2034,7 @@ namespace HREngine.Bots
                 {
                     if ((name == CardIds.Collectible.Neutral.RendBlackhand && target != null) && !target.own)
                     {
-                        if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == CardIds.Collectible.Warlock.Malganis)
+                        if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
@@ -2061,13 +2059,13 @@ namespace HREngine.Bots
                             int beasts = 0;
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.Ready && (mm.handcard.card.name == CardIds.Collectible.Neutral.Lightwarden || mm.handcard.card.name == CardIds.Collectible.Priest.HolyChampion)) beasts++;
+                                if (mm.Ready && (mm.handcard.card.CardId == CardIds.Collectible.Neutral.Lightwarden || mm.handcard.card.CardId == CardIds.Collectible.Priest.HolyChampion)) beasts++;
                             }
                             if (beasts == 0) return 500;
                         }
                         else
                         {
-                            if (!(name == CardIds.Collectible.Neutral.Nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((Race)card.Race == Race.PET && p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null) || p.owncards.Find(x => x.card.name == CardIds.Collectible.Warrior.Charge) != null))
+                            if (!(name == CardIds.Collectible.Neutral.Nightblade || card.Charge || this.silenceDatabase.ContainsKey(name) || this.DamageTargetDatabase.ContainsKey(name) || ((Race)card.Race == Race.PET && p.ownMinions.Find(x => x.name == CardIds.Collectible.Hunter.TundraRhino) != null) || p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Warrior.Charge) != null))
                             {
                                 return 500;
                             }
@@ -2106,7 +2104,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Rogue.GoblinAutoBarber: if (p.ownWeapon.Durability == 0) return 5; return 0;
                 case CardIds.Collectible.Neutral.DreadCorsair: if (p.ownWeapon.Durability == 0) return 5; return 0;
                 case CardIds.Collectible.Warrior.GrimestreetPawnbroker:
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) return 0;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.WEAPON) return 0;
                     return 5;
                 case CardIds.Collectible.Warrior.BloodsailCultist: ;
                     if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((Race)m.handcard.card.Race == Race.PIRATE) return 0;
@@ -2184,7 +2182,7 @@ namespace HREngine.Bots
                         int nextTurnMana = p.ownMaxMana + 1;
                         foreach (Handmanager.Handcard hc in temp)
                         {
-                            if (hc.card.name == name && cnum == 0)
+                            if (hc.card.CardId == name && cnum == 0)
                             {
                                 cnum++;
                                 continue;
@@ -2233,7 +2231,7 @@ namespace HREngine.Bots
                     bool pet = false;
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        if (hc.card.name == CardIds.Collectible.Druid.MenagerieWarden) { menageriewarden = true; continue; }
+                        if (hc.card.CardId == CardIds.Collectible.Druid.MenagerieWarden) { menageriewarden = true; continue; }
                         if ((Race)hc.card.Race == Race.PET && hc.card.Cost <= p.ownMaxMana) pet = true;
                     }
                     if (menageriewarden && pet) pen += 23;
@@ -2272,7 +2270,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.name == CardIds.Collectible.Mage.MirrorEntity)
+                    if (hc.card.CardId == CardIds.Collectible.Mage.MirrorEntity)
                     {
                         foreach (Minion mnn in p.ownMinions)
                         {
@@ -2306,12 +2304,12 @@ namespace HREngine.Bots
 
             if (name == CardIds.Collectible.Neutral.ShifterZerus) return 500;
 
-            if (card.name == CardIds.NonCollectible.Rogue.DaggerMastery)
+            if (card.CardId == CardIds.NonCollectible.Rogue.DaggerMastery)
             {
                 if (p.ownWeapon.Angr >= 2 || p.ownWeapon.Durability >= 2) return 5;
             }
 
-            if (card.name == CardIds.Collectible.Warrior.Upgrade)
+            if (card.CardId == CardIds.Collectible.Warrior.Upgrade)
             {
                 if (p.ownWeapon.Durability == 0)
                 {
@@ -2320,9 +2318,9 @@ namespace HREngine.Bots
                 }
             }
 
-            if (card.name == CardIds.Collectible.Warlock.MalchezaarsImp && p.owncards.Count > 2) return 5;
+            if (card.CardId == CardIds.Collectible.Warlock.MalchezaarsImp && p.owncards.Count > 2) return 5;
 
-            if (card.name == CardIds.Collectible.Neutral.BaronRivendare)
+            if (card.CardId == CardIds.Collectible.Neutral.BaronRivendare)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
@@ -2331,18 +2329,18 @@ namespace HREngine.Bots
             }
 
             //rule for coin on early game
-            if (p.ownMaxMana < 3 && card.name == CardIds.NonCollectible.Neutral.TheCoin)
+            if (p.ownMaxMana < 3 && card.CardId == CardIds.NonCollectible.Neutral.TheCoin)
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.manacost <= p.ownMaxMana && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) return 5;
+                    if (hc.manacost <= p.ownMaxMana && hc.card.Type == CardType.MOB) return 5;
                 }
 
             }
 
             //destroySecretPenality
             pen = 0;
-            switch (card.name)
+            switch (card.CardId)
             {
                 case CardIds.Collectible.Hunter.Flare:
                     foreach (Minion mn in p.ownMinions) if (mn.stealth) pen++;
@@ -2353,10 +2351,10 @@ namespace HREngine.Bots
                         bool canPlaySpell = false;
                         foreach(Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.name == CardIds.Collectible.Hunter.Flare) continue;
+                            if (hc.card.CardId == CardIds.Collectible.Hunter.Flare) continue;
                             if (hc.card.Cost <= p.mana - 2)
                             {
-                                if (!canPlayMinion && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                                if (!canPlayMinion && hc.card.Type == CardType.MOB)
                                 {
 
                                     int tmp = p.getSecretTriggersByType(0, true, false, target);
@@ -2364,7 +2362,7 @@ namespace HREngine.Bots
                                     canPlayMinion = true;
                                     continue;
                                 }
-                                if (!canPlaySpell && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                                if (!canPlaySpell && hc.card.Type == CardType.SPELL)
                                 {
                                     int tmp = p.getSecretTriggersByType(1, true, false, target);
                                     if (tmp > 0) pen -= tmp * 50;
@@ -2417,7 +2415,7 @@ namespace HREngine.Bots
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                            if (hc.card.Type == CardType.MOB)
                             {
                                 iii++;
                             }
@@ -2438,7 +2436,7 @@ namespace HREngine.Bots
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                            if (hc.card.Type == CardType.MOB)
                             {
                                 iii++;
                             }
@@ -2454,7 +2452,7 @@ namespace HREngine.Bots
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                            if (hc.card.Type == CardType.MOB)
                             {
                                 iii++;
                             }
@@ -2747,7 +2745,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.RendBlackhand:
                     if (target == null) return 15;
                     if (target.own) return 100;
-                    if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.name == CardIds.Collectible.Warlock.Malganis)
+                    if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
@@ -2786,7 +2784,7 @@ namespace HREngine.Bots
                     break;
 
                 case CardIds.Collectible.Neutral.NerubianEgg:
-                    if (p.owncards.Find(x => this.attackBuffDatabase.ContainsKey(x.card.name)) != null || p.owncards.Find(x => this.tauntBuffDatabase.ContainsKey(x.card.name)) != null)
+                    if (p.owncards.Find(x => this.attackBuffDatabase.ContainsKey(x.card.CardId)) != null || p.owncards.Find(x => this.tauntBuffDatabase.ContainsKey(x.card.CardId)) != null)
                     {
                         return -6;
                     }
@@ -2812,7 +2810,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Mage.Frostbolt:
                     if (!target.own && !target.isHero)
                     {
-                        if (target.handcard.card.Cost < 3 && !this.priorityDatabase.ContainsKey(target.handcard.card.name)) return 15;
+                        if (target.handcard.card.Cost < 3 && !this.priorityDatabase.ContainsKey(target.handcard.card.CardId)) return 15;
                     }
                     return 0;
 
@@ -2869,7 +2867,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Mage.Flamewaker:
                     foreach (Action a in p.playactions)
                     {
-                        if (a.actionType == actionEnum.playcard && a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) return 30;
+                        if (a.actionType == actionEnum.playcard && a.card.card.Type == CardType.SPELL) return 30;
                     }
                     break;
 
@@ -2944,7 +2942,7 @@ namespace HREngine.Bots
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) return 10;
+                            if (hc.card.Type == CardType.WEAPON) return 10;
                         }
                     }
                     break;
@@ -3008,9 +3006,9 @@ namespace HREngine.Bots
                     break;
 
                 case CardIds.Collectible.Rogue.GangUp:
-                    if (this.GangUpDatabase.ContainsKey(target.handcard.card.name))
+                    if (this.GangUpDatabase.ContainsKey(target.handcard.card.CardId))
                     {
-                        return (-5 - 1 * GangUpDatabase[target.handcard.card.name]);
+                        return (-5 - 1 * GangUpDatabase[target.handcard.card.CardId]);
                     }
                     else return 40;
 
@@ -3072,7 +3070,7 @@ namespace HREngine.Bots
                             else
                             {
                                 // combo for killing with innerfire and biggamehunter
-                                if (p.owncards.Find(x => x.card.name == CardIds.Collectible.Neutral.BigGameHunter) != null && p.owncards.Find(x => x.card.name == CardIds.Collectible.Priest.InnerFire) != null && (target.Hp >= 4 || (p.owncards.Find(x => x.card.name == CardIds.Collectible.Priest.DivineSpirit) != null && target.Hp >= 2)))
+                                if (p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Neutral.BigGameHunter) != null && p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Priest.InnerFire) != null && (target.Hp >= 4 || (p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Priest.DivineSpirit) != null && target.Hp >= 2)))
                                 {
                                     return 0;
                                 }
@@ -3082,7 +3080,7 @@ namespace HREngine.Bots
                         else
                         {
                             // combo for killing with innerfire and biggamehunter
-                            if (p.owncards.Find(x => x.card.name == CardIds.Collectible.Neutral.BigGameHunter) != null && p.owncards.Find(x => x.card.name == CardIds.Collectible.Priest.InnerFire) != null && target.Hp >= 4)
+                            if (p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Neutral.BigGameHunter) != null && p.owncards.Find(x => x.card.CardId == CardIds.Collectible.Priest.InnerFire) != null && target.Hp >= 4)
                             {
                                 return 0;
                             }
@@ -3096,24 +3094,24 @@ namespace HREngine.Bots
             //------------------------------------------------------------------------------------------------------
 
 
-            if ((p.ownHeroAblility.card.name == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.name == Chireiden.Silverfish.SimCard.totemicslam) && p.ownAbilityReady == false)
+            if ((p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.totemicslam) && p.ownAbilityReady == false)
             {
                 foreach (Action a in p.playactions)
                 {
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardIds.Collectible.Shaman.DraeneiTotemcarver) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.图腾潮涌) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == CardIds.Collectible.Shaman.TotemicMight) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.name == Chireiden.Silverfish.SimCard.分裂战斧) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.DraeneiTotemcarver) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == Chireiden.Silverfish.SimCard.图腾潮涌) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.TotemicMight) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == Chireiden.Silverfish.SimCard.分裂战斧) return -1;
                 }
                 if (p.owncards.Count > 1)
                 {
-                    if (card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                    if (card.Type == CardType.SPELL)
                     {
-                        if (!(DamageTargetDatabase.ContainsKey(card.name) || DamageAllEnemysDatabase.ContainsKey(card.name)
-                        || DamageAllDatabase.ContainsKey(card.name) || DamageRandomDatabase.ContainsKey(card.name)
-                        || DamageTargetSpecialDatabase.ContainsKey(card.name) || DamageHeroDatabase.ContainsKey(card.name))) pen += 10;
+                        if (!(DamageTargetDatabase.ContainsKey(card.CardId) || DamageAllEnemysDatabase.ContainsKey(card.CardId)
+                        || DamageAllDatabase.ContainsKey(card.CardId) || DamageRandomDatabase.ContainsKey(card.CardId)
+                        || DamageTargetSpecialDatabase.ContainsKey(card.CardId) || DamageHeroDatabase.ContainsKey(card.CardId))) pen += 10;
                     }
-                    else if (card.name == CardIds.Collectible.Neutral.FrostwolfWarlord || card.name == CardIds.Collectible.Shaman.ThingFromBelow || card.name == CardIds.Collectible.Shaman.DraeneiTotemcarver) return -1;
+                    else if (card.CardId == CardIds.Collectible.Neutral.FrostwolfWarlord || card.CardId == CardIds.Collectible.Shaman.ThingFromBelow || card.CardId == CardIds.Collectible.Shaman.DraeneiTotemcarver) return -1;
                     else pen += 10;
                 }
             }
@@ -3128,7 +3126,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (!lethal && card.card.CardId == CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1) //druidoftheclaw	Charge
+            if (!lethal && card.CardId == CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1) //druidoftheclaw	Charge
             {
                 return 20;
             }
@@ -3141,7 +3139,7 @@ namespace HREngine.Bots
                     int beasts = 0;
                     foreach (Minion mm in p.ownMinions)
                     {
-                        if (mm.Ready && (mm.handcard.card.name == CardIds.Collectible.Neutral.QuestingAdventurer || mm.handcard.card.name == CardIds.Collectible.Mage.ArchmageAntonidas || mm.handcard.card.name == CardIds.Collectible.Neutral.ManaAddict || mm.handcard.card.name == CardIds.Collectible.Mage.ManaWyrm || mm.handcard.card.name == CardIds.Collectible.Neutral.WildPyromancer)) beasts++;
+                        if (mm.Ready && (mm.handcard.card.CardId == CardIds.Collectible.Neutral.QuestingAdventurer || mm.handcard.card.CardId == CardIds.Collectible.Mage.ArchmageAntonidas || mm.handcard.card.CardId == CardIds.Collectible.Neutral.ManaAddict || mm.handcard.card.CardId == CardIds.Collectible.Mage.ManaWyrm || mm.handcard.card.CardId == CardIds.Collectible.Neutral.WildPyromancer)) beasts++;
                     }
                     if (beasts == 0) return 500;
                 }
@@ -3157,7 +3155,7 @@ namespace HREngine.Bots
                     case Chireiden.Silverfish.SimCard.masterchest: return target.own ? -21 : 5;
                 }
 
-                if (card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                if (card.Type == CardType.SPELL)
                 {
                     if (name == CardIds.Collectible.Rogue.Vanish)
                     {
@@ -3246,7 +3244,7 @@ namespace HREngine.Bots
                 foreach (Handmanager.Handcard hc in p.owncards)
             {
                     //肯瑞托法师
-                    if (hc.card.name == CardIds.Collectible.Mage.KirinTorMage && p.mana >= hc.getManaCost(p))
+                    if (hc.card.CardId == CardIds.Collectible.Mage.KirinTorMage && p.mana >= hc.getManaCost(p))
 
                     {
                        pen = 500;
@@ -3282,7 +3280,7 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            switch (c.name)
+            switch (c.CardId)
             {
                 case CardIds.Collectible.Hunter.Flare: return 0; break;
                 case CardIds.Collectible.Neutral.EaterOfSecrets: return 0; break;
@@ -3301,7 +3299,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if ((c.name == CardIds.Collectible.Neutral.AcidicSwampOoze || c.name == CardIds.Collectible.Neutral.GluttonousOoze)
+            if ((c.CardId == CardIds.Collectible.Neutral.AcidicSwampOoze || c.CardId == CardIds.Collectible.Neutral.GluttonousOoze)
                 && (p.enemyHeroStartClass == CardClass.WARRIOR || p.enemyHeroStartClass == CardClass.ROGUE || p.enemyHeroStartClass == CardClass.PALADIN))
             {
                 if (p.enemyHeroStartClass == CardClass.ROGUE && p.enemyWeapon.Angr <= 2)
@@ -3319,7 +3317,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.HUNTER)
             {
-                if (c.Type == Chireiden.Silverfish.SimCardtype.MOB
+                if (c.Type == CardType.MOB
                     && (attackedbefore == 0 || c.Health <= 4
                         || (p.enemyHero.Hp >= p.enemyHeroHpStarted && attackedbefore >= 1)))
                 {
@@ -3329,7 +3327,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.MAGE)
             {
-                if (c.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (c.Type == CardType.MOB)
                 {
                     Minion m = new Minion
                     {
@@ -3337,7 +3335,7 @@ namespace HREngine.Bots
                         maxHp = c.Health,
                         Angr = c.Attack,
                         taunt = c.Taunt,
-                        name = c.name
+                        name = c.CardId
                     };
 
                     // play first the small minion:
@@ -3348,7 +3346,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (c.Type == Chireiden.Silverfish.SimCardtype.SPELL && p.cardsPlayedThisTurn == p.mobsplayedThisTurn)
+                if (c.Type == CardType.SPELL && p.cardsPlayedThisTurn == p.mobsplayedThisTurn)
                 {
                     pen += 10;
                 }
@@ -3356,7 +3354,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.PALADIN)
             {
-                if (c.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (c.Type == CardType.MOB)
                 {
                     Minion m = new Minion
                     {
@@ -3364,7 +3362,7 @@ namespace HREngine.Bots
                         maxHp = c.Health,
                         Angr = c.Attack,
                         taunt = c.Taunt,
-                        name = c.name
+                        name = c.CardId
                     };
                     if ((!this.isOwnLowestInHand(m, p) && p.mobsplayedThisTurn == 0) || attackedbefore == 0)
                     {
@@ -3411,7 +3409,7 @@ namespace HREngine.Bots
                                     if (a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS)) pen += 22;
                                     break;
                                 case actionEnum.playcard:
-                                    if (a.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
+                                    if (a.card.card.Type == CardType.MOB || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
                                     {
                                         pen += 20;
                                     }
@@ -3463,7 +3461,7 @@ namespace HREngine.Bots
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB && hc.canplayCard(p, true)) { pen += 10; break; }
+                                if (hc.card.Type == CardType.MOB && hc.canplayCard(p, true)) { pen += 10; break; }
                             }
                         }
                     }
@@ -3520,13 +3518,13 @@ namespace HREngine.Bots
 
         public Chireiden.Silverfish.SimCard getChooseCard(Chireiden.Silverfish.SimCard c, int choice)
         {
-            if (choice == 1 && this.choose1database.ContainsKey(c.name))
+            if (choice == 1 && this.choose1database.ContainsKey(c.CardId))
             {
-                c = cdb.getCardDataFromID(this.choose1database[c.name]);
+                c = cdb.getCardDataFromID(this.choose1database[c.CardId]);
             }
-            else if (choice == 2 && this.choose2database.ContainsKey(c.name))
+            else if (choice == 2 && this.choose2database.ContainsKey(c.CardId))
             {
-                c = cdb.getCardDataFromID(this.choose2database[c.name]);
+                c = cdb.getCardDataFromID(this.choose2database[c.CardId]);
             }
             return c;
         }
@@ -3565,13 +3563,13 @@ namespace HREngine.Bots
             int val = getValueOfMinion(mnn);
             foreach (Handmanager.Handcard card in p.owncards)
             {
-                if (card.card.Type != Chireiden.Silverfish.SimCardtype.MOB) continue;
+                if (card.card.Type != CardType.MOB) continue;
                 Chireiden.Silverfish.SimCard c = card.card;
                 m.Hp = c.Health;
                 m.maxHp = c.Health;
                 m.Angr = c.Attack;
                 m.taunt = c.Taunt;
-                m.name = c.name;
+                m.name = c.CardId;
                 if (getValueOfMinion(m) < val) ret = false;
             }
             return ret;

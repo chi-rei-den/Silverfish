@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionGetBuffed(target, 2, 2);
-			if ((Race)target.handcard.card.Race == Race.PET) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+			if (target.handcard.card.Race == Race.BEAST) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
         }
     }
 }

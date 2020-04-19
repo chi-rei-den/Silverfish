@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(target.handcard.card.name, ownplay, true);
+            p.drawACard(target.handcard.card.CardId, ownplay, true);
         }
     }
 }

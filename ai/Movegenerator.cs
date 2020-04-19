@@ -1,5 +1,7 @@
 namespace HREngine.Bots
 {
+    using HearthDb;
+    using HearthDb.Enums;
     using System.Collections.Generic;
 
     public class Movegenerator
@@ -19,7 +21,7 @@ namespace HREngine.Bots
         private Movegenerator()
         {
         }
-        
+
         public List<Action> getMoveList(Playfield p, bool usePenalityManager, bool useCutingTargets, bool own)
         {
             //generates only own moves
@@ -40,7 +42,7 @@ namespace HREngine.Bots
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
                     int cardCost = hc.card.getManaCost(p, hc.manacost);
-                    if ((p.nextSpellThisTurnCostHealth && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) || (p.nextMurlocThisTurnCostHealth && (Race)hc.card.Race == Race.MURLOC))
+                    if ((p.nextSpellThisTurnCostHealth && hc.card.Type == CardType.SPELL) || (p.nextMurlocThisTurnCostHealth && hc.card.Race == Race.MURLOC))
                     {
                         if (p.ownHero.Hp > cardCost || p.ownHero.immune) { }
                         else continue; // if not enough Hp
@@ -49,7 +51,7 @@ namespace HREngine.Bots
 
                     Chireiden.Silverfish.SimCard c = hc.card;
                     cardNcost.Clear();
-                    cardNcost.Append(c.name).Append(hc.manacost);
+                    cardNcost.Append(c.CardId).Append(hc.manacost);
                     if (playedcards.Contains(cardNcost.ToString())) continue; // dont play the same card in one loop
                     playedcards.Add(cardNcost.ToString());
 
@@ -66,7 +68,7 @@ namespace HREngine.Bots
                                 for (int i = 1; i < 3; i++)
                                 {
                                     Chireiden.Silverfish.SimCard cTmp = pen.getChooseCard(hc.card, i); // do all choice
-                                    if (pen.DamageTargetDatabase.ContainsKey(cTmp.name) || (p.anzOwnAuchenaiSoulpriest > 0 && pen.HealTargetDatabase.ContainsKey(cTmp.name)))
+                                    if (pen.DamageTargetDatabase.ContainsKey(cTmp) || (p.anzOwnAuchenaiSoulpriest > 0 && pen.HealTargetDatabase.ContainsKey(cTmp.CardId)))
                                     {
                                         choice = i;
                                         choiceDamageFound = true;
@@ -77,12 +79,12 @@ namespace HREngine.Bots
                                 }
                             }
                         }
-                        if (p.ownMinions.Count > 6 && (c.Type == Chireiden.Silverfish.SimCardtype.MOB || hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)) continue;
+                        if (p.ownMinions.Count > 6 && (c.Type == CardType.MINION || hc.card.Type == CardType.MINION)) continue;
                         trgts = c.getTargetsForCard(p, p.isLethalCheck, true);
                         if (trgts.Count == 0) continue;
 
                         int cardplayPenality = 0;
-                        int bestplace = p.getBestPlace(c.Type == Chireiden.Silverfish.SimCardtype.MOB ? c : hc.card, p.isLethalCheck);
+                        int bestplace = p.getBestPlace(c.Type == CardType.MINION ? c : hc.card, p.isLethalCheck);
                         foreach (Minion trgt in trgts)
                         {
                             if (usePenalityManager) cardplayPenality = pen.getPlayCardPenality(c, trgt, p);
@@ -196,7 +198,7 @@ namespace HREngine.Bots
                     bool otherisSpecial = mnn.handcard.card.isSpecialMinion;
 			        bool onlySpecial = isSpecial && otherisSpecial && !m.silenced && !mnn.silenced;
 			        bool onlyNotSpecial =(!isSpecial || (isSpecial && m.silenced)) && (!otherisSpecial || (otherisSpecial && mnn.silenced));
-			
+
 			        if(onlySpecial && (m.name != mnn.name)) continue; // different name -> take it
                     if ((onlySpecial || onlyNotSpecial) && (mnn.Angr == m.Angr && mnn.Hp == m.Hp && mnn.divineshild == m.divineshild && mnn.taunt == m.taunt && mnn.poisonous == m.poisonous && mnn.lifesteal == m.lifesteal && m.handcard.card.isToken == mnn.handcard.card.isToken && mnn.handcard.card.Race == m.handcard.card.Race))
                     {
@@ -281,9 +283,9 @@ namespace HREngine.Bots
 
 
                     if (m.name == CardIds.Collectible.Hunter.ScavengingHyena) hashyena = true;
-                    if (m.handcard.card.Race == 20) haspets++;
+                    if (m.handcard.card.Race == Race.BEAST) haspets++;
                     if (m.name == CardIds.Collectible.Neutral.HarvestGolem || m.name == CardIds.Collectible.Neutral.HauntedCreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == CardIds.Collectible.Neutral.NerubianEgg || m.name == CardIds.Collectible.Hunter.SavannahHighmane || m.name == CardIds.Collectible.Neutral.SludgeBelcher || m.name == CardIds.Collectible.Neutral.CairneBloodhoof || m.name == CardIds.Collectible.Neutral.Feugen || m.name == CardIds.Collectible.Neutral.Stalagg || m.name == CardIds.Collectible.Neutral.TheBeast) spawnminions = true;
-                    
+
                 }
             }
 

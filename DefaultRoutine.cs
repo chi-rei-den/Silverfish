@@ -760,7 +760,7 @@ def Execute():
                         {
                             foreach (Handmanager.Handcard hc in lastChancePl.owncards)
                             {
-                                if (hc.card.name == Chireiden.Silverfish.SimCard.None) lastChance = true;
+                                if (hc.card.CardId == Chireiden.Silverfish.SimCard.None) lastChance = true;
                             }
                             if (!lastChance) doConcede = true;
                         }
@@ -771,7 +771,7 @@ def Execute():
                             foreach (Minion m in lastChancePl.ownMinions)
                             {
                                 if (!m.playedThisTurn) continue;
-                                switch (m.handcard.card.name)
+                                switch (m.handcard.card.CardId)
                                 {
                                     case CardIds.Collectible.Neutral.Cthun: lastChance = true; break;
                                     case CardIds.Collectible.Neutral.NzothTheCorruptor: lastChance = true; break;
@@ -834,7 +834,7 @@ def Execute():
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
                                 dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.card.CardId.ToString();
+                                choiceCardId = moveTodo.card.card.CardId.ToString();
                             }
 
                             //safe targeting stuff for hsbuddy
@@ -843,15 +843,15 @@ def Execute():
 
                             await cardtoplay.Pickup();
 
-                            if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                            if (moveTodo.card.card.Type == CardType.MOB)
                             {
                                 await cardtoplay.UseAt(moveTodo.place);
                             }
-                            else if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.WEAPON) // This fixes perdition's blade
+                            else if (moveTodo.card.card.Type == CardType.WEAPON) // This fixes perdition's blade
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
-                            else if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+                            else if (moveTodo.card.card.Type == CardType.SPELL)
                             {
                                 await cardtoplay.UseOn(target.Card);
                             }
@@ -875,7 +875,7 @@ def Execute():
                     if (moveTodo.druidchoice >= 1)
                     {
                         dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                        choiceCardId = moveTodo.card.card.card.CardId.ToString();
+                        choiceCardId = moveTodo.card.card.CardId.ToString();
                     }
 
                     dirtyTargetSource = -1;
@@ -883,7 +883,7 @@ def Execute():
 
                     await cardtoplay.Pickup();
 
-                    if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if (moveTodo.card.card.Type == CardType.MOB)
                     {
                         await cardtoplay.UseAt(moveTodo.place);
                     }
@@ -975,7 +975,7 @@ def Execute():
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
                                 dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.card.CardId.ToString();
+                                choiceCardId = moveTodo.card.card.CardId.ToString();
                             }
 
                             dirtyTargetSource = 9000;
@@ -999,7 +999,7 @@ def Execute():
                         if (moveTodo.druidchoice >= 1)
                         {
                             dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                            choiceCardId = moveTodo.card.card.card.CardId.ToString();
+                            choiceCardId = moveTodo.card.card.CardId.ToString();
                         }
 
                         dirtyTargetSource = -1;
@@ -1066,7 +1066,7 @@ def Execute():
 
                 int sirFinleyChoice = -1;
                 if (ai.bestmove == null) Log.ErrorFormat("[提示] 没有获得卡牌数据");
-                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.name == CardIds.Collectible.Neutral.SirFinleyMrrgglton)
+                else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.CardId == CardIds.Collectible.Neutral.SirFinleyMrrgglton)
                 {
                     sirFinleyChoice = ai.botBase.getSirFinleyPriority(discoverCards);
                 }
@@ -1091,7 +1091,7 @@ def Execute():
                             switch (choiceMode)
                             {
                                 case GAME_TAG.DISCOVER:
-                                    switch (ai.bestmove.card.card.name)
+                                    switch (ai.bestmove.card.card.CardId)
                                     {
                                         case CardIds.Collectible.Priest.EternalServitude:
                                         case CardIds.Collectible.Priest.FreeFromAmber:
@@ -1103,7 +1103,7 @@ def Execute():
                                             break;
                                     }
                                     bestval = ai.mainTurnSimulator.doallmoves(tmpPlf);
-                                    if (discoverCards[i].card.name == CardIds.Collectible.Warlock.BloodImp) bestval -= 20;
+                                    if (discoverCards[i].card.CardId == CardIds.Collectible.Warlock.BloodImp) bestval -= 20;
                                     break;
                                 case GAME_TAG.ADAPT:
                                     bool found = false;
@@ -1112,7 +1112,7 @@ def Execute():
                                         if (m.entitiyID == sourceEntityId)
                                         {
                                             bool forbidden = false;
-                                            switch (discoverCards[i].card.card.CardId)
+                                            switch (discoverCards[i].card.CardId)
                                             {
                                                 case CardIds.NonCollectible.Neutral.LiquidMembraneToken1: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
                                                 case CardIds.NonCollectible.Neutral.MassiveToken1: if (m.taunt) forbidden = true; break;
@@ -1124,7 +1124,7 @@ def Execute():
                                             if (forbidden) bestval = -2000000;
                                             else
                                             {
-                                                discoverCards[i].card.sim_card.onCardPlay(tmpPlf, true, m, 0);
+                                                discoverCards[i].card.Simulator.onCardPlay(tmpPlf, true, m, 0);
                                                 bestval = ai.mainTurnSimulator.doallmoves(tmpPlf);
                                             }
                                             found = true;
@@ -1147,7 +1147,7 @@ def Execute():
                 if (dirtychoice == 0) dirtychoice = 1;
                 else if (dirtychoice == 1) dirtychoice = 0;
                 int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;
-                Helpfunctions.Instance.logg("发现卡牌: " + dirtychoice + (discoverCardsCount > 1 ? " " + discoverCards[1].card.card.CardId : "") + (discoverCardsCount > 0 ? " " + discoverCards[0].card.card.CardId : "") + (discoverCardsCount > 2 ? " " + discoverCards[2].card.card.CardId : ""));
+                Helpfunctions.Instance.logg("发现卡牌: " + dirtychoice + (discoverCardsCount > 1 ? " " + discoverCards[1].card.CardId : "") + (discoverCardsCount > 0 ? " " + discoverCards[0].card.CardId : "") + (discoverCardsCount > 2 ? " " + discoverCards[2].card.CardId : ""));
                 if (ttf < 3000) return (new Random().Next(ttf < 1300 ? 1300 - ttf : 0, 3100 - ttf));
             }
             else

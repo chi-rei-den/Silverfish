@@ -1,5 +1,6 @@
 namespace HREngine.Bots
 {
+    using Chireiden.Silverfish;
     using System.Collections.Generic;
 
     public class Handmanager
@@ -20,7 +21,7 @@ namespace HREngine.Bots
 
             public Handcard()
             {
-                card = CardDB.Instance.unknownCard;
+                card = SimCard.None;
             }
             public Handcard(Handcard hc)
             {
@@ -120,7 +121,7 @@ namespace HREngine.Bots
             help.logg("Own Handcards: ");
             foreach (Handmanager.Handcard hc in this.handCards)
             {
-                help.logg("pos " + hc.position + " " + hc.card.name + " " + hc.manacost + " entity " + hc.entity + " " + hc.card.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp);
+                help.logg("pos " + hc.position + " " + hc.card.CardId + " " + hc.manacost + " entity " + hc.entity + " " + hc.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp);
             }
             help.logg("Enemy cards: " + this.enemyAnzCards);
         }

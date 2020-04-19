@@ -159,9 +159,9 @@ namespace HREngine.Bots
         {
             nextMobName = Chireiden.Silverfish.SimCard.None;
             nextMobId = 0;
-            if (hc != null && hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+            if (hc != null && hc.card.Type == CardType.MOB)
             {
-                nextMobName = hc.card.name;
+                nextMobName = hc.card.CardId;
                 nextMobId = hc.entity;
             }
         }

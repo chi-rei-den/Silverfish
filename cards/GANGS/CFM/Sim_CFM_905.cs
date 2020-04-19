@@ -42,7 +42,7 @@ namespace HREngine.Bots
                     {
                         for (int i = 0; i < cid.Value; i++)
                         {
-                            p.drawACard(c.name, true);
+                            p.drawACard(c.CardId, true);
                             count++;
                             if (count > 2) break;
                         }

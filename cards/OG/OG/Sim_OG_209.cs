@@ -31,10 +31,10 @@ namespace HREngine.Bots
 		
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
         {
-            if (m.own == ownplay && hc.card.Type == Chireiden.Silverfish.SimCardtype.SPELL)
+            if (m.own == ownplay && hc.card.Type == CardType.SPELL)
             {
                 Minion target = (ownplay) ? p.ownHero : p.enemyHero;
-                p.minionGetDamageOrHeal(target, -p.prozis.penman.guessTotalSpellDamage(p, hc.card.name, ownplay));
+                p.minionGetDamageOrHeal(target, -p.prozis.penman.guessTotalSpellDamage(p, hc.card.CardId, ownplay));
             }
         }
     }

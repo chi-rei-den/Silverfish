@@ -1,6 +1,5 @@
 namespace HREngine.Bots
 {
-
     public class SimTemplate
     {
         public virtual void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
@@ -18,14 +17,12 @@ namespace HREngine.Bots
             return;
         }
 
-
-
         public virtual void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             return;
         }
 
-        public virtual bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus = false) 
+        public virtual bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus = false)
         {
             return false;
         }
@@ -44,7 +41,6 @@ namespace HREngine.Bots
         {
             return;
         }
-
 
         public virtual void onEnrageStart(Playfield p, Minion m)
         {
@@ -68,7 +64,7 @@ namespace HREngine.Bots
         public virtual void onACharGotHealed(Playfield p, Minion triggerEffectMinion, int charsGotHealed)
         {
             return;
-        }        
+        }
 
         public virtual void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
@@ -129,8 +125,5 @@ namespace HREngine.Bots
         {
             return;
         }
-
-
     }
-
 }

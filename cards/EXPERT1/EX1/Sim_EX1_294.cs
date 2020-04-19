@@ -35,7 +35,7 @@ namespace HREngine.Bots
             p.callKid(target.handcard.card, pos, ownplay);
             if (ownplay)
             {
-                if (p.ownMinions.Count >= 1 && p.ownMinions[p.ownMinions.Count - 1].name == target.handcard.card.name)
+                if (p.ownMinions.Count >= 1 && p.ownMinions[p.ownMinions.Count - 1].name == target.handcard.card.CardId)
                 {
                     int e = p.ownMinions[p.ownMinions.Count - 1].entitiyID;
                     p.ownMinions[p.ownMinions.Count - 1].setMinionToMinion(target);
@@ -45,7 +45,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (p.enemyMinions.Count >= 1 && p.enemyMinions[p.enemyMinions.Count - 1].name == target.handcard.card.name)
+                if (p.enemyMinions.Count >= 1 && p.enemyMinions[p.enemyMinions.Count - 1].name == target.handcard.card.CardId)
                 {
                     int e = p.enemyMinions[p.enemyMinions.Count - 1].entitiyID;
                     p.enemyMinions[p.enemyMinions.Count - 1].setMinionToMinion(target);

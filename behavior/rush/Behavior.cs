@@ -70,10 +70,10 @@ namespace HREngine.Bots
                 if (p.ownHeroName == HeroEnum.warrior && a.actionType == actionEnum.attackWithHero && useAbili) retval -= 1;
                 //if (a.actionType == actionEnum.useHeroPower && a.card.card.name == CardIds.NonCollectible.Priest.LesserHeal && (!a.target.own)) retval -= 5;
                 if (a.actionType != actionEnum.playcard) continue;
-                if (a.card.card.name == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.name == CardIds.Collectible.Druid.Innervate) usecoin++;
+                if (a.card.card.CardId == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.CardId == CardIds.Collectible.Druid.Innervate) usecoin++;
 
-                if(a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
-                if (a.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && a.card.card.name == Chireiden.Silverfish.SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
+                if(a.card.card.Type == CardType.SPELL && a.card.card.CardId == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
+                if (a.card.card.Type == CardType.SPELL && a.card.card.CardId == Chireiden.Silverfish.SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
                 if(a.card.card.Secret) retval += 5;
             }
             if (usecoin > 0)
@@ -84,7 +84,7 @@ namespace HREngine.Bots
             }
             if (p.manaTurnEnd >= 2 && !useAbili && p.ownAbilityReady)
             {
-                switch (p.ownHeroAblility.card.name)
+                switch (p.ownHeroAblility.card.CardId)
                 {
                     case Chireiden.Silverfish.SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
                     case CardIds.NonCollectible.Priest.LesserHeal:
@@ -139,9 +139,9 @@ namespace HREngine.Bots
                 if (m.windfury) retval += m.Angr;
                 if (m.taunt) retval += 1;
                 if (!m.taunt && m.stealth && m.handcard.card.isSpecialMinion && !m.silenced) retval += 20;
-                if (m.handcard.card.name == Chireiden.Silverfish.SimCard.silverhandrecruit && m.Angr == 1 && m.Hp == 1) retval -= 5;
-                if (p.ownMinions.Count > 1 && (m.handcard.card.name == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.name == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.name == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.name == CardIds.Collectible.Neutral.RaidLeader || m.handcard.card.name == CardIds.Collectible.Mage.FallenHero)) retval += 10;
-                if (m.handcard.card.name == CardIds.Collectible.Neutral.NerubianEgg)
+                if (m.handcard.card.CardId == Chireiden.Silverfish.SimCard.silverhandrecruit && m.Angr == 1 && m.Hp == 1) retval -= 5;
+                if (p.ownMinions.Count > 1 && (m.handcard.card.CardId == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.CardId == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.CardId == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.CardId == CardIds.Collectible.Neutral.RaidLeader || m.handcard.card.CardId == CardIds.Collectible.Mage.FallenHero)) retval += 10;
+                if (m.handcard.card.CardId == CardIds.Collectible.Neutral.NerubianEgg)
                 {
                     if (m.Angr >= 1) retval += 2;
                     if ((!m.taunt && m.Angr == 0) && (m.divineshild || m.maxHp > 2)) retval -= 10;
@@ -151,7 +151,7 @@ namespace HREngine.Bots
 
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (hc.card.Type == CardType.MOB)
                 {
                     retval += hc.addattack + hc.addHp + hc.elemPoweredUp;
                 }
@@ -178,8 +178,8 @@ namespace HREngine.Bots
             foreach (Action a in p.playactions)
             {
                 if (a.actionType != actionEnum.playcard) continue;
-                if (a.card.card.name == CardIds.Collectible.Warlock.Soulfire || a.card.card.name == CardIds.Collectible.Warlock.Doomguard || a.card.card.name == Chireiden.Silverfish.SimCard.succubus) deletecardsAtLast = 1;
-                if (deletecardsAtLast == 1 && !(a.card.card.name == CardIds.Collectible.Warlock.Soulfire || a.card.card.name == CardIds.Collectible.Warlock.Doomguard || a.card.card.name == Chireiden.Silverfish.SimCard.succubus)) retval -= 20;
+                if (a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == Chireiden.Silverfish.SimCard.succubus) deletecardsAtLast = 1;
+                if (deletecardsAtLast == 1 && !(a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == Chireiden.Silverfish.SimCard.succubus)) retval -= 20;
             }
             if (p.enemyHero.Hp >= 1 && p.guessingHeroHP <= 0)
             {

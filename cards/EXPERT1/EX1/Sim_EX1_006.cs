@@ -36,12 +36,12 @@ namespace HREngine.Bots
                 List<Handmanager.Handcard> temp2 = new List<Handmanager.Handcard>();
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) temp2.Add(hc);
+                    if (hc.card.Type == CardType.MOB) temp2.Add(hc);
                 }
                 temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
                 foreach (Handmanager.Handcard mins in temp2)
                 {
-                    Chireiden.Silverfish.SimCard c = (mins.card.card.CardId);
+                    Chireiden.Silverfish.SimCard c = (mins.card.CardId);
                     p.minionTransform(triggerEffectMinion, c);
                     triggerEffectMinion.playedThisTurn = false;
                     triggerEffectMinion.Ready = true;

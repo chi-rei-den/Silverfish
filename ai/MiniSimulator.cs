@@ -298,7 +298,7 @@ namespace HREngine.Bots
                             {
                                 if (a.actionType == actionEnum.playcard)
                                 {
-                                    if (pen.cardDrawBattleCryDatabase.ContainsKey(a.card.card.name)) secondChance = true;
+                                    if (pen.cardDrawBattleCryDatabase.ContainsKey(a.card.card.CardId)) secondChance = true;
                                 }
                             }
                             if (secondChance) p.value += 1500;

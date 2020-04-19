@@ -40,7 +40,7 @@ namespace HREngine.Bots
             if (tmp.Count >= 1)
             {
                 Minion summonedMinion = tmp[pos];
-                if (summonedMinion.handcard.card.card.CardId == kid.card.CardId)
+                if (summonedMinion.handcard.card.CardId == kid.CardId)
                 {
                     summonedMinion.Hp = 1;
                     summonedMinion.wounded = false;

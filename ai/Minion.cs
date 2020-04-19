@@ -492,12 +492,12 @@ namespace HREngine.Bots
 
             if (woundedbefore && !this.wounded)
             {
-                this.handcard.card.sim_card.onEnrageStop(p, this);
+                this.handcard.card.Simulator.onEnrageStop(p, this);
             }
 
             if (!woundedbefore && this.wounded)
             {
-                this.handcard.card.sim_card.onEnrageStart(p, this);
+                this.handcard.card.Simulator.onEnrageStart(p, this);
             }
 
             if (this.Hp <= 0)
@@ -522,18 +522,17 @@ namespace HREngine.Bots
 
             if (own)
             {
-
                 p.tempTrigger.ownMinionsDied++;
                 if (this.taunt) p.anzOwnTaunt--;
-                if (this.handcard.card.Race == 20)
+                if (this.handcard.card.Race == Race.BEAST)
                 {
                     p.tempTrigger.ownBeastDied++;
                 }
-                else if (this.handcard.card.Race == 17)
+                else if (this.handcard.card.Race == Race.MECHANICAL)
                 {
                     p.tempTrigger.ownMechanicDied++;
                 }
-                else if (this.handcard.card.Race == 14)
+                else if (this.handcard.card.Race == Race.MURLOC)
                 {
                     p.tempTrigger.ownMurlocDied++;
                 }
@@ -542,15 +541,15 @@ namespace HREngine.Bots
             {
                 p.tempTrigger.enemyMinionsDied++;
                 if (this.taunt) p.anzEnemyTaunt--;
-                if (this.handcard.card.Race == 20)
+                if (this.handcard.card.Race == Race.BEAST)
                 {
                     p.tempTrigger.enemyBeastDied++;
                 }
-                else if (this.handcard.card.Race == 17)
+                else if (this.handcard.card.Race == Race.MECHANICAL)
                 {
                     p.tempTrigger.enemyMechanicDied++;
                 }
-                else if (this.handcard.card.Race == 14)
+                else if (this.handcard.card.Race == Race.MURLOC)
                 {
                     p.tempTrigger.enemyMurlocDied++;
                 }
@@ -558,7 +557,7 @@ namespace HREngine.Bots
 
             if (p.diedMinions != null)
             {
-                GraveYardItem gyi = new GraveYardItem(this.handcard.card.card.CardId, this.entitiyID, this.own);
+                GraveYardItem gyi = new GraveYardItem(this.handcard.card.CardId, this.entitiyID, this.own);
                 p.diedMinions.Add(gyi);
             }
         }
@@ -574,9 +573,9 @@ namespace HREngine.Bots
                 return;
             }
 
-            if (!frozen && ((charge >= 1 && playedThisTurn) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || ( !silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <=3 )) ) Ready = true;
-            if (!frozen && (((charge == 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <= 3))) { Ready = true; cantAttackHeroes = true; }
-            if (!frozen && (((charge > 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == Chireiden.Silverfish.SimCard.v07tr0n && numAttacksThisTurn <= 3)))
+            if (!frozen && ((charge >= 1 && playedThisTurn) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || ( !silenced && this.name == CardIds.NonCollectible.Neutral.MimironsHead_V07Tr0NToken && numAttacksThisTurn <=3 )) ) Ready = true;
+            if (!frozen && (((charge == 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == CardIds.NonCollectible.Neutral.MimironsHead_V07Tr0NToken && numAttacksThisTurn <= 3))) { Ready = true; cantAttackHeroes = true; }
+            if (!frozen && (((charge > 0 && rush >= 1 && playedThisTurn)) || !playedThisTurn || shadowmadnessed) && (numAttacksThisTurn == 0 || (numAttacksThisTurn == 1 && windfury) || (!silenced && this.name == CardIds.NonCollectible.Neutral.MimironsHead_V07Tr0NToken && numAttacksThisTurn <= 3)))
             {
                 Ready = true;
                 cantAttackHeroes = false;
@@ -645,7 +644,7 @@ namespace HREngine.Bots
             //delete enrage (if minion is silenced the first time)
             if (wounded && handcard.card.Enrage && !silenced)
             {
-                handcard.card.sim_card.onEnrageStop(p, this);
+                handcard.card.Simulator.onEnrageStop(p, this);
             }
 
             //reset attack
@@ -663,7 +662,7 @@ namespace HREngine.Bots
 
             if (!silenced)//minion WAS not silenced, deactivate his aura
             {
-                handcard.card.sim_card.onAuraEnds(p, this);
+                handcard.card.Simulator.onAuraEnds(p, this);
             }
 
             silenced = true;
@@ -714,7 +713,7 @@ namespace HREngine.Bots
                 // reborns and destoyings----------------------------------------------
 
 
-                if (me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment1 || me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment12) //BlessingOfWisdom
+                if (me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment1 || me.CARDID == CardIds.NonCollectible.Paladin.BlessingofWisdom_BlessingOfWisdomEnchantment2) //BlessingOfWisdom
                 {
                     if (me.controllerOfCreator == ownPlayerControler)
                     {
@@ -773,7 +772,7 @@ namespace HREngine.Bots
               //      this.charge++;
               //  }
 
-                switch(me.CARDID)
+                switch(me.CARDID.CardId)
                 {
                     //ToDo: TBUD_1	Each turn, if you have less health then a your opponent, summon a free minion
 
@@ -811,7 +810,7 @@ namespace HREngine.Bots
 
                     //cantLowerHPbelowONE-------------------------------------------------
                     case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment1: this.cantLowerHPbelowONE = true; continue; //commandingshout
-                    case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment12: this.cantLowerHPbelowONE = true; continue; //commandingshout
+                    case CardIds.NonCollectible.Warrior.CommandingShout_CommandingShoutEnchantment2: this.cantLowerHPbelowONE = true; continue; //commandingshout
 
                     //spellpower-------------------------------------------------
                     case CardIds.NonCollectible.Neutral.VelensChosen_VelensChosen: this.spellpower++; continue; //velenschosen

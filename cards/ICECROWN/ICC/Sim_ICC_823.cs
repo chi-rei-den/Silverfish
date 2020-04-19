@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 Handmanager.Handcard hcCopy = null;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if (hc.card.Type == CardType.MOB)
                     {
                         if (hcCopy == null) hcCopy = hc;
                         else
@@ -45,7 +45,7 @@ namespace HREngine.Bots
                         }
                     }
                 }
-                if (hcCopy != null) p.drawACard(hcCopy.card.name, ownplay, true);
+                if (hcCopy != null) p.drawACard(hcCopy.card.CardId, ownplay, true);
             }
         }
     }
