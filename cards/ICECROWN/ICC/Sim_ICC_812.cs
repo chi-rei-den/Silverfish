@@ -39,7 +39,7 @@ namespace HREngine.Bots
             }
             if (cId != Chireiden.Silverfish.SimCard.None)
             {
-                Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(cId);
+                Chireiden.Silverfish.SimCard kid = (cId);
                 p.callKid(kid, m.zonepos - 1, m.own);
             }
         }

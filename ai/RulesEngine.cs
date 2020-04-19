@@ -3,6 +3,7 @@ using System.Text;
 using System.Linq;
 using System.IO;
 using System.Collections.Generic;
+using HearthDb.Enums;
 
 namespace HREngine.Bots
 {
@@ -12,7 +13,7 @@ namespace HREngine.Bots
      SUMMARY
      1) Comparison operators (=, !=, >, <) !ONLY NUMERIC VALUE!
      (= - equal, != - not equal, > - greater than, < - less than)
-     
+
      tm - turn mana (default mana at this turn);
      am - available mana (at this turn);
      t - turn;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
      ehc - enemy hand cards count (the number of cards in enemy's hand);
      omc - own minions count (the number of own minions on the board);
      emc - enemy minions count (the number of enemy minions on the board);
-     For "ohc", "omc" and "emc" you can use these extensions: 
+     For "ohc", "omc" and "emc" you can use these extensions:
         :Murlocs (the number of own/enemy Murlocs on the board/in own hand)
         :Demons (the number of own/enemy Demons on the board/in own hand)
         :Mechs (the number of own/enemy Mechs on the board/in own hand)
@@ -44,7 +45,7 @@ namespace HREngine.Bots
         :Spells (the number of Spells in own hand)
         :Secrets (the number of Secrets in own hand)
         :Weapons (the number of Weapons in own hand)
-     For "omc" and "emc" only: 
+     For "omc" and "emc" only:
         :SHR (the number of own/enemy Silver Hand Recruits on the board)
         :undamaged (the number of undamaged own/enemy minions on the board)
         :damaged (the number of damaged own/enemy minions on the board)
@@ -52,10 +53,10 @@ namespace HREngine.Bots
      Example:   omc>3 - means that you must have more than 3 minions on the board
                 omc:Murlocs>3 - means that you must have more than 3 murlocs on the board
                 omc>emc - means that you must have more minions than your opponent
-     
+
      2) Boolean operators (=, !=)
      (= - equal/contain; != - not equal/does't contain)
-     
+
      ob - own board (own board must/must not contain this minion (CardID));
      eb - enemy board (enemy board must/must not contain this minion (CardID));
      oh - own hand (own hand must/must not contain this card (CardID));
@@ -63,7 +64,7 @@ namespace HREngine.Bots
      ew - enemy weapon (CardID);
      ohero - own hero class (ALL, DRUID, HUNTER, MAGE, PALADIN, PRIEST, ROGUE, SHAMAN, WARLOCK, WARRIOR);
      ehero - enemy hero class;
-      
+
      3) Unique:
      coin - must be a coin in hand at turn start;
      !coin - must not be a coin in hand at turn start;
@@ -71,7 +72,7 @@ namespace HREngine.Bots
      p= - play - card in hand that must be played (CardID);
      p2= - play 2 identical cards - 2 identical card in hand that must be played (CardID);
      a= - attacker - minion on board (CardID);
-     For "p=" and "p2=" and "a=" you can use these extensions: 
+     For "p=" and "p2=" and "a=" you can use these extensions:
         :pen= (after CardID) - penalty for playing/attacking this card outside of this rule;
         :tgt= - target - target for spell or for minion/weapon (CardID/hero/!hero);
         You can use comparison operators ( =, !=, >, < !ONLY NUMERIC VALUE!) for these parameters:
@@ -79,36 +80,36 @@ namespace HREngine.Bots
         :aHp - attacker's health points
         :tAt - target's attack
         :tHp - target's health points
-     
+
      4) Condition binding:
      & - And (condition1&condition2 - true only if the condition 1 AND condition 2 are true);
      || - Or (condition1||condition2 - true if the condition 1 is true OR condition 2 is true);
      Example: cond_1 & cond_2||cond_3||cond_4 & cond_5 - true if condition_1 = true And (condition 2 or 3 or 4) = true And condition_5 = true;
-     
+
      5) Extra info (written with a comma)
      bonus=X - if all conditions are TRUE then this Playfield gets this bonus;
-         
+
      */
 
     public class RulesEngine
     {
         Dictionary<int, Rule> heapOfRules = new Dictionary<int, Rule>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsPlay = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsAttack = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsHand = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsOwnBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsEnemyBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>(); 
-        Dictionary<int, int> BoardStateRules = new Dictionary<int, int>(); 
-        Dictionary<int, int> BoardStateRulesGame = new Dictionary<int, int>(); 
-        Dictionary<int, int> BoardStateRulesTurn = new Dictionary<int, int>(); 
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsPlay = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsAttack = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsHand = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsOwnBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsEnemyBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, int> BoardStateRules = new Dictionary<int, int>();
+        Dictionary<int, int> BoardStateRulesGame = new Dictionary<int, int>();
+        Dictionary<int, int> BoardStateRulesTurn = new Dictionary<int, int>();
         Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRules = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>(); 
-        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnPlay = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>(); 
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
+        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnPlay = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
         Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnHand = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
         Dictionary<Race, List<int>> hcRaceRulesGame = new Dictionary<Race, List<int>>();
         Dictionary<Race, List<int>> hcRaceRulesTurn = new Dictionary<Race, List<int>>();
@@ -548,7 +549,7 @@ namespace HREngine.Bots
                         {
                             switch (cond.parameter)
                             {
-                                
+
                                 case param.play:
                                     if (playedCardsWRule.ContainsKey(cond.cardID))
                                     {
@@ -586,7 +587,7 @@ namespace HREngine.Bots
                             {
                                 switch (orCond.parameter)
                                 {
-                                    
+
                                     case param.play:
                                         if (playedCardsWRule.ContainsKey(orCond.cardID))
                                         {
@@ -642,7 +643,7 @@ namespace HREngine.Bots
                                         if (checkCondition(extraCond, p, au.action)) continue;
                                         actRuleBroken = true;
                                         tmpPenBonus -= condPen.Item1.bonus;
-                                        if (this.printRules > 0) p.rulesUsed += -condPen.Item1.bonus + " broken extra condition:" + condPen.Item1.parentRule + "@"; 
+                                        if (this.printRules > 0) p.rulesUsed += -condPen.Item1.bonus + " broken extra condition:" + condPen.Item1.parentRule + "@";
                                         break;
                                     }
                                 }
@@ -978,7 +979,7 @@ namespace HREngine.Bots
 
                 heapOfRules.Clear();
                 replacedRules.Clear();
-                foreach (Rule r in rulesList) 
+                foreach (Rule r in rulesList)
                 {
                     if (r.ruleNumber == 0) continue;
                     if (heapOfRules.ContainsKey(r.ruleNumber))
@@ -993,7 +994,7 @@ namespace HREngine.Bots
 
                 Dictionary<int, Rule> tmpRules = new Dictionary<int, Rule>();
                 int i = 1;
-                foreach (Rule r in rulesList) 
+                foreach (Rule r in rulesList)
                 {
                     if (r.ruleNumber != 0) continue;
                     while (heapOfRules.ContainsKey(i)) i++;
@@ -1001,7 +1002,7 @@ namespace HREngine.Bots
                     tmpRules.Add(i, r);
                     i++;
                 }
-                foreach (Rule r in rulesList) 
+                foreach (Rule r in rulesList)
                 {
                     if (r.replacedRule == 0) continue;
                     if (heapOfRules.ContainsKey(r.replacedRule))
@@ -1014,7 +1015,7 @@ namespace HREngine.Bots
                         r.replacedRule = 0;
                     }
                 }
-                foreach (var r in tmpRules) 
+                foreach (var r in tmpRules)
                 {
                     if (heapOfRules.ContainsKey(r.Key))
                     {
@@ -1065,7 +1066,7 @@ namespace HREngine.Bots
                             {
                                 if (equalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double own Hero class (equal): " + hClass);
                                 if (notequalOwnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog("[RulesEngine] The same equal/notequal own Hero class: " + hClass);
-                                if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0); 
+                                if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0);
                                 else RuleOwnClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                             }
                             else if (equalOwnHeroes.Count < 1)
@@ -1073,7 +1074,7 @@ namespace HREngine.Bots
                                 if (!notequalOwnHeroes.ContainsKey(hClass))
                                 {
                                     if (notequalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double own Hero class (notequal): " + hClass);
-                                    if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0); 
+                                    if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0);
                                     else RuleOwnClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                                 }
                             }
@@ -1081,7 +1082,7 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleOwnClass.ContainsKey(CardClass.ALL)) RuleOwnClass[CardClass.ALL].Add(r.Key, 0); 
+                        if (RuleOwnClass.ContainsKey(CardClass.ALL)) RuleOwnClass[CardClass.ALL].Add(r.Key, 0);
                         else RuleOwnClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                     if (equalEnHeroes.Count > 0 || notequalEnHeroes.Count > 0)
@@ -1093,7 +1094,7 @@ namespace HREngine.Bots
                             {
                                 if (equalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double enemy Hero class (equal): " + hClass);
                                 if (notequalEnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog("[RulesEngine] The same equal/notequal enemy Hero class: " + hClass);
-                                if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0); 
+                                if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0);
                                 else RuleEnemyClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                             }
                             else if (equalEnHeroes.Count < 1)
@@ -1101,7 +1102,7 @@ namespace HREngine.Bots
                                 if (!notequalEnHeroes.ContainsKey(hClass))
                                 {
                                     if (notequalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double enemy Hero class (notequal): " + hClass);
-                                    if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0); 
+                                    if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0);
                                     else RuleEnemyClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                                 }
                             }
@@ -1109,7 +1110,7 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleEnemyClass.ContainsKey(CardClass.ALL)) RuleEnemyClass[CardClass.ALL].Add(r.Key, 0); 
+                        if (RuleEnemyClass.ContainsKey(CardClass.ALL)) RuleEnemyClass[CardClass.ALL].Add(r.Key, 0);
                         else RuleEnemyClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                 }
@@ -1221,7 +1222,7 @@ namespace HREngine.Bots
                 case "omc!=emc": condTmp = new Condition(param.omc_notequal_emc, 0, (this.printRules == 0) ? "" : ruleString); return true;
                 case "omc>emc": condTmp = new Condition(param.omc_greater_emc, 0, (this.printRules == 0) ? "" : ruleString); return true;
                 case "omc<emc": condTmp = new Condition(param.omc_less_emc, 0, (this.printRules == 0) ? "" : ruleString); return true;
-                case "ohc=ehc": condTmp = new Condition(param.ohc_equal_ehc, 0, (this.printRules == 0) ? "" : ruleString); return true;  
+                case "ohc=ehc": condTmp = new Condition(param.ohc_equal_ehc, 0, (this.printRules == 0) ? "" : ruleString); return true;
                 case "ohc!=ehc": condTmp = new Condition(param.ohc_notequal_ehc, 0, (this.printRules == 0) ? "" : ruleString); return true;
                 case "ohc>ehc": condTmp = new Condition(param.ohc_greater_ehc, 0, (this.printRules == 0) ? "" : ruleString); return true;
                 case "ohc<ehc": condTmp = new Condition(param.ohc_less_ehc, 0, (this.printRules == 0) ? "" : ruleString); return true;
@@ -1285,35 +1286,35 @@ namespace HREngine.Bots
             parameter = (tmp[0] + parameter).ToLower();
             switch (parameter)
             {
-                case "tm=": condParam = param.tm_equal; break; 
+                case "tm=": condParam = param.tm_equal; break;
                 case "tm!=": condParam = param.tm_notequal; break;
                 case "tm>": condParam = param.tm_greater; break;
                 case "tm<": condParam = param.tm_less; break;
-                case "am=": condParam = param.am_equal; break; 
+                case "am=": condParam = param.am_equal; break;
                 case "am!=": condParam = param.am_notequal; break;
                 case "am>": condParam = param.am_greater; break;
                 case "am<": condParam = param.am_less; break;
-                case "owa=": condParam = param.owa_equal; break; 
+                case "owa=": condParam = param.owa_equal; break;
                 case "owa!=": condParam = param.owa_notequal; break;
                 case "owa>": condParam = param.owa_greater; break;
                 case "owa<": condParam = param.owa_less; break;
-                case "ewa=": condParam = param.ewa_equal; break; 
+                case "ewa=": condParam = param.ewa_equal; break;
                 case "ewa!=": condParam = param.ewa_notequal; break;
                 case "ewa>": condParam = param.ewa_greater; break;
                 case "ewa<": condParam = param.ewa_less; break;
-                case "owd=": condParam = param.owd_equal; break; 
+                case "owd=": condParam = param.owd_equal; break;
                 case "owd!=": condParam = param.owd_notequal; break;
                 case "owd>": condParam = param.owd_greater; break;
                 case "owd<": condParam = param.owd_less; break;
-                case "ewd=": condParam = param.ewd_equal; break; 
+                case "ewd=": condParam = param.ewd_equal; break;
                 case "ewd!=": condParam = param.ewd_notequal; break;
                 case "ewd>": condParam = param.ewd_greater; break;
                 case "ewd<": condParam = param.ewd_less; break;
-                case "omc=": condParam = param.omc_equal; break; 
+                case "omc=": condParam = param.omc_equal; break;
                 case "omc!=": condParam = param.omc_notequal; break;
                 case "omc>": condParam = param.omc_greater; break;
                 case "omc<": condParam = param.omc_less; break;
-                case "emc=": condParam = param.emc_equal; break; 
+                case "emc=": condParam = param.emc_equal; break;
                 case "emc!=": condParam = param.emc_notequal; break;
                 case "emc>": condParam = param.emc_greater; break;
                 case "emc<": condParam = param.emc_less; break;
@@ -1422,11 +1423,11 @@ namespace HREngine.Bots
                 case "emc:taunts!=": condParam = param.emc_taunts_notequal; break;
                 case "emc:taunts>": condParam = param.emc_taunts_greater; break;
                 case "emc:taunts<": condParam = param.emc_taunts_less; break;
-                case "ohc=": condParam = param.ohc_equal; break; 
+                case "ohc=": condParam = param.ohc_equal; break;
                 case "ohc!=": condParam = param.ohc_notequal; break;
                 case "ohc>": condParam = param.ohc_greater; break;
                 case "ohc<": condParam = param.ohc_less; break;
-                case "ehc=": condParam = param.ehc_equal; break; 
+                case "ehc=": condParam = param.ehc_equal; break;
                 case "ehc!=": condParam = param.ehc_notequal; break;
                 case "ehc>": condParam = param.ehc_greater; break;
                 case "ehc<": condParam = param.ehc_less; break;
@@ -1487,11 +1488,11 @@ namespace HREngine.Bots
                 case "ohc:taunts!=": condParam = param.ohc_taunts_notequal; break;
                 case "ohc:taunts>": condParam = param.ohc_taunts_greater; break;
                 case "ohc:taunts<": condParam = param.ohc_taunts_less; break;
-                case "t=": condParam = param.turn_equal; break; 
+                case "t=": condParam = param.turn_equal; break;
                 case "t!=": condParam = param.turn_notequal; break;
                 case "t>": condParam = param.turn_greater; break;
                 case "t<": condParam = param.turn_less; break;
-                case "overload=": condParam = param.overload_equal; break; 
+                case "overload=": condParam = param.overload_equal; break;
                 case "overload!=": condParam = param.overload_notequal; break;
                 case "overload>": condParam = param.overload_greater; break;
                 case "overload<": condParam = param.overload_less; break;
@@ -1503,31 +1504,31 @@ namespace HREngine.Bots
                 case "ohhp!=": condParam = param.ohhp_notequal; break;
                 case "ohhp>": condParam = param.ohhp_greater; break;
                 case "ohhp<": condParam = param.ohhp_less; break;
-                case "ehhp=": condParam = param.ehhp_equal; break; 
+                case "ehhp=": condParam = param.ehhp_equal; break;
                 case "ehhp!=": condParam = param.ehhp_notequal; break;
                 case "ehhp>": condParam = param.ehhp_greater; break;
                 case "ehhp<": condParam = param.ehhp_less; break;
 
-                case "ob=": condParam = param.ownboard_contain; pvaltype = 1; break; 
+                case "ob=": condParam = param.ownboard_contain; pvaltype = 1; break;
                 case "ob!=": condParam = param.ownboard_notcontain; pvaltype = 1; break;
-                case "eb=": condParam = param.enboard_contain; pvaltype = 1; break; 
+                case "eb=": condParam = param.enboard_contain; pvaltype = 1; break;
                 case "eb!=": condParam = param.enboard_notcontain; pvaltype = 1; break;
-                case "oh=": condParam = param.ownhand_contain; pvaltype = 1; break; 
+                case "oh=": condParam = param.ownhand_contain; pvaltype = 1; break;
                 case "oh!=": condParam = param.ownhand_notcontain; pvaltype = 1; break;
-                case "ow=": condParam = param.ownweapon_equal; pvaltype = 1; break; 
+                case "ow=": condParam = param.ownweapon_equal; pvaltype = 1; break;
                 case "ow!=": condParam = param.ownweapon_notequal; pvaltype = 1; break;
-                case "ew=": condParam = param.enweapon_equal; pvaltype = 1; break; 
+                case "ew=": condParam = param.enweapon_equal; pvaltype = 1; break;
                 case "ew!=": condParam = param.enweapon_notequal; pvaltype = 1; break;
-                case "ohero=": condParam = param.ownhero_equal; pvaltype = 2; break; 
+                case "ohero=": condParam = param.ownhero_equal; pvaltype = 2; break;
                 case "ohero!=": condParam = param.ownhero_notequal; pvaltype = 2; break;
-                case "ehero=": condParam = param.enhero_equal; pvaltype = 2; break; 
+                case "ehero=": condParam = param.enhero_equal; pvaltype = 2; break;
                 case "ehero!=": condParam = param.enhero_notequal; pvaltype = 2; break;
 
-                case "p=": condParam = param.play; pvaltype = 1; 
+                case "p=": condParam = param.play; pvaltype = 1;
                     break;
-                case "p2=": condParam = param.play2; pvaltype = 1; 
+                case "p2=": condParam = param.play2; pvaltype = 1;
                     break;
-                case "a=": condParam = param.attacker; pvaltype = 1; 
+                case "a=": condParam = param.attacker; pvaltype = 1;
                     break;
                 default:
                     condErr = "Wrong parameter: ";
@@ -1550,7 +1551,7 @@ namespace HREngine.Bots
                     }
                     break;
                 case 1:
-                    Chireiden.Silverfish.SimCard cardId = CardDB.Instance.cardIdstringToEnum(pval);
+                    Chireiden.Silverfish.SimCard cardId = (pval);
                     if (cardId == Chireiden.Silverfish.SimCard.None)
                     {
                         condErr = "Wrong CardID: ";
@@ -1583,7 +1584,7 @@ namespace HREngine.Bots
                 for (int i = 1; i < extraParamCount; i++)
                 {
                     getSinglecond(extraParam[i], out tmp, out parameter);
-                    
+
                     int pvalInt = 0;
                     Chireiden.Silverfish.SimCard pvalCardId = Chireiden.Silverfish.SimCard.None;
                     try
@@ -1591,7 +1592,7 @@ namespace HREngine.Bots
                         switch (tmp[0])
                         {
                             case "tgt":
-                                pvalCardId = CardDB.Instance.cardIdstringToEnum(tmp[1]);
+                                pvalCardId = (tmp[1]);
                                 if (pvalCardId == Chireiden.Silverfish.SimCard.None)
                                 {
                                     condErr = "Wrong CardID: ";
@@ -1612,19 +1613,19 @@ namespace HREngine.Bots
                     switch (tmp[0] + parameter)
                     {
                         case "pen=": condTmp.bonus = pvalInt; continue;
-                        case "aAt=": condParam = param.aAt_equal; break; 
+                        case "aAt=": condParam = param.aAt_equal; break;
                         case "aAt!=": condParam = param.aAt_notequal; break;
                         case "aAt>": condParam = param.aAt_greater; break;
                         case "aAt<": condParam = param.aAt_less; break;
-                        case "aHp=": condParam = param.aHp_equal; break; 
+                        case "aHp=": condParam = param.aHp_equal; break;
                         case "aHp!=": condParam = param.aHp_notequal; break;
                         case "aHp>": condParam = param.aHp_greater; break;
                         case "aHp<": condParam = param.aHp_less; break;
-                        case "tAt=": condParam = param.tAt_equal; break; 
+                        case "tAt=": condParam = param.tAt_equal; break;
                         case "tAt!=": condParam = param.tAt_notequal; break;
                         case "tAt>": condParam = param.tAt_greater; break;
                         case "tAt<": condParam = param.tAt_less; break;
-                        case "tHp=": condParam = param.tHp_equal; break; 
+                        case "tHp=": condParam = param.tHp_equal; break;
                         case "tHp!=": condParam = param.tHp_notequal; break;
                         case "tHp>": condParam = param.tHp_greater; break;
                         case "tHp<": condParam = param.tHp_less; break;
@@ -1673,7 +1674,7 @@ namespace HREngine.Bots
             condErr = "";
             switch (cond.parameter)
             {
-                case param.tm_equal: 
+                case param.tm_equal:
                     if (p.ownMaxMana == cond.num) return true;
                     return false;
                 case param.tm_notequal:
@@ -1685,7 +1686,7 @@ namespace HREngine.Bots
                 case param.tm_less:
                     if (p.ownMaxMana < cond.num) return true;
                     return false;
-                case param.am_equal: 
+                case param.am_equal:
                     if (p.mana == cond.num) return true;
                     return false;
                 case param.am_notequal:
@@ -1697,7 +1698,7 @@ namespace HREngine.Bots
                 case param.am_less:
                     if (p.mana < cond.num) return true;
                     return false;
-                case param.owa_equal: 
+                case param.owa_equal:
                     if (p.ownWeapon.Angr== cond.num) return true;
                     return false;
                 case param.owa_notequal:
@@ -1709,7 +1710,7 @@ namespace HREngine.Bots
                 case param.owa_less:
                     if (p.ownWeapon.Angr< cond.num) return true;
                     return false;
-                case param.ewa_equal: 
+                case param.ewa_equal:
                     if (p.enemyWeapon.Angr == cond.num) return true;
                     return false;
                 case param.ewa_notequal:
@@ -1721,7 +1722,7 @@ namespace HREngine.Bots
                 case param.ewa_less:
                     if (p.enemyWeapon.Angr < cond.num) return true;
                     return false;
-                case param.owd_equal: 
+                case param.owd_equal:
                     if (p.ownWeapon.Durability == cond.num) return true;
                     return false;
                 case param.owd_notequal:
@@ -1733,7 +1734,7 @@ namespace HREngine.Bots
                 case param.owd_less:
                     if (p.ownWeapon.Durability < cond.num) return true;
                     return false;
-                case param.ewd_equal: 
+                case param.ewd_equal:
                     if (p.enemyWeapon.Durability == cond.num) return true;
                     return false;
                 case param.ewd_notequal:
@@ -1745,7 +1746,7 @@ namespace HREngine.Bots
                 case param.ewd_less:
                     if (p.enemyWeapon.Durability < cond.num) return true;
                     return false;
-                case param.omc_equal: 
+                case param.omc_equal:
                     if (p.ownMinions.Count == cond.num) return true;
                     return false;
                 case param.omc_notequal:
@@ -1757,7 +1758,7 @@ namespace HREngine.Bots
                 case param.omc_less:
                     if (p.ownMinions.Count < cond.num) return true;
                     return false;
-                case param.emc_equal: 
+                case param.emc_equal:
                     if (p.enemyMinions.Count == cond.num) return true;
                     return false;
                 case param.emc_notequal:
@@ -1769,7 +1770,7 @@ namespace HREngine.Bots
                 case param.emc_less:
                     if (p.enemyMinions.Count < cond.num) return true;
                     return false;
-                case param.omc_equal_emc: 
+                case param.omc_equal_emc:
                     if (p.ownMinions.Count == p.enemyMinions.Count) return true;
                     return false;
                 case param.omc_notequal_emc:
@@ -1781,7 +1782,7 @@ namespace HREngine.Bots
                 case param.omc_less_emc:
                     if (p.ownMinions.Count < p.enemyMinions.Count) return true;
                     return false;
-                case param.ohc_equal: 
+                case param.ohc_equal:
                     if (p.owncards.Count == cond.num) return true;
                     return false;
                 case param.ohc_notequal:
@@ -1793,7 +1794,7 @@ namespace HREngine.Bots
                 case param.ohc_less:
                     if (p.owncards.Count < cond.num) return true;
                     return false;
-                case param.ehc_equal: 
+                case param.ehc_equal:
                     if (p.enemyAnzCards == cond.num) return true;
                     return false;
                 case param.ehc_notequal:
@@ -2096,7 +2097,7 @@ namespace HREngine.Bots
                     foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Taunt) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
-                case param.aAt_equal: 
+                case param.aAt_equal:
                     if (a.own != null && a.own.Angr == cond.num) return true;
                     return false;
                 case param.aAt_notequal:
@@ -2108,7 +2109,7 @@ namespace HREngine.Bots
                 case param.aAt_less:
                     if (a.own != null && a.own.Angr < cond.num) return true;
                     return false;
-                case param.aHp_equal: 
+                case param.aHp_equal:
                     if (a.own != null && a.prevHpOwn == cond.num) return true;
                     return false;
                 case param.aHp_notequal:
@@ -2120,7 +2121,7 @@ namespace HREngine.Bots
                 case param.aHp_less:
                     if (a.own != null && a.prevHpOwn < cond.num) return true;
                     return false;
-                case param.tAt_equal: 
+                case param.tAt_equal:
                     if (a.target != null && a.target.Angr == cond.num) return true;
                     return false;
                 case param.tAt_notequal:
@@ -2132,7 +2133,7 @@ namespace HREngine.Bots
                 case param.tAt_less:
                     if (a.target != null && a.target.Angr < cond.num) return true;
                     return false;
-                case param.tHp_equal: 
+                case param.tHp_equal:
                     if (a.target != null && a.prevHpTarget == cond.num) return true;
                     return false;
                 case param.tHp_notequal:
@@ -2665,7 +2666,7 @@ namespace HREngine.Bots
                     if (tmp_counter < cond.num) return true;
                     return false;
 
-                case param.turn_equal: 
+                case param.turn_equal:
                     if (p.gTurn == cond.num) return true;
                     return false;
                 case param.turn_notequal:
@@ -2677,7 +2678,7 @@ namespace HREngine.Bots
                 case param.turn_less:
                     if (p.gTurn < cond.num) return true;
                     return false;
-                case param.overload_equal: 
+                case param.overload_equal:
                     if (p.ueberladung == cond.num) return true;
                     return false;
                 case param.overload_notequal:
@@ -2689,7 +2690,7 @@ namespace HREngine.Bots
                 case param.overload_less:
                     if (p.ueberladung < cond.num) return true;
                     return false;
-                case param.owncarddraw_equal: 
+                case param.owncarddraw_equal:
                     if (p.owncarddraw == cond.num) return true;
                     return false;
                 case param.owncarddraw_notequal:
@@ -2701,7 +2702,7 @@ namespace HREngine.Bots
                 case param.owncarddraw_less:
                     if (p.owncarddraw < cond.num) return true;
                     return false;
-                case param.ohhp_equal: 
+                case param.ohhp_equal:
                     if (p.ownHero.Hp == cond.num) return true;
                     return false;
                 case param.ohhp_notequal:
@@ -2713,7 +2714,7 @@ namespace HREngine.Bots
                 case param.ohhp_less:
                     if (p.ownHero.Hp < cond.num) return true;
                     return false;
-                case param.ehhp_equal: 
+                case param.ehhp_equal:
                     if (p.enemyHero.Hp == cond.num) return true;
                     return false;
                 case param.ehhp_notequal:
@@ -2726,44 +2727,44 @@ namespace HREngine.Bots
                     if (p.enemyHero.Hp < cond.num) return true;
                     return false;
 
-                case param.ownboard_contain: 
+                case param.ownboard_contain:
                     foreach (Minion m in p.ownMinions) if (m.handcard.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownboard_notcontain:
                     foreach (Minion m in p.ownMinions) if (m.handcard.card.card.CardId == cond.cardID) return false;
                     return true;
-                case param.enboard_contain: 
+                case param.enboard_contain:
                     foreach (Minion m in p.enemyMinions) if (m.handcard.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.enboard_notcontain:
                     foreach (Minion m in p.enemyMinions) if (m.handcard.card.card.CardId == cond.cardID) return false;
                     return true;
-                case param.ownhand_contain: 
+                case param.ownhand_contain:
                     foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownhand_notcontain:
                     foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.card.CardId == cond.cardID) return false;
                     return true;
-                case param.ownweapon_equal: 
+                case param.ownweapon_equal:
                     if (p.ownWeapon.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownweapon_notequal:
                     if (p.ownWeapon.card.card.CardId != cond.cardID) return true;
                     return false;
-                case param.enweapon_equal: 
+                case param.enweapon_equal:
                     if (p.enemyWeapon.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.enweapon_notequal:
                     if (p.enemyWeapon.card.card.CardId != cond.cardID) return true;
                     return false;
-                case param.ownhero_equal: 
+                case param.ownhero_equal:
                     if (cond.hClass == CardClass.ALL) return true;
                     if (p.ownHeroStartClass == cond.hClass) return true;
                     return false;
                 case param.ownhero_notequal:
                     if (p.ownHeroStartClass != cond.hClass) return true;
                     return false;
-                case param.enhero_equal: 
+                case param.enhero_equal:
                     if (cond.hClass == CardClass.ALL) return true;
                     if (p.enemyHeroStartClass == cond.hClass) return true;
                     return false;
@@ -2785,7 +2786,7 @@ namespace HREngine.Bots
                     }
                     return false;
 
-                
+
                 case param.noduplicates:
                     return p.prozis.noDuplicates;
                 default:

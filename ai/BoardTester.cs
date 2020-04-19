@@ -1,6 +1,7 @@
 namespace HREngine.Bots
 {
     using HearthDb;
+    using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
     using System.IO;
@@ -396,7 +397,7 @@ namespace HREngine.Bots
                         if (str == "" || str == " ") continue;
                         string id = str.Split(',')[0];
                         string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(CardDB.Instance.cardIdstringToEnum(id), Convert.ToInt32(ent), true);
+                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
                         this.turnGraveYard.Add(gyi);
                     }
                     continue;
@@ -412,7 +413,7 @@ namespace HREngine.Bots
                         if (str == "" || str == " ") continue;
                         string id = str.Split(',')[0];
                         string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(CardDB.Instance.cardIdstringToEnum(id), Convert.ToInt32(ent), false);
+                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
                         this.turnGraveYard.Add(gyi);
                     }
                     continue;
@@ -428,7 +429,7 @@ namespace HREngine.Bots
                         if (str == "" || str == " ") continue;
                         string id = str.Split(',')[0];
                         string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(CardDB.Instance.cardIdstringToEnum(id), Convert.ToInt32(ent), true);
+                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
                         this.turnGraveYardAll.Add(gyi);
                     }
                     continue;
@@ -444,7 +445,7 @@ namespace HREngine.Bots
                         if (str == "" || str == " ") continue;
                         string id = str.Split(',')[0];
                         string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(CardDB.Instance.cardIdstringToEnum(id), Convert.ToInt32(ent), false);
+                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
                         this.turnGraveYardAll.Add(gyi);
                     }
                     continue;
@@ -458,7 +459,7 @@ namespace HREngine.Bots
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        Chireiden.Silverfish.SimCard cide = CardDB.Instance.cardIdstringToEnum(id);
+                        Chireiden.Silverfish.SimCard cide = id;
                         this.og.Add(cide, anz);
                     }
                     continue;
@@ -471,7 +472,7 @@ namespace HREngine.Bots
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        Chireiden.Silverfish.SimCard cide = CardDB.Instance.cardIdstringToEnum(id);
+                        Chireiden.Silverfish.SimCard cide = id;
                         this.eg.Add(cide, anz);
                     }
                     continue;
@@ -529,11 +530,11 @@ namespace HREngine.Bots
                     {
                         if (w.Length > 5)
                         {
-                            ownWeapon.equip(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(w[4])));
+                            ownWeapon.equip(w[4]);
                             if (w.Length > 6) ownWeapon.poisonous = (w[5] == "1") ? true : false;
                             if (w.Length > 7) ownWeapon.lifesteal = (w[6] == "1") ? true : false;
                         }
-                        else ownWeapon.equip(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(w[3])));
+                        else ownWeapon.equip(w[3]);
                     }
                     ownWeapon.Angr = Convert.ToInt32(w[1]);
                     ownWeapon.Durability = Convert.ToInt32(w[2]);
@@ -542,7 +543,7 @@ namespace HREngine.Bots
                 if (readstate == 1 && counter == 3) // ability + abilityready
                 {
                     abilityReady = (s.Split(' ')[1] == "True");
-                    heroability = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(' ')[2]));
+                    heroability = s.Split(' ')[2];
                 }
 
                 if (readstate == 1 && counter >= 5) // secrets
@@ -576,18 +577,18 @@ namespace HREngine.Bots
                     {
                         if (w.Length > 5)
                         {
-                            enemyWeapon.equip(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(w[4])));
+                            enemyWeapon.equip((w[4]));
                             if (w.Length > 6) enemyWeapon.poisonous = (w[5] == "1") ? true : false;
                             if (w.Length > 7) enemyWeapon.lifesteal = (w[6] == "1") ? true : false;
                         }
-                        else enemyWeapon.equip(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(w[3])));
+                        else enemyWeapon.equip((w[3]));
                     }
                     enemyWeapon.Angr = Convert.ToInt32(w[1]);
                     enemyWeapon.Durability = Convert.ToInt32(w[2]);
                 }
                 if (readstate == 2 && counter == 3) // ability
                 {
-                    enemyability = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(' ')[2]));
+                    enemyability = (s.Split(' ')[2]);
                 }
                 if (readstate == 2 && counter == 4) // fatigue
                 {
@@ -614,7 +615,7 @@ namespace HREngine.Bots
                         if (s.Contains(" respawn:"))
                         {
                             string[] tmp = s.Split(new string[] { " respawn:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0].Split(':');
-                            LurkersDB.Add(ent, new IDEnumOwner() { IDEnum = CardDB.Instance.cardIdstringToEnum(tmp[0]), own = (tmp[1] == "True" ? true : false) });
+                            LurkersDB.Add(ent, new IDEnumOwner() { IDEnum = (tmp[0]), own = (tmp[1] == "True" ? true : false) });
                         }
                         int natt = 0;
                         if (s.Contains(" natt:")) natt = Convert.ToInt32(s.Split(new string[] { " natt:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
@@ -694,10 +695,10 @@ namespace HREngine.Bots
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
                         Chireiden.Silverfish.SimCard deathrattle2 = null;
-                        if (s.Contains(" dethrl(")) deathrattle2 = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
+                        if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
-                        tempminion = createNewMinion(new Handmanager.Handcard(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(minionid))), zp, true);
+                        tempminion = createNewMinion(new Handmanager.Handcard(((minionid))), zp, true);
                         tempminion.own = true;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -849,10 +850,10 @@ namespace HREngine.Bots
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
                         Chireiden.Silverfish.SimCard deathrattle2 = null;
-                        if (s.Contains(" dethrl(")) deathrattle2 = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
+                        if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
-                        tempminion = createNewMinion(new Handmanager.Handcard(CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(minionid))), zp, false);
+                        tempminion = createNewMinion(new Handmanager.Handcard(((minionid))), zp, false);
                         tempminion.own = false;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -922,7 +923,7 @@ namespace HREngine.Bots
                     string minionname = hc[2];
                     card.manacost = Convert.ToInt32(hc[3]);
                     card.entity = Convert.ToInt32(hc[5]);
-                    card.card = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(hc[6]));
+                    card.card = ((hc[6]));
                     if (hc.Length > 8) card.addattack = Convert.ToInt32(hc[7]);
                     if (hc.Length > 9) card.addHp = Convert.ToInt32(hc[8]);
                     if (hc.Length > 10) card.elemPoweredUp = Convert.ToInt32(hc[9]);

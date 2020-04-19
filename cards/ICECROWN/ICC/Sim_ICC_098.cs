@@ -36,7 +36,7 @@ namespace HREngine.Bots
             bool found = false;
             foreach (var gi in temp)
             {
-                c = CardDB.Instance.getCardDataFromID(gi.Key);
+                c = (gi.Key);
                 if (c.deathrattle)
                 {
                     p.drawACard(c.name, own.own, true);
@@ -50,7 +50,7 @@ namespace HREngine.Bots
                 {
                     if (gi.own == own.own)
                     {
-                        c = CardDB.Instance.getCardDataFromID(gi.cardid);
+                        c = (gi.cardid);
                         if (c.deathrattle)
                         {
                             p.drawACard(c.name, own.own, true);

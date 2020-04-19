@@ -12,6 +12,7 @@ using Triton.Bot;
 using Triton.Common;
 using Triton.Game;
 using Triton.Game.Data;
+using HearthDb.Enums;
 
 namespace HREngine.Bots
 {
@@ -54,7 +55,7 @@ namespace HREngine.Bots
                 {
                     _arenaPreferredClass1 = value;
                     NotifyPropertyChanged(() => ArenaPreferredClass1);
-  
+
                 }
                 Log.InfoFormat("[默认策略设置] 竞技场优先种族1 = {0}.", _arenaPreferredClass1);
             }
@@ -182,7 +183,7 @@ namespace HREngine.Bots
                 return _allBehav ?? (_allBehav = new ObservableCollection<string>(Silverfish.Instance.BehaviorDB.Keys));
             }
         }
-		
+
 	    private readonly List<int> _questIdsToCancel = new List<int>();
 
 		[JsonIgnore]

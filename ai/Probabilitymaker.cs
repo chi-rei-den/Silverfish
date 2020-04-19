@@ -1,5 +1,6 @@
 namespace HREngine.Bots
 {
+    using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
 
@@ -468,13 +469,13 @@ namespace HREngine.Bots
 
                 if (!found)
                 {
-                    if (CardDB.Instance.getCardDataFromID(ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
+                    if ((ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
                     {
                         this.turngraveyard.Add(ent);
                     }
                     this.turngraveyardAll.Add(ent);
                 }
-                if (ent.own && CardDB.Instance.getCardDataFromID(ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
+                if (ent.own && (ent.cardid).type == Chireiden.Silverfish.SimCardtype.MOB)
                 {
                     OwnLastDiedMinion = ent;
                 }
@@ -507,7 +508,7 @@ namespace HREngine.Bots
         public int anzCardsInDeck(Chireiden.Silverfish.SimCard cardid)
         {
             int ret = 2;
-            Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(cardid);
+            Chireiden.Silverfish.SimCard c = (cardid);
             if (c.rarity == 5) ret = 1;//you can have only one rare;
 
             if (this.enemyCardsOut.ContainsKey(cardid))
@@ -869,7 +870,7 @@ namespace HREngine.Bots
             {
                 if (!old.enemyCardsOut.ContainsKey(tmp.Key) || old.enemyCardsOut[tmp.Key] != tmp.Value)
                 {
-                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(tmp.Key);
+                    Chireiden.Silverfish.SimCard c = (tmp.Key);
                     if (c.Secret) enemySecretsOpenedStep.Add(tmp.Key);
                     else if (c.Type == Chireiden.Silverfish.SimCardtype.MOB) enemyMinionsDiedStep.Add(c);
                 }

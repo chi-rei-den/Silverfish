@@ -40,7 +40,7 @@ namespace HREngine.Bots
             public QuestItem(string s)
             {
                 String[] q = s.Split(' ');
-                this.Id = CardDB.Instance.cardIdstringToEnum(q[0]);
+                this.Id = (q[0]);
                 this.questProgress = Convert.ToInt32(q[1]);
                 this.maxProgress = Convert.ToInt32(q[2]);
             }
@@ -132,7 +132,7 @@ namespace HREngine.Bots
 
         public void updateQuestStuff(string questID, int curProgr, int maxProgr, bool ownplay)
         {
-            QuestItem tmp = new QuestItem() { Id = CardDB.Instance.cardIdstringToEnum(questID), questProgress = curProgr, maxProgress = maxProgr };
+            QuestItem tmp = new QuestItem() { Id = (questID), questProgress = curProgr, maxProgress = maxProgr };
             if (ownplay) this.ownQuest = tmp;
             else this.enemyQuest = tmp;
         }

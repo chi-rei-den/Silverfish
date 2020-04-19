@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID(ownplay ? p.revivingOwnMinion : p.revivingEnemyMinion);
+            Chireiden.Silverfish.SimCard kid = (ownplay ? p.revivingOwnMinion : p.revivingEnemyMinion);
             List<Minion> tmp = ownplay ? p.ownMinions : p.enemyMinions;
             int pos = tmp.Count;
 

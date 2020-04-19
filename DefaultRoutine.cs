@@ -10,7 +10,6 @@ using System.Windows.Documents;
 using System.Windows.Markup;
 using Buddy.Coroutines;
 using HREngine.Bots;
-using IronPython.Modules;
 using log4net;
 using Microsoft.Scripting.Hosting;
 using Triton.Bot;
@@ -202,7 +201,7 @@ def Execute():
             GameEventManager.GameOver += GameEventManagerOnGameOver;
             GameEventManager.QuestUpdate += GameEventManagerOnQuestUpdate;
             GameEventManager.ArenaRewards += GameEventManagerOnArenaRewards;
-            
+
             if (Hrtprozis.Instance.settings == null)
             {
                 Hrtprozis.Instance.setInstances();
@@ -355,7 +354,7 @@ def Execute():
                             "[SettingsControl] SetupComboBoxSelectedItemBinding failed for 'ArenaPreferredClass5ComboBox'.");
                         throw new Exception("The SettingsControl could not be created.");
                     }
-                    
+
                     // defaultBehaviorComboBox1
                     if (
                         !Wpf.SetupComboBoxItemsBinding(root, "defaultBehaviorComboBox1", "AllBehav",
@@ -418,7 +417,7 @@ def Execute():
         /// <returns>true if logic was executed to handle this type and false otherwise.</returns>
         public async Task<bool> Logic(string type, object context)
         {
-            
+
 
             // The bot is requesting mulligan logic.
             if (type == "mulligan")
@@ -495,10 +494,10 @@ def Execute():
 
         /// <summary>
         /// This task implements custom mulligan choosing logic for the bot.
-        /// The user is expected to set the Mulligans list elements to true/false 
-        /// to signal to the bot which cards should/shouldn't be mulliganed. 
-        /// This task should also implement humanization factors, such as hovering 
-        /// over cards, or delaying randomly before returning, as the mulligan 
+        /// The user is expected to set the Mulligans list elements to true/false
+        /// to signal to the bot which cards should/shouldn't be mulliganed.
+        /// This task should also implement humanization factors, such as hovering
+        /// over cards, or delaying randomly before returning, as the mulligan
         /// process takes place as soon as the task completes.
         /// </summary>
         /// <param name="mulliganData">An object that contains relevant data for the mulligan process.</param>
@@ -506,7 +505,7 @@ def Execute():
         public async Task MulliganLogic(MulliganData mulliganData)
         {
             if (!botset.AutoConcedeLag && !botset.ForceConcedeAtMulligan)
-            { 
+            {
             Log.InfoFormat("[日志档案:] 开始创建");
             Hrtprozis prozis = Hrtprozis.Instance;
             prozis.clearAllNewGame();
@@ -730,7 +729,7 @@ def Execute():
             }
 
             if (templearn == true) this.printlearnmode = true;
-            
+
             if (this.learnmode)
             {
                 if (this.printlearnmode)
@@ -841,7 +840,7 @@ def Execute():
                             //safe targeting stuff for hsbuddy
                             dirtyTargetSource = moveTodo.card.entity;
                             dirtytarget = moveTodo.target.entitiyID;
-                            
+
                             await cardtoplay.Pickup();
 
                             if (moveTodo.card.card.Type == Chireiden.Silverfish.SimCardtype.MOB)
@@ -909,9 +908,9 @@ def Execute():
                             Helpfunctions.Instance.ErrorLog("随从攻击: " + attacker.Name + " 目标为: " + target.Name);
                             Helpfunctions.Instance.logg("随从攻击: " + attacker.Name + " 目标为: " + target.Name);
 
-                            
+
                             await attacker.DoAttack(target);
-                            
+
                         }
                         else
                         {
@@ -964,7 +963,7 @@ def Execute():
                 if (moveTodo.actionType == actionEnum.useHeroPower)
                 {
                     HSCard cardtoplay = TritonHs.OurHeroPowerCard;
-                
+
                     if (moveTodo.target != null)
                     {
                         HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
@@ -996,7 +995,7 @@ def Execute():
                     {
                         Helpfunctions.Instance.ErrorLog("使用英雄技能: " + cardtoplay.Name + " 暂时没有目标");
                         Helpfunctions.Instance.logg("使用英雄技能: " + cardtoplay.Name + " 暂时没有目标" + (moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : ""));
-                        
+
                         if (moveTodo.druidchoice >= 1)
                         {
                             dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
@@ -1029,7 +1028,7 @@ def Execute():
                 {
                     sourceEntityId = lscc.m_sourceEntityId;
                     Entity entity = GameState.Get().GetEntity(lscc.m_sourceEntityId);
-                    sourceEntityCId = CardDB.Instance.cardIdstringToEnum(entity.GetCardId());
+                    sourceEntityCId = (entity.GetCardId());
                     if (entity != null)
                     {
                         var sourceCard = entity.GetCard();
@@ -1054,11 +1053,11 @@ def Execute():
                 float bestDiscoverValue = -2000000;
                 var choiceCardMgr = ChoiceCardMgr.Get();
                 var cards = choiceCardMgr.GetFriendlyCards();
-        
+
                 for (int i = 0; i < cards.Count; i++)
                 {
                     var hc = new Handmanager.Handcard();
-                    hc.card = CardDB.Instance.getCardDataFromID(CardDB.Instance.cardIdstringToEnum(cards[i].GetCardId()));
+                    hc.card = ((cards[i].GetCardId()));
                     hc.position = 100 + i;
                     hc.entity = cards[i].GetEntityId();
                     hc.manacost = hc.card.calculateManaCost(ai.nextMoveGuess);
@@ -1289,7 +1288,7 @@ def Execute():
             Log.InfoFormat("[ArenaDraft] Card: [{0} ({3}) | {1} ({4}) | {2} ({5})].", data.Choices[0].EntityDef.CardId,
                 data.Choices[1].EntityDef.CardId, data.Choices[2].EntityDef.CardId, data.Choices[0].EntityDef.Name,
                 data.Choices[1].EntityDef.Name, data.Choices[2].EntityDef.Name);
-            
+
             var actor =
                 data.Choices.Where(c => ArenavaluesReader.Get.ArenaValues.ContainsKey(c.EntityDef.CardId))
                     .OrderByDescending(c => ArenavaluesReader.Get.ArenaValues[c.EntityDef.CardId]).FirstOrDefault();
@@ -1378,7 +1377,7 @@ def Execute():
 
         private void GameEventManagerOnNewGame(object sender, NewGameEventArgs newGameEventArgs)
         {
-            
+
         }
 
         private void GameEventManagerOnQuestUpdate(object sender, QuestUpdateEventArgs questUpdateEventArgs)
@@ -1398,7 +1397,7 @@ def Execute():
             {
                 Log.InfoFormat("[竞技场奖励] {1}x {0}.", reward.Type, reward.Count);
             }
-        }        
+        }
 
         private HSCard getEntityWithNumber(int number)
         {

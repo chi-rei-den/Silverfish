@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 if (p.OwnLastDiedMinion != Chireiden.Silverfish.SimCard.None)
                 {
-                    p.callKid(CardDB.Instance.getCardDataFromID(p.OwnLastDiedMinion), own.zonepos, own.own);
+                    p.callKid((p.OwnLastDiedMinion), own.zonepos, own.own);
                 }
             }
 		}

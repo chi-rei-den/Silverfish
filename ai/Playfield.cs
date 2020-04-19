@@ -3419,7 +3419,7 @@ namespace HREngine.Bots
                                 if (count > 2) count = 2;
                                 foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in this.prozis.turnDeck)
                                 {
-                                    c = CardDB.Instance.getCardDataFromID(cid.Key);
+                                    c = (cid.Key);
                                     if ((Race)c.Race == Race.MURLOC)
                                     {
                                         for (int i = 0; i < cid.Value; i++)
@@ -4127,7 +4127,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.enemyMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.ownHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    Chireiden.Silverfish.SimCard kid = ((this.ownHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.enemyMinionsDied; i++)
                     {
                         this.callKid(kid, this.ownMinions.Count, true);
@@ -4138,7 +4138,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.ownMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.enemyHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    Chireiden.Silverfish.SimCard kid = ((this.enemyHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.ownMinionsDied; i++)
                     {
                         this.callKid(kid, this.enemyMinions.Count, false);
@@ -5992,14 +5992,14 @@ namespace HREngine.Bots
 
             if (s == Chireiden.Silverfish.SimCard.None)
             {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(s);
+                Chireiden.Silverfish.SimCard c = s;
                 Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
             }
             else
             {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(s);
+                Chireiden.Silverfish.SimCard c = s;
                 Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = c.calculateManaCost(this), entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
@@ -6007,7 +6007,7 @@ namespace HREngine.Bots
 
             if (anzOwnChromaggus > 0 && s == Chireiden.Silverfish.SimCard.None && !nopen)
             {
-                Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(s);
+                Chireiden.Silverfish.SimCard c = s;
                 for (int i = 1; i <= anzOwnChromaggus; i++)
                 {
                     if (this.owncards.Count >= 10)
@@ -6850,88 +6850,6 @@ namespace HREngine.Bots
             return minions.OrderBy(predicate).FirstOrDefault();
         }
 
-        public Minion searchRandomMinionByMaxHP(List<Minion> minions, searchmode mode, int maxHP)
-        {
-            //optimistic search
-
-            if (maxHP < 1) return null;
-            if (minions.Count == 0) return null;
-
-            Minion ret = null;
-
-            double value = 0;
-            int retVal = 0;
-            foreach (Minion m in minions)
-            {
-                if (m.Hp > maxHP) continue;
-
-                switch (mode)
-                {
-                    case searchmode.searchHighestHP:
-                        if (m.Hp > value)
-                        {
-                            ret = m;
-                            value = m.Hp;
-                            retVal = m.Angr;
-                        }
-                        else if (m.Hp == value && retVal < m.Angr) ret = m;
-                        continue;
-                    case searchmode.searchLowestAttack:
-                        if (m.Angr < value)
-                        {
-                            ret = m;
-                            value = m.Angr;
-                            retVal = m.Hp;
-                        }
-                        else if (m.Angr == value && retVal < m.Hp) ret = m;
-                        continue;
-                    case searchmode.searchHighestAttack:
-                        if (m.Angr > value)
-                        {
-                            ret = m;
-                            value = m.Angr;
-                            retVal = m.Hp;
-                        }
-                        else if (m.Angr == value && retVal < m.Hp) ret = m;
-                        continue;
-                    case searchmode.searchHighAttackLowHP:
-                        if (m.Angr / m.Hp > value)
-                        {
-                            ret = m;
-                            value = m.Angr / m.Hp;
-                            retVal = m.Hp;
-                        }
-                        else if (m.Angr / m.Hp == value && retVal < m.Hp) ret = m;
-                        continue;
-                    case searchmode.searchHighHPLowAttack:
-                        if (m.Angr == 0)
-                        {
-                            if (ret == null) ret = m;
-                            continue;
-                        }
-                        if (m.Hp / m.Angr > value)
-                        {
-                            ret = m;
-                            value = m.Hp / m.Angr;
-                            retVal = m.Hp;
-                        }
-                        else if (m.Angr / m.Hp == value && retVal < m.Hp) ret = m;
-                        continue;
-                    default: //==searchHighestHP
-                        if (m.Hp > value)
-                        {
-                            ret = m;
-                            value = m.Hp;
-                            retVal = m.Angr;
-                        }
-                        else if (m.Hp == value && retVal < m.Angr) ret = m;
-                        continue;
-                }
-            }
-            if (ret != null && ret.Hp <= 0) return null;
-            return ret;
-        }
-
         public Chireiden.Silverfish.SimCard getNextJadeGolem(bool own)
         {
             var tmp = own ? ++anzOwnJadeGolem : ++anzEnemyJadeGolem;
@@ -7013,15 +6931,17 @@ namespace HREngine.Bots
         {
             string retval = "Turn : board\t" + this.turnCounter + ":" + ((this.value < -2000000) ? "." : this.value.ToString());
             retval += "\r\n" + "pIdHistory\t";
-            foreach (int pId in this.pIdHistory) retval += pId + " ";
-            retval += $"\r\n{("pen\t" + this.evaluatePenality)}";
-            retval += $"\r\n{("mana\t" + this.mana + "/" + this.ownMaxMana)}";
-            retval += $"\r\n{("cardsplayed : handsize : enemyhand\t" + this.cardsPlayedThisTurn + ":" + this.owncards.Count + ":" + this.enemyAnzCards)}";
-            retval += $"\r\n{("Hp : armor : Atk ownhero\t" + this.ownHero.Hp + ":" + this.ownHero.armor + ":" + this.ownHero.Angr + ((this.ownHero.immune) ? ":immune" : ""))}";
-            retval += $"\r\nAtk : Dur : Name : IDe : poison ownWeapon\t{this.ownWeapon.Angr} {this.ownWeapon.Durability} {this.ownWeapon.name} {this.ownWeapon.card.CardId} " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
-            retval += "\r\n" + ("ownHero.frozen\t" + this.ownHero.frozen);
-            retval += "\r\n" + ("Hp : armor enemyhero\t" + this.enemyHero.Hp + ":" + this.enemyHero.armor + ((this.enemyHero.immune) ? ":immune" : ""));
-            retval += "\r\n" + ("Atk : Dur : Name : IDe : poison enemyWeapon\t" + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
+            foreach (int pId in this.pIdHistory)
+                retval += pId + " ";
+            retval += $@"
+pen {this.evaluatePenality}
+mana {  this.mana} / { this.ownMaxMana}
+cardsplayed : handsize : enemyhand{ this.cardsPlayedThisTurn}:{ this.owncards.Count}:{this.enemyAnzCards}
+Hp : armor : Atk ownhero{ this.ownHero.Hp}:{ this.ownHero.armor }:{ this.ownHero.Angr }{this.ownHero.immune}
+Atk : Dur : Name : IDe : poison ownWeapon\t{this.ownWeapon.Angr} {this.ownWeapon.Durability} {this.ownWeapon.name} {this.ownWeapon.card.CardId} {this.ownWeapon.poisonous} {this.ownWeapon.lifesteal}
+ownHero.frozen\t{this.ownHero.frozen}
+Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enemyHero.immune}";
+            retval += $"\r\nAtk : Dur : Name : IDe : poison enemyWeapon\t{this.enemyWeapon.Angr} {this.enemyWeapon.Durability} {this.enemyWeapon.name} {this.enemyWeapon.card.CardId} {(this.enemyWeapon.poisonous )} {(this.enemyWeapon.lifesteal)}";
             retval += "\r\n" + ("carddraw own:enemy\t" + this.owncarddraw + ":" + this.enemycarddraw);
 
             if (this.enemySecretCount > 0) retval += "\r\n" + ("enemySecrets\t" + Probabilitymaker.Instance.getEnemySecretData(this.enemySecretList));

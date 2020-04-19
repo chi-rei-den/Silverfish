@@ -140,7 +140,7 @@ as well as
 
                 if (ruleKey.Length != 4 || ruleValue.Length != 3) { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
 
-                if (ruleKey[0] != CardDB.Instance.cardIdstringToEnum(ruleKey[0]).ToString()) { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
+                if (ruleKey[0] != (ruleKey[0]).ToString()) { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
                 if (ruleKey[1] != Hrtprozis.Instance.heroNametoEnum(ruleKey[1]).ToString()) { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
                 if (ruleKey[2] != Hrtprozis.Instance.heroNametoEnum(ruleKey[2]).ToString()) { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
                 if (ruleValue[0] != "Hold" && ruleValue[0] != "Discard") { rejectedRule.Add(getClearRule(oneRule.Key)); continue; }
@@ -175,7 +175,7 @@ as well as
                         Dictionary<Chireiden.Silverfish.SimCard, string> MulliganRulesManualTmp = new Dictionary<Chireiden.Silverfish.SimCard, string>();
                         foreach (string s in addedCards)
                         {
-                            Chireiden.Silverfish.SimCard tempID = CardDB.Instance.cardIdstringToEnum(s);
+                            Chireiden.Silverfish.SimCard tempID = (s);
                             if (s != tempID.ToString())
                             {
                                 rejectedRule.Add(getClearRule(oneRule.Key));

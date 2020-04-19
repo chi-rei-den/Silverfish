@@ -237,66 +237,7 @@ namespace HREngine.Bots
                 case "EX1_323h": return "lordjaraxxus";
                 case "BRM_027h": return "ragnarosthefirelord";
                 default:
-                    string retval = cdb.getCardDataFromID(cdb.cardIdstringToEnum(s)).name.ToString();
-                    return retval;
-            }
-        }
-
-        public HeroEnum heroNametoEnum(string s)
-        {
-            switch (s)
-            {
-                case "all": return HeroEnum.all;
-                case "druid": return HeroEnum.druid;
-                case "hunter": return HeroEnum.hunter;
-                case "mage": return HeroEnum.mage;
-                case "pala": return HeroEnum.pala;
-                case "paladin": return HeroEnum.pala;
-                case "priest": return HeroEnum.priest;
-                case "shaman": return HeroEnum.shaman;
-                case "thief": return HeroEnum.thief;
-                case "rogue": return HeroEnum.thief;
-                case "maievshadowsong": return HeroEnum.thief;
-                case "warlock": return HeroEnum.warlock;
-                case "warrior": return HeroEnum.warrior;
-                case "lordjaraxxus": return HeroEnum.lordjaraxxus;
-                case "ragnarosthefirelord": return HeroEnum.ragnarosthefirelord;
-                default: return CardClass.INVALID;
-            }
-        }
-
-        public CardClass heroEnumtoTagClass(HeroEnum he)
-        {
-            switch (he)
-            {
-                case HeroEnum.druid: return CardClass.DRUID;
-                case HeroEnum.hunter: return CardClass.HUNTER;
-                case HeroEnum.mage: return CardClass.MAGE;
-                case HeroEnum.pala: return CardClass.PALADIN;
-                case HeroEnum.priest: return CardClass.PRIEST;
-                case HeroEnum.shaman: return CardClass.SHAMAN;
-                case HeroEnum.thief: return CardClass.ROGUE;
-                case HeroEnum.warlock: return CardClass.WARLOCK;
-                case HeroEnum.warrior: return CardClass.WARRIOR;
-                case HeroEnum.all: return CardClass.ALL;
-                default: return CardClass.INVALID;
-            }
-        }
-
-        public HeroEnum heroCardClassstringToEnum(string s)
-        {
-            switch (s)
-            {
-                case "DRUID": return HeroEnum.druid;
-                case "HUNTER": return HeroEnum.hunter;
-                case "MAGE": return HeroEnum.mage;
-                case "PALADIN": return HeroEnum.pala;
-                case "PRIEST": return HeroEnum.priest;
-                case "SHAMAN": return HeroEnum.shaman;
-                case "ROGUE": return HeroEnum.thief;
-                case "WARLOCK": return HeroEnum.warlock;
-                case "WARRIOR": return HeroEnum.warrior;
-                default: return CardClass.INVALID;
+                    return s;
             }
         }
 
@@ -381,7 +322,7 @@ namespace HREngine.Bots
             Chireiden.Silverfish.SimCard c;
             foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
             {
-                c = CardDB.Instance.getCardDataFromID(cn.Key);
+                c = (cn.Key);
                 if (c.Taunt) numTauntCards += cn.Value;
                 if (c.DivineShield) numDivineShieldCards += cn.Value;
                 if (c.Lifesteal) numLifestealCards += cn.Value;
@@ -390,10 +331,10 @@ namespace HREngine.Bots
 
             switch (tag)
             {
-                case GAME_TAGs.TAUNT: return numTauntCards;
-                case GAME_TAGs.DIVINE_SHIELD: return numDivineShieldCards;
-                case GAME_TAGs.LIFESTEAL: return numLifestealCards;
-                case GAME_TAGs.WINDFURY: return numWindfuryCards;
+                case GameTag.TAUNT: return numTauntCards;
+                case GameTag.DIVINE_SHIELD: return numDivineShieldCards;
+                case GameTag.LIFESTEAL: return numLifestealCards;
+                case GameTag.WINDFURY: return numWindfuryCards;
             }
             return -1;
         }
@@ -560,8 +501,8 @@ namespace HREngine.Bots
 
             help.logg("ownhero:");
             help.logg((this.heroname == CardClass.INVALID ? this.heronameingame : this.heroname.ToString()) + " " + this.ownHero.Hp + " " + this.ownHero.maxHp + " " + this.ownHero.armor + " " + this.ownHero.immuneWhileAttacking + " " + this.ownHero.immune + " " + this.ownHero.entitiyID + " " + this.ownHero.Ready + " " + this.ownHero.numAttacksThisTurn + " " + this.ownHero.frozen + " " + this.ownHero.Angr + " " + this.ownHero.tempAttack + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.cardIDenum + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.cardIDenum);
+            help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
+            help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.card.CardId);
             string secs = "";
             foreach (Chireiden.Silverfish.SimCard sec in this.ownSecretList)
             {
@@ -575,8 +516,8 @@ namespace HREngine.Bots
             help.logg("advanced: " + this.ownCrystalCore + " " + (this.ownMinionsInDeckCost0 ? 1: 0));
             help.logg("enemyhero:");
             help.logg((this.enemyHeroname == CardClass.INVALID ? this.enemyHeronameingame : this.enemyHeroname.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.cardIDenum + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + "True" + " " + this.enemyAbility.cardIDenum);
+            help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
+            help.logg("ability: " + "True" + " " + this.enemyAbility.card.CardId);
             help.logg("fatigue: " + this.ownDeckSize + " " + this.ownHeroFatigue + " " + this.enemyDeckSize + " " + this.enemyHeroFatigue);
         }
 
@@ -586,7 +527,7 @@ namespace HREngine.Bots
             help.logg("OwnMinions:");
             foreach (Minion m in this.ownMinions)
             {
-                string mini = m.name + " " + m.handcard.card.cardIDenum + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready + " natt:" + m.numAttacksThisTurn;
+                string mini = m.name + " " + m.handcard.card.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready + " natt:" + m.numAttacksThisTurn;
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -626,7 +567,7 @@ namespace HREngine.Bots
                 if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
+                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.card.CardId + ")";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
@@ -642,7 +583,7 @@ namespace HREngine.Bots
             help.logg("EnemyMinions:");
             foreach (Minion m in this.enemyMinions)
             {
-                string mini = m.name + " " + m.handcard.card.cardIDenum + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready;// +" natt:" + m.numAttacksThisTurn;
+                string mini = m.name + " " + m.handcard.card.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready;// +" natt:" + m.numAttacksThisTurn;
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -682,7 +623,7 @@ namespace HREngine.Bots
                 if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
                 if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
                 if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.cardIDenum + ")";
+                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.card.CardId + ")";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;

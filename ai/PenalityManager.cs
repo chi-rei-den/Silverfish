@@ -339,7 +339,7 @@ namespace HREngine.Bots
             if (!p.isLethalCheck)
             {
                 retval += cb.getPenalityForDestroyingCombo(card, p);
-                retval += cb.getPlayValue(card.cardIDenum);
+                retval += cb.getPlayValue(card.card.CardId);
             }
 
             retval += playSecretPenality(card, p);
@@ -352,7 +352,7 @@ namespace HREngine.Bots
         private int getAttackBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
         {
             Chireiden.Silverfish.SimCard name = card.name;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.cardIDenum != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
             int pen = 0;
             //buff enemy?
 
@@ -455,7 +455,7 @@ namespace HREngine.Bots
             int pen = 0;
 
             if (!this.healthBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.cardIDenum != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
 
             if (target != null && !target.own && !this.tauntBuffDatabase.ContainsKey(name))
             {
@@ -472,8 +472,8 @@ namespace HREngine.Bots
             int pen = 0;
             //buff enemy?
             if (!this.tauntBuffDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.MarkOfNature && card.cardIDenum != CardIds.NonCollectible.Druid.MarkofNature_ThickHide) return 0;
-            if (name == CardIds.Collectible.Druid.DarkWispers && card.cardIDenum != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
+            if (name == CardIds.Collectible.Druid.MarkOfNature && card.card.CardId != CardIds.NonCollectible.Druid.MarkofNature_ThickHide) return 0;
+            if (name == CardIds.Collectible.Druid.DarkWispers && card.card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
 
             if (target == null) return 3;
             if (!target.isHero && !target.own)
@@ -1026,7 +1026,7 @@ namespace HREngine.Bots
 
                     // no pen if we have battlerage for example
                     int dmg = this.DamageTargetDatabase.ContainsKey(name) ? this.DamageTargetDatabase[name] : this.HealTargetDatabase[name];
-                    switch (card.cardIDenum)
+                    switch (card.card.CardId)
                     {
                         case CardIds.NonCollectible.Druid.KeeperoftheGrove_Moonfire: dmg = 2 - p.spellpower; break;
                         case CardIds.Collectible.Mage.IceLance: if (!target.frozen) return 0; break;
@@ -1145,7 +1145,7 @@ namespace HREngine.Bots
                     if (DamageTargetDatabase.ContainsKey(name))
                     {
                         realDamage = this.DamageTargetDatabase[name];
-                        switch (card.cardIDenum)
+                        switch (card.card.CardId)
                         {
                             case CardIds.NonCollectible.Druid.KeeperoftheGrove_Moonfire: realDamage = 2 - p.spellpower; break;
                             case CardIds.Collectible.Mage.IceLance: if (!target.frozen) return 0; break;
@@ -1299,8 +1299,8 @@ namespace HREngine.Bots
             int pen = 0;
             Chireiden.Silverfish.SimCard name = card.name;
             if (!cardDrawBattleCryDatabase.ContainsKey(name)) return 0;
-            if (name == CardIds.Collectible.Druid.Wrath && card.cardIDenum != CardIds.NonCollectible.Druid.Wrath_NaturesWrath) return 0;
-            if (name == CardIds.Collectible.Druid.Nourish && card.cardIDenum != CardIds.NonCollectible.Druid.Nourish_Enrich) return 0;
+            if (name == CardIds.Collectible.Druid.Wrath && card.card.CardId != CardIds.NonCollectible.Druid.Wrath_NaturesWrath) return 0;
+            if (name == CardIds.Collectible.Druid.Nourish && card.card.CardId != CardIds.NonCollectible.Druid.Nourish_Enrich) return 0;
             if (name == CardIds.Collectible.Hunter.Tracking) return -1;
 
             int carddraw = cardDrawBattleCryDatabase[name];
@@ -3128,7 +3128,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (!lethal && card.cardIDenum == CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1) //druidoftheclaw	Charge
+            if (!lethal && card.card.CardId == CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1) //druidoftheclaw	Charge
             {
                 return 20;
             }

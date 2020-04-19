@@ -302,9 +302,9 @@ namespace HREngine.Bots
 
             foreach (var item in this.posmoves[0].owncards)
             {
-                help.logg("card " + item.card.name + " is playable :" + item.canplayCard(posmoves[0], true) + " cost/mana: " + item.manacost + "/" + posmoves[0].mana);
+                help.logg("card " + item.card + " is playable :" + item.canplayCard(posmoves[0], true) + " cost/mana: " + item.manacost + "/" + posmoves[0].mana);
             }
-            help.logg("ability " + posmoves[0].ownHeroAblility.card.name + " is playable :" + posmoves[0].ownHeroAblility.card.canplayCard(posmoves[0], 2, true) + " cost/mana: " + posmoves[0].ownHeroAblility.card.getManaCost(posmoves[0], 2) + "/" + posmoves[0].mana);
+            help.logg("ability " + posmoves[0].ownHeroAblility.card + " is playable :" + posmoves[0].ownHeroAblility.card.canplayCard(posmoves[0], 2, true) + " cost/mana: " + posmoves[0].ownHeroAblility.card.getManaCost(posmoves[0], 2) + "/" + posmoves[0].mana);
 
             DateTime strt = DateTime.Now;
             // lethalcheck

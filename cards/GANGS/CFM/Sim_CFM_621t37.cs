@@ -34,7 +34,7 @@ namespace HREngine.Bots
             int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
 			if (p.OwnLastDiedMinion != Chireiden.Silverfish.SimCard.None)
 			{
-				p.callKid(CardDB.Instance.getCardDataFromID(p.OwnLastDiedMinion), pos, ownplay, false); //presurmise - OwnLastDiedMinion also for enemy
+				p.callKid((p.OwnLastDiedMinion), pos, ownplay, false); //presurmise - OwnLastDiedMinion also for enemy
 			}
         }
     }

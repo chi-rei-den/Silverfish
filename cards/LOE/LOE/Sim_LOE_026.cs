@@ -38,7 +38,7 @@ namespace HREngine.Bots
             Chireiden.Silverfish.SimCard c;
             foreach (var gi in temp)
             {
-                c = CardDB.Instance.getCardDataFromID(gi.Key);
+                c = (gi.Key);
                 if ((Race)c.Race == Race.MURLOC)
                 {
                     p.callKid(c, place, ownplay, false);
@@ -57,7 +57,7 @@ namespace HREngine.Bots
             {
                 if (gi.own == ownplay)
                 {
-                    c = CardDB.Instance.getCardDataFromID(gi.cardid);
+                    c = (gi.cardid);
                     if ((Race)c.Race == Race.MURLOC)
                     {
                         p.callKid(c, place, ownplay, false);

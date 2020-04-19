@@ -1,3 +1,5 @@
+using HearthDb;
+using HearthDb.Enums;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -88,8 +90,8 @@ namespace HREngine.Bots
                     switch (aa.actionType)
                     {
                         case actionEnum.playcard:
-                            if (damageRandom && penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card.name)) rndBeforeDamageAll = true;
-                            else if (penman.DamageRandomDatabase.ContainsKey(aa.card.card.name)) damageRandom = true;
+                            if (damageRandom && penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card)) rndBeforeDamageAll = true;
+                            else if (penman.DamageRandomDatabase.ContainsKey(aa.card.card)) damageRandom = true;
                             break;
                     }
                 }
@@ -107,21 +109,21 @@ namespace HREngine.Bots
                     switch (aa.actionType)
                     {
                         case actionEnum.useHeroPower:
-                            if (aa.card.card.name == CardIds.NonCollectible.Shaman.TotemicCall) totemiccall = true;
+                            if (aa.card.card == CardIds.NonCollectible.Shaman.TotemicCall) totemiccall = true;
                             break;
                         case actionEnum.playcard:
-                            if (penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card.name))
+                            if (penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card))
                             {
                                 if (i != aoeEnNum)
                                 {
-                                    if (totemiccall && aa.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL) return;
+                                    if (totemiccall && aa.card.card.Type == CardType.SPELL) return;
                                     reorderedActions.RemoveAt(i);
                                     reorderedActions.Insert(aoeEnNum, aa);
                                     outOfPlace++;
                                 }
                                 aoeEnNum++;
                             }
-                            else if (rndBeforeDamageAll && aa.card.card.Type == Chireiden.Silverfish.SimCardtype.SPELL && penman.DamageRandomDatabase.ContainsKey(aa.card.card.name))
+                            else if (rndBeforeDamageAll && aa.card.card.Type == CardType.SPELL && penman.DamageRandomDatabase.ContainsKey(aa.card.card))
                             {
                                 damageRandom = true;
                                 Playfield tmp = new Playfield(tmpPlOld);
@@ -230,7 +232,7 @@ namespace HREngine.Bots
                             {
                                 if (p.ownMinions.Count > 6)
                                 {
-                                    if (hc.card.Type == Chireiden.Silverfish.SimCardtype.MOB) return false;
+                                    if (hc.card.Type == CardType.MINION) return false;
                                 }
                                 actionFound = true;
                             }
@@ -326,5 +328,5 @@ namespace HREngine.Bots
         }
     }
 
-    
+
 }
