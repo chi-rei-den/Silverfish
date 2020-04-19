@@ -41,7 +41,7 @@ namespace HREngine.Bots
                 temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
                 foreach (Handmanager.Handcard mins in temp2)
                 {
-                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(mins.card.cardIDenum);
+                    Chireiden.Silverfish.SimCard c = CardDB.Instance.getCardDataFromID(mins.card.card.CardId);
                     p.minionTransform(triggerEffectMinion, c);
                     triggerEffectMinion.playedThisTurn = false;
                     triggerEffectMinion.Ready = true;

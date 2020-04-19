@@ -350,7 +350,7 @@ namespace HREngine.Bots
                              if (Ai.Instance.nextMoveGuess.ownMinions[i].Ready != p.ownMinions[i].Ready && !p.ownMinions[i].Ready)
                              {
                                  sleepRetry = true;
-                                 Helpfunctions.Instance.ErrorLog("[AI] 随从的准备状态 = " + p.ownMinions[i].Ready + " (" + p.ownMinions[i].entitiyID + " " + p.ownMinions[i].handcard.card.cardIDenum + " " + p.ownMinions[i].name + "). 再次尝试....");
+                                 Helpfunctions.Instance.ErrorLog("[AI] 随从的准备状态 = " + p.ownMinions[i].Ready + " (" + p.ownMinions[i].entitiyID + " " + p.ownMinions[i].handcard.card.card.CardId + " " + p.ownMinions[i].name + "). 再次尝试....");
                                  Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
                                  return false;
                              }
@@ -956,11 +956,11 @@ namespace HREngine.Bots
                         switch (a.actionType)
                         {
                             case actionEnum.playcard:
-                                switch (a.card.card.cardIDenum)
+                                switch (a.card.card.card.CardId)
                                 {
                                     case CardIds.Collectible.Priest.Entomb: goto case CardIds.Collectible.Rogue.GangUp; 
                                     case CardIds.Collectible.Rogue.GangUp: 
-                                        if (a.target != null) entityId = a.target.handcard.card.cardIDenum.ToString();
+                                        if (a.target != null) entityId = a.target.handcard.card.card.CardId.ToString();
                                         break;
                                     case CardIds.Collectible.Mage.ForgottenTorch: entityId = "LOE_002t"; break; 
                                     case CardIds.Collectible.Neutral.EliseStarseeker: entityId = "LOE_019t"; break; 
@@ -988,13 +988,13 @@ namespace HREngine.Bots
                             int num = 0;
                             foreach (Minion m in this.enemyMinions)
                             {
-                                if (m.handcard.card.cardIDenum == CardIds.Collectible.Warrior.IronJuggernaut) num++; 
+                                if (m.handcard.card.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num++; 
                             }
                             if (num > 0)
                             {
                                 foreach (Minion m in lastpf.enemyMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == CardIds.Collectible.Warrior.IronJuggernaut) num--;
+                                    if (m.handcard.card.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num--;
                                 }
                             }
                             if (num > 0) entityId = "GVG_056t";
@@ -1003,13 +1003,13 @@ namespace HREngine.Bots
                                 num = 0;
                                 foreach (Minion m in lastpf.ownMinions)
                                 {
-                                    if (m.handcard.card.cardIDenum == CardIds.Collectible.Druid.Malorne) num++; 
+                                    if (m.handcard.card.card.CardId == CardIds.Collectible.Druid.Malorne) num++; 
                                 }
                                 if (num > 0)
                                 {
                                     foreach (Minion m in this.ownMinions)
                                     {
-                                        if (m.handcard.card.cardIDenum == CardIds.Collectible.Druid.Malorne) num--;
+                                        if (m.handcard.card.card.CardId == CardIds.Collectible.Druid.Malorne) num--;
                                     }
                                 }
                                 if (num > 0) entityId = "GVG_035";

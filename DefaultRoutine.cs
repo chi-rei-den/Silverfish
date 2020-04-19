@@ -835,7 +835,7 @@ def Execute():
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
                                 dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.cardIDenum.ToString();
+                                choiceCardId = moveTodo.card.card.card.CardId.ToString();
                             }
 
                             //safe targeting stuff for hsbuddy
@@ -876,7 +876,7 @@ def Execute():
                     if (moveTodo.druidchoice >= 1)
                     {
                         dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                        choiceCardId = moveTodo.card.card.cardIDenum.ToString();
+                        choiceCardId = moveTodo.card.card.card.CardId.ToString();
                     }
 
                     dirtyTargetSource = -1;
@@ -976,7 +976,7 @@ def Execute():
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
                                 dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.cardIDenum.ToString();
+                                choiceCardId = moveTodo.card.card.card.CardId.ToString();
                             }
 
                             dirtyTargetSource = 9000;
@@ -1000,7 +1000,7 @@ def Execute():
                         if (moveTodo.druidchoice >= 1)
                         {
                             dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                            choiceCardId = moveTodo.card.card.cardIDenum.ToString();
+                            choiceCardId = moveTodo.card.card.card.CardId.ToString();
                         }
 
                         dirtyTargetSource = -1;
@@ -1113,7 +1113,7 @@ def Execute():
                                         if (m.entitiyID == sourceEntityId)
                                         {
                                             bool forbidden = false;
-                                            switch (discoverCards[i].card.cardIDenum)
+                                            switch (discoverCards[i].card.card.CardId)
                                             {
                                                 case CardIds.NonCollectible.Neutral.LiquidMembraneToken1: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
                                                 case CardIds.NonCollectible.Neutral.MassiveToken1: if (m.taunt) forbidden = true; break;
@@ -1148,7 +1148,7 @@ def Execute():
                 if (dirtychoice == 0) dirtychoice = 1;
                 else if (dirtychoice == 1) dirtychoice = 0;
                 int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;
-                Helpfunctions.Instance.logg("发现卡牌: " + dirtychoice + (discoverCardsCount > 1 ? " " + discoverCards[1].card.cardIDenum : "") + (discoverCardsCount > 0 ? " " + discoverCards[0].card.cardIDenum : "") + (discoverCardsCount > 2 ? " " + discoverCards[2].card.cardIDenum : ""));
+                Helpfunctions.Instance.logg("发现卡牌: " + dirtychoice + (discoverCardsCount > 1 ? " " + discoverCards[1].card.card.CardId : "") + (discoverCardsCount > 0 ? " " + discoverCards[0].card.card.CardId : "") + (discoverCardsCount > 2 ? " " + discoverCards[2].card.card.CardId : ""));
                 if (ttf < 3000) return (new Random().Next(ttf < 1300 ? 1300 - ttf : 0, 3100 - ttf));
             }
             else

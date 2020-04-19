@@ -2482,7 +2482,7 @@ namespace HREngine.Bots
 
             if (this.enemyAbilityReady)
             {
-                switch (this.enemyHeroAblility.card.cardIDenum)
+                switch (this.enemyHeroAblility.card.card.CardId)
                 {
                     //direct damage
                     case CardIds.NonCollectible.Hunter.SteadyShot: totalEnemyDamage += 2; break;
@@ -3641,7 +3641,7 @@ namespace HREngine.Bots
 
                 if (c.Secret)
                 {
-                    this.ownSecretsIDList.Add(c.cardIDenum);
+                    this.ownSecretsIDList.Add(c.card.CardId);
                     this.nextSecretThisTurnCost0 = false;
                     this.secretsplayedSinceRecalc++;
                 }
@@ -4127,7 +4127,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.enemyMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.ownHeroAblility.card.cardIDenum == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.ownHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.enemyMinionsDied; i++)
                     {
                         this.callKid(kid, this.ownMinions.Count, true);
@@ -4138,7 +4138,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.ownMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.enemyHeroAblility.card.cardIDenum == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    Chireiden.Silverfish.SimCard kid = CardDB.Instance.getCardDataFromID((this.enemyHeroAblility.card.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.ownMinionsDied; i++)
                     {
                         this.callKid(kid, this.enemyMinions.Count, false);
@@ -5195,7 +5195,7 @@ namespace HREngine.Bots
 
                 if (m.returnToHand > 0)
                 {
-                    drawACard(m.handcard.card.cardIDenum, m.own, true);
+                    drawACard(m.handcard.card.card.CardId, m.own, true);
                 }
 
                 if (m.infest > 0)
@@ -5228,7 +5228,7 @@ namespace HREngine.Bots
                         if (tmp.Count >= 1)
                         {
                             Minion summonedMinion = tmp[pos];
-                            if (summonedMinion.handcard.card.cardIDenum == kid.cardIDenum)
+                            if (summonedMinion.handcard.card.card.CardId == kid.card.CardId)
                             {
                                 summonedMinion.Hp = 1;
                                 summonedMinion.wounded = false;
@@ -5280,7 +5280,7 @@ namespace HREngine.Bots
 
                         if (m.returnToHand > 0)
                         {
-                            drawACard(m.handcard.card.cardIDenum, m.own, true);
+                            drawACard(m.handcard.card.card.CardId, m.own, true);
                         }
 
                         if (m.infest > 0)
@@ -5313,7 +5313,7 @@ namespace HREngine.Bots
                                 if (tmp.Count >= 1)
                                 {
                                     Minion summonedMinion = tmp[pos];
-                                    if (summonedMinion.handcard.card.cardIDenum == kid.cardIDenum)
+                                    if (summonedMinion.handcard.card.card.CardId == kid.card.CardId)
                                     {
                                         summonedMinion.Hp = 1;
                                         summonedMinion.wounded = false;
@@ -5374,10 +5374,10 @@ namespace HREngine.Bots
                     //kill it!
                     if (m.Hp <= 0)
                     {
-                        this.OwnLastDiedMinion = m.handcard.card.cardIDenum;
+                        this.OwnLastDiedMinion = m.handcard.card.card.CardId;
                         if (this.revivingOwnMinion == Chireiden.Silverfish.SimCard.None)
                         {
-                            this.revivingOwnMinion = m.handcard.card.cardIDenum;
+                            this.revivingOwnMinion = m.handcard.card.card.CardId;
                             minionOwnReviving = true;
                         }
 
@@ -5417,7 +5417,7 @@ namespace HREngine.Bots
                     {
                         if (this.revivingEnemyMinion == Chireiden.Silverfish.SimCard.None)
                         {
-                            this.revivingEnemyMinion = m.handcard.card.cardIDenum;
+                            this.revivingEnemyMinion = m.handcard.card.card.CardId;
                             minionEnemyReviving = true;
                         }
 
@@ -6934,15 +6934,7 @@ namespace HREngine.Bots
 
         public Chireiden.Silverfish.SimCard getNextJadeGolem(bool own)
         {
-            int tmp = 0;
-            if (own)
-            {
-                tmp = ++anzOwnJadeGolem;
-            }
-            else
-            {
-                tmp = ++anzEnemyJadeGolem;
-            }
+            var tmp = own ? ++anzOwnJadeGolem : ++anzEnemyJadeGolem;
             return $"{CardIds.NonCollectible.Neutral.JadeGolem1.Substring(0, 9)}{Math.Max(Math.Min(tmp, 30), 1)}";
         }
 
@@ -6972,7 +6964,7 @@ namespace HREngine.Bots
             Helpfunctions.Instance.logg("ownhero: ");
             Helpfunctions.Instance.logg("ownherohp: " + this.ownHero.Hp + " + " + this.ownHero.armor);
             Helpfunctions.Instance.logg("ownheroattac: " + this.ownHero.Angr);
-            Helpfunctions.Instance.logg("ownheroweapon: " + this.ownWeapon.Angr + " " + this.ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.cardIDenum + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
+            Helpfunctions.Instance.logg("ownheroweapon: " + this.ownWeapon.Angr + " " + this.ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
             Helpfunctions.Instance.logg("ownherostatus: frozen" + this.ownHero.frozen + " ");
             Helpfunctions.Instance.logg("enemyherohp: " + this.enemyHero.Hp + " + " + this.enemyHero.armor + ((this.enemyHero.immune) ? " immune" : ""));
 
@@ -7009,7 +7001,7 @@ namespace HREngine.Bots
             Helpfunctions.Instance.logg("Own Handcards: ");
             foreach (Handmanager.Handcard hc in this.owncards)
             {
-                Helpfunctions.Instance.logg("pos " + hc.position + " " + hc.card.name + " " + hc.manacost + " entity " + hc.entity + " " + hc.card.cardIDenum + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp);
+                Helpfunctions.Instance.logg("pos " + hc.position + " " + hc.card.name + " " + hc.manacost + " entity " + hc.entity + " " + hc.card.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp);
             }
             Helpfunctions.Instance.logg("+++++++ printBoard end +++++++++");
 
@@ -7022,14 +7014,14 @@ namespace HREngine.Bots
             string retval = "Turn : board\t" + this.turnCounter + ":" + ((this.value < -2000000) ? "." : this.value.ToString());
             retval += "\r\n" + "pIdHistory\t";
             foreach (int pId in this.pIdHistory) retval += pId + " ";
-            retval += "\r\n" + ("pen\t" + this.evaluatePenality);
-            retval += "\r\n" + ("mana\t" + this.mana + "/" + this.ownMaxMana);
-            retval += "\r\n" + ("cardsplayed : handsize : enemyhand\t" + this.cardsPlayedThisTurn + ":" + this.owncards.Count + ":" + this.enemyAnzCards);
-            retval += "\r\n" + ("Hp : armor : Atk ownhero\t" + this.ownHero.Hp + ":" + this.ownHero.armor + ":" + this.ownHero.Angr + ((this.ownHero.immune) ? ":immune" : ""));
-            retval += "\r\n" + ("Atk : Dur : Name : IDe : poison ownWeapon\t" + this.ownWeapon.Angr + " " + this.ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.cardIDenum + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
+            retval += $"\r\n{("pen\t" + this.evaluatePenality)}";
+            retval += $"\r\n{("mana\t" + this.mana + "/" + this.ownMaxMana)}";
+            retval += $"\r\n{("cardsplayed : handsize : enemyhand\t" + this.cardsPlayedThisTurn + ":" + this.owncards.Count + ":" + this.enemyAnzCards)}";
+            retval += $"\r\n{("Hp : armor : Atk ownhero\t" + this.ownHero.Hp + ":" + this.ownHero.armor + ":" + this.ownHero.Angr + ((this.ownHero.immune) ? ":immune" : ""))}";
+            retval += $"\r\nAtk : Dur : Name : IDe : poison ownWeapon\t{this.ownWeapon.Angr} {this.ownWeapon.Durability} {this.ownWeapon.name} {this.ownWeapon.card.CardId} " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
             retval += "\r\n" + ("ownHero.frozen\t" + this.ownHero.frozen);
             retval += "\r\n" + ("Hp : armor enemyhero\t" + this.enemyHero.Hp + ":" + this.enemyHero.armor + ((this.enemyHero.immune) ? ":immune" : ""));
-            retval += "\r\n" + ("Atk : Dur : Name : IDe : poison enemyWeapon\t" + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.cardIDenum + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
+            retval += "\r\n" + ("Atk : Dur : Name : IDe : poison enemyWeapon\t" + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
             retval += "\r\n" + ("carddraw own:enemy\t" + this.owncarddraw + ":" + this.enemycarddraw);
 
             if (this.enemySecretCount > 0) retval += "\r\n" + ("enemySecrets\t" + Probabilitymaker.Instance.getEnemySecretData(this.enemySecretList));
@@ -7038,7 +7030,7 @@ namespace HREngine.Bots
                 retval += "\r\n" + ("ownSecrets\t");
                 foreach (Chireiden.Silverfish.SimCard s in this.ownSecretsIDList)
                 {
-                    retval += " " + CardDB.Instance.getCardDataFromID(s).name;
+                    retval += " " + s.LocName;
                 }
             }
 
@@ -7075,7 +7067,7 @@ namespace HREngine.Bots
             for (int i = 0; i < this.owncards.Count; i++)
             {
                 Handmanager.Handcard hc = this.owncards[i];
-                retval += "\r\n" + (i + 1) + " CARD\t" + (hc.position + " " + hc.entity + ":" + hc.card.name + " " + hc.manacost + " " + hc.card.cardIDenum + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp + "\r\n");
+                retval += "\r\n" + (i + 1) + " CARD\t" + (hc.position + " " + hc.entity + ":" + hc.card.name + " " + hc.manacost + " " + hc.card.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp + "\r\n");
             }
             retval += ("Enemy Handcards count\t" + this.enemyAnzCards + "\r\n");
 

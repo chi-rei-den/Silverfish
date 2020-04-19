@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 p.ownHero.immune = true;
                 if (p.ownWeapon.name == CardIds.NonCollectible.Neutral.Runeblade && p.anzOwnHorsemen < 1)
                 {
-                    int bonus = (p.ownWeapon.card.cardIDenum == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                    int bonus = (p.ownWeapon.card.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
                     p.minionGetBuffed(p.ownHero, -1 * Math.Min(bonus, p.ownWeapon.Angr - 1), 0);
                     p.ownWeapon.Angr = Math.Min(1, p.ownWeapon.Angr - bonus);
                 }
@@ -47,7 +47,7 @@ namespace HREngine.Bots
                 p.enemyHero.immune = true;
                 if (p.enemyWeapon.name == CardIds.NonCollectible.Neutral.Runeblade && p.anzEnemyHorsemen < 1)
                 {
-                    int bonus = (p.enemyWeapon.card.cardIDenum == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                    int bonus = (p.enemyWeapon.card.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
                     p.minionGetBuffed(p.enemyHero, -1 * Math.Min(bonus, p.enemyWeapon.Angr - 1), 0);
                     p.enemyWeapon.Angr = Math.Min(1, p.enemyWeapon.Angr - bonus);
                 }
@@ -65,7 +65,7 @@ namespace HREngine.Bots
                     p.ownHero.immune = false;
                     if (p.ownWeapon.name == CardIds.NonCollectible.Neutral.Runeblade)
                     {
-                        int bonus = (p.ownWeapon.card.cardIDenum == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                        int bonus = (p.ownWeapon.card.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
                         p.minionGetBuffed(p.ownHero, bonus, 0);
                         p.ownWeapon.Angr += bonus;
                     }
@@ -79,7 +79,7 @@ namespace HREngine.Bots
                     p.enemyHero.immune = false;
                     if (p.enemyWeapon.name == CardIds.NonCollectible.Neutral.Runeblade)
                     {
-                        int bonus = (p.enemyWeapon.card.cardIDenum == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                        int bonus = (p.enemyWeapon.card.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
                         p.minionGetBuffed(p.enemyHero, bonus, 0);
                         p.enemyWeapon.Angr += bonus;
                     }

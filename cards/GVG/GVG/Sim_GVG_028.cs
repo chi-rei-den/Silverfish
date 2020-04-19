@@ -35,7 +35,7 @@ namespace HREngine.Bots
             Chireiden.Silverfish.SimCard c = hc.card;
             if (c.Type == Chireiden.Silverfish.SimCardtype.SPELL && c.name != Chireiden.Silverfish.SimCard.gallywixscoin && wasOwnCard != triggerEffectMinion.own)
             {
-                p.drawACard(c.cardIDenum, triggerEffectMinion.own, true);
+                p.drawACard(c.card.CardId, triggerEffectMinion.own, true);
                 p.drawACard(Chireiden.Silverfish.SimCard.gallywixscoin, wasOwnCard, true);
             }
         }

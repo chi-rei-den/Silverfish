@@ -497,7 +497,7 @@ namespace HREngine.Bots
                 switch (a.actionType)
                 {
                     case actionEnum.playcard:
-                        cardID = a.card.card.cardIDenum;
+                        cardID = a.card.card.card.CardId;
                         if (CardIdRulesGame.ContainsKey(cardID))
                         {
                             possibleRules.AddRange(CardIdRulesGame[cardID].Keys);
@@ -513,7 +513,7 @@ namespace HREngine.Bots
                         }
                         break;
                     case actionEnum.attackWithMinion:
-                        cardID = a.own.handcard.card.cardIDenum;
+                        cardID = a.own.handcard.card.card.CardId;
                         if (AttackerIdRulesGame.ContainsKey(cardID))
                         {
                             possibleRules.AddRange(AttackerIdRulesGame[cardID].Keys);
@@ -2727,34 +2727,34 @@ namespace HREngine.Bots
                     return false;
 
                 case param.ownboard_contain: 
-                    foreach (Minion m in p.ownMinions) if (m.handcard.card.cardIDenum == cond.cardID) return true;
+                    foreach (Minion m in p.ownMinions) if (m.handcard.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownboard_notcontain:
-                    foreach (Minion m in p.ownMinions) if (m.handcard.card.cardIDenum == cond.cardID) return false;
+                    foreach (Minion m in p.ownMinions) if (m.handcard.card.card.CardId == cond.cardID) return false;
                     return true;
                 case param.enboard_contain: 
-                    foreach (Minion m in p.enemyMinions) if (m.handcard.card.cardIDenum == cond.cardID) return true;
+                    foreach (Minion m in p.enemyMinions) if (m.handcard.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.enboard_notcontain:
-                    foreach (Minion m in p.enemyMinions) if (m.handcard.card.cardIDenum == cond.cardID) return false;
+                    foreach (Minion m in p.enemyMinions) if (m.handcard.card.card.CardId == cond.cardID) return false;
                     return true;
                 case param.ownhand_contain: 
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.cardIDenum == cond.cardID) return true;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownhand_notcontain:
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.cardIDenum == cond.cardID) return false;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.card.CardId == cond.cardID) return false;
                     return true;
                 case param.ownweapon_equal: 
-                    if (p.ownWeapon.card.cardIDenum == cond.cardID) return true;
+                    if (p.ownWeapon.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.ownweapon_notequal:
-                    if (p.ownWeapon.card.cardIDenum != cond.cardID) return true;
+                    if (p.ownWeapon.card.card.CardId != cond.cardID) return true;
                     return false;
                 case param.enweapon_equal: 
-                    if (p.enemyWeapon.card.cardIDenum == cond.cardID) return true;
+                    if (p.enemyWeapon.card.card.CardId == cond.cardID) return true;
                     return false;
                 case param.enweapon_notequal:
-                    if (p.enemyWeapon.card.cardIDenum != cond.cardID) return true;
+                    if (p.enemyWeapon.card.card.CardId != cond.cardID) return true;
                     return false;
                 case param.ownhero_equal: 
                     if (cond.hClass == CardClass.ALL) return true;
@@ -2771,7 +2771,7 @@ namespace HREngine.Bots
                     if (p.enemyHeroStartClass != cond.hClass) return true;
                     return false;
                 case param.tgt_equal:
-                    if (a.target!= null && (a.target.handcard.card.cardIDenum == cond.cardID || (a.target.isHero && cond.cardID == Chireiden.Silverfish.SimCard.hero))) return true;
+                    if (a.target!= null && (a.target.handcard.card.card.CardId == cond.cardID || (a.target.isHero && cond.cardID == Chireiden.Silverfish.SimCard.hero))) return true;
                     return false;
                 case param.tgt_notequal:
                     if (a.target != null)
@@ -2781,7 +2781,7 @@ namespace HREngine.Bots
                             if (cond.cardID != Chireiden.Silverfish.SimCard.hero) return true;
                             else return false;
                         }
-                        else if (a.target.handcard.card.cardIDenum != cond.cardID) return true;
+                        else if (a.target.handcard.card.card.CardId != cond.cardID) return true;
                     }
                     return false;
 

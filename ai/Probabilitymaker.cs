@@ -913,7 +913,7 @@ namespace HREngine.Bots
                 else if (!enemyMinionsDiedStep[0].deathrattle) { redemption = true; effigy = true; }
                 else
                 {
-                    switch (enemyMinionsDiedStep[0].cardIDenum)
+                    switch (enemyMinionsDiedStep[0].card.CardId)
                     {
                         case CardIds.Collectible.Warlock.Dreadsteed: redemption = false; effigy = false; break;
                         case CardIds.Collectible.Rogue.Anubarak: redemption = false; effigy = false; break;

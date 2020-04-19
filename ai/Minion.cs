@@ -558,7 +558,7 @@ namespace HREngine.Bots
 
             if (p.diedMinions != null)
             {
-                GraveYardItem gyi = new GraveYardItem(this.handcard.card.cardIDenum, this.entitiyID, this.own);
+                GraveYardItem gyi = new GraveYardItem(this.handcard.card.card.CardId, this.entitiyID, this.own);
                 p.diedMinions.Add(gyi);
             }
         }

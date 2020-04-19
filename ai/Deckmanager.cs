@@ -197,7 +197,7 @@ namespace HREngine.Bots
             help.logg("Own Deckcards: ");
             foreach (Deckmanager.Deckcard c in this.Deckcards)
             {
-                help.logg("pos " + c.position + " " + c.card.name + " " + c.manacost + " entity " + c.entity + " " + c.card.cardIDenum + " " + c.addattack);
+                help.logg("pos " + c.position + " " + c.card.name + " " + c.manacost + " entity " + c.entity + " " + c.card.card.CardId + " " + c.addattack);
             }
             help.logg("Enemy cards: " + this.enemyAnzCards);
         }

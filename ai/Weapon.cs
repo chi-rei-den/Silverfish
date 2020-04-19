@@ -73,7 +73,7 @@ namespace HREngine.Bots
 
         public string weaponToString()
         {
-            return this.Angr + " " + this.Durability + " " + this.name + " " + this.card.cardIDenum + " " + (this.poisonous ? 1 : 0) + " " + (this.lifesteal ? 1 : 0);
+            return this.Angr + " " + this.Durability + " " + this.name + " " + this.card.card.CardId + " " + (this.poisonous ? 1 : 0) + " " + (this.lifesteal ? 1 : 0);
         }
             
     }
