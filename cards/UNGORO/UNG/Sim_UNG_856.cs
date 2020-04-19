@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
+            p.drawACard(SimCard.None, ownplay, true);
             p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, ownplay, true);
 			p.owncarddraw--;
         }

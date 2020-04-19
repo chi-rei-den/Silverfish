@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
         {
             if (turnEndOfOwner == triggerEffectMinion.own)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, turnEndOfOwner);
+                p.drawACard(SimCard.None, turnEndOfOwner);
             }
         }
 

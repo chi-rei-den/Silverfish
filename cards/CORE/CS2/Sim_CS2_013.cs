@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(Chireiden.Silverfish.SimCard.excessmana, true, true);
+                    p.drawACard(SimCard.excessmana, true, true);
                 }
 
             }
@@ -52,7 +53,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(Chireiden.Silverfish.SimCard.excessmana, false, true);
+                    p.drawACard(SimCard.excessmana, false, true);
                 }
             }
 		}

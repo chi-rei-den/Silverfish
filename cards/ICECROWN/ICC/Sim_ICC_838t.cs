@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,8 +32,8 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.None, m.own, true);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, m.own, true);//bonus
+            p.drawACard(SimCard.None, m.own, true);
+            p.drawACard(SimCard.None, m.own, true);//bonus
         }
     }
 }

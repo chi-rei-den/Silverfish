@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	class Sim_CS2_196 : SimTemplate //* razorfenhunter
 	{
         //Battlecry: Summon a 1/1 Boar.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Boar; //boar
+        SimCard kid = CardIds.NonCollectible.Neutral.Boar; //boar
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

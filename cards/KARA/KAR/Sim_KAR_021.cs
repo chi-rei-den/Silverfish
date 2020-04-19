@@ -1,4 +1,6 @@
+using Chireiden.Silverfish;
 using HearthDb;
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -30,20 +32,20 @@ namespace HREngine.Bots
 	{
 		//Whenever you cast a spell, summon a random basic Totem.
 
-        Chireiden.Silverfish.SimCard searing = CardIds.NonCollectible.Shaman.SearingTotem;
-        Chireiden.Silverfish.SimCard healing = CardIds.NonCollectible.Shaman.HealingTotem;
-        Chireiden.Silverfish.SimCard wrathofair = CardIds.NonCollectible.Shaman.WrathOfAirTotem;
-		
+        SimCard searing = CardIds.NonCollectible.Shaman.SearingTotem;
+        SimCard healing = CardIds.NonCollectible.Shaman.HealingTotem;
+        SimCard wrathofair = CardIds.NonCollectible.Shaman.WrathOfAirTotem;
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
-				Chireiden.Silverfish.SimCard kid;
+				SimCard kid;
 				int otherTotems = 0;
 				bool wrath = false;
                 foreach (Minion m in (wasOwnCard) ? p.ownMinions : p.enemyMinions)
 				{
-					switch (m.name)
+					switch (m.name.CardId)
 					{
 						case CardIds.NonCollectible.Shaman.SearingTotem: otherTotems++; continue;
 						case CardIds.NonCollectible.Shaman.StoneclawTotem: otherTotems++; continue;

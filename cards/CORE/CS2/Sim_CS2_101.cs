@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	class Sim_CS2_101 : SimTemplate //* reinforce
 	{
         //Hero Power: Summon a 1/1 Silver Hand Recruit.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken;//silverhandrecruit
+        SimCard kid = CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken;//silverhandrecruit
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

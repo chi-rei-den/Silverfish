@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 1/1 Shadowbeast.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.PossessedVillager_Shadowbeast;
+        SimCard kid = CardIds.NonCollectible.Warlock.PossessedVillager_Shadowbeast;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

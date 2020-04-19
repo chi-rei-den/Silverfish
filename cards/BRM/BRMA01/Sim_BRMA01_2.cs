@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Put a minion from each deck into the battlefield.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//4/4Nerubian
+		SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//4/4Nerubian
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

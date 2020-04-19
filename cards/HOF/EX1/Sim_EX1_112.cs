@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_112 : SimTemplate //gelbinmekkatorque
 	{
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.HomingChicken;//homingchicken
+        SimCard kid = CardIds.NonCollectible.Neutral.HomingChicken;//homingchicken
 //    kampfschrei:/ konstruiert eine fantastische erfindung.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

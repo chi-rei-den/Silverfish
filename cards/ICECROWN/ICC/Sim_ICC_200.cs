@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Secret: When one of your minions is attacked, summon a 2/3 Poisonous Cobra.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.EmperorCobra; //Emperor Cobra
+        SimCard kid = CardIds.Collectible.Neutral.EmperorCobra; //Emperor Cobra
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

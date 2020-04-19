@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 2/1 Damaged Golem.
 
-        Chireiden.Silverfish.SimCard card = CardIds.NonCollectible.Neutral.DamagedGolemClassic;
+        SimCard card = CardIds.NonCollectible.Neutral.DamagedGolemClassic;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

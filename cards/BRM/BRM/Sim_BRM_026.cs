@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a random 1-Cost minion for your opponent.
         		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken; //flameofazzinoth
+        SimCard kid = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken; //flameofazzinoth
 
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

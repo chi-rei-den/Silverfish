@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 	{
 		//
 		//
-		// Chireiden.Silverfish.SimCard kid = CardDB. Instance.getCardDataFromID(CardIds.NonCollectible.Neutral.ReplicatingMenace_MicrobotToken);
+		// SimCard kid = CardDB. Instance.getCardDataFromID(CardIds.NonCollectible.Neutral.ReplicatingMenace_MicrobotToken);
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 {
 if (own.own) p.Magnetic(own);

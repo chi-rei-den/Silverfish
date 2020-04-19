@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,11 +38,11 @@ namespace HREngine.Bots
             {
                 if (mnn.wounded)
                 {
-                    p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                    p.drawACard(SimCard.None, ownplay);
                 }
             }
-            if (ownplay && p.ownHero.Hp < 30) p.drawACard(Chireiden.Silverfish.SimCard.None, true);
-            if (!ownplay && p.enemyHero.Hp < 30) p.drawACard(Chireiden.Silverfish.SimCard.None, false);
+            if (ownplay && p.ownHero.Hp < 30) p.drawACard(SimCard.None, true);
+            if (!ownplay && p.enemyHero.Hp < 30) p.drawACard(SimCard.None, false);
 
 		}
 

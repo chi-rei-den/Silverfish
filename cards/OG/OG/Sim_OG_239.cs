@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
 			p.allMinionsGetDestroyed();
             for (int i = 0; i < anz; i++)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
             }
 		}
 	}

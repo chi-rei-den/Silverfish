@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon two 2/2 Hyenas.
 
-        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Hunter.SavannahHighmane_HyenaToken;//hyena
+        SimCard c = CardIds.NonCollectible.Hunter.SavannahHighmane_HyenaToken;//hyena
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

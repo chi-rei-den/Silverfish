@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using HearthDb;
 using System;
 using System.Collections.Generic;

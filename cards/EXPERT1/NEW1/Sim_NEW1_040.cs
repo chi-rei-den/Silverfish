@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_NEW1_040 : SimTemplate //hogger
 	{
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Hogger_GnollToken;//gnoll
+        SimCard kid = CardIds.NonCollectible.Neutral.Hogger_GnollToken;//gnoll
 //    ruft am ende eures zuges einen gnoll (2/2) mit spott/ herbei.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)

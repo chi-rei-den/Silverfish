@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_DS1_188 : SimTemplate //gladiatorslongbow
 	{
-        Chireiden.Silverfish.SimCard c = CardIds.Collectible.Hunter.GladiatorsLongbow;
+        SimCard c = CardIds.Collectible.Hunter.GladiatorsLongbow;
 //    euer held ist immun/, während er angreift.
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon two 2/1 Bone Constructs.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.BoneConstruct;//2/1Bone Construct
+		SimCard kid = CardIds.NonCollectible.Neutral.BoneConstruct;//2/1Bone Construct
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

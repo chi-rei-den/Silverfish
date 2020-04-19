@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +37,7 @@ namespace HREngine.Bots
             for (int i = 0; i < 3; i++)
             {
                 //this.owncarddraw++;
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
             }
             
         }

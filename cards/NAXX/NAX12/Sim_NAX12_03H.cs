@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 		//Whenever a minion with Deathrattle dies, gain +2
 		//Handled in triggerAMinionDied()
 		
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.JawsHeroic;
+        SimCard weapon = CardIds.NonCollectible.Neutral.JawsHeroic;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

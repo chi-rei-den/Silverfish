@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         // Put a copy of a random minion from your opponent's deck into the battlefield.
 
-        Chireiden.Silverfish.SimCard copymin = CardIds.Collectible.Neutral.ChillwindYeti; // we take a icewindjety :D
+        SimCard copymin = CardIds.Collectible.Neutral.ChillwindYeti; // we take a icewindjety :D
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

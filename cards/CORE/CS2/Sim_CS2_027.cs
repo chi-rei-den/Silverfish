@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
         //Summon two 0/2 minions with Taunt.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Mage.MirrorImage;
+        SimCard kid = CardIds.NonCollectible.Mage.MirrorImage;
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Battlecry: Summon a random basic Totem.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Shaman.SearingTotem;//Searing Totem
+        SimCard kid = CardIds.NonCollectible.Shaman.SearingTotem;//Searing Totem
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

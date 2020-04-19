@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a Dreadsteed.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Warlock.Dreadsteed;
+        SimCard kid = CardIds.Collectible.Warlock.Dreadsteed;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

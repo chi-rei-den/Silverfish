@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         // Deathrattle: Summon a random legendary minion.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.KingMukla;
+        SimCard kid = CardIds.Collectible.Neutral.KingMukla;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

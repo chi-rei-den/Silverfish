@@ -1,69 +1,71 @@
+using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     using HearthDb;
     using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
+    using Triton.Game.Mapping;
 
     public class PenalityManager
     {
         //todo acolyteofpain
         //todo better aoe-penality
 
-        public Dictionary<Chireiden.Silverfish.SimCard, int> HealTargetDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> HealHeroDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> HealAllDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<SimCard, int> HealTargetDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> HealHeroDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> HealAllDatabase = new Dictionary<SimCard, int>();
 
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> DamageAllDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> DamageHeroDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageRandomDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageAllEnemysDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> HeroPowerEquipWeapon = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> DamageAllDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> DamageHeroDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> DamageRandomDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> DamageAllEnemysDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> HeroPowerEquipWeapon = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> enrageDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> silenceDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> OwnNeedSilenceDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> enrageDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> silenceDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> OwnNeedSilenceDatabase = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> heroAttackBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> attackBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> healthBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> tauntBuffDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> heroAttackBuffDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> attackBuffDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> healthBuffDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> tauntBuffDatabase = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> lethalHelpers = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> lethalHelpers = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> spellDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> dragonDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> elementalLTDependentDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> spellDependentDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> dragonDependentDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> elementalLTDependentDatabase = new Dictionary<SimCard, int>();
 
-        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDiscardDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> destroyOwnDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> destroyDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> buffingMinionsDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> buffing1TurnDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> heroDamagingAoeDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> randomEffects = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<SimCard, int> cardDiscardDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> destroyOwnDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> destroyDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> buffingMinionsDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> buffing1TurnDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> heroDamagingAoeDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> randomEffects = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> silenceTargets = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> silenceTargets = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> returnHandDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> GangUpDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> buffHandDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> equipWeaponPlayDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> returnHandDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> GangUpDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> buffHandDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> equipWeaponPlayDatabase = new Dictionary<SimCard, int>();
 
-        Dictionary<Chireiden.Silverfish.SimCard, int> priorityDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> UsefulNeedKeepDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard> choose1database = new Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard>();
-        Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard> choose2database = new Dictionary<Chireiden.Silverfish.SimCard, Chireiden.Silverfish.SimCard>();
+        Dictionary<SimCard, int> priorityDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> UsefulNeedKeepDatabase = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, SimCard> choose1database = new Dictionary<SimCard, SimCard>();
+        Dictionary<SimCard, SimCard> choose2database = new Dictionary<SimCard, SimCard>();
 
-        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageTargetDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> DamageTargetSpecialDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> maycauseharmDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDrawBattleCryDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> cardDrawDeathrattleDatabase = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> priorityTargets = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> specialMinions = new Dictionary<Chireiden.Silverfish.SimCard, int>(); //minions with cardtext, but no battlecry
-        public Dictionary<Chireiden.Silverfish.SimCard, int> ownSummonFromDeathrattle = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<SimCard, int> DamageTargetDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> DamageTargetSpecialDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> maycauseharmDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> cardDrawBattleCryDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> cardDrawDeathrattleDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> priorityTargets = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> specialMinions = new Dictionary<SimCard, int>(); //minions with cardtext, but no battlecry
+        public Dictionary<SimCard, int> ownSummonFromDeathrattle = new Dictionary<SimCard, int>();
 
         Dictionary<Race, int> ClassRacePriorityWarloc = new Dictionary<Race, int>();
         Dictionary<Race, int> ClassRacePriorityHunter = new Dictionary<Race, int>();
@@ -149,7 +151,7 @@ namespace HREngine.Bots
                             if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune) return 65;
                         }
                     }
-                    goto case Chireiden.Silverfish.SimCard.None;
+                    goto case SimCard.None;
 
 
                 case CardIds.Collectible.Neutral.AcolyteOfPain:
@@ -160,7 +162,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Rogue.TombPillager:
                 case CardIds.Collectible.Neutral.Toshley:
                 case CardIds.Collectible.Hunter.Webspinner:
-                case Chireiden.Silverfish.SimCard.None:
+                case SimCard.None:
 
                     if (m.Hp <= target.Angr && m.own && !m.divineshild && !m.immune)
                     {
@@ -276,10 +278,10 @@ namespace HREngine.Bots
             if (p.ownWeapon.Durability >= 1)
             {
                 int wAttack = weaponInHandAttackNextTurn(p);
-                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card == Chireiden.Silverfish.SimCard.poisoneddaggers || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Rogue.DaggerMastery)) wAttack = 1;
+                if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card == CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Rogue.DaggerMastery)) wAttack = 1;
                 if (wAttack > 0) retval = -p.ownWeapon.Angr - 1; // so he doesnt "lose" the weapon in evaluation :D
             }
-            if (p.ownWeapon.Angr == 1 && p.ownHeroName == HeroEnum.thief)
+            if (p.ownWeapon.Angr == 1 && p.ownHeroName == CardClass.ROGUE)
             {
                 if (target.Hp < 11) retval += 1;
                 else retval += -1;
@@ -303,12 +305,12 @@ namespace HREngine.Bots
             return 0;
         }
 
-        public int getPlayCardPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        public int getPlayCardPenality(SimCard card, Minion target, Playfield p)
         {
             int retval = ai.botBase.getPlayCardPenality(card, target, p);
             if (retval < 0 || retval > 499) return retval;
 
-            Chireiden.Silverfish.SimCard name = card.CardId;
+            SimCard name = card.CardId;
             //there is no reason to buff HP of minon (because it is not healed)
 
             int abuff = getAttackBuffPenality(card, target, p);
@@ -347,9 +349,9 @@ namespace HREngine.Bots
         }
 
 
-        private int getAttackBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getAttackBuffPenality(SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.CardId;
+            SimCard name = card.CardId;
             if (name == CardIds.Collectible.Druid.DarkWispers && card.CardId != CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians) return 0;
             int pen = 0;
             //buff enemy?
@@ -373,7 +375,7 @@ namespace HREngine.Bots
             if (target == null) return 60;
             if (!target.isHero && !target.own)
             {
-                if (card.Type == CardType.MOB && p.ownMinions.Count == 0) return 2;
+                if (card.Type == CardType.MINION && p.ownMinions.Count == 0) return 2;
 
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
@@ -422,10 +424,10 @@ namespace HREngine.Bots
                         case CardIds.Collectible.Druid.MarkOfYshaarj:
                             if (target.stealth)
                             {
-                                if ((Race)target.handcard.card.Race == Race.PET) return 3;
+                                if (target.handcard.card.Race == Race.PET) return 3;
                                 else return 7;
                             }
-                            if ((Race)target.handcard.card.Race == Race.PET && p.owncards.Count < 2) return 3;
+                            if (target.handcard.card.Race == Race.PET && p.owncards.Count < 2) return 3;
                             return 50;
 
                         default:
@@ -439,7 +441,7 @@ namespace HREngine.Bots
                 }
                 if (m.Angr == 0)
                 {
-                    if (!m.silenced && m.handcard.card.deathrattle) return -8;
+                    if (!m.silenced && m.handcard.card.Deathrattle) return -8;
                     return -5;
                 }
             }
@@ -447,9 +449,9 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getHPBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getHPBuffPenality(SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.CardId;
+            SimCard name = card.CardId;
             int pen = 0;
 
             if (!this.healthBuffDatabase.ContainsKey(name)) return 0;
@@ -464,9 +466,9 @@ namespace HREngine.Bots
         }
 
 
-        private int getTauntBuffPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getTauntBuffPenality(SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card.CardId;
+            SimCard name = card.CardId;
             int pen = 0;
             //buff enemy?
             if (!this.tauntBuffDatabase.ContainsKey(name)) return 0;
@@ -503,7 +505,7 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getSilencePenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
+        private int getSilencePenality(SimCard name, Minion target, Playfield p)
         {
             int pen = 0;
 
@@ -532,9 +534,9 @@ namespace HREngine.Bots
             }
             else
             {
-                switch (target.name)
+                switch (target.name.CardId)
                 {
-                    case Chireiden.Silverfish.SimCard.masterchest: return 500;
+                    case CardIds.NonCollectible.Neutral.MarintheFox_MasterChest: return 500;
                 }
                 if (this.silenceDatabase.ContainsKey(name))
                 {
@@ -557,7 +559,7 @@ namespace HREngine.Bots
                     {
                         if (this.priorityDatabase.ContainsKey(target.name)) return 0;
                         if (this.silenceTargets.ContainsKey(target.name)) return 0;
-                        if (target.handcard.card.deathrattle) return 0;
+                        if (target.handcard.card.Deathrattle) return 0;
                     }
 
                     if (target.Angr <= target.handcard.card.Attack && target.maxHp <= target.handcard.card.Health && !target.taunt && !target.windfury && !target.divineshild && !target.poisonous && !target.lifesteal && !this.specialMinions.ContainsKey(name))
@@ -579,9 +581,9 @@ namespace HREngine.Bots
 
         }
 
-        private int getDamagePenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getDamagePenality(SimCard card, Minion target, Playfield p)
         {
-            Chireiden.Silverfish.SimCard name = card;
+            SimCard name = card;
             int pen = 0;
 
             if (name == CardIds.Collectible.Warrior.ShieldSlam && p.ownHero.armor == 0) return 500;
@@ -629,7 +631,7 @@ namespace HREngine.Bots
                     Minion m = p.enemyMinions[i];
                     if (aoeDamage >= m.Hp && !m.divineshild)
                     {
-                        switch (name)
+                        switch (name.CardId)
                         {
                             case CardIds.Collectible.Warrior.SleepWithTheFishes:
                                 if (!m.wounded) continue;
@@ -647,7 +649,7 @@ namespace HREngine.Bots
                                 if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                 break;
                             case CardIds.Collectible.Paladin.ScarletPurifier:
-                                if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
+                                if (!(m.handcard.card.Deathrattle && !m.silenced)) continue;
                                 break;
                             case CardIds.NonCollectible.DreamCards.YseraAwakens:
                                 if (m.name == CardIds.Collectible.Neutral.Ysera) continue;
@@ -658,7 +660,7 @@ namespace HREngine.Bots
                         }
 
                         if (this.specialMinions.ContainsKey(m.name)) numSpecialMinionsEnemy++;
-                        switch (m.name)
+                        switch (m.name.CardId)
                         {
                             case CardIds.Collectible.Neutral.DireWolfAlpha:
                                 if (m.silenced) break;
@@ -771,7 +773,7 @@ namespace HREngine.Bots
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if (mm.name == SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
                             case CardIds.Collectible.Warrior.WarsongCommander:
@@ -828,7 +830,7 @@ namespace HREngine.Bots
                                     if ((Race)m.handcard.card.Race == Race.DEMON) continue;
                                     break;
                                 case CardIds.Collectible.Paladin.ScarletPurifier:
-                                    if (!(m.handcard.card.deathrattle && !m.silenced)) continue;
+                                    if (!(m.handcard.card.Deathrattle && !m.silenced)) continue;
                                     break;
                                 case CardIds.NonCollectible.DreamCards.YseraAwakens:
                                     if (m.name == CardIds.Collectible.Neutral.Ysera) continue;
@@ -1045,7 +1047,7 @@ namespace HREngine.Bots
                             case CardIds.Collectible.Neutral.GurubashiBerserker: return 0;
                             case CardIds.Collectible.Warrior.AxeFlinger: return 0;
                             case CardIds.Collectible.Hunter.Gahzrilla: return 0;
-                            case Chireiden.Silverfish.SimCard.garr: if (p.ownMinions.Count <= 6) return 0; break;
+                            case SimCard.garr: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.HoggerDoomOfElwynn: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.AcolyteOfPain: if (p.owncards.Count <= 3) return 0; break;
                             case CardIds.Collectible.Neutral.DragonEgg: if (p.ownMinions.Count <= 6) return 5; break;
@@ -1165,7 +1167,7 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getHealPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
+        private int getHealPenality(SimCard name, Minion target, Playfield p)
         {
             ///Todo healpenality for aoe heal
             ///todo auchenai soulpriest
@@ -1291,11 +1293,11 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getCardDrawPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getCardDrawPenality(SimCard card, Minion target, Playfield p)
         {
             // penality if carddraw is late or you have enough cards
             int pen = 0;
-            Chireiden.Silverfish.SimCard name = card;
+            SimCard name = card;
             if (!cardDrawBattleCryDatabase.ContainsKey(name)) return 0;
             if (name == CardIds.Collectible.Druid.Wrath && card.CardId != CardIds.NonCollectible.Druid.Wrath_NaturesWrath) return 0;
             if (name == CardIds.Collectible.Druid.Nourish && card.CardId != CardIds.NonCollectible.Druid.Nourish_Enrich) return 0;
@@ -1327,7 +1329,7 @@ namespace HREngine.Bots
                             {
                                 foreach (Handmanager.Handcard hc in p.owncards)
                                 {
-                                    if (hc.card.Type == CardType.MOB) return 500;
+                                    if (hc.card.Type == CardType.MINION) return 500;
                                 }
                                 if (p.owncards.Count < 2) return -10;
                                 else if (p.owncards.Count < 4) return -2;
@@ -1453,7 +1455,7 @@ namespace HREngine.Bots
                     {
                         if (m.playedThisTurn && cardDrawBattleCryDatabase.ContainsKey(m.name)) prevCardDraw++;
                     }
-                    Chireiden.Silverfish.SimCard c;
+                    SimCard c;
                     foreach (GraveYardItem ge in Probabilitymaker.Instance.turngraveyardAll)
                     {
                         c = ge.cardid;
@@ -1497,7 +1499,7 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getCardDrawofEffectMinions(Chireiden.Silverfish.SimCard card, Playfield p)
+        private int getCardDrawofEffectMinions(SimCard card, Playfield p)
         {
             int pen = 0;
             int carddraw = 0;
@@ -1509,7 +1511,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (card.Type == CardType.MOB && (Race)card.Race == Race.PET)
+            if (card.Type == CardType.MINION && (Race)card.Race == Race.PET)
             {
                 foreach (Minion mnn in p.ownMinions)
                 {
@@ -1526,7 +1528,7 @@ namespace HREngine.Bots
             return pen;
         }
 
-        public int getCardDrawDeathrattlePenality(Chireiden.Silverfish.SimCard name, Playfield p)
+        public int getCardDrawDeathrattlePenality(SimCard name, Playfield p)
         {
             // penality if carddraw is late or you have enough cards
             if (!cardDrawDeathrattleDatabase.ContainsKey(name)) return 0;
@@ -1536,7 +1538,7 @@ namespace HREngine.Bots
             return 3 * p.optionsPlayedThisTurn;
         }
 
-        private int getRandomPenaltiy(Chireiden.Silverfish.SimCard card, Playfield p, Minion target)
+        private int getRandomPenaltiy(SimCard card, Playfield p, Minion target)
         {
             if (p.turnCounter >= 1)
             {
@@ -1609,7 +1611,7 @@ namespace HREngine.Bots
                 }
 
                 if (a.actionType == actionEnum.useHeroPower
-                    && (p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.soultap))
+                    && (p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.CardId == SimCard.soultap))
                 {
                     first = false;
                     continue;
@@ -1623,7 +1625,7 @@ namespace HREngine.Bots
 
                 if (a.actionType == actionEnum.playcard)
                 {
-                    if (card.CardId == CardIds.Collectible.Neutral.KnifeJuggler && card.Type == CardType.MOB)
+                    if (card.CardId == CardIds.Collectible.Neutral.KnifeJuggler && card.Type == CardType.MINION)
                     {
                         continue;
                     }
@@ -1653,7 +1655,7 @@ namespace HREngine.Bots
                         continue;
                     }
 
-                    if (hasknife && card.Type == CardType.MOB)
+                    if (hasknife && card.Type == CardType.MINION)
                     {
                         continue;
                     }
@@ -1671,7 +1673,7 @@ namespace HREngine.Bots
         }
 
 
-        private int getBuffHandPenalityPlay(Chireiden.Silverfish.SimCard name, Playfield p)
+        private int getBuffHandPenalityPlay(SimCard name, Playfield p)
         {
             if (!buffHandDatabase.ContainsKey(name)) return 0;
 
@@ -1706,7 +1708,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.GrimestreetOutfitter:
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.Type == CardType.MOB) anz++;
+                        if (hc1.card.Type == CardType.MINION) anz++;
                     }
                     anz--;
                     if (anz > 0) return -1 * anz * 4;
@@ -1715,7 +1717,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Shaman.TheMistcaller:
                     foreach (Handmanager.Handcard hc1 in p.owncards)
                     {
-                        if (hc1.card.Type == CardType.MOB) anz++;
+                        if (hc1.card.Type == CardType.MINION) anz++;
                     }
                     anz--;
                     anz += p.ownDeckSize / 4;
@@ -1742,7 +1744,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.SmugglersRun:
                     foreach (Handmanager.Handcard hc3 in p.owncards)
                     {
-                        if (hc3.card.Type == CardType.MOB) anz++;
+                        if (hc3.card.Type == CardType.MINION) anz++;
                     }
                     anz--;
                     if (anz > 0) return -1 * anz * 4;
@@ -1752,7 +1754,7 @@ namespace HREngine.Bots
             return 0;
         }
 
-        private int getCardDiscardPenality(Chireiden.Silverfish.SimCard name, Playfield p)
+        private int getCardDiscardPenality(SimCard name, Playfield p)
         {
             if (p.owncards.Count <= 1) return 0;
             if (p.ownMaxMana <= 3) return 0;
@@ -1783,22 +1785,23 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getDestroyOwnPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
+        private int getDestroyOwnPenality(SimCard name, Minion target, Playfield p)
         {
             if (!this.destroyOwnDatabase.ContainsKey(name)) return 0;
 
-            switch (name)
+            switch (name.CardId)
             {
-                case CardIds.Collectible.Warlock.SanguineReveler: goto case CardIds.Collectible.Warlock.Shadowflame;
-                case CardIds.Collectible.Warlock.RavenousPterrordax: goto case CardIds.Collectible.Warlock.Shadowflame;
+                case CardIds.Collectible.Warlock.SanguineReveler:
+                case CardIds.Collectible.Warlock.RavenousPterrordax:
                 case CardIds.Collectible.Warlock.Shadowflame:
                     if (target == null || !target.Ready) return 0;
                     else return 1;
                 case CardIds.Collectible.Neutral.Deathwing:
                     if (p.mobsplayedThisTurn >= 1) return 500;
                     break;
-                case CardIds.Collectible.Warlock.TwistingNether: goto case CardIds.Collectible.Warrior.Brawl;
-                case CardIds.Collectible.Warlock.Doompact: goto case CardIds.Collectible.Warrior.Brawl;
+                case CardIds.Collectible.Warlock.TwistingNether:
+                case CardIds.Collectible.Warlock.Doom:
+                case CardIds.NonCollectible.Deathknight.TheLichKing_DoomPactToken:
                 case CardIds.Collectible.Warrior.Brawl:
                     if (p.mobsplayedThisTurn >= 1) return 500;
 
@@ -1866,18 +1869,18 @@ namespace HREngine.Bots
                                 }
                             }
                             if (up > 0) return 0;
-                            if (target.handcard.card.deathrattle) return 10;
+                            if (target.handcard.card.Deathrattle) return 10;
                             else return 500;
                     }
                 }
                 else
                 {
-                    switch (name)
+                    switch (name.CardId)
                     {
                         case CardIds.Collectible.Warlock.UnwillingSacrifice:
                             if (p.enemyMinions.Count > 0)
                             {
-                                if (target.handcard.card.deathrattle) return 1;
+                                if (target.handcard.card.Deathrattle) return 1;
                                 else return 3;
                             }
                             break;
@@ -1891,7 +1894,7 @@ namespace HREngine.Bots
             return 0;
         }
 
-        private int getDestroyPenality(Chireiden.Silverfish.SimCard name, Minion target, Playfield p)
+        private int getDestroyPenality(SimCard name, Minion target, Playfield p)
         {
             if (!this.destroyDatabase.ContainsKey(name) || p.isLethalCheck) return 0;
             int pen = 0;
@@ -1899,7 +1902,7 @@ namespace HREngine.Bots
             if (target.own && !target.isHero)
             {
                 Minion m = target;
-                if (!m.handcard.card.deathrattle)
+                if (!m.handcard.card.Deathrattle)
                 {
                     pen = 500;
                 }
@@ -1951,12 +1954,12 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int getSpecialCardComboPenalitys(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        private int getSpecialCardComboPenalitys(SimCard card, Minion target, Playfield p)
         {
             bool lethal = p.isLethalCheck;
-            Chireiden.Silverfish.SimCard name = card.CardId;
+            SimCard name = card.CardId;
 
-            if (lethal && card.Type == CardType.MOB)
+            if (lethal && card.Type == CardType.MINION)
             {
                 if (this.lethalHelpers.ContainsKey(name))
                 {
@@ -2000,7 +2003,7 @@ namespace HREngine.Bots
                         case 6:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit && mm.Ready) return 0;
+                                if (mm.name == SimCard.silverhandrecruit && mm.Ready) return 0;
                             }
                             break;
                         case 7:
@@ -2034,7 +2037,7 @@ namespace HREngine.Bots
                 {
                     if ((name == CardIds.Collectible.Neutral.RendBlackhand && target != null) && !target.own)
                     {
-                        if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
+                        if ((target.taunt && target.handcard.card.Rarity == Rarity.LEGENDARY) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
@@ -2083,7 +2086,7 @@ namespace HREngine.Bots
                 pen += 10;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Race == 24)
+                    if (hc.card.Race == Race.DRAGON)
                     {
                         pen -= 10;
                         break;
@@ -2094,7 +2097,7 @@ namespace HREngine.Bots
             if (elementalLTDependentDatabase.ContainsKey(name) && p.anzOwnElementalsLastTurn == 0) pen += 10;
 
             int targets = 0;
-            switch(name)
+            switch(name.CardId)
             {
                 case CardIds.Collectible.Warrior.HobartGrapplehammer: return -5;
                 case CardIds.Collectible.Neutral.BloodsailRaider: if (p.ownWeapon.Durability == 0) return 5; return 0;
@@ -2281,7 +2284,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if ((name == CardIds.NonCollectible.Warlock.LifeTap || name == Chireiden.Silverfish.SimCard.soultap) && p.owncards.Count <= 9)
+            if ((name == CardIds.NonCollectible.Warlock.LifeTap || name == SimCard.soultap) && p.owncards.Count <= 9)
             {
                  foreach (Minion mnn in p.ownMinions)
                  {
@@ -2333,7 +2336,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.manacost <= p.ownMaxMana && hc.card.Type == CardType.MOB) return 5;
+                    if (hc.manacost <= p.ownMaxMana && hc.card.Type == CardType.MINION) return 5;
                 }
 
             }
@@ -2354,7 +2357,7 @@ namespace HREngine.Bots
                             if (hc.card.CardId == CardIds.Collectible.Hunter.Flare) continue;
                             if (hc.card.Cost <= p.mana - 2)
                             {
-                                if (!canPlayMinion && hc.card.Type == CardType.MOB)
+                                if (!canPlayMinion && hc.card.Type == CardType.MINION)
                                 {
 
                                     int tmp = p.getSecretTriggersByType(0, true, false, target);
@@ -2403,7 +2406,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.KezanMystic:
                     if (p.enemySecretCount == 1 && p.playactions.Count == 0) pen -= 50;
                     break;
-                case Chireiden.Silverfish.SimCard.水晶学:
+                case CardIds.Collectible.Paladin.Crystology:
                     if (p.owncards.Count <= 8) return -50;
                     else return 50;
                     break;
@@ -2415,7 +2418,7 @@ namespace HREngine.Bots
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == CardType.MOB)
+                            if (hc.card.Type == CardType.MINION)
                             {
                                 iii++;
                             }
@@ -2432,27 +2435,14 @@ namespace HREngine.Bots
                 //污手街供货商 grimestreetoutfitter
                 //和开车一样的道理
                 case CardIds.Collectible.Paladin.GrimestreetOutfitter:
-                    {
-                        int iii = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards)
-                        {
-                            if (hc.card.Type == CardType.MOB)
-                            {
-                                iii++;
-                            }
-                        }
-                        if (iii >= 3) return -29;
-                        else return 30;
-                    }
-                    break;
                 //亮石技师
                 //原则同上
-                case Chireiden.Silverfish.SimCard.亮石技师:
+                case CardIds.Collectible.Paladin.GlowstoneTechnician:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Type == CardType.MOB)
+                            if (hc.card.Type == CardType.MINION)
                             {
                                 iii++;
                             }
@@ -2462,12 +2452,12 @@ namespace HREngine.Bots
                     }
                     break;
                 //通电机器人
-                case Chireiden.Silverfish.SimCard.通电机器人:
+                case CardIds.Collectible.Neutral.Galvanizer:
                     {
                         int iii = 0;
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
-                            if (hc.card.Race == 17)
+                            if (hc.card.Race == Race.MECHANICAL)
                             {
                                 iii++;
                             }
@@ -2491,7 +2481,7 @@ namespace HREngine.Bots
 
 
                 //分裂战斧
-                case Chireiden.Silverfish.SimCard.分裂战斧:
+                case CardIds.Collectible.Shaman.SplittingAxe:
                   int ownTotemsCount= 0;
                   foreach (Minion m in p.ownMinions)
                         {
@@ -2500,12 +2490,12 @@ namespace HREngine.Bots
                     return 5 - ownTotemsCount * 5;
                 //风怒小陀螺
                 case CardIds.Collectible.Shaman.WhirlingZapOMatic:
-                    if (p.enemyHeroName == HeroEnum.warlock) return -10;
+                    if (p.enemyHeroName == CardClass.WARLOCK) return -10;
 
                     return 0;
 
                 //风暴聚合器
-                case Chireiden.Silverfish.SimCard.风暴聚合器:
+                case CardIds.Collectible.Shaman.TheStormBringer:
                     if (p.ownMinions.Count < 7) return 95 - p.ownMinions.Count * 25;
                     return 0;
 
@@ -2517,7 +2507,7 @@ namespace HREngine.Bots
                         if ((Race)m.handcard.card.Race == Race.TOTEM) ownTotemsCount++;
                     }
                     return 13 - ownTotemsCount * 2;
-                case Chireiden.Silverfish.SimCard.图腾潮涌:
+                case CardIds.Collectible.Shaman.TotemicSurge:
                     ownTotemsCount = 0;
                     foreach (Minion m in p.ownMinions)
                     {
@@ -2525,10 +2515,9 @@ namespace HREngine.Bots
                     }
                     return 13 - ownTotemsCount * 2;
                 //怪盗图腾
-                case Chireiden.Silverfish.SimCard.怪盗图腾:
+                case CardIds.Collectible.Shaman.EvilTotem:
                     return -2;
                 //暗金教侍从添加
-
                 case CardIds.Collectible.Mage.KabalLackey:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
@@ -2536,7 +2525,7 @@ namespace HREngine.Bots
                     }
                     break;
 
-                case Chireiden.Silverfish.SimCard.对空奥术法师:
+                case CardIds.Collectible.Mage.ArcaneFlakmage:
                     {
                         int KillCount = 0;
                         foreach (Minion mi in p.enemyMinions)
@@ -2566,30 +2555,21 @@ namespace HREngine.Bots
                                 }
                                 else
                                 {
-                                    //如果对面随从大于1
-                                    return -50 * KillCount;//推荐使用
-                                }
+                                //如果对面随从大于1
+                                return -50 * KillCount;//推荐使用
                             }
                         }
-                        break;
                     }
-
-
-
-
-
-
-
-
-
+                    break;
+                }
                 //疯狂的科学家
                 case CardIds.Collectible.Neutral.MadScientist: return -6;
                 //厄运信天翁
-                   case Chireiden.Silverfish.SimCard.厄运信天翁:
-                  int ownMinionsSumHp = 0;
-                  if (p.enemyHero.Hp < 20) return -20;
-                        foreach (Minion mm in p.ownMinions)
-                   ownMinionsSumHp += mm.Hp;
+                case CardIds.Collectible.Neutral.BadLuckAlbatross:
+                    int ownMinionsSumHp = 0;
+                    if (p.enemyHero.Hp < 20) return -20;
+                    foreach (Minion mm in p.ownMinions)
+                        ownMinionsSumHp += mm.Hp;
                   if (ownMinionsSumHp < 4) return -3;
                     else return -ownMinionsSumHp;
                     break;
@@ -2605,7 +2585,7 @@ namespace HREngine.Bots
                     bool found1 = false;
                     foreach (Minion mnn1 in p.ownMinions)
                     {
-                        if (mnn1.name == CardIds.Collectible.Mage.KabalCrystalRunner || mnn1.name == Chireiden.Silverfish.SimCard.云雾王子) found1 = true;
+                        if (mnn1.name == CardIds.Collectible.Mage.KabalCrystalRunner || mnn1.name == SimCard.云雾王子) found1 = true;
 
                     }
                     if (found1) return -10;
@@ -2621,7 +2601,7 @@ namespace HREngine.Bots
                 //法术反制
                 case CardIds.Collectible.Mage.Counterspell: return -6;
                 //火焰结界
-                case Chireiden.Silverfish.SimCard.火焰结界:
+                case SimCard.火焰结界:
                     if (p.enemyMinions.Count == 2) return -8;
                     if (p.enemyMinions.Count == 3) return -12;
                     if (p.enemyMinions.Count >= 4) return -15;
@@ -2634,7 +2614,7 @@ namespace HREngine.Bots
                     if (target.isHero) return -5;
                     break;
                 //艾露尼斯
-                case Chireiden.Silverfish.SimCard.艾露尼斯:
+                case SimCard.艾露尼斯:
                     if (p.owncards.Count >= 6) return 500;
                     else return -90;
                     break;
@@ -2664,12 +2644,12 @@ namespace HREngine.Bots
                     if (!found) return 20;
                     break;
 
-                case Chireiden.Silverfish.SimCard.Windfury:
+                case CardIds.Collectible.Shaman.Windfury:
                     if (!target.own) return 500;
                     else if (!target.Ready) return 500;
                     break;
 
-                case CardIds.Collectible.Paladin.DesperateStand: goto case CardIds.Collectible.Shaman.AncestralSpirit;
+                case CardIds.Collectible.Paladin.DesperateStand:
                 case CardIds.Collectible.Shaman.AncestralSpirit:
                     if (!target.isHero)
                     {
@@ -2702,7 +2682,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.Quartermaster:
                     foreach (Minion mm in p.ownMinions)
                     {
-                        if (mm.name == Chireiden.Silverfish.SimCard.silverhandrecruit) return 0;
+                        if (mm.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) return 0;
                     }
                     return 5;
 
@@ -2736,7 +2716,7 @@ namespace HREngine.Bots
 
                 case CardIds.Collectible.Neutral.FacelessManipulator:
                     if (target == null) return 50;
-                    if (target.Angr >= 5 || target.handcard.card.Cost >= 5 || (target.handcard.card.rarity == 5 || target.handcard.card.Cost >= 3))
+                    if (target.Angr >= 5 || target.handcard.card.Cost >= 5 || (target.handcard.card.Rarity == Rarity.LEGENDARY || target.handcard.card.Cost >= 3))
                     {
                         return 0;
                     }
@@ -2745,7 +2725,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.RendBlackhand:
                     if (target == null) return 15;
                     if (target.own) return 100;
-                    if ((target.taunt && target.handcard.card.rarity == 5) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
+                    if ((target.taunt && target.handcard.card.Rarity == Rarity.LEGENDARY) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                     {
                         foreach (Handmanager.Handcard hc in p.owncards)
                         {
@@ -2762,7 +2742,7 @@ namespace HREngine.Bots
                     }
                     return 20;
 
-                case CardIds.Collectible.Neutral.MadderBomber: goto case CardIds.Collectible.Neutral.MadBomber;
+                case CardIds.Collectible.Neutral.MadderBomber:
                 case CardIds.Collectible.Neutral.MadBomber:
                     pen = 0;
                     foreach (Minion mnn in p.ownMinions)
@@ -2842,7 +2822,7 @@ namespace HREngine.Bots
                     if (p.ownMaxMana < 6) return 50;
                     if (p.ownMinions.Count == 7) return 500;
                     if (p.ownMaxMana > 8) return 0;
-                    if (p.OwnLastDiedMinion == Chireiden.Silverfish.SimCard.None) return 6;
+                    if (p.OwnLastDiedMinion == SimCard.None) return 6;
                     return 0;
 
                 case CardIds.Collectible.Shaman.LavaShock:
@@ -2877,7 +2857,7 @@ namespace HREngine.Bots
                     {
                         if (target.own)
                         {
-                            if (target.name == Chireiden.Silverfish.SimCard.masterchest) return -5;
+                            if (target.name == CardIds.NonCollectible.Neutral.MarintheFox_MasterChest) return -5;
                             else return 500;
                         }
                         else
@@ -2976,7 +2956,7 @@ namespace HREngine.Bots
                     if (p.ownHero.Hp + p.ownHero.armor > prevDmg * 2) pen += p.ownMinions.Count * 10 + p.owncards.Count * 25;
                     break;
 
-                case CardIds.Collectible.Neutral.Deathwingdragonlord:
+                case CardIds.Collectible.Neutral.DeathwingDragonlord:
                     foreach (Handmanager.Handcard hc in p.owncards)
                     {
                         if ((Race)hc.card.Race == Race.DRAGON) pen -= 3;
@@ -3032,14 +3012,14 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Shaman.Reincarnate:
                     if (target.own)
                     {
-                        if (target.handcard.card.deathrattle || target.ancestralspirit >= 1 || target.desperatestand >= 1 || target.souloftheforest >= 1 || target.stegodon >= 1 || target.livingspores >= 1 || target.infest >= 1 || target.explorershat >= 1 || target.returnToHand >= 1 || target.deathrattle2 != null || target.enemyBlessingOfWisdom >= 1 || target.enemyPowerWordGlory >= 1) return 0;
+                        if (target.handcard.card.Deathrattle || target.ancestralspirit >= 1 || target.desperatestand >= 1 || target.souloftheforest >= 1 || target.stegodon >= 1 || target.livingspores >= 1 || target.infest >= 1 || target.explorershat >= 1 || target.returnToHand >= 1 || target.deathrattle2 != null || target.enemyBlessingOfWisdom >= 1 || target.enemyPowerWordGlory >= 1) return 0;
                         if (target.handcard.card.Charge && ((target.numAttacksThisTurn == 1 && !target.windfury) || (target.numAttacksThisTurn == 2 && target.windfury))) return 0;
                         if (target.wounded || target.Angr < target.handcard.card.Attack || (target.silenced && this.specialMinions.ContainsKey(target.name))) return 0;
 
                         bool hasOnMinionDiesMinion = false;
                         foreach (Minion mnn in p.ownMinions)
                         {
-                            if (mnn.name == CardIds.Collectible.Hunter.ScavengingHyena && target.handcard.card.Race == 20) hasOnMinionDiesMinion = true;
+                            if (mnn.name == CardIds.Collectible.Hunter.ScavengingHyena && target.handcard.card.Race == Race.BEAST) hasOnMinionDiesMinion = true;
                             if (mnn.name == CardIds.Collectible.Neutral.FlesheatingGhoul || mnn.name == CardIds.Collectible.Neutral.CultMaster) hasOnMinionDiesMinion = true;
                         }
                         if (hasOnMinionDiesMinion) return 0;
@@ -3094,14 +3074,25 @@ namespace HREngine.Bots
             //------------------------------------------------------------------------------------------------------
 
 
-            if ((p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.totemicslam) && p.ownAbilityReady == false)
+            if (new List<string> {
+                CardIds.NonCollectible.Shaman.TotemicCall,
+                CardIds.NonCollectible.Shaman.TotemicCall_TotemicCallHeroSkins1,
+                CardIds.NonCollectible.Shaman.TotemicCall_TotemicCallHeroSkins2,
+                CardIds.NonCollectible.Shaman.TotemicCall_TotemicCallHeroSkins3,
+                CardIds.NonCollectible.Shaman.TotemicCall_TotemicCallHeroSkins4,
+                CardIds.NonCollectible.Shaman.TotemicCall_TotemicCallHeroSkins5,
+                CardIds.NonCollectible.Shaman.TotemicSlamHeroSkins1,
+                CardIds.NonCollectible.Shaman.TotemicSlamHeroSkins2,
+                CardIds.NonCollectible.Shaman.TotemicSlamHeroSkins3,
+                CardIds.NonCollectible.Shaman.TotemicSlamHeroSkins4
+            }.Contains(p.ownHeroAblility.card.CardId) && p.ownAbilityReady == false)
             {
                 foreach (Action a in p.playactions)
                 {
                     if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.DraeneiTotemcarver) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == Chireiden.Silverfish.SimCard.图腾潮涌) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.TotemicSurge) return -1;
                     if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.TotemicMight) return -1;
-                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == Chireiden.Silverfish.SimCard.分裂战斧) return -1;
+                    if (a.actionType == actionEnum.playcard && a.card.card.CardId == CardIds.Collectible.Shaman.SplittingAxe) return -1;
                 }
                 if (p.owncards.Count > 1)
                 {
@@ -3150,9 +3141,9 @@ namespace HREngine.Bots
             {
                 if (target != null && target.own && !target.isHero && target.Ready) pen += 10;
 
-                switch (target.name)
+                switch (target.name.CardId)
                 {
-                    case Chireiden.Silverfish.SimCard.masterchest: return target.own ? -21 : 5;
+                    case CardIds.NonCollectible.Neutral.MarintheFox_MasterChest: return target.own ? -21 : 5;
                 }
 
                 if (card.Type == CardType.SPELL)
@@ -3182,10 +3173,10 @@ namespace HREngine.Bots
                         bool MechReq = false;
                         bool PirateReq = false;
                         bool DragonReq = false;
-                        if (target.handcard.card.battlecry)
+                        if (target.handcard.card.Battlecry)
                         {
                             if (this.dragonDependentDatabase.ContainsKey(target.name)) DragonReq = true;
-                            switch (target.name)
+                            switch (target.name.CardId)
                             {
                                 //case CardIds.Collectible.Neutral.MasterOfCeremonies:
                                 case CardIds.Collectible.Hunter.RamWrangler: BeastReq = true; break;
@@ -3213,18 +3204,18 @@ namespace HREngine.Bots
                         foreach (Minion mnn in p.ownMinions)
                         {
                             if (this.spellDependentDatabase.ContainsKey(mnn.name) && mnn.entitiyID != target.entitiyID) return 0;
-                            if (mnn.name == CardIds.Collectible.Hunter.StarvingBuzzard && mnn.entitiyID != target.entitiyID && target.handcard.card.Race == 20) return 0;
+                            if (mnn.name == CardIds.Collectible.Hunter.StarvingBuzzard && mnn.entitiyID != target.entitiyID && target.handcard.card.Race == Race.BEAST) return 0;
 
-                            if (BeastReq && mnn.handcard.card.Race == 20) return 0;
-                            if (MechReq && mnn.handcard.card.Race == 17) return 0;
-                            if (PirateReq && mnn.handcard.card.Race == 23) return 0;
+                            if (BeastReq && mnn.handcard.card.Race == Race.BEAST) return 0;
+                            if (MechReq && mnn.handcard.card.Race == Race.MECHANICAL) return 0;
+                            if (PirateReq && mnn.handcard.card.Race == Race.PIRATE) return 0;
                         }
 
                         if (DragonReq)
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if (hc.card.Race == 24) return 0;
+                                if (hc.card.Race == Race.DRAGON) return 0;
                             }
                         }
                         return 500;
@@ -3235,7 +3226,7 @@ namespace HREngine.Bots
             return pen;
         }
 
-        private int playSecretPenality(Chireiden.Silverfish.SimCard card, Playfield p)
+        private int playSecretPenality(SimCard card, Playfield p)
         {
             //penality if we play secret and have playable kirintormage
             int pen = 0;
@@ -3272,7 +3263,7 @@ namespace HREngine.Bots
         /// Then attack the mage directly with the smallest minion on your side.
         /// If nothing triggered by that point, it’s either Spellbender or Counterspell, so hold your spells until you can (and have to!) deal with either.
 
-        private int getPlayCardSecretPenality(Chireiden.Silverfish.SimCard c, Playfield p)
+        private int getPlayCardSecretPenality(SimCard c, Playfield p)
         {
             int pen = 0;
             if (p.enemySecretCount == 0)
@@ -3317,7 +3308,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.HUNTER)
             {
-                if (c.Type == CardType.MOB
+                if (c.Type == CardType.MINION
                     && (attackedbefore == 0 || c.Health <= 4
                         || (p.enemyHero.Hp >= p.enemyHeroHpStarted && attackedbefore >= 1)))
                 {
@@ -3327,7 +3318,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.MAGE)
             {
-                if (c.Type == CardType.MOB)
+                if (c.Type == CardType.MINION)
                 {
                     Minion m = new Minion
                     {
@@ -3354,7 +3345,7 @@ namespace HREngine.Bots
 
             if (p.enemyHeroStartClass == CardClass.PALADIN)
             {
-                if (c.Type == CardType.MOB)
+                if (c.Type == CardType.MINION)
                 {
                     Minion m = new Minion
                     {
@@ -3409,7 +3400,7 @@ namespace HREngine.Bots
                                     if (a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS)) pen += 22;
                                     break;
                                 case actionEnum.playcard:
-                                    if (a.card.card.Type == CardType.MOB || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
+                                    if (a.card.card.Type == CardType.MINION || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
                                     {
                                         pen += 20;
                                     }
@@ -3461,7 +3452,7 @@ namespace HREngine.Bots
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if (hc.card.Type == CardType.MOB && hc.canplayCard(p, true)) { pen += 10; break; }
+                                if (hc.card.Type == CardType.MINION && hc.canplayCard(p, true)) { pen += 10; break; }
                             }
                         }
                     }
@@ -3481,7 +3472,7 @@ namespace HREngine.Bots
                         else
                         {
                             pen += target.handcard.card.Cost;
-                            if (target.handcard.card.battlecry && target.name != CardIds.Collectible.Neutral.KingMukla) pen += 1;
+                            if (target.handcard.card.Battlecry && target.name != CardIds.Collectible.Neutral.KingMukla) pen += 1;
                             return pen;
                         }
                     }
@@ -3516,20 +3507,20 @@ namespace HREngine.Bots
         }
 
 
-        public Chireiden.Silverfish.SimCard getChooseCard(Chireiden.Silverfish.SimCard c, int choice)
+        public SimCard getChooseCard(SimCard c, int choice)
         {
             if (choice == 1 && this.choose1database.ContainsKey(c.CardId))
             {
-                c = cdb.getCardDataFromID(this.choose1database[c.CardId]);
+                c = this.choose1database[c.CardId];
             }
             else if (choice == 2 && this.choose2database.ContainsKey(c.CardId))
             {
-                c = cdb.getCardDataFromID(this.choose2database[c.CardId]);
+                c = this.choose2database[c.CardId];
             }
             return c;
         }
 
-        public int getValueOfUsefulNeedKeepPriority(Chireiden.Silverfish.SimCard name)
+        public int getValueOfUsefulNeedKeepPriority(SimCard name)
         {
             return UsefulNeedKeepDatabase.ContainsKey(name) ? UsefulNeedKeepDatabase[name] : 0;
         }
@@ -3563,8 +3554,8 @@ namespace HREngine.Bots
             int val = getValueOfMinion(mnn);
             foreach (Handmanager.Handcard card in p.owncards)
             {
-                if (card.card.Type != CardType.MOB) continue;
-                Chireiden.Silverfish.SimCard c = card.card;
+                if (card.card.Type != CardType.MINION) continue;
+                SimCard c = card.card;
                 m.Hp = c.Health;
                 m.maxHp = c.Health;
                 m.Angr = c.Attack;
@@ -3606,7 +3597,7 @@ namespace HREngine.Bots
             return ret;
         }
 
-        public int guessTotalSpellDamage(Playfield p, Chireiden.Silverfish.SimCard name, bool ownplay)
+        public int guessTotalSpellDamage(Playfield p, SimCard name, bool ownplay)
         {
             int dmg = 0;
             if (this.DamageTargetDatabase.ContainsKey(name)) dmg = this.DamageTargetDatabase[name];
@@ -3646,14 +3637,14 @@ namespace HREngine.Bots
             HealAllDatabase.Add(CardIds.Collectible.Priest.HolyNova, 2);//to all own minions
             HealAllDatabase.Add(CardIds.Collectible.Druid.TreeOfLife, 1000);//all friends
 
-            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.amarawardenofhope, 40);
+            HealHeroDatabase.Add(CardIds.NonCollectible.Priest.AwakentheMakers_AmaraWardenOfHopeToken, 40);
             HealHeroDatabase.Add(CardIds.Collectible.Neutral.AntiqueHealbot, 8); //tohero
             HealHeroDatabase.Add(CardIds.Collectible.Priest.BindingHeal, 5);
             HealHeroDatabase.Add(CardIds.Collectible.Neutral.CultApothecary, 2);
             HealHeroDatabase.Add(CardIds.Collectible.Warlock.DrainLife, 2);//tohero
             HealHeroDatabase.Add(CardIds.Collectible.Paladin.GuardianOfKings, 6);//tohero
             HealHeroDatabase.Add(CardIds.Collectible.Priest.HolyFire, 5);//tohero
-            HealHeroDatabase.Add(Chireiden.Silverfish.SimCard.invocationofwater, 12);
+            HealHeroDatabase.Add(CardIds.NonCollectible.Shaman.KalimosPrimalLord_InvocationOfWater, 12);
             HealHeroDatabase.Add(CardIds.Collectible.Shaman.JinyuWaterspeaker, 6);
             HealHeroDatabase.Add(CardIds.Collectible.Neutral.PriestessOfElune, 4);//tohero
             HealHeroDatabase.Add(CardIds.Collectible.Neutral.RefreshmentVendor, 4);
@@ -3668,14 +3659,14 @@ namespace HREngine.Bots
 
             HealTargetDatabase.Add(CardIds.Collectible.Shaman.AncestralHealing, 1000);
             HealTargetDatabase.Add(CardIds.Collectible.Druid.AncientOfLore, 5);
-            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.ancientsecrets, 5);
+            HealTargetDatabase.Add(CardIds.NonCollectible.Druid.AncientofLore_AncientSecretsClassic, 5);
             HealTargetDatabase.Add(CardIds.Collectible.Priest.BindingHeal, 5);
             HealTargetDatabase.Add(CardIds.Collectible.Priest.DarkshireAlchemist, 5);
             HealTargetDatabase.Add(CardIds.Collectible.Neutral.EarthenRingFarseer, 3);
             HealTargetDatabase.Add(CardIds.Collectible.Priest.FlashHeal, 5);
             HealTargetDatabase.Add(CardIds.Collectible.Paladin.ForbiddenHealing, 2);
             HealTargetDatabase.Add(CardIds.Collectible.Neutral.GadgetzanSocialite, 2);
-            HealTargetDatabase.Add(Chireiden.Silverfish.SimCard.heal, 4);
+            HealTargetDatabase.Add(CardIds.NonCollectible.Priest.JusticarTrueheart_Heal, 4);
             HealTargetDatabase.Add(CardIds.Collectible.Druid.HealingTouch, 8);
             HealTargetDatabase.Add(CardIds.Collectible.Shaman.HealingWave, 14);
             HealTargetDatabase.Add(CardIds.Collectible.Paladin.HolyLight, 6);
@@ -3701,11 +3692,11 @@ namespace HREngine.Bots
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.Demonwrath, 1);
             DamageAllDatabase.Add(CardIds.Collectible.Priest.DragonfirePotion, 5);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.DreadInfernal, 1);
-            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.dreadscale, 1);
+            DamageAllDatabase.Add(SimCard.dreadscale, 1);
             DamageAllDatabase.Add(CardIds.Collectible.Shaman.ElementalDestruction, 4);
             DamageAllDatabase.Add(CardIds.Collectible.Priest.ExcavatedEvil, 3);
             DamageAllDatabase.Add(CardIds.Collectible.Neutral.ExplosiveSheep, 2);
-            DamageAllDatabase.Add(Chireiden.Silverfish.SimCard.felbloom, 4);
+            DamageAllDatabase.Add(SimCard.felbloom, 4);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.FelfirePotion, 5);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.Hellfire, 3);
             DamageAllDatabase.Add(CardIds.NonCollectible.Neutral.Lava, 2);
@@ -3735,9 +3726,9 @@ namespace HREngine.Bots
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Rogue.FanOfKnives, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Mage.Flamestrike, 4);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Priest.HolyNova, 2);
-            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.invocationofair, 3);
+            DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Shaman.KalimosPrimalLord_InvocationOfAir, 3);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Shaman.LightningStorm, 3);
-            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.livingbomb, 5);
+            DamageAllEnemysDatabase.Add(SimCard.livingbomb, 5);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.LocustSwarm, 3);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Shaman.MaelstromPortal, 1);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.PoisonCloud, 1);//todo 1 or 2
@@ -3745,12 +3736,12 @@ namespace HREngine.Bots
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Warlock.Shadowflame, 2);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.Sporeburst, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Druid.Starfall, 2);
-            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.stomp, 2);
+            DamageAllEnemysDatabase.Add(SimCard.stomp, 2);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Druid.Swipe, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Mage.TwilightFlamecaller, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Hunter.ExplodingBloatbat, 2);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Hunter.DeathstalkerRexxar, 2);
-            DamageAllEnemysDatabase.Add(Chireiden.Silverfish.SimCard.deathanddecay, 3);
+            DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_DeathAndDecayToken, 3);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.BoneStorm, 1);
 
             DamageHeroDatabase.Add(CardIds.Collectible.Neutral.BackstreetLeper, 2);
@@ -3759,7 +3750,7 @@ namespace HREngine.Bots
             DamageHeroDatabase.Add(CardIds.Collectible.Neutral.EmeraldReaver, 1);
             DamageHeroDatabase.Add(CardIds.NonCollectible.Neutral.FrostBlast, 3);
             DamageHeroDatabase.Add(CardIds.Collectible.Rogue.Headcrack, 2);
-            DamageHeroDatabase.Add(Chireiden.Silverfish.SimCard.invocationoffire, 6);
+            DamageHeroDatabase.Add(CardIds.NonCollectible.Shaman.KalimosPrimalLord_InvocationOfFire, 6);
             DamageHeroDatabase.Add(CardIds.Collectible.Neutral.LeperGnome, 2);
             DamageHeroDatabase.Add(CardIds.Collectible.Priest.MindBlast, 5);
             DamageHeroDatabase.Add(CardIds.NonCollectible.Neutral.NecroticAura, 3);
@@ -3771,13 +3762,13 @@ namespace HREngine.Bots
             DamageRandomDatabase.Add(CardIds.Collectible.Mage.ArcaneMissiles, 1);
             DamageRandomDatabase.Add(CardIds.Collectible.Paladin.AvengingWrath, 1);
             DamageRandomDatabase.Add(CardIds.Collectible.Neutral.BombLobber, 4);
-            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.boombot, 1);
-            DamageRandomDatabase.Add(Chireiden.Silverfish.SimCard.boombotjr, 1);
+            DamageRandomDatabase.Add(CardIds.NonCollectible.Neutral.DrBoom_BoomBotToken, 1);
+            DamageRandomDatabase.Add(CardIds.NonCollectible.Neutral.BoomBotJrTavernBrawl, 1);
             DamageRandomDatabase.Add(CardIds.Collectible.Warrior.BouncingBlade, 1);
             DamageRandomDatabase.Add(CardIds.Collectible.Warrior.Cleave, 2);
             DamageRandomDatabase.Add(CardIds.Collectible.Neutral.Demolisher, 2);
             DamageRandomDatabase.Add(CardIds.NonCollectible.Neutral.DieInsect, 8);
-            DamageRandomDatabase.Add(CardIds.NonCollectible.Neutral.DieInsects, 8);
+            DamageRandomDatabase.Add(CardIds.NonCollectible.Neutral.DieInsect, 8);
             DamageRandomDatabase.Add(CardIds.Collectible.Hunter.FieryBat, 1);
             DamageRandomDatabase.Add(CardIds.Collectible.Mage.Flamecannon, 4);
             DamageRandomDatabase.Add(CardIds.Collectible.Neutral.FlameJuggler, 1);
@@ -3805,7 +3796,7 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.ArcaneBlast, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.ArcaneShot, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Backstab, 2);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.ballistashot, 3);
+            DamageTargetDatabase.Add(SimCard.ballistashot, 3);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.BarrelToss, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Betrayal, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.BlackwingCorruptor, 3);//if dragon in hand
@@ -3827,7 +3818,7 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Fireball, 6);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Mage.Fireblast, 1);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Mage.Fireblastrank2, 2);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.firebloomtoxin, 2);
+            DamageTargetDatabase.Add(SimCard.firebloomtoxin, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.FireElemental, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.FirelandsPortal, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.FirePlumePhoenix, 2);
@@ -3839,7 +3830,7 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.GormokTheImpaler, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.GreaterHealingPotion, 12);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.GrievousBite, 2);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.heartoffire, 5);
+            DamageTargetDatabase.Add(SimCard.heartoffire, 5);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.HoggerSmash, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.HolyFire, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.HolySmite, 2);
@@ -3853,12 +3844,12 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.Lavaburst, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.LavaShock, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.LightningBolt, 3);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.lightningjolt, 2);
+            DamageTargetDatabase.Add(SimCard.lightningjolt, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.LivingRoots, 2);//choice 1
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.MedivhsValet, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Meteor, 15);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mindshatter, 3);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.mindspike, 2);
+            DamageTargetDatabase.Add(SimCard.mindshatter, 3);
+            DamageTargetDatabase.Add(SimCard.mindspike, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Moonfire, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.MortalCoil, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Warrior.MortalStrike, 4);
@@ -3867,15 +3858,15 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.PerditionsBlade, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.Powershot, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Pyroblast, 10);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.razorpetal, 1);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.roaringtorch, 6);
+            DamageTargetDatabase.Add(SimCard.razorpetal, 1);
+            DamageTargetDatabase.Add(SimCard.roaringtorch, 6);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.ShadowBolt, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.Shadowform, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.ShadowStrike, 5);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Hunter.ShotgunBlast, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Si7Agent, 2);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.SonicBreath, 3);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.sonoftheflame, 6);
+            DamageTargetDatabase.Add(SimCard.sonoftheflame, 6);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Starfall, 5);//2 to all enemy
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Starfire, 5);//draw a card
             DamageTargetDatabase.Add(CardIds.NonCollectible.Hunter.SteadyShot, 2);//or 1 + card
@@ -3886,12 +3877,12 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.UnbalancingStrike, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.UndercityValiant, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Wrath, 1);//todo 3 or 1+card
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.voidform, 2);
+            DamageTargetDatabase.Add(SimCard.voidform, 2);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.VampiricLeech, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.UltimateInfestation, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.ToxicArrow, 2);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.siphonlife, 3);
-            DamageTargetDatabase.Add(Chireiden.Silverfish.SimCard.icytouch, 1);
+            DamageTargetDatabase.Add(SimCard.siphonlife, 3);
+            DamageTargetDatabase.Add(SimCard.icytouch, 1);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.IceClaw, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.DrainSoul, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Doomerang, 2);
@@ -3911,7 +3902,7 @@ namespace HREngine.Bots
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Paladin.HolyWrath, 2);//draw a card
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Warrior.InnerRage, 1); // gives 2 attack
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Hunter.QuickShot, 3); //draw a card
-            DamageTargetSpecialDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 4);//draw a card
+            DamageTargetSpecialDatabase.Add(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_RoguesDoIt, 4);//draw a card
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Druid.Savagery, 1);//dmg=herodamage
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Warrior.ShieldSlam, 1);//dmg=armor
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Rogue.Shiv, 1);//draw a card
@@ -3919,12 +3910,12 @@ namespace HREngine.Bots
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Warlock.Soulfire, 4);//delete a card
 
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Rogue.DaggerMastery, 1);
-            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.direshapeshift, 2);
+            HeroPowerEquipWeapon.Add(SimCard.direshapeshift, 2);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Neutral.Echolocate, 0);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Neutral.Enraged, 2);
-            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.poisoneddaggers, 2);
+            HeroPowerEquipWeapon.Add(SimCard.poisoneddaggers, 2);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Druid.Shapeshift, 1);
-            HeroPowerEquipWeapon.Add(Chireiden.Silverfish.SimCard.plaguelord, 3);
+            HeroPowerEquipWeapon.Add(SimCard.plaguelord, 3);
 
 
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.ArcaneBlast, 1);
@@ -3934,7 +3925,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.BarrelToss, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warrior.Bash, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.BlastcrystalPotion, 2);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.bloodthistletoxin, 3);
+            this.maycauseharmDatabase.Add(SimCard.bloodthistletoxin, 3);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warrior.BloodToIchor, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.ChromaticMutation, 5);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.CobraShot, 1);
@@ -3945,7 +3936,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.Deathbloom, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.Demonfire, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.Demonheart, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.dispel, 4);
+            this.maycauseharmDatabase.Add(SimCard.dispel, 4);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.DragonsBreath, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.DrainLife, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.DrakkisathsCommand, 2);
@@ -3957,7 +3948,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.ExplosiveShot, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.FeedingTime, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.Fireball, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.firebloomtoxin, 1);
+            this.maycauseharmDatabase.Add(SimCard.firebloomtoxin, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FirelandsPortal, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FlameGeyser, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FlameLance, 1);
@@ -3999,10 +3990,10 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.Powershot, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.Pyroblast, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.QuickShot, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.razorpetal, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.roaringtorch, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.rottenbanana, 1);
+            this.maycauseharmDatabase.Add(SimCard.razorpetal, 1);
+            this.maycauseharmDatabase.Add(SimCard.roaringtorch, 1);
+            this.maycauseharmDatabase.Add(SimCard.roguesdoit, 1);
+            this.maycauseharmDatabase.Add(SimCard.rottenbanana, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Savagery, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.ShadowBolt, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Rogue.Shadowstep, 3);
@@ -4022,21 +4013,21 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Starfire, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.Stormcrack, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Swipe, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.tailswipe, 1);
+            this.maycauseharmDatabase.Add(SimCard.tailswipe, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.TheTrueWarchief, 2);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.TidalSurge, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.TimeRewinder, 3);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.Volcano, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Wrath, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.DrainSoul, 1);
-            this.maycauseharmDatabase.Add(Chireiden.Silverfish.SimCard.obliterate, 2);
+            this.maycauseharmDatabase.Add(SimCard.obliterate, 2);
         }
 
         private void setupsilenceDatabase()
         {
 
             this.silenceDatabase.Add(CardIds.Collectible.Neutral.DefiasCleaner, 1);
-            this.silenceDatabase.Add(Chireiden.Silverfish.SimCard.dispel, 1);
+            this.silenceDatabase.Add(SimCard.dispel, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Shaman.EarthShock, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Neutral.IronbeakOwl, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Priest.KabalSongstealer, 1);
@@ -4064,10 +4055,10 @@ namespace HREngine.Bots
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.Icehowl, 2);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.MogorTheOgre, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.NatTheDarkfisher, 0);
-            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectralrider, 1);
-            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectraltrainee, 1);
-            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spectralwarrior, 1);
-            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.spore, 3);
+            OwnNeedSilenceDatabase.Add(SimCard.spectralrider, 1);
+            OwnNeedSilenceDatabase.Add(SimCard.spectraltrainee, 1);
+            OwnNeedSilenceDatabase.Add(SimCard.spectralwarrior, 1);
+            OwnNeedSilenceDatabase.Add(SimCard.spore, 3);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.TheBeast, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Warlock.UnlicensedApothecary, 1);
             OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingRider, 1);
@@ -4079,7 +4070,7 @@ namespace HREngine.Bots
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.ZombieChow, 2);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.TickingAbomination, 0);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.RattlingRascal, 1);
-            OwnNeedSilenceDatabase.Add(Chireiden.Silverfish.SimCard.masterchest, 1);
+            OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.MarintheFox_MasterChest, 1);
         }
 
 
@@ -4156,7 +4147,7 @@ namespace HREngine.Bots
         {
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Bite, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Claw, 2);
-            this.heroAttackBuffDatabase.Add(Chireiden.Silverfish.SimCard.evolvespines, 4);
+            this.heroAttackBuffDatabase.Add(SimCard.evolvespines, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.FeralRage, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Warrior.HeroicStrike, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Gnash, 3);
@@ -4168,7 +4159,7 @@ namespace HREngine.Bots
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.BlessingOfKings, 4);
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.BlessingOfMight, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Warlock.BloodfuryPotion, 3);
-            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.briarthorntoxin, 3);
+            this.attackBuffDatabase.Add(SimCard.briarthorntoxin, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.ClockworkKnight, 1);
             this.attackBuffDatabase.Add(CardIds.Collectible.Rogue.ColdBlood, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Warrior.CruelTaskmaster, 2);
@@ -4200,7 +4191,7 @@ namespace HREngine.Bots
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.SpikeridgedSteed, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Priest.VelensChosen, 2);
             this.attackBuffDatabase.Add(CardIds.NonCollectible.Neutral.WhirlingBlades, 1);
-            this.attackBuffDatabase.Add(Chireiden.Silverfish.SimCard.antimagicshell, 2);
+            this.attackBuffDatabase.Add(SimCard.antimagicshell, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.FallenSunCleric, 1);
             this.attackBuffDatabase.Add(CardIds.Collectible.Shaman.Cryostasis, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.Bonemare, 4);
@@ -4210,7 +4201,7 @@ namespace HREngine.Bots
         private void setupHealthBuff()
         {
             //healthBuffDatabase.Add(CardIds.Collectible.Druid.AncientOfWar, 5);//choice2 is only buffing himself!
-            //healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.rooted, 5);
+            //healthBuffDatabase.Add(SimCard.rooted, 5);
             healthBuffDatabase.Add(CardIds.Collectible.Paladin.Adaptation, 1);
             healthBuffDatabase.Add(CardIds.NonCollectible.Neutral.ArmorPlating, 1);
             healthBuffDatabase.Add(CardIds.NonCollectible.Neutral.Bananas, 1);
@@ -4241,7 +4232,7 @@ namespace HREngine.Bots
             healthBuffDatabase.Add(CardIds.Collectible.Warrior.Upgradedrepairbot, 4);
             healthBuffDatabase.Add(CardIds.Collectible.Priest.VelensChosen, 4);
             healthBuffDatabase.Add(CardIds.Collectible.Druid.Wildwalker, 3);
-            healthBuffDatabase.Add(Chireiden.Silverfish.SimCard.antimagicshell, 2);
+            healthBuffDatabase.Add(SimCard.antimagicshell, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Neutral.SunborneValkyr, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Neutral.FallenSunCleric, 1);
             healthBuffDatabase.Add(CardIds.Collectible.Shaman.Cryostasis, 3);
@@ -4262,7 +4253,7 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.ALightInTheDarkness, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.AncestralKnowledge, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.AncientOfLore, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ancientteachings, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.ancientteachings, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.ArcaneIntellect, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ArchThiefRafaam, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.AzureDrake, 1);
@@ -4272,9 +4263,9 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Burgle, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.CabalistsTome, 3);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.CallPet, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.carnassasbrood, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.carnassasbrood, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warlock.ChitteringTunneler, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.chooseyourpath, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.chooseyourpath, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ColdlightOracle, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.CommandingShout, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.Convert, 1);
@@ -4287,7 +4278,7 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.EliseStarseeker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.EliteTaurenChieftain, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.EtherealConjurer, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.excessmana, 0);
+            cardDrawBattleCryDatabase.Add(SimCard.excessmana, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.FanOfKnives, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.FarSight, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.FightPromoter, 2);
@@ -4297,17 +4288,17 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.Flameheart, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Flare, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.FreeFromAmber, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.giftofcards, 1); //choice = 2
+            cardDrawBattleCryDatabase.Add(SimCard.giftofcards, 1); //choice = 2
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GnomishExperimenter, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GnomishInventor, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.goldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.goldenmonkey, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GorillabotA3, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GrandCrusader, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GrimestreetInformant, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Hallucination, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.HammerOfWrath, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.HarrisonJones, 0);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.harvest, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.harvest, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.HolyWrath, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.Hydrologist, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.IKnowAGuy, 1);
@@ -4319,18 +4310,18 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.KabalCourier, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.Kazakus, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.KingMukla, 2);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingsblood, 2);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.kingsbloodtoxin, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.kingsblood, 2);
+            cardDrawBattleCryDatabase.Add(SimCard.kingsbloodtoxin, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.KingsElekk, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.LayOnHands, 3);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Warlock.LifeTap, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.LockAndLoad, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.LotusAgents, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.LunarVisions, 2);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.maptothegoldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.maptothegoldenmonkey, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.MarkOfYshaarj, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.MassDispel, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.megafin, 9);
+            cardDrawBattleCryDatabase.Add(SimCard.megafin, 9);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.MimicPod, 2);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.Mindpocalypse, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.MindVision, 1);
@@ -4350,17 +4341,17 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.RavenIdol, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RazorpetalLasher, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RazorpetalVolley, 2);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.roguesdoit, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.roguesdoit, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ServantOfKalimos, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Shadowcaster, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.shadowoil, 2);
+            cardDrawBattleCryDatabase.Add(SimCard.shadowoil, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.ShadowVisions, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.ShieldBlock, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Shiv, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.Slam, 0); //if survives
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.SmallTimeRecruits, 3);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.SolemnVigil, 2);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.soultap, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.soultap, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.Spellslinger, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Sprint, 4);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Stampede, 0);
@@ -4377,18 +4368,18 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.TortollanPrimalist, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.Toshley, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Tracking, 1); //NOT SUPPORTED YET
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.ungoropack, 5);
+            cardDrawBattleCryDatabase.Add(SimCard.ungoropack, 5);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.UnholyShadow, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.UnstablePortal, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.VarianWrynn, 3);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.wildmagic, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.wildmagic, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.Wrath, 1); //choice=2
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.Wrathion, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.XarilPoisonedMind, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.UltimateInfestation, 5);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.TombLurker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.GhastlyConjurer, 1);
-            cardDrawBattleCryDatabase.Add(Chireiden.Silverfish.SimCard.deathgrip, 1);
+            cardDrawBattleCryDatabase.Add(SimCard.deathgrip, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.StitchedTracker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RollTheBones, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.IceFishing, 2);
@@ -4461,7 +4452,7 @@ namespace HREngine.Bots
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.EmperorThaurissan, 11);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.FaerieDragon, 7);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Mage.FallenHero, 15);
-            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.masterchest, 48);
+            UsefulNeedKeepDatabase.Add(CardIds.NonCollectible.Neutral.MarintheFox_MasterChest, 48);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Druid.FandralStaghelm, 15);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Warlock.FelCannon, 10);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Shaman.FlametongueTotem, 30);
@@ -4481,7 +4472,7 @@ namespace HREngine.Bots
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Hobgoblin, 10);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Hogger, 13);
             UsefulNeedKeepDatabase.Add(CardIds.NonCollectible.Neutral.HomingChicken, 12);
-            UsefulNeedKeepDatabase.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 10);
+            UsefulNeedKeepDatabase.Add(SimCard.illidanstormrage, 10);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Illuminator, 2);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.ImpMaster, 5);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Rogue.IronSensei, 10);
@@ -4582,7 +4573,7 @@ namespace HREngine.Bots
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.Doomguard, 5);
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.LakkariFelhound, 4);
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.Soulfire, 1);
-            cardDiscardDatabase.Add(Chireiden.Silverfish.SimCard.succubus, 2);
+            cardDiscardDatabase.Add(SimCard.succubus, 2);
         }
 
         private void setupDestroyOwnCards()
@@ -4630,14 +4621,14 @@ namespace HREngine.Bots
             this.destroyDatabase.Add(CardIds.Collectible.Rogue.VilespineSlayer, 0);
             this.destroyDatabase.Add(CardIds.Collectible.Warlock.VoidCrusher, 0);
             this.destroyDatabase.Add(CardIds.Collectible.Priest.ObsidianStatue, 0);
-            this.destroyDatabase.Add(Chireiden.Silverfish.SimCard.obliterate, 0);
+            this.destroyDatabase.Add(SimCard.obliterate, 0);
             this.destroyDatabase.Add(CardIds.Collectible.Warlock.Doompact, 0);
         }
 
         private void setupReturnBackToHandCards()
         {
             returnHandDatabase.Add(CardIds.Collectible.Neutral.AncientBrewmaster, 0);
-            returnHandDatabase.Add(Chireiden.Silverfish.SimCard.bloodthistletoxin, 0);
+            returnHandDatabase.Add(SimCard.bloodthistletoxin, 0);
             returnHandDatabase.Add(CardIds.NonCollectible.DreamCards.Dream, 0);
             returnHandDatabase.Add(CardIds.Collectible.Rogue.GadgetzanFerryman, 0);
             returnHandDatabase.Add(CardIds.Collectible.Rogue.Kidnapper, 0);//if combo
@@ -4650,7 +4641,7 @@ namespace HREngine.Bots
 
         private void setupHeroDamagingAOE()
         {
-            this.heroDamagingAoeDatabase.Add(Chireiden.Silverfish.SimCard.None, 0);
+            this.heroDamagingAoeDatabase.Add(SimCard.None, 0);
         }
 
         private void setupSpecialMins()
@@ -4726,7 +4717,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.DragonhawkRider, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 0);
-            specialMinions.Add(Chireiden.Silverfish.SimCard.dreadscale, 0);
+            specialMinions.Add(SimCard.dreadscale, 0);
             specialMinions.Add(CardIds.Collectible.Warlock.Dreadsteed, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Eggnapper, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.EmperorCobra, 0);
@@ -4748,7 +4739,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.FoeReaper4000, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 0);
             specialMinions.Add(CardIds.Collectible.Hunter.Gahzrilla, 0);
-            specialMinions.Add(Chireiden.Silverfish.SimCard.garr, 0);
+            specialMinions.Add(SimCard.garr, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GarrisonCommander, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Gazlowe, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GenzoTheShark, 0);
@@ -4773,7 +4764,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Priest.HoodedAcolyte, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.HugeToad, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.IgneousElemental, 0);
-            specialMinions.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 0);
+            specialMinions.Add(SimCard.illidanstormrage, 0);
             specialMinions.Add(CardIds.Collectible.Warlock.ImpGangBoss, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.InfestedTauren, 0);
@@ -4812,7 +4803,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.ManaAddict, 0);
             specialMinions.Add(CardIds.Collectible.Priest.ManaGeode, 0);
             specialMinions.Add(CardIds.Collectible.Shaman.ManaTideTotem, 0);
-            specialMinions.Add(Chireiden.Silverfish.SimCard.manatreant, 0);
+            specialMinions.Add(SimCard.manatreant, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.ManaWraith, 0);
             specialMinions.Add(CardIds.Collectible.Mage.ManaWyrm, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 0);
@@ -4822,7 +4813,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.MekgineerThermaplugg, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MicroMachine, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MimironsHead, 0);
-            specialMinions.Add(Chireiden.Silverfish.SimCard.mistressofpain, 0);
+            specialMinions.Add(SimCard.mistressofpain, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Moroes, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MuklasChampion, 0);
             specialMinions.Add(CardIds.Collectible.Paladin.MurlocKnight, 0);
@@ -5003,7 +4994,7 @@ namespace HREngine.Bots
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Hunter.InfestedWolf, 1);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Rogue.JadeSwarmer, -1);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Hunter.KindlyGrandmother, -10);
-            ownSummonFromDeathrattle.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 3);
+            ownSummonFromDeathrattle.Add(SimCard.moirabronzebeard, 3);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Druid.MountedRaptor, 3);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Neutral.NerubianEgg, -16);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Neutral.PilotedShredder, 4);
@@ -5119,14 +5110,14 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonhawkRider, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 4);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.dreadscale, 10);
+            priorityTargets.Add(SimCard.dreadscale, 10);
             priorityTargets.Add(CardIds.Collectible.Shaman.DustDevil, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.Eggnapper, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.EmperorThaurissan, 10);
             priorityTargets.Add(CardIds.Collectible.Mage.EtherealArcanist, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.EydisDarkbane, 10);
             priorityTargets.Add(CardIds.Collectible.Mage.FallenHero, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.masterchest, 10);
+            priorityTargets.Add(CardIds.NonCollectible.Neutral.MarintheFox_MasterChest, 10);
             priorityTargets.Add(CardIds.Collectible.Druid.FandralStaghelm, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.FinjaTheFlyingStar, 10);
             priorityTargets.Add(CardIds.Collectible.Shaman.FlametongueTotem, 10);
@@ -5138,7 +5129,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Warrior.FrothingBerserker, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 10);
             priorityTargets.Add(CardIds.Collectible.Hunter.Gahzrilla, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.garr, 10);
+            priorityTargets.Add(SimCard.garr, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GarrisonCommander, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GenzoTheShark, 10);
             priorityTargets.Add(CardIds.Collectible.Druid.GiantAnaconda, 10);
@@ -5153,7 +5144,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Priest.HolyChampion, 10);
             priorityTargets.Add(CardIds.Collectible.Priest.HoodedAcolyte, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.IgneousElemental, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 10);
+            priorityTargets.Add(SimCard.illidanstormrage, 10);
             priorityTargets.Add(CardIds.Collectible.Warlock.ImpGangBoss, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.ImpMaster, 10);
             priorityTargets.Add(CardIds.Collectible.Rogue.IronSensei, 10);
@@ -5178,7 +5169,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.Malygos, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.ManaAddict, 10);
             priorityTargets.Add(CardIds.Collectible.Shaman.ManaTideTotem, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.manatreant, 10);
+            priorityTargets.Add(SimCard.manatreant, 10);
             priorityTargets.Add(CardIds.Collectible.Mage.ManaWyrm, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.Mechwarper, 10);
@@ -5250,8 +5241,8 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.YshaarjRageUnbound, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.TheLichKing, 10);
             priorityTargets.Add(CardIds.Collectible.Priest.ObsidianStatue, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 10);
-            priorityTargets.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 10);
+            priorityTargets.Add(SimCard.moirabronzebeard, 10);
+            priorityTargets.Add(SimCard.highjusticegrimstone, 10);
             priorityTargets.Add(CardIds.Collectible.Druid.Hadronox, 10);
             priorityTargets.Add(CardIds.NonCollectible.Neutral.Festergut, 10);
             priorityTargets.Add(CardIds.Collectible.Warlock.DespicableDreadlord, 10);
@@ -5398,7 +5389,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonhawkRider, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.dreadscale, 0);
+            silenceTargets.Add(SimCard.dreadscale, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.Eggnapper, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.Emboldener3000, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.EmperorCobra, 0);
@@ -5408,7 +5399,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.ExplosiveSheep, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.EydisDarkbane, 0);
             silenceTargets.Add(CardIds.Collectible.Mage.FallenHero, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.masterchest, 0);
+            silenceTargets.Add(CardIds.NonCollectible.Neutral.MarintheFox_MasterChest, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.FandralStaghelm, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.Feugen, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.FinjaTheFlyingStar, 0);
@@ -5421,7 +5412,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Warrior.FrothingBerserker, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 10);
             silenceTargets.Add(CardIds.Collectible.Hunter.Gahzrilla, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.garr, 0);
+            silenceTargets.Add(SimCard.garr, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.GarrisonCommander, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.GiantAnaconda, 0);
             silenceTargets.Add(CardIds.Collectible.Hunter.GiantSandWorm, 0);
@@ -5442,7 +5433,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.NonCollectible.Neutral.HomingChicken, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.HoodedAcolyte, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.IgneousElemental, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 0);
+            silenceTargets.Add(SimCard.illidanstormrage, 0);
             silenceTargets.Add(CardIds.Collectible.Warlock.ImpGangBoss, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             silenceTargets.Add(CardIds.Collectible.Rogue.IronSensei, 0);
@@ -5474,7 +5465,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.ManaAddict, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.ManaGeode, 0);
             silenceTargets.Add(CardIds.Collectible.Shaman.ManaTideTotem, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.manatreant, 0);
+            silenceTargets.Add(SimCard.manatreant, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ManaWraith, 0);
             silenceTargets.Add(CardIds.Collectible.Mage.ManaWyrm, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 0);
@@ -5564,7 +5555,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Rogue.UndercityHuckster, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.Undertaker, 0);
             silenceTargets.Add(CardIds.Collectible.Warlock.UsherOfSouls, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.v07tr0n, 0);
+            silenceTargets.Add(SimCard.v07tr0n, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ViciousFledgling, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.VioletIllusionist, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.VioletTeacher, 0);
@@ -5588,9 +5579,9 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.Skelemancer, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ShallowGravedigger, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.ShadowAscendant, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 0);
+            silenceTargets.Add(SimCard.moirabronzebeard, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.MeatWagon, 0);
-            silenceTargets.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 0);
+            silenceTargets.Add(SimCard.highjusticegrimstone, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.Hadronox, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.FrozenChampion, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.Festergut, 0);
@@ -5640,7 +5631,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Warrior.Brawl, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.CaptainsParrot, 1);
             randomEffects.Add(CardIds.Collectible.Warlock.ChitteringTunneler, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.chooseyourpath, 1);
+            randomEffects.Add(SimCard.chooseyourpath, 1);
             randomEffects.Add(CardIds.Collectible.Warrior.Cleave, 2);
             randomEffects.Add(CardIds.Collectible.Paladin.Coghammer, 1);
             randomEffects.Add(CardIds.Collectible.Shaman.Crackle, 1);
@@ -5668,10 +5659,10 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Mage.GreaterArcaneMissiles, 3);
             randomEffects.Add(CardIds.Collectible.Neutral.GrimestreetInformant, 1);
             randomEffects.Add(CardIds.Collectible.Rogue.Hallucination, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.harvest, 1);
+            randomEffects.Add(SimCard.harvest, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.HungryDragon, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.Hydrologist, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.iammurloc, 3);
+            randomEffects.Add(SimCard.iammurloc, 3);
             randomEffects.Add(CardIds.Collectible.Warrior.IKnowAGuy, 1);
             randomEffects.Add(CardIds.Collectible.Warrior.IronforgePortal, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.IvoryKnight, 1);
@@ -5680,7 +5671,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Neutral.KabalChemist, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.KabalCourier, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.Kazakus, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.kingsblood, 1);
+            randomEffects.Add(SimCard.kingsblood, 1);
             randomEffects.Add(CardIds.NonCollectible.Warlock.LifeTap, 1);
             randomEffects.Add(CardIds.Collectible.Shaman.LightningStorm, 1);
             randomEffects.Add(CardIds.Collectible.Hunter.LockAndLoad, 10);
@@ -5700,7 +5691,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Priest.MuseumCurator, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.MysteriousChallenger, 2);
             randomEffects.Add(CardIds.NonCollectible.Neutral.PileOn, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.powerofthehorde, 1);
+            randomEffects.Add(SimCard.powerofthehorde, 1);
             randomEffects.Add(CardIds.Collectible.Mage.PrimordialGlyph, 1);
             randomEffects.Add(CardIds.Collectible.Hunter.RamWrangler, 1);
             randomEffects.Add(CardIds.Collectible.Druid.RavenIdol, 1);
@@ -5708,11 +5699,11 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Rogue.Sabotage, 0);
             randomEffects.Add(CardIds.Collectible.Warlock.SenseDemons, 2);
             randomEffects.Add(CardIds.Collectible.Neutral.ServantOfKalimos, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.shadowoil, 1);
+            randomEffects.Add(SimCard.shadowoil, 1);
             randomEffects.Add(CardIds.Collectible.Priest.ShadowVisions, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.SilvermoonPortal, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.SirFinleyMrrgglton, 1);
-            randomEffects.Add(Chireiden.Silverfish.SimCard.soultap, 1);
+            randomEffects.Add(SimCard.soultap, 1);
             randomEffects.Add(CardIds.Collectible.Mage.Spellslinger, 1);
             randomEffects.Add(CardIds.Collectible.Warlock.SpreadingMadness, 9);
             randomEffects.Add(CardIds.Collectible.Hunter.Stampede, 10);
@@ -5763,7 +5754,7 @@ namespace HREngine.Bots
             this.choose1database.Add(CardIds.Collectible.Druid.WispsOfTheOldGods, CardIds.NonCollectible.Druid.WispsoftheOldGods_ManyWisps);
             this.choose1database.Add(CardIds.Collectible.Druid.Wrath, CardIds.NonCollectible.Druid.Wrath_SolarWrath);
             this.choose1database.Add(CardIds.Collectible.Druid.MalfurionThePestilent, CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderPlague);
-            this.choose1database.Add(Chireiden.Silverfish.SimCard.plaguelord, CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderFangs);
+            this.choose1database.Add(SimCard.plaguelord, CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderFangs);
             this.choose1database.Add(CardIds.Collectible.Druid.DruidOfTheSwarm, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1);
 
             this.choose2database.Add(CardIds.Collectible.Druid.AncientOfLore, CardIds.NonCollectible.Druid.AncientofLore_AncientSecretsClassic);
@@ -5924,7 +5915,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Mage.ColdarraDrake, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ColdlightOracle, 5);
             GangUpDatabase.Add(CardIds.Collectible.Priest.ConfessorPaletress, 5);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.corendirebrew, 5);
+            GangUpDatabase.Add(SimCard.corendirebrew, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Cthun, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.CultApothecary, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.CultMaster, 1);
@@ -5952,7 +5943,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Warrior.FrothingBerserker, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 1);
             GangUpDatabase.Add(CardIds.Collectible.Hunter.Gahzrilla, 5);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.garr, 5);
+            GangUpDatabase.Add(SimCard.garr, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Gazlowe, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GelbinMekkatorque, 3);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GenzoTheShark, 5);
@@ -5962,12 +5953,12 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Gruul, 4);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HarrisonJones, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HemetNesingwary, 1);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.highjusticegrimstone, 5);
+            GangUpDatabase.Add(SimCard.highjusticegrimstone, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Hobgoblin, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Hogger, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HoggerDoomOfElwynn, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.IgneousElemental, 1);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.illidanstormrage, 5);
+            GangUpDatabase.Add(SimCard.illidanstormrage, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.InfestedTauren, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.IronbeakOwl, 4);
@@ -6001,7 +5992,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MicroMachine, 1);
             GangUpDatabase.Add(CardIds.NonCollectible.Hunter.Misha, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MoatLurker, 4);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.moirabronzebeard, 5);
+            GangUpDatabase.Add(SimCard.moirabronzebeard, 5);
             GangUpDatabase.Add(CardIds.Collectible.Paladin.MurlocKnight, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MurlocTidecaller, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MurlocWarleader, 1);
@@ -6058,7 +6049,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Undertaker, 0);
             GangUpDatabase.Add(CardIds.Collectible.Rogue.UnearthedRaptor, 5);
             GangUpDatabase.Add(CardIds.Collectible.Warlock.UsherOfSouls, 1);
-            GangUpDatabase.Add(Chireiden.Silverfish.SimCard.v07tr0n, 5);
+            GangUpDatabase.Add(SimCard.v07tr0n, 5);
             GangUpDatabase.Add(CardIds.NonCollectible.Neutral.Vaelastrasz, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ViciousFledgling, 2);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.VioletIllusionist, 5);
@@ -6108,9 +6099,9 @@ namespace HREngine.Bots
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Neutral.MedivhTheGuardian, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Paladin.MusterForBattle, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.NzothsFirstMate, 1);
-            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.poisoneddaggers, 2);
+            equipWeaponPlayDatabase.Add(SimCard.poisoneddaggers, 2);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.Upgrade, 1);
-            equipWeaponPlayDatabase.Add(Chireiden.Silverfish.SimCard.visionsoftheassassin, 1);
+            equipWeaponPlayDatabase.Add(SimCard.visionsoftheassassin, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Paladin.UtherOfTheEbonBlade, 5);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.ScourgelordGarrosh, 4);
         }

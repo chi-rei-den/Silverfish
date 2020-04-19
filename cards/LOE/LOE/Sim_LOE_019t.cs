@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,7 +39,7 @@ namespace HREngine.Bots
 			}
             else p.enemyDeckSize++;
 			
-			p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+			p.drawACard(SimCard.None, ownplay);
 		}
 	}
 }

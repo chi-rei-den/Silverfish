@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon two 1/1 Spiders.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.InfestedWolf_Spider;
+        SimCard kid = CardIds.NonCollectible.Hunter.InfestedWolf_Spider;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,8 +34,8 @@ namespace HREngine.Bots
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
 
-                p.drawACard(Chireiden.Silverfish.SimCard.None, true);
-                p.drawACard(Chireiden.Silverfish.SimCard.None, false);
+                p.drawACard(SimCard.None, true);
+                p.drawACard(SimCard.None, false);
            
         }
 

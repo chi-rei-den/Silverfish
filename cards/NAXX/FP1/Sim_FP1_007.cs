@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_FP1_007 : SimTemplate //* nerubianegg
 	{
         //todesröcheln:/ ruft einen neruber (4/4) herbei.
-        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//nerubian
+        SimCard c = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//nerubian
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.callKid(c, m.zonepos-1, m.own);

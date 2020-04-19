@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -762,7 +763,7 @@ def Execute():
                         {
                             foreach (Handmanager.Handcard hc in lastChancePl.owncards)
                             {
-                                if (hc.card.CardId == Chireiden.Silverfish.SimCard.None) lastChance = true;
+                                if (hc.card.CardId == SimCard.None) lastChance = true;
                             }
                             if (!lastChance) doConcede = true;
                         }
@@ -845,7 +846,7 @@ def Execute():
 
                             await cardtoplay.Pickup();
 
-                            if (moveTodo.card.card.Type == CardType.MOB)
+                            if (moveTodo.card.card.Type == CardType.MINION)
                             {
                                 await cardtoplay.UseAt(moveTodo.place);
                             }
@@ -885,7 +886,7 @@ def Execute():
 
                     await cardtoplay.Pickup();
 
-                    if (moveTodo.card.card.Type == CardType.MOB)
+                    if (moveTodo.card.card.Type == CardType.MINION)
                     {
                         await cardtoplay.UseAt(moveTodo.place);
                     }
@@ -1025,7 +1026,7 @@ def Execute():
                 var lscc = ccm.m_lastShownChoiceState;
                 GAME_TAG choiceMode = GAME_TAG.CHOOSE_ONE;
                 int sourceEntityId = -1;
-                Chireiden.Silverfish.SimCard sourceEntityCId = Chireiden.Silverfish.SimCard.None;
+                SimCard sourceEntityCId = SimCard.None;
                 if (lscc != null)
                 {
                     sourceEntityId = lscc.m_sourceEntityId;

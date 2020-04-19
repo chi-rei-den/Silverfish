@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Summon a 5/5 copy of a random minion in your deck.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.KingMukla; //King Mukla 5/5
+        SimCard kid = CardIds.Collectible.Neutral.KingMukla; //King Mukla 5/5
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

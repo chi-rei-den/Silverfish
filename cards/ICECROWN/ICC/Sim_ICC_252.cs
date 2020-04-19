@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -47,7 +48,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (frozen) p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
+            if (frozen) p.drawACard(SimCard.None, m.own);
         }
     }
 }

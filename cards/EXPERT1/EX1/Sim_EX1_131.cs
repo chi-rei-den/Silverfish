@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_131 : SimTemplate //defiasringleader
 	{
-        Chireiden.Silverfish.SimCard card = CardIds.NonCollectible.Rogue.DefiasRingleader_DefiasBanditToken;
+        SimCard card = CardIds.NonCollectible.Rogue.DefiasRingleader_DefiasBanditToken;
 //    combo:/ ruft einen banditen der defias (2/1) herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

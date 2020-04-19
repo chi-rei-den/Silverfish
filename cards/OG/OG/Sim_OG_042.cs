@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//At the end of your turn, put a minion from your deck into the battlefield.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Priest.TempleEnforcer; //6/6 Temple Enforcer
+        SimCard kid = CardIds.Collectible.Priest.TempleEnforcer; //6/6 Temple Enforcer
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

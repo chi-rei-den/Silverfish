@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
     class Sim_PRO_001a : SimTemplate//I Am Murloc
     {
         //Summon three, four, or five 1/1 Murlocs.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.EliteTaurenChieftain_Murloc;
+        SimCard kid = CardIds.NonCollectible.Neutral.EliteTaurenChieftain_Murloc;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

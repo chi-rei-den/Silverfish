@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a random Murloc.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.ColdlightOracle;//Coldlight Oracle 2/2
+		SimCard kid = CardIds.Collectible.Neutral.ColdlightOracle;//Coldlight Oracle 2/2
 
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

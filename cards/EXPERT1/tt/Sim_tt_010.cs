@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
         //todo secret
         //    geheimnis:/ wenn ein feind einen zauber auf einen diener wirkt, ruft ihr einen diener (1/3) als neues ziel herbei.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Mage.Spellbender_Spellbender;
+        SimCard kid = CardIds.NonCollectible.Mage.Spellbender_Spellbender;
 
         public override void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
         {

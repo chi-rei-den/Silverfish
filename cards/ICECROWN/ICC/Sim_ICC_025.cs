@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon a 5/5 Skeleton. Deathrattle: Summon a 5/5 Skeleton for your opponent.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.SkeletonHeroic; //Skeleton 5/5
+        SimCard kid = CardIds.NonCollectible.Neutral.SkeletonHeroic; //Skeleton 5/5
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

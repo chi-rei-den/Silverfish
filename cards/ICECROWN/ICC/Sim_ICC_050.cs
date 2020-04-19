@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Summon two 1/2 Poisonous Spiders
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1; //Poisonous Spider
+        SimCard kid = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1; //Poisonous Spider
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

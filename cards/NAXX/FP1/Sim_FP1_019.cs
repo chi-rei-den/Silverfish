@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_FP1_019 : SimTemplate //poisonseeds
 	{
-        Chireiden.Silverfish.SimCard d = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;
+        SimCard d = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;
 //    vernichtet alle diener und ruft für jeden einen treant (2/2) als ersatz herbei.
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)

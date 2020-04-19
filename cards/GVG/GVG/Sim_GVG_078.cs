@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace HREngine.Bots
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(CardIds.NonCollectible.Neutral.ArmorPlating, false, true);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
+            p.drawACard(SimCard.None, true, true);
         }
     }
 }

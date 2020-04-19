@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon two 1/1 Skeletons.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.GrimNecromancer_SkeletonToken; //1/1 Skeleton
+        SimCard kid = CardIds.NonCollectible.Neutral.GrimNecromancer_SkeletonToken; //1/1 Skeleton
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

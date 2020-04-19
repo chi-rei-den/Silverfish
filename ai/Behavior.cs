@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 
 using System.Collections.Generic;
 
@@ -20,7 +21,7 @@ namespace HREngine.Bots
             return "None";
         }
 
-        public virtual int getPlayCardPenality(Chireiden.Silverfish.SimCard card, Minion target, Playfield p)
+        public virtual int getPlayCardPenality(SimCard card, Minion target, Playfield p)
         {
             return 0;
         }

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_CS2_151 : SimTemplate //silverhandknight
 	{
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Squire;//squire
+        SimCard kid = CardIds.NonCollectible.Neutral.Squire;//squire
 //    kampfschrei:/ ruft einen knappen (2/2) herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

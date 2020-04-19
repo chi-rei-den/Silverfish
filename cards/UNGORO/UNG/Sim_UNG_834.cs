@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.FeedingTime_PterrordaxToken;
+        SimCard kid = CardIds.NonCollectible.Warlock.FeedingTime_PterrordaxToken;
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

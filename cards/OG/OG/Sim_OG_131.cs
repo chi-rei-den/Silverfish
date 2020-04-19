@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Taunt Battlecry:If your C'Thun has at least 10 attack, summon another Emperor.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.TwinEmperorVeknilash;
+        SimCard kid = CardIds.NonCollectible.Neutral.TwinEmperorVeknilash;
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

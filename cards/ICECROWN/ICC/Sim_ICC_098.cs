@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,12 +33,12 @@ namespace HREngine.Bots
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
             var temp = (own.own) ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
-            Chireiden.Silverfish.SimCard c;
+            SimCard c;
             bool found = false;
             foreach (var gi in temp)
             {
                 c = (gi.Key);
-                if (c.deathrattle)
+                if (c.Deathrattle)
                 {
                     p.drawACard(c.CardId, own.own, true);
                     found = true;
@@ -51,7 +52,7 @@ namespace HREngine.Bots
                     if (gi.own == own.own)
                     {
                         c = (gi.cardid);
-                        if (c.deathrattle)
+                        if (c.Deathrattle)
                         {
                             p.drawACard(c.CardId, own.own, true);
                             break;

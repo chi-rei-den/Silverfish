@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) p.minionGetBuffed(m, 2, 2);
+                if (m.name == SimCard.silverhandrecruit) p.minionGetBuffed(m, 2, 2);
             }
         }
 

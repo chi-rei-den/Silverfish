@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Equip a 4/3 Shadowmourne that also damages adjacent minions.
 
-        Chireiden.Silverfish.SimCard w = CardIds.NonCollectible.Warrior.ScourgelordGarrosh_Shadowmourne; //Shadowmourne
+        SimCard w = CardIds.NonCollectible.Warrior.ScourgelordGarrosh_Shadowmourne; //Shadowmourne
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

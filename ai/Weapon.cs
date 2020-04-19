@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using Triton.Game.Mapping;
 
@@ -9,8 +10,8 @@ namespace HREngine.Bots
     public class Weapon
     {
         public int pID = 0;
-        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.None;
-        public Chireiden.Silverfish.SimCard card;
+        public SimCard name = SimCard.None;
+        public SimCard card;
         public int numAttacksThisTurn = 0;
         public bool immuneWhileAttacking = false;
         
@@ -55,7 +56,7 @@ namespace HREngine.Bots
             return true;
         }
 
-        public void equip(Chireiden.Silverfish.SimCard c)
+        public void equip(SimCard c)
         {
             this.name = c.CardId;
             this.card = c;

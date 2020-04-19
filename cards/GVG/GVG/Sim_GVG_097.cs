@@ -37,7 +37,7 @@ namespace HREngine.Bots
             int gain = 0;
             foreach (Minion m in temp)
             {
-                if (m.handcard.card.deathrattle) gain++;
+                if (m.handcard.card.Deathrattle) gain++;
             }
             if(gain>=1) p.minionGetBuffed(own, gain, gain);
         }

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,7 +36,7 @@ namespace HREngine.Bots
         {
             if (hc.card.Type == CardType.SPELL && wasOwnCard == triggerEffectMinion.own)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, wasOwnCard);
+                p.drawACard(SimCard.None, wasOwnCard);
             }
 
         }

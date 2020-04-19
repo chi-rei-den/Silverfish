@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Choose One - Give your minions +1/+1; or Summon a 3/2 Panther.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken;//panther
+        SimCard kid = CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken;//panther
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

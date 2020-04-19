@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
         {
             for (int i = 0; i < minionsGotHealed; i++)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, triggerEffectMinion.own);
+                p.drawACard(SimCard.None, triggerEffectMinion.own);
             }
         }
 	}

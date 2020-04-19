@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_NAX8_03 : SimTemplate //* Unrelenting Trainee
 	{
 //    Deathrattle:: Summon a Spectral Trainee for your opponent.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingTrainee_SpectralTraineeToken; //Spectral Trainee
+        SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingTrainee_SpectralTraineeToken; //Spectral Trainee
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

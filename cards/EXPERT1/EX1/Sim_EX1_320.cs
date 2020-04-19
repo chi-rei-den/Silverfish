@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 
 //    fügt einem charakter $2 schaden zu. beschwört einen zufälligen dämon, wenn der schaden tödlich ist.
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Warlock.BloodImp;//bloodimp
+        SimCard kid = CardIds.Collectible.Warlock.BloodImp;//bloodimp
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
 

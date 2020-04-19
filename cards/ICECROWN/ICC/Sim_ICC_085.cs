@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,18 +31,18 @@ namespace HREngine.Bots
     {
         // Deal 5 damage. Draw 5 cards. Gain 5 Armor. Summon a 5/5 Ghoul.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.UltimateInfestation_GhoulInfestorToken; //Ghoul Infestor
+        SimCard kid = CardIds.NonCollectible.Druid.UltimateInfestation_GhoulInfestorToken; //Ghoul Infestor
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             p.minionGetDamageOrHeal(target, dmg);
 
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
 
             p.minionGetArmor(ownplay ? p.ownHero : p.enemyHero, 5);
 

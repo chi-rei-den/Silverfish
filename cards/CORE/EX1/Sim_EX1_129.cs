@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace HREngine.Bots
 		{
             int dmg = (ownplay) ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
             p.allMinionOfASideGetDamage(!ownplay, dmg);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
 		}
 
 	}

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Spend all your Mana. Summon that many 1/1 Tentacles.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.ForbiddenRitual_IckyTentacle; //Icky Tentacle
+        SimCard kid = CardIds.NonCollectible.Warlock.ForbiddenRitual_IckyTentacle; //Icky Tentacle
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

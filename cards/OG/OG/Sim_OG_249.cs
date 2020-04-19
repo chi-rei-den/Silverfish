@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Taunt. Deathrattle: Summon a 2/2 Slime.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;
+        SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

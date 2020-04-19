@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Deathrattle: Summon a number of 1/1 Rats equal to this minion's Attack.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.RatPack_RatToken; //1/1 Rat
+        SimCard kid = CardIds.NonCollectible.Hunter.RatPack_RatToken; //1/1 Rat
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

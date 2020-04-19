@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +33,7 @@ public override void onCardPlay(Playfield p, bool ownplay, Minion target, int ch
 {
 p.minionGetBuffed(target, 2, 2);
 if ((Race)target.handcard.card.Race == Race.ELEMENTAL)
-p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
+p.drawACard(SimCard.None, ownplay, true);
 if ((Race)target.handcard.card.Race == Race.TOTEM)
 p.evaluatePenality -= 5;
 }

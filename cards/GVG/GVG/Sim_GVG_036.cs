@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Give a random friendly Mech +2/+2.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.Powermace;
+        SimCard weapon = CardIds.Collectible.Shaman.Powermace;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 1/1 Spectator with Taunt.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.JeeringCrowd_DarkIronSpectatorToken;//Dark Iron Spectator
+		SimCard kid = CardIds.NonCollectible.Neutral.JeeringCrowd_DarkIronSpectatorToken;//Dark Iron Spectator
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

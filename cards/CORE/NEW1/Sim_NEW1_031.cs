@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
         //Summon a random Beast Companion.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.Misha;//misha
+        SimCard kid = CardIds.NonCollectible.Hunter.Misha;//misha
         
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

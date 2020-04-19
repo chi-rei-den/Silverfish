@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
         // Destroy any Frozen minion damaged by this.
         //done in Playfield
 
-        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Shaman.IceBreaker;
+        SimCard w = CardIds.Collectible.Shaman.IceBreaker;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

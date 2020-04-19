@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 3/3 Flamewaker Acolyte.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.FlamewakerAcolyteHeroic;//3/3Flamewaker Acolyte
+		SimCard kid = CardIds.NonCollectible.Neutral.FlamewakerAcolyteHeroic;//3/3Flamewaker Acolyte
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

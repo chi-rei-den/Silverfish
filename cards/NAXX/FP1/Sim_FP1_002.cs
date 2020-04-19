@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon two 1/1 Spectral Spiders.
 
-        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.HauntedCreeper_SpectralSpiderToken;
+        SimCard c = CardIds.NonCollectible.Neutral.HauntedCreeper_SpectralSpiderToken;
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

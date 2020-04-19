@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Equip a 5/3 Lifesteal weapon.
 
-        Chireiden.Silverfish.SimCard w = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_GraveVengeanceToken; //Grave Vengeance
+        SimCard w = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_GraveVengeanceToken; //Grave Vengeance
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

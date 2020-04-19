@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon two 0/1 Frozen Champions.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Mage.Sindragosa_FrozenChampionToken; //Frozen Champion
+        SimCard kid = CardIds.NonCollectible.Mage.Sindragosa_FrozenChampionToken; //Frozen Champion
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

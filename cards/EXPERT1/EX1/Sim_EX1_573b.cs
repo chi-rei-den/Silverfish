@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Summon two 2/2 Treants with Taunt.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.Cenarius_TreantToken; //special treant
+        SimCard kid = CardIds.NonCollectible.Druid.Cenarius_TreantToken; //special treant
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
             int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;

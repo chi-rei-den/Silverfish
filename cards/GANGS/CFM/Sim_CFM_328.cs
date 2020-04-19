@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,8 +37,8 @@ namespace HREngine.Bots
             {
                 if (mnn.Hp >= 6)
                 {
-                    p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
-                    p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
+                    p.drawACard(SimCard.None, m.own);
+                    p.drawACard(SimCard.None, m.own);
                     break;
                 }
             }

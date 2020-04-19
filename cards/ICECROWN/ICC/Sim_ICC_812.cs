@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,15 +32,15 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            Chireiden.Silverfish.SimCard cId = Chireiden.Silverfish.SimCard.None;
+            SimCard cId = SimCard.None;
             for (int i = m.Angr - 1; i >= 0; i--)
             {
                 cId = p.prozis.getDeckCardsForCost(i);
-                if (cId != Chireiden.Silverfish.SimCard.None) break;
+                if (cId != SimCard.None) break;
             }
-            if (cId != Chireiden.Silverfish.SimCard.None)
+            if (cId != SimCard.None)
             {
-                Chireiden.Silverfish.SimCard kid = (cId);
+                SimCard kid = (cId);
                 p.callKid(kid, m.zonepos - 1, m.own);
             }
         }

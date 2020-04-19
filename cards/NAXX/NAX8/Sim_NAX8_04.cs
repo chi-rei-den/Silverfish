@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_NAX8_04 : SimTemplate //* Unrelenting Warrior
 	{
 //    Deathrattle:: Summon a Spectral Warrior for your opponent.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingWarrior_SpectralWarriorToken; //Spectral Warrior
+        SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingWarrior_SpectralWarriorToken; //Spectral Warrior
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

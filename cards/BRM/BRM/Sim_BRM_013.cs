@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -36,7 +37,7 @@ namespace HREngine.Bots
             p.minionGetDamageOrHeal(target, dmg);
 			
 			int cardsCount = (ownplay) ? p.owncards.Count : p.enemyAnzCards;
-            if (cardsCount <= 0) p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            if (cardsCount <= 0) p.drawACard(SimCard.None, ownplay);
 		}
 	}
 }

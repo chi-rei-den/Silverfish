@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay, true);
+            p.drawACard(SimCard.None, ownplay, true);
         }
     }
 }

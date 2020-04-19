@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 		//Deals double damage to heroes.
 		//Handled in minionAttacksMinion()
 
-		Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.MassiveRunebladeHeroic;
+		SimCard weapon = CardIds.NonCollectible.Neutral.MassiveRunebladeHeroic;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

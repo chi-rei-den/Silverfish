@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,7 +39,7 @@ namespace HREngine.Bots
             m.extraParam2 = diedMinions;
             for (int i = 0; i < residual; i++)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, m.own);
+                p.drawACard(SimCard.None, m.own);
             }
         }
 	}

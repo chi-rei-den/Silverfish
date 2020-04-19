@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_Mekka4 : SimTemplate //* poultryizer
 	{
-        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.Chicken;
+        SimCard c = CardIds.NonCollectible.Neutral.Chicken;
                                 
 //    verwandelt zu beginn eures zuges einen zufälligen diener in ein huhn (1/1).
 

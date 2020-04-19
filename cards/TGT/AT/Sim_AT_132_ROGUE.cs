@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Hero Power. Equip a 2/2 Weapon.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDagger;
+        SimCard weapon = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDagger;
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

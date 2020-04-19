@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Transform into a 2/5 minion.
 
-        Chireiden.Silverfish.SimCard hawk = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken2;
+        SimCard hawk = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

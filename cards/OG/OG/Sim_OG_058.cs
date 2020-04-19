@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_OG_058 : SimTemplate //* Rusty Hook
 	{
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warrior.RustyHook;
+        SimCard weapon = CardIds.NonCollectible.Warrior.RustyHook;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

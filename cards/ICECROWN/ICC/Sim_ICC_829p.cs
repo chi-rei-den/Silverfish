@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,10 +31,10 @@ namespace HREngine.Bots
     {
         // Hero Power: Summon a 2/2 Horseman. If you have all 4, destroy the enemy hero.
 
-        Chireiden.Silverfish.SimCard kid1 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_DeathlordNazgrimToken; //Deathlord Nazgrim
-        Chireiden.Silverfish.SimCard kid2 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_ThorasTrollbaneToken; //Thoras Trollbane
-        Chireiden.Silverfish.SimCard kid3 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_InquisitorWhitemaneToken; //Inquisitor Whitemane
-        Chireiden.Silverfish.SimCard kid4 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_DarionMograineToken; //Darion Mograine
+        SimCard kid1 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_DeathlordNazgrimToken; //Deathlord Nazgrim
+        SimCard kid2 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_ThorasTrollbaneToken; //Thoras Trollbane
+        SimCard kid3 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_InquisitorWhitemaneToken; //Inquisitor Whitemane
+        SimCard kid4 = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_DarionMograineToken; //Darion Mograine
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

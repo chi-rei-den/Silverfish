@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_LOEA16_5 : SimTemplate //* Mirror of Doom
 	{
 		// Fill your board with 3/3 Mummy Zombies.
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.MirrorofDoom_MummyZombieToken;//Mummy Zombie
+		SimCard kid = CardIds.NonCollectible.Neutral.MirrorofDoom_MummyZombieToken;//Mummy Zombie
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

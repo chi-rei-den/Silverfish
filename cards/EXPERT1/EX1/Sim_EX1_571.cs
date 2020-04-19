@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Summon three 2/2 Treants.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
+        SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

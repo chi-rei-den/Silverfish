@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Return this to your hand.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Warrior.TentaclesForArms;
+        SimCard weapon = CardIds.Collectible.Warrior.TentaclesForArms;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

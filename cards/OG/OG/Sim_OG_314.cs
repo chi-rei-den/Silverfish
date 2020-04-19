@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deal 1 damage to a minion. If it survives, summon a 2/2 Slime.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.InfestedTauren_Slime;
+        SimCard kid = CardIds.NonCollectible.Neutral.InfestedTauren_Slime;
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

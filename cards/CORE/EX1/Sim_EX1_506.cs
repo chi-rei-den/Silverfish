@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_506 : SimTemplate //murloctidehunter
 	{
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.MurlocTidehunter_MurlocScout;//murlocscout
+        SimCard kid = CardIds.NonCollectible.Neutral.MurlocTidehunter_MurlocScout;//murlocscout
 //    kampfschrei:/ ruft einen murlocspäher (1/1) herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     public class SimTemplate
@@ -111,7 +112,7 @@ namespace HREngine.Bots
             return;
         }
 
-        public virtual void onCardWasPlayed(Playfield p, Chireiden.Silverfish.SimCard c, bool wasOwnCard, Minion triggerEffectMinion)
+        public virtual void onCardWasPlayed(Playfield p, SimCard c, bool wasOwnCard, Minion triggerEffectMinion)
         {
             return;
         }

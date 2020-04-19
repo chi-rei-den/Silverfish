@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Your Hero Power: becomes 'Deal 8 damage to a random enemy.'
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warrior.FirePlumesHeart_SulfurasToken;
+        SimCard weapon = CardIds.NonCollectible.Warrior.FirePlumesHeart_SulfurasToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Charge
 
-        Chireiden.Silverfish.SimCard cat = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1;
+        SimCard cat = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

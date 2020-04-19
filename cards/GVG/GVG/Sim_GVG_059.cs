@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
     internal class Sim_GVG_059 : SimTemplate //Coghammer
     {
         //   Battlecry: Give a random friendly minion Divine Shield and Taunt;.
-        private Chireiden.Silverfish.SimCard w = CardIds.Collectible.Paladin.Coghammer;
+        private SimCard w = CardIds.Collectible.Paladin.Coghammer;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

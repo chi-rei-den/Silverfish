@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Has +6 Attack if the other Horsemen are dead.
 		//Handled in Horsemen
-		Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.RunebladeHeroic;
+		SimCard weapon = CardIds.NonCollectible.Neutral.RunebladeHeroic;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_FP1_009 : SimTemplate //* deathlord
 	{
         //Taunt. Deathrattle: Your opponent puts a minion from their deck into the battlefield.
-        Chireiden.Silverfish.SimCard c = CardIds.Collectible.Mage.KirinTorMage;//kirintormage
+        SimCard c = CardIds.Collectible.Mage.KirinTorMage;//kirintormage
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

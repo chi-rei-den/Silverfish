@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 3/3 Finkle Einhorn for your opponent.
 
-        Chireiden.Silverfish.SimCard c = CardIds.NonCollectible.Neutral.FinkleEinhorn;//finkleeinhorn
+        SimCard c = CardIds.NonCollectible.Neutral.FinkleEinhorn;//finkleeinhorn
         public override void onDeathrattle(Playfield p, Minion m)
         {
             int pos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;

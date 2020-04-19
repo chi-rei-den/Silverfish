@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 		//Lifesteal
 		//Handled in minionAttacksMinion()
 
-		Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_GraveVengeanceToken;
+		SimCard weapon = CardIds.NonCollectible.Paladin.UtheroftheEbonBlade_GraveVengeanceToken;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace HREngine.Bots
 	{
 		//Choose One - Charge or +1/+1 and Stealth.
         
-        Chireiden.Silverfish.SimCard cCharge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
-        Chireiden.Silverfish.SimCard cStealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken12;
-        Chireiden.Silverfish.SimCard cTiger = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheSaber;
+        SimCard cCharge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
+        SimCard cStealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken12;
+        SimCard cTiger = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheSaber;
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

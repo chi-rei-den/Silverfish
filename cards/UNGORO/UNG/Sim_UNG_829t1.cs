@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Open a permanent portal that summons 3/2 Imps.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.LakkariSacrifice_NetherPortalToken2; //Nether Portal
+        SimCard kid = CardIds.NonCollectible.Warlock.LakkariSacrifice_NetherPortalToken2; //Nether Portal
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

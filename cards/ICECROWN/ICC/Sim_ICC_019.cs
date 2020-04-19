@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: If it's your opponent's turn, summon an 8/8 Skeleton.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Skelemancer_SkeletalFlayerToken; //Skeletal Flayer
+        SimCard kid = CardIds.NonCollectible.Neutral.Skelemancer_SkeletalFlayerToken; //Skeletal Flayer
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

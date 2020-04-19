@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == summonedMinion.own)
             {
-                if (summonedMinion.handcard.card.deathrattle) p.minionGetBuffed(triggerEffectMinion,1,0);
+                if (summonedMinion.handcard.card.Deathrattle) p.minionGetBuffed(triggerEffectMinion,1,0);
             }
         }
 

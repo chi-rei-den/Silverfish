@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,15 +34,15 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                List<Chireiden.Silverfish.SimCard> secrets = new List<Chireiden.Silverfish.SimCard>();
-                Chireiden.Silverfish.SimCard c;
-                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in p.prozis.turnDeck)
+                List<SimCard> secrets = new List<SimCard>();
+                SimCard c;
+                foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = (cid.Key);
                     if (c.Secret) secrets.Add(cid.Key);
                 }
 
-                foreach (Chireiden.Silverfish.SimCard cId in secrets)
+                foreach (SimCard cId in secrets)
                 {
                     if (p.ownSecretsIDList.Count < 5 && !p.ownSecretsIDList.Contains(cId)) p.ownSecretsIDList.Add(cId);
                 }

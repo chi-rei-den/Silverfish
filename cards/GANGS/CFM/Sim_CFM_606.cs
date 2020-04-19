@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Whenever this minion is healed, summon a 2/2 Crystal.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Priest.ManaGeode_CrystalToken; //2/2 Crystal
+        SimCard kid = CardIds.NonCollectible.Priest.ManaGeode_CrystalToken; //2/2 Crystal
 
         public override void onAMinionGotHealedTrigger(Playfield p, Minion triggerEffectMinion, int minionsGotHealed)
         {

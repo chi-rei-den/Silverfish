@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a random 3-Cost minion.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.LightsChampion; //Light's Champion
+		SimCard kid = CardIds.Collectible.Neutral.LightsChampion; //Light's Champion
 				
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a 6/6 Ogre.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.BigTimeRacketeer_LittleFriendToken; //6/6 Ogre
+        SimCard kid = CardIds.NonCollectible.Neutral.BigTimeRacketeer_LittleFriendToken; //6/6 Ogre
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         //   Deal $2-$4 damage to a minion. Summon a 1/1 Imp for each damage dealt.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.Implosion_ImpToken;
+        SimCard kid = CardIds.NonCollectible.Warlock.Implosion_ImpToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using HearthDb;
 namespace HREngine.Bots
 {
@@ -74,7 +76,7 @@ namespace HREngine.Bots
                 if (a.card.card.CardId == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.CardId == CardIds.Collectible.Druid.Innervate) usecoin++;
 
                 if(a.card.card.Type == CardType.SPELL && a.card.card.CardId == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
-                if (a.card.card.Type == CardType.SPELL && a.card.card.CardId == Chireiden.Silverfish.SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
+                if (a.card.card.Type == CardType.SPELL && a.card.card.CardId == SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
                 if(a.card.card.Secret) retval += 5;
             }
             if (usecoin > 0)
@@ -87,7 +89,7 @@ namespace HREngine.Bots
             {
                 switch (p.ownHeroAblility.card.CardId)
                 {
-                    case Chireiden.Silverfish.SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
+                    case SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
                     case CardIds.NonCollectible.Priest.LesserHeal:
                         bool wereTarget = false;
                         if (p.ownHero.Hp < p.ownHero.maxHp) wereTarget = true;
@@ -100,22 +102,22 @@ namespace HREngine.Bots
                         }
                         if (wereTarget && !(p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0)) retval -= 10;
                         break;
-                    case Chireiden.Silverfish.SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
+                    case SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
                     case CardIds.NonCollectible.Rogue.DaggerMastery:
                         if (!(p.ownWeapon.Durability > 1 || p.ownWeapon.Angr > 1)) retval -= 10;
                         break;
-                    case Chireiden.Silverfish.SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
+                    case SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
                     case CardIds.NonCollectible.Shaman.TotemicCall:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case Chireiden.Silverfish.SimCard.thetidalhand: goto case Chireiden.Silverfish.SimCard.reinforce;
-                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case Chireiden.Silverfish.SimCard.reinforce;
-                    case Chireiden.Silverfish.SimCard.reinforce:
+                    case SimCard.thetidalhand: goto case SimCard.reinforce;
+                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case SimCard.reinforce;
+                    case SimCard.reinforce:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case Chireiden.Silverfish.SimCard.soultap: 
+                    case SimCard.soultap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
                     case CardIds.NonCollectible.Warlock.LifeTap: 
@@ -136,11 +138,11 @@ namespace HREngine.Bots
             {
                 retval += m.Hp * 1;
                 retval += m.Angr * 2;
-                retval += m.handcard.card.rarity;
+                retval += m.handcard.card.Rarity;
                 if (m.windfury) retval += m.Angr;
                 if (m.taunt) retval += 1;
                 if (!m.taunt && m.stealth && m.handcard.card.isSpecialMinion && !m.silenced) retval += 20;
-                if (m.handcard.card.CardId == Chireiden.Silverfish.SimCard.silverhandrecruit && m.Angr == 1 && m.Hp == 1) retval -= 5;
+                if (m.handcard.card.CardId == SimCard.silverhandrecruit && m.Angr == 1 && m.Hp == 1) retval -= 5;
                 if (p.ownMinions.Count > 1 && (m.handcard.card.CardId == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.CardId == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.CardId == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.CardId == CardIds.Collectible.Neutral.RaidLeader || m.handcard.card.CardId == CardIds.Collectible.Mage.FallenHero)) retval += 10;
                 if (m.handcard.card.CardId == CardIds.Collectible.Neutral.NerubianEgg)
                 {
@@ -152,7 +154,7 @@ namespace HREngine.Bots
 
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.Type == CardType.MOB)
+                if (hc.card.Type == CardType.MINION)
                 {
                     retval += hc.addattack + hc.addHp + hc.elemPoweredUp;
                 }
@@ -179,8 +181,8 @@ namespace HREngine.Bots
             foreach (Action a in p.playactions)
             {
                 if (a.actionType != actionEnum.playcard) continue;
-                if (a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == Chireiden.Silverfish.SimCard.succubus) deletecardsAtLast = 1;
-                if (deletecardsAtLast == 1 && !(a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == Chireiden.Silverfish.SimCard.succubus)) retval -= 20;
+                if (a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == SimCard.succubus) deletecardsAtLast = 1;
+                if (deletecardsAtLast == 1 && !(a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == SimCard.succubus)) retval -= 20;
             }
             if (p.enemyHero.Hp >= 1 && p.guessingHeroHP <= 0)
             {
@@ -213,7 +215,7 @@ namespace HREngine.Bots
                     if (p.ownMinions.Count < p.enemyMinions.Count) retval += 10;
                 }
                 if (m.lifesteal) retval += m.Angr;
-                if (m.handcard.card.isSpecialMinion) retval += m.handcard.card.rarity;
+                if (m.handcard.card.isSpecialMinion) retval += m.handcard.card.Rarity;
             }
 
             retval += m.synergy;

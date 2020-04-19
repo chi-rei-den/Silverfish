@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a 1/3 Spider.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.CellarSpider;//Cellar Spider
+        SimCard kid = CardIds.NonCollectible.Neutral.CellarSpider;//Cellar Spider
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

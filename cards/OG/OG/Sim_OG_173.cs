@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//If you control two of these at the end of your turn, merge them into 'The Ancient One'
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.BloodofTheAncientOne_TheAncientOne; //The Ancient One
+        SimCard kid = CardIds.NonCollectible.Neutral.BloodofTheAncientOne_TheAncientOne; //The Ancient One
 		
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

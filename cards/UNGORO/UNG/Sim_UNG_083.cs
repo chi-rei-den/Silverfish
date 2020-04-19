@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 5/5 Devilsaur.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DevilsaurEgg_DevilsaurToken; //5/5 Devilsaur
+        SimCard kid = CardIds.NonCollectible.Neutral.DevilsaurEgg_DevilsaurToken; //5/5 Devilsaur
         
         public override void onDeathrattle(Playfield p, Minion m)
         {

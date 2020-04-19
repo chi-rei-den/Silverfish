@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +37,7 @@ public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, 
 {
 if (turnEndOfOwner == triggerEffectMinion.own)
 {
-p.drawACard(Chireiden.Silverfish.SimCard.None, turnEndOfOwner);
+p.drawACard(SimCard.None, turnEndOfOwner);
 }
 }
 

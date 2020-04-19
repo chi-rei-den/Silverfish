@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Battlecry: Summon a 3/6 Water Elemental. Your Elementals have Lifesteal for the rest of the game.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Mage.FrostLichJaina_WaterElementalToken; //Water Elemental
+        SimCard kid = CardIds.NonCollectible.Mage.FrostLichJaina_WaterElementalToken; //Water Elemental
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -17,7 +17,7 @@ namespace HREngine.Bots
             weaponuse
         }
 
-        private Dictionary<Chireiden.Silverfish.SimCard, int> playByValue = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        private Dictionary<SimCard, int> playByValue = new Dictionary<SimCard, int>();
         private List<combo> combos = new List<combo>();
         public int attackFaceHP = -1;
 
@@ -45,11 +45,11 @@ namespace HREngine.Bots
             private ComboBreaker cb;
             public combotype type = combotype.combo;
             public int neededMana = 0;
-            public Dictionary<Chireiden.Silverfish.SimCard, int> combocards = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            public Dictionary<Chireiden.Silverfish.SimCard, int> cardspen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn0Mobs = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn0All = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            public Dictionary<Chireiden.Silverfish.SimCard, int> combocardsTurn1 = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            public Dictionary<SimCard, int> combocards = new Dictionary<SimCard, int>();
+            public Dictionary<SimCard, int> cardspen = new Dictionary<SimCard, int>();
+            public Dictionary<SimCard, int> combocardsTurn0Mobs = new Dictionary<SimCard, int>();
+            public Dictionary<SimCard, int> combocardsTurn0All = new Dictionary<SimCard, int>();
+            public Dictionary<SimCard, int> combocardsTurn1 = new Dictionary<SimCard, int>();
             public int penality = 0;
             public int combolength = 0;
             public int combot0len = 0;
@@ -59,14 +59,14 @@ namespace HREngine.Bots
             public int bonusForPlaying = 0;
             public int bonusForPlayingT0 = 0;
             public int bonusForPlayingT1 = 0;
-            public Chireiden.Silverfish.SimCard requiredWeapon = Chireiden.Silverfish.SimCard.None;
+            public SimCard requiredWeapon = SimCard.None;
             public CardClass oHero;
 
             public combo(string s)
             {
                 int i = 0;
                 this.neededMana = 0;
-                requiredWeapon = Chireiden.Silverfish.SimCard.None;
+                requiredWeapon = SimCard.None;
                 this.type = combotype.combo;
                 this.twoTurnCombo = false;
                 bool fixmana = false;
@@ -170,7 +170,7 @@ namespace HREngine.Bots
                             }
                             else
                             {
-                                Chireiden.Silverfish.SimCard lolcrd = crd;
+                                SimCard lolcrd = crd;
                                 if (lolcrd.Type == CardType.MINION)
                                 {
                                     if (this.combocardsTurn0Mobs.ContainsKey(crd))
@@ -224,7 +224,7 @@ namespace HREngine.Bots
             public int isInCombo(List<Handmanager.Handcard> hand, int omm)
             {
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -239,11 +239,11 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, Chireiden.Silverfish.SimCard weapon)
+            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, SimCard weapon)
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -258,7 +258,7 @@ namespace HREngine.Bots
                 {
                     //search for required minions on field
                     int turn0requires = 0;
-                    foreach (Chireiden.Silverfish.SimCard s in combocardsTurn0Mobs.Keys)
+                    foreach (SimCard s in combocardsTurn0Mobs.Keys)
                     {
                         foreach (Minion m in ownmins)
                         {
@@ -270,7 +270,7 @@ namespace HREngine.Bots
                         }
                     }
 
-                    if (requiredWeapon != Chireiden.Silverfish.SimCard.None && requiredWeapon != weapon) return 1;
+                    if (requiredWeapon != SimCard.None && requiredWeapon != weapon) return 1;
 
                     if (turn0requires >= combot0len) return 2;
 
@@ -284,7 +284,7 @@ namespace HREngine.Bots
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -304,7 +304,7 @@ namespace HREngine.Bots
             }
 
 
-            public bool isMultiTurn1Card(Chireiden.Silverfish.SimCard card)
+            public bool isMultiTurn1Card(SimCard card)
             {
                 if (this.combocardsTurn1.ContainsKey(card.CardId))
                 {
@@ -313,7 +313,7 @@ namespace HREngine.Bots
                 return false;
             }
 
-            public bool isCardInCombo(Chireiden.Silverfish.SimCard card)
+            public bool isCardInCombo(SimCard card)
             {
                 if (this.combocards.ContainsKey(card.CardId))
                 {
@@ -325,7 +325,7 @@ namespace HREngine.Bots
             public int hasPlayedCombo(List<Handmanager.Handcard> hand)
             {
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocards);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -343,7 +343,7 @@ namespace HREngine.Bots
             {
                 if (this.combocardsTurn0All.Count == 0) return 0;
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn0All);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -361,7 +361,7 @@ namespace HREngine.Bots
             {
                 if (this.combocardsTurn1.Count == 0) return 0;
                 int cardsincombo = 0;
-                Dictionary<Chireiden.Silverfish.SimCard, int> combocardscopy = new Dictionary<Chireiden.Silverfish.SimCard, int>(this.combocardsTurn1);
+                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
                 foreach (Handmanager.Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
@@ -443,7 +443,7 @@ namespace HREngine.Bots
                         try
                         {
                             string cardvalue = line.Replace("cardvalue:", "");
-                            Chireiden.Silverfish.SimCard ce = cdb.cardIdstringToEnum(cardvalue.Split(',')[0]);
+                            SimCard ce = cardvalue.Split(',')[0];
                             int val = Convert.ToInt32(cardvalue.Split(',')[1]);
                             if (this.playByValue.ContainsKey(ce)) continue;
                             this.playByValue.Add(ce, val);
@@ -474,7 +474,7 @@ namespace HREngine.Bots
             help.ErrorLog("[连招功能] " + combos.Count + " “连招”功能激活成功, " + playByValue.Count + " 个权重值已加载");
         }
 
-        public int getPenalityForDestroyingCombo(Chireiden.Silverfish.SimCard crd, Playfield p)
+        public int getPenalityForDestroyingCombo(SimCard crd, Playfield p)
         {
             if (this.combos.Count == 0) return 0;
             int pen = int.MaxValue;
@@ -508,8 +508,8 @@ namespace HREngine.Bots
             if (this.combos.Count == 0) return 0;
 
             List<Action> alist = p.playactions;
-            Chireiden.Silverfish.SimCard weapon = p.ownWeapon.name;
-            HeroEnum heroname = p.ownHeroName;
+            SimCard weapon = p.ownWeapon.name;
+            var heroname = p.ownHeroName;
 
             //returns a penalty only if the combo could be played, but is not played completely
             List<Handmanager.Handcard> playedcards = new List<Handmanager.Handcard>();
@@ -519,7 +519,7 @@ namespace HREngine.Bots
             foreach (Action a in alist)
             {
                 if (a.actionType != actionEnum.playcard) continue;
-                Chireiden.Silverfish.SimCard crd = a.card.card;
+                SimCard crd = a.card.card;
                 foreach (combo c in this.combos)
                 {
                     if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
@@ -561,7 +561,7 @@ namespace HREngine.Bots
 
         }
 
-        public int getPlayValue(Chireiden.Silverfish.SimCard ce)
+        public int getPlayValue(SimCard ce)
         {
             if (this.playByValue.Count == 0) return 0;
             if (this.playByValue.ContainsKey(ce))

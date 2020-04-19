@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a Jade Golem. Overload: (1)
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.JadeClaws;
+        SimCard weapon = CardIds.Collectible.Shaman.JadeClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Whenever this minion takes damage, summon a 2/2 Gnoll with Taunt.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.HoggerDoomofElwynn_GnollToken;
+        SimCard kid = CardIds.NonCollectible.Neutral.HoggerDoomofElwynn_GnollToken;
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {

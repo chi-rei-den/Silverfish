@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Handmanager.Handcard triggerhc)
         {
-            if (hc.card.battlecry && hc.card.Type == CardType.MOB)
+            if (hc.card.Battlecry && hc.card.Type == CardType.MINION)
             {
                 hc.addattack++;
                 hc.addHp++;

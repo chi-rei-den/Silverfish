@@ -38,7 +38,7 @@ namespace HREngine.Bots
 
     public struct IDEnumOwner
     {
-        public Chireiden.Silverfish.SimCard IDEnum;
+        public SimCard IDEnum;
         public bool own;
     }
 
@@ -195,9 +195,9 @@ namespace HREngine.Bots
         public int mana = 0;
         public int manaTurnEnd = 0;
 
-        public List<Chireiden.Silverfish.SimCard> ownSecretsIDList = new List<Chireiden.Silverfish.SimCard>();
+        public List<SimCard> ownSecretsIDList = new List<SimCard>();
         public List<SecretItem> enemySecretList = new List<SecretItem>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> enemyCardsOut = null;
+        public Dictionary<SimCard, int> enemyCardsOut = null;
 
         public List<Playfield> nextPlayfields = new List<Playfield>();
 
@@ -310,9 +310,9 @@ namespace HREngine.Bots
         public Playfield endTurnState = null;
 
         // just for saving which minion to revive with secrets (=the first one that died);
-        public Chireiden.Silverfish.SimCard revivingOwnMinion = Chireiden.Silverfish.SimCard.None;
-        public Chireiden.Silverfish.SimCard revivingEnemyMinion = Chireiden.Silverfish.SimCard.None;
-        public Chireiden.Silverfish.SimCard OwnLastDiedMinion = Chireiden.Silverfish.SimCard.None;
+        public SimCard revivingOwnMinion = SimCard.None;
+        public SimCard revivingEnemyMinion = SimCard.None;
+        public SimCard OwnLastDiedMinion = SimCard.None;
 
         public int shadowmadnessed = 0; //minions has switched controllers this turn.
 
@@ -726,8 +726,8 @@ namespace HREngine.Bots
                 }
 
                 if (m.name == CardIds.Collectible.Paladin.DragonConsort && anzOwnDragonConsort > 0) this.anzOwnDragonConsortStarted++;
-                if (m.handcard.card.Race == 23) this.anzOwnPiratesStarted++;
-                if (m.handcard.card.Race == 14) this.anzOwnMurlocStarted++;
+                if (m.handcard.card.Race == Race.PIRATE) this.anzOwnPiratesStarted++;
+                if (m.handcard.card.Race == Race.MURLOC) this.anzOwnMurlocStarted++;
 
             }
 
@@ -748,7 +748,7 @@ namespace HREngine.Bots
                 this.enemyspellpower = this.enemyspellpowerStarted;
                 if (m.taunt) anzEnemyTaunt++;
 
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     case CardIds.Collectible.Neutral.BaronRivendare:
                         this.enemyBaronRivendare++;
@@ -1557,11 +1557,11 @@ namespace HREngine.Bots
             return mana;
         }
 
-        public int EnemyPlaysACard(Chireiden.Silverfish.SimCard cardname, int currmana, int playAroundProb, int pap2)
+        public int EnemyPlaysACard(SimCard cardname, int currmana, int playAroundProb, int pap2)
         {
             //todo manacosts
 
-            switch (cardname)
+            switch (cardname.CardId)
             {
                 case CardIds.Collectible.Mage.Flamestrike:
                     if (currmana >= 7)
@@ -1624,7 +1624,7 @@ namespace HREngine.Bots
 
                             int anz = this.ownMinions.Count;
                             int posi = this.enemyMinions.Count - 1;
-                            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.UnleashTheHoundst;//hound
+                            SimCard kid = CardIds.NonCollectible.Hunter.UnleashtheHounds_HoundToken;//hound
                             for (int i = 0; i < anz; i++)
                             {
                                 callKid(kid, posi, false);
@@ -1848,10 +1848,10 @@ namespace HREngine.Bots
             return trgts2;
         }
 
-        public int getBestPlace(Chireiden.Silverfish.SimCard card, bool lethal)
+        public int getBestPlace(SimCard card, bool lethal)
         {
             //we return the zonepos!
-            if (card.Type != CardType.MOB) return 1;
+            if (card.Type != CardType.MINION) return 1;
             if (this.ownMinions.Count == 0) return 1;
             if (this.ownMinions.Count == 1)
             {
@@ -1994,7 +1994,7 @@ namespace HREngine.Bots
 
 
                 int cval = 0;
-                if (card.Charge || (card.Race == 20 && tundrarhino))
+                if (card.Charge || (card.Race == Race.BEAST && tundrarhino))
                 {
                     cval = card.Attack;
                     if (card.Windfury) cval = card.Attack;
@@ -2368,7 +2368,7 @@ namespace HREngine.Bots
             bool haveImmune = false;
             if (this.guessingHeroHP < 1 && this.ownSecretsIDList.Count > 0)
             {
-                foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
+                foreach (SimCard secretID in this.ownSecretsIDList)
                 {
                     switch (secretID.CardId)
                     {
@@ -2437,11 +2437,11 @@ namespace HREngine.Bots
                                 foreach (Minion m in this.enemyMinions)
                                 {
                                     if (m.frozen) continue;
-                                    switch (m.name)
+                                    switch (m.name.CardId)
                                     {
-                                        case CardIds.Collectible.Neutral.AncientWatcher: if (!m.silenced) continue; break;
-                                        case CardIds.NonCollectible.Neutral.BlackKnight: if (!m.silenced) continue; break;
-                                        case CardIds.NonCollectible.Neutral.WhiteKnight: if (!m.silenced) continue; break;
+                                        case CardIds.Collectible.Neutral.AncientWatcher:
+                                        case CardIds.NonCollectible.Neutral.BlackKnight:
+                                        case CardIds.NonCollectible.Neutral.WhiteKnight:
                                         case CardIds.Collectible.Neutral.HumongousRazorleaf: if (!m.silenced) continue; break;
                                     }
                                     if (m.Hp < 3)
@@ -2472,7 +2472,7 @@ namespace HREngine.Bots
             {
                 if (!m.frozen && !m.cantAttack)
                 {
-                    switch (m.name)
+                    switch (m.name.CardId)
                     {
                         case CardIds.Collectible.Neutral.Icehowl: if (!m.silenced) continue; break;
                     }
@@ -2487,37 +2487,37 @@ namespace HREngine.Bots
                 {
                     //direct damage
                     case CardIds.NonCollectible.Hunter.SteadyShot: totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Hunter.SteadyShot_H1: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Hunter.SteadyShot_SteadyShotHeroSkins2: totalEnemyDamage += 2; break;
                     case CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot: totalEnemyDamage += 3; break;
-                    case CardIds.NonCollectible.Hunter.SteadyShot_H1_AT_132: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Hunter.BallistaShotHeroSkins1: totalEnemyDamage += 3; break;
                     case CardIds.NonCollectible.Neutral.FrostBlast: totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Neutral.FrostBlastH: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Neutral.FrostBlastHeroic: totalEnemyDamage += 2; break;
                     case CardIds.NonCollectible.Neutral.NecroticAura: totalEnemyDamage += 3; break;
-                    case CardIds.NonCollectible.Neutral.NecroticAuraH: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Neutral.NecroticAuraHeroic: totalEnemyDamage += 3; break;
                     case CardIds.NonCollectible.Mage.Fireblast: totalEnemyDamage += 1; break;
-                    case CardIds.NonCollectible.Mage.Fireblast_H1: totalEnemyDamage += 1; break;
-                    case CardIds.NonCollectible.Mage.Fireblast_H2: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_FireblastHeroSkins1: totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Mage.Fireblast_FireblastHeroSkins2: totalEnemyDamage += 1; break;
                     case CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken: totalEnemyDamage += 2; break;
                     case CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2: totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Mage.Fireblast_H1_AT_132: totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Mage.Fireblast_H2_AT_132: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Mage.FireblastRank2HeroSkins1: totalEnemyDamage += 2; break;
+                    case CardIds.NonCollectible.Mage.FireblastRank2HeroSkins2: totalEnemyDamage += 2; break;
                     case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken: totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken2: totalEnemyDamage += 3; break;
+                    case CardIds.NonCollectible.Priest.Shadowform_MindShatterToken: totalEnemyDamage += 3; break;
                     case CardIds.NonCollectible.Hunter.ShotgunBlast: totalEnemyDamage += 1; break;
                     case CardIds.NonCollectible.Neutral.UnbalancingStrike: totalEnemyDamage += 3; break;
-                    case CardIds.NonCollectible.Neutral.UnbalancingStrikeH: totalEnemyDamage += 4; break;
+                    case CardIds.NonCollectible.Neutral.UnbalancingStrikeHeroic: totalEnemyDamage += 4; break;
                     //condition
                     case CardIds.NonCollectible.Neutral.IgniteManaHeroic: if (this.mana > 0) totalEnemyDamage += 10; break;
                     case CardIds.NonCollectible.Neutral.IgniteMana: if (this.mana > 0) totalEnemyDamage += 5; break;
                     case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower: if (this.ownMinions.Count < 1) totalEnemyDamage += 8; break;
-                    case CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPowerH: if (this.ownMinions.Count < 2) totalEnemyDamage += 8; break;
+                    case CardIds.NonCollectible.Neutral.MajordomoExecutusHeroic: if (this.ownMinions.Count < 2) totalEnemyDamage += 8; break;
                     case CardIds.NonCollectible.Neutral.BoomBotJrTavernBrawl: if (this.ownMinions.Count < 2) totalEnemyDamage += 1; break;
                     //equip weapon
                     case CardIds.NonCollectible.Neutral.Enraged: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
-                    case CardIds.NonCollectible.Neutral.EnragedH: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 5; break;
+                    case CardIds.NonCollectible.Neutral.EnragedHeroic: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 5; break;
                     case CardIds.NonCollectible.Druid.Shapeshift: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
                     case CardIds.NonCollectible.Rogue.DaggerMastery: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
-                    case CardIds.NonCollectible.Rogue.DaggerMastery_H1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
+                    case CardIds.NonCollectible.Rogue.DaggerMasteryHeroSkins1: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 1; break;
                     case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
                     case CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift: if (this.enemyWeapon.Durability < 1 && !this.enemyHero.frozen) totalEnemyDamage += 2; break;
                 }
@@ -2531,7 +2531,7 @@ namespace HREngine.Bots
             if (totalEnemyDamage < this.ownHero.Hp + this.ownHero.armor) return false;
             if (this.ownSecretsIDList.Count > 0)
             {
-                foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
+                foreach (SimCard secretID in this.ownSecretsIDList)
                 {
                     switch (secretID.CardId)
                     {
@@ -2569,11 +2569,11 @@ namespace HREngine.Bots
         {
             // DONT KILL ENEMY HERO (cause its only guessing)
 
-            List<Chireiden.Silverfish.SimCard> tmpSecretsIDList = new List<Chireiden.Silverfish.SimCard>();
+            List<SimCard> tmpSecretsIDList = new List<SimCard>();
             List<Minion> temp;
             int pos;
 
-            foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
+            foreach (SimCard secretID in this.ownSecretsIDList)
             {
                 switch (secretID.CardId)
                 {
@@ -2583,7 +2583,7 @@ namespace HREngine.Bots
 
                         pos = this.ownMinions.Count;
                         if (pos == 0) continue;
-                        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.SnakeTrapt;//snake
+                        SimCard kid = CardIds.NonCollectible.Hunter.SnakeTrap_SnakeToken;//snake
                         callKid(kid, pos, true, false);
                         callKid(kid, pos, true);
                         callKid(kid, pos, true);
@@ -2782,11 +2782,11 @@ namespace HREngine.Bots
         {
             // DONT KILL ENEMY HERO (cause its only guessing)
 
-            List<Chireiden.Silverfish.SimCard> tmpSecretsIDList = new List<Chireiden.Silverfish.SimCard>();
+            List<SimCard> tmpSecretsIDList = new List<SimCard>();
             List<Minion> temp;
 
             bool activate = false;
-            foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
+            foreach (SimCard secretID in this.ownSecretsIDList)
             {
                 switch (secretID.CardId)
                 {
@@ -3187,7 +3187,7 @@ namespace HREngine.Bots
                         if (this.isOwnTurn)
                         {
                             playACard(a.card, a.target, a.place, a.druidchoice, a.penalty);
-                            if (ownQuest.questProgress == ownQuest.maxProgress && ownQuest.Id != Chireiden.Silverfish.SimCard.None)
+                            if (ownQuest.questProgress == ownQuest.maxProgress && ownQuest.Id != SimCard.None)
                             {
                                 this.drawACard(ownQuest.Reward(), true);
                                 ownQuest.Reset();
@@ -3372,7 +3372,7 @@ namespace HREngine.Bots
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) this.minionGetBuffed(attacker, 2, 2);
                     break;
                 case CardIds.Collectible.Neutral.WindUpBurglebot:
-                    if (!defender.isHero && attacker.Hp > 0) this.drawACard(Chireiden.Silverfish.SimCard.None, attacker.own);
+                    if (!defender.isHero && attacker.Hp > 0) this.drawACard(SimCard.None, attacker.own);
                     break;
                 case CardIds.Collectible.Rogue.LotusAssassin:
                     if (!defender.isHero && defender.Hp < 1 && attacker.Hp > 0) attacker.stealth = true;
@@ -3391,12 +3391,12 @@ namespace HREngine.Bots
                     {
                         if (attacker.own)
                         {
-                            Chireiden.Silverfish.SimCard c;
+                            SimCard c;
                             int count = 7 - this.ownMinions.Count;
                             if (count > 0)
                             {
                                 if (count > 2) count = 2;
-                                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in this.prozis.turnDeck)
+                                foreach (KeyValuePair<SimCard, int> cid in this.prozis.turnDeck)
                                 {
                                     c = (cid.Key);
                                     if ((Race)c.Race == Race.MURLOC)
@@ -3572,7 +3572,7 @@ namespace HREngine.Bots
         // 5.1 dmg/died/dthrttl triggers
         public void playACard(Handmanager.Handcard hc, Minion target, int position, int choice, int penality)
         {
-            Chireiden.Silverfish.SimCard c = hc.card;
+            SimCard c = hc.card;
             this.evaluatePenality += penality;
             if (this.nextSpellThisTurnCostHealth && hc.card.Type == CardType.SPELL)
             {
@@ -3652,13 +3652,13 @@ namespace HREngine.Bots
                 }
                 if (this.ownHero.entitiyID == newTarget) target = this.ownHero;
                 if (this.enemyHero.entitiyID == newTarget) target = this.enemyHero;
-                if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.Type == CardType.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
+                if (this.ownQuest.Id != SimCard.None && c.Type == CardType.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
                 hc.target = target;
             }
             if (newTarget != -2) // trigger spell-secrets!
             {
 
-                if (c.Type == CardType.MOB)
+                if (c.Type == CardType.MINION)
                 {
                     if (this.ownMinions.Count < 7)
                     {
@@ -3669,7 +3669,7 @@ namespace HREngine.Bots
                     {
                         for (int i = 1; i <= stampede; i++)
                         {
-                            this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
+                            this.drawACard(SimCard.None, true, true);
                         }
                     }
                 }
@@ -3679,11 +3679,11 @@ namespace HREngine.Bots
                     {
                         for (int i = 1; i <= lockandload; i++)
                         {
-                            this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
+                            this.drawACard(SimCard.None, true, true);
                         }
                     }
                     c.Simulator.onCardPlay(this, true, target, choice);
-                    if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None && c.Type == CardType.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
+                    if (this.ownQuest.Id != SimCard.None && c.Type == CardType.SPELL) this.ownQuest.trigger_SpellWasPlayed(target, hc.entity);
                     else if (c.Type == CardType.WEAPON)
                     {
                         this.ownWeapon.Angr += hc.addattack;
@@ -3717,7 +3717,7 @@ namespace HREngine.Bots
 
         }
 
-        public void enemyplaysACard(Chireiden.Silverfish.SimCard c, Minion target, int position, int choice, int penality)
+        public void enemyplaysACard(SimCard c, Minion target, int position, int choice, int penality)
         {
 
             Handmanager.Handcard hc = new Handmanager.Handcard(c);
@@ -3755,7 +3755,7 @@ namespace HREngine.Bots
             }
             if (newTarget != -2) // trigger spell-secrets!
             {
-                if (c.Type == CardType.MOB)
+                if (c.Type == CardType.MINION)
                 {
                     //todo mob playing
                     //this.placeAmobSomewhere(hc, target, choice, position);
@@ -3777,7 +3777,7 @@ namespace HREngine.Bots
         public void playHeroPower(Minion target, int penality, bool ownturn, int choice)
         {
 
-            Chireiden.Silverfish.SimCard c = (ownturn) ? this.ownHeroAblility.card : this.enemyHeroAblility.card;
+            SimCard c = (ownturn) ? this.ownHeroAblility.card : this.enemyHeroAblility.card;
 
             if (ownturn)
             {
@@ -3813,7 +3813,7 @@ namespace HREngine.Bots
                 this.ownWeapon.Durability -= value;
                 if (this.ownWeapon.Durability <= 0)
                 {
-                    if (this.ownWeapon.card.deathrattle)
+                    if (this.ownWeapon.card.Deathrattle)
                     {
                         Minion m = new Minion { own = true };
                         ownWeapon.card.Simulator.onDeathrattle(this, m);
@@ -3825,7 +3825,7 @@ namespace HREngine.Bots
 
                     foreach (Minion m in this.ownMinions)
                     {
-                        switch (m.name)
+                        switch (m.name.CardId)
                         {
                             case CardIds.Collectible.Neutral.SouthseaDeckhand:
                                 if (m.playedThisTurn)
@@ -3851,7 +3851,7 @@ namespace HREngine.Bots
                 this.enemyWeapon.Durability -= value;
                 if (this.enemyWeapon.Durability <= 0)
                 {
-                    if (this.enemyWeapon.card.deathrattle)
+                    if (this.enemyWeapon.card.Deathrattle)
                     {
                         Minion m = new Minion { own = false };
                         enemyWeapon.card.Simulator.onDeathrattle(this, m);
@@ -3863,7 +3863,7 @@ namespace HREngine.Bots
 
                     foreach (Minion m in this.enemyMinions)
                     {
-                        switch (m.name)
+                        switch (m.name.CardId)
                         {
                             case CardIds.Collectible.Neutral.SmallTimeBuccaneer:
                                 this.minionGetBuffed(m, -2, 0);
@@ -3937,11 +3937,11 @@ namespace HREngine.Bots
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.CardId)
                 {
-                    case CardIds.Collectible.Neutral.Lightwarden: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.HolyChampion: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.Shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.HoodedAcolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.aiextra1:
+                    case CardIds.Collectible.Neutral.Lightwarden:
+                    case CardIds.Collectible.Priest.HolyChampion:
+                    case CardIds.Collectible.Priest.Shadowboxer:
+                    case CardIds.Collectible.Priest.HoodedAcolyte:
+                    case SimCard.None:
                         mnn.handcard.card.Simulator.onACharGotHealed(this, mnn, anz);
                         break;
                     case CardIds.Collectible.Paladin.Blackguard:
@@ -3954,11 +3954,11 @@ namespace HREngine.Bots
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.CardId)
                 {
-                    case CardIds.Collectible.Neutral.Lightwarden: goto case Chireiden.Silverfish.SimCard.None;
-                    case CardIds.Collectible.Priest.HolyChampion: goto case Chireiden.Silverfish.SimCard.None;
-                    case CardIds.Collectible.Priest.Shadowboxer: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.HoodedAcolyte: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.aiextra1:
+                    case CardIds.Collectible.Neutral.Lightwarden:
+                    case CardIds.Collectible.Priest.HolyChampion:
+                    case CardIds.Collectible.Priest.Shadowboxer:
+                    case CardIds.Collectible.Priest.HoodedAcolyte:
+                    case SimCard.None:
                         mnn.handcard.card.Simulator.onACharGotHealed(this, mnn, anz);
                         break;
                     case CardIds.Collectible.Paladin.Blackguard:
@@ -3979,9 +3979,9 @@ namespace HREngine.Bots
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.CardId)
                 {
-                    case CardIds.Collectible.Priest.NorthshireCleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.ManaGeode: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.aiextra1:
+                    case CardIds.Collectible.Priest.NorthshireCleric:
+                    case CardIds.Collectible.Priest.ManaGeode:
+                    case SimCard.None:
                         mnn.handcard.card.Simulator.onAMinionGotHealedTrigger(this, mnn, anz);
                         break;
                 }
@@ -3992,9 +3992,9 @@ namespace HREngine.Bots
                 if (mnn.silenced) continue;
                 switch (mnn.handcard.card.CardId)
                 {
-                    case CardIds.Collectible.Priest.NorthshireCleric: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case CardIds.Collectible.Priest.ManaGeode: goto case Chireiden.Silverfish.SimCard.aiextra1;
-                    case Chireiden.Silverfish.SimCard.aiextra1:
+                    case CardIds.Collectible.Priest.NorthshireCleric:
+                    case CardIds.Collectible.Priest.ManaGeode:
+                    case SimCard.None:
                         mnn.handcard.card.Simulator.onAMinionGotHealedTrigger(this, mnn, anz);
                         break;
                 }
@@ -4089,15 +4089,15 @@ namespace HREngine.Bots
             if (this.ownWeapon.name == CardIds.NonCollectible.Neutral.Jaws)
             {
                 int bonus = 0;
-                foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
-                foreach (Minion m in this.enemyMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
+                foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.Deathrattle && !m.silenced) bonus++;
+                foreach (Minion m in this.enemyMinions) if (m.Hp < 1 && m.handcard.card.Deathrattle && !m.silenced) bonus++;
                 this.ownWeapon.Angr += bonus * 2;
             }
             if (this.enemyWeapon.name == CardIds.NonCollectible.Neutral.Jaws)
             {
                 int bonus = 0;
-                foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
-                foreach (Minion m in this.enemyMinions) if (m.Hp < 1 && m.handcard.card.deathrattle && !m.silenced) bonus++;
+                foreach (Minion m in this.ownMinions) if (m.Hp < 1 && m.handcard.card.Deathrattle && !m.silenced) bonus++;
+                foreach (Minion m in this.enemyMinions) if (m.Hp < 1 && m.handcard.card.Deathrattle && !m.silenced) bonus++;
                 this.enemyWeapon.Angr += bonus * 2;
             }
 
@@ -4106,7 +4106,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.enemyMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = ((this.ownHeroAblility.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    SimCard kid = ((this.ownHeroAblility.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.enemyMinionsDied; i++)
                     {
                         this.callKid(kid, this.ownMinions.Count, true);
@@ -4117,7 +4117,7 @@ namespace HREngine.Bots
             {
                 if (this.tempTrigger.ownMinionsDied > 0)
                 {
-                    Chireiden.Silverfish.SimCard kid = ((this.enemyHeroAblility.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
+                    SimCard kid = ((this.enemyHeroAblility.card.CardId == CardIds.NonCollectible.Neutral.RaiseDeadHeroic) ? CardIds.NonCollectible.Neutral.SkeletonHeroic : CardIds.NonCollectible.Neutral.SkeletonNAXX);
                     for (int i = 0; i < this.tempTrigger.ownMinionsDied; i++)
                     {
                         this.callKid(kid, this.enemyMinions.Count, false);
@@ -4128,10 +4128,7 @@ namespace HREngine.Bots
 
         public void triggerAMinionIsGoingToAttack(Minion attacker, Minion target)
         {
-
-
-
-            switch (attacker.name)
+            switch (attacker.name.CardId)
             {
                 case CardIds.Collectible.Rogue.Cutpurse:
                     if (target.isHero) this.drawACard(CardIds.NonCollectible.Neutral.TheCoin, attacker.own, true);
@@ -4140,16 +4137,16 @@ namespace HREngine.Bots
                     if (target.isHero) minionGetDamageOrHeal(attacker.own ? this.enemyHero : this.ownHero, 2);
                     break;
                 case CardIds.Collectible.Rogue.ShakuTheCollector:
-                    this.drawACard(Chireiden.Silverfish.SimCard.None, attacker.own, true);
+                    this.drawACard(SimCard.None, attacker.own, true);
                     break;
                 case CardIds.Collectible.Neutral.GenzoTheShark:
                     while (this.owncards.Count < 3 && this.ownDeckSize > 0)
                     {
-                        this.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
+                        this.drawACard(SimCard.None, true, true);
                     }
                     while (this.enemyAnzCards < 3 && this.enemyDeckSize > 0)
                     {
-                        this.drawACard(Chireiden.Silverfish.SimCard.None, false, true);
+                        this.drawACard(SimCard.None, false, true);
                     }
                     break;
             }
@@ -4158,14 +4155,14 @@ namespace HREngine.Bots
             {
                 for (int i = 0; i < attacker.ownBlessingOfWisdom; i++)
                 {
-                    this.drawACard(Chireiden.Silverfish.SimCard.None, true);
+                    this.drawACard(SimCard.None, true);
                 }
             }
             if (attacker.enemyBlessingOfWisdom >= 1)
             {
                 for (int i = 0; i < attacker.enemyBlessingOfWisdom; i++)
                 {
-                    this.drawACard(Chireiden.Silverfish.SimCard.None, false);
+                    this.drawACard(SimCard.None, false);
                 }
             }
 
@@ -4190,7 +4187,7 @@ namespace HREngine.Bots
         public void triggerAMinionDealedDmg(Minion m, int dmgDone, bool isAttacker)
         {
             //3 cards only has such trigger
-            switch (m.name)
+            switch (m.name.CardId)
             {
                 case CardIds.Collectible.Warrior.AlleyArmorsmith:
                     if (!m.silenced) this.minionGetArmor(m.own ? this.ownHero : this.enemyHero, m.Angr);
@@ -4239,16 +4236,14 @@ namespace HREngine.Bots
                 {
                     switch (ohc.card.CardId)
                     {
-                        case Chireiden.Silverfish.SimCard.shadowreflection:
-                            ohc.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, ohc);
-                            break;
+                        case CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken:
                         case CardIds.Collectible.Neutral.BlubberBaron:
                             ohc.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, ohc);
                             break;
                     }
                 }
 
-                if (this.ownHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.voidform) this.ownHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.ownHeroAblility);
+                if (this.ownHeroAblility.card.CardId == CardIds.NonCollectible.Priest.Shadowform_MindShatterToken || this.ownHeroAblility.card.CardId == CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken) this.ownHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.ownHeroAblility);
 
                 if (this.ownWeapon.name == CardIds.NonCollectible.Neutral.Atiesh)
                 {
@@ -4259,7 +4254,7 @@ namespace HREngine.Bots
                 for (int i = 0; i < burly; i++)//summon for enemy !
                 {
                     int pos = this.enemyMinions.Count;
-                    this.callKid(CardDB.Instance.burlyrockjaw, pos, !own);
+                    this.callKid(CardIds.Collectible.Neutral.BurlyRockjawTrogg, pos, !own);
                 }
             }
             else
@@ -4282,7 +4277,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (this.enemyHeroAblility.card.CardId == Chireiden.Silverfish.SimCard.voidform) this.enemyHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.enemyHeroAblility);
+                if (this.enemyHeroAblility.card.CardId == SimCard.voidform) this.enemyHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.enemyHeroAblility);
 
                 if (this.enemyWeapon.name == CardIds.NonCollectible.Neutral.Atiesh)
                 {
@@ -4299,7 +4294,7 @@ namespace HREngine.Bots
 
         }
 
-        // public void triggerACardWasPlayed(Chireiden.Silverfish.SimCard c, bool own) {        }
+        // public void triggerACardWasPlayed(SimCard c, bool own) {        }
 
         public void triggerAMinionIsSummoned(Minion m)
         {
@@ -4325,7 +4320,7 @@ namespace HREngine.Bots
         {
             if (mnn.own)
             {
-                if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None) this.ownQuest.trigger_MinionWasSummoned(mnn);
+                if (this.ownQuest.Id != SimCard.None) this.ownQuest.trigger_MinionWasSummoned(mnn);
                 if (mnn.taunt) anzOwnTaunt++;
                 foreach (Minion m in this.ownMinions.ToArray())
                 {
@@ -4342,7 +4337,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (this.enemyQuest.Id != Chireiden.Silverfish.SimCard.None) this.enemyQuest.trigger_MinionWasSummoned(mnn);
+                if (this.enemyQuest.Id != SimCard.None) this.enemyQuest.trigger_MinionWasSummoned(mnn);
                 if (mnn.taunt) anzEnemyTaunt++;
                 foreach (Minion m in this.enemyMinions.ToArray())
                 {
@@ -4505,10 +4500,10 @@ namespace HREngine.Bots
                 hero.conceal = false;
                 hero.stealth = false;
             }
-            if (ab.card.CardId == Chireiden.Silverfish.SimCard.deathsshadow) ab.card.Simulator.onTurnStartTrigger(this, null, ownturn);
+            if (ab.card.CardId == SimCard.deathsshadow) ab.card.Simulator.onTurnStartTrigger(this, null, ownturn);
 
             this.doDmgTriggers();
-            this.drawACard(Chireiden.Silverfish.SimCard.None, ownturn);
+            this.drawACard(SimCard.None, ownturn);
             this.doDmgTriggers();
 
 
@@ -4659,7 +4654,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_explosive = false;
                             }
-                            CardIds.Collectible.Hunter.ExplosiveTrap.sim_card.onSecretPlay(this, false, 0);
+                            SimCard.FromName(CardIds.Collectible.Hunter.ExplosiveTrap).Simulator.onSecretPlay(this, false, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4670,7 +4665,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_beartrap = false;
                             }
-                            CardIds.Collectible.Hunter.BearTrap.sim_card.onSecretPlay(this, false, 0);
+                            SimCard.FromName(CardIds.Collectible.Hunter.BearTrap).Simulator.onSecretPlay(this, false, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4681,7 +4676,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_vaporize = false;
                             }
-                            CardIds.Collectible.Mage.Vaporize.sim_card.onSecretPlay(this, false, attacker, 0);
+                            SimCard.FromName(CardIds.Collectible.Mage.Vaporize).Simulator.onSecretPlay(this, false, attacker, 0);
                             needDamageTrigger = true;
                         }
 
@@ -4694,7 +4689,7 @@ namespace HREngine.Bots
                                 {
                                     sii.canBe_missdirection = false;
                                 }
-                                CardIds.Collectible.Hunter.Misdirection.sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
+                                SimCard.FromName(CardIds.Collectible.Hunter.Misdirection).Simulator.onSecretPlay(this, false, attacker, defender, out newTarget);
                                 //no needDamageTrigger
                             }
                         }
@@ -4706,7 +4701,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_icebarrier = false;
                             }
-                            CardIds.Collectible.Mage.IceBarrier.sim_card.onSecretPlay(this, false, defender, 0);
+                            SimCard.FromName(CardIds.Collectible.Mage.IceBarrier).Simulator.onSecretPlay(this, false, defender, 0);
                         }
 
                         if (needDamageTrigger) doDmgTriggers();
@@ -4724,7 +4719,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_snaketrap = false;
                             }
-                            CardIds.Collectible.Hunter.SnakeTrap.sim_card.onSecretPlay(this, false, 0);
+                            SimCard.FromName(CardIds.Collectible.Hunter.SnakeTrap).Simulator.onSecretPlay(this, false, 0);
                             doDmgTriggers();
                         }
                     }
@@ -4741,7 +4736,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_freezing = false;
                             }
-                            CardIds.Collectible.Hunter.FreezingTrap.sim_card.onSecretPlay(this, false, attacker, 0);
+                            SimCard.FromName(CardIds.Collectible.Hunter.FreezingTrap).Simulator.onSecretPlay(this, false, attacker, 0);
                         }
                     }
                 }
@@ -4757,7 +4752,7 @@ namespace HREngine.Bots
                         }
                         bool ishero = defender.isHero;
                         si.usedTrigger_CharIsAttacked(ishero, attacker.isHero);
-                        CardIds.Collectible.Paladin.NobleSacrifice.sim_card.onSecretPlay(this, false, attacker, defender, out newTarget);
+                        SimCard.FromName(CardIds.Collectible.Paladin.NobleSacrifice).Simulator.onSecretPlay(this, false, attacker, defender, out newTarget);
                         //no needDamageTrigger
                     }
                 }
@@ -4787,7 +4782,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_eyeforaneye = false;
                             }
-                            CardIds.Collectible.Paladin.EyeForAnEye.sim_card.onSecretPlay(this, false, dmg);
+                            SimCard.FromName(CardIds.Collectible.Paladin.EyeForAnEye).Simulator.onSecretPlay(this, false, dmg);
                         }
 
                         if (si.canBe_iceblock && this.enemyHero.Hp <= 0)
@@ -4797,7 +4792,7 @@ namespace HREngine.Bots
                             {
                                 sii.canBe_iceblock = false;
                             }
-                            CardIds.Collectible.Mage.IceBlock.sim_card.onSecretPlay(this, false, this.enemyHero, dmg);
+                            SimCard.FromName(CardIds.Collectible.Mage.IceBlock).Simulator.onSecretPlay(this, false, this.enemyHero, dmg);
                         }
                     }
                 }
@@ -4826,7 +4821,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_mirrorentity = false;
                         }
-                        CardIds.Collectible.Mage.MirrorEntity.sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        SimCard.FromName(CardIds.Collectible.Mage.MirrorEntity).Simulator.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
 
@@ -4837,7 +4832,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_repentance = false;
                         }
-                        CardIds.Collectible.Paladin.Repentance.sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        SimCard.FromName(CardIds.Collectible.Paladin.Repentance).Simulator.onSecretPlay(this, false, playedMinion, 0);
                     }
 
                     if (si.canBe_sacredtrial && this.ownMinions.Count > 3)
@@ -4848,7 +4843,7 @@ namespace HREngine.Bots
                             sii.canBe_sacredtrial = false;
                             sii.canBe_snipe = false;
                         }
-                        CardIds.Collectible.Paladin.SacredTrial.sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        SimCard.FromName(CardIds.Collectible.Paladin.SacredTrial).Simulator.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
                     else if (si.canBe_snipe)
@@ -4858,7 +4853,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_snipe = false;
                         }
-                        CardIds.Collectible.Hunter.Snipe.sim_card.onSecretPlay(this, false, playedMinion, 0);
+                        SimCard.FromName(CardIds.Collectible.Hunter.Snipe).Simulator.onSecretPlay(this, false, playedMinion, 0);
                         needDamageTrigger = true;
                     }
 
@@ -4873,7 +4868,7 @@ namespace HREngine.Bots
 
         }
 
-        public int secretTrigger_SpellIsPlayed(Minion target, Chireiden.Silverfish.SimCard c)
+        public int secretTrigger_SpellIsPlayed(Minion target, SimCard c)
         {
             int triggered = 0;
             int retval = 0;
@@ -4911,7 +4906,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_cattrick = false;
                         }
-                        CardIds.Collectible.Hunter.CatTrick.sim_card.onSecretPlay(this, false, 0);
+                        SimCard.FromName(CardIds.Collectible.Hunter.CatTrick).Simulator.onSecretPlay(this, false, 0);
                         doDmgTriggers();
                     }
 
@@ -4923,7 +4918,7 @@ namespace HREngine.Bots
                             sii.canBe_spellbender = false;
                         }
                         if (target.own && prozis.penman.maycauseharmDatabase.ContainsKey(c.CardId)) { }
-                        else CardIds.Collectible.Mage.Spellbender.sim_card.onSecretPlay(this, false, null, target, out retval);
+                        else SimCard.FromName(CardIds.Collectible.Mage.Spellbender).Simulator.onSecretPlay(this, false, null, target, out retval);
                     }
                 }
 
@@ -4954,7 +4949,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_duplicate = false;
                         }
-                        CardIds.Collectible.Mage.Duplicate.sim_card.onSecretPlay(this, false, 0);
+                        SimCard.FromName(CardIds.Collectible.Mage.Duplicate).Simulator.onSecretPlay(this, false, 0);
                     }
 
                     if (si.canBe_redemption)
@@ -4964,7 +4959,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_redemption = false;
                         }
-                        CardIds.Collectible.Paladin.Redemption.sim_card.onSecretPlay(this, false, 0);
+                       SimCard.FromName(CardIds.Collectible.Paladin.Redemption).Simulator.onSecretPlay(this, false, 0);
                     }
 
                     if (si.canBe_avenge)
@@ -4974,7 +4969,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_avenge = false;
                         }
-                        CardIds.Collectible.Paladin.Avenge.sim_card.onSecretPlay(this, false, 0);
+                        SimCard.FromName(CardIds.Collectible.Paladin.Avenge).Simulator.onSecretPlay(this, false, 0);
                     }
                 }
             }
@@ -5000,7 +4995,7 @@ namespace HREngine.Bots
                         {
                             sii.canBe_darttrap = false;
                         }
-                        CardIds.Collectible.Hunter.DartTrap.sim_card.onSecretPlay(this, false, 0);
+                        SimCard.FromName(CardIds.Collectible.Hunter.DartTrap).Simulator.onSecretPlay(this, false, 0);
                         doDmgTriggers();
                     }
                 }
@@ -5162,7 +5157,7 @@ namespace HREngine.Bots
             //https://www.youtube.com/watch?v=2WrbqsOSbhc
             foreach (Minion m in deathrattleMinions)
             {
-                if (!m.silenced && m.handcard.card.deathrattle) m.handcard.card.Simulator.onDeathrattle(this, m);
+                if (!m.silenced && m.handcard.card.Deathrattle) m.handcard.card.Simulator.onDeathrattle(this, m);
 
                 if (m.explorershat > 0)
                 {
@@ -5189,7 +5184,7 @@ namespace HREngine.Bots
                 {
                     for (int i = 0; i < m.ancestralspirit; i++)
                     {
-                        Chireiden.Silverfish.SimCard kid = m.handcard.card;
+                        SimCard kid = m.handcard.card;
                         int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                         callKid(kid, pos, m.own, false, true);
                     }
@@ -5199,7 +5194,7 @@ namespace HREngine.Bots
                 {
                     for (int i = 0; i < m.desperatestand; i++)
                     {
-                        Chireiden.Silverfish.SimCard kid = m.handcard.card;
+                        SimCard kid = m.handcard.card;
                         List<Minion> tmp = (m.own) ? this.ownMinions : this.enemyMinions;
                         int pos = tmp.Count;
                         callKid(kid, pos, m.own, false, true);
@@ -5219,21 +5214,21 @@ namespace HREngine.Bots
 
                 for (int i = 0; i < m.souloftheforest; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
+                    SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                 }
 
                 for (int i = 0; i < m.stegodon; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
+                    SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                 }
 
                 for (int i = 0; i < m.livingspores; i++)
                 {
-                    Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
+                    SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
                     int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                     callKid(kid, pos, m.own, false, true);
                     callKid(kid, pos, m.own, false, true);
@@ -5247,7 +5242,7 @@ namespace HREngine.Bots
                     int r = (m.own) ? this.ownBaronRivendare : this.enemyBaronRivendare;
                     for (int j = 0; j < r; j++)
                     {
-                        if (!m.silenced && m.handcard.card.deathrattle) m.handcard.card.Simulator.onDeathrattle(this, m);
+                        if (!m.silenced && m.handcard.card.Deathrattle) m.handcard.card.Simulator.onDeathrattle(this, m);
 
                         if (m.explorershat > 0)
                         {
@@ -5274,7 +5269,7 @@ namespace HREngine.Bots
                         {
                             for (int i = 0; i < m.ancestralspirit; i++)
                             {
-                                Chireiden.Silverfish.SimCard kid = m.handcard.card;
+                                SimCard kid = m.handcard.card;
                                 int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                                 callKid(kid, pos, m.own); //because baron rivendare
                             }
@@ -5284,7 +5279,7 @@ namespace HREngine.Bots
                         {
                             for (int i = 0; i < m.desperatestand; i++)
                             {
-                                Chireiden.Silverfish.SimCard kid = m.handcard.card;
+                                SimCard kid = m.handcard.card;
                                 List<Minion> tmp = (m.own) ? this.ownMinions : this.enemyMinions;
                                 int pos = tmp.Count;
                                 callKid(kid, pos, m.own, false, true);
@@ -5304,21 +5299,21 @@ namespace HREngine.Bots
 
                         for (int i = 0; i < m.souloftheforest; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
+                            SimCard kid = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;//Treant
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own); //because baron rivendare
                         }
 
                         for (int i = 0; i < m.stegodon; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
+                            SimCard kid = CardIds.Collectible.Neutral.Stegodon;//Stegodon
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own);  //because baron rivendare
                         }
 
                         for (int i = 0; i < m.livingspores; i++)
                         {
-                            Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
+                            SimCard kid = CardIds.NonCollectible.Neutral.PlantToken;//Plant
                             int pos = (m.own) ? this.ownMinions.Count : this.enemyMinions.Count;
                             callKid(kid, pos, m.own);
                             callKid(kid, pos, m.own);  //because baron rivendare
@@ -5354,13 +5349,13 @@ namespace HREngine.Bots
                     if (m.Hp <= 0)
                     {
                         this.OwnLastDiedMinion = m.handcard.card.CardId;
-                        if (this.revivingOwnMinion == Chireiden.Silverfish.SimCard.None)
+                        if (this.revivingOwnMinion == SimCard.None)
                         {
                             this.revivingOwnMinion = m.handcard.card.CardId;
                             minionOwnReviving = true;
                         }
 
-                        if ((!m.silenced && m.handcard.card.deathrattle) || m.ancestralspirit >= 1 || m.desperatestand >= 1 || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.deathrattle2 != null)
+                        if ((!m.silenced && m.handcard.card.Deathrattle) || m.ancestralspirit >= 1 || m.desperatestand >= 1 || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.deathrattle2 != null)
                         {
                             deathrattleMinions.Add(m);
                         }
@@ -5394,13 +5389,13 @@ namespace HREngine.Bots
                     //kill it!
                     if (m.Hp <= 0)
                     {
-                        if (this.revivingEnemyMinion == Chireiden.Silverfish.SimCard.None)
+                        if (this.revivingEnemyMinion == SimCard.None)
                         {
                             this.revivingEnemyMinion = m.handcard.card.CardId;
                             minionEnemyReviving = true;
                         }
 
-                        if ((!m.silenced && m.handcard.card.deathrattle) || m.ancestralspirit >= 1 || m.desperatestand >= 1 || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.deathrattle2 != null)
+                        if ((!m.silenced && m.handcard.card.Deathrattle) || m.ancestralspirit >= 1 || m.desperatestand >= 1 || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.deathrattle2 != null)
                         {
                             deathrattleMinions.Add(m);
                         }
@@ -5475,13 +5470,13 @@ namespace HREngine.Bots
             if (minionOwnReviving)
             {
                 this.secretTrigger_MinionDied(true);
-                this.revivingOwnMinion = Chireiden.Silverfish.SimCard.None;
+                this.revivingOwnMinion = SimCard.None;
             }
 
             if (minionEnemyReviving)
             {
                 this.secretTrigger_MinionDied(false);
-                this.revivingEnemyMinion = Chireiden.Silverfish.SimCard.None;
+                this.revivingEnemyMinion = SimCard.None;
             }
             //update buffs
         }
@@ -5494,7 +5489,7 @@ namespace HREngine.Bots
 
             if (!m.silenced) // if they are not silenced, these minions will give a buff, but cant buff themselfes
             {
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     case CardIds.Collectible.Neutral.RaidLeader: angr--; break;
                     case CardIds.NonCollectible.Hunter.Leokk: angr--; break;
@@ -5519,7 +5514,7 @@ namespace HREngine.Bots
                 }
             }
 
-            if (m.handcard.card.Race == 14)
+            if (m.handcard.card.Race == Race.MURLOC)
             {
                 if (m.own)
                 {
@@ -5535,20 +5530,20 @@ namespace HREngine.Bots
                 angr += anzOwnRaidleader;
                 angr += anzOwnStormwindChamps;
                 vert += anzOwnStormwindChamps;
-                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) angr += anzOwnWarhorseTrainer;
-                if (m.handcard.card.Race == 20)
+                if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) angr += anzOwnWarhorseTrainer;
+                if (m.handcard.card.Race == Race.BEAST)
                 {
                     angr += anzOwnTimberWolfs;
                     if (get) m.charge += anzOwnTundrarhino;
                     else m.charge -= anzOwnTundrarhino;
                 }
-                if (m.handcard.card.Race == 23)
+                if (m.handcard.card.Race == Race.PIRATE)
                 {
                     angr += anzOwnSouthseacaptain;
                     vert += anzOwnSouthseacaptain;
 
                 }
-                if (m.handcard.card.Race == 15)
+                if (m.handcard.card.Race == Race.DEMON)
                 {
                     angr += anzOwnMalGanis * 2;
                     vert += anzOwnMalGanis * 2;
@@ -5562,19 +5557,19 @@ namespace HREngine.Bots
                 angr += anzEnemyStormwindChamps;
                 vert += anzEnemyStormwindChamps;
 
-                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) angr += anzEnemyWarhorseTrainer;
-                if (m.handcard.card.Race == 20)
+                if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) angr += anzEnemyWarhorseTrainer;
+                if (m.handcard.card.Race == Race.BEAST)
                 {
                     angr += anzEnemyTimberWolfs;
                     if (get) m.charge += anzEnemyTundrarhino;
                     else m.charge -= anzEnemyTundrarhino;
                 }
-                if (m.handcard.card.Race == 23)
+                if (m.handcard.card.Race == Race.PIRATE)
                 {
                     angr += anzEnemySouthseacaptain;
                     vert += anzEnemySouthseacaptain;
                 }
-                if (m.handcard.card.Race == 15)
+                if (m.handcard.card.Race == Race.DEMON)
                 {
                     angr += anzEnemyMalGanis * 2;
                     vert += anzEnemyMalGanis * 2;
@@ -5598,7 +5593,7 @@ namespace HREngine.Bots
                 Minion m = temp[i];
                 if (!m.silenced)
                 {
-                    switch (m.name)
+                    switch (m.name.CardId)
                     {
                         case CardIds.Collectible.Neutral.FaerieDragon: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
                         case CardIds.Collectible.Neutral.SpectralKnight: m.cantBeTargetedBySpellsOrHeroPowers = true; continue;
@@ -5662,7 +5657,7 @@ namespace HREngine.Bots
             m.stealth = hc.card.Stealth;
             m.untouchable = hc.card.untouchable;
 
-            switch (m.name)
+            switch (m.name.CardId)
             {
                 case CardIds.Collectible.Priest.Lightspawn:
                     m.Angr = m.Hp;
@@ -5711,7 +5706,7 @@ namespace HREngine.Bots
             doDmgTriggers();
 
             secretTrigger_MinionIsPlayed(m);
-            if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None) ownQuest.trigger_MinionWasPlayed(m);
+            if (this.ownQuest.Id != SimCard.None) ownQuest.trigger_MinionWasPlayed(m);
 
             if (logging) Helpfunctions.Instance.logg("added " + m.handcard.card.CardId);
         }
@@ -5730,7 +5725,7 @@ namespace HREngine.Bots
             if (m.own)
             {
                 this.tempTrigger.ownMinionsChanged = true;
-                if (m.handcard.card.Race == 20) this.tempTrigger.ownBeastSummoned++;
+                if (m.handcard.card.Race == Race.BEAST) this.tempTrigger.ownBeastSummoned++;
             }
             else this.tempTrigger.enemyMininsChanged = true;
 
@@ -5743,7 +5738,7 @@ namespace HREngine.Bots
             m.updateReadyness();
         }
 
-        public void equipWeapon(Chireiden.Silverfish.SimCard c, bool own)
+        public void equipWeapon(SimCard c, bool own)
         {
             Minion hero = (own) ? this.ownHero : this.enemyHero;
             if (own)
@@ -5753,7 +5748,7 @@ namespace HREngine.Bots
                     bool calcLostWeaponDamage = true;
                     switch (c.CardId)
                     {
-                        case Chireiden.Silverfish.SimCard.poisoneddagger: goto case CardIds.NonCollectible.Rogue.WickedKnife;
+                        case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDagger:
                         case CardIds.NonCollectible.Rogue.WickedKnife:
                             if (this.ownWeapon.Angr == c.Attack && this.ownWeapon.Durability < c.Durability) calcLostWeaponDamage = false;
                             break;
@@ -5781,7 +5776,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own) ? this.ownMinions : this.enemyMinions;
             foreach (Minion m in temp)
             {
-                switch (m.name)
+                switch (m.name.CardId)
                 {
                     case CardIds.Collectible.Neutral.SouthseaDeckhand:
                         if (m.playedThisTurn) minionGetCharge(m);
@@ -5800,7 +5795,7 @@ namespace HREngine.Bots
 
 
 
-        public void callKid(Chireiden.Silverfish.SimCard c, int zonepos, bool own, bool spawnKid = true, bool oneMoreIsAllowed = false)
+        public void callKid(SimCard c, int zonepos, bool own, bool spawnKid = true, bool oneMoreIsAllowed = false)
         {
 
             int allowed = 7;
@@ -5842,7 +5837,7 @@ namespace HREngine.Bots
             {
                 foreach (Minion m in this.ownMinions)
                 {
-                    switch (m.name)
+                    switch (m.name.CardId)
                     {
                         case CardIds.Collectible.Shaman.Moorabi:
                             if (m.silenced) continue;
@@ -5852,7 +5847,7 @@ namespace HREngine.Bots
                 }
                 foreach (Minion m in this.enemyMinions)
                 {
-                    switch (m.name)
+                    switch (m.name.CardId)
                     {
                         case CardIds.Collectible.Shaman.Moorabi:
                             if (m.silenced) continue;
@@ -5879,15 +5874,15 @@ namespace HREngine.Bots
             }
         }
 
-        public void drawACard(Chireiden.Silverfish.SimCard ss, bool own, bool nopen = false)
+        public void drawACard(SimCard ss, bool own, bool nopen = false)
         {
-            Chireiden.Silverfish.SimCard s = ss;
+            SimCard s = ss;
 
             // cant hold more than 10 cards
 
             if (own)
             {
-                if (s == Chireiden.Silverfish.SimCard.None && !nopen)
+                if (s == SimCard.None && !nopen)
                 {
                     if (ownDeckSize == 0)
                     {
@@ -5919,7 +5914,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (s == Chireiden.Silverfish.SimCard.None && !nopen)
+                if (s == SimCard.None && !nopen)
                 {
                     if (enemyDeckSize == 0)
                     {
@@ -5952,7 +5947,7 @@ namespace HREngine.Bots
                 }
                 this.triggerCardsChanged(false);
 
-                if (anzEnemyChromaggus > 0 && s == Chireiden.Silverfish.SimCard.None && !nopen)
+                if (anzEnemyChromaggus > 0 && s == SimCard.None && !nopen)
                 {
                     for (int i = 1; i <= anzEnemyChromaggus; i++)
                     {
@@ -5969,24 +5964,24 @@ namespace HREngine.Bots
                 return;
             }
 
-            if (s == Chireiden.Silverfish.SimCard.None)
+            if (s == SimCard.None)
             {
-                Chireiden.Silverfish.SimCard c = s;
+                SimCard c = s;
                 Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
             }
             else
             {
-                Chireiden.Silverfish.SimCard c = s;
+                SimCard c = s;
                 Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = c.calculateManaCost(this), entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
             }
 
-            if (anzOwnChromaggus > 0 && s == Chireiden.Silverfish.SimCard.None && !nopen)
+            if (anzOwnChromaggus > 0 && s == SimCard.None && !nopen)
             {
-                Chireiden.Silverfish.SimCard c = s;
+                SimCard c = s;
                 for (int i = 1; i <= anzOwnChromaggus; i++)
                 {
                     if (this.owncards.Count >= 10)
@@ -6078,16 +6073,16 @@ namespace HREngine.Bots
 
             if (own)
             {
-                Chireiden.Silverfish.SimCard c = m.handcard.card;
+                SimCard c = m.handcard.card;
                 Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, entity = m.entitiyID, manacost = c.calculateManaCost(this) + manachange };
                 if (this.owncards.Count < 10)
                 {
                     this.owncards.Add(hc);
                     this.triggerCardsChanged(true);
                 }
-                else this.drawACard(Chireiden.Silverfish.SimCard.None, true);
+                else this.drawACard(SimCard.None, true);
             }
-            else this.drawACard(Chireiden.Silverfish.SimCard.None, false);
+            else this.drawACard(SimCard.None, false);
 
             if (m.own) this.tempTrigger.ownMinionsChanged = true;
             else this.tempTrigger.enemyMininsChanged = true;
@@ -6106,7 +6101,7 @@ namespace HREngine.Bots
             else this.enemyDeckSize++;
         }
 
-        public void minionTransform(Minion m, Chireiden.Silverfish.SimCard c)
+        public void minionTransform(Minion m, SimCard c)
         {
             m.handcard.card.Simulator.onAuraEnds(this, m);//end aura of the minion
 
@@ -6143,9 +6138,9 @@ namespace HREngine.Bots
             if (logging) Helpfunctions.Instance.logg("minion got sheep" + m.name + " " + m.Angr);
         }
 
-        public Chireiden.Silverfish.SimCard getRandomCardForManaMinion(int manaCost)
+        public SimCard getRandomCardForManaMinion(int manaCost)
         {
-            Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Wisp;
+            SimCard kid = CardIds.Collectible.Neutral.Wisp;
             if (manaCost > 0)
             {
                 if (manaCost > 10) manaCost = 10;
@@ -6392,7 +6387,7 @@ namespace HREngine.Bots
                 int ratio = 100;
                 List<Handmanager.Handcard> discardedCardsBonusList = new List<Handmanager.Handcard>();
                 Handmanager.Handcard hc;
-                Chireiden.Silverfish.SimCard c;
+                SimCard c;
                 Dictionary<int, int> cardsValDict = new Dictionary<int, int>();
                 for (int i = 0; i < this.owncards.Count; i++)
                 {
@@ -6400,8 +6395,8 @@ namespace HREngine.Bots
                     c = hc.card;
                     switch (c.Type)
                     {
-                        case CardType.MOB:
-                            cardValue = (c.Health + hc.addHp) * 2 + (c.Attack + hc.addattack) * 2 + c.rarity + hc.elemPoweredUp * 2;
+                        case CardType.MINION:
+                            cardValue = (c.Health + hc.addHp) * 2 + (c.Attack + hc.addattack) * 2 + c.Rarity + hc.elemPoweredUp * 2;
                             if (c.Windfury) cardValue += c.Attack + hc.addattack;
                             if (c.Taunt) cardValue += 2;
                             if (c.DivineShield) cardValue += 2;
@@ -6414,13 +6409,13 @@ namespace HREngine.Bots
                                 case CardIds.Collectible.Shaman.FlametongueTotem: if (this.ownMinions.Count > 2) cardValue += 10; break;
                                 case CardIds.Collectible.Neutral.StormwindChampion: if (this.ownMinions.Count > 2) cardValue += 10; break;
                                 case CardIds.Collectible.Neutral.RaidLeader: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case CardIds.Collectible.Warlock.SilverwareGolem: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
-                                case CardIds.Collectible.Warlock.ClutchmotherZavas: cardValue = (c.Health + hc.addHp) * 2 + c.rarity; break;
+                                case CardIds.Collectible.Warlock.SilverwareGolem: cardValue = (c.Health + hc.addHp) * 2 + c.Rarity; break;
+                                case CardIds.Collectible.Warlock.ClutchmotherZavas: cardValue = (c.Health + hc.addHp) * 2 + c.Rarity; break;
                             }
                             break;
                         case CardType.WEAPON:
                             cardValue = c.Attack * c.Durability * 2;
-                            if (c.battlecry || c.deathrattle) cardValue += 7;
+                            if (c.Battlecry || c.Deathrattle) cardValue += 7;
                             break;
                         case CardType.SPELL:
                             cardValue = 15;
@@ -6500,7 +6495,7 @@ namespace HREngine.Bots
                     this.owncards.RemoveRange(0, anz);
                 }
 
-                if (this.ownQuest.Id != Chireiden.Silverfish.SimCard.None) this.ownQuest.trigger_WasDiscard(numDiscardedCards);
+                if (this.ownQuest.Id != SimCard.None) this.ownQuest.trigger_WasDiscard(numDiscardedCards);
 
 
                 int malchezaarsimpCount = 0;
@@ -6799,7 +6794,7 @@ namespace HREngine.Bots
         }
 
 
-        public void setNewHeroPower(Chireiden.Silverfish.SimCard newHeroPower, bool own)
+        public void setNewHeroPower(SimCard newHeroPower, bool own)
         {
             if (own)
             {
@@ -6829,7 +6824,7 @@ namespace HREngine.Bots
             return minions.OrderBy(predicate).FirstOrDefault();
         }
 
-        public Chireiden.Silverfish.SimCard getNextJadeGolem(bool own)
+        public SimCard getNextJadeGolem(bool own)
         {
             var tmp = own ? ++anzOwnJadeGolem : ++anzEnemyJadeGolem;
             return $"{CardIds.NonCollectible.Neutral.JadeGolem1.Substring(0, 9)}{Math.Max(Math.Min(tmp, 30), 1)}";
@@ -6927,7 +6922,7 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
             if (this.ownSecretsIDList.Count > 0)
             {
                 retval += "\r\n" + ("ownSecrets\t");
-                foreach (Chireiden.Silverfish.SimCard s in this.ownSecretsIDList)
+                foreach (SimCard s in this.ownSecretsIDList)
                 {
                     retval += " " + s.LocName;
                 }

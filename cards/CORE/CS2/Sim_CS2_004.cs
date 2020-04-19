@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
             p.minionGetBuffed(target, 0, 2);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
 		}
 
 	}

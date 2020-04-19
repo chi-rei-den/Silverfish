@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using HearthDb.Enums;
 using System;
@@ -30,11 +31,11 @@ namespace HREngine.Bots
         public bool herofrozen = false;
         public bool enemyfrozen = false;
 
-        public List<Chireiden.Silverfish.SimCard> ownSecretList = new List<Chireiden.Silverfish.SimCard>();
+        public List<SimCard> ownSecretList = new List<SimCard>();
         public int enemySecretCount = 0;
-        public Dictionary<int, Chireiden.Silverfish.SimCard> DiscoverCards = new Dictionary<int, Chireiden.Silverfish.SimCard>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> turnDeck = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        private Dictionary<int, Chireiden.Silverfish.SimCard> deckCardForCost = new Dictionary<int, Chireiden.Silverfish.SimCard>();
+        public Dictionary<int, SimCard> DiscoverCards = new Dictionary<int, SimCard>();
+        public Dictionary<SimCard, int> turnDeck = new Dictionary<SimCard, int>();
+        private Dictionary<int, SimCard> deckCardForCost = new Dictionary<int, SimCard>();
         public bool noDuplicates = false;
 
         private int numTauntCards = -1;
@@ -49,14 +50,14 @@ namespace HREngine.Bots
         public string heronameingame = "", enemyHeronameingame = "";
         public CardClass ownHeroStartClass;
         public CardClass enemyHeroStartClass;
-        public Chireiden.Silverfish.SimCard heroAbility;
+        public SimCard heroAbility;
         public bool ownAbilityisReady = false;
         public int ownHeroPowerCost = 2;
-        public Chireiden.Silverfish.SimCard enemyAbility;
+        public SimCard enemyAbility;
         public int enemyHeroPowerCost = 2;
         public int numOptionsPlayedThisTurn = 0;
         public int numMinionsPlayedThisTurn = 0;
-        public Chireiden.Silverfish.SimCard OwnLastDiedMinion = Chireiden.Silverfish.SimCard.None;
+        public SimCard OwnLastDiedMinion = SimCard.None;
 
         public int cardsPlayedThisTurn = 0;
         public int ueberladung = 0;
@@ -149,8 +150,8 @@ namespace HREngine.Bots
             enemyHeroname = CardClass.INVALID;
             heronameingame = "";
             enemyHeronameingame = "";
-            heroAbility = new Chireiden.Silverfish.SimCard();
-            enemyAbility = new Chireiden.Silverfish.SimCard();
+            heroAbility = new SimCard();
+            enemyAbility = new SimCard();
             herofrozen = false;
             enemyfrozen = false;
             numMinionsPlayedThisTurn = 0;
@@ -274,15 +275,15 @@ namespace HREngine.Bots
             this.ownSecretList.Clear();
             foreach (string s in ownsecs)
             {
-                this.ownSecretList.Add(cdb.cardIdstringToEnum(s));
+                this.ownSecretList.Add(s);
             }
             this.enemySecretCount = numEnemSec;
         }
 
-        public void updateTurnDeck(Dictionary<Chireiden.Silverfish.SimCard, int> deck, bool noDupl)
+        public void updateTurnDeck(Dictionary<SimCard, int> deck, bool noDupl)
         {
             this.turnDeck.Clear();
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> c in deck)
+            foreach (KeyValuePair<SimCard, int> c in deck)
             {
                 this.turnDeck.Add(c.Key, c.Value);
             }
@@ -290,19 +291,19 @@ namespace HREngine.Bots
             deckCardForCost.Clear();
         }
 
-        public Chireiden.Silverfish.SimCard getDeckCardsForCost(int cost)
+        public SimCard getDeckCardsForCost(int cost)
         {
             if (deckCardForCost.Count == 0)
             {
-                Chireiden.Silverfish.SimCard c;
-                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
+                SimCard c;
+                foreach (KeyValuePair<SimCard, int> cn in turnDeck)
                 {
                     c = cn.Key;
                     if (!deckCardForCost.ContainsKey(c.Cost)) deckCardForCost.Add(c.Cost, c);
                 }
             }
             if (deckCardForCost.ContainsKey(cost)) return deckCardForCost[cost];
-            else return Chireiden.Silverfish.SimCard.None;
+            else return SimCard.None;
         }
 
         public int numDeckCardsByTag(GameTag tag)
@@ -319,8 +320,8 @@ namespace HREngine.Bots
             numLifestealCards = 0;
             numWindfuryCards = 0;
 
-            Chireiden.Silverfish.SimCard c;
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cn in turnDeck)
+            SimCard c;
+            foreach (KeyValuePair<SimCard, int> cn in turnDeck)
             {
                 c = (cn.Key);
                 if (c.Taunt) numTauntCards += cn.Value;
@@ -359,7 +360,7 @@ namespace HREngine.Bots
         }
 
 
-        public void updateHero(Weapon w, string heron, Chireiden.Silverfish.SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
+        public void updateHero(Weapon w, string heron, SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
         {
             if (w.name == CardIds.Collectible.Warrior.FoolsBane) w.cantAttackHeroes = true;
 
@@ -446,12 +447,12 @@ namespace HREngine.Bots
                 this.DiscoverCards.Clear();
                 for (int i = 0; i < 3; i++)
                 {
-                    this.DiscoverCards.Add(i, cdb.cardIdstringToEnum(discoverCardsList[i + 1]));
+                    this.DiscoverCards.Add(i, discoverCardsList[i + 1]);
                 }
             }
         }
 
-        public void updateOwnLastDiedMinion(Chireiden.Silverfish.SimCard cid)
+        public void updateOwnLastDiedMinion(SimCard cid)
         {
             this.OwnLastDiedMinion = cid;
         }
@@ -504,7 +505,7 @@ namespace HREngine.Bots
             help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
             help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.CardId);
             string secs = "";
-            foreach (Chireiden.Silverfish.SimCard sec in this.ownSecretList)
+            foreach (SimCard sec in this.ownSecretList)
             {
                 secs += sec + " ";
             }
@@ -637,7 +638,7 @@ namespace HREngine.Bots
         public void printOwnDeck()
         {
             string od = "od: ";
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.turnDeck)
+            foreach (KeyValuePair<SimCard, int> e in this.turnDeck)
             {
                 od += e.Key + "," + e.Value + ";";
             }

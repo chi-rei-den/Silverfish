@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Secret: After your opponent casts a spell, summon a 4/2 Panther with Stealth.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.CatTrick_CatInAHat;//Panther - Cat in a Hat
+        SimCard kid = CardIds.NonCollectible.Hunter.CatTrick_CatInAHat;//Panther - Cat in a Hat
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //   Choose One - Summon 5 Wisps; or Give a minion +5/+5 and Taunt.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Wisp;
+        SimCard kid = CardIds.Collectible.Neutral.Wisp;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))

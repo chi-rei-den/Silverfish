@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a 3/5 War Kodo.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Kodorider_WarKodoToken; //War Kodo
+        SimCard kid = CardIds.NonCollectible.Neutral.Kodorider_WarKodoToken; //War Kodo
 		
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

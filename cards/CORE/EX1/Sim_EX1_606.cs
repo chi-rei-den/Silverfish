@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace HREngine.Bots
             {
                 p.minionGetArmor(p.enemyHero, 5);
             }
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
 		}
 
 	}

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Taunt. Battlecry: Summon three 1/1 Raptors for your opponent.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Eggnapper_RaptorToken; //1/1 Raptor
+        SimCard kid = CardIds.NonCollectible.Neutral.Eggnapper_RaptorToken; //1/1 Raptor
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

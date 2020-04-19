@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,12 +32,12 @@ namespace HREngine.Bots
 		
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.briarthorntoxin, own.own, true);
+            p.drawACard(SimCard.briarthorntoxin, own.own, true);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(Chireiden.Silverfish.SimCard.fadeleaftoxin, m.own, true);
+            p.drawACard(SimCard.fadeleaftoxin, m.own, true);
         }
     }
 }

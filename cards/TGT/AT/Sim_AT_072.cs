@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -35,21 +36,21 @@ namespace HREngine.Bots
 			if (own.own)
 			{
 				int tmpCard = p.owncards.Count;
-				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
+				p.drawACard(SimCard.None, own.own);
 				if (tmpCard < 10)
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
                     p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, p.ownMinions.Count, own.own, false);//river crocolisk
 				}
-				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
+				p.drawACard(SimCard.None, own.own);
 				if (tmpCard < 10)
 				{
 					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
 					p.owncarddraw--;
                     p.callKid(CardIds.Collectible.Neutral.Spellbreaker, p.ownMinions.Count, own.own, false);//spellbreaker
 				}
-				p.drawACard(Chireiden.Silverfish.SimCard.None, own.own);
+				p.drawACard(SimCard.None, own.own);
 			}
 		}
 	}

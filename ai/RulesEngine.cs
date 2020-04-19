@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Text;
@@ -95,23 +96,23 @@ namespace HREngine.Bots
     public class RulesEngine
     {
         Dictionary<int, Rule> heapOfRules = new Dictionary<int, Rule>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsPlay = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsAttack = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsHand = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsOwnBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
-        Dictionary<int, List<Chireiden.Silverfish.SimCard>> RuleCardIdsEnemyBoard = new Dictionary<int, List<Chireiden.Silverfish.SimCard>>();
+        Dictionary<int, List<SimCard>> RuleCardIdsPlay = new Dictionary<int, List<SimCard>>();
+        Dictionary<int, List<SimCard>> RuleCardIdsAttack = new Dictionary<int, List<SimCard>>();
+        Dictionary<int, List<SimCard>> RuleCardIdsHand = new Dictionary<int, List<SimCard>>();
+        Dictionary<int, List<SimCard>> RuleCardIdsOwnBoard = new Dictionary<int, List<SimCard>>();
+        Dictionary<int, List<SimCard>> RuleCardIdsEnemyBoard = new Dictionary<int, List<SimCard>>();
         Dictionary<int, int> BoardStateRules = new Dictionary<int, int>();
         Dictionary<int, int> BoardStateRulesGame = new Dictionary<int, int>();
         Dictionary<int, int> BoardStateRulesTurn = new Dictionary<int, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRules = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnPlay = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
-        Dictionary<Chireiden.Silverfish.SimCard, List<int>> CardIdRulesTurnHand = new Dictionary<Chireiden.Silverfish.SimCard, List<int>>();
+        Dictionary<SimCard, List<int>> CardIdRules = new Dictionary<SimCard, List<int>>();
+        Dictionary<SimCard, Dictionary<int, int>> CardIdRulesGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, Dictionary<int, int>> CardIdRulesPlayGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, Dictionary<int, int>> CardIdRulesHandGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, Dictionary<int, int>> CardIdRulesOwnBoardGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, Dictionary<int, int>> CardIdRulesEnemyBoardGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, Dictionary<int, int>> AttackerIdRulesGame = new Dictionary<SimCard, Dictionary<int, int>>();
+        Dictionary<SimCard, List<int>> CardIdRulesTurnPlay = new Dictionary<SimCard, List<int>>();
+        Dictionary<SimCard, List<int>> CardIdRulesTurnHand = new Dictionary<SimCard, List<int>>();
         Dictionary<Race, List<int>> hcRaceRulesGame = new Dictionary<Race, List<int>>();
         Dictionary<Race, List<int>> hcRaceRulesTurn = new Dictionary<Race, List<int>>();
         List<int> pfStateRulesGame = new List<int>();
@@ -123,7 +124,7 @@ namespace HREngine.Bots
         public bool mulliganRulesLoaded = false;
         Dictionary<string, string> MulliganRules = new Dictionary<string, string>();
         Dictionary<string, Dictionary<string, string>> MulliganRulesDB = new Dictionary<string, Dictionary<string, string>>();
-        Dictionary<Chireiden.Silverfish.SimCard, string> MulliganRulesManual = new Dictionary<Chireiden.Silverfish.SimCard, string>();
+        Dictionary<SimCard, string> MulliganRulesManual = new Dictionary<SimCard, string>();
         Condition condTmp;
         string condErr;
         Minion target;
@@ -412,7 +413,7 @@ namespace HREngine.Bots
             public param parameter = param.None;
             public int num = int.MinValue;
             public CardClass hClass = CardClass.INVALID;
-            public Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
+            public SimCard cardID = SimCard.None;
             public int numCards = 0;
             public int bonus = 0;
             public int orCondNum = -1;
@@ -426,7 +427,7 @@ namespace HREngine.Bots
                 this.num = pnum;
                 this.parentRule = pRule;
             }
-            public Condition(param paramtr, Chireiden.Silverfish.SimCard cID, string pRule)
+            public Condition(param paramtr, SimCard cID, string pRule)
             {
                 this.parameter = paramtr;
                 this.cardID = cID;
@@ -451,11 +452,11 @@ namespace HREngine.Bots
 
         public class actUnit
         {
-            public Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
+            public SimCard cardID = SimCard.None;
             public Action action = null;
             public int entity = -1;
 
-            public actUnit(Chireiden.Silverfish.SimCard cid, Action a, int ent)
+            public actUnit(SimCard cid, Action a, int ent)
             {
                 this.cardID = cid;
                 this.action = a;
@@ -488,14 +489,14 @@ namespace HREngine.Bots
             int weight = 0;
             List<int> possibleRules = new List<int>();
             possibleRules.AddRange(this.BoardStateRulesTurn.Keys);
-            Dictionary<Chireiden.Silverfish.SimCard, int> handCardsWRule = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>> playedCardsWRule = new Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>>();
-            Dictionary<Chireiden.Silverfish.SimCard, int> playedCardsWRulePen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>> attackersWRule = new Dictionary<Chireiden.Silverfish.SimCard, List<actUnit>>();
-            Dictionary<Chireiden.Silverfish.SimCard, int> attackersWRulePen = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            Dictionary<SimCard, int> handCardsWRule = new Dictionary<SimCard, int>();
+            Dictionary<SimCard, List<actUnit>> playedCardsWRule = new Dictionary<SimCard, List<actUnit>>();
+            Dictionary<SimCard, int> playedCardsWRulePen = new Dictionary<SimCard, int>();
+            Dictionary<SimCard, List<actUnit>> attackersWRule = new Dictionary<SimCard, List<actUnit>>();
+            Dictionary<SimCard, int> attackersWRulePen = new Dictionary<SimCard, int>();
             foreach (Action a in p.playactions)
             {
-                Chireiden.Silverfish.SimCard cardID = Chireiden.Silverfish.SimCard.None;
+                SimCard cardID = SimCard.None;
                 switch (a.actionType)
                 {
                     case actionEnum.playcard:
@@ -732,9 +733,9 @@ namespace HREngine.Bots
             }
         }
 
-        private void addCardIdRulesGame(Dictionary<int, List<Chireiden.Silverfish.SimCard>> baseDct, Dictionary<Chireiden.Silverfish.SimCard, Dictionary<int, int>> targetDct, int ruleNum)
+        private void addCardIdRulesGame(Dictionary<int, List<SimCard>> baseDct, Dictionary<SimCard, Dictionary<int, int>> targetDct, int ruleNum)
         {
-            foreach (Chireiden.Silverfish.SimCard cid in baseDct[ruleNum])
+            foreach (SimCard cid in baseDct[ruleNum])
             {
                 if (targetDct.ContainsKey(cid))
                 {
@@ -748,7 +749,7 @@ namespace HREngine.Bots
                 else targetDct.Add(cid, new Dictionary<int, int>() { { ruleNum, 0 } });
             }
 
-            foreach (Chireiden.Silverfish.SimCard cid in baseDct[ruleNum])
+            foreach (SimCard cid in baseDct[ruleNum])
             {
                 if (CardIdRulesGame.ContainsKey(cid))
                 {
@@ -765,7 +766,7 @@ namespace HREngine.Bots
 
         private void addAttackerIdRulesGame(int ruleNum)
         {
-            foreach (Chireiden.Silverfish.SimCard cid in RuleCardIdsAttack[ruleNum])
+            foreach (SimCard cid in RuleCardIdsAttack[ruleNum])
             {
                 if (AttackerIdRulesGame.ContainsKey(cid))
                 {
@@ -1148,11 +1149,11 @@ namespace HREngine.Bots
             {
                 bool stateRule = false;
                 bool playRule = false;
-                List<Chireiden.Silverfish.SimCard> IDsListPlay = new List<Chireiden.Silverfish.SimCard>();
-                List<Chireiden.Silverfish.SimCard> IDsListHand = new List<Chireiden.Silverfish.SimCard>();
-                List<Chireiden.Silverfish.SimCard> IDsListOB = new List<Chireiden.Silverfish.SimCard>();
-                List<Chireiden.Silverfish.SimCard> IDsListEB = new List<Chireiden.Silverfish.SimCard>();
-                List<Chireiden.Silverfish.SimCard> IDsListAttack = new List<Chireiden.Silverfish.SimCard>();
+                List<SimCard> IDsListPlay = new List<SimCard>();
+                List<SimCard> IDsListHand = new List<SimCard>();
+                List<SimCard> IDsListOB = new List<SimCard>();
+                List<SimCard> IDsListEB = new List<SimCard>();
+                List<SimCard> IDsListAttack = new List<SimCard>();
                 foreach (Condition cond in getAllCondList(oneRule.Value.conditions))
                 {
                     switch (cond.parameter)
@@ -1552,8 +1553,8 @@ namespace HREngine.Bots
                     }
                     break;
                 case 1:
-                    Chireiden.Silverfish.SimCard cardId = (pval);
-                    if (cardId == Chireiden.Silverfish.SimCard.None)
+                    SimCard cardId = (pval);
+                    if (cardId == SimCard.None)
                     {
                         condErr = "Wrong CardID: ";
                         returnRes = false;
@@ -1587,14 +1588,14 @@ namespace HREngine.Bots
                     getSinglecond(extraParam[i], out tmp, out parameter);
 
                     int pvalInt = 0;
-                    Chireiden.Silverfish.SimCard pvalCardId = Chireiden.Silverfish.SimCard.None;
+                    SimCard pvalCardId = SimCard.None;
                     try
                     {
                         switch (tmp[0])
                         {
                             case "tgt":
                                 pvalCardId = (tmp[1]);
-                                if (pvalCardId == Chireiden.Silverfish.SimCard.None)
+                                if (pvalCardId == SimCard.None)
                                 {
                                     condErr = "Wrong CardID: ";
                                     returnRes = false;
@@ -1821,22 +1822,22 @@ namespace HREngine.Bots
 	                return false;
                 case param.ohc_minions_equal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MINION) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.ohc_minions_notequal:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MINION) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.ohc_minions_greater:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MINION) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.ohc_minions_less:
                     tmp_counter = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MOB) tmp_counter++;
+                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.MINION) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.ohc_spells_equal:
@@ -2468,42 +2469,42 @@ namespace HREngine.Bots
                     return false;
                 case param.omc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_undamaged_equal:
@@ -2773,14 +2774,14 @@ namespace HREngine.Bots
                     if (p.enemyHeroStartClass != cond.hClass) return true;
                     return false;
                 case param.tgt_equal:
-                    if (a.target!= null && (a.target.handcard.card.CardId == cond.cardID || (a.target.isHero && cond.cardID == Chireiden.Silverfish.SimCard.hero))) return true;
+                    if (a.target!= null && (a.target.handcard.card.CardId == cond.cardID || (a.target.isHero && cond.cardID == SimCard.hero))) return true;
                     return false;
                 case param.tgt_notequal:
                     if (a.target != null)
                     {
                         if (a.target.isHero)
                         {
-                            if (cond.cardID != Chireiden.Silverfish.SimCard.hero) return true;
+                            if (cond.cardID != SimCard.hero) return true;
                             else return false;
                         }
                         else if (a.target.handcard.card.CardId != cond.cardID) return true;

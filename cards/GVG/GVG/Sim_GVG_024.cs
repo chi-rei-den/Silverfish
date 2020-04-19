@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         //    Has +2 Attack while you have a Mech.
 
-        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Rogue.CogmastersWrench;
+        SimCard w = CardIds.Collectible.Rogue.CogmastersWrench;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

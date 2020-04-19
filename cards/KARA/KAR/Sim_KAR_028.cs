@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
         //Unlimited attacks each turn. Can't attack heroes.
         // handled in public void getMoveList
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Warrior.FoolsBane;
+        SimCard weapon = CardIds.Collectible.Warrior.FoolsBane;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

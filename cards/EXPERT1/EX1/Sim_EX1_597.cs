@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
 //    fügt am ende eures zuges diesem diener 1 schaden zu und beschwört einen wichtel (1/1).
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Imp;//imp
+        SimCard kid = CardIds.NonCollectible.Neutral.Imp;//imp
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Transform into a +1/+1 and Stealth
 		
-        Chireiden.Silverfish.SimCard Stealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2;
+        SimCard Stealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

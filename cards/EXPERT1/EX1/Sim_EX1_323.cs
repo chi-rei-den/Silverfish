@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         // Battlecry: Destroy your hero and replace it with Lord Jaraxxus.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury;
+        SimCard weapon = CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury;
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

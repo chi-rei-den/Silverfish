@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Summon two 1/1 Saplings.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.LivingRoots_SaplingToken; //Sapling
+        SimCard kid = CardIds.NonCollectible.Druid.LivingRoots_SaplingToken; //Sapling
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

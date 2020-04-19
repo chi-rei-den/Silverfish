@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -34,7 +35,7 @@ namespace HREngine.Bots
 		{
             bool own = target.own;
             int place = target.zonepos;
-            Chireiden.Silverfish.SimCard d = target.handcard.card;
+            SimCard d = target.handcard.card;
             p.minionGetDestroyed(target);
             p.callKid(d, place, own);
 		}

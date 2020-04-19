@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,14 +38,14 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.CardId == Chireiden.Silverfish.SimCard.shadowreflection)
+                    if (hc.card.CardId == SimCard.shadowreflection)
                     {
                         found = true;
                         break;
                     }
                 }
             }
-            if (!found) p.drawACard(Chireiden.Silverfish.SimCard.shadowreflection, turnStartOfOwner, true);
+            if (!found) p.drawACard(SimCard.shadowreflection, turnStartOfOwner, true);
         }
     }
 }

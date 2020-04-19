@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Summon four 1/1 Murlocs.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Shaman.CallintheFinishers_MurlocRazorgillToken; //1/1 Murloc Razorgill
+        SimCard kid = CardIds.NonCollectible.Shaman.CallintheFinishers_MurlocRazorgillToken; //1/1 Murloc Razorgill
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	class Sim_CS2_112 : SimTemplate //arcanitereaper
 	{
 
-        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Warrior.ArcaniteReaper;
+        SimCard card = CardIds.Collectible.Warrior.ArcaniteReaper;
         //
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

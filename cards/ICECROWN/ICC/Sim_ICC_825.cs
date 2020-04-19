@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: Summon a random friendly Beast that died this game.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.BloodfenRaptor; //3/2 Bloodfen Raptor
+        SimCard kid = CardIds.Collectible.Neutral.BloodfenRaptor; //3/2 Bloodfen Raptor
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

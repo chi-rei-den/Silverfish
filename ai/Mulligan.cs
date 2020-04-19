@@ -38,13 +38,13 @@ as well as
         public bool mulliganRulesLoaded = false;
         Dictionary<string, string> MulliganRules = new Dictionary<string, string>();
         Dictionary<string, Dictionary<string, string>> MulliganRulesDB = new Dictionary<string, Dictionary<string, string>>();
-        Dictionary<Chireiden.Silverfish.SimCard, string> MulliganRulesManual = new Dictionary<Chireiden.Silverfish.SimCard, string>();
+        Dictionary<SimCard, string> MulliganRulesManual = new Dictionary<SimCard, string>();
         List<CardIDEntity> cards = new List<CardIDEntity>();
         private static readonly ILog Log = Logger.GetLoggerInstanceForType();
 
         public class CardIDEntity
         {
-            public Chireiden.Silverfish.SimCard id = Chireiden.Silverfish.SimCard.None;
+            public SimCard id = SimCard.None;
             public int entitiy = 0;
             public int hold = 0;
             public int holdByRule = 0;
@@ -172,10 +172,10 @@ as well as
                     {
                         bool wasBreak = false;
                         string[] addedCards = ruleValue[2].Split(new string[] { "/" }, StringSplitOptions.RemoveEmptyEntries);
-                        Dictionary<Chireiden.Silverfish.SimCard, string> MulliganRulesManualTmp = new Dictionary<Chireiden.Silverfish.SimCard, string>();
+                        Dictionary<SimCard, string> MulliganRulesManualTmp = new Dictionary<SimCard, string>();
                         foreach (string s in addedCards)
                         {
-                            Chireiden.Silverfish.SimCard tempID = (s);
+                            SimCard tempID = (s);
                             if (s != tempID.ToString())
                             {
                                 rejectedRule.Add(getClearRule(oneRule.Key));
@@ -282,7 +282,7 @@ as well as
             var enemyHeroClass = mulliganData.OpponentClass.Convert();
 
             int manaRule = 4;
-            string MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, enemyHeroClass, 1);
+            string MullRuleKey = getMullRuleKey(SimCard.None, ownHeroClass, enemyHeroClass, 1);
             if (MulliganRules.ContainsKey(MullRuleKey))
             {
                 string[] temp = MulliganRules[MullRuleKey].Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -290,7 +290,7 @@ as well as
             }
             else
             {
-                MullRuleKey = getMullRuleKey(Chireiden.Silverfish.SimCard.None, ownHeroClass, CardClass.INVALID, 1);
+                MullRuleKey = getMullRuleKey(SimCard.None, ownHeroClass, CardClass.INVALID, 1);
                 if (MulliganRules.ContainsKey(MullRuleKey))
                 {
                     string[] temp = MulliganRules[MullRuleKey].Split(new string[] { ";" }, StringSplitOptions.RemoveEmptyEntries);
@@ -303,7 +303,7 @@ as well as
 
             foreach (CardIDEntity CardIDEntityC in cards)
             {
-                Chireiden.Silverfish.SimCard c = CardIDEntityC.id;
+                SimCard c = CardIDEntityC.id;
                 if (CardIDEntityC.hold == 0 && CardIDEntityC.holdByRule == 0)
                 {
                     if (c.Cost < manaRule)

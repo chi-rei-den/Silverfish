@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
         //-
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Rogue.WickedKnife;
+        SimCard weapon = CardIds.NonCollectible.Rogue.WickedKnife;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

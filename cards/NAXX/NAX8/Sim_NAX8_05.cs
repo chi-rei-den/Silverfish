@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_NAX8_05 : SimTemplate //* Unrelenting Rider
 	{
 //    Deathrattle:: Summon a Spectral Rider for your opponent.
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingRider_SpectralRiderToken; //Spectral Rider
+        SimCard kid = CardIds.NonCollectible.Neutral.UnrelentingRider_SpectralRiderToken; //Spectral Rider
 		
         public override void onDeathrattle(Playfield p, Minion m)
         {

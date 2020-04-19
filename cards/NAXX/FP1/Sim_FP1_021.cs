@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Deathrattle: Deal 1 damage to all minions.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Warrior.DeathsBite;
+        SimCard weapon = CardIds.Collectible.Warrior.DeathsBite;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

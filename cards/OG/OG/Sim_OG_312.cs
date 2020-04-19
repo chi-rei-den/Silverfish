@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Equip a 1/3 Rusty Hook.
 
-        Chireiden.Silverfish.SimCard w = CardIds.NonCollectible.Warrior.RustyHook;
+        SimCard w = CardIds.NonCollectible.Warrior.RustyHook;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_409t : SimTemplate //* Heavy Axe
 	{
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken;
+        SimCard weapon = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

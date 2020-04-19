@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Equip Atiesh, Greatstaff of the Guardian.
 		
-        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Neutral.MedivhtheGuardian_AtieshToken;//Atiesh
+        SimCard wcard = CardIds.NonCollectible.Neutral.MedivhtheGuardian_AtieshToken;//Atiesh
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

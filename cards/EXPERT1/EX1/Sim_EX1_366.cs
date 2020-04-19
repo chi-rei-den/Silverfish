@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_366 : SimTemplate //swordofjustice
 	{
-        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Paladin.SwordOfJustice;
+        SimCard card = CardIds.Collectible.Paladin.SwordOfJustice;
 
 //    jedes mal, wenn ihr einen diener herbeiruft, erhält dieser +1/+1 und diese waffe verliert 1 haltbarkeit.
 

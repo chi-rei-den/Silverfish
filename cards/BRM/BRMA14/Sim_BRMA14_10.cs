@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Activate a random Tron.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Toxitron;//3/3toxitron
+		SimCard kid = CardIds.NonCollectible.Neutral.Toxitron;//3/3toxitron
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

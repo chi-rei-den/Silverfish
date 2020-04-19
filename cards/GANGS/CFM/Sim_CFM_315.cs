@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Battlecry: Summon a 1/1 Cat.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.Alleycat_TabbycatToken; //1/1 Cat
+        SimCard kid = CardIds.NonCollectible.Hunter.Alleycat_TabbycatToken; //1/1 Cat
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

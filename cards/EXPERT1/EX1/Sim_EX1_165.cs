@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace HREngine.Bots
     {
         // Choose One - Charge; or +2 Health and Taunt.
 
-        Chireiden.Silverfish.SimCard cat = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1;
-        Chireiden.Silverfish.SimCard bear = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic2;
-        Chireiden.Silverfish.SimCard bearcat = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheClaw;
+        SimCard cat = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic1;
+        SimCard bear = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic2;
+        SimCard bearcat = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheClaw;
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

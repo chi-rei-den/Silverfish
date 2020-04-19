@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Transform into a Charge
 		
-        Chireiden.Silverfish.SimCard Charge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
+        SimCard Charge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

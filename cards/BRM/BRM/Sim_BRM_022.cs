@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 	{
 		// Whenever this minion takes damage, summon a 2/1 Whelp.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DragonEgg_BlackWhelpToken; //Black Whelp
+		SimCard kid = CardIds.NonCollectible.Neutral.DragonEgg_BlackWhelpToken; //Black Whelp
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {

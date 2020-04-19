@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // Deathrattle: Summon every minion killed by this weapon.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Deathknight.TheLichKing_FrostmourneToken;
+        SimCard weapon = CardIds.NonCollectible.Deathknight.TheLichKing_FrostmourneToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

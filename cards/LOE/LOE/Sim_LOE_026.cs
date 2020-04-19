@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
             var temp = (ownplay) ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
             if (place > 6) return;
 
-            Chireiden.Silverfish.SimCard c;
+            SimCard c;
             foreach (var gi in temp)
             {
                 c = (gi.Key);

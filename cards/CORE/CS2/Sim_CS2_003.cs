@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ namespace HREngine.Bots
             int anz = (ownplay) ? p.enemyAnzCards : p.owncards.Count;
             if (anz >= 1)
             {
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay,true);
+                p.drawACard(SimCard.None, ownplay,true);
             }
         }
 

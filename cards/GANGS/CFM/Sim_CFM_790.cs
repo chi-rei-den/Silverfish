@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Taunt. Battlecry: Your opponent summons a random minion from their hand.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.AcidicSwampOoze; //acidicswampooze
+        SimCard kid = CardIds.Collectible.Neutral.AcidicSwampOoze; //acidicswampooze
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

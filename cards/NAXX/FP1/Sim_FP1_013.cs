@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
             {
                 if (gyi.own == triggerEffectMinion.own)
                 {
-                    Chireiden.Silverfish.SimCard card = (gyi.cardid);
+                    SimCard card = (gyi.cardid);
                     int pos = triggerEffectMinion.own ? p.ownMinions.Count : p.enemyMinions.Count;
                     p.callKid(card, p.ownMinions.Count, gyi.own);
                 }

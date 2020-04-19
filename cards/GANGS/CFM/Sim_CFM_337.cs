@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Whenever your hero attacks, summon a 1/1 Piranha.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Hunter.PiranhaLauncher;
+        SimCard weapon = CardIds.Collectible.Hunter.PiranhaLauncher;
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

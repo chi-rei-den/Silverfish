@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         //  Battlecry: Summon two 1/1 Boom Bots. WARNING: Bots may explode. 
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DrBoom_BoomBotToken;//chillwind
+        SimCard kid = CardIds.NonCollectible.Neutral.DrBoom_BoomBotToken;//chillwind
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

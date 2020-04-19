@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         //   Battlecry: Give a random friendly minion +1 Attack.
 
-        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Hunter.Glaivezooka;
+        SimCard w = CardIds.Collectible.Hunter.Glaivezooka;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(w, ownplay);

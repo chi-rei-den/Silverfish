@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -34,7 +35,7 @@ public class Sim_DAL_741 : SimTemplate
 
 public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice) 
 { 
-p.drawACard(Chireiden.Silverfish.SimCard.None, own.own, true); 
+p.drawACard(SimCard.None, own.own, true); 
 } 
 } 
 }

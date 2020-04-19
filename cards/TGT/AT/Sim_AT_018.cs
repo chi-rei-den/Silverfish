@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Inspire: Summon a random Legendary minion.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.KingMukla;//King Mukla 5/5
+		SimCard kid = CardIds.Collectible.Neutral.KingMukla;//King Mukla 5/5
 		
 		public override void onInspire(Playfield p, Minion m, bool own)
         {

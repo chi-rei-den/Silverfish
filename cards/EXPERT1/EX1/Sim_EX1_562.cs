@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_EX1_562 : SimTemplate //onyxia
 	{
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.LeeroyJenkins_WhelpToken;//whelp
+        SimCard kid = CardIds.NonCollectible.Neutral.LeeroyJenkins_WhelpToken;//whelp
 
 //    kampfschrei:/ ruft welplinge (1/1) herbei, bis eure seite des schlachtfelds voll ist.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)

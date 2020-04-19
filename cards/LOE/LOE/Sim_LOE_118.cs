@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 		//Double all damage dealt to your hero.
         //handled in getDamageOrHeal
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Warrior.CursedBlade;
+        SimCard weapon = CardIds.Collectible.Warrior.CursedBlade;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

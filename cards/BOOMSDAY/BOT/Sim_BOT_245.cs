@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 {
 class Sim_BOT_245: SimTemplate //* 风暴聚合器
 {
-Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.ChillwindYeti;
+SimCard kid = CardIds.Collectible.Neutral.ChillwindYeti;
 public override void onCardPlay(Playfield p,bool ownplay,Minion target,int choice)
 {
 List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//<b>Battlecry:</b> Summon copies of your Totems.
 		//<b>战吼：</b>召唤你的图腾的复制。
-		Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.SplittingAxe;
+		SimCard weapon = CardIds.Collectible.Shaman.SplittingAxe;
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
 			p.equipWeapon(weapon, ownplay);

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Secret: When one of your minions is attacked, summon three 1/1 Snakes.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.SnakeTrap_SnakeToken;//snake
+        SimCard kid = CardIds.NonCollectible.Hunter.SnakeTrap_SnakeToken;//snake
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {

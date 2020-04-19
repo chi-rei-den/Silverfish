@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//When you play 4 cards in a turn, revive this minion.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Rogue.SherazinCorpseFlower; //Sherazin, Corpse Flower
+        SimCard kid = CardIds.Collectible.Rogue.SherazinCorpseFlower; //Sherazin, Corpse Flower
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

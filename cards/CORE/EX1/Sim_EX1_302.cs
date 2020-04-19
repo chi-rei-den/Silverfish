@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -37,7 +38,7 @@ namespace HREngine.Bots
             if (dmg >= target.Hp && !target.divineshild && !target.immune)
             {
                 //this.owncarddraw++;
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
             }
             p.minionGetDamageOrHeal(target, dmg);
             

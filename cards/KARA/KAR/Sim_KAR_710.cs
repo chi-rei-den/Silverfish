@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Battlecry: Summon a 0/5 minion with Taunt.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Arcanosmith_AnimatedShield;//Animated Shield
+        SimCard kid = CardIds.NonCollectible.Neutral.Arcanosmith_AnimatedShield;//Animated Shield
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

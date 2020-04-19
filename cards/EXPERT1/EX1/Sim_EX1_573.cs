@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Choose One - Give your other minions +2/+2; or Summon two 2/2 Treants with Taunt.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Druid.Cenarius_TreantToken; //special treant
+        SimCard kid = CardIds.NonCollectible.Druid.Cenarius_TreantToken; //special treant
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -48,9 +49,9 @@ namespace HREngine.Bots
             if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
             {
                 //this.owncarddraw+=3;
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
             }
         }
 

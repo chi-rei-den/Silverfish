@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 namespace HREngine.Bots
 {
@@ -9,9 +10,9 @@ namespace HREngine.Bots
     {
         public bool own;
         public int entity;
-        public Chireiden.Silverfish.SimCard cardid;
+        public SimCard cardid;
 
-        public GraveYardItem(Chireiden.Silverfish.SimCard id, int entity, bool own)
+        public GraveYardItem(SimCard id, int entity, bool own)
         {
             this.own = own;
             this.cardid = id;
@@ -342,8 +343,8 @@ namespace HREngine.Bots
 
     public class Probabilitymaker
     {
-        public Dictionary<Chireiden.Silverfish.SimCard, int> ownCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        public Dictionary<Chireiden.Silverfish.SimCard, int> enemyCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        public Dictionary<SimCard, int> ownCardsOut = new Dictionary<SimCard, int>();
+        public Dictionary<SimCard, int> enemyCardsOut = new Dictionary<SimCard, int>();
         List<GraveYardItem> graveyard = new List<GraveYardItem>();
         public List<GraveYardItem> turngraveyard = new List<GraveYardItem>();//MOBS only
         public List<GraveYardItem> turngraveyardAll = new List<GraveYardItem>();//All
@@ -368,7 +369,7 @@ namespace HREngine.Bots
 
         }
 
-        public void setOwnCardsOut(Dictionary<Chireiden.Silverfish.SimCard, int> og)
+        public void setOwnCardsOut(Dictionary<SimCard, int> og)
         {
             ownCardsOut.Clear();
             this.stalaggDead = false;
@@ -380,7 +381,7 @@ namespace HREngine.Bots
                 if (tmp.Key == CardIds.Collectible.Neutral.Stalagg) this.stalaggDead = true;
             }
         }
-        public void setEnemyCardsOut(Dictionary<Chireiden.Silverfish.SimCard, int> eg)
+        public void setEnemyCardsOut(Dictionary<SimCard, int> eg)
         {
             enemyCardsOut.Clear();
             foreach (var tmp in eg)
@@ -444,7 +445,7 @@ namespace HREngine.Bots
             this.turngraveyard.Clear();
             this.turngraveyardAll.Clear();
 
-            GraveYardItem OwnLastDiedMinion = new GraveYardItem(Chireiden.Silverfish.SimCard.None, -1, true);
+            GraveYardItem OwnLastDiedMinion = new GraveYardItem(SimCard.None, -1, true);
             foreach (GraveYardItem ent in list)
             {
                 if (ent.cardid == CardIds.Collectible.Neutral.Feugen)
@@ -470,13 +471,13 @@ namespace HREngine.Bots
 
                 if (!found)
                 {
-                    if ((ent.cardid).type == CardType.MOB)
+                    if ((ent.cardid).type == CardType.MINION)
                     {
                         this.turngraveyard.Add(ent);
                     }
                     this.turngraveyardAll.Add(ent);
                 }
-                if (ent.own && (ent.cardid).type == CardType.MOB)
+                if (ent.own && (ent.cardid).type == CardType.MINION)
                 {
                     OwnLastDiedMinion = ent;
                 }
@@ -492,7 +493,7 @@ namespace HREngine.Bots
             this.turngraveyardAll.AddRange(listAll);
         }
 
-        public bool hasEnemyThisCardInDeck(Chireiden.Silverfish.SimCard cardid)
+        public bool hasEnemyThisCardInDeck(SimCard cardid)
         {
             if (this.enemyCardsOut.ContainsKey(cardid))
             {
@@ -506,11 +507,11 @@ namespace HREngine.Bots
             return true;
         }
 
-        public int anzCardsInDeck(Chireiden.Silverfish.SimCard cardid)
+        public int anzCardsInDeck(SimCard cardid)
         {
             int ret = 2;
-            Chireiden.Silverfish.SimCard c = (cardid);
-            if (c.rarity == 5) ret = 1;//you can have only one rare;
+            SimCard c = (cardid);
+            if (c.Rarity == Rarity.LEGENDARY) ret = 1;//you can have only one rare;
 
             if (this.enemyCardsOut.ContainsKey(cardid))
             {
@@ -528,12 +529,12 @@ namespace HREngine.Bots
         public void printGraveyards()
         {
             string og = "og: ";
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.ownCardsOut)
+            foreach (KeyValuePair<SimCard, int> e in this.ownCardsOut)
             {
                 og += e.Key + "," + e.Value + ";";
             }
             string eg = "eg: ";
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> e in this.enemyCardsOut)
+            foreach (KeyValuePair<SimCard, int> e in this.enemyCardsOut)
             {
                 eg += e.Key + "," + e.Value + ";";
             }
@@ -541,7 +542,7 @@ namespace HREngine.Bots
             Helpfunctions.Instance.logg(eg);
         }
 
-        public int getProbOfEnemyHavingCardInHand(Chireiden.Silverfish.SimCard cardid, int handsize, int decksize)
+        public int getProbOfEnemyHavingCardInHand(SimCard cardid, int handsize, int decksize)
         {
             //calculates probability \in [0,...,100]
 
@@ -565,7 +566,7 @@ namespace HREngine.Bots
             return (int)(100.0 * retval);
         }
 
-        public bool hasCardinGraveyard(Chireiden.Silverfish.SimCard cardid)
+        public bool hasCardinGraveyard(SimCard cardid)
         {
             foreach (GraveYardItem gyi in this.graveyard)
             {
@@ -793,7 +794,7 @@ namespace HREngine.Bots
         }
 
 
-        public bool isAllowedSecret(Chireiden.Silverfish.SimCard cardID)
+        public bool isAllowedSecret(SimCard cardID)
         {
             if (ownCardsOut.ContainsKey(cardID) && ownCardsOut[cardID] >= 2) return false;
             return true;
@@ -865,15 +866,15 @@ namespace HREngine.Bots
             Action doneMove = Ai.Instance.bestmove;
             if (doneMove == null) return;
 
-            List<Chireiden.Silverfish.SimCard> enemySecretsOpenedStep = new List<Chireiden.Silverfish.SimCard>();
-            List<Chireiden.Silverfish.SimCard> enemyMinionsDiedStep = new List<Chireiden.Silverfish.SimCard>();
-            foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> tmp in p.enemyCardsOut)
+            List<SimCard> enemySecretsOpenedStep = new List<SimCard>();
+            List<SimCard> enemyMinionsDiedStep = new List<SimCard>();
+            foreach (KeyValuePair<SimCard, int> tmp in p.enemyCardsOut)
             {
                 if (!old.enemyCardsOut.ContainsKey(tmp.Key) || old.enemyCardsOut[tmp.Key] != tmp.Value)
                 {
-                    Chireiden.Silverfish.SimCard c = (tmp.Key);
+                    SimCard c = (tmp.Key);
                     if (c.Secret) enemySecretsOpenedStep.Add(tmp.Key);
-                    else if (c.Type == CardType.MOB) enemyMinionsDiedStep.Add(c);
+                    else if (c.Type == CardType.MINION) enemyMinionsDiedStep.Add(c);
                 }
             }
 
@@ -912,7 +913,7 @@ namespace HREngine.Bots
                     effigy = true;
                     redemption = true;
                 }
-                else if (!enemyMinionsDiedStep[0].deathrattle) { redemption = true; effigy = true; }
+                else if (!enemyMinionsDiedStep[0].Deathrattle) { redemption = true; effigy = true; }
                 else
                 {
                     switch (enemyMinionsDiedStep[0].CardId)
@@ -973,9 +974,9 @@ namespace HREngine.Bots
                     if (!attackerIsHero) freezing = true;
                     if (old.enemyMinions.Count < 7) noblesacrifice = true;
 
-                    foreach (Chireiden.Silverfish.SimCard id in enemySecretsOpenedStep)
+                    foreach (SimCard id in enemySecretsOpenedStep)
                     {
-                        switch (id)
+                        switch (id.CardId)
                         {
                             case CardIds.Collectible.Hunter.BearTrap:  //beartrap
                                 beartrap = true;
@@ -1027,7 +1028,7 @@ namespace HREngine.Bots
                     counterspell = true;
                     if (!targetWasHero) spellbender = true;
                 }
-                /* else if (doneMove.card.card.type == CardType.MOB) //we need the response from the core
+                /* else if (doneMove.card.card.type == CardType.MINION) //we need the response from the core
                  {
                      mirrorentity = true;
                      snipe = true;
@@ -1046,9 +1047,9 @@ namespace HREngine.Bots
             if (p.enemyHero.Hp + p.enemyHero.armor < old.enemyHero.Hp + old.enemyHero.armor) eyeforaneye = true;
             if (doneMove.actionType == actionEnum.useHeroPower) darttrap = true;
 
-            foreach (Chireiden.Silverfish.SimCard id in enemySecretsOpenedStep)
+            foreach (SimCard id in enemySecretsOpenedStep)
             {
-                switch (id)
+                switch (id.CardId)
                 {
                     case CardIds.Collectible.Mage.Effigy: effigy = true; continue;
                     case CardIds.Collectible.Hunter.BearTrap: beartrap = true; continue;

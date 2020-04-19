@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
         public Dictionary<string, string> BehaviorPath = new Dictionary<string, string>();
         List<HSCard> ETallcards = new List<HSCard>();
         Dictionary<string, int> startDeck = new Dictionary<string, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> turnDeck = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> turnDeck = new Dictionary<SimCard, int>();
         Dictionary<int, extraCard> extraDeck = new Dictionary<int, extraCard>();
         bool noDuplicates = false;
 
@@ -52,10 +53,10 @@ namespace HREngine.Bots
         private string heroname = "";
         private string enemyHeroname = "";
 
-        private Chireiden.Silverfish.SimCard heroAbility = new Chireiden.Silverfish.SimCard();
+        private SimCard heroAbility = new SimCard();
         private int ownHeroPowerCost = 2;
         private bool ownAbilityisReady = false;
-        private Chireiden.Silverfish.SimCard enemyAbility = new Chireiden.Silverfish.SimCard();
+        private SimCard enemyAbility = new SimCard();
         private int enemyHeroPowerCost = 2;
 
         private Weapon ownWeapon;
@@ -323,7 +324,7 @@ namespace HREngine.Bots
             }
 
             Playfield p = new Playfield();
-            p.enemyCardsOut = new Dictionary<Chireiden.Silverfish.SimCard, int>(Probabilitymaker.Instance.enemyCardsOut);
+            p.enemyCardsOut = new Dictionary<SimCard, int>(Probabilitymaker.Instance.enemyCardsOut);
 
             if (lastpf != null)
             {
@@ -604,7 +605,7 @@ namespace HREngine.Bots
             {
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.ownHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
                 {
-                    Chireiden.Silverfish.SimCard id = (ent.Id);
+                    SimCard id = (ent.Id);
                     int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                     int creator = ent.GetTag(GAME_TAG.CREATOR);
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -622,7 +623,7 @@ namespace HREngine.Bots
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.enemyHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
 
                 {
-                    Chireiden.Silverfish.SimCard id = (ent.Id);
+                    SimCard id = (ent.Id);
                     int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                     int creator = ent.GetTag(GAME_TAG.CREATOR);
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -674,7 +675,7 @@ namespace HREngine.Bots
                     }
 
 
-                    Chireiden.Silverfish.SimCard c = ((entitiy.Id));
+                    SimCard c = ((entitiy.Id));
                     Minion m = new Minion();
                     m.name = c.CardId;
                     m.handcard.card = c;
@@ -754,7 +755,7 @@ namespace HREngine.Bots
                     {
                         if (ent.GetTag(GAME_TAG.ATTACHED) == m.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
                         {
-                            Chireiden.Silverfish.SimCard id = (ent.Id);
+                            SimCard id = (ent.Id);
                             int controler = ent.GetTag(GAME_TAG.CONTROLLER);
                             int creator = ent.GetTag(GAME_TAG.CREATOR);
                             int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
@@ -844,7 +845,7 @@ namespace HREngine.Bots
             {
                 if (entitiy.ZonePosition >= 1)
                 {
-                    Chireiden.Silverfish.SimCard c = ((entitiy.Id));
+                    SimCard c = ((entitiy.Id));
 
 
 
@@ -880,8 +881,8 @@ namespace HREngine.Bots
         {
             Dictionary<string, int> tmpDeck = new Dictionary<string, int>(startDeck);
             List<GraveYardItem> graveYard = new List<GraveYardItem>();
-            Dictionary<Chireiden.Silverfish.SimCard, int> og = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-            Dictionary<Chireiden.Silverfish.SimCard, int> eg = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+            Dictionary<SimCard, int> og = new Dictionary<SimCard, int>();
+            Dictionary<SimCard, int> eg = new Dictionary<SimCard, int>();
             int owncontroler = TritonHs.OurHero.GetTag(GAME_TAG.CONTROLLER);
             int enemycontroler = TritonHs.EnemyHero.GetTag(GAME_TAG.CONTROLLER);
             turnDeck.Clear();
@@ -899,7 +900,7 @@ namespace HREngine.Bots
 
                 if (entity.GetZone() == Triton.Game.Mapping.TAG_ZONE.GRAVEYARD)
                 {
-                    Chireiden.Silverfish.SimCard cide = (entity.Id);
+                    SimCard cide = (entity.Id);
                     GraveYardItem gyi = new GraveYardItem(cide, entity.EntityId, entity.GetTag(GAME_TAG.CONTROLLER) == owncontroler);
                     graveYard.Add(gyi);
 
@@ -944,7 +945,7 @@ namespace HREngine.Bots
             foreach (var c in extraDeck)
             {
                 if (c.Value.isindeck == false) continue;
-                Chireiden.Silverfish.SimCard ce;
+                SimCard ce;
                 string entityId = c.Value.id;
                 if (entityId == "")
                 {
@@ -1023,8 +1024,8 @@ namespace HREngine.Bots
             foreach (var c in tmpDeck)
             {
                 if (c.Value < 1) continue;
-                Chireiden.Silverfish.SimCard ce = (c.Key);
-                if (ce == Chireiden.Silverfish.SimCard.None) continue;
+                SimCard ce = (c.Key);
+                if (ce == SimCard.None) continue;
                 if (turnDeck.ContainsKey(ce)) turnDeck[ce] += c.Value;
                 else turnDeck.Add(ce, c.Value);
             }

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Hero Power. Summon a Totem of your choice.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Shaman.StoneclawTotem;//Stoneclaw Totem
+        SimCard kid = CardIds.NonCollectible.Shaman.StoneclawTotem;//Stoneclaw Totem
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

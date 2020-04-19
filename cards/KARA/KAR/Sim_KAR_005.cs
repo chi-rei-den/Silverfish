@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Summon a 3/2 Big Bad Wolf.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.KindlyGrandmother_BigBadWolf;//Big Bad Wolf
+        SimCard kid = CardIds.NonCollectible.Hunter.KindlyGrandmother_BigBadWolf;//Big Bad Wolf
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

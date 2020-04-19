@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace HREngine.Bots
 	{
 		//Summon all 3 Animal Companions.
 		
-        Chireiden.Silverfish.SimCard c1 = CardIds.NonCollectible.Hunter.Huffer;//Huffer
-        Chireiden.Silverfish.SimCard c2 = CardIds.NonCollectible.Hunter.Leokk;//Leokk
-        Chireiden.Silverfish.SimCard c3 = CardIds.NonCollectible.Hunter.Misha;//Misha
+        SimCard c1 = CardIds.NonCollectible.Hunter.Huffer;//Huffer
+        SimCard c2 = CardIds.NonCollectible.Hunter.Leokk;//Leokk
+        SimCard c3 = CardIds.NonCollectible.Hunter.Misha;//Misha
         
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

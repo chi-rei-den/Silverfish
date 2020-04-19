@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     using System;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
             foreach (Handmanager.Handcard hc in p.owncards)
             {
                 int r = Math.Max(hc.getManaCost(p), 1);
-                if (hc.card == Chireiden.Silverfish.SimCard.None) r = 4;
+                if (hc.card == SimCard.None) r = 4;
                 retval += r;
             }
 
@@ -52,7 +53,7 @@ namespace HREngine.Bots
         {
             int retval = 0;
             retval += m.handcard.card.Cost;
-            if (m.handcard.card == Chireiden.Silverfish.SimCard.None) retval = 4;
+            if (m.handcard.card == SimCard.None) retval = 4;
             return retval;
         }
 

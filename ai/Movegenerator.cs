@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     using HearthDb;
@@ -49,7 +50,7 @@ namespace HREngine.Bots
                     }
                     else if (p.mana < cardCost) continue; // if not enough manna
 
-                    Chireiden.Silverfish.SimCard c = hc.card;
+                    SimCard c = hc.card;
                     cardNcost.Clear();
                     cardNcost.Append(c.CardId).Append(hc.manacost);
                     if (playedcards.Contains(cardNcost.ToString())) continue; // dont play the same card in one loop
@@ -67,7 +68,7 @@ namespace HREngine.Bots
                                 if (choiceDamageFound) break;
                                 for (int i = 1; i < 3; i++)
                                 {
-                                    Chireiden.Silverfish.SimCard cTmp = pen.getChooseCard(hc.card, i); // do all choice
+                                    SimCard cTmp = pen.getChooseCard(hc.card, i); // do all choice
                                     if (pen.DamageTargetDatabase.ContainsKey(cTmp) || (p.anzOwnAuchenaiSoulpriest > 0 && pen.HealTargetDatabase.ContainsKey(cTmp.CardId)))
                                     {
                                         choice = i;
@@ -149,7 +150,7 @@ namespace HREngine.Bots
             {
                 if (p.ownAbilityReady && p.mana >= p.ownHeroAblility.card.getManaCost(p, p.ownHeroAblility.manacost)) // if ready and enough manna
                 {
-                    Chireiden.Silverfish.SimCard c = p.ownHeroAblility.card;
+                    SimCard c = p.ownHeroAblility.card;
                     int isChoice = (c.choice) ? 1 : 0;
                     for (int choice = 0 + 1 * isChoice; choice < 1 + 2 * isChoice; choice++)
                     {

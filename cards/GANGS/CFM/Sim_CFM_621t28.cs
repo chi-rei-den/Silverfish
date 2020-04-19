@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Summon an 8/8 Demon.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.Kazakus_KabalDemon2;
+        SimCard kid = CardIds.NonCollectible.Neutral.Kazakus_KabalDemon2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

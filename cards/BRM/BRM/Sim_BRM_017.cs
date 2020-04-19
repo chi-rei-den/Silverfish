@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -36,7 +37,7 @@ namespace HREngine.Bots
             if (p.ownMaxMana >= 6)
             {
                 int posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
-                Chireiden.Silverfish.SimCard kid = ((p.OwnLastDiedMinion == Chireiden.Silverfish.SimCard.None) ? CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
+                SimCard kid = ((p.OwnLastDiedMinion == SimCard.None) ? CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
                 p.callKid(kid, posi, ownplay, false);
             }
 		}

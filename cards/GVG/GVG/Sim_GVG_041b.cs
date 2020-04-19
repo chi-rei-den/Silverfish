@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //   Summon 5 Wisps;
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Wisp;
+        SimCard kid = CardIds.Collectible.Neutral.Wisp;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             for (int i = 0; i < 5; i++)

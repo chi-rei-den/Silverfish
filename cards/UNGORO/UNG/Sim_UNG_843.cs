@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +32,7 @@ namespace HREngine.Bots
 	{
 		//After you cast a spell on this minion, summon a 1/1 Plant and cast another copy on it.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.PlantToken; //Plant
+        SimCard kid = CardIds.NonCollectible.Neutral.PlantToken; //Plant
         
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

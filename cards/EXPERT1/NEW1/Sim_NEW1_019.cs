@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace HREngine.Bots
                     {
                         if (m.name == CardIds.Collectible.Neutral.NerubianEgg && m.Hp >= 2) continue; //dont attack nerubianegg!
                         if (m.handcard.card.isToken && m.Hp == 1) continue;
-                        if (m.name == Chireiden.Silverfish.SimCard.defender) continue;
+                        if (m.name == SimCard.defender) continue;
                         if (m.name == CardIds.Collectible.Mage.Spellbender) continue;
                         if (m.Hp >= 2 && minhp > m.Hp)
                         {

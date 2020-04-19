@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         //Secret: When an enemy attacks, summon a 2/1 Defender as the new target.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Paladin.NobleSacrifice_Defender;
+        SimCard kid = CardIds.NonCollectible.Paladin.NobleSacrifice_Defender;
 
         public override void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
         {
@@ -41,7 +42,7 @@ namespace HREngine.Bots
                 p.callKid(kid, pos, true, true, true);
                 if (p.ownMinions.Count >= 1)
                 {
-                    if (p.ownMinions[p.ownMinions.Count - 1].name == Chireiden.Silverfish.SimCard.defender)
+                    if (p.ownMinions[p.ownMinions.Count - 1].name == SimCard.defender)
                     {
                         number = p.ownMinions[p.ownMinions.Count - 1].entitiyID;
                     }
@@ -54,7 +55,7 @@ namespace HREngine.Bots
 
                 if (p.enemyMinions.Count >= 1)
                 {
-                    if (p.enemyMinions[p.enemyMinions.Count - 1].name == Chireiden.Silverfish.SimCard.defender)
+                    if (p.enemyMinions[p.enemyMinions.Count - 1].name == SimCard.defender)
                     {
                         number = p.enemyMinions[p.enemyMinions.Count - 1].entitiyID;
                     }

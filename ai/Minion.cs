@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using Triton.Game.Mapping;
 
 namespace HREngine.Bots
@@ -9,12 +10,12 @@ namespace HREngine.Bots
 
     public class miniEnch
     {
-        public Chireiden.Silverfish.SimCard CARDID = Chireiden.Silverfish.SimCard.None;
+        public SimCard CARDID = SimCard.None;
         public int creator = 0; // the minion
         public int controllerOfCreator = 0; // own or enemys buff?
         public int copyDeathrattle = 0;
 
-        public miniEnch(Chireiden.Silverfish.SimCard id, int crtr, int controler, int copydr)
+        public miniEnch(SimCard id, int crtr, int controler, int copydr)
         {
             this.CARDID = id;
             this.creator = crtr;
@@ -36,14 +37,14 @@ namespace HREngine.Bots
         public bool own;
         public int pID = 0;
 
-        public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.None;
+        public SimCard name = SimCard.None;
         public CardClass CardClass = CardClass.INVALID;
         public int synergy = 0;
         public Handmanager.Handcard handcard;
         public int entitiyID = -1;
         //public int id = -1;//delete this
         public int zonepos = 0;
-        public Chireiden.Silverfish.SimCard deathrattle2;
+        public SimCard deathrattle2;
 
         public bool playedThisTurn = false;
         public bool playedPrevTurn = false;
@@ -799,7 +800,7 @@ namespace HREngine.Bots
 
                     case CardIds.NonCollectible.Druid.Infest_NerubianSpores: this.infest++; continue;
                     case CardIds.NonCollectible.Rogue.UnearthedRaptor_UnearthedRaptorEnchantment: this.extraParam2 = me.copyDeathrattle; continue; //unearthedraptor
-                   // case Chireiden.Silverfish.SimCard.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
+                   // case SimCard.LOE_012e: this.deathrattle2 = ; continue; //zzdeletetombexplorer
 
 
                     //conceal-------------------------------------------------

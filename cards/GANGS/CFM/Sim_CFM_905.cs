@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,9 +34,9 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                Chireiden.Silverfish.SimCard c;
+                SimCard c;
                 int count = 0;
-                foreach (KeyValuePair<Chireiden.Silverfish.SimCard, int> cid in p.prozis.turnDeck)
+                foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = (cid.Key);
                     if (c.Cost == 1)

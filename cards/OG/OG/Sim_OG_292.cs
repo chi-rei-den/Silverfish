@@ -35,7 +35,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.deathrattle)
+                    if (hc.card.Deathrattle)
                     {
                         hc.addattack++;
                         hc.addHp++;

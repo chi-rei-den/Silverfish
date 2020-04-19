@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,8 @@ namespace HREngine.Bots
     {
         // Choose One - Summon 2 Poisonous Spiders; or 2 Scarabs with Taunt.
 
-        Chireiden.Silverfish.SimCard kidSpider = CardIds.NonCollectible.Druid.MalfurionthePestilent_FrostWidowToken; //Frost Widow
-        Chireiden.Silverfish.SimCard kidScarab = CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabBeetleToken; //Scarab Beetle
+        SimCard kidSpider = CardIds.NonCollectible.Druid.MalfurionthePestilent_FrostWidowToken; //Frost Widow
+        SimCard kidScarab = CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabBeetleToken; //Scarab Beetle
         
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

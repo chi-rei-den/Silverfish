@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Return this to your hand and summon a 4/4 Nerubian.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//Nerubian
+		SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//Nerubian
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

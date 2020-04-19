@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Has +2 Attack while you have Spell Damage.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.SpiritClaws;
+        SimCard weapon = CardIds.Collectible.Shaman.SpiritClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

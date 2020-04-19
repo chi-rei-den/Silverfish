@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +32,7 @@ namespace HREngine.Bots
     {
         //Whenever you cast a spell, summon a 1/1 Violet Apprentice.
 
-        public Chireiden.Silverfish.SimCard card = CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken;
+        public SimCard card = CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken;
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

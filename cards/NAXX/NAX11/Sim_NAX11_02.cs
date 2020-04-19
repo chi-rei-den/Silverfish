@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Deal 1 damage to all minions. If any die, summon a slime.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;//Fallout Slime
+		SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;//Fallout Slime
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

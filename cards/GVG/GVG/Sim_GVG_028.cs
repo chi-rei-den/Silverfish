@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,11 +34,11 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            Chireiden.Silverfish.SimCard c = hc.card;
-            if (c.Type == CardType.SPELL && c.CardId != Chireiden.Silverfish.SimCard.gallywixscoin && wasOwnCard != triggerEffectMinion.own)
+            SimCard c = hc.card;
+            if (c.Type == CardType.SPELL && c.CardId != SimCard.gallywixscoin && wasOwnCard != triggerEffectMinion.own)
             {
                 p.drawACard(c.CardId, triggerEffectMinion.own, true);
-                p.drawACard(Chireiden.Silverfish.SimCard.gallywixscoin, wasOwnCard, true);
+                p.drawACard(SimCard.gallywixscoin, wasOwnCard, true);
             }
         }
 

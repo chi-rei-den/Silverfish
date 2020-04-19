@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_PRO_001c : SimTemplate //* powerofthehorde
 	{
         //Summon a random Horde Warrior.
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.TaurenWarrior;
+        SimCard kid = CardIds.Collectible.Neutral.TaurenWarrior;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

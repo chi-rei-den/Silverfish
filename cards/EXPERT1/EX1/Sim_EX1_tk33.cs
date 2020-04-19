@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Hero PowerSummon a 6/6 Infernal.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Warlock.Infernal;//infernal
+        SimCard kid = CardIds.NonCollectible.Warlock.Infernal;//infernal
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

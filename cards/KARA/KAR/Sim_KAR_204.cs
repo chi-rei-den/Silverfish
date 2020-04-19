@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
 		{
             if (own.own)
             {
-                if (p.OwnLastDiedMinion != Chireiden.Silverfish.SimCard.None)
+                if (p.OwnLastDiedMinion != SimCard.None)
                 {
                     p.callKid((p.OwnLastDiedMinion), own.zonepos, own.own);
                 }

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deal 1 damage. Summon a 1/1 Mastiff.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Hunter.OntheHunt_MastiffToken;
+        SimCard kid = CardIds.NonCollectible.Hunter.OntheHunt_MastiffToken;
 		
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

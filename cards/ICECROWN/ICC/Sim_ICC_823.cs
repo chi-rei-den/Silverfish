@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +37,7 @@ namespace HREngine.Bots
                 Handmanager.Handcard hcCopy = null;
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Type == CardType.MOB)
+                    if (hc.card.Type == CardType.MINION)
                     {
                         if (hcCopy == null) hcCopy = hc;
                         else

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Windfury. Deathrattle: Put this weapon into your hand.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.NonCollectible.Neutral.HookHeroic;
+        SimCard weapon = CardIds.NonCollectible.Neutral.HookHeroic;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

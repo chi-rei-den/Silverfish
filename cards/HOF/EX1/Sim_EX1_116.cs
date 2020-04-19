@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_116 : SimTemplate //leeroyjenkins
 	{
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.LeeroyJenkins_WhelpToken;//whelp
+        SimCard kid = CardIds.NonCollectible.Neutral.LeeroyJenkins_WhelpToken;//whelp
 //    ansturm/. kampfschrei:/ ruft zwei welplinge (1/1) für euren gegner herbei.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

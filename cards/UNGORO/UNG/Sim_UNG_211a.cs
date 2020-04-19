@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Fill your board with 1/1 Elementals.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Shaman.KalimosPrimalLord_StoneElemental; //Stone Elemental
+		SimCard kid = CardIds.NonCollectible.Shaman.KalimosPrimalLord_StoneElemental; //Stone Elemental
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

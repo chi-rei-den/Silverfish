@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 {
 	class Sim_EX1_247 : SimTemplate //stormforgedaxe
 	{
-        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Shaman.StormforgedAxe;
+        SimCard card = CardIds.Collectible.Shaman.StormforgedAxe;
         //
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

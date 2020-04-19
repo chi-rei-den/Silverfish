@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 
 //    windzorn/, überladung:/ (2)
-        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Shaman.Doomhammer;
+        SimCard card = CardIds.Collectible.Shaman.Doomhammer;
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

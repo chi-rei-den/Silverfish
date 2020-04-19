@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     using HearthDb;
@@ -89,13 +90,13 @@ namespace HREngine.Bots
         List<Minion> ownminions = new List<Minion>();
         List<Minion> enemyminions = new List<Minion>();
         List<Handmanager.Handcard> handcards = new List<Handmanager.Handcard>();
-        List<Chireiden.Silverfish.SimCard> enemycards = new List<Chireiden.Silverfish.SimCard>();
+        List<SimCard> enemycards = new List<SimCard>();
         List<GraveYardItem> turnGraveYard = new List<GraveYardItem>();
         List<GraveYardItem> turnGraveYardAll = new List<GraveYardItem>();
         List<string> discover = new List<string>();
         Dictionary<int, IDEnumOwner> LurkersDB = new Dictionary<int, IDEnumOwner>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> og = new Dictionary<Chireiden.Silverfish.SimCard, int>();
-        Dictionary<Chireiden.Silverfish.SimCard, int> eg = new Dictionary<Chireiden.Silverfish.SimCard, int>();
+        Dictionary<SimCard, int> og = new Dictionary<SimCard, int>();
+        Dictionary<SimCard, int> eg = new Dictionary<SimCard, int>();
 
         bool feugendead = false;
         bool stalaggdead = false;
@@ -157,8 +158,8 @@ namespace HREngine.Bots
                 lines = data.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
             }
 
-            Chireiden.Silverfish.SimCard heroability = CardIds.NonCollectible.Mage.Fireblast;
-            Chireiden.Silverfish.SimCard enemyability = CardIds.NonCollectible.Mage.Fireblast;
+            SimCard heroability = CardIds.NonCollectible.Mage.Fireblast;
+            SimCard enemyability = CardIds.NonCollectible.Mage.Fireblast;
             bool abilityReady = false;
 
             int readstate = 0;
@@ -459,7 +460,7 @@ namespace HREngine.Bots
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        Chireiden.Silverfish.SimCard cide = id;
+                        SimCard cide = id;
                         this.og.Add(cide, anz);
                     }
                     continue;
@@ -472,7 +473,7 @@ namespace HREngine.Bots
                         if (tmp == "" || tmp == " ") continue;
                         string id = tmp.Split(',')[0];
                         int anz = Convert.ToInt32(tmp.Split(',')[1]);
-                        Chireiden.Silverfish.SimCard cide = id;
+                        SimCard cide = id;
                         this.eg.Add(cide, anz);
                     }
                     continue;
@@ -694,7 +695,7 @@ namespace HREngine.Bots
                         int infest = 0;//adjadmg
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
-                        Chireiden.Silverfish.SimCard deathrattle2 = null;
+                        SimCard deathrattle2 = null;
                         if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
@@ -849,7 +850,7 @@ namespace HREngine.Bots
                         int infest = 0;//adjadmg
                         if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
 
-                        Chireiden.Silverfish.SimCard deathrattle2 = null;
+                        SimCard deathrattle2 = null;
                         if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 

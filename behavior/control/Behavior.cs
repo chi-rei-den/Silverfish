@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using Chireiden.Silverfish;
 using HearthDb;
 using System.Collections.Generic;
 
@@ -99,7 +101,7 @@ namespace HREngine.Bots
                 retval += 5;
                 retval += m.Hp * 2;
                 retval += m.Angr * 2;
-                retval += m.handcard.card.rarity;
+                retval += m.handcard.card.Rarity;
                 if (!m.playedThisTurn && m.windfury) retval += m.Angr;
                 if (m.divineshild) retval += 1;
                 if (m.stealth) retval += 1;
@@ -177,7 +179,7 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Warlock.DarkshireLibrarian: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.DarkBargain: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.Doomguard: goto case CardIds.Collectible.Warlock.Soulfire;
-                    case Chireiden.Silverfish.SimCard.succubus: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case SimCard.succubus: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.Soulfire: deletecardsAtLast = 1; break;
                     default:
                         if (deletecardsAtLast == 1) retval -= 20;
@@ -206,7 +208,7 @@ namespace HREngine.Bots
             {
                 switch (p.ownHeroAblility.card.CardId)
                 {
-                    case Chireiden.Silverfish.SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
+                    case SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
                     case CardIds.NonCollectible.Priest.LesserHeal:
                         bool wereTarget = false;
                         if (p.ownHero.Hp < p.ownHero.maxHp) wereTarget = true;
@@ -219,22 +221,22 @@ namespace HREngine.Bots
                         }
                         if (wereTarget && !(p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0)) retval -= 10;
                         break;
-                    case Chireiden.Silverfish.SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
+                    case SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
                     case CardIds.NonCollectible.Rogue.DaggerMastery:
                          if (!(p.ownWeapon.Durability > 1 || p.ownWeapon.Angr > 1)) retval -= 10;
                          break;
-                    case Chireiden.Silverfish.SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
+                    case SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
                     case CardIds.NonCollectible.Shaman.TotemicCall:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case Chireiden.Silverfish.SimCard.thetidalhand: goto case Chireiden.Silverfish.SimCard.reinforce;
-                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case Chireiden.Silverfish.SimCard.reinforce;
-                    case Chireiden.Silverfish.SimCard.reinforce:
+                    case SimCard.thetidalhand: goto case SimCard.reinforce;
+                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case SimCard.reinforce;
+                    case SimCard.reinforce:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case Chireiden.Silverfish.SimCard.soultap: 
+                    case SimCard.soultap: 
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
                     case CardIds.NonCollectible.Warlock.LifeTap: 
@@ -255,7 +257,7 @@ namespace HREngine.Bots
             int bigMobsInHand = 0;
             foreach (Handmanager.Handcard hc in p.owncards)
             {
-                if (hc.card.Type == CardType.MOB)
+                if (hc.card.Type == CardType.MINION)
                 {
                     mobsInHand++;
                     if (hc.card.Attack + hc.addattack >= 3) bigMobsInHand++;
@@ -335,7 +337,7 @@ namespace HREngine.Bots
                 if (m.Angr == 0) retval -= 7;
                 else if (m.Angr <= 2 && m.Hp <= 2 && !m.divineshild) retval -= 5;
             }
-            else retval += m.handcard.card.rarity;
+            else retval += m.handcard.card.Rarity;
 			
             if (m.taunt) retval += 5;
             if (m.divineshild) retval += m.Angr;
@@ -367,7 +369,7 @@ namespace HREngine.Bots
             int tmp = int.MinValue;
             for (int i = 0; i < discoverCards.Count; i++)
             {
-                Chireiden.Silverfish.SimCard name = discoverCards[i].card.CardId;
+                SimCard name = discoverCards[i].card.CardId;
                 if (SirFinleyPriorityList.ContainsKey(name) && SirFinleyPriorityList[name] > tmp)
                 {
                     tmp = SirFinleyPriorityList[name];
@@ -377,7 +379,7 @@ namespace HREngine.Bots
             return sirFinleyChoice;
         }
 
-        private Dictionary<Chireiden.Silverfish.SimCard, int> SirFinleyPriorityList = new Dictionary<Chireiden.Silverfish.SimCard, int>
+        private Dictionary<SimCard, int> SirFinleyPriorityList = new Dictionary<SimCard, int>
         {
             //{HeroPowerName, Priority}, where 0-9 = manual priority
             { CardIds.NonCollectible.Priest.LesserHeal, 0 }, 
@@ -386,8 +388,8 @@ namespace HREngine.Bots
             { CardIds.NonCollectible.Shaman.TotemicCall, 1 },
             { CardIds.NonCollectible.Warlock.LifeTap, 9 },
             { CardIds.NonCollectible.Rogue.DaggerMastery, 5 },
-            { Chireiden.Silverfish.SimCard.reinforce, 4 },
-            { Chireiden.Silverfish.SimCard.armorup, 2 },
+            { SimCard.reinforce, 4 },
+            { SimCard.armorup, 2 },
             { CardIds.NonCollectible.Hunter.SteadyShot, 8 }
         };
 		

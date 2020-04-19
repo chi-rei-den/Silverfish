@@ -13,7 +13,7 @@ namespace HREngine.Bots
             public int manacost = 1000;
             public int addattack = 0;
             public int addHp = 0;
-            public Chireiden.Silverfish.SimCard card;
+            public SimCard card;
             public Minion target;
             public int elemPoweredUp = 0;
             public int extraParam2 = 0;
@@ -33,7 +33,7 @@ namespace HREngine.Bots
                 this.addHp = hc.addHp;
                 this.elemPoweredUp = hc.elemPoweredUp;
             }
-            public Handcard(Chireiden.Silverfish.SimCard c)
+            public Handcard(SimCard c)
             {
                 this.position = 0;
                 this.entity = -1;

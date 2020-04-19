@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 {
     class Sim_EX1_025 : SimTemplate//dragonling mechanic
     {
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.DragonlingMechanic_MechanicalDragonlingToken;//mechanicaldragonling
+        SimCard kid = CardIds.NonCollectible.Neutral.DragonlingMechanic_MechanicalDragonlingToken;//mechanicaldragonling
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {

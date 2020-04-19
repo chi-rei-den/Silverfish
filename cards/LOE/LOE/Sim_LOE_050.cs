@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a random 1-Cost minion.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Priest.TwilightWhelp; //Twilight Whelp
+        SimCard kid = CardIds.Collectible.Priest.TwilightWhelp; //Twilight Whelp
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

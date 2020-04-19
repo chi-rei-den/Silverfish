@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,9 +31,9 @@ namespace HREngine.Bots
 	{
 		//Choose One - Transform into a 5/3 with Stealth or a 3/5 with Taunt.
 
-        Chireiden.Silverfish.SimCard m53 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken1;
-        Chireiden.Silverfish.SimCard m35 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken12;
-        Chireiden.Silverfish.SimCard m55 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken13;
+        SimCard m53 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken1;
+        SimCard m35 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken12;
+        SimCard m55 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken13;
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

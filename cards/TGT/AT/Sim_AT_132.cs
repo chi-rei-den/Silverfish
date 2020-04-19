@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -34,7 +35,7 @@ namespace HREngine.Bots
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
 		{
             CardClass HeroStartClass = (m.own) ? p.ownHeroStartClass : p.enemyHeroStartClass;
-			Chireiden.Silverfish.SimCard tmp = Chireiden.Silverfish.SimCard.None;
+			SimCard tmp = SimCard.None;
 
             switch (HeroStartClass)
             {
@@ -68,7 +69,7 @@ namespace HREngine.Bots
 				//default:
 			}
 
-            if (tmp != Chireiden.Silverfish.SimCard.None) p.setNewHeroPower(tmp, m.own);
+            if (tmp != SimCard.None) p.setNewHeroPower(tmp, m.own);
 		}
 	}
 }

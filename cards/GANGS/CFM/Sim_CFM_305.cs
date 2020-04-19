@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -35,7 +36,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.Type == CardType.MOB)
+                    if (hc.card.Type == CardType.MINION)
                     {
                         hc.addattack++;
                         hc.addHp++;

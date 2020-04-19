@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		//Deathrattle: Go dormant. Play 4 cards in a turn to revive this minion.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Rogue.SherazinCorpseFlower_SherazinSeedToken; //Sherazin, Seed
+        SimCard kid = CardIds.NonCollectible.Rogue.SherazinCorpseFlower_SherazinSeedToken; //Sherazin, Seed
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

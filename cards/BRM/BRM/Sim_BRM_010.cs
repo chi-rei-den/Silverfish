@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -30,9 +31,9 @@ namespace HREngine.Bots
     class Sim_BRM_010 : SimTemplate //* Druid of the Flame
     {
 		// Choose One - Transform into a 5/2 minion; or a 2/5 minion.
-        Chireiden.Silverfish.SimCard fireCat52 = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken1;
-        Chireiden.Silverfish.SimCard fireHawk25 = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken12;
-        Chireiden.Silverfish.SimCard CatHawk55 = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheFlame;
+        SimCard fireCat52 = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken1;
+        SimCard fireHawk25 = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken12;
+        SimCard CatHawk55 = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheFlame;
 		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

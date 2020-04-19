@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,7 +34,7 @@ namespace HREngine.Bots
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
             p.minionGetDamageOrHeal(target, dmg);
-            p.drawACard(Chireiden.Silverfish.SimCard.flameelemental, ownplay, true);
+            p.drawACard(SimCard.flameelemental, ownplay, true);
 		}
 	}
 }

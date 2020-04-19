@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 
 //
-        Chireiden.Silverfish.SimCard wcard = CardIds.NonCollectible.Paladin.TirionFordring_AshbringerToken;
+        SimCard wcard = CardIds.NonCollectible.Paladin.TirionFordring_AshbringerToken;
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.equipWeapon(wcard, ownplay);

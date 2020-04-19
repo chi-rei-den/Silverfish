@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 //    kampfschrei:/ fügt eurer hand einen zufälligen piraten aus eurem deck hinzu.
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(Chireiden.Silverfish.SimCard.None, true, true);
+            p.drawACard(SimCard.None, true, true);
 		}
 
 

@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using HearthDb;
 using System;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 {
 	class Sim_CS2_106 : SimTemplate //fierywaraxe
 	{
-        Chireiden.Silverfish.SimCard card = CardIds.Collectible.Warrior.FieryWarAxe;
+        SimCard card = CardIds.Collectible.Warrior.FieryWarAxe;
 //
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

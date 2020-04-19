@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Battlecry: Put a 1-Cost minion from each deck into the battlefield.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Priest.TwilightWhelp; //Twilight Whelp
+        SimCard kid = CardIds.Collectible.Priest.TwilightWhelp; //Twilight Whelp
 
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{

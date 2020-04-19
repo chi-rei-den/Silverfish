@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         //Deathrattle: Summon a 4/5 Baine Bloodhoof.
 
-        Chireiden.Silverfish.SimCard blaine = CardIds.NonCollectible.Neutral.CairneBloodhoof_BaineBloodhoofToken;
+        SimCard blaine = CardIds.NonCollectible.Neutral.CairneBloodhoof_BaineBloodhoofToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

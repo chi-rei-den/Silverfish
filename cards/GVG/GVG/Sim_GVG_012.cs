@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         //    Restore #3 Health. If the target is still damaged, summon a Lightwarden.
 
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Neutral.Lightwarden;
+        SimCard kid = CardIds.Collectible.Neutral.Lightwarden;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

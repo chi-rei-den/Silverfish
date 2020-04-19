@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -37,7 +38,7 @@ namespace HREngine.Bots
             if (target.Hp > dmg || target.immune || target.divineshild)
             {
                 //this.owncarddraw++;
-                p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+                p.drawACard(SimCard.None, ownplay);
             }
             p.minionGetDamageOrHeal(target, dmg);
             

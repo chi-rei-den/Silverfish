@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -32,10 +33,10 @@ namespace HREngine.Bots
 //    zieht 4 karten.
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
-            p.drawACard(Chireiden.Silverfish.SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
+            p.drawACard(SimCard.None, ownplay);
 		}
 
 	}

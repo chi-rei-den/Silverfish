@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon a 4/4 Nerubian.
 		
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.NerubianHeroic;//4/4Nerubian
+		SimCard kid = CardIds.NonCollectible.Neutral.NerubianHeroic;//4/4Nerubian
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

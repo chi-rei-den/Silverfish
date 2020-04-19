@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -33,11 +34,11 @@ namespace HREngine.Bots
 		{
 			foreach (Minion m in p.ownMinions)
             {
-                if (m.name != Chireiden.Silverfish.SimCard.skeleton) p.minionGetDestroyed(m);
+                if (m.name != SimCard.skeleton) p.minionGetDestroyed(m);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if (m.name != Chireiden.Silverfish.SimCard.skeleton) p.minionGetDestroyed(m);
+                if (m.name != SimCard.skeleton) p.minionGetDestroyed(m);
             }
 		}
 	}

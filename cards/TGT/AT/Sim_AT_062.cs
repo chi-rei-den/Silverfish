@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
 		//Summon three 1/1 Webspinners.
 		
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Hunter.Webspinner;//Webspinner
+        SimCard kid = CardIds.Collectible.Hunter.Webspinner;//Webspinner
 
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{

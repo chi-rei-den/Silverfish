@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -29,7 +30,7 @@ namespace HREngine.Bots
 
     class Sim_EX1_133 : SimTemplate//pertitions blade
     {
-        Chireiden.Silverfish.SimCard w = CardIds.Collectible.Rogue.PerditionsBlade;
+        SimCard w = CardIds.Collectible.Rogue.PerditionsBlade;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

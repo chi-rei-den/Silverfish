@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -36,7 +37,7 @@ namespace HREngine.Bots
 			int bestAdapt = 0;
             foreach (Minion m in temp)
             {
-                if (m.name == Chireiden.Silverfish.SimCard.silverhandrecruit)
+                if (m.name == SimCard.silverhandrecruit)
 				{
 					if (first )
 					{

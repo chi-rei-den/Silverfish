@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
 		// Hero Power: Summon three 1/1 Whelps. Get a new Hero Power.
 
-		Chireiden.Silverfish.SimCard kid = CardIds.NonCollectible.Neutral.OpentheGates_WhelpTokenBRS;//1/1Whelp
+		SimCard kid = CardIds.NonCollectible.Neutral.OpentheGates_WhelpTokenBRS;//1/1Whelp
 		
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (m.handcard.card.Type == CardType.MOB && p.ownMinions.Count == 0) return 0;
+                if (m.handcard.card.Type == CardType.MINION && p.ownMinions.Count == 0) return 0;
                 //allow it if you have biggamehunter
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {

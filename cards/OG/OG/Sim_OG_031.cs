@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,8 +31,8 @@ namespace HREngine.Bots
     {
         //Deathrattle: Summon a 4/2 Elemental.
 
-        Chireiden.Silverfish.SimCard weapon = CardIds.Collectible.Shaman.HammerOfTwilight;
-        Chireiden.Silverfish.SimCard kid = CardIds.Collectible.Shaman.HammerOfTwilighta;
+        SimCard weapon = CardIds.Collectible.Shaman.HammerOfTwilight;
+        SimCard kid = CardIds.Collectible.Shaman.HammerOfTwilighta;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
