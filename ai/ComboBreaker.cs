@@ -37,7 +37,6 @@ namespace HREngine.Bots
         public void setInstances()
         {
             help = Helpfunctions.Instance;
-            cdb = CardDB.Instance;
         }
 
 
