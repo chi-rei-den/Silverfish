@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_719",
@@ -9,7 +10,7 @@
     "每当你将一张牌洗入你的牌库时，将该牌的一张复制置入你的\n手牌。",
     "[x]Whenever you shuffle a\ncard into your deck, add\na copy to your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

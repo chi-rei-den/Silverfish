@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_007",
@@ -9,7 +10,7 @@
     "召唤@个1/1的小鬼。<i>（每回合都会升级！）</i>",
     "Summon @ 1/1 |4(Imp, Imps). <i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

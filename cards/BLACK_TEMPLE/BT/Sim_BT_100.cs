@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_100",
@@ -9,7 +10,7 @@
     "造成$3点伤害。随机召唤一个法力值消耗为（3）的随从。<b>过载：</b>（1）",
     "Deal $3 damage.\nSummon a random\n3-Cost minion.\n<b>Overload:</b> (1)"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

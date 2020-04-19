@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_858e",
@@ -9,7 +10,7 @@
     "战斗期间鱼人会不时乱入。",
     "Murlocs occasionally join the battle."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

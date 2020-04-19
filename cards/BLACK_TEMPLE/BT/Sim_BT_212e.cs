@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_212e",
@@ -9,7 +10,7 @@
     "从{0}复制的<b>亡语</b>。",
     "Copied <b>Deathrattle</b> from {0}."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

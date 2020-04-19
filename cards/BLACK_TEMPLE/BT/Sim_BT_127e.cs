@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_127e",
@@ -9,7 +10,7 @@
     "法力值消耗减少（5）点。",
     "Costs (5) less."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

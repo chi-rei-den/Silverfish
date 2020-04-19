@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_03px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机将一张神奇的魔术牌置入你的\n手牌。",
     "<b>Hero Power</b>\nAdd a random magical feat to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_31px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n将一个随从变为金色随从。如果该随从已经为金色随从，则使其获得+8/+8。",
     "<b>Hero Power</b>\nMake a minion Golden. If it's already Golden, give it +8/+8."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

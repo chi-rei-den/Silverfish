@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>\n随机弃一张牌。",
     "<b>Battlecry:</b> Discard a random card."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 2,
   "rarity": "FREE",

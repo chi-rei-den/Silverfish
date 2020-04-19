@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_57",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤一个毛茸茸的白色野兽。",
     "<b>Battlecry:</b> Summon a \n Fluffy White Beast."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

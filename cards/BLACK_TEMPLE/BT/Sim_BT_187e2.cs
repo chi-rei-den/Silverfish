@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_187e2",
@@ -9,7 +10,7 @@
     "凯恩使其无视<b>嘲讽</b>。",
     "Kayn is letting this ignore <b>Taunt</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

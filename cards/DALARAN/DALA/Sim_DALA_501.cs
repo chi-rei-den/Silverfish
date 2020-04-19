@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_501",
@@ -9,7 +10,7 @@
     "每当你抽到一张法术牌，将一张它的复制置入你的牌库。",
     "Whenever you draw a spell, add a copy of it to your deck."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": null,

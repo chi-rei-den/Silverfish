@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_715",
@@ -9,7 +10,7 @@
     "在本回合中，你在使用一张卡牌后，再次使用该卡牌<i>（目标随机而定）</i>。",
     "After you play a card this turn, replay it\n<i>(targets chosen randomly)</i>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

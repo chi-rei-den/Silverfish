@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_15",
@@ -9,7 +10,7 @@
     "无法被<b>沉默，圣盾，潜行</b>。",
     "Can't be <b>Silenced. Divine Shield, Stealth.</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "LEGENDARY",

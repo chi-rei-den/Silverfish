@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA03_2",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n造成30点伤害。",
     "<b>Hero Power</b>\nDeal 30 damage."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

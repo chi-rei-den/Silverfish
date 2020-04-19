@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_033",
@@ -9,7 +10,7 @@
     "造成$2点伤害。召唤一个0/2的地精炸弹。",
     "Deal $2 damage. Summon a 0/2 Goblin Bomb."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

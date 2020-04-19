@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_141ts",
@@ -9,7 +10,7 @@
     "随机施放一个圣骑士<b>奥秘</b>。",
     "Cast a random Paladin <b>Secret</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ using System.Text;
     "<b>战吼：</b>使你手牌中所有机械牌的法力值消耗减少（1）点。",
     "[x]<b>Battlecry:</b> Reduce the\nCost of Mechs in your\nhand by (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

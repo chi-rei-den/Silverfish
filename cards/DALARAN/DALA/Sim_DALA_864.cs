@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_864",
@@ -9,7 +10,7 @@
     "所有随从会在其拥有者的回合结束时获得+1/+1。",
     "Minions gain +1/+1 at the end of their owner's turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

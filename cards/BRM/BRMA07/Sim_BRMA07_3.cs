@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA07_3",
@@ -9,7 +10,7 @@
     "随机对一个敌人造成$5点伤害。获得5点护甲值。",
     "Deal $5 damage to a random enemy. Gain 5 Armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 4,
   "rarity": null,

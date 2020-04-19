@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_130",
@@ -9,7 +10,7 @@
     "获得两个空的法力水晶。",
     "Gain two empty Mana Crystals."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 4,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_589",
@@ -9,7 +10,7 @@
     "复制你手牌中的所有野兽牌。",
     "Copy all Beasts in your hand."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 5,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>英雄技能</b>\n本回合+1攻击力。  +1护甲值。",
     "<b>Hero Power</b>\n+1 Attack this turn.\n+1 Armor."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

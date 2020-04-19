@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_004",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一只6/4的大灰狼。",
     "<b>Deathrattle:</b> Summon a 6/4 Big Bad Wolf."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

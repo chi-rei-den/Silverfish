@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "造成$4点伤害，随机弃一\n张牌。",
     "[x]Deal $4 damage.\nDiscard a random card."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

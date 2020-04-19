@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_083e",
@@ -9,7 +10,7 @@
     "这把武器本回合获得+1攻击力。",
     "+1 Attack this turn."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

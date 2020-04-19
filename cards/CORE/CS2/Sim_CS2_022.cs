@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,7 @@ using System.Text;
     "使一个随从变形成为1/1的绵羊。",
     "Transform a minion\ninto a 1/1 Sheep."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 4,
   "rarity": "FREE",

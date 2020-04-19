@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_087",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤两个具有全部随从类型的1/1的融合怪。",
     "<b>Battlecry:</b> Summon two 1/1 Amalgams with all minion types."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

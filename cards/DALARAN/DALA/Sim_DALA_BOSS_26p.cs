@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_26p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n<b>冻结</b>每回合第一个攻击你的随从。",
     "<b>Passive Hero Power</b>\n<b>Freeze</b> the first minion that attacks you each turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

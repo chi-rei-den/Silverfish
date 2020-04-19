@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA10_6",
@@ -9,7 +10,7 @@
     "每当一个腐化的蛋死亡，便获得+1攻击力。",
     "Whenever a Corrupted Egg dies, gain +1 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "WEAPON",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_740",
@@ -9,7 +10,7 @@
     "<b>吸血</b>\n随机对两个敌方随从造成$2点伤害。",
     "<b>Lifesteal</b>\nDeal $2 damage to two random enemy minions."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

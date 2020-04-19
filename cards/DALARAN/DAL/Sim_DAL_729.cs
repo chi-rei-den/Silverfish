@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_729",
@@ -9,7 +10,7 @@
     "<b>战吼：</b><b>发现</b>一张你的对手手牌的复制。",
     "[x]<b>Battlecry:</b> <b>Discover</b> a\ncopy of a card in your\nopponent's hand."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

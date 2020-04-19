@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_27p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n消耗你所有的法力值，随机召唤一个法力值消耗相同的随从。",
     "[x]<b>Hero Power</b>\nSpend all your Mana.\nSummon a random minion\nthat costs that much."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

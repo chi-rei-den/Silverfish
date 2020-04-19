@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_305",
@@ -9,7 +10,7 @@
     "<b>休眠</b>两回合。唤醒时，使你手牌中的所有随从牌获得+2/+2。",
     "<b>Dormant</b> for 2 turns.\nWhen this awakens,\ngive all minions in your hand +2/+2."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

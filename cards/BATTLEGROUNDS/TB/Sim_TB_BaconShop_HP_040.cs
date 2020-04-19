@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_040",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机使一个友方随从获得+4生命值。",
     "<b>Hero Power</b>\nGive a random friendly minion +4 Health."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

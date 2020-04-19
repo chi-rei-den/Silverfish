@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_062",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在你的回合开始时，在鲍勃的酒馆添加一条龙。",
     "[x]<b>Passive Hero Power</b>\nAt the start of your turn,\nadd a Dragon to Bob's\nTavern."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

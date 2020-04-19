@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_562e",
@@ -9,7 +10,7 @@
     "获得<b>潜行</b>直到你的下个回合。",
     "<b>Stealthed</b> until your next turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

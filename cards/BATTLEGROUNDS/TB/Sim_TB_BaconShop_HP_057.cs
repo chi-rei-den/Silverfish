@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_057",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n对战开始时，<b>发现</b>一个英雄技能。",
     "[x]<b>Passive Hero Power</b>\nAt the start of the game,\n<b>Discover</b> a Hero Power."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

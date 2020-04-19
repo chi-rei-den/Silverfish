@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_720",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机将一个友方随从移回你的手牌。它的法力值消耗减少（2）点。",
     "[x]<b>Deathrattle:</b> Return\na random friendly\nminion to your hand.\nIt costs (2) less."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "WEAPON",
   "cost": 4,
   "rarity": "EPIC",

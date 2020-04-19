@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_539",
@@ -9,7 +10,7 @@
     "<b>战吼：</b><b>发现</b>一张法力值消耗大于或等于（5）点的法术牌。",
     "<b>Battlecry:</b> <b>Discover</b> a spell that costs (5) or more."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

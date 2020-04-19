@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "在本回合中，获得一个法力\n水晶。",
     "Gain 1 Mana Crystal this turn only."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_850",
@@ -9,7 +10,7 @@
     "<b>休眠</b>。\n<b>战吼：</b>为你的对手召唤三个1/3的典狱官。当她们死亡时，消灭所有随从并唤醒。",
     "[x]<b>Dormant</b>. <b>Battlecry:</b> Summon\nthree 1/3 enemy Warders.\nWhen they die, destroy all\nminions and awaken."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

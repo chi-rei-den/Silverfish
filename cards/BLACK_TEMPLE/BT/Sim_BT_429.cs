@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_429",
@@ -9,7 +10,7 @@
     "将你的英雄技能替换为“造成5点伤害。”使用两次后，换回原技能。",
     "Swap your Hero Power to \"Deal 5 damage.\" After 2 uses, swap it back."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 5,
   "rarity": "LEGENDARY",

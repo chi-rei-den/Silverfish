@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_222",
@@ -9,7 +10,7 @@
     "对一个随从和你的英雄各造成$4点伤害。",
     "Deal $4 damage to a minion and your hero."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

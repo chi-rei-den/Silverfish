@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_087",
@@ -9,7 +10,7 @@
     "将十张你对手职业的卡牌洗入你的牌库，其法力值消耗为（1）点。",
     "Shuffle 10 cards from your opponent's class into your deck. They cost (1)."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 4,
   "rarity": "EPIC",

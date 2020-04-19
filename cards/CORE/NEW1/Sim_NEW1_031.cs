@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "随机召唤一个野兽伙伴。",
     "Summon a random Beast Companion."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

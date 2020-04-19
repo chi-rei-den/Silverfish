@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_726",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个3/4的龙骑士。",
     "<b>Deathrattle:</b> Summon a 3/4 Dragonrider."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

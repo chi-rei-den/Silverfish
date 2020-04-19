@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_603",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>将你手牌中法力值消耗最低的恶魔牌置入战场。",
     "<b>Deathrattle:</b> Put the lowest Cost Demon from your hand into the battlefield."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

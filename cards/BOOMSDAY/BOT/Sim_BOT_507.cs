@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_507",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n为相邻的随从各召唤一个复制。",
     "<b>Battlecry:</b> Summon a copy of each adjacent minion."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 7,
   "rarity": "COMMON",

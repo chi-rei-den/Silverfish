@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_592",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n在该随从攻击并消灭一个随从后，可再次攻击。",
     "<b>Rush</b>. After this attacks and kills a minion, it may attack again."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_017e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个1/1的鱼人。",
     "<b>Deathrattle:</b> Summon a 1/1 Murloc."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

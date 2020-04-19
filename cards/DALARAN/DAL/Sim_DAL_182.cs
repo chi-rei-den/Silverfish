@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_182",
@@ -9,7 +10,7 @@
     "在你施放一个法术后，随机对一个敌方随从造成1点伤害。",
     "After you cast a spell, deal 1 damage to a random enemy minion."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

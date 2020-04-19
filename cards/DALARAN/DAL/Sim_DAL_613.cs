@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +16,7 @@ using System.Text;
     "<b>战吼：</b>随机召唤一个法力值消耗为（2）的随从。",
     "<b>Battlecry:</b> Summon a random 2-Cost minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

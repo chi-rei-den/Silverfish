@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>\n对所有未受伤的敌方随从造成2点伤害。",
     "<b>Battlecry:</b> Deal 2 damage to all undamaged enemy minions."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

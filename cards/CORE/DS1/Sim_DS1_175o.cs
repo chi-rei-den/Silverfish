@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DS1_175o",
@@ -9,7 +10,7 @@
     "{0}使其获得+1攻击力。",
     "+1 Attack from {0}."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

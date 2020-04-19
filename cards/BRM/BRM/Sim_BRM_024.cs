@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>如果你对手的生命值小于或等于15点，便获得+3/+3。",
     "<b>Battlecry:</b> If your opponent has 15 or less Health, gain +3/+3."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

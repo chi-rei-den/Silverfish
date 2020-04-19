@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_417",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制一个<b>跟班</b>，就可以选择一张宝藏牌。",
     "<b>Battlecry:</b> If you control a <b>Lackey</b>, choose a fantastic treasure."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

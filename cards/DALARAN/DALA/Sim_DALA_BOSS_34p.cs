@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_34p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在你的回合结束时，让场上所有随从快乐地转起来。",
     "[x]<b>Passive Hero Power</b>\nAt the end of your turn,\nmerrily rotate all minions\naround the board."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

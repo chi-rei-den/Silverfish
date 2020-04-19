@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_800",
@@ -9,7 +10,7 @@
     "你改用泽尔的一副怪盗套牌来开始对战！",
     "You start the game with one of Zayle's EVIL Decks!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

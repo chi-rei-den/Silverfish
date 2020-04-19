@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_116",
@@ -9,7 +10,7 @@
     "每当这张牌被抽到时，装备一个微笑。",
     "Whenever this card is drawn, equip a smile."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 0,
   "rarity": "LEGENDARY",

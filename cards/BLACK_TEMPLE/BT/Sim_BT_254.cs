@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_254",
@@ -9,7 +10,7 @@
     "在你对一个随从施放法术后，随机将一张牧师法术牌置入你的\n手牌。",
     "[x]After you cast a spell on\na minion, add a Priest\nspell to your hand."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 2,
   "rarity": "EPIC",

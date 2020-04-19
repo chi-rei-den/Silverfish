@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_037",
@@ -9,7 +10,7 @@
     "每当你使用一张具有<b>战吼</b>的牌，便获得+2/+2。",
     "Whenever you play a card with <b>Battlecry</b>, gain +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

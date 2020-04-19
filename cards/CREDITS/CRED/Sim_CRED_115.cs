@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_115",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤两只小龙虾替你作战。",
     "<b>Battlecry:</b> Summon two crawdads to fight for you."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_321",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n<b>发现</b>一张恶魔牌。",
     "<b>Battlecry:</b> <b>Discover</b> a Demon."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

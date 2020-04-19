@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_213e",
@@ -9,7 +10,7 @@
     "+3/+3。",
     "+3/+3."
   ],
-  "cardClass": null,
+  "CardClass": null,
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

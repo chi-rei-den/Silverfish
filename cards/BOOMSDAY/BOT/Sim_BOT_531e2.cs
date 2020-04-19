@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_531e2",
@@ -9,7 +10,7 @@
     "在本回合中，你的下一个法术将获得<b>法术伤害+2</b>。",
     "You have <b>Spell Damage +2</b> for your next spell this turn."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

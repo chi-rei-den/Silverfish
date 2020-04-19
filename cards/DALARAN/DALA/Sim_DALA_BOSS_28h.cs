@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_28h",
@@ -9,7 +10,7 @@
     "<i>释放法术的大师，但并不擅长瞄准。</i>",
     "<i>Master of spellcasting.\n[x]Lousy at spell-aiming.</i>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

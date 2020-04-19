@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA08_3",
@@ -9,7 +10,7 @@
     "消灭一个随从。获得10点护甲值。",
     "Destroy a minion. Gain 10 Armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

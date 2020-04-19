@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_14p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤一个2/2的友善的服务员。",
     "<b>Hero Power</b>\nSummon a 2/2 Kind Waitress."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>英雄技能</b>\n随机激活一个金刚。",
     "<b>Hero Power</b>\nActivate a random Tron."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 4,
   "rarity": null,

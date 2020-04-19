@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRM_027pH",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机对一个敌人\n造成$8点伤害。\n施放两次。",
     "<b>Hero Power</b>\nDeal $8 damage to a random enemy. TWICE."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

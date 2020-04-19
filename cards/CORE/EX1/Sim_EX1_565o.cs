@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "EX1_565o",
@@ -9,7 +10,7 @@
     "火舌图腾使其获得+2攻击力。",
     "+2 Attack from Flametongue Totem."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

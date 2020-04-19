@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_745",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n对战开始时，使你的对手获得两张“诅咒”。",
     "<b>Passive</b>\nAt the start of the game, give your opponent two 'Cursed!' cards."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

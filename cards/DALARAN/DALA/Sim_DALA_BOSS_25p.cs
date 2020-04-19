@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_25p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在任意玩家抽到一张随从牌后，召唤一个它的1/1的复制。",
     "[x]<b>Passive Hero Power</b>\nAfter a player draws a\nminion, they summon\na 1/1 copy of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_566",
@@ -9,7 +10,7 @@
     "你使用的<b>亡语</b>随从牌的法力值消耗减少（3）点，但会在回合结束时死亡。",
     "[x]<b>Deathrattle</b> minions you\nplay cost (3) less, but die\nat the end of the turn."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

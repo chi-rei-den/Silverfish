@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_022e",
@@ -9,7 +10,7 @@
     "该随从被变形成为1/1的绵羊。",
     "This minion has been transformed into a 1/1 Sheep."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": "COMMON",

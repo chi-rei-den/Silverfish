@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_908",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的随从受到攻击时，使其获得<b>圣盾</b>。",
     "<b>Secret:</b> When one of your minions is attacked, give it <b>Divine Shield</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

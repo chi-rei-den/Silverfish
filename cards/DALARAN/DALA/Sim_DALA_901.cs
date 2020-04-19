@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_901",
@@ -9,7 +10,7 @@
     "选择一个敌方随从，将其加入你的冒险模式套牌。",
     "Choose an enemy minion. Add it to your Adventure Deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

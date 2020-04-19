@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_140e",
@@ -9,7 +10,7 @@
     "+1/+1和<b>突袭</b>。",
     "+1/+1 and <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

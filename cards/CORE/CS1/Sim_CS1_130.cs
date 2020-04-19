@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对一个随从造成$3点伤害。",
     "Deal $3 damage\nto a minion."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

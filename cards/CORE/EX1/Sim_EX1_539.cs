@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "造成$3点伤害。如果你控制一个野兽，则改为造成\n$5点伤害。",
     "Deal $3 damage. If you control a Beast, deal\n$5 damage instead."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

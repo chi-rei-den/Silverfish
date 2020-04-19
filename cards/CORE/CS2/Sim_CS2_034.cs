@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>英雄技能</b>\n造成$1点伤害。",
     "<b>Hero Power</b>\nDeal $1 damage."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_136tb",
@@ -9,7 +10,7 @@
     "召唤一个9/9并具有<b>突袭</b>的\n打手。",
     "Summon a 9/9 Bruiser with <b>Rush</b>."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 10,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_859",
@@ -9,7 +10,7 @@
     "对战开始时，双方玩家额外抽两张牌，并获得两个额外的法力水晶。",
     "Both players start the game with two extra cards and Mana Crystals."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

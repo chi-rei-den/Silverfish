@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_062",
@@ -9,7 +10,7 @@
     "使一个随从获得\n“同时对其攻击目标相邻的随从造成伤害。”",
     "Give a minion \"Also damages minions next to whomever this attacks.\""
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

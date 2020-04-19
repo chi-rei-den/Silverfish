@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_27h",
@@ -9,7 +10,7 @@
     "<i>有人说艺术是带有主观性的，而拉希尔喜欢破坏性的。</i>",
     "<i>Some say art is subjective. Rasil\nprefers destructive.</i>"
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "NEW1_033o",
@@ -9,7 +10,7 @@
     "雷欧克使该随从获得+1攻击力。",
     "Leokk is granting this minion +1 Attack."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

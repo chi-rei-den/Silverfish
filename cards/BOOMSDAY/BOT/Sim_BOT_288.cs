@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_288",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将一个友方随从的三张复制洗入你的牌库。",
     "<b>Battlecry:</b> Shuffle 3 copies of a friendly minion into your deck."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

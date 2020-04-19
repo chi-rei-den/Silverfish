@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_34",
@@ -9,7 +10,7 @@
     "该牌只能在移动设备上使用。",
     "Can only be played on a mobile device."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_Sorcerer",
@@ -9,7 +10,7 @@
     "<b>法术伤害+2</b>。<b>战吼：</b>抽三张法术牌。",
     "<b>Spell Damage +2</b>\n<b>Battlecry:</b> Draw 3 spells."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

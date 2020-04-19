@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_093",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤一头2/2的雌斑虎。",
     "<b>Battlecry:</b> Summon a 2/2 Cat."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_50",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本局对战的剩余时间内，你的随从无法被<b>沉默</b>。",
     "<b>Battlecry:</b> For the rest of the game, your minions can't be <b><b>Silence</b>d</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 11,
   "rarity": "LEGENDARY",

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>战吼：</b>随机将两张<i>（你对手职业的）</i>法术牌置入你的手牌。",
     "<b>Battlecry:</b> Add 2 random spells to your hand <i>(from your opponent's class)</i>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 9,
   "rarity": "LEGENDARY",

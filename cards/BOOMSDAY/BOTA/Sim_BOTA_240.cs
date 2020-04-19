@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_240",
@@ -9,7 +10,7 @@
     "消灭所有友方随从。",
     "Destroy all friendly minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

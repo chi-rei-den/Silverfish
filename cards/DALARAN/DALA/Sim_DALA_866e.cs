@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_866e",
@@ -9,7 +10,7 @@
     "在每个玩家的回合开始时，为其英雄恢复2点生命值。",
     "[x]At the start of each\nplayer's turn, that\nplayer restores 2 Health\nto their hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

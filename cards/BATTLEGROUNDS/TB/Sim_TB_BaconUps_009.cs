@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_009",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使相邻的随从获得+2/+2和<b>嘲讽</b>。",
     "<b>Battlecry:</b> Give adjacent minions +2/+2 and <b>Taunt</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

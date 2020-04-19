@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_20p1",
@@ -9,7 +10,7 @@
     "<i>你可曾见到过如此完美无瑕的镜像？</i>",
     "<i>Have you ever seen such a magnificent reflection?</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

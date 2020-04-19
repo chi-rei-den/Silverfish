@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_01h",
@@ -9,7 +10,7 @@
     "<i>咀嚼者在下水道中依靠吞噬小型随从维持生计。</i>",
     "<i>Chomper survives the sewers by snacking on smaller minions.</i>"
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO",
   "cost": null,
   "rarity": null,

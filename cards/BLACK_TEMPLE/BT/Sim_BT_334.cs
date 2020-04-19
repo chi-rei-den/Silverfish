@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_334",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将你在本局对战中施放在友方角色上的所有法术的复制置入你的手牌。",
     "[x]<b>Battlecry:</b> Add a copy of\neach spell you cast on\nfriendly characters this\ngame to your hand."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_041",
@@ -9,7 +10,7 @@
     "在你使用一张<b>战吼</b>随从牌后，使你的龙获得+1/+1。",
     "After you play a minion with <b>Battlecry</b>, give your Dragons +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

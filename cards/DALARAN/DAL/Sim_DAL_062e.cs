@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_062e",
@@ -9,7 +10,7 @@
     "同时对攻击目标相邻的随从造成伤害。",
     "Damages minions adjacent to defender."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

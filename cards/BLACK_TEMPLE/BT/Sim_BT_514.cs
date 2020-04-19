@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_514",
@@ -9,7 +10,7 @@
     "对所有随从造成$1点伤害两次。",
     "Deal $1 damage to all minions twice."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

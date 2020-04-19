@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_262e",
@@ -9,7 +10,7 @@
     "+1攻击力和<b>吸血</b>。",
     "+1 Attack and <b>Lifesteal</b>."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

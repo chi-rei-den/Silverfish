@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_163",
@@ -9,7 +10,7 @@
     "召唤四只3/5的裂蹄牛并使其攻击随机敌人。",
     "Summon four 3/5 Clefthoofs that attack random enemies."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 10,
   "rarity": "EPIC",

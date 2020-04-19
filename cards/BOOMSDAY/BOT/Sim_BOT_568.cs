@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_568",
@@ -9,7 +10,7 @@
     "抽三张牌。在你的回合结束时，弃掉它们。",
     "Draw 3 cards.\nAt the end of your turn, discard them."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 1,
   "rarity": "LEGENDARY",

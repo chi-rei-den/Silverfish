@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_706",
@@ -9,7 +10,7 @@
     "获得所有敌方随从的控制权。",
     "Take control of all enemy minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 10,
   "rarity": null,

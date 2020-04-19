@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_040",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>使你的龙获得<b>圣盾</b>。",
     "<b>Deathrattle:</b> Give your Dragons <b>Divine Shield</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": null,

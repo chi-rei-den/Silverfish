@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_1p_Reroll_Button",
@@ -9,7 +10,7 @@
     "让鲍勃的酒馆坐满新的随从。",
     "Fill Bob's Tavern with new minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "GAME_MODE_BUTTON",
   "cost": 1,
   "rarity": null,

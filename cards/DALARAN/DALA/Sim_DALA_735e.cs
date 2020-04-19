@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_735e",
@@ -9,7 +10,7 @@
     "你的卡牌法力值消耗减半，但你每回合只能使用两张卡牌。",
     "Your cards cost half, but you can only play two cards each turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

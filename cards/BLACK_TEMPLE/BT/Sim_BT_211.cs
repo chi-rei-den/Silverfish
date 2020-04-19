@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_211",
@@ -9,7 +10,7 @@
     "<b>休眠</b>两回合。唤醒时，随机攻击一个\n敌人。",
     "[x]<b>Dormant</b> for 2 turns.\nWhen this awakens,\n  attack a random enemy."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

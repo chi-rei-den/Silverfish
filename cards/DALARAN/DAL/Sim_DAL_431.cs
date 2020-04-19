@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_431",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n将一个5/5的恐魔置入你的手牌，并教会它两个萨满祭司法术。",
     "[x]<b>Battlecry:</b> Add a 5/5\nHorror to your hand. Teach\nit two Shaman spells."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

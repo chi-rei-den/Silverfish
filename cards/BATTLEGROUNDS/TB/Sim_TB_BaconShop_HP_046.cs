@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_046",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n使一个友方随从变成金色。<i>（每场对战限一次。）</i>",
     "[x]<b>Hero Power</b>\nMake a friendly minion\nGolden.\n<i>(Once per game.)</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 3,
   "rarity": null,

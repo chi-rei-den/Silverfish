@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRM_003e",
@@ -9,7 +10,7 @@
     "在本回合中，法力值消耗减少（3）点。",
     "Costs (3) less this turn."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

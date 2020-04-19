@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>英雄技能</b>\n对敌方英雄造成$2点伤害。",
     "<b>Hero Power</b>\nDeal $2 damage to the enemy hero."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>如果你的手牌中有龙牌，则造成3点伤害。",
     "<b>Battlecry:</b> If you're holding a Dragon, deal 3 damage."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

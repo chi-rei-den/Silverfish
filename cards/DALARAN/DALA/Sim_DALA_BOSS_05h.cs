@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_05h",
@@ -9,7 +10,7 @@
     "<i>他在抄袭别人的法术方面造诣惊人。</i>",
     "<i>What's amazing is how far he's gotten copying other people's spells.</i>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

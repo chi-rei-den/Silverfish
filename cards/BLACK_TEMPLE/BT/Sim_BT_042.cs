@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_042",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的随从受到攻击时，随机将其变形成为一个法力值消耗增加（3）点的随从。",
     "[x]<b>Secret:</b> When one of\nyour minions is attacked,\ntransform it into a random\none that costs (3) more."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "EPIC",

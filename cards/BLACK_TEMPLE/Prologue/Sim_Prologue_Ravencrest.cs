@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_Ravencrest",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n在你施放一个法术后，召唤一个4/4并具有<b>突袭</b>的枪兵。",
     "<b>Taunt</b>\nAfter you cast a spell, summon a 4/4 Lancer with <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": null,

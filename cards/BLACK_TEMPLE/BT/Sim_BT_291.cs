@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_291",
@@ -9,7 +10,7 @@
     "造成$5点伤害。如果你的牌库中没有随从牌，随机召唤一个法力值消耗为（5）的随从。",
     "Deal $5 damage.\nIf your deck has no minions, summon a random 5-Cost minion."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "EPIC",

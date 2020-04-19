@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_231e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个{0}。",
     "<b>Deathrattle:</b> Summon a {0}."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

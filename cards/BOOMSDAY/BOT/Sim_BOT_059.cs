@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_059",
@@ -9,7 +10,7 @@
     "每当该随从受到伤害，便获得2点\n护甲值。",
     "Whenever this minion takes damage, gain 2 Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

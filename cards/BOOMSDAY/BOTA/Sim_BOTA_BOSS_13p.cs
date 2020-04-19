@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_13p",
@@ -9,7 +10,7 @@
     "<i>这些谜题都很\n初级。</i>",
     "<i>These puzzles are elementary.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_054",
@@ -9,7 +10,7 @@
     "每个玩家获得两个法力水晶。",
     "Each player gains 2 Mana Crystals."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

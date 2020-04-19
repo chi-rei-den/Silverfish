@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_ReturningPlayer_HoundmastHP",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤一只2/1并具有<b>突袭</b>的地狱犬。",
     "<b>Hero Power</b>\nSummon a 2/1 Felhound with <b>Rush</b>."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

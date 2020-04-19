@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_039",
@@ -9,7 +10,7 @@
     "你的<b>亡语</b>会触发\n两次。",
     "Your <b>Deathrattles</b> trigger twice."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

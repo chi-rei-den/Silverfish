@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_202",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机使你手牌中的一张野兽牌获得+1/+1。",
     "<b>Deathrattle:</b> Give a random Beast in your hand +1/+1."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

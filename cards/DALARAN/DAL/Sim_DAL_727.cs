@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_727",
@@ -9,7 +10,7 @@
     "从你的牌库中抽取法力值消耗最低的随从牌，使其获得+2/+2。",
     "Draw the lowest Cost minion from your deck. Give it +2/+2."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 3,
   "rarity": "RARE",

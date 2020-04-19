@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "每当该随从受到伤害，召唤一个1/1的\n小鬼。",
     "Whenever this minion takes damage, summon a 1/1 Imp."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_579p",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张法术牌。",
     "<b>Discover</b> a spell."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

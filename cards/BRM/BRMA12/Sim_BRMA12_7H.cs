@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA12_7H",
@@ -9,7 +10,7 @@
     "如果这张牌在你的手牌中，克洛玛古斯的随从的法力值消耗就减少（3）点。",
     "While this is in your hand, Chromaggus' minions cost (3) less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

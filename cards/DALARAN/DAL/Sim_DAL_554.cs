@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_554",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你的牌库里没有牌，则召唤六个6/6的猛火元素。",
     "<b>Battlecry:</b> If your deck is empty, summon six 6/6 Greasefire Elementals."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

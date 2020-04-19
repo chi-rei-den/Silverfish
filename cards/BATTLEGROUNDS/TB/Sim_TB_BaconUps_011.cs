@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_011",
@@ -9,7 +10,7 @@
     "每当你召唤一个鱼人，便获得\n+2攻击力。",
     "Whenever you summon a Murloc, gain +2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_001",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n在本回合中，你每购买过一个随从，使一个随从获得+1/+1。",
     "[x]<b>Hero Power</b>\nGive a minion +1/+1\nfor each minion you've\nbought this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

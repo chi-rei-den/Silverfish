@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_ManaBurn",
@@ -9,7 +10,7 @@
     "下个回合，你的对手减少两个法力水晶。",
     "Your opponent has 2 fewer Mana Crystals next turn."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

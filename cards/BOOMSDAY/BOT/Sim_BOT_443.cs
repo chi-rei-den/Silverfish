@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_443",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>使你手牌中的所有恶魔牌获得+1/+1。",
     "<b>Deathrattle:</b> Give all Demons in your hand +1/+1."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_573",
@@ -9,7 +10,7 @@
     "你的<b>奥秘</b>会触发\n两次。",
     "Your <b>Secrets</b> trigger twice."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

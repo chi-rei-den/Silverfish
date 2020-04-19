@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_909",
@@ -9,7 +10,7 @@
     "将场上的所有友方随从移出你的冒险模式套牌。",
     "Remove all friendly minions in play from your Adventure Deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

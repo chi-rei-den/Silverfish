@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_434",
@@ -9,7 +10,7 @@
     "除非你拥有<b>法术伤害</b>，\n否则无法进行攻击。",
     "Can't attack unless you have <b>Spell Damage</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

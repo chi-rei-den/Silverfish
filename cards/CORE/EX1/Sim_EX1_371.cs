@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "使一个随从获得<b>圣盾</b>。",
     "Give a minion <b>Divine Shield</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

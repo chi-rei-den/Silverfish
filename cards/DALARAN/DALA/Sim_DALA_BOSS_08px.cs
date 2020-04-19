@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_08px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n对生命值最低的敌人造成$2点伤害。如果该敌人死亡，则重复此效果。",
     "[x]<b>Hero Power</b>\nDeal $2 damage to the\nlowest Health enemy.\nIf it dies, repeat this."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 3,
   "rarity": null,

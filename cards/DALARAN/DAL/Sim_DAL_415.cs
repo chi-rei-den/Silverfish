@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_415",
@@ -9,7 +10,7 @@
     "<b>连击：</b>随机将两张<b>跟班</b>牌置入你的手牌。",
     "<b>Combo:</b> Add two random <b>Lackeys</b> to your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

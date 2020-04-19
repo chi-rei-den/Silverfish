@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "获得一个空的法力水晶。",
     "Gain an empty Mana Crystal."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

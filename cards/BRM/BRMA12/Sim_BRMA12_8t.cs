@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA12_8t",
@@ -9,7 +10,7 @@
     "每当你的对手施放一个法术，便获得+2/+2。",
     "Whenever your opponent casts a spell, gain +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_039",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>亡语：</b>随机消灭一个敌方随从。",
     "[x]<b><b>Taunt</b></b>\n<b>Deathrattle:</b> Destroy a\n random enemy minion."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

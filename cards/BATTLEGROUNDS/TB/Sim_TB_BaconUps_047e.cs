@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_047e",
@@ -9,7 +10,7 @@
     "攻击力提高。",
     "Increased Attack."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

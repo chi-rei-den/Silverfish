@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_146t",
@@ -9,7 +10,7 @@
     null,
     null
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

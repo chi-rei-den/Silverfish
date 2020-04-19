@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_Azshara",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤侍女瓦丝琪和四个皇家卫士。",
     "<b>Battlecry:</b> Summon Handmaiden Vashj, and 4 Royal Guardians."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "COMMON",

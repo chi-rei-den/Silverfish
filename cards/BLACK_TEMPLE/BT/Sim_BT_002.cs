@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_002",
@@ -9,7 +10,7 @@
     "使你牌库中所有法术牌的法力值消耗减少（1）点。",
     "Reduce the Cost of spells in your deck by (1)."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_354",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>将两张1/1的“松鼠”置入你的手牌。",
     "<b>Deathrattle:</b> Add two 1/1 Squirrels to your hand."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_13",
@@ -9,7 +10,7 @@
     "在你的回合结束时，随机使一个随从获得+1攻击力。",
     "At the end of your turn, give a random minion +1 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 10,
   "rarity": "LEGENDARY",

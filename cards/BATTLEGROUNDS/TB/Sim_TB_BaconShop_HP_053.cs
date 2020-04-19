@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_053",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n下一场战斗，将你消灭的第一个随从的原始版复制置入你的手牌。",
     "[x]<b>Hero Power</b>\nNext combat, add a plain\ncopy of the first minion\nyou kill to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "消灭一个敌方随从。",
     "Destroy an enemy minion."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "FREE",

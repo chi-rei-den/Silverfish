@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "在本回合中，使你的所有角色获得+2攻击力。",
     "Give your characters +2 Attack this turn."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

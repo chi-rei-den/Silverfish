@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_603",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你在本回合中每施放过一个法术，便随机将一张法师法术牌置入你的手牌。",
     "[x]<b>Battlecry:</b> For each spell\nyou've cast this turn, add\na random Mage spell\nto your hand."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "EPIC",

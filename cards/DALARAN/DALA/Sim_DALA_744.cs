@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_744",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n在你的回合开始时，随机使你手牌中的一张随从牌获得+1/+1。",
     "<b>Passive</b>\nAt the start of your turn, give a random minion in your hand +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

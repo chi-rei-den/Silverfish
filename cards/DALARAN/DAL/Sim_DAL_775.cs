@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_775",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>对所有随从造成3点伤害。",
     "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Deal 3 damage\nto all minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "RARE",

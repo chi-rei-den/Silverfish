@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_244",
@@ -9,7 +10,7 @@
     "对所有随从造成10点伤害，重复10次。",
     "Deal 10 damage to all minions 10 times."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 10,
   "rarity": null,

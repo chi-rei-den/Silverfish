@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_714c",
@@ -9,7 +10,7 @@
     "对所有敌方随从造成$3点伤害。",
     "Deal $3 damage to all enemy minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

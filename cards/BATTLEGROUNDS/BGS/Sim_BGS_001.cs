@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_001",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使一个友方恶魔获得+2/+2。",
     "<b>Battlecry:</b> Give a friendly Demon +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

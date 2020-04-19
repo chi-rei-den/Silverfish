@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_728",
@@ -9,7 +10,7 @@
     "将所有友方随从移回你的手牌。",
     "Return all friendly minions to your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

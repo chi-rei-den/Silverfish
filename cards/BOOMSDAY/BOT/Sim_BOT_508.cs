@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_508",
@@ -9,7 +10,7 @@
     "触发一个友方随从的<b>亡语</b>两次。",
     "Trigger a friendly minion's <b>Deathrattle</b> twice."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "EPIC",

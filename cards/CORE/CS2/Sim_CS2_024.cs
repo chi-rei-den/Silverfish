@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对一个角色造成$3点伤害，并使其<b>冻结</b>。",
     "Deal $3 damage to a character and <b>Freeze</b> it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "FREE",

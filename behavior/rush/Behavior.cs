@@ -1,3 +1,4 @@
+using HearthDb;
 namespace HREngine.Bots
 {
     public class BehaviorRush : Behavior

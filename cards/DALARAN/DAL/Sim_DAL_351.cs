@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_351",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n使你的所有随从获得+1/+1。",
     "<b>Twinspell</b>\nGive your minions +1/+1."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

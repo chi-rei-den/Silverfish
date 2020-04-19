@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA04_4",
@@ -9,7 +10,7 @@
     "召唤三个火誓者。<b>过载：</b>（2）",
     "Summon 3 Firesworn. <b>Overload:</b> (2)"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

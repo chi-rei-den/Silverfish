@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_262",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你的手牌中有龙牌，便获得+1攻击力和<b>吸血</b>。",
     "<b>Battlecry:</b> If you're holding a Dragon, gain +1 Attack and <b>Lifesteal</b>."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

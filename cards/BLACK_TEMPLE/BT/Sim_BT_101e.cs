@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_101e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>再次召唤该随从。",
     "<b>Deathrattle:</b> Resummon this minion."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

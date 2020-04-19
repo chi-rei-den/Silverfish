@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA09_5H",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤盖斯。获得另一个英雄技能。",
     "<b>Hero Power</b>\nSummon Gyth. Get a new Hero Power."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 4,
   "rarity": null,

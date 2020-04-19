@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_22h",
@@ -9,7 +10,7 @@
     "<i>请保持安静。</i>",
     "<i>Quiet, please.</i>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "HERO",
   "cost": null,
   "rarity": null,

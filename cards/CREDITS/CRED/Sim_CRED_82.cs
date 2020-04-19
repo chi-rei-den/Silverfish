@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_82",
@@ -9,7 +10,7 @@
     "<b>永不言弃：</b>如果你的对手想进行斩杀，拔他网线。",
     "<b>Never Give Up</b>: If your opponent has lethal, they disconnect."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 0,
   "rarity": "LEGENDARY",

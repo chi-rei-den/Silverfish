@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>英雄技能</b>\n随机消灭一个受伤的敌方随从。",
     "<b>Hero Power</b>\nDestroy a random damaged enemy minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

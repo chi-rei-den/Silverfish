@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_563",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机使两个友方随从获得+2/+2。",
     "<b>Deathrattle:</b> Give two random friendly minions +2/+2."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

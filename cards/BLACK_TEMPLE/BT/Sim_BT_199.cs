@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_199",
@@ -9,7 +10,7 @@
     "对一个敌方随从和一个随机友方随从造成$3点伤害。",
     "Deal $3 damage to an enemy minion and a random friendly one."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

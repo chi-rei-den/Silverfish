@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_401",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n随机将一张<b>传说</b>随从牌置入你的手牌。",
     "<b>Deathrattle:</b> Add a random <b>Legendary</b> minion to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

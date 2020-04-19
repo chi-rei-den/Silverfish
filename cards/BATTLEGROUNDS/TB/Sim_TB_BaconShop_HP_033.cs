@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_033",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n开局时获得一个具有全部随从类型的1/1的融合怪。",
     "[x]<b>Passive Hero Power</b>\nStart the game with a\n1/1 Amalgam with\nall minion types."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

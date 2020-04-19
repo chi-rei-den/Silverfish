@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_606",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>消灭一个友方随从，随机将两张<b>跟班</b>牌置入你的手牌。",
     "<b>Battlecry:</b> Destroy a friendly minion to add 2 random <b>Lackeys</b> to your hand."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

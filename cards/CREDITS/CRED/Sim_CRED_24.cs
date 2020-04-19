@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_24",
@@ -9,7 +10,7 @@
     "只要该牌在你的牌库中，你的星数不会因为败北而减少。",
     "You can't lose stars while this is in your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

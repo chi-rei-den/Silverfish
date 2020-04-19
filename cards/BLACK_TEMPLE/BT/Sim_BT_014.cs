@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_014",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>抽一张法术牌。",
     "<b>Deathrattle:</b> Draw a spell."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

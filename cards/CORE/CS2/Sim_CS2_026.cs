@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>冻结</b>所有敌方随从。",
     "<b>Freeze</b> all enemy minions."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

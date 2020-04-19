@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_187",
@@ -9,7 +10,7 @@
     "<b>冲锋</b>\n所有友方攻击无视\n<b>嘲讽</b>。",
     "<b>Charge</b>\nAll friendly attacks ignore <b>Taunt</b>."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

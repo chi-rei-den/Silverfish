@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_Bacon_Secrets_04",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的随从受到攻击时，召唤一个该随从的复制。",
     "<b>Secret:</b> When one of your minions is attacked, summon a copy of it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 3,
   "rarity": "EPIC",

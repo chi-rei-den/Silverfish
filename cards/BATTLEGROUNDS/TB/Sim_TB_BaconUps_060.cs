@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_060",
@@ -9,7 +10,7 @@
     "你的其他恶魔获得+4/+4。你的英雄获得<b>免疫</b>。",
     "Your other Demons have +4/+4.\nYour hero is <b>Immune</b>."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 9,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_536",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你有十个法力水晶，召唤该随从的两个复制。",
     "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, summon\n 2 copies of this minion."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

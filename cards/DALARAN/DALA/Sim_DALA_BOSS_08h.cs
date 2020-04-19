@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_08h",
@@ -9,7 +10,7 @@
     "<i>被这棵老树砸过\n的人都变得更有学问了。</i>",
     "<i>This old tree is full of\nknowledge to drop.</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO",
   "cost": null,
   "rarity": null,

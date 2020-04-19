@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_02h",
@@ -9,7 +10,7 @@
     "<i>这位大厨的菜品特别养生。</i>",
     "<i>This chef is cooking\nup some REALLY healthy food.</i>"
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO",
   "cost": null,
   "rarity": null,

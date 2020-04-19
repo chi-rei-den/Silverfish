@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_414",
@@ -9,7 +10,7 @@
     "<b>潜行</b>\n<b>圣盾</b>",
     "<b>Stealth</b>\n<b>Divine Shield</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

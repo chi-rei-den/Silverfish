@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_257",
@@ -9,7 +10,7 @@
     "使你牌库中所有随从牌的法力值消耗变为（1）点。",
     "Change the Cost of minions in your\ndeck to (1)."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 7,
   "rarity": "LEGENDARY",

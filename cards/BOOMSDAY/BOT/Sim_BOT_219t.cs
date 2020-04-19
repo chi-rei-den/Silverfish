@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_219t",
@@ -9,7 +10,7 @@
     "使一个随从获得+2/+2。",
     "Give a minion +2/+2."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

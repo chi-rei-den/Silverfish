@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_26",
@@ -9,7 +10,7 @@
     "在凌晨3点时获得\n<b>嘲讽</b>。",
     "Has <b>Taunt</b> if it's 3 AM."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

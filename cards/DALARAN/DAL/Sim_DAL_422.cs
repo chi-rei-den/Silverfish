@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_422",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>战吼：</b>将你的手牌和牌库里的卡牌替换为<b>传说</b>随从。",
     "<b><b>Taunt</b>\nBattlecry:</b> Replace your hand and deck with <b>Legendary</b> minions."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

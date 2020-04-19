@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_433",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n将该随从与你牌库中的一个随从互换。",
     "<b>Deathrattle:</b> Swap this with a minion from your deck."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

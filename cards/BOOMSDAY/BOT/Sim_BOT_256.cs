@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_256",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>随机召唤一个法力值消耗等同于你手牌数量的随从。",
     "[x]<b>Battlecry:</b> Summon a\nrandom minion with Cost\nequal to your hand size."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 7,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "使你的英雄获得2点护甲值，并在本回合中获得\n+2攻击力。",
     "Give your hero +2 Attack this turn. Gain 2 Armor."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

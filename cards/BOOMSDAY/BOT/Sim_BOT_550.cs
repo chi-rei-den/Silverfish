@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_550",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n如果你的手牌中有法力值消耗大于或等于（5）点的法术牌，便获得+1/+1。",
     "<b>Battlecry:</b> If you're holding a spell that costs (5) or more, gain +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

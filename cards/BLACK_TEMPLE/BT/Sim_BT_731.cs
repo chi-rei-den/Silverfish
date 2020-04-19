@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_731",
@@ -9,7 +10,7 @@
     "在对随从造成伤害后，将其变为\n传染孢子。",
     "After this damages a minion, turn it into an Infectious Sporeling."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

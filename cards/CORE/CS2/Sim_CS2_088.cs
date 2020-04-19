@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>为你的英雄恢复#6点生命值。",
     "<b>Battlecry:</b> Restore #6 Health to your hero."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 7,
   "rarity": "FREE",

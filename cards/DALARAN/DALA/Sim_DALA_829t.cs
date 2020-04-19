@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_829t",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>使每个玩家获得两个幸运币。",
     "<b>Deathrattle:</b> Give each player two Coins."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

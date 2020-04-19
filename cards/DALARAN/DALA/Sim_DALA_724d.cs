@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_724d",
@@ -9,7 +10,7 @@
     "为放出大炸弹的玩家保留效果（DALA 724e）",
     "Holds an effect for Big Boomba Player Enchantment (DALA 724e)"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

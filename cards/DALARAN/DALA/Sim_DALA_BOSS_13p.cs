@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_13p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机对三个随从各造成$1-$3点伤害。",
     "<b>Hero Power</b>\nDeal $1-$3 damage to three random minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

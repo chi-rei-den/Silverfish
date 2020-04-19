@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_20p4",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n对敌方英雄造成40点伤害。",
     "<b>Hero Power</b>\nDeal 40 damage to the enemy hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

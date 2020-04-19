@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "选择一个随从。将该随从的三张复制洗入你的牌库。",
     "Choose a minion. Shuffle 3 copies of it into your deck."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

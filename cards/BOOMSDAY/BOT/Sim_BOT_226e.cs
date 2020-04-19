@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_226e",
@@ -9,7 +10,7 @@
     "攻击力提高。",
     "Attack increased."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

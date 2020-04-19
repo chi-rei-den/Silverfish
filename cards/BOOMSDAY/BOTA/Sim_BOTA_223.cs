@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_223",
@@ -9,7 +10,7 @@
     "在你使用一张法术牌后，随机对一个敌方随从造成1点伤害。",
     "After you play a spell, deal 1 damage to a random enemy minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_730",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n当拥有所有生命值时，该随从具有+2攻击力。",
     "<b>Taunt</b>\nWhile at full Health,\nthis has +2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

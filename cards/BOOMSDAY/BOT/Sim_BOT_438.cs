@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_438",
@@ -9,7 +10,7 @@
     "使你的所有随从获得\n“<b>亡语：</b>随机将一张机械牌置入你的手牌”。",
     "Give your minions \"<b>Deathrattle:</b> Add a random Mech to your hand.\""
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

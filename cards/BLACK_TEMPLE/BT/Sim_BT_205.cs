@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_205",
@@ -9,7 +10,7 @@
     "造成$3点伤害。随机使你手牌中的一张野兽牌获得+3/+3。",
     "Deal $3 damage.\nGive a random Beast in your hand +3/+3."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

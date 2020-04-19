@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_211",
@@ -9,7 +10,7 @@
     "每当你召唤一个攻击力小于或等于3的随从，使其获得<b>冲锋</b>。",
     "Whenever you summon a minion with 3 or less Attack, give it <b>Charge</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

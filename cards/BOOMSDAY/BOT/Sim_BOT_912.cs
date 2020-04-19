@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_912",
@@ -9,7 +10,7 @@
     "复活三个友方机械，它们会保留所有<b>磁力</b>升级。",
     "Resurrect 3 friendly Mechs. They keep any <b>Magnetic</b> upgrades."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 7,
   "rarity": "LEGENDARY",

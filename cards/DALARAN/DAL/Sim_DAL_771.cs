@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_771",
@@ -9,7 +10,7 @@
     "每当该随从进行攻击，使你的对手获得一个幸运币。",
     "Whenever this minion attacks, give your opponent a Coin."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

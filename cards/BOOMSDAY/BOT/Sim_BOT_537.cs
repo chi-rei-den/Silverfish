@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_537",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个8/8的机械暴龙。",
     "<b>Deathrattle:</b> Summon an 8/8 Robosaur."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

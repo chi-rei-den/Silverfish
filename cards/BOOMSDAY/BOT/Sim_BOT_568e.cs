@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_568e",
@@ -9,7 +10,7 @@
     "在你的回合结束时弃掉。",
     "Discards at the end of your turn."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

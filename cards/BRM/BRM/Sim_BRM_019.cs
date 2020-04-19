@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "在该随从受到伤害并没有死亡后，召唤另一个恐怖的奴隶主。",
     "After this minion survives damage, summon another Grim Patron."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

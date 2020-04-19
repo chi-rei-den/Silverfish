@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_05p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机施放一个在本局对战中施放过的法术<i>（目标随机而定）</i>。",
     "[x]<b>Hero Power</b>\nCast a random spell that\nwas cast this game\n<i>(targets chosen randomly)</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

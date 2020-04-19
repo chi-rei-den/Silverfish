@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_68",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n移除你手牌中一张卡牌的一个文字。",
     "<b>Battlecry:</b> Remove a word from a card in your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "LEGENDARY",

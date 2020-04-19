@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_034",
@@ -9,7 +10,7 @@
     "<b>圣盾，复生</b>",
     "<b>Divine Shield</b>\n<b>Reborn</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_069",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n<b>战斗开始时：</b>你最左边和最右边的随从立即发起攻击。",
     "[x]<b>Passive Hero Power</b>\n<b>Start of Combat:</b> Your left\nand right-most minions\nattack immediately."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

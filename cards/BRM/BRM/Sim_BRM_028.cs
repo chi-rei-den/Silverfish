@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "在你的回合结束时，你所有手牌的法力值消耗减少（1）点。",
     "At the end of your turn, reduce the Cost of cards in your hand by (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

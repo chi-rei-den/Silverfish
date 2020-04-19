@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_366t4",
@@ -9,7 +10,7 @@
     "消灭一个随从。对其相邻的随从造成等同于其攻击力的\n伤害。",
     "Destroy a minion. It deals its damage to adjacent minions."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 6,
   "rarity": "EPIC",

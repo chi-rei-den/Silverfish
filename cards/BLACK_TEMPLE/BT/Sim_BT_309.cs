@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_309",
@@ -9,7 +10,7 @@
     "你的恶魔牌法力值消耗减少（1）点。<b>亡语：</b>将“终极坎雷萨德”洗入你的牌库。",
     "[x]Your Demons cost (1) less.\n<b>Deathrattle:</b> Shuffle\n'Kanrethad Prime'\ninto your deck."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

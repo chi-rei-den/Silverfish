@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_229",
@@ -9,7 +10,7 @@
     "<b>潜行，亡语：</b>对敌方英雄造成100点伤害。",
     "<b>Stealth</b>\n<b>Deathrattle:</b>Deal 100 damage to the enemy hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 10,
   "rarity": null,

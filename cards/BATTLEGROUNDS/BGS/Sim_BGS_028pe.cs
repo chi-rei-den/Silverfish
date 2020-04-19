@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_028pe",
@@ -9,7 +10,7 @@
     "Counts the number of Pogo-Hoppers played.",
     "Counts the number of Pogo-Hoppers played."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

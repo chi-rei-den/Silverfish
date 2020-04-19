@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_238p4",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n<b>发现</b>一张机械牌。每回合切换。",
     "<b>Hero Power</b>\n<b>Discover</b> a Mech.\nSwaps each turn."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

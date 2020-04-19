@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_299",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张机械牌。如果你有十个法力水晶，保留全部三张牌。",
     "[x]<b>Discover</b> a Mech. If you\nhave 10 Mana Crystals,\nkeep all 3 cards."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

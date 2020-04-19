@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_600",
@@ -9,7 +10,7 @@
     "每个玩家抽两张牌。",
     "Each player draws 2 cards."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

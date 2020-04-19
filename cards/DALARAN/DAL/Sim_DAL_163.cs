@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_163",
@@ -9,7 +10,7 @@
     "<b>战吼：</b><b>发现</b>一张法师随从牌。",
     "<b>Battlecry:</b> <b>Discover</b> a\nMage minion."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_55",
@@ -9,7 +10,7 @@
     "描述每有一个文字，该牌的法力值消耗就增加（1）点。",
     "Costs (1) more for each word of text on this card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 0,
   "rarity": "LEGENDARY",

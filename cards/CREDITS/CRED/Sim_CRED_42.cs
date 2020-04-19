@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_42",
@@ -9,7 +10,7 @@
     "每当该随从消灭另一个随从，抽一张牌。",
     "Whenever this minion destroys another minion, draw a card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_89",
@@ -9,7 +10,7 @@
     "在你的回合结束时，钓上来一些鱼人。",
     "At the end of your turn, fish up some murlocs"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

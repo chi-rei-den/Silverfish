@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_561",
@@ -9,7 +10,7 @@
     "如果这张牌在你的手牌中，每当一个友方恶魔死亡，法力值消耗就减少（1）点。",
     "Costs (1) less whenever a friendly Demon dies while this is in your hand."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 10,
   "rarity": "EPIC",

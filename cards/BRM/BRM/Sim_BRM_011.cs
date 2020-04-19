@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "造成$2点伤害。\n将你所有<b>过载</b>的法力水晶解锁。",
     "Deal $2 damage.\nUnlock your <b>Overloaded</b> Mana Crystals."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

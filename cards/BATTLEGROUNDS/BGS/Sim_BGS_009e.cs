@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_009e",
@@ -9,7 +10,7 @@
     "属性值提高。",
     "Increased stats."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

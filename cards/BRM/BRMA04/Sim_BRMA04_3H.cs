@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA04_3H",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n在本回合中每死亡一个火誓者，便对敌方英雄造成3点伤害。",
     "<b>Deathrattle:</b> Deal 3 damage to the enemy hero for each Firesworn that died this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 0,
   "rarity": null,

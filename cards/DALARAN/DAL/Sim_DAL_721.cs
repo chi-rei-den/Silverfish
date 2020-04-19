@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_721",
@@ -9,7 +10,7 @@
     "在你的回合结束时，召唤一个在本局对战中死亡的友方随从。",
     "[x]At the end of your turn,\nsummon a friendly minion\nthat died this game."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

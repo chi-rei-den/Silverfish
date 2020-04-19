@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_733t",
@@ -9,7 +10,7 @@
     "<b>吸血</b>",
     "<b>Lifesteal</b>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_71",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你的所有随从会随机攻击。\n <b>亡语：</b>全部修复，只留一个。",
     "<b>Battlecry:</b> Your minions \n attack randomly. \n <b>Deathrattle:</b> Fix all but one."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

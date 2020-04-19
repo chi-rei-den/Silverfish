@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_605",
@@ -9,7 +10,7 @@
     "使你的恶魔获得+1攻击力。对所有敌方随从造成$1点\n伤害。",
     "Give your Demons +1 Attack. Deal $1 damage to all enemy minions."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 3,
   "rarity": "RARE",

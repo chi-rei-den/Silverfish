@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_051",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n使你没有随从类型的所有随从获得+1/+1。",
     "[x]<b>Hero Power</b>\nGive your minions with\nno minion type\n+1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

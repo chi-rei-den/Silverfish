@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_237",
@@ -9,7 +10,7 @@
     "<b>磁力</b>\n无法成为法术或英雄技能的目标。",
     "<b>Magnetic</b>\nCan't be targeted by spells or Hero Powers."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 7,
   "rarity": "EPIC",

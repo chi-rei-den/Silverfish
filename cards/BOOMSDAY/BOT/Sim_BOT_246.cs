@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_246",
@@ -9,7 +10,7 @@
     "对所有随从造成$1点伤害。\n<b>过载：</b>（2）",
     "Deal $1 damage to all minions. <b>Overload:</b> (2)"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 0,
   "rarity": "COMMON",

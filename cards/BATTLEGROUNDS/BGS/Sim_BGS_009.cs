@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_009",
@@ -9,7 +10,7 @@
     "在你的回合结束时，随机使一个友方机械，鱼人，野兽，恶魔和龙获得+2/+1。",
     "[x]At the end of your turn,\ngive a random friendly Mech,\nMurloc, Beast, Demon,\nand Dragon +2/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "EPIC",

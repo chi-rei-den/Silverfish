@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_73",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你的手里有饼干，则消灭所有程序错误。",
     "<b>Battlecry:</b> If you're holding a Cookie, destroy all bugs."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

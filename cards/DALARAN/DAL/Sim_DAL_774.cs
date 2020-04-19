@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_774",
@@ -9,7 +10,7 @@
     "每当你施放一个法术，随机召唤一个法力值消耗为（3）的\n野兽。",
     "Whenever you cast a spell, summon a random\n3-Cost Beast."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "RARE",

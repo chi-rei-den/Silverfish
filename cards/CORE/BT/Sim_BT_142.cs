@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_142",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，使你的英雄获得+1攻击力。",
     "<b>Battlecry:</b> Give your hero +1 Attack this turn."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 1,
   "rarity": "FREE",

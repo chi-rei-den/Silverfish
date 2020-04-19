@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_197t",
@@ -9,7 +10,7 @@
     "<b>嘲讽，吸血</b>\n只有你可以将它作为法术和英雄技能的\n目标。",
     "[x]<b><b>Taunt</b>, Lifesteal</b>\nOnly you can target this with\nspells and Hero Powers."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 7,
   "rarity": null,

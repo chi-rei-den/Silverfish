@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_083",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你的英雄每受到一点伤害，便获得+2生命值。",
     "<b>Battlecry:</b> Gain +2 Health for each damage your hero has taken."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "EPIC",

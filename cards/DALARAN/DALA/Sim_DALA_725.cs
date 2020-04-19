@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_725",
@@ -9,7 +10,7 @@
     "使一个友方随从获得+2/+2，并召唤两个它的复制。",
     "Give a friendly minion +2/+2. Summon two copies of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_20h",
@@ -9,7 +10,7 @@
     "<i>这位巨魔水灵萨满擅于操纵暗流和法力过载。</i>",
     "<i>This troll water shaman is into undertows and overloads.</i>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

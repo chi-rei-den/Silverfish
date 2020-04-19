@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_238p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n每回合切换动力\n装置！",
     "[x]<b>Hero Power</b>\nActivate this turn's\nMech Suit power!"
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

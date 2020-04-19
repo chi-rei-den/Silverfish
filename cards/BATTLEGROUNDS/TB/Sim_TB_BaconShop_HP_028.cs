@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_028",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n<b>刷新</b>鲍勃的酒馆，其中包含一个更高等级的随从。",
     "[x]<b>Hero Power</b>\n<b>Refresh</b> Bob's Tavern.\nInclude a minion from\na higher Tavern Tier."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

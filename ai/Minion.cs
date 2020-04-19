@@ -37,7 +37,7 @@ namespace HREngine.Bots
         public int pID = 0;
 
         public Chireiden.Silverfish.SimCard name = Chireiden.Silverfish.SimCard.None;
-        public CardClass cardClass = CardClass.INVALID;
+        public CardClass CardClass = CardClass.INVALID;
         public int synergy = 0;
         public Handmanager.Handcard handcard;
         public int entitiyID = -1;
@@ -131,7 +131,7 @@ namespace HREngine.Bots
             this.own = m.own;
 
             this.name = m.name;
-            this.cardClass = m.cardClass;
+            this.CardClass = m.CardClass;
             this.synergy = m.synergy;
             this.handcard = m.handcard;
             this.deathrattle2 = m.deathrattle2;
@@ -217,7 +217,7 @@ namespace HREngine.Bots
             this.own = m.own;
 
             this.name = m.name;
-            this.cardClass = m.cardClass;
+            this.CardClass = m.CardClass;
             this.synergy = m.synergy;
             this.handcard = m.handcard;
             this.deathrattle2 = m.deathrattle2;

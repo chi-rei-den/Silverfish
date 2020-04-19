@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_043",
@@ -9,7 +10,7 @@
     "每当一个友方野兽死亡时，便获得+4/+2。",
     "Whenever a friendly Beast dies, gain +4/+2."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

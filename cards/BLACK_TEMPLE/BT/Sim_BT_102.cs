@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_102",
@@ -9,7 +10,7 @@
     "在你的英雄攻击后，随机将你的所有随从变形成为法力值消耗增加（1）点的随从。",
     "After your hero attacks, transform your minions into random ones that cost (1) more."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "WEAPON",
   "cost": 5,
   "rarity": "EPIC",

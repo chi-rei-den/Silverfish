@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_604",
@@ -9,7 +10,7 @@
     "<b>法术伤害+2</b>",
     "<b>Spell Damage +2</b>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

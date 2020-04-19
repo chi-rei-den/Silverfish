@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_CenariusHP",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤一个2/2并具有<b>嘲讽</b>的树人。",
     "<b>Hero Power</b>\nSummon a 2/2 Treant with <b>Taunt</b>."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

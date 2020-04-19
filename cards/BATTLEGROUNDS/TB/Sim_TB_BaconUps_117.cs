@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_117",
@@ -9,7 +10,7 @@
     "在一个友方随从失去<b>圣盾</b>后，获得+4/+4。",
     "After a friendly minion loses <b>Divine Shield</b>, gain +4/+4."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": null,

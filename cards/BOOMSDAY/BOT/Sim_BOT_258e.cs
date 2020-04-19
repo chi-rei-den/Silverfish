@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_258e",
@@ -9,7 +10,7 @@
     "准备好召唤克隆大师泽里克",
     "Prepared to summon Zerek, Master Cloner"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_105e",
@@ -9,7 +10,7 @@
     "在本回合中，+4攻击力。",
     "+4 Attack this turn."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

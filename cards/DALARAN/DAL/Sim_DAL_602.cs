@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_602",
@@ -9,7 +10,7 @@
     "将你的手牌洗入牌库。抽取同样数量的牌。",
     "Shuffle your hand\ninto your deck.\nDraw that many cards."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA01_4",
@@ -9,7 +10,7 @@
     "召唤四个1/1并具有<b>嘲讽</b>的\n矮人。",
     "Summon four 1/1 Dwarves with <b>Taunt</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_731",
@@ -9,7 +10,7 @@
     "从双方玩家的牌库中各召唤一个随从，并使其互相\n攻击！",
     "Summon a minion from each player's deck.\nThey fight!"
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 5,
   "rarity": "EPIC",

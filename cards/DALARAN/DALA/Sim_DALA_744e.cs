@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_744e",
@@ -9,7 +10,7 @@
     "在你的回合开始时，随机使你手牌中的一张随从牌获得+1/+1。",
     "At the start of your turn, give a random minion in your hand +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

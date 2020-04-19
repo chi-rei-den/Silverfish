@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_70",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>为一个友方野兽打一件舒适的+1/+1的毛衣。",
     "<b>Battlecry:</b>  Knit a cozy +1/+1 sweater for a friendly Beast."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

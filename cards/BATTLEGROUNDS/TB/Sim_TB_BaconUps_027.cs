@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_027",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤若干个2/2的老鼠，数量等同于该随从的攻击力。",
     "[x]<b>Deathrattle:</b> Summon a\nnumber of 2/2 Rats equal\n to this minion's Attack."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

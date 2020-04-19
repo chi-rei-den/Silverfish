@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_03t",
@@ -9,7 +10,7 @@
     "使双方玩家手牌和牌库中的所有法术牌的法力值消耗减少（1）点。",
     "Reduce the cost of all spells in both player's hand and deck by (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

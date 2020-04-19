@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_94",
@@ -9,7 +10,7 @@
     "每当一个友方随从\n感觉<b>口渴</b>时，<b>发现</b>一份好喝的饮料。",
     "Whenever a friendly minion is <b>Thirsty</b>, <b>Discover</b> a tasty beverage."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

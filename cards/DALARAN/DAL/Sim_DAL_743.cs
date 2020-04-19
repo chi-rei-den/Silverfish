@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_743",
@@ -9,7 +10,7 @@
     "<b>突袭，亡语：</b>召唤一个1/1的鱼人。",
     "<b>Rush</b>\n<b>Deathrattle:</b> Summon a 1/1 Murloc."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

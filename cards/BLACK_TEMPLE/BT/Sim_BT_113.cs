@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_113",
@@ -9,7 +10,7 @@
     "使一个随从获得+2/+2。如果该随从是图腾，召唤一个它的复制。",
     "Give a minion +2/+2.\nIf it's a Totem, summon a copy of it."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

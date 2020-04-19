@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_068e",
@@ -9,7 +10,7 @@
     "+4/+4并具有<b>嘲讽</b>。",
     "+4/+4 and <b>Taunt</b>."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

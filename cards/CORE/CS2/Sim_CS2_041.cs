@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "为一个随从恢复所有生命值并使其获得<b>嘲讽</b>。",
     "Restore a minion\nto full Health and\ngive it <b>Taunt</b>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 0,
   "rarity": "FREE",

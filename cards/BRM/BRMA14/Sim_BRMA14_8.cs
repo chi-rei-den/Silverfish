@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA14_8",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n激活熔岩金刚！",
     "<b>Hero Power</b>\nActivate Magmatron!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 8,
   "rarity": null,

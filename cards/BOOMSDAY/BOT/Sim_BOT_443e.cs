@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_443e",
@@ -9,7 +10,7 @@
     "虚空分析师使其获得+1/+1。",
     "+1/+1 from Void Analyst."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

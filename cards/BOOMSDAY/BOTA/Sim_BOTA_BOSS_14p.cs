@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_14p",
@@ -9,7 +10,7 @@
     "<i>能让你瞬间毙命的毒药才是好毒药。</i>",
     "<i>Good poisons work instantly.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

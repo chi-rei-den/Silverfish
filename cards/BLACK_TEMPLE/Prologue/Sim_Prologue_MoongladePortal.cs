@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_MoongladePortal",
@@ -9,7 +10,7 @@
     "恢复#6点生命值。随机召唤一个法力值消耗为（6）的\n随从。",
     "Restore #6 Health. Summon a random\n6-Cost minion."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 6,
   "rarity": "RARE",

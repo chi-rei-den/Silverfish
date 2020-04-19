@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_856e",
@@ -9,7 +10,7 @@
     "所有法术额外施放一次<i>（目标随机而定）</i>。",
     "All spells cast an additional time. <i>(targets chosen randomly)</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

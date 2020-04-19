@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_147",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使你手牌中的所有龙牌获得+3/+3。",
     "<b>Battlecry:</b> Give all Dragons in your hand +3/+3."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

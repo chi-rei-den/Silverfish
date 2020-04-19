@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_16h",
@@ -9,7 +10,7 @@
     "<i>她不断搅动牌库，试图炼出金色\n卡牌。</i>",
     "<i>This alchemist mixes up decks, attempting to create golden cards.</i>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

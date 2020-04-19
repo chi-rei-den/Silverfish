@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_09h",
@@ -9,7 +10,7 @@
     "<i>忘记历史就意味着重蹈失败的覆辙。</i>",
     "<i>Those who forget history are doomed to resummon it.</i>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "HERO",
   "cost": null,
   "rarity": null,

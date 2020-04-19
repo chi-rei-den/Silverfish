@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_429",
@@ -9,7 +10,7 @@
     "从你的牌库中召唤三个随从。他们会攻击敌方随从，然后死亡。",
     "[x]Summon 3 minions from\nyour deck. They attack\nenemy minions, then die."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 7,
   "rarity": "LEGENDARY",

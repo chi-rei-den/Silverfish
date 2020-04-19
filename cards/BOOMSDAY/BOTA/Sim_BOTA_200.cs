@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_200",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>选择一个随从，将它的两张复制置入你的牌库顶。",
     "<b>Battlecry:</b> Choose a minion. Put two copies of it on top of your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": null,

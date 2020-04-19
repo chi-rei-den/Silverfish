@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_434e",
@@ -9,7 +10,7 @@
     "变成最近使用过的随从牌。",
     "Transforming into recent minions."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

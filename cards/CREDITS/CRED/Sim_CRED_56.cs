@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_56",
@@ -9,7 +10,7 @@
     "<b>潜行</b>。你的其他随从都是机械。",
     "<b>Stealth</b>. Your other minions are Mechs."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

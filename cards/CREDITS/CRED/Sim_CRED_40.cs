@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_40",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>不断使用背刺，冷血，刺骨<i>（目标随机而定）</i>。",
     "<b>Battlecry:</b> Cast copies of Backstab, Cold Blood, and Eviscerate. <i>(targets chosen randomly).</i>"
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

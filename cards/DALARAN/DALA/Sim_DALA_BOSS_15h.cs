@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_15h",
@@ -9,7 +10,7 @@
     "<i>时间总会治愈伤痕。但你要是想挂急诊，还得找妮希。</i>",
     "<i>Time heals all wounds. But if you're in a hurry, call Nici!</i>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "HERO",
   "cost": null,
   "rarity": null,

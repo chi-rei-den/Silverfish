@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA05_2",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n如果敌方英雄有任何未使用的法力水晶，便对其造成5点伤害。",
     "<b>Hero Power</b>\nDeal 5 damage to the enemy hero if they have any unspent Mana."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

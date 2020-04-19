@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_008",
@@ -9,7 +10,7 @@
     "将一个友方随从移回你的手牌，并使其获得+5/+5。",
     "Return a friendly minion to your hand and give it +5/+5."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

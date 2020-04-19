@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_051",
@@ -9,7 +10,7 @@
     "<b>超杀：</b>召唤一个10/10的铁皮小恐龙。",
     "<b>Overkill:</b> Summon a 10/10 Ironhide Runt."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 7,
   "rarity": "COMMON",

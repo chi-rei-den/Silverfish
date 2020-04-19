@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_26px",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在一个随从攻击你后，将其<b>冻结</b>。",
     "<b>Passive Hero Power</b>\nAfter a minion attacks you, <b>Freeze</b> it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

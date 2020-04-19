@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_252",
@@ -9,7 +10,7 @@
     "恢复#3点\n生命值。<b>发现</b>一张法术牌。",
     "Restore #3 Health. <b>Discover</b> a spell."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

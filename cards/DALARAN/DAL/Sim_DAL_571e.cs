@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_571e",
@@ -9,7 +10,7 @@
     "+1攻击力。",
     "+1 Attack."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

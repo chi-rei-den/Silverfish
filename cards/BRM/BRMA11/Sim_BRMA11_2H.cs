@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA11_2H",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n每个玩家抽三张牌\n并获得一个法力\n水晶。",
     "<b>Hero Power</b>\nEach player draws 3 cards. Gain a Mana Crystal."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

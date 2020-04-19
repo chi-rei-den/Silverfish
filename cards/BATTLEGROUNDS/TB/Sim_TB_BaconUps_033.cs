@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_033",
@@ -9,7 +10,7 @@
     "在一个友方随从攻击后，获得+2攻击力。",
     "After a friendly minion attacks, gain +2 Attack."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

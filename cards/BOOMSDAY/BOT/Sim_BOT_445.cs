@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_445",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个1/1的机械袋鼠宝宝。",
     "<b>Deathrattle:</b> Summon a 1/1 Jo-E Bot."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

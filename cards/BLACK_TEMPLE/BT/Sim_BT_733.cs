@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_733",
@@ -9,7 +10,7 @@
     "所有随从受到的法术伤害翻倍。",
     "All minions take double damage from spells."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "EPIC",

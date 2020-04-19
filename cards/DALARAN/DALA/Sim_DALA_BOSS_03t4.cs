@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_03t4",
@@ -9,7 +10,7 @@
     "将三张惊奇卡牌洗入双方玩家的牌库。",
     "Shuffle three Scrolls of Wonder into each player's deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

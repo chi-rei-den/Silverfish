@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_529",
@@ -9,7 +10,7 @@
     "选择一个友方随从，召唤一个该随从的5/5复制。",
     "Choose a friendly minion. Summon a 5/5 copy of it."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 5,
   "rarity": "EPIC",

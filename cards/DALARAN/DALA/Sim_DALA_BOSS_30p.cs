@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_30p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤一个下水道\n老鼠。",
     "<b>Hero Power</b>\nSummon an Underbelly Rat."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 3,
   "rarity": null,

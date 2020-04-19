@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "随机复制对手手牌中的一张牌，将其置入你的手牌。",
     "Put a copy of a random card in your opponent's hand into your hand."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

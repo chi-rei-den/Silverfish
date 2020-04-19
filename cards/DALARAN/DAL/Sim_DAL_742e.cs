@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_742e",
@@ -9,7 +10,7 @@
     "<b>超级风怒</b>",
     "<b>Mega-Windfury</b>"
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

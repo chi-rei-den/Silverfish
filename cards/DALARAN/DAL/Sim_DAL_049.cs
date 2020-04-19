@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_049",
@@ -9,7 +10,7 @@
     "在你使用一张鱼人牌后，随机将一张鱼人牌置入你的手牌。",
     "After you play a Murloc, add a random Murloc to your hand."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

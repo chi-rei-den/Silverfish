@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_12",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n抓两张牌。<i>她才不是工程师学徒呢。</i>",
     "<b>Battlecry:</b> Draw TWO cards. <i>She's not a novice engineer.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

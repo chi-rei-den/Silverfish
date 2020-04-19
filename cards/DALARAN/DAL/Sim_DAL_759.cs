@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_759",
@@ -9,7 +10,7 @@
     "每当该随从造成伤害时，获得等量的\n护甲值。",
     "Whenever this minion\ndeals damage, gain that much Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_576",
@@ -9,7 +10,7 @@
     "<b>法术伤害+3</b>\n你的法术牌法力值消耗增加（1）点。",
     "<b>Spell Damage +3</b>\nYour spells cost (1) more."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

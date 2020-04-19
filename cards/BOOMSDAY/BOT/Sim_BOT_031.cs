@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_031",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>对敌方英雄造成2点伤害。",
     "[x]<b>Deathrattle:</b> Deal 2 damage\nto the enemy hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

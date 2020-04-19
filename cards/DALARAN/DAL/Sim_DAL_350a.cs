@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_350a",
@@ -9,7 +10,7 @@
     "对一个随从造成$2点伤害。",
     "Deal $2 damage to a minion."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

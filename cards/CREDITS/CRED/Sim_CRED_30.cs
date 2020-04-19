@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_30",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n为《炉石传说》新增一个运行平台。",
     "<b>Battlecry:</b> Add a new platform for Hearthstone."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

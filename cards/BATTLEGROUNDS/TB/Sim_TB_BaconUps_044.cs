@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_044",
@@ -9,7 +10,7 @@
     "在你的回合结束时，使另一个友方机械获得+4/+4。",
     "At the end of your turn, give another friendly Mech +4/+4."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

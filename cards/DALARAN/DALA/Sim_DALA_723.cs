@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_723",
@@ -9,7 +10,7 @@
     "<b>剧毒</b>\n你的英雄在攻击时具有<b>免疫</b>。",
     "<b>Poisonous</b>.\nYour hero is <b>Immune</b> while attacking."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "WEAPON",
   "cost": 3,
   "rarity": null,

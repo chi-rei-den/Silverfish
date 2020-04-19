@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_716",
@@ -9,7 +10,7 @@
     "对一个随从造成$4点伤害。如果你的手牌中有其他职业的卡牌，则法力值消耗为（0）点。",
     "Deal $4 damage to a minion. Costs (0) if you're holding a card from another class."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

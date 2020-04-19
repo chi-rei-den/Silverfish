@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_101e",
@@ -9,7 +10,7 @@
     "属性值提高。",
     "Increased stats."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

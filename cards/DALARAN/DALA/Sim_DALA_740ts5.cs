@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_740ts5",
@@ -9,7 +10,7 @@
     "随机召唤三个<b>嘲讽</b>随从。",
     "Summon 3 random <b>Taunt</b> minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

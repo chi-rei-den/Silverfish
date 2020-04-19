@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_727",
@@ -9,7 +10,7 @@
     "每当该随从受到伤害，对你的英雄造成等量的伤害。",
     "Whenever this minion takes damage, also deal that amount to your hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

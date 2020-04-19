@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_366",
@@ -9,7 +10,7 @@
     "消灭一个随从。在你手牌中时获得额外效果。",
     "Destroy a minion. Gains a bonus effect in your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 6,
   "rarity": "EPIC",

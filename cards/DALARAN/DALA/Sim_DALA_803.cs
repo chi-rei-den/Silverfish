@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_803",
@@ -9,7 +10,7 @@
     "用一副随机套牌开始冒险。",
     "Start the run with a deck of random cards."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

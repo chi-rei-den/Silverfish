@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_63",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n在48小时内…创造一个自定义法术牌。",
     "<b>Battlecry:</b> Create a custom spell… in under 48 hours."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

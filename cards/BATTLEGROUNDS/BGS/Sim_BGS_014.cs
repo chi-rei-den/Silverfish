@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_014",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>召唤一个1/1的小鬼。",
     "<b>Taunt</b>\n<b>Deathrattle:</b> Summon a 1/1 Imp."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

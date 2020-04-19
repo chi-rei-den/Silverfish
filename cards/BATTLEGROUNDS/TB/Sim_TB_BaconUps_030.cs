@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_030",
@@ -9,7 +10,7 @@
     "每当该随从受到伤害，召唤一个2/2的\n小鬼。",
     "Whenever this minion takes damage, summon a 2/2 Imp."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_242",
@@ -9,7 +10,7 @@
     "抽取你牌库剩下的牌。",
     "Draw the rest of\nyour deck."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "LEGENDARY",

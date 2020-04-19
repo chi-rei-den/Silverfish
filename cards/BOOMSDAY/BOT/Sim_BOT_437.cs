@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_437",
@@ -9,7 +10,7 @@
     "使一个友方随从获得+3/+3和<b>突袭</b>，该随从会在回合结束时死亡。",
     "Give a friendly minion +3/+3 and <b>Rush</b>. It dies at end of turn."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "EPIC",

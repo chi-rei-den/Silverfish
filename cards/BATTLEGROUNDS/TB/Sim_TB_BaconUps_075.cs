@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_075",
@@ -9,7 +10,7 @@
     "在一个友方恶魔死亡后，随机对一个敌方随从造成3点伤害，触发两次。",
     "After a friendly Demon dies, deal 3 damage to a random enemy minion twice."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

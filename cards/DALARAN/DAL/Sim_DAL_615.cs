@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_615",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将一个友方随从变形成为一个法力值消耗增加（1）点的随从。",
     "<b>Battlecry:</b> Transform a friendly minion into one that costs (1) more."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

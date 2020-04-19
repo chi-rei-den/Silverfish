@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_011",
@@ -9,7 +10,7 @@
     "直到你的下个回合，使一个敌方随从的攻击力降低@点。<i>（每回合都会升级！）</i>",
     "Reduce the Attack of an enemy minion by\n@ until your next turn. <i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 0,
   "rarity": "EPIC",

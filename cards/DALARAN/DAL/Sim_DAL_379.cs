@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_379",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>装备索利达尔，群星之怒。",
     "<b>Battlecry:</b> Equip Thori'dal, the Stars' Fury."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

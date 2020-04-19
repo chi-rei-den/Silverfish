@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_72",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>向所有友方随从发一封电子邮件。",
     "<b>Battlecry:</b> Send an email to all friendly minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

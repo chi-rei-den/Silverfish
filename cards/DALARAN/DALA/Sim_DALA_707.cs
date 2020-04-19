@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_707",
@@ -9,7 +10,7 @@
     "<b>对战开始时：</b>抽到这张牌。<b>嘲讽</b>。如果这张牌在你的手牌中，每个回合获得+1/+1。",
     "[x]<b>Start of Game:</b> Draw this.\n<b>Taunt</b>. Each turn this is in\nyour hand, gain +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

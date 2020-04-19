@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_230",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>对一个敌方随从造成3点伤害。如果该随从死亡，则对一个相邻的随从重复此效果。",
     "[x]<b>Battlecry:</b> Deal 3 damage\nto an enemy minion. If it\ndies, repeat on one of\nits neighbors."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

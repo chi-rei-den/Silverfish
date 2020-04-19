@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "你的具有<b>冲锋</b>的随从获得+1攻击力。",
     "Your <b>Charge</b> minions have +1 Attack."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 3,
   "rarity": "FREE",

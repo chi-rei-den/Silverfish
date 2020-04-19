@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_224",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤该随从的一个复制。",
     "<b>Battlecry:</b> Summon a copy of this minion."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

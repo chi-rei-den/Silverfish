@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_146",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>将两张4/4的“青铜龙”置入你的手牌。",
     "<b>Deathrattle:</b> Add two 4/4 Dragons to your hand."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

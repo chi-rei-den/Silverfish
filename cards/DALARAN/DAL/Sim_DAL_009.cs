@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_009",
@@ -9,7 +10,7 @@
     "对所有随从造成$@点伤害。<i>（每回合都会升级！）</i>",
     "Deal $@ damage\nto all minions.\n<i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 5,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_60",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使所有敌方随从变为1/1的杂鱼。",
     "<b>Battlecry:</b> Transform \nall enemy minions \ninto 1/1 Fish."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

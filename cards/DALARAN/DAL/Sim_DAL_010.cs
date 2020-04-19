@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_010",
@@ -9,7 +10,7 @@
     "选择一个随从。将它的@张复制洗入你的牌库。<i>（每回合都会升级！）</i>",
     "Choose a minion. Shuffle @ |4(copy, copies) of it into your deck.\n<i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

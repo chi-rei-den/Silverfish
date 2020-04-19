@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_733",
@@ -9,7 +10,7 @@
     "召唤两个1/2并具有<b>吸血</b>的\n树妖。",
     "Summon two 1/2 Dryads with <b>Lifesteal</b>."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_026",
@@ -9,7 +10,7 @@
     "同时对其攻击目标相邻的随从\n造成伤害。",
     "Also damages minions next to whomever your hero attacks."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "WEAPON",
   "cost": 3,
   "rarity": "FREE",

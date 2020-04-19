@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_03t3",
@@ -9,7 +10,7 @@
     "使双方玩家各获得一个随机金色<b>传说</b>随从。",
     "Give each player a random Golden <b>Legendary</b> minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

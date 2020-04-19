@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_543",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你有十个法力水晶，在本回合中你的所有法术具有\n<b>吸血</b>。",
     "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, your spells\n have <b>Lifesteal</b> this turn."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 2,
   "rarity": "EPIC",

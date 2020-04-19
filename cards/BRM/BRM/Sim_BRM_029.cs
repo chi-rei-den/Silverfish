@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>如果你的手牌中有龙牌，则消灭一个<b>传说</b>随从。",
     "<b>Battlecry:</b> If you're holding a Dragon, destroy a <b>Legendary</b> minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

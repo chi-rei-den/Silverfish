@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_862",
@@ -9,7 +10,7 @@
     "在双方玩家各自的回合结束时，其所有手牌的法力值消耗减少（1）点。",
     "At the end of each player's turn, reduce the cost of cards in their hand by (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

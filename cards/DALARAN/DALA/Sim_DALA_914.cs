@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_914",
@@ -9,7 +10,7 @@
     "查看你的冒险模式套牌中的四张法术牌。选择一张，其法力值消耗在本次冒险中减少（3）点。",
     "Look at four spells from your deck. Reduce the cost of one by (3) for this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

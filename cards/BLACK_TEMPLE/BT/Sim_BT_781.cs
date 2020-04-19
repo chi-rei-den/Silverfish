@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_781",
@@ -9,7 +10,7 @@
     "每当你的英雄即将受到伤害，改为埃辛诺斯壁垒失去1点耐久度。",
     "[x]Whenever your hero would\ntake damage, this loses\n 1 Durability instead."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "WEAPON",
   "cost": 3,
   "rarity": "LEGENDARY",

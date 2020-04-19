@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_911",
@@ -9,7 +10,7 @@
     "查看你的冒险模式套牌中的四张法术牌。选择一张移出\n套牌。",
     "Look at four spells from your Adventure Deck. Choose one to remove."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

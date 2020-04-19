@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_570",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的对手施放一个法术时，使你的所有随从获得+2生命值。",
     "<b>Secret:</b> When your opponent casts a spell, give your minions +2 Health."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

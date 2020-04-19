@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_036",
@@ -9,7 +10,7 @@
     "召唤三个1/1并具有<b>突袭</b>的伊利达雷。",
     "Summon three 1/1 Illidari with <b>Rush</b>."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

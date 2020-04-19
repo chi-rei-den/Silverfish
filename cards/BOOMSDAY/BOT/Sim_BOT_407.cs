@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_407",
@@ -9,7 +10,7 @@
     "在你使用一张<b>过载</b>牌后，召唤两个1/1并具有<b>突袭</b>的“火花”。",
     "[x]After you play a card with\n<b>Overload</b>, summon two\n1/1 Sparks with <b>Rush</b>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

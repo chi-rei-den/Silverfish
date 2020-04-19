@@ -1,3 +1,5 @@
+using HearthDb;
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>英雄技能</b>\n随机将一张你对手职业的法术牌置入你的手牌。",
     "<b>Hero Power</b>\nPut a random spell from your opponent's class into your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,
@@ -28,7 +30,7 @@ namespace HREngine.Bots
 	class Sim_BRMA13_4 : SimTemplate //* Wild Magic
 	{
 		// Hero Power: Put a random spell from your opponent's class into your hand.
-		
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
             CardClass opponentHeroClass = ownplay ? p.enemyHeroStartClass : p.ownHeroStartClass;

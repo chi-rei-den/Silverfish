@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_048",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在你使用一个<b>战吼</b>随从后，随机使一个友方随从获得+1/+1。",
     "[x]<b>Passive Hero Power</b>\nAfter you play a <b>Battlecry</b>\nminion, give a random\n   friendly minion +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

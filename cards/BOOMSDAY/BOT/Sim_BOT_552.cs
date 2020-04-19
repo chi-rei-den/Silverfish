@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_552",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制三个生命值为7的随从，对所有敌人造成7点\n伤害。",
     "[x]<b>Battlecry:</b> If you control 3\nminions with 7 Health, deal\n7 damage to all enemies."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "EPIC",

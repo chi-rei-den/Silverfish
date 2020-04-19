@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_307",
@@ -9,7 +10,7 @@
     "在你的英雄受到伤害后，复原两个\n法力水晶。",
     "After your hero takes damage, refresh 2 Mana Crystals."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

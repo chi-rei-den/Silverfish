@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_721",
@@ -9,7 +10,7 @@
     "选择一个友方随从。将你的冒险模式套牌中的所有随从牌替换为该随从的复制。",
     "Choose a friendly minion. Replace all minions in your Adventure deck with copies of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 4,
   "rarity": null,

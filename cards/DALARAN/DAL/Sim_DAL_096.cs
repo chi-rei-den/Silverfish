@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_096",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>法术伤害+1</b>",
     "<b>Taunt</b>\n<b>Spell Damage +1</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

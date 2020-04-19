@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对所有随从造成$1点伤害。如果你的生命值小于或等于12点，则改为造成$3点伤害。",
     "Deal $1 damage to all minions. If you have 12 or less Health, deal $3 damage instead."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

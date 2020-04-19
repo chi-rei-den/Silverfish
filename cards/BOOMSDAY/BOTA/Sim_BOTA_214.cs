@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_214",
@@ -9,7 +10,7 @@
     "在你的对手使用一张随从牌后，攻击该随从。<b>亡语：</b>复原所有的法力水晶。",
     "[x]After your opponent plays\na minion, attack it.\n<b>Deathrattle:</b> Refresh ALL\nMana Crystals."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

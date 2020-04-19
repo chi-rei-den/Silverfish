@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_23h",
@@ -9,7 +10,7 @@
     "<i>超强鲨鱼，专吃\n弱者。</i>",
     "<i>This McShark feeds\non the McWeak.</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO",
   "cost": null,
   "rarity": null,

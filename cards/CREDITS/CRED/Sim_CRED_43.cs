@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_43",
@@ -9,7 +10,7 @@
     "50%机会获得100%准确率。",
     "50% chance to be 100% right."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

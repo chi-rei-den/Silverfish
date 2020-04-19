@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_35",
@@ -9,7 +10,7 @@
     "你的表情没有冷却时间，也无法被无视。",
     "Your emotes have no cooldown and can't be squelched."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

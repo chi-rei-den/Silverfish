@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "EX1_193",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>复制你对手的牌库中的一张牌，并将其置入你的手牌。",
     "<b>Battlecry:</b> Copy a card in your opponent’s deck and add it to your hand."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 1,
   "rarity": "FREE",

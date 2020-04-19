@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_003",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤一个2/2的鱼人斥候。",
     "<b>Battlecry:</b> Summon a 2/2 Murloc Scout."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "FREE",

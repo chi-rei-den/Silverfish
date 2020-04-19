@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_86",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n帮助他人找到你的<b>炉边聚会</b><i>（无论他在哪里）。</i>",
     "<b>Battlecry:</b> Help others find your <b>Fireside Gathering</b> <i>(wherever it is).</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

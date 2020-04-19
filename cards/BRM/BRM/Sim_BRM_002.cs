@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "在你施放一个法术后，造成2点伤害，随机分配到所有敌人身上。",
     "After you cast a spell, deal 2 damage randomly split among all enemies."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

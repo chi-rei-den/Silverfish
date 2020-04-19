@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_53",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使你的手牌和牌库里的所有开发人员获得+1魅力。",
     "<b>Battlecry:</b> Give all \nDevs in your hand and deck +1 Swag."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

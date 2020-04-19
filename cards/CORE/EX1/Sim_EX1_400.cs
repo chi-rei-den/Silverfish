@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对所有随从造成$1点伤害。",
     "Deal $1 damage to ALL minions."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

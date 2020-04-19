@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_008",
@@ -9,7 +10,7 @@
     "获得@点护甲值。<i>（每回合都会升级！）</i>",
     "Gain @ Armor.\n<i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 4,
   "rarity": "COMMON",

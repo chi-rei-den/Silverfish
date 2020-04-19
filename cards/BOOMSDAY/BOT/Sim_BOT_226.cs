@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_226",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，你的英雄每受到一点伤害，便获得+1攻击力。",
     "<b>Battlecry:</b> Gain +1 Attack for each damage your hero has taken this turn."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

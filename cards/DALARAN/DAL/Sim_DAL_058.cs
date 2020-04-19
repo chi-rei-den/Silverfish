@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_058",
@@ -9,7 +10,7 @@
     "<b>嘲讽，战吼：</b>使你的对手从牌库中召唤一个随从。",
     "<b>Taunt</b>\n<b>Battlecry:</b> Your opponent summons a minion from their deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

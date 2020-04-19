@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_031",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>随机使一个友方随从获得+2/+2。",
     "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Give a random\n friendly minion +2/+2."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

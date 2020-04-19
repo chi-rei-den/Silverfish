@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_11h",
@@ -9,7 +10,7 @@
     "<i>这位狗头人海盗把背后偷袭提升成了一门艺术。</i>",
     "<i>This kobold pirate has elevated sneak attacks to an art form.</i>"
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

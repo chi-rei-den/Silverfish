@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_35h",
@@ -9,7 +10,7 @@
     "<i>预言已毫无作用。这位治疗师将为城市而战！</i>",
     "<i>This healer will fight\nfor her city. Break\nout the sooths!</i>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "HERO",
   "cost": null,
   "rarity": null,

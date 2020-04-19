@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_111",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>获得+1/+1……呃，这应该是个<b>战吼</b>才对。",
     "<b>Deathrattle</b>: Gain +1/+1 for… hmmm, this should really be a <b>Battlecry</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

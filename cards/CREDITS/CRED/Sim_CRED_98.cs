@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_98",
@@ -9,7 +10,7 @@
     "<b>圣盾</b>。<b>圣盾</b>。<b>圣盾</b>。<b>圣盾</b>。<b>圣盾</b>。<b>圣盾</b>。<b>圣盾</b>。",
     "[x]<b>Divine Shield</b>. <b>Divine Shield</b>.\n<b>Divine Shield</b>. <b>Divine Shield</b>.\n<b>Divine Shield</b>. <b>Divine Shield</b>.\n<b>Divine Shield</b>."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

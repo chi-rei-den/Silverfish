@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_447",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>对你的英雄造成5点伤害。获得5点护甲值。",
     "[x]<b>Battlecry:</b> Deal 5 damage\nto your hero. Gain 5 Armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_607",
@@ -9,7 +10,7 @@
     "每当你抽到一张随从牌，召唤一个它的复制。该复制具有<b>突袭</b>，并会在回合结束时死亡。",
     "[x]Whenever you draw a\nminion, summon a copy\n with <b>Rush</b> that dies at\nend of turn."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

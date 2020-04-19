@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_517",
@@ -9,7 +10,7 @@
     "使一个随从的攻击力和生命值\n互换。",
     "Swap a minion's Attack and Health."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 0,
   "rarity": "COMMON",

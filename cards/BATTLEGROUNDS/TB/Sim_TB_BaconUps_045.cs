@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_045",
@@ -9,7 +10,7 @@
     "你的<b>战吼</b>会触发\n三次。",
     "Your <b>Battlecries</b> trigger three times."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

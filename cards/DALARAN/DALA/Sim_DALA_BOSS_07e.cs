@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_07e",
@@ -9,7 +10,7 @@
     "贝尔纳拉现在<b>免疫</b>了。",
     "Belnaara is <b>Immune</b> for now."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "每当该随从受到伤害，对敌方英雄造成\n2点伤害。",
     "Whenever this minion takes damage, deal 2 damage to the enemy hero."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

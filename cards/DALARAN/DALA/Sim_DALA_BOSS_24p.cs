@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_24p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n你的下一个<b>战吼</b>额外触发一次。",
     "<b>Hero Power</b>\nYour next <b>Battlecry</b> triggers an additional time."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

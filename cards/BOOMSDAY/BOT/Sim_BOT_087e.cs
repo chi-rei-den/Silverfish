@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_087e",
@@ -9,7 +10,7 @@
     "法力值消耗为（1）点。",
     "Costs (1)."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

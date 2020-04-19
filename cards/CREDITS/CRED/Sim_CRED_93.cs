@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_93",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>随机实施\n一个“极好”的创意。",
     "<b>Battlecry</b>: Randomly implement a \"great\" idea."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

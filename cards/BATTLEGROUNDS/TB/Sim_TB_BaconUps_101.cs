@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_101",
@@ -9,7 +10,7 @@
     "每当你的英雄在你的回合受到伤害，便获得+4/+4。",
     "Whenever your hero takes damage on your turn, gain +4/+4."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

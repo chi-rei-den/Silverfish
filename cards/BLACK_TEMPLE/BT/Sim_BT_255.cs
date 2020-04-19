@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_255",
@@ -9,7 +10,7 @@
     "在每回合中，你每施放三个法术，第三个法术的法力值消耗为（0）点。",
     "Every third spell you cast each turn costs (0)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

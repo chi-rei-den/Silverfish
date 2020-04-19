@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_263",
@@ -9,7 +10,7 @@
     "使你手牌中最左边的随从牌获得+2/+2。",
     "Give the\nleft-most minion in your hand +2/+2."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_058",
@@ -9,7 +10,7 @@
     "每当波戈蒙斯塔攻击并消灭一个随从，便获得+4/+4。",
     "Whenever this attacks and kills a minion, gain +4/+4."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

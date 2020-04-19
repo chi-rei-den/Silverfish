@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_424",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n如果你的牌库、手牌和战场没有任何牌，消灭敌方英雄。",
     "[x]<b>Deathrattle:</b> If you have no\ncards in your deck, hand,\nand battlefield, destroy\nthe enemy hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 10,
   "rarity": "LEGENDARY",

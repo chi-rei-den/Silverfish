@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_853e",
@@ -9,7 +10,7 @@
     "所有<b>亡语</b>会触发两次。",
     "All <b>Deathrattles</b> trigger twice."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

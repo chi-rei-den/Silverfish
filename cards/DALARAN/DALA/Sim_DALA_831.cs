@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_831",
@@ -9,7 +10,7 @@
     "所有随从的攻击力和生命值\n互换。",
     "All minions' Attack and Health are swapped."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

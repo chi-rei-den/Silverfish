@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_33p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n每当你受到伤害时，将一个幸运币置入你的手牌。",
     "<b>Passive Hero Power</b>\nWhenever you take damage, add a Coin\nto your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

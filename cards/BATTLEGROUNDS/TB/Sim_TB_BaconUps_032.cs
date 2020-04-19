@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_032",
@@ -9,7 +10,7 @@
     "<b>磁力</b>\n<b>亡语：</b>召唤三个2/2的微型机器人。",
     "<b>Magnetic</b>\n<b>Deathrattle:</b> Summon three 2/2 Microbots."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_133",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n在该随从攻击后，随机将一张法力值消耗为（8）的随从牌置入你的手牌。",
     "[x]<b>Rush</b>\nAfter this attacks, add a\nrandom 8-Cost minion\nto your hand."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 7,
   "rarity": "EPIC",

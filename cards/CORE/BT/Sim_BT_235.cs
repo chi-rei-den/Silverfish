@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_235",
@@ -9,7 +10,7 @@
     "对所有随从造成$4点伤害。",
     "Deal $4 damage to all minions."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 5,
   "rarity": "FREE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_10",
@@ -9,7 +10,7 @@
     "<b>连-连-连-连击：</b>消灭一个随从。",
     "<b>C-C-C-COMBO:</b> Destroy a minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

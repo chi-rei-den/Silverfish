@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_20p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n你的<b>过载</b>法术会施放两次。",
     "<b>Passive Hero Power</b>\nYour spells with <b>Overload</b> cast twice."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

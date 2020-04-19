@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_UnstableEnergy2",
@@ -9,7 +10,7 @@
     "无法攻击，在每个回合结束时，对双方英雄造成3点伤害。",
     "Can't attack.\nAt the end of each turn,\ndeal 3 damage to\nboth heroes."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "FREE",

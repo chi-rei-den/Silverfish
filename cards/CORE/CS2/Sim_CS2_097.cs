@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "每当你的英雄进攻，便为其恢复#2点生命值。",
     "Whenever your hero attacks, restore #2 Health to it."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "WEAPON",
   "cost": 4,
   "rarity": "FREE",

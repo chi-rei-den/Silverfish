@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对所有非恶魔随从造成$2点\n伤害。",
     "[x]Deal $2 damage to all\nminions except Demons."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 3,
   "rarity": "RARE",

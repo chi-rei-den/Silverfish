@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_740ts4",
@@ -9,7 +10,7 @@
     "将一个随从随机变形成为<b>传说</b>随从。",
     "Transform a minion into a random <b>Legendary</b> minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

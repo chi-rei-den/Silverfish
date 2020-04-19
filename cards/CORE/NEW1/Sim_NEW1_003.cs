@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "牺牲一个恶魔，为你的英雄恢复#5点生命值。",
     "Destroy a Demon. Restore #5 Health to your hero."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 0,
   "rarity": "FREE",

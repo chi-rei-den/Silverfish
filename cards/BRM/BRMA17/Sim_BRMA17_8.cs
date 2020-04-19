@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA17_8",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n奈法利安从空中喷吐火焰！",
     "<b>Hero Power</b>\nNefarian rains fire from above!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

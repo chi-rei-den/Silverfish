@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "EX1_084e",
@@ -9,7 +10,7 @@
     "战歌指挥官使得该随从获得+1攻击力。",
     "Warsong Commander is granting this minion +1 Attack."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

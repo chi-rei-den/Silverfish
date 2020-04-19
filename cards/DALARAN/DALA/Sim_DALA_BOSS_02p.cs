@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_02p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在你施放一个法术后，为你的英雄恢复#3点生命值。",
     "[x]<b>Passive Hero Power</b>\nAfter you cast a spell,\nrestore #3 Health\nto your hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

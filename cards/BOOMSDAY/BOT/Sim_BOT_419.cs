@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_419",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制一个树人，<b>发现</b>一张法术牌。",
     "<b>Battlecry:</b> If you control a Treant, <b>Discover</b> a spell."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

@@ -1045,8 +1045,8 @@ namespace HREngine.Bots
             this.enemyHero.maxHp = this.enemyheromaxhp;
             this.ownHero.entitiyID = ownHEntity;
             this.enemyHero.entitiyID = enemyHEntity;
-            this.ownHero.cardClass = heroNametoClass(this.ownheroname);
-            this.enemyHero.cardClass = heroNametoClass(this.enemyheroname);
+            this.ownHero.CardClass = heroNametoClass(this.ownheroname);
+            this.enemyHero.CardClass = heroNametoClass(this.enemyheroname);
 
             this.ownHero.Angr = ownHeroAttack;
             this.ownHero.Hp = ownherohp;

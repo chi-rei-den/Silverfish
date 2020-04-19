@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_136ta",
@@ -9,7 +10,7 @@
     "召唤一个9/9并具有<b>嘲讽</b>的\n守卫。",
     "Summon a 9/9 Guardian with <b>Taunt</b>."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 10,
   "rarity": null,

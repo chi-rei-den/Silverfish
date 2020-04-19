@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_053",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n你的其他恶魔获得+2攻击力。",
     "<b>Taunt</b>\nYour other Demons have +2 Attack."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 7,
   "rarity": "RARE",

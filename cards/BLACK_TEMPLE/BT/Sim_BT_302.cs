@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_302",
@@ -9,7 +10,7 @@
     "抽一张随从牌。如果你拥有至少八张手牌，则使其法力值消耗减少（5）点。",
     "Draw a minion. If you have at least 8 cards in hand, it costs (5) less."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA_01",
@@ -9,7 +10,7 @@
     "抽两张牌。\n获得4点护甲值。",
     "Draw 2 cards.\nGain 4 Armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

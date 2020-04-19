@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA14_7",
@@ -9,7 +10,7 @@
     "所有法术的法力值消耗减少（3）点。",
     "All spells cost (3) less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

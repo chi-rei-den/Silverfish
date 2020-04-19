@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_710",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制一个<b>潜行</b>的随从，抽两张牌。",
     "[x]<b>Battlecry:</b> If you control\na <b><b>Stealth</b>ed</b> minion,\ndraw 2 cards."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对所有敌方随从造成$2点伤害，为所有友方角色恢复#2点\n生命值。",
     "Deal $2 damage to all enemy minions. Restore #2 Health to all friendly characters."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 4,
   "rarity": "FREE",

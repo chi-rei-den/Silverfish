@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_31",
@@ -9,7 +10,7 @@
     "当对战开始时，该牌会自动变成牌库的第一张牌。",
     "When the game starts, this card climbs to the top of the deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

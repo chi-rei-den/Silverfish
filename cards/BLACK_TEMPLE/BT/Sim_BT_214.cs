@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_214",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>从你的手牌中召唤三只野兽。",
     "<b>Battlecry:</b> Summon 3 Beasts from your hand."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

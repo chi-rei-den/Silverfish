@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_605e",
@@ -9,7 +10,7 @@
     "+1攻击力。",
     "+1 Attack."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": 2,
   "rarity": "RARE",

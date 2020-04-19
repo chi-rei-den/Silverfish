@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_119",
@@ -9,7 +10,7 @@
     "每当你召唤一个恶魔，便获得+2/+2。",
     "Whenever you summon a Demon, gain +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": null,

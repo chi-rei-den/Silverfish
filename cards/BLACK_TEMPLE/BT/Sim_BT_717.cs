@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_717",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>造成2点伤害。如果消灭了目标，则获得<b>潜行</b>。",
     "[x]<b>Battlecry:</b> Deal 2 damage.\nIf that kills the target,\ngain <b>Stealth</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

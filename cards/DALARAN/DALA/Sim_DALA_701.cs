@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_701",
@@ -9,7 +10,7 @@
     "如果这张牌在你的手牌中，每个回合都会随机变成一张\n宝藏牌。",
     "Each turn this is in your hand, transform it into a random treasure."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

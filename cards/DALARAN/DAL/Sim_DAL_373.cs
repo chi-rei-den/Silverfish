@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_373",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n造成$1点伤害。",
     "<b>Twinspell</b>\nDeal $1 damage."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

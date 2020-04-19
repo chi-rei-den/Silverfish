@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_022",
@@ -9,7 +10,7 @@
     "在你使用一张<b>奥秘</b>牌后，<b>发现</b>一张\n法术牌。",
     "After you play a <b>Secret</b>, <b>Discover</b> a spell."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "EPIC",

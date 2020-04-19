@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_905",
@@ -9,7 +10,7 @@
     "选择一个友方随从，它将始终出现在你的起始手牌中。",
     "Choose a friendly minion. It always starts in your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

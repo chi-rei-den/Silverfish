@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShopBadsongE",
@@ -9,7 +10,7 @@
     "消耗为（0）。",
     "Costs (0)."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

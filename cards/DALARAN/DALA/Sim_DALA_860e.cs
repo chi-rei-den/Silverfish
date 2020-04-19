@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_860e",
@@ -9,7 +10,7 @@
     "任意玩家在一回合中施放三个法术后，召唤一条5/5的龙。",
     "After a player casts 3 spells in a turn, that player summons a 5/5 Dragon."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

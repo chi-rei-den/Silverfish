@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_46",
@@ -9,7 +10,7 @@
     "在你的回合开始时，因为饥饿而获得-2生命值。",
     "At the start of your turn, get -2 Health due to hunger."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

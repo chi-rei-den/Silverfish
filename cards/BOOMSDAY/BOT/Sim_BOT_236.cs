@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_236",
@@ -9,7 +10,7 @@
     "<b>圣盾，吸血</b>\n你的治疗效果翻倍。",
     "<b>Divine Shield</b>, <b>Lifesteal</b>\nYour healing is doubled."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_11px",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n每当一个<b>潜行</b>的随从被召唤，使其获得+2攻击力。",
     "[x]<b>Passive Hero Power</b>\nWhenever a <b>Stealthed</b>\nminion is summoned,\ngive it +2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

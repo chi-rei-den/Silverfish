@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_216",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你有十个法力水晶，为你的英雄恢复#10点生命值。",
     "<b>Battlecry:</b> If you have 10 Mana Crystals, restore #10 Health to your hero."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

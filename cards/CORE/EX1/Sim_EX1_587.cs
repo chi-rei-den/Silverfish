@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>使一个友方随从获得<b>风怒</b>。",
     "<b>Battlecry:</b> Give a friendly minion <b>Windfury</b>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 4,
   "rarity": "FREE",

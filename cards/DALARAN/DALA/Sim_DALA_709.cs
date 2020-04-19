@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_709",
@@ -9,7 +10,7 @@
     "<b>嘲讽，战吼：</b>将所有其他卡牌替换成随机传说随从牌。",
     "<b>Taunt</b>. <b>Battlecry:</b> Replace ALL other cards with random Legendary minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

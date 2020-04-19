@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_047t",
@@ -9,7 +10,7 @@
     "<b>发现</b>一个<b>等级",
     "<b>Discover</b> a minion\nfrom <b>Tavern Tier"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

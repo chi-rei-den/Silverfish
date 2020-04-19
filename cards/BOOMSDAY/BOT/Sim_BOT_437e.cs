@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_437e",
@@ -9,7 +10,7 @@
     "获得+3/+3和<b>突袭</b>。在回合结束时黏呼呼地死去。",
     "+3/+3 and <b>Rush</b>. Dies a slimy death at the end of the turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

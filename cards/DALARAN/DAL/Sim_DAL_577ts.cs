@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_577ts",
@@ -9,7 +10,7 @@
     "<b>冻结</b>一个随从。如果该随从已被<b>冻结</b>，则对其造成$2点伤害。",
     "<b>Freeze</b> a minion.\nIf it's already <b>Frozen</b>,\ndeal $2 damage to it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_62",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你的下个回合由电脑操作。",
     "<b>Battlecry:</b> The AI \n controls your next turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

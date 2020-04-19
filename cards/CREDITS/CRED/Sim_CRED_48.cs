@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_48",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>重新排列你的随从，使其工作更有效率。",
     "<b>Battlecry:</b> Rearrange \n your minions to be \n more effective."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

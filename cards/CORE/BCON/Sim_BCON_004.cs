@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_004",
@@ -9,7 +10,7 @@
     "选择一个随从，将其变形成为你<b>发现</b>的一个新随从。",
     "Choose a minion. <b>Discover</b> a new minion to transform it into."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "FREE",

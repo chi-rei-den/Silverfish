@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_21h",
@@ -9,7 +10,7 @@
     "<i>洞察所有秘密的秘密是什么？那是个秘密。</i>",
     "<i>What's the secret to knowing all secrets? It's a secret.</i>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

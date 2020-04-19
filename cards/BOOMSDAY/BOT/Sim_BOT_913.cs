@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_913",
@@ -9,7 +10,7 @@
     "随机将每个玩家手牌中的一张随从牌变形成为一张\n恶魔牌。",
     "Each player transforms a random minion in their hand into a Demon."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

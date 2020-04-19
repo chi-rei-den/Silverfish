@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,7 +16,7 @@ using System.Text;
     "<b>磁力</b>\n<b>圣盾</b>\n<b>嘲讽</b>",
     "<b>Magnetic</b>\n<b>Divine Shield</b>\n<b>Taunt</b>"
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

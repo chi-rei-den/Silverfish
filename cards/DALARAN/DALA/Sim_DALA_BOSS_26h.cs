@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_26h",
@@ -9,7 +10,7 @@
     "<i>冷冷的喷泉在脸上胡乱地拍。</i>",
     "<i>Ice cold this fountain flows frostin' up foes with lyrical ice floes.</i>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

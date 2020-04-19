@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_079",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使一个友方机械获得+1/+1。",
     "<b>Battlecry:</b> Give a friendly Mech +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "随机对两个敌方随从造成\n$2点伤害。",
     "[x]Deal $2 damage to\ntwo random enemy\nminions."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "FREE",

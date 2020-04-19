@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_071",
@@ -9,7 +10,7 @@
     "将一个友方随从随机变形成为一个法力值消耗增加（1）点的随从。",
     "Transform a friendly minion into a random one that costs (1) more."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 0,
   "rarity": "COMMON",

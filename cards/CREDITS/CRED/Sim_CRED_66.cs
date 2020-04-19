@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_66",
@@ -9,7 +10,7 @@
     "<i>只有炸掉旧的，才能创造新的！</i>",
     "<i>Ensure a better foundation by blowing up the old one!</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 10,
   "rarity": "LEGENDARY",

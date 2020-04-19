@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_296",
@@ -9,7 +10,7 @@
     "<b>嘲讽，战吼：</b>如果你有十个法力水晶，获得+10攻击力。",
     "[x]<b>Taunt</b>\n<b>Battlecry:</b> If you have\n10 Mana Crystals,\ngain +10 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

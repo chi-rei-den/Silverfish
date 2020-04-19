@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_773",
@@ -9,7 +10,7 @@
     "在你使用一张法力值消耗为（1）的随从牌后，使其获得+1攻击力和<b>突袭</b>。",
     "After you play a 1-Cost minion, give it +1 Attack and <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

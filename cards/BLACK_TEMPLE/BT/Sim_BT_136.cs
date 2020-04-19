@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_136",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>亡语：</b>将“终极姆希菲”洗入你的牌库。",
     "[x]<b>Taunt</b>\n<b>Deathrattle:</b> Shuffle\n'Msshi'fn Prime'\ninto your deck."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

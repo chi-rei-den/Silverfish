@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_084",
@@ -9,7 +10,7 @@
     "随机将两张<b>亡语</b>牌置入你的\n手牌。",
     "Add 2 random <b>Deathrattle</b> cards to your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

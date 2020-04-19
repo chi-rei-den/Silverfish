@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_735t",
@@ -9,7 +10,7 @@
     "在你的回合开始时，该随从变形成为奥。",
     "At the start of your turn, transform this into Al'ar."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

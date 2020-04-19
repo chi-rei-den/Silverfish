@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_566",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤四个1/1的复仇卷轴。",
     "<b>Deathrattle:</b> Summon\nfour 1/1 Vengeful Scrolls."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

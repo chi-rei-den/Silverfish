@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_30t",
@@ -9,7 +10,7 @@
     "当你的英雄死亡时，最年长的下水道老鼠会替换为你的英雄。",
     "When your hero dies, the eldest Underbelly Rat replaces your hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_254",
@@ -9,7 +10,7 @@
     "随机召唤两个法力值消耗为（$2）的随从<i>（受<b>法术伤害</b>加成影响）</i>。",
     "[x]Summon two random\n$2-Cost minions <i>(improved\nby <b>Spell Damage</b>)</i>."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 3,
   "rarity": "EPIC",

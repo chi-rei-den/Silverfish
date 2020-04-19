@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_07p2",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n贝尔纳拉将在2回合内着陆<i>（还剩",
     "[x]<b>Passive Hero Power</b>\nBelnaara will land in 2 turns.\n<i>("
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_29p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n对一个友方元素造成2点伤害，找到其中的矿藏。",
     "<b>Hero Power</b>\nDeal 2 damage to a friendly Elemental. Find out what's inside."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

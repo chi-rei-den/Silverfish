@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA14_9H",
@@ -9,7 +10,7 @@
     "每当一个玩家使用一张牌时，熔岩金刚便对其造成2点伤害。",
     "Whenever a player plays a card, Magmatron deals 2 damage to them."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": null,

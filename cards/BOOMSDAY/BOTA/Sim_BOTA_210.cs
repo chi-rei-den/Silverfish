@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_210",
@@ -9,7 +10,7 @@
     "你的攻击力为1的随从，其法力值消耗减少（1）点。",
     "Your 1-Attack minions cost (1) less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

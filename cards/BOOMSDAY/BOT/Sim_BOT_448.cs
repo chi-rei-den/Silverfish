@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_448",
@@ -9,7 +10,7 @@
     "<b>嘲讽，战吼：</b>对该随从造成6点伤害。",
     "<b>Taunt</b>\n<b>Battlecry:</b> Deal 6 damage to this minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

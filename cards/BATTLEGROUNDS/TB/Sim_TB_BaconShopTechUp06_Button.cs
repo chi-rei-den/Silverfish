@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShopTechUp06_Button",
@@ -9,7 +10,7 @@
     "在你<b>刷新</b>时，鲍勃会提供等级更高的随从。",
     "Bob sells higher tier minions when you <b>Refresh</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "GAME_MODE_BUTTON",
   "cost": 10,
   "rarity": null,

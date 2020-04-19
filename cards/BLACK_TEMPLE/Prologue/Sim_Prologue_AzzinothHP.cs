@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_AzzinothHP",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n装备埃辛诺斯战刃。",
     "<b>Hero Power</b>\nEquip the Warglaives of Azzinoth."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 4,
   "rarity": null,

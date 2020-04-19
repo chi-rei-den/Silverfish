@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_729",
@@ -9,7 +10,7 @@
     "<b>潜行</b>\n在该随从攻击英雄后，从你对手的手牌中偷取一张牌。",
     "[x]<b>Stealth</b>\nAfter this minion attacks\na hero, steal a card from\n   your opponent's hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

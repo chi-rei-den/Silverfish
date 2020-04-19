@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_738",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n将你的初始英雄技能随机替换为一个死亡骑士英雄技能。",
     "<b>Passive</b>\nReplace your starting Hero Power with a random Death Knight one."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

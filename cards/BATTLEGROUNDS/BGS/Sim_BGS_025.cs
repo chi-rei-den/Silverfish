@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_025",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机召唤一个法力值消耗为（1）的随从。",
     "<b>Deathrattle:</b> Summon a random 1-Cost minion."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

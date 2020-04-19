@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_32p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n使一个友方随从随机获得一个新\n发型。",
     "<b>Hero Power</b>\nGive a friendly minion a random haircut."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

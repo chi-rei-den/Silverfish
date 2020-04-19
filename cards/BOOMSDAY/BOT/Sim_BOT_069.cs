@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_069",
@@ -9,7 +10,7 @@
     "随机从你的手牌中召唤三个随从，并使其获得<b>突袭</b>。",
     "Summon 3 random minions from your hand. Give them <b>Rush</b>."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 9,
   "rarity": "LEGENDARY",

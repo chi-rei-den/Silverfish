@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_067",
@@ -9,7 +10,7 @@
     "使一个随从获得<b>突袭</b>。抽\n一张牌。",
     "Give a minion <b>Rush</b>. Draw a card."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

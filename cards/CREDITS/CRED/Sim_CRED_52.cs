@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_52",
@@ -9,7 +10,7 @@
     "将所有音效替换成加拉克苏斯的问候。",
     "Whenever a sound plays, replace it with \nJaraxxus' greeting."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

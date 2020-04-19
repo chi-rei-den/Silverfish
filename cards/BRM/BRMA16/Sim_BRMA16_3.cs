@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA16_3",
@@ -9,7 +10,7 @@
     "对一个随从造成$3点伤害。使你的武器获得+3攻击力。",
     "Deal $3 damage to a minion. Give your weapon +3 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 4,
   "rarity": null,

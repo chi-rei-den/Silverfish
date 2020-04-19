@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA13_8",
@@ -9,7 +10,7 @@
     "随机对一个敌人造成$8点伤害。",
     "Deal $8 damage to a random enemy."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

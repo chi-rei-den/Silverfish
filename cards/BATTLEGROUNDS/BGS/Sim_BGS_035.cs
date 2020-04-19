@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_035",
@@ -9,7 +10,7 @@
     "每当一条友方的龙消灭一个敌人，便获得+2/+2。",
     "Whenever a friendly Dragon kills an enemy, gain +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

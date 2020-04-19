@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_Azzinoth",
@@ -9,7 +10,7 @@
     null,
     null
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO",
   "cost": null,
   "rarity": null,

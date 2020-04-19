@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_33h",
@@ -9,7 +10,7 @@
     "<i>许愿池水底好像有点不对劲。</i>",
     "<i>Something has gone awry at the bottom of the wishing well.</i>"
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "HERO",
   "cost": null,
   "rarity": null,

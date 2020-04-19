@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_543e",
@@ -9,7 +10,7 @@
     "在本回合中，你的法术具有<b>吸血</b>。",
     "Your spells have <b>Lifesteal</b> this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

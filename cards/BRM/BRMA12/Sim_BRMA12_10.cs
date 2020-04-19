@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA12_10",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机弃一张牌。",
     "<b>Hero Power</b>\nDiscard a random card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_422a",
@@ -9,7 +10,7 @@
     "使你的所有其他随从获得+1/+1。",
     "Give your other minions +1/+1."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 6,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_538",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n随机使你的对手从手牌中施放一个法术<i>（目标随机而定）</i>。",
     "<b>Battlecry:</b> Your opponent casts a random spell from their hand <i>(targets chosen randomly)</i>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "EPIC",

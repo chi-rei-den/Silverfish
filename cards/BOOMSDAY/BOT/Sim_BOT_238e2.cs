@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_238e2",
@@ -9,7 +10,7 @@
     "砰砰博士使你的机械获得<b>突袭</b>。",
     "Dr. Boom is granting your Mechs <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

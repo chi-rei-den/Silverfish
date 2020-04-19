@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_854e2",
@@ -9,7 +10,7 @@
     "获得“<b>亡语：</b>召唤一个该随从的1/1复制。”",
     "Granted \"<b>Deathrattle:</b> Summon a 1/1 copy of this minion.\""
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

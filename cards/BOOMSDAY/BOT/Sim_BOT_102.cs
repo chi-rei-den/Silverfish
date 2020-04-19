@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_102",
@@ -9,7 +10,7 @@
     "<b>突袭，亡语：</b>将两张1/1并具有<b>突袭</b>的“火花”置入你的手牌。",
     "<b>Rush</b>\n<b>Deathrattle:</b> Add two\n1/1 Sparks with <b>Rush</b> to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

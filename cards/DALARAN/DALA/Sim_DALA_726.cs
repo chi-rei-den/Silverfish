@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_726",
@@ -9,7 +10,7 @@
     "造成$@点伤害。抽@张牌。获得@点护甲。召唤@个<b>砰砰机器人</b>。<i>（每回合都会升级！）</i>",
     "[x]Deal $@ damage. Draw\n@ |4(card, cards). Gain @ Armor.\nSummon @ <b>Boom |4(Bot, Bots)</b>.\n<i>(Upgrades each turn!)</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

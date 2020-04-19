@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_123",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n<b>亡语：</b>将“终极卡加斯”洗入你的牌库。",
     "[x]<b>Rush</b>\n<b>Deathrattle:</b> Shuffle\n'Kargath Prime'\ninto your deck."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

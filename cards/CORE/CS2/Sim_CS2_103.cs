@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "使一个友方随从获得<b>冲锋</b>。在本回合中无法攻击英雄。",
     "Give a friendly minion <b>Charge</b>. It can't attack heroes this turn."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

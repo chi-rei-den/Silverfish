@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_077",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使一个友方鱼人获得<b>剧毒</b>。",
     "<b>Battlecry:</b> Give a friendly Murloc <b>Poisonous</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

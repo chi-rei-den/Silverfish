@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_029",
@@ -9,7 +10,7 @@
     "如果这张牌在你的手牌中，每个回合都会随机变成一张随从牌。",
     "Each turn this is in your hand, transform it into a random minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "LEGENDARY",

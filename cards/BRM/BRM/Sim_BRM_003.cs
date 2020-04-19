@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "造成$4点伤害。在本回合中每有一个随从死亡，该牌的法力值消耗就减少（1）点。",
     "Deal $4 damage. Costs (1) less for each minion that died this turn."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 5,
   "rarity": "COMMON",

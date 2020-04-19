@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_23px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机消灭一个受伤的敌方随从。",
     "<b>Hero Power</b>\nDestroy a random damaged enemy minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

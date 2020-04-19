@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_03",
@@ -9,7 +10,7 @@
     "<b>超级嘲讽</b> <i>（所有角色必须攻击该随从。）</i>",
     "<b>Super Taunt</b> <i>(EVERY character must attack this minion.)</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

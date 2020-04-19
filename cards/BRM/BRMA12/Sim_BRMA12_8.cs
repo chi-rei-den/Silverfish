@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA12_8",
@@ -9,7 +10,7 @@
     "将一个随从\n变形成为2/2的多彩龙人。",
     "Transform a minion into a 2/2 Chromatic Dragonkin."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

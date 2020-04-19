@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_257",
@@ -9,7 +10,7 @@
     "使一个随从获得+2/+3和<b>吸血</b>。",
     "Give a minion +2/+3 and <b>Lifesteal</b>."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

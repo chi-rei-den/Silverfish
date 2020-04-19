@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRM_011t",
@@ -9,7 +10,7 @@
     "所有在本回合中使用的牌不会造成<b>过载</b>。",
     "Cards you play this turn don't cause <b>Overload</b>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

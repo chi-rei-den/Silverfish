@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_159",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>为你的对手召唤三个1/1的女猎手。",
     "<b>Battlecry:</b> Summon three 1/1 Huntresses for your opponent."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

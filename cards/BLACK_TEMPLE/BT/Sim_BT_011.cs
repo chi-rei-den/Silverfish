@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_011",
@@ -9,7 +10,7 @@
     "装备一把1/4的武器。将所有敌方随从的生命值变为1。",
     "Equip a 1/4 weapon. Change the Health of all enemy minions to 1."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 6,
   "rarity": "COMMON",

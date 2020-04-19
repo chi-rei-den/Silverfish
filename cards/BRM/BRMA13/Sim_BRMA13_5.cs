@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA13_5",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>造成6点伤害。",
     "<b>Battlecry:</b> Deal 6 damage."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 0,
   "rarity": null,

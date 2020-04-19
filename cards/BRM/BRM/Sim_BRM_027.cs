@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>亡语：</b>\n用炎魔之王拉格纳罗斯替换你的英雄。",
     "<b>Deathrattle:</b> Replace your hero with Ragnaros the Firelord."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 9,
   "rarity": "LEGENDARY",

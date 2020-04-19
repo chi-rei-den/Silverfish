@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>如果你的手牌中有龙牌，便获得+2生命值。",
     "<b>Battlecry:</b> If you're holding a Dragon, gain +2 Health."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

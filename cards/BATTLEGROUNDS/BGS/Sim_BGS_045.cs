@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_045",
@@ -9,7 +10,7 @@
     "每当该随从攻击，便使其攻击力翻倍。",
     "Whenever this attacks, double its Attack."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

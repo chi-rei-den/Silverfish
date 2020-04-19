@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_035",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n初始生命值为50点，而非40点。",
     "[x]<b>Passive Hero Power</b>\nStart with 50 Health \ninstead of 40."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

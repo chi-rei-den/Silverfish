@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_38",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果在战场上没有其他Eric，则将该牌命名为Eric。",
     "<b>Battlecry:</b> If you have no other Erics on the battlefield, rename this card to \"Eric\"."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

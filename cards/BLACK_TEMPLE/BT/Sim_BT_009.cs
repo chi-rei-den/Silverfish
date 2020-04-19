@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_009",
@@ -9,7 +10,7 @@
     "<b>休眠</b>两回合。唤醒时，召唤两个1/1的\n鱼人。",
     "<b>Dormant</b> for 2 turns.\nWhen this awakens, summon two 1/1\nMurlocs."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

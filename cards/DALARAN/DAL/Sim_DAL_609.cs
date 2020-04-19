@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_609",
@@ -9,7 +10,7 @@
     "你每个回合使用的第一张法术牌的法力值消耗为（0）点。<b>战吼：</b><b>发现</b>一张法术牌。",
     "Your first spell each\nturn costs (0).\n<b>Battlecry:</b> <b>Discover</b>\na spell."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 10,
   "rarity": "LEGENDARY",

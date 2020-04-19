@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_UnstableEnergy3",
@@ -9,7 +10,7 @@
     "无法攻击。\n<b>亡语：</b>对所有随从造成2点伤害。",
     "Can't attack.\n<b>Deathrattle:</b> Deal 2 damage to ALL minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "FREE",

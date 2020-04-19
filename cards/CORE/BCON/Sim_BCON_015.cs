@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_015",
@@ -9,7 +10,7 @@
     "选择一个友方随从，交给你的对手，并抽三张牌。",
     "[x]Choose a friendly minion.\nGive it to your opponent\nand draw 3 cards."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 2,
   "rarity": "FREE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_065",
@@ -9,7 +10,7 @@
     "<b>沉默</b>一个友方随从，然后召唤一个它的复制。",
     "<b>Silence</b> a friendly minion, then summon a copy of it."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 4,
   "rarity": "COMMON",

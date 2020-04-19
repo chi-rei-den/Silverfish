@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "检视你的牌库顶的三张牌，将其中一张置入手牌，弃掉其余牌。",
     "Look at the top 3 cards of your deck. Draw one and discard the others."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

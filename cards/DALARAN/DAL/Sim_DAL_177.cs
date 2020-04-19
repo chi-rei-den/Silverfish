@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_177",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n消灭一个随从。召唤两个法力值消耗相同的随从来替换它。",
     "<b>Twinspell</b>\nDestroy a minion. Summon 2 minions of the same Cost to replace it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

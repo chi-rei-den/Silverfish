@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_06p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n获得2点护甲值。",
     "<b>Hero Power</b>\nGain 2 Armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

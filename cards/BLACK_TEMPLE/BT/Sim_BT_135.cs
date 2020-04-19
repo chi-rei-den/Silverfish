@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_135",
@@ -9,7 +10,7 @@
     "你的手牌中每有一张法术牌，召唤一只2/2的萤火虫。",
     "Summon a 2/2 Glowfly for each spell in your hand."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 5,
   "rarity": "EPIC",

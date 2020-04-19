@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_256ts",
@@ -9,7 +10,7 @@
     "召唤五个2/2的树人。",
     "Summon five 2/2 Treants."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 8,
   "rarity": "RARE",

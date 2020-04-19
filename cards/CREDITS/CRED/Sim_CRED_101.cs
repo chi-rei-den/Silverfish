@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_101",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>战吼：</b>推迟一期\n乱斗模式。",
     "<b>Taunt</b>\n<b>Battlecry:</b> Reschedule a Tavern Brawl."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_024",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n在下一场战斗中，使一个友方随从获得<b>复生</b>。",
     "[x]<b>Hero Power</b>\nGive a friendly minion\n<b>Reborn</b> for the next\ncombat only."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

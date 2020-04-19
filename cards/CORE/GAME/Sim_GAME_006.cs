@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "出于某种原因，你曾经拥有的一张牌被删除了。拿着这张牌吧，它将成为那张牌的替代品！",
     "Somehow, the card you USED to have has been deleted.  Here, have this one instead!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

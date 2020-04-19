@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_115",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你在上回合施放过法术，<b>发现</b>一张法术牌。",
     "<b>Battlecry:</b> If you cast\na spell last turn,\n<b>Discover</b> a spell."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

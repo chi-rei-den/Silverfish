@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_041",
@@ -9,7 +10,7 @@
     "每当该随从受到伤害，召唤一个4/6并具有<b>嘲讽</b>的机械。",
     "[x]Whenever this minion\ntakes damage, summon a\n4/6 Mech with <b>Taunt</b>."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

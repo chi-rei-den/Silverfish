@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_086",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制一个<b>奥秘</b>，便获得+1/+1。",
     "<b>Battlecry:</b> If you control a <b>Secret</b>, gain +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

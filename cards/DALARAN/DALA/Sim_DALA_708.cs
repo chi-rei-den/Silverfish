@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_708",
@@ -9,7 +10,7 @@
     "随机将五张宝藏牌洗入你的\n牌库。",
     "Shuffle 5 random treasures into your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

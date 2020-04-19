@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_123t",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n每当该随从攻击并消灭一个随从时，获得10点护甲值。",
     "<b>Rush</b>. Whenever this attacks and kills a minion, gain 10 Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

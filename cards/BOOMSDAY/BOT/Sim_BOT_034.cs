@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_034",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤四个0/2的地精炸弹。",
     "<b>Battlecry:</b> Summon four 0/2 Goblin Bombs."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_907",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张<b>传说</b>随从牌，并将其加入你的冒险模式套牌。",
     "<b>Discover</b> a <b>Legendary</b> minion. Add it to your Adventure Deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

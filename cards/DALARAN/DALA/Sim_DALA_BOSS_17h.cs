@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_17h",
@@ -9,7 +10,7 @@
     "<i>德鲁伊之道多种多样，而塔拉走遍了所有道路。</i>",
     "<i>Druids walk many paths.\nTala walks them all.</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO",
   "cost": null,
   "rarity": null,

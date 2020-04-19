@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_060",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将一张“炸弹” 牌洗入你对手的牌库。当玩家抽到“炸弹”时，便会受到5点伤害。",
     "[x]<b>Battlecry:</b> Shuffle a Bomb\ninto your opponent's deck.\nWhen drawn, it explodes\nfor 5 damage."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_099",
@@ -9,7 +10,7 @@
     "随机召唤你手牌中的一张随从牌的一个复制。",
     "Summon a copy of a random minion from your hand."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 6,
   "rarity": "RARE",

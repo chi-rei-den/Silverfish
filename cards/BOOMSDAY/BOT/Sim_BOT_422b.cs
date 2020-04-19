@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_422b",
@@ -9,7 +10,7 @@
     "召唤两个2/2的树人。",
     "Summon two 2/2 Treants."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 6,
   "rarity": null,

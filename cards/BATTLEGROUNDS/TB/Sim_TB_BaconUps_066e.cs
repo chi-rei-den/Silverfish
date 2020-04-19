@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_066e",
@@ -9,7 +10,7 @@
     "+4攻击力。",
     "+4 Attack."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

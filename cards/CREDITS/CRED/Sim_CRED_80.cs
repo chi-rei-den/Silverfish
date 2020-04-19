@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_80",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使所有友方随从获得<b>甜甜圈</b>。",
     "<b>Battlecry:</b> Give all friendly minions <b>Donuts</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_712",
@@ -9,7 +10,7 @@
     "造成$20点伤害，分配到所有敌人身上。",
     "Deal $20 damage split between all enemies."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 4,
   "rarity": null,

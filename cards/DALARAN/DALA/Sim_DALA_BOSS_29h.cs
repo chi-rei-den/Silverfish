@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_29h",
@@ -9,7 +10,7 @@
     "<i>她不断地在套牌中挖掘新的元素。</i>",
     "<i>She's always digging into her deck for elementals.</i>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

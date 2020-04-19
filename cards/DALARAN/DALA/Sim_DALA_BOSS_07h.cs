@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_07h",
@@ -9,7 +10,7 @@
     "<i>无论开战还是开溜，贝尔纳拉都很在行。</i>",
     "<i>When it comes to Fight or Flight, Belnaara chooses both.</i>"
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO",
   "cost": null,
   "rarity": null,

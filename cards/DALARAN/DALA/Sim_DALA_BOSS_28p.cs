@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_28p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n法术牌在被抽到的回合法力值消耗为（0）点。",
     "<b>Passive Hero Power</b>\nSpells cost (0) the turn they are drawn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

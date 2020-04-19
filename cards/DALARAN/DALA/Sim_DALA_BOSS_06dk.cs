@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_06dk",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>装备一把4/3的影之哀伤，影之哀伤同时对其攻击目标相邻的随从造成伤害。",
     "<b>Battlecry</b>: Equip a 4/3 Shadowmourne that also damages adjacent minions."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO",
   "cost": 8,
   "rarity": "LEGENDARY",

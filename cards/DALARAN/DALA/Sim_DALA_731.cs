@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_731",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n使你的所有随从获得<b>突袭</b>。",
     "<b>Passive</b>\nYour minions have <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

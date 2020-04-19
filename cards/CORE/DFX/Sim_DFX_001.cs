@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DFX_001",
@@ -9,7 +10,7 @@
     "Holds the FX for inserting a card into a deck quickly.",
     "Holds the FX for inserting a card into a deck quickly."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

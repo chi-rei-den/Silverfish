@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_700e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤两个1/1的微型机器人。",
     "<b>Deathrattle:</b> Summon two 1/1 Microbots."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

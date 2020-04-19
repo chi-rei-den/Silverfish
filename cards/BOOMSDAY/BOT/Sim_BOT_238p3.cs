@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_238p3",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n对所有敌人造成$1点伤害。每回合\n切换。",
     "<b>Hero Power</b>\nDeal $1 damage to all enemies. Swaps each turn."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

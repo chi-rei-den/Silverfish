@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_700",
@@ -9,7 +10,7 @@
     "摆出和敌方首领完全相同的战场阵容。",
     "Match the boss's\nside of the\nbattlefield exactly."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

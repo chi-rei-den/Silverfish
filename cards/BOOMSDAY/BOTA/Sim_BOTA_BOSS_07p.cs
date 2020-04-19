@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_07p",
@@ -9,7 +10,7 @@
     "<i>全外域效果最好的肥料，没有之一。</i>",
     "<i>The most effective fertilizer this side of Outland.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

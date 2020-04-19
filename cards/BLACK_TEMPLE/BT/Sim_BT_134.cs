@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_134",
@@ -9,7 +10,7 @@
     "对一个随从造成$3点伤害。如果你拥有至少七个法力水晶，则法力值消耗为（0）点。",
     "Deal $3 damage to a minion.\nCosts (0) if you have at least 7 Mana Crystals."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 3,
   "rarity": "COMMON",

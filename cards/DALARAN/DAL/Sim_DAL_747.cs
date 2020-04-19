@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_747",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>为每个玩家召唤一只2/2的狮鹫。",
     "<b>Battlecry:</b> Summon a 2/2 Gryphon for each player."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_060e",
@@ -9,7 +10,7 @@
     "玛尔加尼斯使其获得+4/+4。",
     "Mal'Ganis is granting +4/+4."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

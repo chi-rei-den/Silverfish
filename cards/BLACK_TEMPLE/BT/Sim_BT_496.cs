@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_496",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，如果你的英雄进行过攻击，则获得+1攻击力和<b>突袭</b>。",
     "[x]<b>Battlecry:</b> If your hero\nattacked this turn, gain\n+1 Attack and <b>Rush</b>."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

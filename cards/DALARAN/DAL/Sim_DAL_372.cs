@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_372",
@@ -9,7 +10,7 @@
     "每当你使用一张法力值消耗为（1）的随从牌，从你的牌库中抽一张法术牌。",
     "[x]Whenever you play a\n1-Cost minion, draw a\nspell from your deck."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_102",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤金色的\n小精灵，直到你的随从数量达到上限。",
     "<b>Battlecry</b>: Fill your board with Golden Wisps."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_24h",
@@ -9,7 +10,7 @@
     "<i>发出浩劫般的战吼，让雌斑虎在战争中肆虐横行！</i>",
     "<i>Battlecry havoc,\nand let slip the\nAlleycats of war!</i>"
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO",
   "cost": null,
   "rarity": null,

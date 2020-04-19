@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_718",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将你在本次冒险中对此随从施放过的所有法术再次施放在此随从身上。",
     "<b>Battlecry:</b> Recast all spells you've cast on this minion this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

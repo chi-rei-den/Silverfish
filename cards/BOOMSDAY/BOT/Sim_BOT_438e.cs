@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_438e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机将一张机械牌置入你的手牌。",
     "<b>Deathrattle:</b> Add a random Mech to your hand."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": "COMMON",

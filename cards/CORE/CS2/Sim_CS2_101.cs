@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>英雄技能</b>\n召唤一个1/1的白银之手新兵。",
     "<b>Hero Power</b>\nSummon a 1/1 Silver Hand Recruit."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

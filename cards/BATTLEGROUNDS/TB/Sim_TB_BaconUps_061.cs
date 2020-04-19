@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_061",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使一个友方鱼人获得+2/+2。",
     "<b>Battlecry:</b> Give a friendly Murloc +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

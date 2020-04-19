@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_430",
@@ -9,7 +10,7 @@
     "在攻击一个随从后，你的英雄可以再次攻击。",
     "After attacking a minion, your hero may attack again."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "WEAPON",
   "cost": 5,
   "rarity": "EPIC",

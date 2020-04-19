@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_30h",
@@ -9,7 +10,7 @@
     "<i>一定要有一位鼠\n妖王。</i>",
     "<i>There must always\nbe a rat king.</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO",
   "cost": null,
   "rarity": null,

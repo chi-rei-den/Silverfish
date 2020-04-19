@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_251",
@@ -9,7 +10,7 @@
     "<b>磁力</b>\n<b>亡语：</b>随机消灭一个敌方随从。",
     "<b>Magnetic</b>\n<b>Deathrattle:</b> Destroy a random enemy minion."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

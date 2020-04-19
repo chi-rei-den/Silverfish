@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_78",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>用腐肉虫填满双方的面板。",
     "<b>Battlecry:</b> Fill both \n sides of the board with Carrion Grubs."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

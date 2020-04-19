@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>英雄技能</b>\n抽一张牌并受到$2点伤害。",
     "<b>Hero Power</b>\nDraw a card and take $2 damage."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

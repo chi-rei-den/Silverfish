@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_411",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，你的下一个法术将施放两次。",
     "<b>Battlecry:</b> Your next spell this turn casts twice."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

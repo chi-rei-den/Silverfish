@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_559",
@@ -9,7 +10,7 @@
     "每当你将一张牌洗入牌库，额外洗入一张相同的牌。",
     "Whenever you shuffle a card into a deck, shuffle in an extra copy."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_746e",
@@ -9,7 +10,7 @@
     "在你使用一张随从牌后，将两张它的复制洗入你的牌库，其法力值消耗为（1）点。",
     "After you play a minion, shuffle two copies of it into your deck. They cost (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_728",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n在一个友方随从死亡后，获得2点护甲值。",
     "<b>Passive</b>\nAfter a friendly minion dies, gain 2 armor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_509",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机从你的手牌中召唤一个恶魔。",
     "<b>Deathrattle:</b> Summon a random Demon from your hand."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

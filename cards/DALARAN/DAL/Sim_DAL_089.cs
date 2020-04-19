@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_089",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你拥有<b>法术伤害</b>，抽一张牌。",
     "<b>Battlecry:</b> If you have <b>Spell Damage</b>, draw a card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

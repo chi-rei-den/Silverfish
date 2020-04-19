@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_185",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n当你抽到该牌时，为你的英雄恢复#4点生命值。",
     "[x]<b>Taunt</b>\nWhen you draw this, restore\n#4 Health to your hero."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 6,
   "rarity": "COMMON",

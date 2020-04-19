@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_357t",
@@ -9,7 +10,7 @@
     "<b>休眠</b>\n当你累计恢复了5点生命值时，唤醒该随从。<i>（还剩下",
     "<b>Dormant</b>\nWhen you restore 5 Health, awaken this minion.\n<i>("
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 11,
   "rarity": null,

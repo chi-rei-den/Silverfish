@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_906",
@@ -9,7 +10,7 @@
     "将所有敌方随从加入你的冒险模式套牌。在本次冒险中他们获得+1/+1。",
     "[x]Add all enemy minions\nto your Adventure Deck.\nThey gain +1/+1\nfor this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_258",
@@ -9,7 +10,7 @@
     "<b>休眠</b>两回合。<b>嘲讽</b>",
     "<b>Dormant</b> for 2 turns.\n<b>Taunt</b>"
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

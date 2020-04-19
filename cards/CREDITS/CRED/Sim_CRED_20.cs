@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_20",
@@ -9,7 +10,7 @@
     "<b>抉择：</b>\n为一个机械恢复所有生命值；或者使一个设计师获得<b>风怒</b>。",
     "<b>Choose One</b> - Restore a Mech to full Health; or Give a Designer <b>Windfury.</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

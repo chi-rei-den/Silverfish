@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_041b",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n每当你购买一个<b>机械</b>，使其获得+1/+2。每回合切换类型。",
     "[x]<b>Passive Hero Power</b>\nWhenever you buy a\n<b>Mech</b>, give it +1/+2.\nSwaps type each turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_036",
@@ -9,7 +10,7 @@
     "<b>冲锋</b>，在战场上每有一个其他鱼人便获得+2攻击力。",
     "<b>Charge</b>. Has +2 Attack for each other Murloc on the battlefield."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

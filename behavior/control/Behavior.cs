@@ -1,3 +1,4 @@
+using HearthDb;
 using System.Collections.Generic;
 
 namespace HREngine.Bots

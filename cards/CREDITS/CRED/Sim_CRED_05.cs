@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_05",
@@ -9,7 +10,7 @@
     "<i>3点召唤一个5/4的大块头？这可真划算！</i>",
     "<i>3 for a 5/4? That's a good deal!</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

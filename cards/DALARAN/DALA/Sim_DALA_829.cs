@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_829",
@@ -9,7 +10,7 @@
     "对战开始时，你对手的场上有一个“现金储备箱”。",
     "Your opponent starts the game with a 'Cache of Cash.'"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

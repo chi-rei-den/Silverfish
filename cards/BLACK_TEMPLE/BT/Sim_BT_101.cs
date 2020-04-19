@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_101",
@@ -9,7 +10,7 @@
     "使你的所有随从获得“<b>亡语</b>：再次召唤该随从。”",
     "Give your minions \"<b>Deathrattle:</b> Resummon this minion.\""
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

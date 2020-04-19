@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_719",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n召唤所有在本次冒险中被该武器消灭的随从。",
     "<b>Deathrattle:</b> Summon all minions killed by this weapon this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "WEAPON",
   "cost": 5,
   "rarity": null,

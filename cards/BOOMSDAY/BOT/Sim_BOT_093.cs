@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_093",
@@ -9,7 +10,7 @@
     "抽一张牌。如果你在上个回合使用过元素牌，则复制抽到的牌。",
     "Draw a card. Copy it if you played an Elemental last turn."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

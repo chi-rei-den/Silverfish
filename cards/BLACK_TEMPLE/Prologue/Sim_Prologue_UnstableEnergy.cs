@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_UnstableEnergy",
@@ -9,7 +10,7 @@
     "无法攻击。\n<b>嘲讽</b>",
     "Can't attack.\n<b>Taunt</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "FREE",

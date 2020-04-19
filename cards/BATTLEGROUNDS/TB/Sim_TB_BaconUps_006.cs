@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_006",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个4/2的损坏的傀儡。",
     "<b>Deathrattle:</b> Summon a 4/2 Damaged Golem."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_210",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n<b>亡语：</b>将“终极兹克索尔”洗入你的牌库。",
     "[x]<b>Rush</b>\n<b>Deathrattle:</b> Shuffle 'Zixor\nPrime' into your deck."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

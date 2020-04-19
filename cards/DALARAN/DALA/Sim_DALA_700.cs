@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_700",
@@ -9,7 +10,7 @@
     "获得一个额外回合。此后你的对手获得一个额外回合。",
     "Take an extra turn. Your opponent takes an extra turn after."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 4,
   "rarity": null,

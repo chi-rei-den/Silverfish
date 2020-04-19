@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_711",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你控制一个<b>奥秘</b>，将一个随从移回其拥有者的手牌，并且法力值消耗增加（2）点。",
     "[x]<b>Battlecry:</b> If you control a\n<b>Secret</b>, return a minion\nto its owner's hand.\nIt costs (2) more."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

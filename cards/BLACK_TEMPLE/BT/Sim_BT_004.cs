@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_004",
@@ -9,7 +10,7 @@
     "<b>休眠</b>两回合。唤醒时，对所有敌方随从造成2点伤害。",
     "<b>Dormant</b> for 2 turns.\nWhen this awakens,\ndeal 2 damage to all\nenemy minions."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

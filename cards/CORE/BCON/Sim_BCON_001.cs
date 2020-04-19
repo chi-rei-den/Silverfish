@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_001",
@@ -9,7 +10,7 @@
     "在本局对战的剩余时间内，你的英雄技能能够以随从为\n目标。",
     "For the rest of the game,\nyour Hero Power can target minions."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "FREE",

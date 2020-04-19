@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_851",
@@ -9,7 +10,7 @@
     "在使用一张法术牌后，召唤一个法力值消耗相同的随从。",
     "After a spell is played, a minion of the same cost is summoned."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

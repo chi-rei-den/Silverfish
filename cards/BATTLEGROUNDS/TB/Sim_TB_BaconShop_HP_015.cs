@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_015",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n鲍勃的酒馆中的机械获得+2攻击力。",
     "[x]<b>Passive Hero Power</b>\nMechs in Bob's Tavern\nhave +2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>英雄技能</b>\n随机召唤一个\n图腾。",
     "<b>Hero Power</b>\nSummon a random Totem."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

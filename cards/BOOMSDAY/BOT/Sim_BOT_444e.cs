@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_444e",
@@ -9,7 +10,7 @@
     "在本回合中，每当一个随从死亡，便获得一个仅限本回合可用的法力水晶。",
     "Whenever a minion dies this turn, gain 1 Mana Crystal this turn only."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

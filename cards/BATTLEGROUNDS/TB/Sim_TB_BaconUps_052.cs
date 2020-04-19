@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_052",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤三个2/2的鱼人。",
     "<b>Deathrattle:</b> Summon three 2/2 Murlocs."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "COMMON",

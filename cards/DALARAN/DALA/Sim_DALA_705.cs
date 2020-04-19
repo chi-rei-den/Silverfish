@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_705",
@@ -9,7 +10,7 @@
     "在你的回合结束时，召唤一个该随从的\n复制。",
     "At the end of your turn, summon a copy of this minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

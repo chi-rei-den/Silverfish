@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_14t",
@@ -9,7 +10,7 @@
     "攻击该随从的敌人有50%几率攻击其他角色。",
     "[x]Enemies attacking this\nhave a 50% chance to\nattack someone else."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": null,

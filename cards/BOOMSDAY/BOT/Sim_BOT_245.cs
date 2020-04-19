@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +16,7 @@ using System.Text;
     "随机将你的所有随从变形成为<b>传说</b>随从。",
     "Transform your minions into random <b>Legendary</b> minions."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 6,
   "rarity": "LEGENDARY",

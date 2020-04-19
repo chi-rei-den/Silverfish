@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_23",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n当你使用表情时，你的英雄所发出来的语音变为“电子音”。",
     "<b>Battlecry:</b> Your emotes are now spoken in \"Radio Voice.\""
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

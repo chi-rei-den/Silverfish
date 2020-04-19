@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_730",
@@ -9,7 +10,7 @@
     "每当你使用一张牌，使你对手的一个法力水晶<b>过载</b>。",
     "Whenever you play\na card, <b>Overload</b> one\nof your opponent's\nMana Crystals."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

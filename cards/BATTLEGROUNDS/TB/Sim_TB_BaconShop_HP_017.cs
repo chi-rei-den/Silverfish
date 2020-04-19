@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_017",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n在下一场战斗开始时，使你的所有随从获得“<b>亡语：</b>召唤一个1/1的鱼人。”",
     "[x]<b>Hero Power</b>\nAt the start of next combat,\ngive your minions \"<b>Deathrattle:</b>\n Summon a 1/1 Murloc.\""
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

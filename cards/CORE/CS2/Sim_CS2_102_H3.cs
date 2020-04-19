@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_102_H3",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n获得2点护甲值。",
     "<b>Hero Power</b>\nGain 2 Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

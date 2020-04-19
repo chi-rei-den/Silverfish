@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_855e",
@@ -9,7 +10,7 @@
     "在每个玩家的回合结束时，该玩家抽若干牌，直至其手牌数量达到5张。",
     "At the end of each player's turn, that player draws until they have 5 cards."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

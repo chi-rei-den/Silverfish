@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>英雄技能</b>\n装备一把1/2的\n匕首。",
     "<b>Hero Power</b>\nEquip a 1/2 Dagger."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": "FREE",

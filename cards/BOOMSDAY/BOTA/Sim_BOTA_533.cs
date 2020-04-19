@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_533",
@@ -9,7 +10,7 @@
     "Start Mirror Puzzle 4-5.",
     "Start Mirror Puzzle 4-5."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 5,
   "rarity": null,

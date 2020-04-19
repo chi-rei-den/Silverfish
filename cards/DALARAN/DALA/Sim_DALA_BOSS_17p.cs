@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_17p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n你的<b>抉择</b>牌和英雄技能可以同时拥有两种效果。",
     "[x]<b>Passive Hero Power</b>\nYour <b>Choose One</b> cards\nand powers have both\neffects combined."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

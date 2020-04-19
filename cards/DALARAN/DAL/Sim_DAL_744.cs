@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_744",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>复制一个友方随从的生命值。",
     "<b>Battlecry:</b> Copy a friendly minion's Health."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

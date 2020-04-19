@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_063",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>随机使一个友方野兽，龙和鱼人获得+2/+2。",
     "<b>Battlecry:</b> Give a random friendly Beast, Dragon, and Murloc +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

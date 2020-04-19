@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_037",
@@ -9,7 +10,7 @@
     "当你出售该随从时，使鲍勃的酒馆中的所有随从获得+1/+1。",
     "When you sell this minion, give all minions in Bob's Tavern +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

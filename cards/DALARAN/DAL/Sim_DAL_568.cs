@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_568",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n使一个友方随从获得<b>吸血</b>。",
     "<b>Twinspell</b>\nGive a friendly minion <b>Lifesteal</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA15_2",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n使所有随从的攻击力和生命值互换。",
     "<b>Passive Hero Power</b>\nWhenever a minion is summoned, swap its Attack and Health."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

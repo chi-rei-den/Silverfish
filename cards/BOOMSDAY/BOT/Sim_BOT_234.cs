@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_234",
@@ -9,7 +10,7 @@
     "将所有随从的攻击力和生命值\n变为1。",
     "Set the Attack and Health of all minions\nto 1."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 5,
   "rarity": "RARE",

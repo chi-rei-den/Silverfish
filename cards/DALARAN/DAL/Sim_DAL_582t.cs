@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_582t",
@@ -9,7 +10,7 @@
     "<b>抽到时施放</b>\n召唤一只2/2并具有<b>突袭</b>的地狱犬。",
     "<b>Casts When Drawn</b>\nSummon a 2/2 Felhound with <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

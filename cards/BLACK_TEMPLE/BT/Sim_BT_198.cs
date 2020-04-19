@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_198",
@@ -9,7 +10,7 @@
     "召唤所有敌方随从的复制，并使敌方随从与其复制\n互相攻击。",
     "Summon copies of enemy minions. They attack their copies."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 7,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_Baconups_055e",
@@ -9,7 +10,7 @@
     "你的随从的<b>亡语</b>将触发三次。",
     "Your minions trigger their <b>Deathrattles</b> three times."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

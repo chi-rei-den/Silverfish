@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_249",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>获得等同于该随从攻击力的护甲值。",
     "<b>Taunt</b>. <b>Deathrattle</b>: Gain Armor equal to this minion's Attack."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_243",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n<b>发现</b>一张<b>亡语</b>随从牌，并获得其<b>亡语</b>。",
     "[x]<b>Battlecry:</b> <b>Discover</b> a\n<b>Deathrattle</b> minion. Also\ngain its <b>Deathrattle</b>."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

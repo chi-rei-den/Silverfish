@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "抽一张牌。<i>（你最多可以拥有\n十个法力水晶。）</i>",
     "Draw a card. <i>(You can only have 10 Mana in your tray.)</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

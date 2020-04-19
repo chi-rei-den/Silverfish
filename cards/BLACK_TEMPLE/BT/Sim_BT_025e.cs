@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_025e",
@@ -9,7 +10,7 @@
     "+1/+1。<b>亡语：</b>将一张“智慧圣契”置入你的手牌。",
     "+1/+1. <b>Deathrattle:</b> Add 'Libram of Wisdom' to your hand."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_34h",
@@ -9,7 +10,7 @@
     "<i>你的随从转圈圈……</i>",
     "<i>Round and round your minions go...</i>"
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "HERO",
   "cost": null,
   "rarity": null,

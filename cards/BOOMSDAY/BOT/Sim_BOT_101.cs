@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_101",
@@ -9,7 +10,7 @@
     "随机将两张随从牌置入你的\n手牌。",
     "Add 2 random minions to your hand."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

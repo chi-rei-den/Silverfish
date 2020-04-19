@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_601",
@@ -9,7 +10,7 @@
     "抽三张牌。<b>流放：</b>这些牌的法力值消耗减少（3）点。",
     "Draw 3 cards.\n<b>Outcast:</b> Reduce their Cost by (3)."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 6,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_511t",
@@ -9,7 +10,7 @@
     "<b>抽到时施放</b>\n你受到5点伤害。",
     "<b>Casts When Drawn</b>\nYou take 5 damage."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 5,
   "rarity": null,

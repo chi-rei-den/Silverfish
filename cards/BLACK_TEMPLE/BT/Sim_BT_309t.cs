@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_309t",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>召唤三个在本局对战中死亡的友方恶魔。",
     "<b>Battlecry:</b> Summon 3 friendly Demons that died this game."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_128",
@@ -9,7 +10,7 @@
     "抽三张牌。\n弃掉抽到的所有随从牌。",
     "Draw 3 cards. Discard any minions drawn."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

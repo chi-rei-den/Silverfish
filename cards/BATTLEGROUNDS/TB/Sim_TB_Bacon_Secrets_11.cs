@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_Bacon_Secrets_11",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>在一回合中当你的第二个随从死亡时，将其复活。",
     "<b>Secret:</b> When your second minion dies in a turn, return it to life."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

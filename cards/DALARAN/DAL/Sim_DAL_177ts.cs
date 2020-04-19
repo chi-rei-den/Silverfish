@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_177ts",
@@ -9,7 +10,7 @@
     "消灭一个随从。召唤两个法力值消耗相同的随从来\n替换它。",
     "Destroy a minion. Summon 2 minions of the same Cost to replace it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 4,
   "rarity": "RARE",

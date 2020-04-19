@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_09p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机召唤一个在本回合中死亡的友方随从。",
     "<b>Hero Power</b>\nSummon a random friendly minion that died this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

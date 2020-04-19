@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_416",
@@ -9,7 +10,7 @@
     "<b>战吼：</b><b>发现</b>一张其他职业的法术牌。",
     "<b>Battlecry:</b> <b>Discover</b> a spell from another class."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

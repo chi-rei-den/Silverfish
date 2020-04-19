@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_857e",
@@ -9,7 +10,7 @@
     "任意玩家在使用一张法力值消耗大于或等于（8）点的卡牌后，将一张宝藏牌置入其手牌。",
     "After a player plays a card that costs (8) or more, that player adds a Treasure to their hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

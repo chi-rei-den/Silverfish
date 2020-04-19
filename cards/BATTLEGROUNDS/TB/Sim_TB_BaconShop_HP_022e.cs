@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_022e",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n你在本回合中的下一个<b>战吼</b>将触发两次。",
     "<b>Hero Power</b>\nYour next <b>Battlecry</b> this turn triggers twice."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

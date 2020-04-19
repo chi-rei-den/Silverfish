@@ -2370,7 +2370,7 @@ namespace HREngine.Bots
             {
                 foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
                 {
-                    switch (secretID)
+                    switch (secretID.CardId)
                     {
                         case CardIds.Collectible.Paladin.NobleSacrifice: //Noble Sacrifice
                             if (this.enemyMinions.Count > 0)
@@ -2533,7 +2533,7 @@ namespace HREngine.Bots
             {
                 foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
                 {
-                    switch (secretID)
+                    switch (secretID.CardId)
                     {
                         case CardIds.Collectible.Mage.IceBarrier: //Ice Barrier
                             totalEnemyDamage -= 8;
@@ -2575,7 +2575,7 @@ namespace HREngine.Bots
 
             foreach (Chireiden.Silverfish.SimCard secretID in this.ownSecretsIDList)
             {
-                switch (secretID)
+                switch (secretID.CardId)
                 {
 
 

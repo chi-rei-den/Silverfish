@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "<b>抉择：</b>将该随从变形成为5/2；或者将该随从变形成为2/5。",
     "<b>Choose One -</b> Transform into a 5/2 minion; or a 2/5 minion."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

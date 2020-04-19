@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_DemonicPortal",
@@ -9,7 +10,7 @@
     "每回合都会召唤不稳定的能量。消灭30个能量来稳定传送门并获得胜利！<i>（还剩下",
     "[x]Each turn, summons\nUnstable Energy. Destroy\n30 to stabilize the portal\nand win! <i>("
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_571",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n如果你控制一个<b>奥秘</b>，便获得+1攻击力。",
     "<b>Battlecry:</b> If you control a\n<b>Secret</b>, gain +1 Attack."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "WEAPON",
   "cost": 2,
   "rarity": "RARE",

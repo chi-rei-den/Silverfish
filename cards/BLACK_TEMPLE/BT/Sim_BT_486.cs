@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_486",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n在你的回合结束时，从你的牌库中召唤一个恶魔。",
     "<b>Taunt</b>\nAt the end of your turn, summon a Demon from your deck."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 9,
   "rarity": "EPIC",

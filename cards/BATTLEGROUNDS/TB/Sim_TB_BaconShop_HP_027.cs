@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_027",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n<b>战斗开始时：</b>随机对两个敌方随从造成4点伤害。",
     "[x]<b>Hero Power</b>\n<b>Start of Combat:</b>\nDeal 4 damage to two\n  random enemy minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

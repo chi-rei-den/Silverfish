@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_008",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n将一枚铸币置入你的手中。",
     "[x]<b>Hero Power</b>\nAdd a Gold Coin\nto your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

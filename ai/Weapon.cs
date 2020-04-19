@@ -1,3 +1,4 @@
+using HearthDb;
 using Triton.Game.Mapping;
 
 namespace HREngine.Bots

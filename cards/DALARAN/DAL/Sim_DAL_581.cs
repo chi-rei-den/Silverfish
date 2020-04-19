@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_581",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>为双方英雄恢复所有生命值。",
     "<b>Battlecry:</b> Restore both heroes to full Health."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 10,
   "rarity": "LEGENDARY",

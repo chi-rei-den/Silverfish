@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_283",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本局对战中，你每使用一张蹦蹦兔就会使其获得+2/+2。",
     "[x]<b>Battlecry:</b> Gain +2/+2 for\neach other Pogo-Hopper\nyou played this game."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

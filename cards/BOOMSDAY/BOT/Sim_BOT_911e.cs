@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_911e",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n<b>圣盾</b>",
     "<b>Taunt</b>, <b>Divine Shield</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

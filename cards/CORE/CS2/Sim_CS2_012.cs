@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对一个敌人造成$4点伤害，并对所有其他敌人\n造成$1点伤害。",
     "Deal $4 damage to an enemy and $1 damage to all other enemies."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 4,
   "rarity": "FREE",

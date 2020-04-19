@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_748",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n你的法术消耗生命值，而非法力值。",
     "<b>Passive</b>\nYour spells cost Health instead of Mana."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

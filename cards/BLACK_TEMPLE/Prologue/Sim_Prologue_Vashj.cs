@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_Vashj",
@@ -9,7 +10,7 @@
     "<b>法术伤害+1</b>\n你的法术的法力值消耗减少（1）点。",
     "<b>Spell Damage +1</b>\nYour spells cost (1) less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

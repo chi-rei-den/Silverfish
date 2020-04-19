@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_495",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，如果你的英雄进行过攻击，则造成4点\n伤害。",
     "<b>Battlecry:</b> If your hero attacked this turn,\ndeal 4 damage."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 5,
   "rarity": "FREE",

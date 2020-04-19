@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_521",
@@ -9,7 +10,7 @@
     "召唤你控制的所有恶魔的复制。",
     "Summon copies of all Demons you control."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 6,
   "rarity": "EPIC",

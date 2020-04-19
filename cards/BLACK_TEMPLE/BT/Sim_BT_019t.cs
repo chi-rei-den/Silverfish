@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_019t",
@@ -9,7 +10,7 @@
     "<b>圣盾，战吼：</b>随机召唤四个鱼人。使它们获得<b>圣盾</b>。",
     "<b>Divine Shield</b>\n<b>Battlecry:</b> Summon 4 random Murlocs. Give them <b>Divine Shield</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_575",
@@ -9,7 +10,7 @@
     "你的召唤随从的卡牌召唤数量翻倍。",
     "Your cards that summon minions summon twice as many."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

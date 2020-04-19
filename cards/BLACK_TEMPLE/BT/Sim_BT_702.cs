@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_702",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>在本回合中，使一个<b>潜行</b>的随从获得+3攻击力和<b>免疫</b>。",
     "<b>Battlecry:</b> Give a <b><b>Stealth</b>ed</b> minion +3 Attack and <b>Immune</b> this turn."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

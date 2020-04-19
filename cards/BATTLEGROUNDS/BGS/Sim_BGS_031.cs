@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_031",
@@ -9,7 +10,7 @@
     "<b>战吼：</b><b>进化</b>你所有的鱼人。",
     "<b>Battlecry:</b> <b>Adapt</b> your Murlocs."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

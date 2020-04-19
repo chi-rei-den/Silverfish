@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_863",
@@ -9,7 +10,7 @@
     "对战开始时，将十张“幻觉”分别置入双方玩家的牌库。",
     "Both players start the game with 10 'Hallucinations' in their deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

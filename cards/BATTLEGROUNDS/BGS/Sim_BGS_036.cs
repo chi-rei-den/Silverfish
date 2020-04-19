@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_036",
@@ -9,7 +10,7 @@
     "在你的回合结束时，你每有一条龙，便获得+1/+1。",
     "At the end of your turn, gain +1/+1 for each Dragon you have."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

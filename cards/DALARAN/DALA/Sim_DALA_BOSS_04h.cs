@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_04h",
@@ -9,7 +10,7 @@
     "<i>第一步：打开传送门；第二步：随从决斗；第三步：……胜利？</i>",
     "<i>Step 1: Open portal.\nStep 2: Minions fight.\nStep 3: ...Victory?</i>"
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "HERO",
   "cost": null,
   "rarity": null,

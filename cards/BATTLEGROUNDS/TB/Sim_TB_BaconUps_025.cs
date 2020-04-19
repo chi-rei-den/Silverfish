@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_025",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>使你的所有随从获得+2/+2。",
     "<b>Deathrattle:</b> Give your minions +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_861e",
@@ -9,7 +10,7 @@
     "所有随从有50%几率攻击错误的敌人。",
     "All minions have a 50% chance to attack the wrong enemy."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

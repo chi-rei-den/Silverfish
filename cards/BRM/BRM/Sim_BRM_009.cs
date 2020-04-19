@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>嘲讽</b>\n在本回合中每有一个随从死亡，该牌的法力值消耗就减少（1）点。",
     "<b>Taunt</b>\nCosts (1) less for each minion that died this turn."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 9,
   "rarity": "RARE",

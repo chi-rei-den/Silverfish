@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_744d",
@@ -9,7 +10,7 @@
     "为施放了哈加莎的拥抱的玩家保留强化效果（DALA744e）",
     "Holds an effect for Hagatha's Embrace Player Enchantment (DALA 744e)"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

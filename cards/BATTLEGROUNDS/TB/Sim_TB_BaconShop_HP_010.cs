@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_010",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n使一个友方随从获得<b>圣盾</b>。",
     "<b>Hero Power</b>\nGive a friendly minion <b>Divine Shield</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 3,
   "rarity": null,

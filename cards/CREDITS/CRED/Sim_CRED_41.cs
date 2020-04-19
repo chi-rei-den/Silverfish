@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_41",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将三张短跑卡牌和一张马拉松卡牌置入你的手牌。",
     "<b>Battlecry:</b> Add 3 Sprints and a Marathon to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

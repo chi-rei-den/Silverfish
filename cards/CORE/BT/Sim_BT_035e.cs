@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_035e",
@@ -9,7 +10,7 @@
     "在本回合中，+2攻击力。",
     "+2 Attack this turn."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

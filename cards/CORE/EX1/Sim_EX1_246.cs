@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "使一个随从变形成为一个0/1并具有<b>嘲讽</b>的青蛙。",
     "Transform a minion into a 0/1 Frog with <b>Taunt</b>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 4,
   "rarity": "FREE",

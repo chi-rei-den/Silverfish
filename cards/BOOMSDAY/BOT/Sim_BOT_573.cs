@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_573",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n从你的牌库中抽五张不同的<b>奥秘</b>牌。",
     "<b>Battlecry:</b> Draw 5 different <b>Secrets</b> from your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "造成$2点伤害，为你的英雄恢复#2点生命值。",
     "Deal $2 damage. Restore #2 Health to your hero."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 3,
   "rarity": "FREE",

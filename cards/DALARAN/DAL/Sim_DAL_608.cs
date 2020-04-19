@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_608",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张法力值消耗小于或等于（3）点的法术牌。",
     "<b>Discover</b> a spell that costs (3) or less."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

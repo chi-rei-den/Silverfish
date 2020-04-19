@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,7 +15,7 @@ using System.Text;
     "<b>战吼：</b>使你手牌中的所有随从牌获得+2/+2。",
     "<b>Battlecry:</b> Give all minions in your hand +2/+2."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

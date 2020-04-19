@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_865",
@@ -9,7 +10,7 @@
     "在一个随从被召唤后，使其获得“<b>亡语：</b>对所有随从造成1点伤害。”",
     "After a minion is summoned, it gains \"<b>Deathrattle</b>: Deal 1 damage to all minions.\""
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

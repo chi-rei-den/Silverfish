@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_601",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你每有一张手牌，便随机对一个敌人造成1点伤害。",
     "<b>Battlecry:</b> For each card in your hand, deal 1 damage to a random enemy."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_280",
@@ -9,7 +10,7 @@
     "在你的对手使用一张随从牌后，召唤一个该随从的1/1复制。",
     "After your opponent plays a minion, summon a 1/1 copy of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

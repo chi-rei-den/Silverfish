@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_551",
@@ -9,7 +10,7 @@
     "<b>嘲讽</b>\n如果你没有其他随从，则具有+2攻\n击力。",
     "<b>Taunt</b>\nHas +2 Attack while you [x]have no other minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

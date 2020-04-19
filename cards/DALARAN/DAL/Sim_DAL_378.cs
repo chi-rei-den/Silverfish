@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_378",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n召唤一只5/5并具有<b>突袭</b>的双足飞龙。",
     "<b>Twinspell</b>\nSummon a 5/5 Wyvern with <b>Rush</b>."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 6,
   "rarity": "RARE",

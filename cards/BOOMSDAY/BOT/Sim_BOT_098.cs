@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_098",
@@ -9,7 +10,7 @@
     "在本回合中，除非你施放过法术，否则无法进行攻击。",
     "Can only attack if you cast a spell this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

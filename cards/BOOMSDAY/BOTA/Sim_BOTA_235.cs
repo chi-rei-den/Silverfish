@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_235",
@@ -9,7 +10,7 @@
     "对所有随从造成$8点伤害。",
     "Deal $8 damage to all minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 6,
   "rarity": null,

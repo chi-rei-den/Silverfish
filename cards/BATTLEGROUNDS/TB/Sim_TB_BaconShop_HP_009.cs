@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_009",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n提升酒馆等级所需的铸币减少\n（1）枚。",
     "[x]<b>Passive Hero Power</b>\nReduce the Cost of\nTavern Tiers by (1)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

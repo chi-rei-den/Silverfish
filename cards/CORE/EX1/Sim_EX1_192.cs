@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "EX1_192",
@@ -9,7 +10,7 @@
     "为你的英雄恢复#5点生命值。",
     "Restore #5 Health to your hero."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

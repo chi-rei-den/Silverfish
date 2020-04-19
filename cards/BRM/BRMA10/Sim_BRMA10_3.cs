@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA10_3",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n使所有腐化的蛋获得+1生命值，并召唤一个腐化的蛋。",
     "<b>Hero Power</b>\nGive all Corrupted Eggs +1 Health, then summon one."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

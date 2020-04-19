@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_037a",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机使一个友方机械，鱼人，野兽，恶魔和龙获得+2攻击力。",
     "[x]<b>Hero Power</b>\nGive a random friendly Mech,\nMurloc, Beast, Demon,\nand Dragon +2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

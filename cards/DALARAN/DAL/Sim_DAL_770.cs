@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_770",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你有十个法力水晶，对一个随从造成10点伤害。",
     "[x]<b>Battlecry:</b> If you have 10\nMana Crystals, deal 10\ndamage to a minion."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 4,
   "rarity": "EPIC",

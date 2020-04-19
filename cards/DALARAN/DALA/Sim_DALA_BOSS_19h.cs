@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_19h",
@@ -9,7 +10,7 @@
     "<i>这位小巧的潜行者能造成巨大的\n伤害。</i>",
     "<i>This teeny-tiny\nrogue dishes out\nsome big big hurt.</i>"
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

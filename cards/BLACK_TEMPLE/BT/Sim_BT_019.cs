@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_019",
@@ -9,7 +10,7 @@
     "<b>圣盾</b>\n<b>亡语：</b>将“终极莫戈尔格”洗入你的牌库。",
     "[x]<b>Divine Shield</b>\n<b>Deathrattle:</b> Shuffle\n'Murgurgle Prime'\ninto your deck."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

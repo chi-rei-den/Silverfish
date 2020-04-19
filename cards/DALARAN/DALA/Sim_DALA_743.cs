@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_743",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n对战开始时，召唤三个1/1的砰砰机器人。",
     "<b>Passive</b>\nAt the start of the game, summon three 1/1 Boom Bots."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

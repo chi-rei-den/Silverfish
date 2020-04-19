@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_562",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>获得<b>潜行</b>直到你的下个回合。",
     "<b>Battlecry:</b> Gain <b>Stealth</b> until your next turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

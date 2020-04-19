@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_740ts",
@@ -9,7 +10,7 @@
     "有几率使你额外获得一张卡牌的二到五张复制。",
     "Chance to give you 2 - 5 extra copies of a card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_714",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n<b>冻结</b>一个敌人。",
     "<b>Battlecry:</b> <b>Freeze</b> an enemy."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

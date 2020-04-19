@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DFX_002",
@@ -9,7 +10,7 @@
     "Holds the FX for playing Timewarp FX.",
     "Holds the FX for playing Timewarp FX."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_411e2",
@@ -9,7 +10,7 @@
     "在本回合中，你的下一个法术将施放两次。",
     "Your next spell this turn casts twice."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

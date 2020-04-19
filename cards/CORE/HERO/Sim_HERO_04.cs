@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     null,
     null
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "HERO",
   "cost": null,
   "rarity": "FREE",

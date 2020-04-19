@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "对一个敌方角色造成$1点伤害，并使其<b>冻结</b>。",
     "Deal $1 damage to an enemy character and <b>Freeze</b> it."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

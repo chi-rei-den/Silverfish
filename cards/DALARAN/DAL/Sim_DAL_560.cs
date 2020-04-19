@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_560",
@@ -9,7 +10,7 @@
     "<b>嘲讽，战吼：</b>每有一个其他友方随从，便获得+2/+2。",
     "<b>Taunt.</b> <b>Battlecry:</b> Gain +2/+2 for each other friendly minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "COMMON",

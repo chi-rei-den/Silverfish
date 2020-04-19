@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_036t",
@@ -9,7 +10,7 @@
     "<b>突袭</b>",
     "<b>Rush</b>"
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

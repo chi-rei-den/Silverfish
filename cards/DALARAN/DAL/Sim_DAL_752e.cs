@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_752e",
@@ -9,7 +10,7 @@
     "耶比托·乔巴斯把它变成了1/1。",
     "Jepetto Joybuzz made this 1/1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

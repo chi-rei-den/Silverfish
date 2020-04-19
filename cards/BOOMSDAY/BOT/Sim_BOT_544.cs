@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_544",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>造成6点伤害，随机分配到所有其他友方随从身上。",
     "<b>Battlecry:</b> Deal 6 damage randomly split among other friendly minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

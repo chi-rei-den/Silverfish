@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_746d",
@@ -9,7 +10,7 @@
     "为使用活化药剂的玩家保留效果（DALA746e）",
     "Holds and effect for Elixir of Vigor Player Enchantment (DALA 746e)"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

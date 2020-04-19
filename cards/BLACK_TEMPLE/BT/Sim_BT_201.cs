@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_201",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n造成等同于该随从攻击力的伤害，随机分配到所有敌人身上。",
     "[x]<b>Deathrattle</b>: Deal this\nminion's Attack damage\nrandomly split among\nall enemies."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 3,
   "rarity": "EPIC",

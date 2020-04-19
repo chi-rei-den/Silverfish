@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_050",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机召唤两个法力值消耗为（4）的随从。",
     "<b>Deathrattle:</b> Summon two random 4-Cost minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "EPIC",

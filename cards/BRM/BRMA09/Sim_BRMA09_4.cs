@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA09_4",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n召唤一个3/1的龙人。获得另一个英雄技能。",
     "<b>Hero Power</b>\nSummon a 3/1 Dragonkin. Get a new Hero Power."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

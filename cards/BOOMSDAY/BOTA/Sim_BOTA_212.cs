@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_212",
@@ -9,7 +10,7 @@
     "每当一个随从获得治疗时，对敌方英雄造成2点伤害。",
     "Whenever a minion is healed, deal 2 damage to the enemy hero."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

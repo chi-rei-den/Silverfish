@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_352",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张德鲁伊随从牌。如果你的手牌中没有随从牌，则保留全部三张牌。",
     "<b>Discover</b> a Druid minion. If your hand has no minions, keep all 3."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 2,
   "rarity": "EPIC",

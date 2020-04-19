@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_022",
@@ -9,7 +10,7 @@
     "<b>风怒</b>\n该随从总会攻击攻击力最低的敌方随从。",
     "[x]<b>Windfury</b>\nThis minion always attacks\nthe enemy minion with\nthe lowest Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

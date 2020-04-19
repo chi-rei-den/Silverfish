@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_258",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>如果你对该随从施放过任意法术，再次召唤该随从。",
     "<b>Deathrattle:</b> If you've cast any spells on this minion, resummon it."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

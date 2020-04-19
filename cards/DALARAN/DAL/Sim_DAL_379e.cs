@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_379e",
@@ -9,7 +10,7 @@
     "在本回合中，你具有<b>法术伤害+2</b>。",
     "You have <b>Spell Damage +2</b> this turn."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

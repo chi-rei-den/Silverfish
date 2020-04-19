@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_052",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>变形成为你的牌库中一个其他随从的4/4复制。",
     "[x]<b>Battlecry:</b> Transform into\na 4/4 copy of a different\nminion in your deck."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

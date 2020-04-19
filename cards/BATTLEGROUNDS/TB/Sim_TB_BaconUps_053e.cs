@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_053e",
@@ -9,7 +10,7 @@
     "攻城恶魔使得该随从获得+2攻击力。",
     "Siegebreaker is granting this minion +2 Attack."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

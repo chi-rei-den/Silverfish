@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_066",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个7/7的机械巨龙。",
     "<b>Deathrattle:</b> Summon a 7/7 Mechanical Dragon."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA10_4H",
@@ -9,7 +10,7 @@
     "当该随从的生命值大于或等于5时，它便会孵化。",
     "When this minion has 5 or more Health, it hatches."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

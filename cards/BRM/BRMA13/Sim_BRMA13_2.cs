@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA13_2",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n游戏开始！",
     "<b>Hero Power</b>\nLet the games begin!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_112",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n将你对手的所有手牌变成韩文版本。",
     "<b>Battlecry:</b> Localize all cards in your opponent's hand into Korean."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

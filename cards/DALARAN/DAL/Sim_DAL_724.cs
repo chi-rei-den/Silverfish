@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_724",
@@ -9,7 +10,7 @@
     "召唤三个在本局对战中死亡的友方随从。",
     "Summon 3 friendly minions that died\nthis game."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 9,
   "rarity": "RARE",

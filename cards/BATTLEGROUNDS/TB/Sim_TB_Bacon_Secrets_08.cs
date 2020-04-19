@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_Bacon_Secrets_08",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的随从死亡时，随机使一个友方随从获得+3/+2。",
     "<b>Secret:</b> When one of your minions dies, give a random friendly minion +3/+2."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

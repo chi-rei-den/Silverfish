@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_723",
@@ -9,7 +10,7 @@
     "消耗你所有的法力值。消灭一个攻击力小于或等于所消耗法力值的随从。",
     "[x]Spend all your Mana.\nDestroy a minion with that\nmuch Attack or less."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 0,
   "rarity": "RARE",

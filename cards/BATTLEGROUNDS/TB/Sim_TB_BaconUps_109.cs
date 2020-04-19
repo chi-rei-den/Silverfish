@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_109",
@@ -9,7 +10,7 @@
     "在你使用一张<b>战吼</b>随从牌后，使你的所有龙获得+2/+2。",
     "After you play a minion with <b>Battlecry</b>, give your Dragons +2/+2."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

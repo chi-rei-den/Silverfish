@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_523",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n在本局对战中，每有一个友方树人死亡，该牌的法力值消耗便减少（1）点。",
     "<b>Rush</b>. Costs (1) less for each friendly Treant that died this game."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 9,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_323",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>检视你牌库中的三张牌。选择一张置于牌库顶。",
     "<b>Battlecry:</b> Look at 3 cards in your deck. Choose one to put on top."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "MINION",
   "cost": 2,
   "rarity": "FREE",

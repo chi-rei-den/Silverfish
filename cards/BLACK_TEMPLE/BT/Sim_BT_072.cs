@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_072",
@@ -9,7 +10,7 @@
     "<b>冻结</b>一个敌人。召唤两个3/6的水元素。",
     "<b>Freeze</b> an enemy. Summon two 3/6 Water Elementals."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 8,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_04p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n从双方玩家的牌库中各召唤一个随从，并使其互相攻击。",
     "<b>Hero Power</b>\nBoth players summon a minion from their deck. They fight."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

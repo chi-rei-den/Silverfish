@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_87",
@@ -9,7 +10,7 @@
     "相邻的随从<b>免疫</b>火焰法术。<i>还不赖吧。</i>",
     "Adjacent minions \nare <b>Immune</b> to fire spells. <i>This is fine.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

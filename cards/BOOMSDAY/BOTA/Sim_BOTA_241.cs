@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_241",
@@ -9,7 +10,7 @@
     "使一个随从获得<b>剧毒</b>。",
     "Give a minion <b>Poisonous</b>."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

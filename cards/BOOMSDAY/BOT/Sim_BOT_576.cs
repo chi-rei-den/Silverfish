@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_576",
@@ -9,7 +10,7 @@
     "<b>连击：</b>使一个友方随从获得+4攻击力。",
     "<b>Combo:</b> Give a friendly minion +4 Attack."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

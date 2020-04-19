@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_028",
@@ -9,7 +10,7 @@
     "<b>法术伤害+1</b>\n<b>亡语：</b>将“终极索兰莉安”洗入你的牌库。",
     "[x]<b>Spell Damage +1</b>\n<b>Deathrattle:</b> Shuffle\n'Solarian Prime'\ninto your deck."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

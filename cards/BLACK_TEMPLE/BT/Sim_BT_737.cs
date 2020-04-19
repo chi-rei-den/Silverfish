@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_737",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n选择一个随从。使其<b>休眠</b>两回合。",
     "<b>Battlecry:</b> Choose a minion.\nIt goes <b>Dormant</b> for 2 turns."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

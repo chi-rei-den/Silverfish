@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_914",
@@ -9,7 +10,7 @@
     "你改用威兹班的一副梦幻套牌来开始\n对战！",
     "You start the game with one of Whizbang's Wonderful Decks!"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

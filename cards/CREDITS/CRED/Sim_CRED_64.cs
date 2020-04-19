@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_64",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>把你的卡背染成橘色。事实上…把所有东西都染成橘色。",
     "<b>Battlecry:</b>  Make your \n card back orange.  Actually… make everything orange."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

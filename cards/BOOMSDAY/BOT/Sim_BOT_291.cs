@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_291",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>从你的牌库中抽一张法力值消耗大于或等于（5）点的法术牌。",
     "<b>Battlecry:</b> Draw a spell from your deck that costs (5) or more."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

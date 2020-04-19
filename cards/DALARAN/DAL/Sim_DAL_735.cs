@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_735",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n<b>沉默</b>相邻的随从。",
     "<b>Battlecry:</b> <b>Silence</b>\nadjacent minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_107",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n使所有随从及游戏场地获得<b>紫色+3</b>。",
     "<b>Battlecry:</b> Give all minions, everywhere, <b>Purple +3</b>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "LEGENDARY",

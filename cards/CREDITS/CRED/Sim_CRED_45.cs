@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_45",
@@ -9,7 +10,7 @@
     "每当一个被<b>沉默</b>的随从死亡，获得+1/+1。",
     "Whenever a <b>Silenced</b> minion dies, gain +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

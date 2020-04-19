@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_114",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n如果你在上个回合施放过法术，则对所有其他随从造成2点伤害。",
     "<b>Battlecry:</b> If you cast a spell last turn, deal 2 damage to all other minions."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

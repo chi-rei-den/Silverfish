@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_120",
@@ -9,7 +10,7 @@
     "在你的回合结束时，随机使另一个友方随从获得+6攻击力。",
     "At the end of your turn, give another random friendly minion +6 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_008a",
@@ -9,7 +10,7 @@
     "在本回合中获得1枚铸币。",
     "Gain 1 Gold this turn only."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": "RARE",

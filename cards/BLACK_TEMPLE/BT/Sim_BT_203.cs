@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_203",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当一个友方随从受到攻击时，召唤一个该随从的3/3的复制。",
     "<b>Secret:</b> When a friendly minion is attacked, summon a 3/3 copy."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_208e",
@@ -9,7 +10,7 @@
     "在本回合中，你的所有牌消耗生命值，而非法力值。",
     "This turn, your cards cost Health instead of Mana."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

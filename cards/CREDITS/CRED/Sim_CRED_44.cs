@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_44",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>对2个战略目标各造成1点伤害。",
     "<b>Battlecry:</b> Deal 1 damage to each of 2 strategic targets."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

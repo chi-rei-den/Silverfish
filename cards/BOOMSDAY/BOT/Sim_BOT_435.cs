@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_435",
@@ -9,7 +10,7 @@
     "从你对手的牌库中<b>发现</b>一张随从牌的复制。",
     "<b>Discover</b> a copy of a minion in your opponent's deck."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

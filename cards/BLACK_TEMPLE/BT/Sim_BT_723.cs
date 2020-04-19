@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_723",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>对一个随从造成1点伤害并使其获得<b>突袭</b>。",
     "<b>Battlecry:</b> Deal 1 damage to a minion and give it <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

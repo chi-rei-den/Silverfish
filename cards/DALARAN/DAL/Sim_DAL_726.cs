@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_726",
@@ -9,7 +10,7 @@
     "你的鱼人法力值消耗为（1）点。",
     "Your Murlocs cost (1)."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

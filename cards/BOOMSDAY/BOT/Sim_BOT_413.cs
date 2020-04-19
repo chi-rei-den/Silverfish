@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_413",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你手牌中每有一张法术牌，便获得+1生命值。",
     "[x]<b>Battlecry:</b> Gain +1 Health\nfor each spell in your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_728",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个9/1的审判官。",
     "<b>Deathrattle:</b> Summon a 9/1 Inquisitor."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

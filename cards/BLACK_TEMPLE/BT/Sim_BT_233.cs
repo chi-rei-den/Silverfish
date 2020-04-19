@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_233",
@@ -9,7 +10,7 @@
     "对一个随从造成$2点伤害。获得2点护甲值。",
     "Deal $2 damage to a minion. Gain 2 Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

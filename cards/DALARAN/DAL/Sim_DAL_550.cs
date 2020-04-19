@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_550",
@@ -9,7 +10,7 @@
     "在该随从受到伤害并没有死亡后，召唤一个它的复制。",
     "After this minion survives damage, summon a copy of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 7,
   "rarity": "RARE",

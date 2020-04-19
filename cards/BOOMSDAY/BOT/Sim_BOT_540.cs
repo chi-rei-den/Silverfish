@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_540",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n消灭一个机械。",
     "<b>Battlecry:</b> Destroy a Mech."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

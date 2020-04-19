@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "在你的回合结束时，为所有友方随从恢复#1点生命值。",
     "At the end of your turn, restore #1 Health to all friendly minions."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 1,
   "rarity": "FREE",

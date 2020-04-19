@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_724",
@@ -9,7 +10,7 @@
     "消灭所有随从。在你的下个回合开始时，再次消灭所有\n随从。",
     "Destroy ALL minions. Do it again at the start of your next turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 2,
   "rarity": null,

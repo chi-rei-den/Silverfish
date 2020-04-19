@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_702e",
@@ -9,7 +10,7 @@
     "在本回合中，+3攻击力和<b>免疫</b>。",
     "+3 Attack and <b>Immune</b> this turn."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

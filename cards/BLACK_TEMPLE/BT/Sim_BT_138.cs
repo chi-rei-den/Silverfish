@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_138",
@@ -9,7 +10,7 @@
     "<b>突袭</b>\n每有一个受伤的随从，该牌的法力值消耗减少（1）点。",
     "<b>Rush</b>\nCosts (1) less for each damaged minion."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 7,
   "rarity": "RARE",

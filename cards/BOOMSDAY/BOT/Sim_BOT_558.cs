@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_558",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>将你施放在该随从身上的所有法术移回你的手牌。",
     "[x]<b>Deathrattle:</b> Return any\nspells you cast on this\nminion to your hand."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 1,
   "rarity": "RARE",

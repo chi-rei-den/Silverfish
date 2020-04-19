@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_Bacon_Secrets_12",
@@ -9,7 +10,7 @@
     "<b>奥秘：</b>当你的英雄将要承受致命伤害时，防止这些伤害，并使其在本回合中获得<b>免疫</b>。",
     "<b>Secret:</b> When your hero takes fatal damage, prevent it and become <b>Immune</b> this turn."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 3,
   "rarity": "EPIC",

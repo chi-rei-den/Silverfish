@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_737",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n对战开始时，随机装备一把武器，并使其获得+1/+1。",
     "<b>Passive</b>\nAt the start of the game, equip a random weapon. Give it +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

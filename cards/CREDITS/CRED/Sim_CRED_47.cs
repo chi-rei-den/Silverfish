@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_47",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n<b>设计</b>一个解决方案<i>（无论他在哪里）。</i>",
     "<b>Battlecry:</b> <b>Design</b> \na solution \n <i>(wherever it is)</i>."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 3,
   "rarity": "LEGENDARY",

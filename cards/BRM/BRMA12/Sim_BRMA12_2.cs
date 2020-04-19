@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA12_2",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n在你的回合结束时，将一张龙血之痛牌置入对手的手牌。",
     "<b>Hero Power</b>\nAt the end of your turn, add a Brood Affliction card to your opponent's hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_034",
@@ -9,7 +10,7 @@
     "你的召唤随从的卡牌召唤数量变为三倍。",
     "Your cards that summon minions summon three times as many."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "MINION",
   "cost": 2,
   "rarity": "LEGENDARY",

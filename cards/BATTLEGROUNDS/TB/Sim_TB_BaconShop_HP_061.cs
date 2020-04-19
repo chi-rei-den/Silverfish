@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_061",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n所有随从获得+2攻击力。",
     "[x]<b>Passive Hero Power</b>\nALL minions have\n+2 Attack."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

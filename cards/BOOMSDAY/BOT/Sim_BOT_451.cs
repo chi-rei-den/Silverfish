@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_451",
@@ -9,7 +10,7 @@
     "召唤两个1/1并具有<b>突袭</b>的“火花”。<b>过载：</b>（1）",
     "Summon two 1/1 Sparks with <b>Rush</b>. <b>Overload:</b> (1)"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

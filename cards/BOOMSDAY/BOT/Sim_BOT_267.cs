@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_267",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机从你的手牌中召唤一个法力值消耗小于或等于（2）点的随从。",
     "<b>Deathrattle:</b> Summon a random minion from\nyour hand that costs (2) or less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

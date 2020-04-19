@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_739",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n对战开始时，将十张惊奇卡牌洗入你的\n牌库。",
     "<b>Passive</b>\nAt the start of the game, shuffle 10 'Scrolls of Wonder' into your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

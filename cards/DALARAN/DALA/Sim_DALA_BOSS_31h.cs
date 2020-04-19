@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_31h",
@@ -9,7 +10,7 @@
     "<i>提莫斯从不分解金色卡牌。一次都没分过！</i>",
     "<i>Timothy has never dusted a golden.\nNot even once!</i>"
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

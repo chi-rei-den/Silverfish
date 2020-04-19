@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRM_018e",
@@ -9,7 +10,7 @@
     "你的下一张龙牌的法力值消耗减少（2）点。",
     "Your next Dragon costs (2) less."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

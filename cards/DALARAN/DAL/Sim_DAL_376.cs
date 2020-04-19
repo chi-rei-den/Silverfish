@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_376",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>从你的手牌中召唤一个机械，并触发其<b>亡语</b>。",
     "[x]<b>Deathrattle:</b> Summon a\nMech from your hand and\ntrigger its <b>Deathrattle</b>."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

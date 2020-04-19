@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_024",
@@ -9,7 +10,7 @@
     "随机将你的手牌替换成恶魔牌。",
     "Replace your hand with random Demons."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 0,
   "rarity": "FREE",

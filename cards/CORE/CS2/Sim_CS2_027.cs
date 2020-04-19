@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     "召唤两个0/2，并具有<b>嘲讽</b>的随从。",
     "Summon two 0/2 minions with <b>Taunt</b>."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "FREE",

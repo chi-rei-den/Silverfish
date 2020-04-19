@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_32h",
@@ -9,7 +10,7 @@
     "<i>一位老练的造型师。一句惹毛她的人有危险。</i>",
     "<i>A skilled stylist, but get on her bad side and she's a bit snippy.</i>"
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "HERO",
   "cost": null,
   "rarity": null,

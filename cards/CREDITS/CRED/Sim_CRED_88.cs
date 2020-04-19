@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_88",
@@ -9,7 +10,7 @@
     "每当你发出一份请求时，相邻随从的攻击力变为10倍。",
     "Whenever a request is played, multiply the attack of adjacent minions by 10."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

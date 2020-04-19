@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_063e",
@@ -9,7 +10,7 @@
     "在施放腐蚀术的玩家的回合开始时，消灭该随从。",
     "At the start of the corrupting player's turn, destroy this minion."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

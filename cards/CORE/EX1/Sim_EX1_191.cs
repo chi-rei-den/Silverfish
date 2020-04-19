@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "EX1_191",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使一个友方随从获得<b>剧毒</b>。",
     "<b>Battlecry:</b> Give a friendly minion <b>Poisonous</b>."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 4,
   "rarity": "FREE",

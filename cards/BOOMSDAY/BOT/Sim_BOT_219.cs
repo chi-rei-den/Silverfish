@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_219",
@@ -9,7 +10,7 @@
     "使一个随从获得+2/+2。将一张可使一个随从获得+2/+2的“更多手臂”置入你的手牌。",
     "[x]Give a minion +2/+2.\nAdd 'More Arms!' to your\nhand that gives +2/+2."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 3,
   "rarity": "RARE",

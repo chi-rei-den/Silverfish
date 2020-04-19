@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_714b",
@@ -9,7 +10,7 @@
     "<b>双生法术</b>\n对所有敌方随从造成$3点伤害。",
     "<b>Twinspell.</b>\nDeal $3 damage to all enemy minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

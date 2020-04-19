@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_741",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n在你的回合结束时，随机调整你所有手牌的法力值消耗。",
     "<b>Passive</b>\nAt the end of your turn, randomize the cost of all cards in your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_292",
@@ -9,7 +10,7 @@
     "使一个随从获得+2/+2。\n抽一张牌。",
     "Give a minion +2/+2.\nDraw a card."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

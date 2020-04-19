@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_913e",
@@ -9,7 +10,7 @@
     "+4/+4且法力值消耗增加（2）点。",
     "+4/+4 and costs (2) more."
   ],
-  "cardClass": null,
+  "CardClass": null,
   "type": "ENCHANTMENT",
   "cost": 1,
   "rarity": null,

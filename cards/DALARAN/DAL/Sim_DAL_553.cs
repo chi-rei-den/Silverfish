@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_553",
@@ -9,7 +10,7 @@
     "在你的回合结束时，随机召唤一个法力值消耗为（6）的随从。",
     "At the end of your turn, summon a random\n6-Cost minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 10,
   "rarity": "EPIC",

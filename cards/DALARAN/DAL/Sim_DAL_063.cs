@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_063",
@@ -9,7 +10,7 @@
     "在你的英雄攻击后，将一张“炸弹”牌洗入你对手的牌库。",
     "After your hero attacks, shuffle a Bomb into your [x]opponent's deck."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "WEAPON",
   "cost": 4,
   "rarity": "EPIC",

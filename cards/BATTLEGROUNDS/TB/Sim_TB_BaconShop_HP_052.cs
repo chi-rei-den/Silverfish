@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_052",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n将一个随从随机替换为一个等级相同的随从。",
     "[x]<b>Hero Power</b>\nReplace a minion with a\nrandom one of the same\nTavern Tier."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

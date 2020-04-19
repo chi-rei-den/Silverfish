@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>你的下一张龙牌的法力值消耗减少（2）点。",
     "<b>Battlecry:</b> The next Dragon you play costs (2) less."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

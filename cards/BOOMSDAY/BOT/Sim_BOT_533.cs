@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_533",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>随机将一张元素牌置入你的手牌。",
     "<b>Battlecry:</b> Add a random Elemental to your hand."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

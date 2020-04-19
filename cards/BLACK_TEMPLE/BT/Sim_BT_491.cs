@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_491",
@@ -9,7 +10,7 @@
     "抽一张牌。<b>流放：</b>再抽一张。",
     "[x]Draw a card.\n<b>Outcast:</b> Draw another."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_03h",
@@ -9,7 +10,7 @@
     "<i>这不是真正的魔术，他在袖子里藏牌了。</i>",
     "<i>It's not real magic. He's got cards tucked into his sleeve.</i>"
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "HERO",
   "cost": null,
   "rarity": null,

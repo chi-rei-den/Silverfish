@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "<b>战吼：</b>获得1-4点攻击力。<b>过载：</b>（1）",
     "<b>Battlecry:</b> Gain 1-4 Attack. <b>Overload:</b> (1)"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

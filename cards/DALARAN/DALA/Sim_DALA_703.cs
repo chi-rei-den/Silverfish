@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_703",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>\n随机将三张卡牌置入你的手牌，其法力值消耗为（0）点。",
     "<b>Battlecry:</b> Add three random cards to your hand. They cost (0)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": null,

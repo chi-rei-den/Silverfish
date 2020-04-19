@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_832",
@@ -9,7 +10,7 @@
     "双方玩家在对战开始时获得一个“紫罗兰囚室”。",
     "Both players start the game with a 'Violet Prison.'"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

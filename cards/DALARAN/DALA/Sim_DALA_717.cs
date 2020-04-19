@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_717",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张<b>任务</b>牌的<b>奖励</b>。",
     "<b>Discover</b> a <b>Quest</b> <b>Reward</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

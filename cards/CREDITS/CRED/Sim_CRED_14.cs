@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_14",
@@ -9,7 +10,7 @@
     "你的其他随从获得+3攻击力和<b>冲锋</b>。",
     "Your other minions have +3 Attack and <b>Charge</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

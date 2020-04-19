@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_371",
@@ -9,7 +10,7 @@
     "对一个随从造成$4点伤害。<b>发现</b>一张法术牌。",
     "Deal $4 damage to a minion. <b>Discover</b> a spell."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 4,
   "rarity": "COMMON",

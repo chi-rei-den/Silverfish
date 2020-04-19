@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_21p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n将一个随机职业的<b>奥秘</b>置入战场。",
     "<b>Hero Power</b>\nPut a random class <b>Secret</b> into the battlefield."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_19px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n造成1点伤害。<b>连击：</b>改为造成2点\n伤害。",
     "<b>Hero Power</b>\nDeal 1 damage\n<b>Combo:</b> 2 instead."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

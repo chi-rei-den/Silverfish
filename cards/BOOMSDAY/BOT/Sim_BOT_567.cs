@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_567",
@@ -9,7 +10,7 @@
     "召唤你的牌库中每一个随从的1/1复制。",
     "Summon a 1/1 copy of each minion in your deck."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "SPELL",
   "cost": 9,
   "rarity": "LEGENDARY",

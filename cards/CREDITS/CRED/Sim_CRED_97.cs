@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_97",
@@ -9,7 +10,7 @@
     "<b>嘲讽。</b>从你的牌库底部出发。<i>我马上就到。</i>",
     "<b>Taunt</b>\nStarts at the bottom of your deck.\n<i>I got here as soon as I could.</i>"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_018",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>使你的野兽获得+4/+4。",
     "<b>Deathrattle:</b> Give your Beasts +4/+4."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

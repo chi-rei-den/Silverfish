@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_039",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机从鲍勃的酒馆中雇用一个随从并使其获得+1/+1。",
     "<b>Hero Power</b>\nHire a random minion in Bob's Tavern and give it +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 2,
   "rarity": null,

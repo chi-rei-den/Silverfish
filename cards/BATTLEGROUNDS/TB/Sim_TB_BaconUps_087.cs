@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_087",
@@ -9,7 +10,7 @@
     "<b>亡语</b>：召唤本场战斗中最先死亡的四个友方机械。",
     "<b>Deathrattle</b>: Summon the first 4 friendly Mechs that died this combat."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 9,
   "rarity": "EPIC",

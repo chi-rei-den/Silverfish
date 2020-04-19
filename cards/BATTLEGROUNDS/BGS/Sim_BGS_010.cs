@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_010",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>你的英雄每受到一点伤害，便获得+1生命值。",
     "<b>Battlecry:</b> Gain +1 Health for each damage your hero has taken."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "EPIC",

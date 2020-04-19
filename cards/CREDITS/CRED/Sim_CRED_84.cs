@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_84",
@@ -9,7 +10,7 @@
     "你的时间表\n对内容剧增<b>免疫</b>。",
     "Your Schedule is <b>Immune</b> to feature creep."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

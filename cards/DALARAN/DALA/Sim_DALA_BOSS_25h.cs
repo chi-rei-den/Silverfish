@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_25h",
@@ -9,7 +10,7 @@
     "<i>需要自行组装。</i>",
     "<i>Some assembly required.</i>"
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "HERO",
   "cost": null,
   "rarity": null,

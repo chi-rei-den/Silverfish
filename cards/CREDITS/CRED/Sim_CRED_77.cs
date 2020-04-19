@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_77",
@@ -9,7 +10,7 @@
     "<b>激励：</b>获得<b>暴虐</b>，然后将其攻击力和生命值互换。",
     "<b>Inspire</b>: Gain <b>Barbarism</b>, then swap this minion's Attack and Health."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "LEGENDARY",

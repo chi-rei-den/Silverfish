@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_068",
@@ -9,7 +10,7 @@
     "在一个其他友方随从失去<b>圣盾</b>后，获得\n<b>圣盾</b>。",
     "[x]After another friendly\nminion loses <b>Divine Shield</b>,\ngain <b>Divine Shield</b>."
   ],
-  "cardClass": "PALADIN",
+  "CardClass": "PALADIN",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

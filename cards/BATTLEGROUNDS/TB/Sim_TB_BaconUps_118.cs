@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_118",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>对所有随从造成1点伤害，触发两次。",
     "<b>Taunt</b>\n<b>Deathrattle:</b> Deal 1 damage to all minions twice."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

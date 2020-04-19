@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_913",
@@ -9,7 +10,7 @@
     "选择一个友方随从，使其在本次冒险中获得+4/+4，且法力值消耗增加（2）点。",
     "[x]Choose a friendly minion.\nIt gains +4/+4 but costs\n(2) more for this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

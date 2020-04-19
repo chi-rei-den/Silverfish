@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_453",
@@ -9,7 +10,7 @@
     "对一个随从及其相邻的随从造成$1点伤害。",
     "Deal $1 damage to a minion and the minions next to it."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "COMMON",

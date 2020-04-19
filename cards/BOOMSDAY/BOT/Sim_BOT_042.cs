@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_042",
@@ -9,7 +10,7 @@
     "每个玩家装备一把2/3的武器，并获得6点护甲值。",
     "Each player equips a 2/3 Weapon and\ngains 6 Armor."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

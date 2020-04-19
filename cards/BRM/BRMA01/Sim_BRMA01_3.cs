@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA01_3",
@@ -9,7 +10,7 @@
     "总会赢得绝命乱斗的胜利。",
     "Always wins Brawls."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": null,

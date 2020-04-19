@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_711",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张<b>传说</b>随从牌。召唤五个它的复制。",
     "<b>Discover</b> a <b>Legendary</b> minion. Summon five copies of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 9,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BRMA05_3He",
@@ -9,7 +10,7 @@
     "在迦顿的回合开始时，对你的所有角色造成10点伤害。",
     "On Geddon's turn, deal 10 damage to all of your stuff."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

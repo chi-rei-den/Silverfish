@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_25",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将麦迪文的残影和分裂软泥怪置入你的手牌。",
     "<b>Battlecry:</b> Add Echo of Medivh and Echoing Ooze to your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

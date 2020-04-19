@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -12,7 +13,7 @@ using System.Text;
     "<b>战吼：</b>\n使一个友方随从获得+1攻击力和<b>突袭</b>。",
     "<b>Battlecry:</b> Give a friendly minion +1 Attack and <b>Rush</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": null,

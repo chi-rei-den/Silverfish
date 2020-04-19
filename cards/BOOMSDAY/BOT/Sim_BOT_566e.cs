@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_566e",
@@ -9,7 +10,7 @@
     "该随从将在回合结束时死于非命。",
     "This minion will die a reckless death at the end of the turn."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

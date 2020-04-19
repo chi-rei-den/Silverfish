@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_18h",
@@ -9,7 +10,7 @@
     "<i>铁石心肠，天纵奇才，图腾大师。</i>",
     "<i>Terribly tenacious.\nTruly thaumaturgic.\nTotally totemic.</i>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "HERO",
   "cost": null,
   "rarity": null,

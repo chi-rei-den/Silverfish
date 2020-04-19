@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_749",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>如果该随从的攻击力大于或等于4，则再次召唤该随从。",
     "<b>Deathrattle:</b> If this minion has 4 or more Attack, resummon it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_728d",
@@ -9,7 +10,7 @@
     "为开启回收的玩家保留效果（DALA 728e）",
     "Holds an effect for Recycling Player Enchantment (DALA 728e)"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BCON_021",
@@ -9,7 +10,7 @@
     "对所有随从造成$12点伤害。<b>过载：</b>（10）",
     "Deal $12 damage to all minions.\n<b>Overload</b>: (10)"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 0,
   "rarity": "FREE",

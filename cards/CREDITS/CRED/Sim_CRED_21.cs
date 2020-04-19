@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_21",
@@ -9,7 +10,7 @@
     "<b>食客：</b>使所有随从都变得可被食用。",
     "<b>Foodie:</b> Make all minions edible."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "LEGENDARY",

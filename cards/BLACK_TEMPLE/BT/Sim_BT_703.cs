@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_703",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个7/5并具有<b>潜行</b>的阴影。",
     "<b>Deathrattle:</b> Summon a 7/5 Shadow with <b>Stealth</b>."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 7,
   "rarity": "COMMON",

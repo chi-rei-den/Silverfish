@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShopLockAll_Button",
@@ -9,7 +10,7 @@
     "<b>冻结</b>/<b>解冻</b>鲍勃的酒馆中的随从。",
     "<b>Freeze</b> / <b>Unfreeze</b> the minions in Bob's Tavern."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "GAME_MODE_BUTTON",
   "cost": 0,
   "rarity": null,

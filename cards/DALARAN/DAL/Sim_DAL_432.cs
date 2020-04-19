@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_432",
@@ -9,7 +10,7 @@
     "恢复#4点生命值。在本回合可以重复使用。",
     "Restore #4 Health. Repeatable this turn."
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "SPELL",
   "cost": 2,
   "rarity": "EPIC",

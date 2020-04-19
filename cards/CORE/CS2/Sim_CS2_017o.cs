@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CS2_017o",
@@ -9,7 +10,7 @@
     "在本回合中，你的英雄获得+1攻击力。",
     "Your hero has +1 Attack this turn."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

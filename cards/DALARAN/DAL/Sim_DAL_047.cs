@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_047",
@@ -9,7 +10,7 @@
     "<b>吸血，突袭，风怒</b>",
     "<b>Lifesteal</b>, <b>Rush</b>, <b>Windfury</b>"
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 8,
   "rarity": "COMMON",

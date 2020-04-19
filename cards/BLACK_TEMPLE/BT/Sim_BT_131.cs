@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_131",
@@ -9,7 +10,7 @@
     "你的法术的法力值消耗为（1）点。",
     "Your spells cost (1)."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 9,
   "rarity": "LEGENDARY",

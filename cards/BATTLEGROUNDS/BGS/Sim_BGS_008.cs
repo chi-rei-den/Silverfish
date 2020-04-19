@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_008",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机召唤\n两个<b>亡语</b>随从。",
     "<b>Deathrattle:</b> Summon\n2 random <b>Deathrattle</b> minions."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 6,
   "rarity": null,

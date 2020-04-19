@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_301",
@@ -9,7 +10,7 @@
     "<b>突袭，战吼：</b>\n弃掉你的法力值消耗最高的牌。",
     "<b>Rush</b>\n<b>Battlecry:</b> Discard your highest Cost card."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

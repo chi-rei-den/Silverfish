@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_021",
@@ -9,7 +10,7 @@
     "<b>发现</b>一张法师随从牌。如果你的牌库中没有随从牌，则保留全部三张牌。",
     "<b>Discover</b> a Mage minion. If your deck has no minions, keep all 3."
   ],
-  "cardClass": "MAGE",
+  "CardClass": "MAGE",
   "type": "SPELL",
   "cost": 1,
   "rarity": "RARE",

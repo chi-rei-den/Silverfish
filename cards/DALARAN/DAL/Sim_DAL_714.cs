@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_714",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果你手牌中有其他职业的卡牌，则获得+1/+1和<b>突袭</b>。",
     "[x]<b>Battlecry:</b> If you're holding\na card from another class,\n gain +1/+1 and <b><b>Rush</b>.</b>"
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "MINION",
   "cost": 2,
   "rarity": "RARE",

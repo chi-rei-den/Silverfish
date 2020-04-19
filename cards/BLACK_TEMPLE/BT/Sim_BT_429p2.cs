@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_429p2",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n造成$5点伤害。<i>（还可使用一次！）</i>",
     "[x]<b>Hero Power</b>\nDeal $5 damage.\n<i>(Last use!)</i>"
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

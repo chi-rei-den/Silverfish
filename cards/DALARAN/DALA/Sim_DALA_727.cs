@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_727",
@@ -9,7 +10,7 @@
     "使你牌库中的所有随从牌获得+3/+3。",
     "Give all minions in your deck +3/+3."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 5,
   "rarity": null,

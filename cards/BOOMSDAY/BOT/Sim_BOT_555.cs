@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_555",
@@ -9,7 +10,7 @@
     "<b>潜行</b>\n在你的对手使用一张随从牌后，变成该随从的复制。",
     "[x]<b>Stealth</b>\nAfter your opponent plays\na minion, become a\ncopy of it."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

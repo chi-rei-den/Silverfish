@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_10p",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n每当你使用一个幸运币，抽一张牌。",
     "<b>Passive Hero Power</b>\nWhenever you play a Coin, draw a card."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

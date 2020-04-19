@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_54",
@@ -9,7 +10,7 @@
     "<b>潜行</b>。在每个回合开始时随机制造一个效果，一个没有任何实际用处的效果。",
     "<b>Stealth</b>.  At the beginning of each turn, create a random effect.  It doesn't actually do anything."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 4,
   "rarity": "LEGENDARY",

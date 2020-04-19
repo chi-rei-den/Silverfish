@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_366t2",
@@ -9,7 +10,7 @@
     "消灭一个随从。将一张它的复制置入你的手牌。",
     "Destroy a minion. Add a copy of it to your hand."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "SPELL",
   "cost": 6,
   "rarity": "EPIC",

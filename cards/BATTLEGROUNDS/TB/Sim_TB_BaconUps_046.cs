@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_046",
@@ -9,7 +10,7 @@
     "每当一个友方机械死亡，便获得+4/+4。",
     "Whenever a friendly Mech dies, gain +4/+4."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "EPIC",

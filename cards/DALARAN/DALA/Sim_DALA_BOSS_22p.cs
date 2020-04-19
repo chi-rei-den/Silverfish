@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_22p",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n<b>沉默</b>所有随从。",
     "<b>Hero Power</b>\n<b>Silence</b> ALL minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 3,
   "rarity": null,

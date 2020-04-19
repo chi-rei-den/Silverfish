@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_090",
@@ -9,7 +10,7 @@
     "每当你召唤一个野兽，使其获得+10/+10。",
     "Whenever you summon a Beast, give it +10/+10."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "EPIC",

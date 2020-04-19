@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_733",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n使你最左边的手牌法力值消耗减少\n（2）点。",
     "<b>Passive</b>\nThe left-most card in your hand costs (2) less."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

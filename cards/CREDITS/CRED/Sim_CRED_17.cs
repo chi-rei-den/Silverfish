@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_17",
@@ -9,7 +10,7 @@
     "如果你的套牌中没有该随从，则你无法开始任何比赛。",
     "You can't start a game without this minion in your deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 9,
   "rarity": "LEGENDARY",

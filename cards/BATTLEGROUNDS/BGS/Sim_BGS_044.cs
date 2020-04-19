@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_044",
@@ -9,7 +10,7 @@
     "每当该随从受到伤害，随机召唤一个恶魔并使其获得<b>嘲讽</b>。",
     "[x]Whenever this minion takes\ndamage, summon a random\nDemon and give it <b>Taunt</b>."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

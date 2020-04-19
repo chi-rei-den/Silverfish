@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconShop_HP_054",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n购买随从的消耗改为（2）枚铸币，<b>刷新</b>酒馆消耗（2）枚铸币。",
     "[x]<b>Passive Hero Power</b>\nMinions cost 2 Gold.\n<b>Refresh</b> costs 2 Gold."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_109t",
@@ -9,7 +10,7 @@
     "<b>法术伤害+1</b>\n<b>战吼：</b>抽三张法术牌，其法力值消耗减少（3）点。",
     "[x]<b>Spell Damage +1</b>\n<b>Battlecry:</b> Draw 3 spells.\n   Reduce their Cost by (3).   "
   ],
-  "cardClass": "SHAMAN",
+  "CardClass": "SHAMAN",
   "type": "MINION",
   "cost": 7,
   "rarity": null,

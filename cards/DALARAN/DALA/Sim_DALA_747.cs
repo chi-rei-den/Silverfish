@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_747",
@@ -9,7 +10,7 @@
     "<b>被动</b>\n你每回合额外抽两张牌。你对<b>疲劳</b>效果\n<b>免疫</b>。",
     "<b>Passive</b>\nYou draw an additional two cards each turn. You are <b>Immune</b> to <b>Fatigue</b>."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

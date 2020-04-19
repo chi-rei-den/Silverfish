@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_720",
@@ -9,7 +10,7 @@
     "<b>嘲讽，突袭，\n战吼：</b>在本回合获得+4攻击力。",
     "<b>Taunt</b>, <b>Rush</b>\n<b>Battlecry:</b> Gain +4 Attack this turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 5,
   "rarity": "COMMON",

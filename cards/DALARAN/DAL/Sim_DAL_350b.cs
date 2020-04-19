@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_350b",
@@ -9,7 +10,7 @@
     "恢复#5点生命值。",
     "Restore #5 Health."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

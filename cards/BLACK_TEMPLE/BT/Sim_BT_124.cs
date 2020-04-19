@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_124",
@@ -9,7 +10,7 @@
     "抽一张武器牌。使其获得+1/+1。",
     "Draw a weapon.\nGive it +1/+1."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "SPELL",
   "cost": 2,
   "rarity": "RARE",

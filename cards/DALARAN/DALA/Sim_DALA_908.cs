@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_908",
@@ -9,7 +10,7 @@
     "使一个友方随从在本次冒险中获得+2/+2。",
     "Give a friendly minion +2/+2 for this run."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

@@ -1,3 +1,5 @@
+using HearthDb.Enums;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +15,7 @@ using System.Text;
     null,
     null
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "WEAPON",
   "cost": 5,
   "rarity": "FREE",

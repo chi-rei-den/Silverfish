@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_140",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>如果有受伤的随从，便获得+1/+1和<b>突袭</b>。",
     "<b>Battlecry:</b> If there is a damaged minion, gain +1/+1 and <b>Rush</b>."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

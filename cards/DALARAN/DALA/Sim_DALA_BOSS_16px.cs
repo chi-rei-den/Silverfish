@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_16px",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n随机交换双方玩家的一张手牌。",
     "<b>Hero Power</b>\nSwap a random card in each player's hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

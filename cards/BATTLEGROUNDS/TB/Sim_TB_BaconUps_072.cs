@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_072",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>使你具有<b>嘲讽</b>的随从获得+4/+4。",
     "<b>Battlecry:</b> Give your <b>Taunt</b> minions +4/+4."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 4,
   "rarity": "RARE",

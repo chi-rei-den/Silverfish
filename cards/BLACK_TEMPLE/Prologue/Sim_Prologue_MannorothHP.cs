@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "Prologue_MannorothHP",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n对所有非恶魔随从造成$1点伤害。",
     "<b>Hero Power</b>\nDeal $1 damage to\nall non-Demon\nminions."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

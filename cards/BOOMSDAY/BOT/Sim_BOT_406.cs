@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_406",
@@ -9,7 +10,7 @@
     "在你攻击一个随从后，迫使其攻击相邻的一个\n随从。",
     "[x]After you attack a minion,\nforce it to attack one\nof its neighbors."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "WEAPON",
   "cost": 5,
   "rarity": "EPIC",

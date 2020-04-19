@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_422",
@@ -9,7 +10,7 @@
     "<b>抉择：</b>\n使你的所有其他随从获得+1/+1；或者召唤两个2/2的树人。",
     "[x]<b>Choose One -</b> Give your\nother minions +1/+1;\nor Summon two\n2/2 Treants."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

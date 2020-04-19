@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_902",
@@ -9,7 +10,7 @@
     "选择一个友方随从，将其移出你的冒险模式套牌。",
     "Choose a friendly minion. Remove it from your Adventure Deck."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

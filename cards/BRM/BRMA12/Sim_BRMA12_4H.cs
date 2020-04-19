@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Text;
     "如果这张牌在你的手牌中，在你的回合开始时，敌方英雄恢复#6点生命值。",
     "While this is in your hand, restore #6 health to your opponent at the start of your turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 3,
   "rarity": null,

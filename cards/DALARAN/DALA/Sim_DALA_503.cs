@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_503",
@@ -9,7 +10,7 @@
     "每有一个其他友方肯瑞托卫兵，便具有+1攻击力。",
     "Has +1 Attack for each other friendly Kirin Tor Guard."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 2,
   "rarity": null,

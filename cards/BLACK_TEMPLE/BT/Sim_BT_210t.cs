@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_210t",
@@ -9,7 +10,7 @@
     "<b>突袭，战吼：</b>召唤该随从的三个复制。",
     "[x]<b>Rush</b>\n<b>Battlecry:</b> Summon 3\ncopies of this minion."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 8,
   "rarity": null,

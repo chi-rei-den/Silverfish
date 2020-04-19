@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_509",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>从你的牌库中抽一张具有<b>亡语</b>的随从牌。",
     "<b>Deathrattle:</b> Draw a <b>Deathrattle</b> minion from your deck."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 2,
   "rarity": "COMMON",

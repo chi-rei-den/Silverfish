@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_040",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>为敌方英雄恢复5点生命值。",
     "<b>Deathrattle:</b> Restore 5 Health to the enemy hero."
   ],
-  "cardClass": "PRIEST",
+  "CardClass": "PRIEST",
   "type": "MINION",
   "cost": 4,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_404",
@@ -9,7 +10,7 @@
     "从你的牌库中抽取法力值消耗为（7），（8），（9）和（10）的随从牌各一张。",
     "Draw a 7, 8, 9, and\n10-Cost minion\n from your deck."
   ],
-  "cardClass": "DRUID",
+  "CardClass": "DRUID",
   "type": "SPELL",
   "cost": 4,
   "rarity": "EPIC",

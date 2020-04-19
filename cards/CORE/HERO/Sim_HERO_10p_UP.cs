@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "HERO_10p_UP",
@@ -9,7 +10,7 @@
     "<b>英雄技能</b>\n在本回合中获得+2攻击力。",
     "[x]<b>Hero Power</b>\n+2 Attack this turn."
   ],
-  "cardClass": "DEMONHUNTER",
+  "CardClass": "DEMONHUNTER",
   "type": "HERO_POWER",
   "cost": 1,
   "rarity": null,

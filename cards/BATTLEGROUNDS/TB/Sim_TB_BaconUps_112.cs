@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_112",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机使一个友方随从获得该随从的攻击力，触发两次。",
     "[x]<b>Deathrattle:</b> Give this\nminion's Attack to a random\nfriendly minion twice."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 1,
   "rarity": "COMMON",

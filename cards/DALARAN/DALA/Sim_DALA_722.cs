@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_722",
@@ -9,7 +10,7 @@
     "召唤数个吵闹的随从，直到你的随从数量达到上限。",
     "Fill your board with annoying minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 7,
   "rarity": null,

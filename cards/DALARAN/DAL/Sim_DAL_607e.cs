@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_607e",
@@ -9,7 +10,7 @@
     "<b>突袭</b>。在回合结束时死亡。",
     "<b>Rush</b>. Dies at end of turn."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

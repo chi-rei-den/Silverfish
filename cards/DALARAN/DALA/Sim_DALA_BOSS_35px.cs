@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_35px",
@@ -9,7 +10,7 @@
     "<b>被动英雄技能</b>\n在你的回合开始时，为所有友方随从恢复所有生命值。",
     "[x]<b>Passive Hero Power</b>\nAt the start of your turn,\nrestore all friendly\nminions to full Health."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "HERO_POWER",
   "cost": 0,
   "rarity": null,

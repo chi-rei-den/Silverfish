@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_601",
@@ -9,7 +10,7 @@
     "选择一个随从。将该随从置入你的牌库底。",
     "Choose a minion.\nPut it on the bottom of your deck."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 0,
   "rarity": null,

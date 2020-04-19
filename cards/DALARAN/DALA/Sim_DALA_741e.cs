@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_741e",
@@ -9,7 +10,7 @@
     "在你的回合结束时，随机调整你所有手牌的法力值消耗。",
     "At the end of your turn, randomize the cost of all cards in your hand."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

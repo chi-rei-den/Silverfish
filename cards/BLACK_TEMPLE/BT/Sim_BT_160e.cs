@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_160e",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>召唤一个1/1的恶魔。",
     "<b>Deathrattle:</b> Summon a 1/1 Demon."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

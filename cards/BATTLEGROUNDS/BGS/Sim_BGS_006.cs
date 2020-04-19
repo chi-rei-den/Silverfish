@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BGS_006",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>随机召唤一个<b>传说</b>随从。",
     "<b>Deathrattle:</b> Summon a random <b>Legendary</b> minion."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 8,
   "rarity": "LEGENDARY",

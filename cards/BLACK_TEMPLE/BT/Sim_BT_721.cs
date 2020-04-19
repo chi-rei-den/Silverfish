@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_721",
@@ -9,7 +10,7 @@
     "在你的回合结束时，召唤一个属性值等同于该随从的腐质。",
     "[x]At the end of your turn,\nsummon a Rot with stats\nequal to this minion's."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": "RARE",

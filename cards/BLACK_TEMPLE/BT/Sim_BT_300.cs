@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_300",
@@ -9,7 +10,7 @@
     "当你使用或弃掉这张牌时，抽三张牌。",
     "When you play\nor discard this,\ndraw 3 cards."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "SPELL",
   "cost": 6,
   "rarity": "COMMON",

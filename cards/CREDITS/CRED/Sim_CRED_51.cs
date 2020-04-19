@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_51",
@@ -9,7 +10,7 @@
     "<b>激励：</b>随机使一个工程师获得+1/+1。",
     "<b>Inspire</b>: Give a random Engineer +1/+1."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 1,
   "rarity": "LEGENDARY",

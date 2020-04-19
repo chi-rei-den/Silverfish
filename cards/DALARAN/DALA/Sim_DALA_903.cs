@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_903",
@@ -9,7 +10,7 @@
     "随机使你冒险模式套牌中的一张卡牌的法力值消耗变为（0）点。",
     "Reduce the cost of a random card in your Adventure Deck to (0)."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "SPELL",
   "cost": 1,
   "rarity": null,

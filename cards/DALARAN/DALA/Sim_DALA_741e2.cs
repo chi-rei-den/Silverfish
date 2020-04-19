@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_741e2",
@@ -9,7 +10,7 @@
     "托瓦格尔的骰子改变了它的法力值消耗。",
     "Cost manipulated by Togwaggle's Dice."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "ENCHANTMENT",
   "cost": null,
   "rarity": null,

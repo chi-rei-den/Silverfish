@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_213",
@@ -9,7 +10,7 @@
     "抽一张野兽牌。使其获得+3/+3。",
     "Draw a Beast.\nGive it +3/+3."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "SPELL",
   "cost": 2,
   "rarity": "COMMON",

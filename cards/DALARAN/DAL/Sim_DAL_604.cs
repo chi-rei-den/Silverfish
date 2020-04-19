@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_604",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>从你的牌库中抽一张机械牌。",
     "<b>Deathrattle:</b> Draw a Mech from your deck."
   ],
-  "cardClass": "HUNTER",
+  "CardClass": "HUNTER",
   "type": "MINION",
   "cost": 3,
   "rarity": "COMMON",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_286",
@@ -9,7 +10,7 @@
     "<b>亡语：</b>\n随机触发一个友方随从的<b>亡语</b>。",
     "<b>Deathrattle:</b> Trigger the <b>Deathrattle</b> of a random friendly minion."
   ],
-  "cardClass": "ROGUE",
+  "CardClass": "ROGUE",
   "type": "WEAPON",
   "cost": 3,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_059",
@@ -9,7 +10,7 @@
     "<b>嘲讽，亡语：</b>\n召唤三个2/6并具有<b>嘲讽</b>的恶魔。",
     "[x]<b>Taunt</b>\n <b>Deathrattle:</b> Summon three\n2/6 Demons with <b>Taunt</b>."
   ],
-  "cardClass": "WARLOCK",
+  "CardClass": "WARLOCK",
   "type": "MINION",
   "cost": 9,
   "rarity": "EPIC",

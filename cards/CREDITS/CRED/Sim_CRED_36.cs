@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "CRED_36",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>将所有在战场上的、手牌里的和牌库里的随从替换成随机随从。",
     "<b>Battlecry:</b> Replace all minions in the battlefield, in both hands, and in both decks with random minions."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "LEGENDARY",

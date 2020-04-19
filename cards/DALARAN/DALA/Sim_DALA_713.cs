@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_713",
@@ -9,7 +10,7 @@
     "<b>战吼：</b>对所有敌方随从造成4点伤害。\n<b>亡语：</b>将该随从洗入你的牌库。",
     "[x]<b>Battlecry:</b> Deal 4 damage\nto all enemy minions.\n<b>Deathrattle:</b> Shuffle\nthis into your deck"
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 3,
   "rarity": null,

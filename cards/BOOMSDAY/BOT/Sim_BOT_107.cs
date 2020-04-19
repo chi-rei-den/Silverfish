@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_107",
@@ -9,7 +10,7 @@
     "<b>磁力</b>\n在你的回合结束时，对所有其他角色造成1点伤害。",
     "[x]<b>Magnetic</b>\nAt the end of your turn,\ndeal 1 damage to all\nother characters."
   ],
-  "cardClass": "NEUTRAL",
+  "CardClass": "NEUTRAL",
   "type": "MINION",
   "cost": 6,
   "rarity": "RARE",

@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 /* _BEGIN_TEMPLATE_
 {
   "id": "TB_BaconUps_103",
@@ -9,7 +10,7 @@
     "<b>超杀：</b>对最左边的敌方随从造成6点伤害。",
     "<b>Overkill:</b> Deal 6 damage\nto the left-most enemy minion."
   ],
-  "cardClass": "WARRIOR",
+  "CardClass": "WARRIOR",
   "type": "MINION",
   "cost": 5,
   "rarity": null,

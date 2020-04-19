@@ -370,7 +370,7 @@ namespace HREngine.Bots
                 this.ownHero = new Minion(hero);
                 this.heroname = this.heroNametoEnum(heron);
                 this.heronameingame = heron;
-                if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.cardClass;
+                if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.CardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
                 if (this.ownWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.ownHero.immuneWhileAttacking = true;
@@ -386,7 +386,7 @@ namespace HREngine.Bots
 
                 this.enemyHeroname = this.heroNametoEnum(heron);
                 this.enemyHeronameingame = heron;
-                if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.cardClass;
+                if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.CardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
                 if (this.enemyWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.enemyHero.immuneWhileAttacking = true;
