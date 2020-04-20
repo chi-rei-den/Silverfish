@@ -35,7 +35,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((Race)m.handcard.card.Race == Race.PIRATE)
+                if (m.handcard.card.Race == Race.PIRATE)
                 {
                     p.minionGetBuffed(own, 1, 1);
 					break;

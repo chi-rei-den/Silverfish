@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {

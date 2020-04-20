@@ -554,11 +554,11 @@ namespace HREngine.Bots
 
             if (cardsremaining == 1)
             {
-                retval = 1.0 - ((double)(decksize)) / ((double)(decksize + handsize));
+                retval = 1.0 - decksize / ((double)(decksize + handsize));
             }
             else
             {
-                retval = 1.0 - ((double)(decksize * (decksize - 1))) / ((double)((decksize + handsize) * (decksize + handsize - 1)));
+                retval = 1.0 - decksize * (decksize - 1) / ((double)((decksize + handsize) * (decksize + handsize - 1)));
             }
 
             retval = Math.Min(retval, 1.0);

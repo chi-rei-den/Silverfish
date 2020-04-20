@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if ((Race)summonedMinion.handcard.card.Race == Race.PIRATE)
+            if (summonedMinion.handcard.card.Race == Race.PIRATE)
             {
                 triggerEffectMinion.stealth = true;
             }

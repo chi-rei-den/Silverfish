@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -34,7 +35,7 @@ namespace HREngine.Bots
             List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion mnn in temp)
             {
-                if ((Race)mnn.handcard.card.Race == Race.DEMON && mnn.entitiyID != m.entitiyID) p.minionGetBuffed(mnn, 1, 1);
+                if (mnn.handcard.card.Race == Race.DEMON && mnn.entitiyID != m.entitiyID) p.minionGetBuffed(mnn, 1, 1);
             }
         }
     }

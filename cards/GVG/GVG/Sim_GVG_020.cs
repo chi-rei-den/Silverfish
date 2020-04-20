@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -39,7 +40,7 @@ namespace HREngine.Bots
                 Minion ownTemp = null;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((Race)m.handcard.card.Race != Race.MECHANICAL)
+                    if (m.handcard.card.Race != Race.MECHANICAL)
                     {
                         if (ownTemp == null) ownTemp = m;
                         ownNonMechs++;
@@ -50,7 +51,7 @@ namespace HREngine.Bots
                 Minion enemyTemp = null;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((Race)m.handcard.card.Race != Race.MECHANICAL)
+                    if (m.handcard.card.Race != Race.MECHANICAL)
                     {
                         if (enemyTemp == null) enemyTemp = m;
                         enemyNonMechs++;

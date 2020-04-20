@@ -70,7 +70,7 @@ namespace HREngine.Bots
                 {
                     case CardIds.Collectible.Druid.JungleGiants: if (m.Angr >= 5) questProgress++; break;
                     case CardIds.Collectible.Priest.AwakenTheMakers: if (m.handcard.card.Deathrattle) questProgress++; break;
-                    case CardIds.Collectible.Shaman.UniteTheMurlocs: if ((Race)m.handcard.card.Race == Race.MURLOC) questProgress++; break;
+                    case CardIds.Collectible.Shaman.UniteTheMurlocs: if (m.handcard.card.Race == Race.MURLOC) questProgress++; break;
                 }
             }
 

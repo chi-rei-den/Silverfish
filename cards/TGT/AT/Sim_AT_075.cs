@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,7 +39,7 @@ namespace HREngine.Bots
 			List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if (m.name == SimCard.silverhandrecruit) p.minionGetBuffed(m, 1, 0);
+                if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) p.minionGetBuffed(m, 1, 0);
             }            
 		}
 
@@ -50,7 +51,7 @@ namespace HREngine.Bots
 			List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if (m.name == SimCard.silverhandrecruit) p.minionGetBuffed(m, -1, 0);
+                if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) p.minionGetBuffed(m, -1, 0);
             }
         }
 	}

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -36,7 +37,7 @@ namespace HREngine.Bots
                 p.anzOwnSouthseacaptain++;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if((Race)m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
+                    if(m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
                 }
             }
             else
@@ -44,7 +45,7 @@ namespace HREngine.Bots
                 p.anzEnemySouthseacaptain++;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((Race)m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
+                    if (m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
                 }
             }
 
@@ -57,7 +58,7 @@ namespace HREngine.Bots
                 p.anzOwnSouthseacaptain--;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if ((Race)m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
+                    if (m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
                 }
             }
             else
@@ -65,7 +66,7 @@ namespace HREngine.Bots
                 p.anzEnemySouthseacaptain--;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if ((Race)m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
+                    if (m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
                 }
             }
         }

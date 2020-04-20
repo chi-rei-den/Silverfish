@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -38,7 +39,7 @@ namespace HREngine.Bots
                 p.ownHero.immune = true;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
                 }
             }
             else
@@ -47,7 +48,7 @@ namespace HREngine.Bots
                 p.enemyHero.immune = true;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
                 }
             }
 
@@ -61,7 +62,7 @@ namespace HREngine.Bots
                 p.ownHero.immune = false;
                 foreach (Minion m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
                 }
             }
             else
@@ -70,7 +71,7 @@ namespace HREngine.Bots
                 p.enemyHero.immune = false;
                 foreach (Minion m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && (Race)m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
                 }
             }
         }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,7 +33,7 @@ namespace HREngine.Bots
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             int hpbaff = 0;
-            if ((Race)target.handcard.card.Race == Race.DEMON) hpbaff = 3;
+            if (target.handcard.card.Race == Race.DEMON) hpbaff = 3;
             p.minionGetBuffed(target, 3, hpbaff);
         }
     }

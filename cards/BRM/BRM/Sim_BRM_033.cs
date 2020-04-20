@@ -37,7 +37,7 @@ namespace HREngine.Bots
 				bool dragonInHand = false;
 				foreach (Handmanager.Handcard hc in p.owncards)
 				{
-					if ((Race)hc.card.Race == Race.DRAGON)
+					if (hc.card.Race == Race.DRAGON)
 					{
 						dragonInHand = true;
 						break;

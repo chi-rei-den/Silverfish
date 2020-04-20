@@ -2,6 +2,8 @@ using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "GIL_586",
@@ -32,9 +34,9 @@ class Sim_GIL_586 : SimTemplate //* 大地之力 Earthen Might
 public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 {
 p.minionGetBuffed(target, 2, 2);
-if ((Race)target.handcard.card.Race == Race.ELEMENTAL)
+if (target.handcard.card.Race == Race.ELEMENTAL)
 p.drawACard(SimCard.None, ownplay, true);
-if ((Race)target.handcard.card.Race == Race.TOTEM)
+if (target.handcard.card.Race == Race.TOTEM)
 p.evaluatePenality -= 5;
 }
 

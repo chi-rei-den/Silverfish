@@ -44,7 +44,7 @@ namespace HREngine.Bots
                 if (m.Hp < minHp) minHp = m.Hp;
             }
 
-            int dmgdone = (int)Math.Ceiling((double)minHp / (double)dmg) * dmg;
+            int dmgdone = (int)Math.Ceiling(minHp / (double)dmg) * dmg;
 
             p.allMinionsGetDamage(dmgdone);
         }

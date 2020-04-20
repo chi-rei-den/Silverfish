@@ -3,6 +3,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -38,7 +39,7 @@ namespace HREngine.Bots
 			List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
 			List<Minion> CopiesMinion = new List<Minion>();
 			foreach (Minion t in temp)
-				if ((Race)t.handcard.card.Race == Race.TOTEM)
+				if (t.handcard.card.Race == Race.TOTEM)
 					CopiesMinion.Add(t);
 			foreach (Minion t in CopiesMinion)
 			{

@@ -773,7 +773,7 @@ namespace HREngine.Bots
                                 if (m.silenced) break;
                                 foreach (Minion mm in p.enemyMinions)
                                 {
-                                    if (mm.name == SimCard.silverhandrecruit && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
+                                    if (mm.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken && (mm.Hp > aoeDamage || mm.divineshild)) preventDamage += 1;
                                 }
                                 break;
                             case CardIds.Collectible.Warrior.WarsongCommander:

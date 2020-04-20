@@ -2,6 +2,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -36,7 +37,7 @@ namespace HREngine.Bots
             foreach (Minion m in temp)
             {
                 if (m.entitiyID == own.entitiyID) continue;
-                if ((Race)m.handcard.card.Race == Race.MURLOC)
+                if (m.handcard.card.Race == Race.MURLOC)
 				{
 					p.drawACard(CardIds.Collectible.Neutral.BluegillWarrior, own.own, true);
 					break;

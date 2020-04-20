@@ -2,6 +2,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -39,7 +40,7 @@ namespace HREngine.Bots
 					bool needTrigger = false;
 					foreach (Handmanager.Handcard hc in p.owncards.ToArray())
 					{
-						if ((Race)hc.card.Race == Race.DRAGON)
+						if (hc.card.Race == Race.DRAGON)
 						{
 							p.callKid(hc.card, p.ownMinions.Count, true);
 							p.removeCard(hc);

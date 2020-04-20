@@ -503,7 +503,7 @@ namespace HREngine.Bots
                 if (readstate == 1 && counter == 1) // class + hp + defence + immunewhile attacking + immune
                 {
                     String[] h = s.Split(' ');
-                    ownHero.CardClass = Enum.Parse(typeof(CardClass), h[0]);
+                    ownHero.CardClass = (CardClass)Enum.Parse(typeof(CardClass), h[0]);
                     ownherohp = Convert.ToInt32(h[1]);
                     ownheromaxhp = Convert.ToInt32(h[2]);
                     ownherodefence = Convert.ToInt32(h[3]);
@@ -556,7 +556,7 @@ namespace HREngine.Bots
                 if (readstate == 2 && counter == 1) // class + hp + defence + frozen + immune
                 {
                     String[] h = s.Split(' ');
-                    enemyHero.CardClass = Enum.Parse(typeof(CardClass), h[0]);
+                    enemyHero.CardClass = (CardClass)Enum.Parse(typeof(CardClass), h[0]);
                     enemyherohp = Convert.ToInt32(h[1]);
                     enemyheromaxhp = Convert.ToInt32(h[2]);
                     enemyherodefence = Convert.ToInt32(h[3]);
@@ -1120,8 +1120,8 @@ namespace HREngine.Bots
             m.lifesteal = hc.card.Lifesteal;
             m.stealth = hc.card.Stealth;
 
-            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.ownHero.CardClass), (Race)hc.card.Race);
-            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.enemyHero.CardClass), (Race)hc.card.Race);
+            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.ownHero.CardClass), hc.card.Race);
+            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.enemyHero.CardClass), hc.card.Race);
             if (m.synergy > 0 && hc.card.Stealth) m.synergy++;
 
             m.updateReadyness();

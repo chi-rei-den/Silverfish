@@ -142,7 +142,7 @@ namespace HREngine.Bots
                 if (m.windfury) retval += m.Angr;
                 if (m.taunt) retval += 1;
                 if (!m.taunt && m.stealth && m.handcard.card.isSpecialMinion && !m.silenced) retval += 20;
-                if (m.handcard.card.CardId == SimCard.silverhandrecruit && m.Angr == 1 && m.Hp == 1) retval -= 5;
+                if (m.handcard.card.CardId == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken && m.Angr == 1 && m.Hp == 1) retval -= 5;
                 if (p.ownMinions.Count > 1 && (m.handcard.card.CardId == CardIds.Collectible.Neutral.DireWolfAlpha || m.handcard.card.CardId == CardIds.Collectible.Shaman.FlametongueTotem || m.handcard.card.CardId == CardIds.Collectible.Neutral.StormwindChampion || m.handcard.card.CardId == CardIds.Collectible.Neutral.RaidLeader || m.handcard.card.CardId == CardIds.Collectible.Mage.FallenHero)) retval += 10;
                 if (m.handcard.card.CardId == CardIds.Collectible.Neutral.NerubianEgg)
                 {

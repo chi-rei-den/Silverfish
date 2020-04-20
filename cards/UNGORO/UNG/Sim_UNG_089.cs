@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -36,7 +37,7 @@ namespace HREngine.Bots
 			int bestAdapt = 0;
             foreach (Minion m in temp)
             {
-                if ((Race)m.handcard.card.Race == Race.MURLOC)
+                if (m.handcard.card.Race == Race.MURLOC)
 				{
 					if (first )
 					{

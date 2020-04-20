@@ -38,7 +38,7 @@ namespace HREngine.Bots
             List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion m in temp)
             {
-                if ((Race)m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 0);
+                if (m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 0);
             }
         }
 
@@ -50,7 +50,7 @@ namespace HREngine.Bots
             List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
             foreach (Minion mn in temp)
             {
-                if ((Race)mn.handcard.card.Race == Race.MURLOC && mn.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, 0);
+                if (mn.handcard.card.Race == Race.MURLOC && mn.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, 0);
             }
         }
     }

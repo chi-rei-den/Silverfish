@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,14 +33,14 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if ((Race)summonedMinion.handcard.card.Race == Race.MECHANICAL)
+            if (summonedMinion.handcard.card.Race == Race.MECHANICAL)
             {
                 List<Minion> temp = (triggerEffectMinion.own) ? p.ownMinions : p.enemyMinions;
 
                 foreach (Minion m in temp)
                 {
                     //if we have allready a mechanical, we are buffed
-                    if ((Race)m.handcard.card.Race == Race.MECHANICAL) return; 
+                    if (m.handcard.card.Race == Race.MECHANICAL) return; 
                 }
 
                 //we had no mechanical, but now!
@@ -60,7 +61,7 @@ namespace HREngine.Bots
 				bool hasmechanics = false;
                 foreach (Minion mTmp in temp) //check if we have more mechanics, or debuff him
                 {
-                    if (mTmp.Hp >=1 && (Race)mTmp.handcard.card.Race == Race.MECHANICAL) hasmechanics = true;
+                    if (mTmp.Hp >=1 && mTmp.handcard.card.Race == Race.MECHANICAL) hasmechanics = true;
                 }
 				
                 if (!hasmechanics)

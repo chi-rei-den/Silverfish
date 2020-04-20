@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,11 +34,11 @@ namespace HREngine.Bots
 		{
             foreach (Minion m in p.ownMinions)
             {
-                if ((Race)m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if (m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
             }
             foreach (Minion m in p.enemyMinions)
             {
-                if ((Race)m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if (m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
             }
 		}
 	}

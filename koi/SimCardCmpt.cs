@@ -1,4 +1,10 @@
-﻿using System;
+﻿///
+// This file contains a few methods required for the bot to run.
+// They will be removed in later updates
+///
+using HearthDb.Enums;
+using HREngine.Bots;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +14,13 @@ namespace Chireiden.Silverfish
 {
     partial class SimCard
     {
+        dynamic playrequires;
         public List<Minion> getTargetsForCard(Playfield p, bool isLethalCheck, bool own)
         {
             //if wereTargets=true and 0 targets at end -> then can not play this card
             List<Minion> retval = new List<Minion>();
-            if (this.type == CardDB.cardtype.MOB && ((own && p.ownMinions.Count >= 7) || (!own && p.enemyMinions.Count >= 7))) return retval; // cant play mob, if we have allready 7 mininos
-            if (this.Secret && ((own && (p.ownSecretsIDList.Contains(this.cardIDenum) || p.ownSecretsIDList.Count >= 5)) || (!own && p.enemySecretCount >= 5))) return retval;
+            if (this.Type == CardType.MINION && ((own && p.ownMinions.Count >= 7) || (!own && p.enemyMinions.Count >= 7))) return retval; // cant play mob, if we have allready 7 mininos
+            if (this.Secret && ((own && (p.ownSecretsIDList.Contains(this) || p.ownSecretsIDList.Count >= 5)) || (!own && p.enemySecretCount >= 5))) return retval;
             //if (p.mana < this.getManaCost(p, 1)) return retval;
 
             if (this.playrequires.Count == 0) { retval.Add(null); return retval; }
@@ -707,9 +714,9 @@ namespace Chireiden.Silverfish
             int offset = 0; // if offset < 0 costs become lower, if >0 costs are higher at the end
 
             // CARDS that increase/decrease the manacosts of others ##############################
-            switch (this.type)
+            switch (this.Type)
             {
-                case cardtype.HEROPWR:
+                case CardType.HERO_POWER:
                     retval += p.ownHeroPowerCostLessOnce;
                     if (retval < 0) retval = 0;
                     return retval;

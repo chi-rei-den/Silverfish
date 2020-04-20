@@ -3,6 +3,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -40,7 +41,7 @@ namespace HREngine.Bots
             int anz =0;
             foreach (Minion m in temp)
             {
-                if ((Race)m.handcard.card.Race == Race.MECHANICAL && m.Hp >=1 )
+                if (m.handcard.card.Race == Race.MECHANICAL && m.Hp >=1 )
                 {
                     anz++;
                 }
@@ -50,7 +51,7 @@ namespace HREngine.Bots
                 anz = 0;
                 foreach (Minion m in temp)
                 {
-                    if ((Race)m.handcard.card.Race == Race.MECHANICAL)
+                    if (m.handcard.card.Race == Race.MECHANICAL)
                     {
                         p.minionGetDestroyed(m);
                         anz++;

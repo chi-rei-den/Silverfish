@@ -2,6 +2,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -37,7 +38,7 @@ namespace HREngine.Bots
 
             foreach (Minion m in temp)
             {
-                if ((Race)m.handcard.card.Race == Race.MECHANICAL)
+                if (m.handcard.card.Race == Race.MECHANICAL)
                 {
                     p.minionGetBuffed(own, 1, 1);
                     p.drawACard(CardIds.NonCollectible.Neutral.ArmorPlating, own.own, true);

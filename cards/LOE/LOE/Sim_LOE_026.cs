@@ -60,7 +60,7 @@ namespace HREngine.Bots
                 if (gi.own == ownplay)
                 {
                     c = (gi.cardid);
-                    if ((Race)c.Race == Race.MURLOC)
+                    if (c.Race == Race.MURLOC)
                     {
                         p.callKid(c, place, ownplay, false);
                         place++;

@@ -188,7 +188,7 @@ namespace HREngine.Bots
 
         public void setWeights(int alpha)
         {
-            float a = ((float)alpha) / 100f;
+            float a = alpha / 100f;
             this.firstweight = 1f - a;
             this.secondweight = a;
             Helpfunctions.Instance.ErrorLog($"目前的AI值（alpha）是 {this.secondweight}");

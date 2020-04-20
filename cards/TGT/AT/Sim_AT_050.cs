@@ -40,7 +40,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.setNewHeroPower(CardIds.Collectible.Shaman.ChargedHammert, m.own); // Lightning Jolt
+            p.setNewHeroPower(CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken, m.own); // Lightning Jolt
         }
     }
 }

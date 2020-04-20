@@ -37,7 +37,7 @@ namespace HREngine.Bots
 			int bestAdapt = 0;
             foreach (Minion m in temp)
             {
-                if (m.name == SimCard.silverhandrecruit)
+                if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken)
 				{
 					if (first )
 					{

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -35,7 +36,7 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if ((Race)hc.card.Race == Race.ELEMENTAL) hc.manacost--;
+                    if (hc.card.Race == Race.ELEMENTAL) hc.manacost--;
                 }
             }
 		}

@@ -443,7 +443,7 @@ namespace HREngine.Bots
                         if (p.enemyAnzCards >= 2) m.divineshild = true;
                         continue;
                     case CardIds.Collectible.Neutral.KnifeJuggler:
-                        anz = Math.Min(p.enemyAnzCards, (int)p.enemyMaxMana / 2);
+                        anz = Math.Min(p.enemyAnzCards, p.enemyMaxMana / 2);
                         if (anz > 0)
                         {
                             Minion target = p.ownHero;

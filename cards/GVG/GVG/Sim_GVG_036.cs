@@ -3,6 +3,7 @@ using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -48,7 +49,7 @@ namespace HREngine.Bots
 
                 foreach (Minion mnn in temp)
                 {
-                    if ((Race)mnn.handcard.card.Race == Race.MECHANICAL)
+                    if (mnn.handcard.card.Race == Race.MECHANICAL)
                     {
                         int s = mnn.maxHp + mnn.Angr;
                         if (s < sum)

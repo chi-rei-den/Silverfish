@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (triggerEffectMinion.own == summonedMinion.own && (Race)summonedMinion.handcard.card.Race == Race.MURLOC)
+            if (triggerEffectMinion.own == summonedMinion.own && summonedMinion.handcard.card.Race == Race.MURLOC)
             {
                 p.minionGetBuffed(triggerEffectMinion, 1, 0);
             }

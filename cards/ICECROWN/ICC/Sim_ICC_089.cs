@@ -40,7 +40,7 @@ namespace HREngine.Bots
                 foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
                 {
                     c = (cid.Key);
-                    if ((Race)c.Race == Race.MURLOC)
+                    if (c.Race == Race.MURLOC)
                     {
                         for (int i = 0; i < cid.Value; i++)
                         {

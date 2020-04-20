@@ -41,7 +41,7 @@ namespace HREngine.Bots
 
                 foreach (Minion m in temp)
                 {
-                    switch ((Race)m.handcard.card.Race)
+                    switch (m.handcard.card.Race)
 					{
 						case Race.PET:
 							if (Beast == null) Beast = m;
