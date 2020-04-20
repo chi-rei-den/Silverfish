@@ -205,8 +205,6 @@ namespace HREngine.Bots
 
         public Minion ownHero;
         public Minion enemyHero;
-        public CardClass ownHeroName;
-        public CardClass enemyHeroName;
         public CardClass ownHeroStartClass;
         public CardClass enemyHeroStartClass;
 
@@ -393,8 +391,8 @@ namespace HREngine.Bots
                 }
             }
 
-            this.ownHeroName = prozis.heroname;
-            this.enemyHeroName = prozis.enemyHeroname;
+            this.ownHero.CardClass = prozis.ownHero.CardClass;
+            this.enemyHero.CardClass = prozis.enemyHero.CardClass;
             this.ownHeroStartClass = prozis.ownHeroStartClass;
             this.enemyHeroStartClass = prozis.enemyHeroStartClass;
             //####buffs#############################
@@ -949,8 +947,8 @@ namespace HREngine.Bots
             this.enemyWeapon = new Weapon(p.enemyWeapon);
             addCardsReal(p.owncards);
 
-            this.ownHeroName = p.ownHeroName;
-            this.enemyHeroName = p.enemyHeroName;
+            this.ownHero.CardClass = p.ownHero.CardClass;
+            this.enemyHero.CardClass = p.enemyHero.CardClass;
 
             this.ownHeroStartClass = p.ownHeroStartClass;
             this.enemyHeroStartClass = p.enemyHeroStartClass;
@@ -1184,7 +1182,7 @@ namespace HREngine.Bots
                 return false;
             }
 
-            if (this.ownHeroName != p.ownHeroName || this.enemyHeroName != p.enemyHeroName)
+            if (this.ownHero.CardClass != p.ownHero.CardClass || this.enemyHero.CardClass != p.enemyHero.CardClass)
             {
                 if (logg) Helpfunctions.Instance.logg("hero name changed ");
                 return false;
@@ -1322,7 +1320,7 @@ namespace HREngine.Bots
 
             if (this.mana != p.mana || this.enemyMaxMana != p.enemyMaxMana || this.ownMaxMana != p.ownMaxMana || this.ownQuest.questProgress != p.ownQuest.questProgress) return false;
 
-            if (this.ownHeroName != p.ownHeroName || this.enemyHeroName != p.enemyHeroName || this.enemySecretCount != p.enemySecretCount) return false;
+            if (this.ownHero.CardClass != p.ownHero.CardClass || this.enemyHero.CardClass != p.enemyHero.CardClass || this.enemySecretCount != p.enemySecretCount) return false;
 
             if (this.ownHero.Hp != p.ownHero.Hp || this.ownHero.Angr != p.ownHero.Angr || this.ownHero.armor != p.ownHero.armor || this.ownHero.frozen != p.ownHero.frozen || this.ownHero.immuneWhileAttacking != p.ownHero.immuneWhileAttacking || this.ownHero.immune != p.ownHero.immune) return false;
 
@@ -6396,7 +6394,7 @@ namespace HREngine.Bots
                     switch (c.Type)
                     {
                         case CardType.MINION:
-                            cardValue = (c.Health + hc.addHp) * 2 + (c.Attack + hc.addattack) * 2 + c.Rarity + hc.elemPoweredUp * 2;
+                            cardValue = (c.Health + hc.addHp) * 2 + (c.Attack + hc.addattack) * 2 + (int)c.Rarity + hc.elemPoweredUp * 2;
                             if (c.Windfury) cardValue += c.Attack + hc.addattack;
                             if (c.Taunt) cardValue += 2;
                             if (c.DivineShield) cardValue += 2;
@@ -6409,8 +6407,8 @@ namespace HREngine.Bots
                                 case CardIds.Collectible.Shaman.FlametongueTotem: if (this.ownMinions.Count > 2) cardValue += 10; break;
                                 case CardIds.Collectible.Neutral.StormwindChampion: if (this.ownMinions.Count > 2) cardValue += 10; break;
                                 case CardIds.Collectible.Neutral.RaidLeader: if (this.ownMinions.Count > 2) cardValue += 10; break;
-                                case CardIds.Collectible.Warlock.SilverwareGolem: cardValue = (c.Health + hc.addHp) * 2 + c.Rarity; break;
-                                case CardIds.Collectible.Warlock.ClutchmotherZavas: cardValue = (c.Health + hc.addHp) * 2 + c.Rarity; break;
+                                case CardIds.Collectible.Warlock.SilverwareGolem: cardValue = (c.Health + hc.addHp) * 2 + (int)c.Rarity; break;
+                                case CardIds.Collectible.Warlock.ClutchmotherZavas: cardValue = (c.Health + hc.addHp) * 2 + (int)c.Rarity; break;
                             }
                             break;
                         case CardType.WEAPON:

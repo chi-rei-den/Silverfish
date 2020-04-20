@@ -2,6 +2,7 @@ using Chireiden.Silverfish;
 namespace HREngine.Bots
 {
     using HearthDb;
+    using HearthDb.Enums;
     using System;
     using System.Collections.Generic;
 
@@ -167,8 +168,8 @@ namespace HREngine.Bots
                 {
                     if (bestplay.enemyAnzCards > 0)
                     {
-                        if (bestplay.enemyMaxMana > 5) bestplay.callKid(spellbreaker43, bestplay.enemyMinions.Count, false, false);
-                        else bestplay.callKid(flame, bestplay.enemyMinions.Count, false, false);
+                        if (bestplay.enemyMaxMana > 5) bestplay.callKid(CardIds.Collectible.Neutral.Spellbreaker, bestplay.enemyMinions.Count, false, false);
+                        else bestplay.callKid(CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken, bestplay.enemyMinions.Count, false, false);
                         int tmp = bestplay.enemyMinions.Count;
                         bestplay.simulateTrapsEndEnemyTurn();
 
@@ -236,11 +237,9 @@ namespace HREngine.Bots
             tempDict.Clear();
         }
 
-        const string spellbreaker43 = CardIds.Collectible.Neutral.Spellbreaker;
-
         private void doSomeBasicEnemyAi(Playfield p)
         {
-            if (p.enemyHeroName == HeroEnum.mage)
+            if (p.enemyHero.CardClass == CardClass.MAGE)
             {
                 if (Probabilitymaker.Instance.enemyCardsOut.ContainsKey(CardIds.Collectible.Neutral.Alexstrasza)) p.ownHero.Hp = Math.Max(5, p.ownHero.Hp - 7);
             }

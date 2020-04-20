@@ -50,9 +50,6 @@ namespace HREngine.Bots
 
         private int enemyMaxMana = 0;
 
-        private string heroname = "";
-        private string enemyHeroname = "";
-
         private SimCard heroAbility = new SimCard();
         private int ownHeroPowerCost = 2;
         private bool ownAbilityisReady = false;
@@ -296,8 +293,8 @@ namespace HREngine.Bots
                 TritonHs.EnemyHero.EntityId);
             Hrtprozis.Instance.updateSecretStuff(this.ownSecretList, this.enemySecretList.Count);
 
-            Hrtprozis.Instance.updateHero(this.ownWeapon, this.heroname, this.heroAbility, this.ownAbilityisReady, this.ownHeroPowerCost, this.ownHero);
-            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyHeroname, this.enemyAbility, false, this.enemyHeroPowerCost, this.enemyHero, this.enemyMaxMana);
+            Hrtprozis.Instance.updateHero(this.ownWeapon, this.ownHero.CardClass, this.heroAbility, this.ownAbilityisReady, this.ownHeroPowerCost, this.ownHero);
+            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyHero.CardClass, this.enemyAbility, false, this.enemyHeroPowerCost, this.enemyHero, this.enemyMaxMana);
 
             Questmanager.Instance.updatePlayedMobs(this.gTurnStep);
             Hrtprozis.Instance.updateMinions(this.ownMinions, this.enemyMinions);
@@ -319,7 +316,7 @@ namespace HREngine.Bots
 
             if (!Hrtprozis.Instance.setGameRule)
             {
-                RulesEngine.Instance.setCardIdRulesGame(this.ownHero.cardClass, this.enemyHero.cardClass);
+                RulesEngine.Instance.setCardIdRulesGame(this.ownHero.CardClass, this.enemyHero.CardClass);
                 Hrtprozis.Instance.setGameRule = true;
             }
 
@@ -410,14 +407,14 @@ namespace HREngine.Bots
             {
                 if (ent.IsHero == true)
                 {
-                    if (ent.ControllerId == 1 && this.ownHero.cardClass == CardClass.INVALID)
+                    if (ent.ControllerId == 1 && this.ownHero.CardClass == CardClass.INVALID)
                     {
-                        this.ownHero.cardClass = (CardClass)ent.Class;
+                        this.ownHero.CardClass = (CardClass)ent.Class;
 
                     }
-                    if (ent.ControllerId == 2 && this.enemyHero.cardClass == CardClass.INVALID)
+                    if (ent.ControllerId == 2 && this.enemyHero.CardClass == CardClass.INVALID)
                     {
-                        this.enemyHero.cardClass = (CardClass)ent.Class;
+                        this.enemyHero.CardClass = (CardClass)ent.Class;
 
                     }
                     if (ent.EntityId == enemyheroentity) enemHeroCard = ent;
@@ -516,7 +513,7 @@ namespace HREngine.Bots
                 if (ent.ControllerId != ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 2) enemyDecksize++;
             }
 
-            this.heroname = Hrtprozis.Instance.heroIDtoName(TritonHs.OurHero.Id);
+            this.ownHero.CardClass = SimCard.FromName(TritonHs.OurHero.Id).CardDef.Class;
 
             this.ownHero.Angr = ownHeroCard.GetTag(GAME_TAG.ATK);
             this.ownHero.Hp = ownHeroCard.GetTag(GAME_TAG.HEALTH) - ownHeroCard.GetTag(GAME_TAG.DAMAGE);
@@ -541,7 +538,7 @@ namespace HREngine.Bots
                 if (!this.ownHero.windfury) this.ownHero.windfury = ownWeapon.windfury;
             }
 
-            this.enemyHeroname = Hrtprozis.Instance.heroIDtoName(TritonHs.EnemyHero.Id);
+            this.enemyHero.CardClass = Hrtprozis.Instance.heroIDtoName(TritonHs.EnemyHero.Id);
 
             this.enemyHero.Angr = enemHeroCard.GetTag(GAME_TAG.ATK);
             this.enemyHero.Hp = enemHeroCard.GetTag(GAME_TAG.HEALTH) - enemHeroCard.GetTag(GAME_TAG.DAMAGE);
@@ -817,13 +814,13 @@ namespace HREngine.Bots
                     if (entitiy.GetTag(GAME_TAG.CONTROLLER) == this.ownPlayerController)
                     {
                         m.own = true;
-                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.ownHero.cardClass, (Race)c.Race);
+                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.ownHero.CardClass, (Race)c.Race);
                         this.ownMinions.Add(m);
                     }
                     else
                     {
                         m.own = false;
-                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.enemyHero.cardClass, (Race)c.Race);
+                        m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.enemyHero.CardClass, (Race)c.Race);
                         this.enemyMinions.Add(m);
                     }
                 }

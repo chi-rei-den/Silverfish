@@ -31,9 +31,9 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (wasOwnCard == triggerEffectMinion.own && hc.card.overload > 0)
+            if (wasOwnCard == triggerEffectMinion.own && hc.card.Overload > 0)
             {
-                p.minionGetBuffed(triggerEffectMinion, hc.card.overload, 0);
+                p.minionGetBuffed(triggerEffectMinion, hc.card.Overload, 0);
             }
         }
 

@@ -45,9 +45,7 @@ namespace HREngine.Bots
 
         public bool setGameRule = false;
 
-        public CardClass heroname;
-        public CardClass enemyHeroname;
-        public string heronameingame = "", enemyHeronameingame = "";
+        public string heronameingame = "", enemyHeroingame = "";
         public CardClass ownHeroStartClass;
         public CardClass enemyHeroStartClass;
         public SimCard heroAbility;
@@ -147,9 +145,9 @@ namespace HREngine.Bots
             ownSecretList.Clear();
             enemySecretCount = 0;
             heroname = CardClass.INVALID;
-            enemyHeroname = CardClass.INVALID;
+            enemyHero.CardClass = CardClass.INVALID;
             heronameingame = "";
-            enemyHeronameingame = "";
+            enemyHeroingame = "";
             heroAbility = new SimCard();
             enemyAbility = new SimCard();
             herofrozen = false;
@@ -360,7 +358,7 @@ namespace HREngine.Bots
         }
 
 
-        public void updateHero(Weapon w, string heron, SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
+        public void updateHero(Weapon w, CardClass heron, SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
         {
             if (w.name == CardIds.Collectible.Warrior.FoolsBane) w.cantAttackHeroes = true;
 
@@ -369,7 +367,6 @@ namespace HREngine.Bots
                 this.ownWeapon = new Weapon(w);
 
                 this.ownHero = new Minion(hero);
-                this.heroname = this.heroNametoEnum(heron);
                 this.heronameingame = heron;
                 if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.CardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
@@ -385,8 +382,7 @@ namespace HREngine.Bots
                 this.enemyWeapon = new Weapon(w);
                 this.enemyHero = new Minion(hero);;
 
-                this.enemyHeroname = this.heroNametoEnum(heron);
-                this.enemyHeronameingame = heron;
+                this.enemyHeroingame = heron;
                 if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.CardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
@@ -516,7 +512,7 @@ namespace HREngine.Bots
             help.logg(Questmanager.Instance.getQuestsString());
             help.logg("advanced: " + this.ownCrystalCore + " " + (this.ownMinionsInDeckCost0 ? 1: 0));
             help.logg("enemyhero:");
-            help.logg((this.enemyHeroname == CardClass.INVALID ? this.enemyHeronameingame : this.enemyHeroname.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
+            help.logg((this.enemyHero.CardClass == CardClass.INVALID ? this.enemyHeroingame : this.enemyHero.CardClass.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
             help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
             help.logg("ability: " + "True" + " " + this.enemyAbility.CardId);
             help.logg("fatigue: " + this.ownDeckSize + " " + this.ownHeroFatigue + " " + this.enemyDeckSize + " " + this.enemyHeroFatigue);

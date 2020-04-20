@@ -114,7 +114,7 @@ namespace HREngine.Bots
                         }
                         if (crdl.StartsWith("hero:"))
                         {
-                            this.oHero = Hrtprozis.Instance.heroNametoEnum(crdl.Replace("hero:", ""));
+                            this.oHero = SimCard.FromName(crdl.Replace("hero:", "")).CardDef.Class;
                             continue;
                         }
                         if (crdl.StartsWith("bonus:"))
@@ -482,7 +482,7 @@ namespace HREngine.Bots
             int mana = Math.Max(p.ownMaxMana, p.mana);
             foreach (combo c in this.combos)
             {
-                if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
+                if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHero.CardClass) && c.isCardInCombo(crd))
                 {
                     int iia = c.isInCombo(p.owncards, p.ownMaxMana);//check if we have all cards for a combo, and if the choosen card is one
                     int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, p.ownWeapon.name);
@@ -509,7 +509,7 @@ namespace HREngine.Bots
 
             List<Action> alist = p.playactions;
             SimCard weapon = p.ownWeapon.name;
-            var heroname = p.ownHeroName;
+            var heroname = p.ownHero.CardClass;
 
             //returns a penalty only if the combo could be played, but is not played completely
             List<Handmanager.Handcard> playedcards = new List<Handmanager.Handcard>();
@@ -522,7 +522,7 @@ namespace HREngine.Bots
                 SimCard crd = a.card.card;
                 foreach (combo c in this.combos)
                 {
-                    if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHeroName) && c.isCardInCombo(crd))
+                    if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHero.CardClass) && c.isCardInCombo(crd))
                     {
                         int iia = c.isInCombo(p.owncards, p.ownMaxMana);
                         int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, weapon);

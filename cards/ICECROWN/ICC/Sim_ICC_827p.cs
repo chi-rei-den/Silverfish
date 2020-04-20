@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -38,14 +39,14 @@ namespace HREngine.Bots
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
                 {
-                    if (hc.card.CardId == SimCard.shadowreflection)
+                    if (hc.card.CardId == CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken)
                     {
                         found = true;
                         break;
                     }
                 }
             }
-            if (!found) p.drawACard(SimCard.shadowreflection, turnStartOfOwner, true);
+            if (!found) p.drawACard(CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken, turnStartOfOwner, true);
         }
     }
 }

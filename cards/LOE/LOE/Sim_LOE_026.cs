@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -40,7 +41,7 @@ namespace HREngine.Bots
             foreach (var gi in temp)
             {
                 c = (gi.Key);
-                if ((Race)c.Race == Race.MURLOC)
+                if (c.Race == Race.MURLOC)
                 {
                     p.callKid(c, place, ownplay, false);
                     place++;

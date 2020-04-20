@@ -29,27 +29,21 @@ namespace HREngine.Bots
 {
 	class Sim_AT_042 : SimTemplate //* Druid of the Saber
 	{
-		//Choose One - Charge or +1/+1 and Stealth.
-        
-        SimCard cCharge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
-        SimCard cStealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken12;
-        SimCard cTiger = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheSaber;
-		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
             if (p.ownFandralStaghelm > 0)
             {
-                p.minionTransform(own, cTiger);
+                p.minionTransform(own, CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheSaber);
             }
             else
             {
                 if (choice == 1)
                 {
-                    p.minionTransform(own, cCharge);
+                    p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1);
                 }
                 if (choice == 2)
                 {
-                    p.minionTransform(own, cStealth);
+                    p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2);
                 }
             }
 		}

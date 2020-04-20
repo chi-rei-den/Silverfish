@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 	class Sim_KAR_095 : SimTemplate //* Zoobot
 	{
 		//Battlecry: Give a random friendly Beast, Dragon and Murloc +1/+1.
-		
+
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
 			List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
@@ -37,10 +38,10 @@ namespace HREngine.Bots
                 Minion Beast = null;
                 Minion Dragon = null;
                 Minion Murloc = null;
-				
+
                 foreach (Minion m in temp)
                 {
-                    switch ((Race)m.handcard.card.Race)
+                    switch (m.handcard.card.Race)
 					{
 						case Race.PET:
 							if (Beast == null) Beast = m;
@@ -53,7 +54,7 @@ namespace HREngine.Bots
 							continue;
 					}
                 }
-				
+
 				if (Beast != null) p.minionGetBuffed(Beast, 1, 1);
 				if (Dragon != null) p.minionGetBuffed(Dragon, 1, 1);
 				if (Murloc != null) p.minionGetBuffed(Murloc, 1, 1);

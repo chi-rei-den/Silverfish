@@ -40,7 +40,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (p.enemyHeroName != HeroEnum.mage && p.enemyHeroName != HeroEnum.priest)
+                if (p.enemyHero.CardClass != HeroEnum.mage && p.enemyHero.CardClass != HeroEnum.priest)
                 {
                     retval += 11;
                 }
@@ -70,7 +70,7 @@ namespace HREngine.Bots
             {
                 if (a.actionType == actionEnum.attackWithHero && p.enemyHero.Hp <= p.attackFaceHP) retval++;
                 if (a.actionType == actionEnum.useHeroPower) useAbili = true;
-                if (p.ownHeroName == HeroEnum.warrior && a.actionType == actionEnum.attackWithHero && useAbili) retval -= 1;
+                if (p.ownHero.CardClass == CardClass.WARRIOR && a.actionType == actionEnum.attackWithHero && useAbili) retval -= 1;
                 //if (a.actionType == actionEnum.useHeroPower && a.card.card.name == CardIds.NonCollectible.Priest.LesserHeal && (!a.target.own)) retval -= 5;
                 if (a.actionType != actionEnum.playcard) continue;
                 if (a.card.card.CardId == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.CardId == CardIds.Collectible.Druid.Innervate) usecoin++;

@@ -471,13 +471,13 @@ namespace HREngine.Bots
 
                 if (!found)
                 {
-                    if ((ent.cardid).type == CardType.MINION)
+                    if ((ent.cardid).Type == CardType.MINION)
                     {
                         this.turngraveyard.Add(ent);
                     }
                     this.turngraveyardAll.Add(ent);
                 }
-                if (ent.own && (ent.cardid).type == CardType.MINION)
+                if (ent.own && (ent.cardid).Type == CardType.MINION)
                 {
                     OwnLastDiedMinion = ent;
                 }
@@ -612,7 +612,7 @@ namespace HREngine.Bots
                 case CardClass.DRUID: break;
                 default:
                     Helpfunctions.Instance.ErrorLog("Problem is detected: undefined Secret class " + SecClass);
-                    SecClass = Hrtprozis.Instance.heroEnumtoTagClass(Hrtprozis.Instance.enemyHeroname);
+                    SecClass = Hrtprozis.Instance.heroEnumtoTagClass(Hrtprozis.Instance.enemyHero.CardClass);
                     Helpfunctions.Instance.ErrorLog("attempt to restore... " + SecClass);
                     break;
             }

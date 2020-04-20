@@ -1,3 +1,4 @@
+using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,7 +29,7 @@ namespace HREngine.Bots
 	class Sim_KAR_702 : SimTemplate //* Menagerie Magician
 	{
 		//Battlecry: Give a random Beast, Dragon and Murloc +2/+2.
-		
+
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
 			List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
@@ -37,7 +38,7 @@ namespace HREngine.Bots
                 Minion Beast = null;
                 Minion Dragon = null;
                 Minion Murloc = null;
-				
+
                 foreach (Minion m in temp)
                 {
                     switch ((Race)m.handcard.card.Race)
@@ -53,7 +54,7 @@ namespace HREngine.Bots
 							continue;
 					}
                 }
-				
+
 				if (Beast != null) p.minionGetBuffed(Beast, 2, 2);
 				if (Dragon != null) p.minionGetBuffed(Dragon, 2, 2);
 				if (Murloc != null) p.minionGetBuffed(Murloc, 2, 2);

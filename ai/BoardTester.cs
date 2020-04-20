@@ -35,7 +35,6 @@ namespace HREngine.Bots
         int gTurnStep = 0;
         int mana = 0;
         int maxmana = 0;
-        string ownheroname = "";
         int ownherohp = 0;
         int ownheromaxhp = 30;
         int enemyheromaxhp = 30;
@@ -80,7 +79,6 @@ namespace HREngine.Bots
         bool ownHeroFrozen = false;
 
         List<string> ownsecretlist = new List<string>();
-        string enemyheroname = "";
         int enemyherohp = 0;
         int enemyherodefence = 0;
         bool enemyFrozen = false;
@@ -505,7 +503,7 @@ namespace HREngine.Bots
                 if (readstate == 1 && counter == 1) // class + hp + defence + immunewhile attacking + immune
                 {
                     String[] h = s.Split(' ');
-                    ownheroname = h[0];
+                    ownHero.CardClass = h[0];
                     ownherohp = Convert.ToInt32(h[1]);
                     ownheromaxhp = Convert.ToInt32(h[2]);
                     ownherodefence = Convert.ToInt32(h[3]);
@@ -558,7 +556,7 @@ namespace HREngine.Bots
                 if (readstate == 2 && counter == 1) // class + hp + defence + frozen + immune
                 {
                     String[] h = s.Split(' ');
-                    enemyheroname = h[0];
+                    enemyHero.CardClass = h[0];
                     enemyherohp = Convert.ToInt32(h[1]);
                     enemyheromaxhp = Convert.ToInt32(h[2]);
                     enemyherodefence = Convert.ToInt32(h[3]);
@@ -1004,7 +1002,7 @@ namespace HREngine.Bots
 
             //set Simulation stuff
             Ai.Instance.botBase = Silverfish.Instance.getBehaviorByName(this.botBehavior);
-            RulesEngine.Instance.setCardIdRulesGame(heroNametoClass(this.ownheroname), heroNametoClass(this.enemyheroname));
+            RulesEngine.Instance.setCardIdRulesGame((this.ownHero.CardClass), (this.enemyHero.CardClass));
             RulesEngine.Instance.setRulesTurn((gTurn + 1) / 2);
             Ai.Instance.setMaxWide(this.maxwide);
             Ai.Instance.setTwoTurnSimulation(false, this.twoturnsim);
@@ -1046,8 +1044,8 @@ namespace HREngine.Bots
             this.enemyHero.maxHp = this.enemyheromaxhp;
             this.ownHero.entitiyID = ownHEntity;
             this.enemyHero.entitiyID = enemyHEntity;
-            this.ownHero.CardClass = heroNametoClass(this.ownheroname);
-            this.enemyHero.CardClass = heroNametoClass(this.enemyheroname);
+            this.ownHero.CardClass = (this.ownHero.CardClass);
+            this.enemyHero.CardClass = (this.enemyHero.CardClass);
 
             this.ownHero.Angr = ownHeroAttack;
             this.ownHero.Hp = ownherohp;
@@ -1071,9 +1069,9 @@ namespace HREngine.Bots
 
 
             //save data
-            Hrtprozis.Instance.updateHero(this.ownWeapon, this.ownheroname, heroability, abilityReady, this.ownHeroPowerCost, this.ownHero);
-            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyheroname, enemyability, false, this.enemyHeroPowerCost, this.enemyHero, enemmaxman);
-            Hrtprozis.Instance.updateHeroStartClass(heroNametoClass(this.ownheroname), heroNametoClass(this.enemyheroname));
+            Hrtprozis.Instance.updateHero(this.ownWeapon, this.ownHero.CardClass, heroability, abilityReady, this.ownHeroPowerCost, this.ownHero);
+            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyHero.CardClass, enemyability, false, this.enemyHeroPowerCost, this.enemyHero, enemmaxman);
+            Hrtprozis.Instance.updateHeroStartClass((this.ownHero.CardClass), (this.enemyHero.CardClass));
 
             Hrtprozis.Instance.updateMinions(this.ownminions, this.enemyminions);
             Hrtprozis.Instance.updateLurkersDB(this.LurkersDB);
@@ -1122,8 +1120,8 @@ namespace HREngine.Bots
             m.lifesteal = hc.card.Lifesteal;
             m.stealth = hc.card.Stealth;
 
-            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.ownheroname), (Race)hc.card.Race);
-            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(heroNametoClass(this.enemyheroname), (Race)hc.card.Race);
+            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.ownHero.CardClass), (Race)hc.card.Race);
+            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.enemyHero.CardClass), (Race)hc.card.Race);
             if (m.synergy > 0 && hc.card.Stealth) m.synergy++;
 
             m.updateReadyness();
@@ -1134,25 +1132,6 @@ namespace HREngine.Bots
             }
             return m;
         }
-
-
-        public CardClass heroNametoClass(string s)
-        {
-            switch (s)
-            {
-                case "hunter": return CardClass.HUNTER;
-                case "priest": return CardClass.PRIEST;
-                case "druid": return CardClass.DRUID;
-                case "warlock": return CardClass.WARLOCK;
-                case "thief": return CardClass.ROGUE;
-                case "pala": return CardClass.PALADIN;
-                case "warrior": return CardClass.WARRIOR;
-                case "shaman": return CardClass.SHAMAN;
-                case "mage": return CardClass.MAGE;
-                default: return CardClass.INVALID;
-            }
-        }
-
 
         public void printSettings()
         {

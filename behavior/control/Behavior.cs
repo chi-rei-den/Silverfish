@@ -18,7 +18,7 @@ namespace HREngine.Bots
             if (p.value >= -2000000) return p.value;
             int retval = 0;
             int hpboarder = 10;
-            if (p.ownHeroName == HeroEnum.warlock && p.enemyHeroName != HeroEnum.mage) hpboarder = 6;
+            if (p.ownHero.CardClass == HeroEnum.warlock && p.enemyHero.CardClass != HeroEnum.mage) hpboarder = 6;
             int aggroboarder = 11;
 
             retval -= p.evaluatePenality;
@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 else retval -= 3;
             }
 
-            if (p.enemyHeroName == HeroEnum.mage || p.enemyHeroName == HeroEnum.druid) retval -= 2 * p.enemyspellpower;
+            if (p.enemyHero.CardClass == HeroEnum.mage || p.enemyHero.CardClass == HeroEnum.druid) retval -= 2 * p.enemyspellpower;
 
             if (p.ownHero.Hp + p.ownHero.armor > hpboarder)
             {
@@ -159,7 +159,7 @@ namespace HREngine.Bots
                 {
                     case actionEnum.attackWithHero:
                         if (p.enemyHero.Hp <= p.attackFaceHP) retval++;
-                        if (p.ownHeroName == HeroEnum.warrior && useAbili) retval -= 1;
+                        if (p.ownHero.CardClass == CardClass.WARRIOR && useAbili) retval -= 1;
                         continue;
                     case actionEnum.useHeroPower:
                         useAbili = true;

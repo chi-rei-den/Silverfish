@@ -125,7 +125,7 @@ namespace HREngine.Bots
             setupClassRacePriorityDatabase();
             setupGangUpDatabase();
             setupOwnSummonFromDeathrattle();
-			setupbuffHandDatabase();
+            setupbuffHandDatabase();
             setupequipWeaponPlayDatabase();
             setupReturnBackToHandCards();
         }
@@ -176,7 +176,7 @@ namespace HREngine.Bots
             if (this.UsefulNeedKeepDatabase.ContainsKey(m.name) && !target.isHero && !(m.divineshild || target.Angr == 0)) retval++;
             if (m.justBuffed > 0)
             {
-                if (m.divineshild || m.immune) {}
+                if (m.divineshild || m.immune) { }
                 else if (target.poisonous || target.Angr >= m.Hp) retval += m.justBuffed;
             }
             return retval;
@@ -281,7 +281,7 @@ namespace HREngine.Bots
                 if (p.ownWeapon.Angr == 1 && wAttack == 0 && (p.ownHeroAblility.card == CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Rogue.DaggerMastery)) wAttack = 1;
                 if (wAttack > 0) retval = -p.ownWeapon.Angr - 1; // so he doesnt "lose" the weapon in evaluation :D
             }
-            if (p.ownWeapon.Angr == 1 && p.ownHeroName == CardClass.ROGUE)
+            if (p.ownWeapon.Angr == 1 && p.ownHero.CardClass == CardClass.ROGUE)
             {
                 if (target.Hp < 11) retval += 1;
                 else retval += -1;
@@ -1179,19 +1179,19 @@ namespace HREngine.Bots
             switch (name.CardId)
             {
                 case CardIds.Collectible.Druid.TreeOfLife:
+                {
+                    int mheal = 0;
+                    int wounded = 0;
+                    if (p.ownHero.wounded) wounded++;
+                    foreach (Minion mi in p.ownMinions)
                     {
-                        int mheal = 0;
-                        int wounded = 0;
-                        if (p.ownHero.wounded) wounded++;
-                        foreach (Minion mi in p.ownMinions)
-                        {
-                            mheal += Math.Min((mi.maxHp - mi.Hp), 4);
-                            if (mi.wounded) wounded++;
-                        }
-                        if (mheal == 0) return 500;
-                        if (mheal <= 7 && wounded <= 2) return 20;
+                        mheal += Math.Min((mi.maxHp - mi.Hp), 4);
+                        if (mi.wounded) wounded++;
                     }
-                    break;
+                    if (mheal == 0) return 500;
+                    if (mheal <= 7 && wounded <= 2) return 20;
+                }
+                break;
 
                 case CardIds.Collectible.Neutral.RenoJackson:
                     if (p.ownHero.Hp < 16)
@@ -1215,20 +1215,20 @@ namespace HREngine.Bots
                     break;
 
                 case CardIds.Collectible.Priest.CircleOfHealing:
+                {
+                    int mheal = 0;
+                    int wounded = 0;
+                    //int eheal = 0;
+                    foreach (Minion mi in p.ownMinions)
                     {
-                        int mheal = 0;
-                        int wounded = 0;
-                        //int eheal = 0;
-                        foreach (Minion mi in p.ownMinions)
-                        {
-                            mheal += Math.Min((mi.maxHp - mi.Hp), 4);
-                            if (mi.wounded) wounded++;
-                        }
-                        //Console.WriteLine(mheal + " circle");
-                        if (mheal == 0) return 500;
-                        if (mheal <= 7 && wounded <= 2) return 20;
+                        mheal += Math.Min((mi.maxHp - mi.Hp), 4);
+                        if (mi.wounded) wounded++;
                     }
-                    break;
+                    //Console.WriteLine(mheal + " circle");
+                    if (mheal == 0) return 500;
+                    if (mheal <= 7 && wounded <= 2) return 20;
+                }
+                break;
             }
 
             if (HealTargetDatabase.ContainsKey(name))
@@ -1306,7 +1306,7 @@ namespace HREngine.Bots
             int carddraw = cardDrawBattleCryDatabase[name];
             if (carddraw == 0)
             {
-                switch(name.CardId)
+                switch (name.CardId)
                 {
                     case CardIds.Collectible.Neutral.HarrisonJones:
                         carddraw = p.enemyWeapon.Durability;
@@ -1325,7 +1325,7 @@ namespace HREngine.Bots
                         }
                         if (carddraw == 0)
                         {
-                            if(p.ownMinions.Count == 0 && p.mana > 6)
+                            if (p.ownMinions.Count == 0 && p.mana > 6)
                             {
                                 foreach (Handmanager.Handcard hc in p.owncards)
                                 {
@@ -1358,7 +1358,7 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Priest.Thoughtsteal:
                         carddraw = Math.Min(2, p.enemyDeckSize);
                         if (carddraw == 2) break;
-                        if (carddraw == 1) pen +=4;
+                        if (carddraw == 1) pen += 4;
                         else
                         {
                             foreach (Minion mnn in p.ownMinions)
@@ -1377,7 +1377,7 @@ namespace HREngine.Bots
                             foreach (Minion mnn in p.ownMinions)
                             {
                                 if (this.spellDependentDatabase.ContainsKey(mnn.name))
-                                    if(mnn.name == CardIds.Collectible.Neutral.LorewalkerCho) pen += 20; //if(spellDependentDatabase[mnn.name] == 0);
+                                    if (mnn.name == CardIds.Collectible.Neutral.LorewalkerCho) pen += 20; //if(spellDependentDatabase[mnn.name] == 0);
                                     else scales--;
                             }
                             if (scales == 0) return 500;
@@ -1850,15 +1850,15 @@ namespace HREngine.Bots
                             {
                                 switch (m.handcard.card.CardId)
                                 {
-                                    case CardIds.Collectible.Mage.ManaWyrm: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Mage.Flamewaker: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Mage.ArchmageAntonidas: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Neutral.GadgetzanAuctioneer: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Neutral.ManaAddict: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Neutral.RedManaWyrm: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Neutral.SummoningStone: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Shaman.WickedWitchdoctor: goto case CardIds.Collectible.Neutral.Lightwarden;
-                                    case CardIds.Collectible.Priest.HolyChampion: goto case CardIds.Collectible.Neutral.Lightwarden;
+                                    case CardIds.Collectible.Mage.ManaWyrm:
+                                    case CardIds.Collectible.Mage.Flamewaker:
+                                    case CardIds.Collectible.Mage.ArchmageAntonidas:
+                                    case CardIds.Collectible.Neutral.GadgetzanAuctioneer:
+                                    case CardIds.Collectible.Neutral.ManaAddict:
+                                    case CardIds.Collectible.Neutral.RedManaWyrm:
+                                    case CardIds.Collectible.Neutral.SummoningStone:
+                                    case CardIds.Collectible.Shaman.WickedWitchdoctor:
+                                    case CardIds.Collectible.Priest.HolyChampion:
                                     case CardIds.Collectible.Neutral.Lightwarden:
                                         if (m.Ready)
                                         {
@@ -1972,7 +1972,7 @@ namespace HREngine.Bots
                     {
                         case 0:
                             if (p.ownMinions.Count > 0) return 0;
-                                break;
+                            break;
                         case 1:
                             foreach (Minion mm in p.ownMinions)
                             {
@@ -2003,7 +2003,7 @@ namespace HREngine.Bots
                         case 6:
                             foreach (Minion mm in p.ownMinions)
                             {
-                                if (mm.name == SimCard.silverhandrecruit && mm.Ready) return 0;
+                                if (mm.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken && mm.Ready) return 0;
                             }
                             break;
                         case 7:
@@ -2097,7 +2097,7 @@ namespace HREngine.Bots
             if (elementalLTDependentDatabase.ContainsKey(name) && p.anzOwnElementalsLastTurn == 0) pen += 10;
 
             int targets = 0;
-            switch(name.CardId)
+            switch (name.CardId)
             {
                 case CardIds.Collectible.Warrior.HobartGrapplehammer: return -5;
                 case CardIds.Collectible.Neutral.BloodsailRaider: if (p.ownWeapon.Durability == 0) return 5; return 0;
@@ -2109,7 +2109,8 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.GrimestreetPawnbroker:
                     foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.WEAPON) return 0;
                     return 5;
-                case CardIds.Collectible.Warrior.BloodsailCultist: ;
+                case CardIds.Collectible.Warrior.BloodsailCultist:
+                    ;
                     if (p.ownWeapon.Durability > 0) foreach (Minion m in p.ownMinions) if ((Race)m.handcard.card.Race == Race.PIRATE) return 0;
                     return 8;
                 case CardIds.Collectible.Neutral.RavasaurRunt:
@@ -2172,8 +2173,8 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.GluttonousOoze: goto case CardIds.Collectible.Neutral.AcidicSwampOoze;
                 case CardIds.Collectible.Neutral.AcidicSwampOoze:
                     if (p.enemyWeapon.Angr > 0) return 0;
-                    if (p.enemyHeroName == HeroEnum.shaman || p.enemyHeroName == HeroEnum.warrior || p.enemyHeroName == HeroEnum.thief || p.enemyHeroName == HeroEnum.pala) return 10;
-                    if (p.enemyHeroName == HeroEnum.hunter) return 6;
+                    if (p.enemyHero.CardClass == CardClass.SHAMAN || p.enemyHero.CardClass == CardClass.WARRIOR || p.enemyHero.CardClass == CardClass.ROGUE || p.enemyHero.CardClass == CardClass.PALADIN) return 10;
+                    if (p.enemyHero.CardClass == CardClass.HUNTER) return 6;
                     return 0;
                 case CardIds.Collectible.Warlock.DarkshireCouncilman:
                     if (p.enemyMinions.Count == 0)
@@ -2284,12 +2285,12 @@ namespace HREngine.Bots
                 }
             }
 
-            if ((name == CardIds.NonCollectible.Warlock.LifeTap || name == SimCard.soultap) && p.owncards.Count <= 9)
+            if ((name == CardIds.NonCollectible.Warlock.LifeTap || name == CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap) && p.owncards.Count <= 9)
             {
-                 foreach (Minion mnn in p.ownMinions)
-                 {
-                     if (mnn.name == CardIds.Collectible.Warlock.WilfredFizzlebang && !mnn.silenced) return -20;
-                 }
+                foreach (Minion mnn in p.ownMinions)
+                {
+                    if (mnn.name == CardIds.Collectible.Warlock.WilfredFizzlebang && !mnn.silenced) return -20;
+                }
             }
 
             if (name == CardIds.Collectible.Warlock.ForbiddenRitual)
@@ -2352,7 +2353,7 @@ namespace HREngine.Bots
                     {
                         bool canPlayMinion = false;
                         bool canPlaySpell = false;
-                        foreach(Handmanager.Handcard hc in p.owncards)
+                        foreach (Handmanager.Handcard hc in p.owncards)
                         {
                             if (hc.card.CardId == CardIds.Collectible.Hunter.Flare) continue;
                             if (hc.card.Cost <= p.mana - 2)
@@ -2414,19 +2415,19 @@ namespace HREngine.Bots
                 //判断手牌中随从数量，
                 //此处大于或等于2个时使用
                 case CardIds.Collectible.Paladin.SmugglersRun:
+                {
+                    int iii = 0;
+                    foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        int iii = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        if (hc.card.Type == CardType.MINION)
                         {
-                            if (hc.card.Type == CardType.MINION)
-                            {
-                                iii++;
-                            }
+                            iii++;
                         }
-                        if (iii >= 3) return -30;//此处为30考虑到可能会先开车后水晶学
-                        else return 30;
                     }
-                    break;
+                    if (iii >= 3) return -30;//此处为30考虑到可能会先开车后水晶学
+                    else return 30;
+                }
+                break;
                 //神恩术 divinefavor
                 case CardIds.Collectible.Paladin.DivineFavor:
                     if (p.enemycarddraw - p.owncards.Count >= 2) return -50;
@@ -2438,36 +2439,36 @@ namespace HREngine.Bots
                 //亮石技师
                 //原则同上
                 case CardIds.Collectible.Paladin.GlowstoneTechnician:
+                {
+                    int iii = 0;
+                    foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        int iii = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        if (hc.card.Type == CardType.MINION)
                         {
-                            if (hc.card.Type == CardType.MINION)
-                            {
-                                iii++;
-                            }
+                            iii++;
                         }
-                        if (iii >= 3) return -29;
-                        else return 30;
                     }
-                    break;
+                    if (iii >= 3) return -29;
+                    else return 30;
+                }
+                break;
                 //通电机器人
                 case CardIds.Collectible.Neutral.Galvanizer:
+                {
+                    int iii = 0;
+                    foreach (Handmanager.Handcard hc in p.owncards)
                     {
-                        int iii = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        if (hc.card.Race == Race.MECHANICAL)
                         {
-                            if (hc.card.Race == Race.MECHANICAL)
-                            {
-                                iii++;
-                            }
+                            iii++;
                         }
-                        if (iii >= 3) return -40;
-                        else if (iii >= 2) return -20;
-                        else
-                            return 20;
                     }
-                    break;
+                    if (iii >= 3) return -40;
+                    else if (iii >= 2) return -20;
+                    else
+                        return 20;
+                }
+                break;
                 //机械跃迁者 mechwarper
                 //此处惩罚值有待考究
                 /*矛盾点在于是否要判断法力水晶可用个数，然后下机械跃迁者后减费铺场
@@ -2482,15 +2483,15 @@ namespace HREngine.Bots
 
                 //分裂战斧
                 case CardIds.Collectible.Shaman.SplittingAxe:
-                  int ownTotemsCount= 0;
-                  foreach (Minion m in p.ownMinions)
-                        {
+                    int ownTotemsCount = 0;
+                    foreach (Minion m in p.ownMinions)
+                    {
                         if ((Race)m.handcard.card.Race == Race.TOTEM) ownTotemsCount++;
-                        }
+                    }
                     return 5 - ownTotemsCount * 5;
                 //风怒小陀螺
                 case CardIds.Collectible.Shaman.WhirlingZapOMatic:
-                    if (p.enemyHeroName == CardClass.WARLOCK) return -10;
+                    if (p.enemyHero.CardClass == CardClass.WARLOCK) return -10;
 
                     return 0;
 
@@ -2526,35 +2527,35 @@ namespace HREngine.Bots
                     break;
 
                 case CardIds.Collectible.Mage.ArcaneFlakmage:
+                {
+                    int KillCount = 0;
+                    foreach (Minion mi in p.enemyMinions)
                     {
-                        int KillCount = 0;
-                        foreach (Minion mi in p.enemyMinions)
+                        //对方随从生命值小于 2
+                        if (mi.Hp <= 2)
+                            KillCount++;
+                    }
+                    //如果对面随从等于0
+                    if (p.enemyMinions.Count == 0)
+                    {
+                        return 50;//不推荐使用
+                    }
+                    //如果对面随从大于1
+                    foreach (Handmanager.Handcard hc in p.owncards)
+                    {
+                        if (hc.card.Secret && p.mana >= (hc.card.Cost + card.Cost))
                         {
-                            //对方随从生命值小于 2
-                            if (mi.Hp <= 2)
-                                KillCount++;
-                        }
-                        //如果对面随从等于0
-                        if (p.enemyMinions.Count == 0)
-                        {
-                            return 50;//不推荐使用
-                        }
-                        //如果对面随从大于1
-                        foreach (Handmanager.Handcard hc in p.owncards)
-                        {
-                            if (hc.card.Secret && p.mana >= (hc.card.Cost + card.Cost))
+                            //如果对面随从等于1
+                            if (p.enemyMinions.Count == 1)
                             {
-                                //如果对面随从等于1
-                                if (p.enemyMinions.Count == 1)
-                                {
-                                    //是否能击杀
-                                    if (KillCount < 1)
-                                        return 5;//不推荐使用
-                                    else
-                                        return -10;//比较推荐使用
-                                }
+                                //是否能击杀
+                                if (KillCount < 1)
+                                    return 5;//不推荐使用
                                 else
-                                {
+                                    return -10;//比较推荐使用
+                            }
+                            else
+                            {
                                 //如果对面随从大于1
                                 return -50 * KillCount;//推荐使用
                             }
@@ -2570,7 +2571,7 @@ namespace HREngine.Bots
                     if (p.enemyHero.Hp < 20) return -20;
                     foreach (Minion mm in p.ownMinions)
                         ownMinionsSumHp += mm.Hp;
-                  if (ownMinionsSumHp < 4) return -3;
+                    if (ownMinionsSumHp < 4) return -3;
                     else return -ownMinionsSumHp;
                     break;
                 //麦迪文的男仆
@@ -2585,7 +2586,7 @@ namespace HREngine.Bots
                     bool found1 = false;
                     foreach (Minion mnn1 in p.ownMinions)
                     {
-                        if (mnn1.name == CardIds.Collectible.Mage.KabalCrystalRunner || mnn1.name == SimCard.云雾王子) found1 = true;
+                        if (mnn1.name == CardIds.Collectible.Mage.KabalCrystalRunner || mnn1.name == CardIds.Collectible.Mage.CloudPrince) found1 = true;
 
                     }
                     if (found1) return -10;
@@ -2593,7 +2594,7 @@ namespace HREngine.Bots
                     else return -5;
                     break;
 
-                 //寒冰屏障
+                //寒冰屏障
                 case CardIds.Collectible.Mage.IceBlock:
                     if (p.ownHero.Hp < 20) return -8;
                     else return -3;
@@ -2601,7 +2602,7 @@ namespace HREngine.Bots
                 //法术反制
                 case CardIds.Collectible.Mage.Counterspell: return -6;
                 //火焰结界
-                case SimCard.火焰结界:
+                case CardIds.Collectible.Mage.FlameWard:
                     if (p.enemyMinions.Count == 2) return -8;
                     if (p.enemyMinions.Count == 3) return -12;
                     if (p.enemyMinions.Count >= 4) return -15;
@@ -2614,7 +2615,7 @@ namespace HREngine.Bots
                     if (target.isHero) return -5;
                     break;
                 //艾露尼斯
-                case SimCard.艾露尼斯:
+                case CardIds.Collectible.Mage.Aluneth:
                     if (p.owncards.Count >= 6) return 500;
                     else return -90;
                     break;
@@ -2815,7 +2816,7 @@ namespace HREngine.Bots
 
                 case CardIds.Collectible.Druid.WildGrowth: goto case CardIds.Collectible.Druid.Nourish;
                 case CardIds.Collectible.Druid.Nourish:
-                    if (p.ownMaxMana == 9 && !(p.ownHeroName == HeroEnum.thief && p.cardsPlayedThisTurn == 0)) return 500;
+                    if (p.ownMaxMana == 9 && !(p.ownHero.CardClass == CardClass.ROGUE && p.cardsPlayedThisTurn == 0)) return 500;
                     break;
 
                 case CardIds.Collectible.Priest.Resurrect:
@@ -3187,7 +3188,7 @@ namespace HREngine.Bots
                                 case CardIds.Collectible.Neutral.GormokTheImpaler: if (p.ownMinions.Count > 4) return 0; break;
                                 case CardIds.Collectible.Hunter.CoreRager: if (p.owncards.Count < 1) return 0; break;
                                 case CardIds.Collectible.Neutral.DrakonidCrusher: if (p.enemyHero.Hp < 16) return 0; break;
-                                case CardIds.Collectible.Priest.MindControltech: if (p.enemyMinions.Count > 3) return 0; break;
+                                case CardIds.Collectible.Neutral.MindControlTech: if (p.enemyMinions.Count > 3) return 0; break;
                                 case CardIds.Collectible.Warrior.AlexstraszasChampion: if (target.Ready) DragonReq = false; break;
                                 case CardIds.Collectible.Neutral.TwilightGuardian: if (target.taunt) DragonReq = false; break;
                                 case CardIds.Collectible.Priest.WyrmrestAgent: if (target.taunt) DragonReq = false; break;
@@ -3233,13 +3234,13 @@ namespace HREngine.Bots
             if (card.Secret)
             {
                 foreach (Handmanager.Handcard hc in p.owncards)
-            {
+                {
                     //肯瑞托法师
                     if (hc.card.CardId == CardIds.Collectible.Mage.KirinTorMage && p.mana >= hc.getManaCost(p))
 
                     {
-                       pen = 500;
-                   }
+                        pen = 500;
+                    }
                 }
             }
 
@@ -3276,7 +3277,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Hunter.Flare: return 0; break;
                 case CardIds.Collectible.Neutral.EaterOfSecrets: return 0; break;
                 case CardIds.Collectible.Neutral.KezanMystic:
-                    if (p.enemySecretCount == 1)  return 0;
+                    if (p.enemySecretCount == 1) return 0;
                     break;
             }
 
@@ -3392,7 +3393,7 @@ namespace HREngine.Bots
                     }
                     if (canBe_explosive)
                     {
-                        foreach(Action a in p.playactions)
+                        foreach (Action a in p.playactions)
                         {
                             switch (a.actionType)
                             {
@@ -3692,11 +3693,10 @@ namespace HREngine.Bots
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.Demonwrath, 1);
             DamageAllDatabase.Add(CardIds.Collectible.Priest.DragonfirePotion, 5);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.DreadInfernal, 1);
-            DamageAllDatabase.Add(SimCard.dreadscale, 1);
+            DamageAllDatabase.Add(CardIds.Collectible.Hunter.Acidmaw_DreadscaleToken, 1);
             DamageAllDatabase.Add(CardIds.Collectible.Shaman.ElementalDestruction, 4);
             DamageAllDatabase.Add(CardIds.Collectible.Priest.ExcavatedEvil, 3);
             DamageAllDatabase.Add(CardIds.Collectible.Neutral.ExplosiveSheep, 2);
-            DamageAllDatabase.Add(SimCard.felbloom, 4);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.FelfirePotion, 5);
             DamageAllDatabase.Add(CardIds.Collectible.Warlock.Hellfire, 3);
             DamageAllDatabase.Add(CardIds.NonCollectible.Neutral.Lava, 2);
@@ -3728,7 +3728,6 @@ namespace HREngine.Bots
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Priest.HolyNova, 2);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Shaman.KalimosPrimalLord_InvocationOfAir, 3);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Shaman.LightningStorm, 3);
-            DamageAllEnemysDatabase.Add(SimCard.livingbomb, 5);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.LocustSwarm, 3);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Shaman.MaelstromPortal, 1);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.PoisonCloud, 1);//todo 1 or 2
@@ -3736,7 +3735,6 @@ namespace HREngine.Bots
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Warlock.Shadowflame, 2);
             DamageAllEnemysDatabase.Add(CardIds.NonCollectible.Neutral.Sporeburst, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Druid.Starfall, 2);
-            DamageAllEnemysDatabase.Add(SimCard.stomp, 2);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Druid.Swipe, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Mage.TwilightFlamecaller, 1);
             DamageAllEnemysDatabase.Add(CardIds.Collectible.Hunter.ExplodingBloatbat, 2);
@@ -3796,7 +3794,7 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.ArcaneBlast, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.ArcaneShot, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Backstab, 2);
-            DamageTargetDatabase.Add(SimCard.ballistashot, 3);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot, 3);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.BarrelToss, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Betrayal, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.BlackwingCorruptor, 3);//if dragon in hand
@@ -3817,8 +3815,7 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.FelCannon, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Fireball, 6);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Mage.Fireblast, 1);
-            DamageTargetDatabase.Add(CardIds.NonCollectible.Mage.Fireblastrank2, 2);
-            DamageTargetDatabase.Add(SimCard.firebloomtoxin, 2);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_FirebloomToxin, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.FireElemental, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.FirelandsPortal, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.FirePlumePhoenix, 2);
@@ -3830,7 +3827,6 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Neutral.GormokTheImpaler, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.GreaterHealingPotion, 12);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.GrievousBite, 2);
-            DamageTargetDatabase.Add(SimCard.heartoffire, 5);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.HoggerSmash, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.HolyFire, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.HolySmite, 2);
@@ -3841,15 +3837,15 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.JadeShuriken, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.KeeperOfTheGrove, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.KillCommand, 3);//or 5
-            DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.Lavaburst, 5);
+            DamageTargetDatabase.Add(CardIds.Collectible.Shaman.LavaBurst, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.LavaShock, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Shaman.LightningBolt, 3);
-            DamageTargetDatabase.Add(SimCard.lightningjolt, 2);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.LivingRoots, 2);//choice 1
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.MedivhsValet, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Meteor, 15);
-            DamageTargetDatabase.Add(SimCard.mindshatter, 3);
-            DamageTargetDatabase.Add(SimCard.mindspike, 2);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Priest.Shadowform_MindShatterToken, 3);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Moonfire, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.MortalCoil, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Warrior.MortalStrike, 4);
@@ -3858,15 +3854,13 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.PerditionsBlade, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.Powershot, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Mage.Pyroblast, 10);
-            DamageTargetDatabase.Add(SimCard.razorpetal, 1);
-            DamageTargetDatabase.Add(SimCard.roaringtorch, 6);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Mage.ForgottenTorch_RoaringTorchToken, 6);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.ShadowBolt, 4);
             DamageTargetDatabase.Add(CardIds.Collectible.Priest.Shadowform, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.ShadowStrike, 5);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Hunter.ShotgunBlast, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Si7Agent, 2);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.SonicBreath, 3);
-            DamageTargetDatabase.Add(SimCard.sonoftheflame, 6);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Starfall, 5);//2 to all enemy
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Starfire, 5);//draw a card
             DamageTargetDatabase.Add(CardIds.NonCollectible.Hunter.SteadyShot, 2);//or 1 + card
@@ -3877,12 +3871,12 @@ namespace HREngine.Bots
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.UnbalancingStrike, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.UndercityValiant, 1);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.Wrath, 1);//todo 3 or 1+card
-            DamageTargetDatabase.Add(SimCard.voidform, 2);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Priest.ShadowreaperAnduin_Voidform, 2);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.VampiricLeech, 3);
             DamageTargetDatabase.Add(CardIds.Collectible.Druid.UltimateInfestation, 5);
             DamageTargetDatabase.Add(CardIds.Collectible.Hunter.ToxicArrow, 2);
-            DamageTargetDatabase.Add(SimCard.siphonlife, 3);
-            DamageTargetDatabase.Add(SimCard.icytouch, 1);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.BloodreaverGuldan_SiphonLife, 3);
+            DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.IcyTouchHeroic, 1);
             DamageTargetDatabase.Add(CardIds.NonCollectible.Neutral.IceClaw, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Warlock.DrainSoul, 2);
             DamageTargetDatabase.Add(CardIds.Collectible.Rogue.Doomerang, 2);
@@ -3910,12 +3904,11 @@ namespace HREngine.Bots
             DamageTargetSpecialDatabase.Add(CardIds.Collectible.Warlock.Soulfire, 4);//delete a card
 
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Rogue.DaggerMastery, 1);
-            HeroPowerEquipWeapon.Add(SimCard.direshapeshift, 2);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Neutral.Echolocate, 0);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Neutral.Enraged, 2);
-            HeroPowerEquipWeapon.Add(SimCard.poisoneddaggers, 2);
+            HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers, 2);
             HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Druid.Shapeshift, 1);
-            HeroPowerEquipWeapon.Add(SimCard.plaguelord, 3);
+            HeroPowerEquipWeapon.Add(CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderFangs, 3);
 
 
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.ArcaneBlast, 1);
@@ -3925,7 +3918,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.BarrelToss, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warrior.Bash, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.BlastcrystalPotion, 2);
-            this.maycauseharmDatabase.Add(SimCard.bloodthistletoxin, 3);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_BloodthistleToxin, 3);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warrior.BloodToIchor, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.ChromaticMutation, 5);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.CobraShot, 1);
@@ -3936,7 +3929,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.Deathbloom, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.Demonfire, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.Demonheart, 1);
-            this.maycauseharmDatabase.Add(SimCard.dispel, 4);
+            this.maycauseharmDatabase.Add(CardIds.Collectible.Priest.MassDispel, 4);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.DragonsBreath, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.DrainLife, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.DrakkisathsCommand, 2);
@@ -3948,7 +3941,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.ExplosiveShot, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.FeedingTime, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.Fireball, 1);
-            this.maycauseharmDatabase.Add(SimCard.firebloomtoxin, 1);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_FirebloomToxin, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FirelandsPortal, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FlameGeyser, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.FlameLance, 1);
@@ -3972,7 +3965,7 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Rogue.JadeShuriken, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.KeeperOfTheGrove, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.KillCommand, 1);
-            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.Lavaburst, 1);
+            this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.LavaBurst, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.LavaShock, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.LightningBolt, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.LivingRoots, 1);
@@ -3990,10 +3983,9 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.Powershot, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Mage.Pyroblast, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Hunter.QuickShot, 1);
-            this.maycauseharmDatabase.Add(SimCard.razorpetal, 1);
-            this.maycauseharmDatabase.Add(SimCard.roaringtorch, 1);
-            this.maycauseharmDatabase.Add(SimCard.roguesdoit, 1);
-            this.maycauseharmDatabase.Add(SimCard.rottenbanana, 1);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Mage.ForgottenTorch_RoaringTorchToken, 1);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_RoguesDoIt, 1);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.RottenBananaTavernBrawl, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Savagery, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.ShadowBolt, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Rogue.Shadowstep, 3);
@@ -4013,21 +4005,21 @@ namespace HREngine.Bots
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Starfire, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.Stormcrack, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Swipe, 1);
-            this.maycauseharmDatabase.Add(SimCard.tailswipe, 1);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.Nefarian_TailSwipeToken, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.TheTrueWarchief, 2);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.TidalSurge, 1);
             this.maycauseharmDatabase.Add(CardIds.NonCollectible.Neutral.TimeRewinder, 3);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Shaman.Volcano, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Druid.Wrath, 1);
             this.maycauseharmDatabase.Add(CardIds.Collectible.Warlock.DrainSoul, 1);
-            this.maycauseharmDatabase.Add(SimCard.obliterate, 2);
+            this.maycauseharmDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_ObliterateToken, 2);
         }
 
         private void setupsilenceDatabase()
         {
 
             this.silenceDatabase.Add(CardIds.Collectible.Neutral.DefiasCleaner, 1);
-            this.silenceDatabase.Add(SimCard.dispel, 1);
+            this.silenceDatabase.Add(CardIds.Collectible.Priest.MassDispel, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Shaman.EarthShock, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Neutral.IronbeakOwl, 1);
             this.silenceDatabase.Add(CardIds.Collectible.Priest.KabalSongstealer, 1);
@@ -4055,10 +4047,9 @@ namespace HREngine.Bots
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.Icehowl, 2);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.MogorTheOgre, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.NatTheDarkfisher, 0);
-            OwnNeedSilenceDatabase.Add(SimCard.spectralrider, 1);
-            OwnNeedSilenceDatabase.Add(SimCard.spectraltrainee, 1);
-            OwnNeedSilenceDatabase.Add(SimCard.spectralwarrior, 1);
-            OwnNeedSilenceDatabase.Add(SimCard.spore, 3);
+            OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingRider_SpectralRiderToken, 1);
+            OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingTrainee_SpectralTraineeToken, 1);
+            OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingWarrior_SpectralWarriorToken, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.TheBeast, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Warlock.UnlicensedApothecary, 1);
             OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingRider, 1);
@@ -4066,7 +4057,7 @@ namespace HREngine.Bots
             OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.UnrelentingWarrior, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.VentureCoMercenary, 1);
             OwnNeedSilenceDatabase.Add(CardIds.NonCollectible.Neutral.WhiteKnight, 2);
-            OwnNeedSilenceDatabase.Add(CardIds.Collectible.Druid.Wrathguard, 1);
+            OwnNeedSilenceDatabase.Add(CardIds.Collectible.Warlock.Wrathguard, 1);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.ZombieChow, 2);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.TickingAbomination, 0);
             OwnNeedSilenceDatabase.Add(CardIds.Collectible.Neutral.RattlingRascal, 1);
@@ -4147,7 +4138,7 @@ namespace HREngine.Bots
         {
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Bite, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Claw, 2);
-            this.heroAttackBuffDatabase.Add(SimCard.evolvespines, 4);
+            this.heroAttackBuffDatabase.Add(CardIds.NonCollectible.Druid.FeralRage_EvolveSpines, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.FeralRage, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Warrior.HeroicStrike, 4);
             this.heroAttackBuffDatabase.Add(CardIds.Collectible.Druid.Gnash, 3);
@@ -4159,7 +4150,7 @@ namespace HREngine.Bots
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.BlessingOfKings, 4);
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.BlessingOfMight, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Warlock.BloodfuryPotion, 3);
-            this.attackBuffDatabase.Add(SimCard.briarthorntoxin, 3);
+            this.attackBuffDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_BriarthornToxin, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.ClockworkKnight, 1);
             this.attackBuffDatabase.Add(CardIds.Collectible.Rogue.ColdBlood, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Warrior.CruelTaskmaster, 2);
@@ -4191,7 +4182,7 @@ namespace HREngine.Bots
             this.attackBuffDatabase.Add(CardIds.Collectible.Paladin.SpikeridgedSteed, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Priest.VelensChosen, 2);
             this.attackBuffDatabase.Add(CardIds.NonCollectible.Neutral.WhirlingBlades, 1);
-            this.attackBuffDatabase.Add(SimCard.antimagicshell, 2);
+            this.attackBuffDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_AntiMagicShellToken2, 2);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.FallenSunCleric, 1);
             this.attackBuffDatabase.Add(CardIds.Collectible.Shaman.Cryostasis, 3);
             this.attackBuffDatabase.Add(CardIds.Collectible.Neutral.Bonemare, 4);
@@ -4229,10 +4220,10 @@ namespace HREngine.Bots
             healthBuffDatabase.Add(CardIds.Collectible.Warrior.ScrewjankClunker, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Paladin.SilvermoonPortal, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Paladin.SpikeridgedSteed, 6);
-            healthBuffDatabase.Add(CardIds.Collectible.Warrior.Upgradedrepairbot, 4);
+            healthBuffDatabase.Add(CardIds.Collectible.Priest.UpgradedRepairBot, 4);
             healthBuffDatabase.Add(CardIds.Collectible.Priest.VelensChosen, 4);
             healthBuffDatabase.Add(CardIds.Collectible.Druid.Wildwalker, 3);
-            healthBuffDatabase.Add(SimCard.antimagicshell, 2);
+            healthBuffDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_AntiMagicShellToken2, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Neutral.SunborneValkyr, 2);
             healthBuffDatabase.Add(CardIds.Collectible.Neutral.FallenSunCleric, 1);
             healthBuffDatabase.Add(CardIds.Collectible.Shaman.Cryostasis, 3);
@@ -4253,7 +4244,7 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.ALightInTheDarkness, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.AncestralKnowledge, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.AncientOfLore, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.ancientteachings, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Druid.AncientofLore_AncientTeachingsClassic, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.ArcaneIntellect, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ArchThiefRafaam, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.AzureDrake, 1);
@@ -4263,9 +4254,9 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Burgle, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.CabalistsTome, 3);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.CallPet, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.carnassasbrood, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Hunter.TheMarshQueen_CarnassasBroodToken, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warlock.ChitteringTunneler, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.chooseyourpath, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Warrior.ExploreUnGoro_ChooseYourPathToken, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ColdlightOracle, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.CommandingShout, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.Convert, 1);
@@ -4278,7 +4269,7 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.EliseStarseeker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.EliteTaurenChieftain, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.EtherealConjurer, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.excessmana, 0);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Druid.WildGrowth_ExcessManaToken, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.FanOfKnives, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.FarSight, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.FightPromoter, 2);
@@ -4288,17 +4279,16 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.Flameheart, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Flare, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.FreeFromAmber, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.giftofcards, 1); //choice = 2
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Druid.GroveTender_GiftOfCards, 1); //choice = 2
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GnomishExperimenter, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GnomishInventor, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.goldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.EliseStarseeker_GoldenMonkeyToken, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GorillabotA3, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GrandCrusader, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.GrimestreetInformant, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Hallucination, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.HammerOfWrath, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.HarrisonJones, 0);
-            cardDrawBattleCryDatabase.Add(SimCard.harvest, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.HolyWrath, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.Hydrologist, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.IKnowAGuy, 1);
@@ -4310,18 +4300,17 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.KabalCourier, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.Kazakus, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.KingMukla, 2);
-            cardDrawBattleCryDatabase.Add(SimCard.kingsblood, 2);
-            cardDrawBattleCryDatabase.Add(SimCard.kingsbloodtoxin, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_KingsbloodToxin, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.KingsElekk, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.LayOnHands, 3);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Warlock.LifeTap, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.LockAndLoad, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.LotusAgents, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.LunarVisions, 2);
-            cardDrawBattleCryDatabase.Add(SimCard.maptothegoldenmonkey, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.EliseStarseeker_MapToTheGoldenMonkeyToken, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.MarkOfYshaarj, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.MassDispel, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.megafin, 9);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Shaman.UnitetheMurlocs_MegafinToken, 9);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.MimicPod, 2);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.Mindpocalypse, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.MindVision, 1);
@@ -4341,17 +4330,15 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.RavenIdol, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RazorpetalLasher, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RazorpetalVolley, 2);
-            cardDrawBattleCryDatabase.Add(SimCard.roguesdoit, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_RoguesDoIt, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.ServantOfKalimos, 0);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Shadowcaster, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.shadowoil, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Priest.ShadowVisions, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.ShieldBlock, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Shiv, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.Slam, 0); //if survives
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.SmallTimeRecruits, 3);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Paladin.SolemnVigil, 2);
-            cardDrawBattleCryDatabase.Add(SimCard.soultap, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.Spellslinger, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.Sprint, 4);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Stampede, 0);
@@ -4368,18 +4355,17 @@ namespace HREngine.Bots
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.TortollanPrimalist, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.Toshley, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.Tracking, 1); //NOT SUPPORTED YET
-            cardDrawBattleCryDatabase.Add(SimCard.ungoropack, 5);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.ElisetheTrailblazer_UngoroPackToken, 5);
             cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Neutral.UnholyShadow, 2);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.UnstablePortal, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Warrior.VarianWrynn, 3);
-            cardDrawBattleCryDatabase.Add(SimCard.wildmagic, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.Wrath, 1); //choice=2
-            cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.Wrathion, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.Wrathion, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.XarilPoisonedMind, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Druid.UltimateInfestation, 5);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Neutral.TombLurker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Mage.GhastlyConjurer, 1);
-            cardDrawBattleCryDatabase.Add(SimCard.deathgrip, 1);
+            cardDrawBattleCryDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_DeathGripToken, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Hunter.StitchedTracker, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Rogue.RollTheBones, 1);
             cardDrawBattleCryDatabase.Add(CardIds.Collectible.Shaman.IceFishing, 2);
@@ -4472,7 +4458,7 @@ namespace HREngine.Bots
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Hobgoblin, 10);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Hogger, 13);
             UsefulNeedKeepDatabase.Add(CardIds.NonCollectible.Neutral.HomingChicken, 12);
-            UsefulNeedKeepDatabase.Add(SimCard.illidanstormrage, 10);
+            UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Xavius, 10);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.Illuminator, 2);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Neutral.ImpMaster, 5);
             UsefulNeedKeepDatabase.Add(CardIds.Collectible.Rogue.IronSensei, 10);
@@ -4573,7 +4559,7 @@ namespace HREngine.Bots
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.Doomguard, 5);
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.LakkariFelhound, 4);
             cardDiscardDatabase.Add(CardIds.Collectible.Warlock.Soulfire, 1);
-            cardDiscardDatabase.Add(SimCard.succubus, 2);
+            cardDiscardDatabase.Add(CardIds.Collectible.Warlock.Felstalker, 2);
         }
 
         private void setupDestroyOwnCards()
@@ -4621,14 +4607,14 @@ namespace HREngine.Bots
             this.destroyDatabase.Add(CardIds.Collectible.Rogue.VilespineSlayer, 0);
             this.destroyDatabase.Add(CardIds.Collectible.Warlock.VoidCrusher, 0);
             this.destroyDatabase.Add(CardIds.Collectible.Priest.ObsidianStatue, 0);
-            this.destroyDatabase.Add(SimCard.obliterate, 0);
-            this.destroyDatabase.Add(CardIds.Collectible.Warlock.Doompact, 0);
+            this.destroyDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_ObliterateToken, 0);
+            this.destroyDatabase.Add(CardIds.NonCollectible.Deathknight.TheLichKing_DoomPactToken, 0);
         }
 
         private void setupReturnBackToHandCards()
         {
             returnHandDatabase.Add(CardIds.Collectible.Neutral.AncientBrewmaster, 0);
-            returnHandDatabase.Add(SimCard.bloodthistletoxin, 0);
+            returnHandDatabase.Add(CardIds.NonCollectible.Rogue.XarilPoisonedMind_BloodthistleToxin, 0);
             returnHandDatabase.Add(CardIds.NonCollectible.DreamCards.Dream, 0);
             returnHandDatabase.Add(CardIds.Collectible.Rogue.GadgetzanFerryman, 0);
             returnHandDatabase.Add(CardIds.Collectible.Rogue.Kidnapper, 0);//if combo
@@ -4717,7 +4703,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.DragonhawkRider, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 0);
-            specialMinions.Add(SimCard.dreadscale, 0);
+            specialMinions.Add(CardIds.Collectible.Hunter.Acidmaw_DreadscaleToken, 0);
             specialMinions.Add(CardIds.Collectible.Warlock.Dreadsteed, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Eggnapper, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.EmperorCobra, 0);
@@ -4739,7 +4725,6 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.FoeReaper4000, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 0);
             specialMinions.Add(CardIds.Collectible.Hunter.Gahzrilla, 0);
-            specialMinions.Add(SimCard.garr, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GarrisonCommander, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Gazlowe, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GenzoTheShark, 0);
@@ -4764,7 +4749,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Priest.HoodedAcolyte, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.HugeToad, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.IgneousElemental, 0);
-            specialMinions.Add(SimCard.illidanstormrage, 0);
+            specialMinions.Add(CardIds.Collectible.Neutral.Xavius, 0);
             specialMinions.Add(CardIds.Collectible.Warlock.ImpGangBoss, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.InfestedTauren, 0);
@@ -4803,7 +4788,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.ManaAddict, 0);
             specialMinions.Add(CardIds.Collectible.Priest.ManaGeode, 0);
             specialMinions.Add(CardIds.Collectible.Shaman.ManaTideTotem, 0);
-            specialMinions.Add(SimCard.manatreant, 0);
+            specialMinions.Add(CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.ManaWraith, 0);
             specialMinions.Add(CardIds.Collectible.Mage.ManaWyrm, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 0);
@@ -4813,7 +4798,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.MekgineerThermaplugg, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MicroMachine, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MimironsHead, 0);
-            specialMinions.Add(SimCard.mistressofpain, 0);
+            specialMinions.Add(CardIds.Collectible.Warlock.QueenOfPain, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.Moroes, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.MuklasChampion, 0);
             specialMinions.Add(CardIds.Collectible.Paladin.MurlocKnight, 0);
@@ -4973,7 +4958,7 @@ namespace HREngine.Bots
             specialMinions.Add(CardIds.Collectible.Neutral.Mindbreaker, 0);
             specialMinions.Add(CardIds.Collectible.Mage.IceWalker, 0);
             specialMinions.Add(CardIds.Collectible.Neutral.GraveShambler, 0);
-            specialMinions.Add(CardIds.Collectible.Warlock.Doomedapprentice, 0);
+            specialMinions.Add(CardIds.Collectible.Mage.DoomedApprentice, 0);
             specialMinions.Add(CardIds.Collectible.Druid.CryptLord, 0);
             specialMinions.Add(CardIds.Collectible.Hunter.CorpseWidow, 0);
         }
@@ -4994,7 +4979,6 @@ namespace HREngine.Bots
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Hunter.InfestedWolf, 1);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Rogue.JadeSwarmer, -1);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Hunter.KindlyGrandmother, -10);
-            ownSummonFromDeathrattle.Add(SimCard.moirabronzebeard, 3);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Druid.MountedRaptor, 3);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Neutral.NerubianEgg, -16);
             ownSummonFromDeathrattle.Add(CardIds.Collectible.Neutral.PilotedShredder, 4);
@@ -5022,14 +5006,14 @@ namespace HREngine.Bots
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.ClockworkKnight, 2);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.ColdlightSeer, 3);
             buffingMinionsDatabase.Add(CardIds.Collectible.Warrior.CruelTaskmaster, 0);
-            buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.Cthunschosen, 10);
+            buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.CthunsChosen, 10);
             buffingMinionsDatabase.Add(CardIds.Collectible.Mage.CultSorcerer, 10);
             buffingMinionsDatabase.Add(CardIds.Collectible.Druid.DarkArakkoa, 10);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.DarkIronDwarf, 0);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.DefenderOfArgus, 0);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.DireWolfAlpha, 0);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.DiscipleOfCthun, 10);
-            buffingMinionsDatabase.Add(CardIds.Collectible.Warlock.Doomcaller, 10);
+            buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.Doomcaller, 10);
             buffingMinionsDatabase.Add(CardIds.Collectible.Shaman.FlametongueTotem, 0);
             buffingMinionsDatabase.Add(CardIds.Collectible.Rogue.GoblinAutoBarber, 5);
             buffingMinionsDatabase.Add(CardIds.Collectible.Neutral.GrimscaleOracle, 3);
@@ -5051,7 +5035,7 @@ namespace HREngine.Bots
             buffingMinionsDatabase.Add(CardIds.Collectible.Priest.TempleEnforcer, 0);
             buffingMinionsDatabase.Add(CardIds.Collectible.Shaman.ThunderBluffValiant, 9);
             buffingMinionsDatabase.Add(CardIds.Collectible.Hunter.TimberWolf, 1);
-            buffingMinionsDatabase.Add(CardIds.Collectible.Warrior.Upgradedrepairbot, 2);
+            buffingMinionsDatabase.Add(CardIds.Collectible.Priest.UpgradedRepairBot, 2);
             buffingMinionsDatabase.Add(CardIds.Collectible.Warlock.UsherOfSouls, 10);
             buffingMinionsDatabase.Add(CardIds.Collectible.Paladin.WarhorseTrainer, 6);
             buffingMinionsDatabase.Add(CardIds.Collectible.Warrior.WarsongCommander, 7);
@@ -5110,7 +5094,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonhawkRider, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 4);
-            priorityTargets.Add(SimCard.dreadscale, 10);
+            priorityTargets.Add(CardIds.Collectible.Hunter.Acidmaw_DreadscaleToken, 10);
             priorityTargets.Add(CardIds.Collectible.Shaman.DustDevil, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.Eggnapper, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.EmperorThaurissan, 10);
@@ -5129,7 +5113,6 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Warrior.FrothingBerserker, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 10);
             priorityTargets.Add(CardIds.Collectible.Hunter.Gahzrilla, 10);
-            priorityTargets.Add(SimCard.garr, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GarrisonCommander, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.GenzoTheShark, 10);
             priorityTargets.Add(CardIds.Collectible.Druid.GiantAnaconda, 10);
@@ -5144,7 +5127,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Priest.HolyChampion, 10);
             priorityTargets.Add(CardIds.Collectible.Priest.HoodedAcolyte, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.IgneousElemental, 10);
-            priorityTargets.Add(SimCard.illidanstormrage, 10);
+            priorityTargets.Add(CardIds.Collectible.Neutral.Xavius, 10);
             priorityTargets.Add(CardIds.Collectible.Warlock.ImpGangBoss, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.ImpMaster, 10);
             priorityTargets.Add(CardIds.Collectible.Rogue.IronSensei, 10);
@@ -5169,7 +5152,7 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.Malygos, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.ManaAddict, 10);
             priorityTargets.Add(CardIds.Collectible.Shaman.ManaTideTotem, 10);
-            priorityTargets.Add(SimCard.manatreant, 10);
+            priorityTargets.Add(CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken, 10);
             priorityTargets.Add(CardIds.Collectible.Mage.ManaWyrm, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.Mechwarper, 10);
@@ -5241,8 +5224,6 @@ namespace HREngine.Bots
             priorityTargets.Add(CardIds.Collectible.Neutral.YshaarjRageUnbound, 10);
             priorityTargets.Add(CardIds.Collectible.Neutral.TheLichKing, 10);
             priorityTargets.Add(CardIds.Collectible.Priest.ObsidianStatue, 10);
-            priorityTargets.Add(SimCard.moirabronzebeard, 10);
-            priorityTargets.Add(SimCard.highjusticegrimstone, 10);
             priorityTargets.Add(CardIds.Collectible.Druid.Hadronox, 10);
             priorityTargets.Add(CardIds.NonCollectible.Neutral.Festergut, 10);
             priorityTargets.Add(CardIds.Collectible.Warlock.DespicableDreadlord, 10);
@@ -5278,7 +5259,7 @@ namespace HREngine.Bots
             lethalHelpers.Add(CardIds.Collectible.Priest.ProphetVelen, 0);
             lethalHelpers.Add(CardIds.Collectible.Mage.SootSpewer, 0);
             lethalHelpers.Add(CardIds.Collectible.Neutral.StreetTrickster, 0);
-            lethalHelpers.Add(CardIds.Collectible.Druid.Wrathofairtotem, 0);
+            lethalHelpers.Add(CardIds.NonCollectible.Shaman.WrathOfAirTotem, 0);
             lethalHelpers.Add(CardIds.Collectible.Neutral.TuskarrFisherman, 0);
             lethalHelpers.Add(CardIds.Collectible.Neutral.TaintedZealot, 1);
             lethalHelpers.Add(CardIds.Collectible.Neutral.Spellweaver, 2);
@@ -5389,7 +5370,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonEgg, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonhawkRider, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.DragonkinSorcerer, 0);
-            silenceTargets.Add(SimCard.dreadscale, 0);
+            silenceTargets.Add(CardIds.Collectible.Hunter.Acidmaw_DreadscaleToken, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.Eggnapper, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.Emboldener3000, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.EmperorCobra, 0);
@@ -5412,7 +5393,6 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Warrior.FrothingBerserker, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 10);
             silenceTargets.Add(CardIds.Collectible.Hunter.Gahzrilla, 0);
-            silenceTargets.Add(SimCard.garr, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.GarrisonCommander, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.GiantAnaconda, 0);
             silenceTargets.Add(CardIds.Collectible.Hunter.GiantSandWorm, 0);
@@ -5433,7 +5413,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.NonCollectible.Neutral.HomingChicken, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.HoodedAcolyte, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.IgneousElemental, 0);
-            silenceTargets.Add(SimCard.illidanstormrage, 0);
+            silenceTargets.Add(CardIds.Collectible.Neutral.Xavius, 0);
             silenceTargets.Add(CardIds.Collectible.Warlock.ImpGangBoss, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             silenceTargets.Add(CardIds.Collectible.Rogue.IronSensei, 0);
@@ -5465,7 +5445,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.ManaAddict, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.ManaGeode, 0);
             silenceTargets.Add(CardIds.Collectible.Shaman.ManaTideTotem, 0);
-            silenceTargets.Add(SimCard.manatreant, 0);
+            silenceTargets.Add(CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ManaWraith, 0);
             silenceTargets.Add(CardIds.Collectible.Mage.ManaWyrm, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.MasterSwordsmith, 0);
@@ -5555,7 +5535,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Rogue.UndercityHuckster, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.Undertaker, 0);
             silenceTargets.Add(CardIds.Collectible.Warlock.UsherOfSouls, 0);
-            silenceTargets.Add(SimCard.v07tr0n, 0);
+            silenceTargets.Add(CardIds.NonCollectible.Neutral.MimironsHead_V07Tr0NToken, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ViciousFledgling, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.VioletIllusionist, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.VioletTeacher, 0);
@@ -5579,9 +5559,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.Skelemancer, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.ShallowGravedigger, 0);
             silenceTargets.Add(CardIds.Collectible.Priest.ShadowAscendant, 0);
-            silenceTargets.Add(SimCard.moirabronzebeard, 0);
             silenceTargets.Add(CardIds.Collectible.Neutral.MeatWagon, 0);
-            silenceTargets.Add(SimCard.highjusticegrimstone, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.Hadronox, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.FrozenChampion, 0);
             silenceTargets.Add(CardIds.NonCollectible.Neutral.Festergut, 0);
@@ -5608,7 +5586,7 @@ namespace HREngine.Bots
             silenceTargets.Add(CardIds.Collectible.Neutral.NecroticGeist, 0);
             silenceTargets.Add(CardIds.Collectible.Shaman.Moorabi, 0);
             silenceTargets.Add(CardIds.Collectible.Mage.IceWalker, 0);
-            silenceTargets.Add(CardIds.Collectible.Warlock.Doomedapprentice, 0);
+            silenceTargets.Add(CardIds.Collectible.Mage.DoomedApprentice, 0);
             silenceTargets.Add(CardIds.Collectible.Druid.CryptLord, 0);
             silenceTargets.Add(CardIds.Collectible.Hunter.CorpseWidow, 0);
             silenceTargets.Add(CardIds.Collectible.Paladin.BolvarFireblood, 0);
@@ -5631,7 +5609,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Warrior.Brawl, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.CaptainsParrot, 1);
             randomEffects.Add(CardIds.Collectible.Warlock.ChitteringTunneler, 1);
-            randomEffects.Add(SimCard.chooseyourpath, 1);
+            randomEffects.Add(CardIds.NonCollectible.Warrior.ExploreUnGoro_ChooseYourPathToken, 1);
             randomEffects.Add(CardIds.Collectible.Warrior.Cleave, 2);
             randomEffects.Add(CardIds.Collectible.Paladin.Coghammer, 1);
             randomEffects.Add(CardIds.Collectible.Shaman.Crackle, 1);
@@ -5659,10 +5637,9 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Mage.GreaterArcaneMissiles, 3);
             randomEffects.Add(CardIds.Collectible.Neutral.GrimestreetInformant, 1);
             randomEffects.Add(CardIds.Collectible.Rogue.Hallucination, 1);
-            randomEffects.Add(SimCard.harvest, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.HungryDragon, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.Hydrologist, 1);
-            randomEffects.Add(SimCard.iammurloc, 3);
+            randomEffects.Add(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_IAmMurloc, 3);
             randomEffects.Add(CardIds.Collectible.Warrior.IKnowAGuy, 1);
             randomEffects.Add(CardIds.Collectible.Warrior.IronforgePortal, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.IvoryKnight, 1);
@@ -5671,7 +5648,6 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Neutral.KabalChemist, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.KabalCourier, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.Kazakus, 1);
-            randomEffects.Add(SimCard.kingsblood, 1);
             randomEffects.Add(CardIds.NonCollectible.Warlock.LifeTap, 1);
             randomEffects.Add(CardIds.Collectible.Shaman.LightningStorm, 1);
             randomEffects.Add(CardIds.Collectible.Hunter.LockAndLoad, 10);
@@ -5681,7 +5657,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Shaman.MaelstromPortal, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.MasterJouster, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.MenagerieMagician, 0);
-            randomEffects.Add(CardIds.Collectible.Priest.MindControltech, 1);
+            randomEffects.Add(CardIds.Collectible.Neutral.MindControlTech, 1);
             randomEffects.Add(CardIds.Collectible.Priest.Mindgames, 1);
             randomEffects.Add(CardIds.Collectible.Priest.MindVision, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.MogorsChampion, 1);
@@ -5691,7 +5667,7 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Priest.MuseumCurator, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.MysteriousChallenger, 2);
             randomEffects.Add(CardIds.NonCollectible.Neutral.PileOn, 1);
-            randomEffects.Add(SimCard.powerofthehorde, 1);
+            randomEffects.Add(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_PowerOfTheHorde, 1);
             randomEffects.Add(CardIds.Collectible.Mage.PrimordialGlyph, 1);
             randomEffects.Add(CardIds.Collectible.Hunter.RamWrangler, 1);
             randomEffects.Add(CardIds.Collectible.Druid.RavenIdol, 1);
@@ -5699,11 +5675,9 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Rogue.Sabotage, 0);
             randomEffects.Add(CardIds.Collectible.Warlock.SenseDemons, 2);
             randomEffects.Add(CardIds.Collectible.Neutral.ServantOfKalimos, 1);
-            randomEffects.Add(SimCard.shadowoil, 1);
             randomEffects.Add(CardIds.Collectible.Priest.ShadowVisions, 1);
             randomEffects.Add(CardIds.Collectible.Paladin.SilvermoonPortal, 1);
             randomEffects.Add(CardIds.Collectible.Neutral.SirFinleyMrrgglton, 1);
-            randomEffects.Add(SimCard.soultap, 1);
             randomEffects.Add(CardIds.Collectible.Mage.Spellslinger, 1);
             randomEffects.Add(CardIds.Collectible.Warlock.SpreadingMadness, 9);
             randomEffects.Add(CardIds.Collectible.Hunter.Stampede, 10);
@@ -5754,7 +5728,6 @@ namespace HREngine.Bots
             this.choose1database.Add(CardIds.Collectible.Druid.WispsOfTheOldGods, CardIds.NonCollectible.Druid.WispsoftheOldGods_ManyWisps);
             this.choose1database.Add(CardIds.Collectible.Druid.Wrath, CardIds.NonCollectible.Druid.Wrath_SolarWrath);
             this.choose1database.Add(CardIds.Collectible.Druid.MalfurionThePestilent, CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderPlague);
-            this.choose1database.Add(SimCard.plaguelord, CardIds.NonCollectible.Druid.MalfurionthePestilent_SpiderFangs);
             this.choose1database.Add(CardIds.Collectible.Druid.DruidOfTheSwarm, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1);
 
             this.choose2database.Add(CardIds.Collectible.Druid.AncientOfLore, CardIds.NonCollectible.Druid.AncientofLore_AncientSecretsClassic);
@@ -5763,8 +5736,8 @@ namespace HREngine.Bots
             this.choose2database.Add(CardIds.Collectible.Druid.Cenarius, CardIds.NonCollectible.Druid.Cenarius_ShandosLesson);
             this.choose2database.Add(CardIds.Collectible.Druid.DarkWispers, CardIds.NonCollectible.Druid.DarkWispers_CallTheGuardians);
             this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheClaw, CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic2);
-            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheFlame, CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken12);
-            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheSaber, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken12);
+            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheFlame, CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken1);
+            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheSaber, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2);
             this.choose2database.Add(CardIds.Collectible.Druid.FeralRage, CardIds.NonCollectible.Druid.FeralRage_EvolveScales);
             this.choose2database.Add(CardIds.Collectible.Druid.GroveTender, CardIds.NonCollectible.Druid.GroveTender_GiftOfCards);
             this.choose2database.Add(CardIds.Collectible.Druid.JadeIdol, CardIds.NonCollectible.Druid.JadeIdol_JadeStash);
@@ -5772,17 +5745,16 @@ namespace HREngine.Bots
             this.choose2database.Add(CardIds.Collectible.Druid.KunTheForgottenKing, CardIds.NonCollectible.Druid.KuntheForgottenKing_ForgottenMana);
             this.choose2database.Add(CardIds.Collectible.Druid.LivingRoots, CardIds.NonCollectible.Druid.LivingRoots_OneTwoTrees);
             this.choose2database.Add(CardIds.Collectible.Druid.MarkOfNature, CardIds.NonCollectible.Druid.MarkofNature_ThickHide);
-            this.choose2database.Add(CardIds.Collectible.Druid.MireKeeper, CardIds.NonCollectible.Druid.MireKeeper_YshaarjsStrengthe);
+            this.choose2database.Add(CardIds.Collectible.Druid.MireKeeper, CardIds.NonCollectible.Druid.MireKeeper_YshaarjsStrengthEnchantment);
             this.choose2database.Add(CardIds.Collectible.Druid.Nourish, CardIds.NonCollectible.Druid.Nourish_Enrich);
             this.choose2database.Add(CardIds.Collectible.Druid.PowerOfTheWild, CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken);
             this.choose2database.Add(CardIds.Collectible.Druid.RavenIdol, CardIds.NonCollectible.Druid.RavenIdol_Awakened);
-            this.choose2database.Add(CardIds.Collectible.Druid.Shellshifter, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken12);
+            this.choose2database.Add(CardIds.Collectible.Druid.Shellshifter, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken2);
             this.choose2database.Add(CardIds.Collectible.Druid.Starfall, CardIds.NonCollectible.Druid.Starfall_StellarDrift);
             this.choose2database.Add(CardIds.Collectible.Druid.WispsOfTheOldGods, CardIds.NonCollectible.Druid.WispsoftheOldGods_BigWisps);
             this.choose2database.Add(CardIds.Collectible.Druid.Wrath, CardIds.NonCollectible.Druid.Wrath_NaturesWrath);
             this.choose2database.Add(CardIds.Collectible.Druid.MalfurionThePestilent, CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabPlague);
-            this.choose2database.Add(CardIds.NonCollectible.Druid.malfu, CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabShell);
-            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheSwarm, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken12);
+            this.choose2database.Add(CardIds.Collectible.Druid.DruidOfTheSwarm, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken2);
         }
 
 
@@ -5796,31 +5768,31 @@ namespace HREngine.Bots
                     break;
                 case CardClass.WARRIOR:
                     if (this.ClassRacePriorityWarrior.ContainsKey(minionRace)) retval += this.ClassRacePriorityWarrior[minionRace];
-					break;
+                    break;
                 case CardClass.ROGUE:
                     if (this.ClassRacePriorityRouge.ContainsKey(minionRace)) retval += this.ClassRacePriorityRouge[minionRace];
-					break;
+                    break;
                 case CardClass.SHAMAN:
                     if (this.ClassRacePriorityShaman.ContainsKey(minionRace)) retval += this.ClassRacePriorityShaman[minionRace];
-					break;
+                    break;
                 case CardClass.PRIEST:
                     if (this.ClassRacePriorityPriest.ContainsKey(minionRace)) retval += this.ClassRacePriorityPriest[minionRace];
-					break;
+                    break;
                 case CardClass.PALADIN:
                     if (this.ClassRacePriorityPaladin.ContainsKey(minionRace)) retval += this.ClassRacePriorityPaladin[minionRace];
-					break;
+                    break;
                 case CardClass.MAGE:
                     if (this.ClassRacePriorityMage.ContainsKey(minionRace)) retval += this.ClassRacePriorityMage[minionRace];
-					break;
+                    break;
                 case CardClass.HUNTER:
                     if (this.ClassRacePriorityHunter.ContainsKey(minionRace)) retval += this.ClassRacePriorityHunter[minionRace];
-					break;
+                    break;
                 case CardClass.DRUID:
                     if (this.ClassRacePriorityDruid.ContainsKey(minionRace)) retval += this.ClassRacePriorityDruid[minionRace];
                     break;
                 default:
                     break;
-			}
+            }
             return retval;
         }
 
@@ -5900,7 +5872,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.AzureDrake, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.BaronRivendare, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.BigGameHunter, 5);
-            GangUpDatabase.Add(CardIds.Collectible.Druid.Biteweed, 5);
+            GangUpDatabase.Add(CardIds.Collectible.Rogue.Biteweed, 5);
             GangUpDatabase.Add(CardIds.Collectible.Rogue.BladeOfCthun, 5);
             GangUpDatabase.Add(CardIds.Collectible.Warlock.BloodImp, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.BombLobber, 4);
@@ -5915,7 +5887,6 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Mage.ColdarraDrake, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ColdlightOracle, 5);
             GangUpDatabase.Add(CardIds.Collectible.Priest.ConfessorPaletress, 5);
-            GangUpDatabase.Add(SimCard.corendirebrew, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Cthun, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.CultApothecary, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.CultMaster, 1);
@@ -5943,7 +5914,6 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Warrior.FrothingBerserker, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GadgetzanAuctioneer, 1);
             GangUpDatabase.Add(CardIds.Collectible.Hunter.Gahzrilla, 5);
-            GangUpDatabase.Add(SimCard.garr, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Gazlowe, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GelbinMekkatorque, 3);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.GenzoTheShark, 5);
@@ -5953,12 +5923,11 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Gruul, 4);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HarrisonJones, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HemetNesingwary, 1);
-            GangUpDatabase.Add(SimCard.highjusticegrimstone, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Hobgoblin, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Hogger, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.HoggerDoomOfElwynn, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.IgneousElemental, 1);
-            GangUpDatabase.Add(SimCard.illidanstormrage, 5);
+            GangUpDatabase.Add(CardIds.Collectible.Neutral.Xavius, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ImpMaster, 0);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.InfestedTauren, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.IronbeakOwl, 4);
@@ -5992,7 +5961,6 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MicroMachine, 1);
             GangUpDatabase.Add(CardIds.NonCollectible.Hunter.Misha, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MoatLurker, 4);
-            GangUpDatabase.Add(SimCard.moirabronzebeard, 5);
             GangUpDatabase.Add(CardIds.Collectible.Paladin.MurlocKnight, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MurlocTidecaller, 1);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.MurlocWarleader, 1);
@@ -6049,7 +6017,7 @@ namespace HREngine.Bots
             GangUpDatabase.Add(CardIds.Collectible.Neutral.Undertaker, 0);
             GangUpDatabase.Add(CardIds.Collectible.Rogue.UnearthedRaptor, 5);
             GangUpDatabase.Add(CardIds.Collectible.Warlock.UsherOfSouls, 1);
-            GangUpDatabase.Add(SimCard.v07tr0n, 5);
+            GangUpDatabase.Add(CardIds.NonCollectible.Neutral.MimironsHead_V07Tr0NToken, 5);
             GangUpDatabase.Add(CardIds.NonCollectible.Neutral.Vaelastrasz, 5);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.ViciousFledgling, 2);
             GangUpDatabase.Add(CardIds.Collectible.Neutral.VioletIllusionist, 5);
@@ -6099,14 +6067,11 @@ namespace HREngine.Bots
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Neutral.MedivhTheGuardian, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Paladin.MusterForBattle, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.NzothsFirstMate, 1);
-            equipWeaponPlayDatabase.Add(SimCard.poisoneddaggers, 2);
+            equipWeaponPlayDatabase.Add(CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers, 2);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.Upgrade, 1);
-            equipWeaponPlayDatabase.Add(SimCard.visionsoftheassassin, 1);
+            equipWeaponPlayDatabase.Add(CardIds.NonCollectible.Warrior.VisionsOfTheAssassinTavernBrawl, 1);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Paladin.UtherOfTheEbonBlade, 5);
             equipWeaponPlayDatabase.Add(CardIds.Collectible.Warrior.ScourgelordGarrosh, 4);
         }
-
-
     }
-
 }
