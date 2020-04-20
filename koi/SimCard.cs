@@ -5,7 +5,7 @@ using HREngine.Bots;
 using System;
 using System.Reflection;
 
-namespace Chireiden.Silverfish
+ namespace Chireiden.Silverfish
 {
     public partial class SimCard
     {
@@ -108,6 +108,7 @@ namespace Chireiden.Silverfish
 
         public static SimCard FromName(string name)
         {
+            var i =CardIds.Collectible.Demonhunter.Battlefiend;
             if (!Cards.Collectible.TryGetValue(name, out var card) && !Cards.All.TryGetValue(name, out card))
             {
                 card = Cards.GetFromName(name, Locale.enUS)

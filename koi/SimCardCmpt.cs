@@ -822,19 +822,13 @@ namespace Chireiden.Silverfish
             switch (this.CardId)
             {
                 case CardIds.Collectible.Druid.VolcanicLumberer:
-                    retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
-                    break;
                 case CardIds.Collectible.Paladin.SolemnVigil:
-                    retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
-                    break;
                 case CardIds.Collectible.Neutral.VolcanicDrake:
+                case CardIds.Collectible.Mage.DragonsBreath:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
                 case CardIds.Collectible.Druid.KnightOfTheWild:
                     retval = retval + offset - p.tempTrigger.ownBeastSummoned;
-                    break;
-                case CardIds.Collectible.Mage.DragonsBreath:
-                    retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
                 case CardIds.Collectible.Neutral.DreadCorsair:
                     retval = retval + offset - p.ownWeapon.Angr + p.ownWeaponAttackStarted; // if weapon attack change we change manacost
@@ -907,9 +901,6 @@ namespace Chireiden.Silverfish
                 case CardIds.Collectible.Neutral.HappyGhoul:
                     if (p.ownHero.anzGotHealed > 0) retval = 0;
                     break;
-                case cardName.wildmagic:
-                    retval = 0;
-                    break;
                 case CardIds.Collectible.Shaman.ThingFromBelow:
                     if (p.playactions.Count > 0)
                     {
@@ -921,7 +912,7 @@ namespace Chireiden.Silverfish
                                 {
                                     case CardIds.Collectible.Shaman.TuskarrTotemic: retval -= p.ownBrannBronzebeard + 1; break;
                                     default:
-                                        if ((Race)a.card.card.race == Race.TOTEM) retval--;
+                                        if ((Race)a.card.card.Race == Race.TOTEM) retval--;
                                         break;
                                 }
                             }
