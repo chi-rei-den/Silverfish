@@ -79,8 +79,6 @@ namespace Chireiden.Silverfish
 
         public SimTemplate Simulator => (SimTemplate)Activator.CreateInstance(Assembly.GetExecutingAssembly().GetType($"Sim_{this.CardId}"));
 
-        public string name_TBRM => this.CardId;
-
         public override int GetHashCode()
         {
             return this.CardDef.GetHashCode();

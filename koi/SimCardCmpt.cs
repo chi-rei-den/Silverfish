@@ -1,4 +1,4 @@
-﻿///
+///
 // This file contains a few methods required for the bot to run.
 // They will be removed in later updates
 ///
@@ -9,12 +9,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HearthDb;
 
 namespace Chireiden.Silverfish
 {
     partial class SimCard
     {
-        dynamic playrequires;
+        public bool IsToken => CardId.EndsWith("t");
         public List<Minion> getTargetsForCard(Playfield p, bool isLethalCheck, bool own)
         {
             //if wereTargets=true and 0 targets at end -> then can not play this card
@@ -23,8 +24,14 @@ namespace Chireiden.Silverfish
             if (this.Secret && ((own && (p.ownSecretsIDList.Contains(this) || p.ownSecretsIDList.Count >= 5)) || (!own && p.enemySecretCount >= 5))) return retval;
             //if (p.mana < this.getManaCost(p, 1)) return retval;
 
-            if (this.playrequires.Count == 0) { retval.Add(null); return retval; }
-
+            // https://github.com/HearthSim/HearthDb/issues/18
+            // The PlayRequirement section lost since version 16.0.0.37060
+            // So it will ALWAYS be true
+            if (true) /*this.playrequires.Count == 0*/
+            {
+                retval.Add(null); return retval;
+            }
+            /*
             List<Minion> targets = new List<Minion>();
             bool targetAll = false;
             bool targetAllEnemy = false;
@@ -121,7 +128,7 @@ namespace Chireiden.Silverfish
                         int difftotem = 0;
                         foreach (Minion m in (own ? p.ownMinions : p.enemyMinions))
                         {
-                            if (m.name == CardDB.cardName.healingtotem || m.name == CardDB.cardName.wrathofairtotem || m.name == CardDB.cardName.searingtotem || m.name == CardDB.cardName.stoneclawtotem) difftotem++;
+                            if (m.name == cardName.healingtotem || m.name == cardName.wrathofairtotem || m.name == cardName.searingtotem || m.name == cardName.stoneclawtotem) difftotem++;
                         }
                         if (difftotem == 4) return retval;
                         continue;
@@ -134,7 +141,7 @@ namespace Chireiden.Silverfish
                         {
                             foreach (Handmanager.Handcard hc in p.owncards)
                             {
-                                if ((TAG_RACE)hc.card.race == TAG_RACE.DRAGON) { targetAll = true; break; }
+                                if ((Race)hc.card.Race == Race.DRAGON) { targetAll = true; break; }
                             }
                         }
                         else targetAll = true; // apriori the enemy have a dragon
@@ -242,10 +249,10 @@ namespace Chireiden.Silverfish
                 {
                     foreach (Minion m in targets)
                     {
-                        if (m.handcard.card.race != this.needRaceForPlaying) m.extraParam = true;
+                        if (m.handcard.card.Race != this.needRaceForPlaying) m.extraParam = true;
                     }
-                    targetOwnHero = (p.ownHeroName == HeroEnum.lordjaraxxus && (TAG_RACE)this.needRaceForPlaying == TAG_RACE.DEMON);
-                    targetEnemyHero = (p.enemyHeroName == HeroEnum.lordjaraxxus && (TAG_RACE)this.needRaceForPlaying == TAG_RACE.DEMON);
+                    targetOwnHero = (p.ownHeroName == HeroEnum.lordjaraxxus && (Race)this.needRaceForPlaying == Race.DEMON);
+                    targetEnemyHero = (p.enemyHeroName == HeroEnum.lordjaraxxus && (Race)this.needRaceForPlaying == Race.DEMON);
                 }
                 if (REQ_HERO_TARGET)
                 {
@@ -332,7 +339,7 @@ namespace Chireiden.Silverfish
                 {
                     foreach (Minion m in targets)
                     {
-                        if (!m.silenced && (m.handcard.card.deathrattle || m.deathrattle2 != null ||
+                        if (!m.silenced && (m.handcard.card.Deathrattle || m.deathrattle2 != null ||
                         m.ancestralspirit + m.desperatestand + m.souloftheforest + m.stegodon + m.livingspores + m.explorershat + m.returnToHand + m.infest > 0)) continue;
                         else m.extraParam = true;
                     }
@@ -353,7 +360,7 @@ namespace Chireiden.Silverfish
                     wereTargets = false;
                     foreach (Minion m in targets)
                     {
-                        if (m.handcard.card.rarity != 5) m.extraParam = true;
+                        if (m.handcard.card.Rarity != Rarity.LEGENDARY) m.extraParam = true;
                     }
                     targetOwnHero = false;
                     targetEnemyHero = false;
@@ -364,7 +371,7 @@ namespace Chireiden.Silverfish
                     {
                         foreach (Minion m in targets)
                         {
-                            if (m.cantBeTargetedBySpellsOrHeroPowers && (this.type == cardtype.HEROPWR || this.type == cardtype.SPELL))
+                            if (m.cantBeTargetedBySpellsOrHeroPowers && (this.Type == CardType.HERO_POWER || this.Type == CardType.SPELL))
                             {
                                 m.extraParam = true;
                                 if (m.stealth && !m.own) m.extraParam = true;
@@ -393,9 +400,9 @@ namespace Chireiden.Silverfish
                 if (targetEnemyHero && own) retval.Add(p.enemyHero);
                 else if (targetOwnHero && !own) retval.Add(p.ownHero);
 
-                switch (this.type)
+                switch (this.Type)
                 {
-                    case cardtype.SPELL:
+                    case CardType.SPELL:
                         if (p.prozis.penman.attackBuffDatabase.ContainsKey(this.name))
                         {
                             if (targetOwnHero && own) retval.Add(p.ownHero);
@@ -416,7 +423,7 @@ namespace Chireiden.Silverfish
                         {
                             switch (this.name)
                             {
-                                case cardName.polymorphboar:
+                                case CardIds.Collectible.Mage.PolymorphBoar:
                                     foreach (Minion m in targets)
                                     {
                                         m.extraParam = false;
@@ -425,8 +432,8 @@ namespace Chireiden.Silverfish
                                         else if (m.taunt) retval.Add(m);
                                     }
                                     break;
-                                case cardName.hex: goto case cardName.polymorph;
-                                case cardName.polymorph:
+                                case CardIds.Collectible.Shaman.Hex: goto case CardIds.Collectible.Mage.Polymorph;
+                                case CardIds.Collectible.Mage.Polymorph:
                                     foreach (Minion m in targets)
                                     {
                                         m.extraParam = false;
@@ -436,7 +443,7 @@ namespace Chireiden.Silverfish
                             }
                         }
                         break;
-                    case cardtype.MOB:
+                    case CardType.MINION:
                         foreach (Minion m in targets)
                         {
                             if (m.extraParam != true)
@@ -447,7 +454,7 @@ namespace Chireiden.Silverfish
                             m.extraParam = false;
                         }
                         break;
-                    case cardtype.HEROPWR:
+                    case CardType.HERO_POWER:
                         if (p.prozis.penman.attackBuffDatabase.ContainsKey(this.name))
                         {
                             foreach (Minion m in targets)
@@ -476,7 +483,7 @@ namespace Chireiden.Silverfish
                     if (m.extraParam != true)
                     {
                         if (m.stealth && !m.own) continue;
-                        if (m.cantBeTargetedBySpellsOrHeroPowers && (this.type == cardtype.SPELL || this.type == cardtype.HEROPWR)) continue;
+                        if (m.cantBeTargetedBySpellsOrHeroPowers && (this.Type == CardType.SPELL || this.Type == CardType.HERO_POWER)) continue;
                         retval.Add(m);
                     }
                     m.extraParam = false;
@@ -486,32 +493,33 @@ namespace Chireiden.Silverfish
             if (retval.Count == 0 && (!wereTargets || REQ_TARGET_IF_AVAILABLE)) retval.Add(null);
 
             return retval;
+            */
         }
 
 
         public List<Minion> getTargetsForHeroPower(Playfield p, bool own)
         {
-            List<Minion> trgts = getTargetsForCard(p, p.isLethalCheck, own);
-            cardName abName = own ? p.ownHeroAblility.card.name : p.enemyHeroAblility.card.name;
+            List<Minion> trgts = this.getTargetsForCard(p, p.isLethalCheck, own);
+            var abName = own ? p.ownHeroAblility.card.CardId : p.enemyHeroAblility.card.CardId;
             int abType = 0; //0 none, 1 damage, 2 heal, 3 baff
             switch (abName)
             {
-                case cardName.heal: goto case cardName.lesserheal;
-                case cardName.lesserheal:
+                case cardName.heal:
+                case CardIds.NonCollectible.Priest.LesserHeal:
                     if (p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0) abType = 1;
                     else abType = 2;
                     break;
                 case cardName.ballistashot: abType = 1; break;
-                case cardName.steadyshot: abType = 1; break;
-                case cardName.fireblast: abType = 1; break;
-                case cardName.fireblastrank2: abType = 1; break;
+                case CardIds.NonCollectible.Hunter.SteadyShot: abType = 1; break;
+                case CardIds.NonCollectible.Mage.Fireblast: abType = 1; break;
+                case CardIds.NonCollectible.Mage.Fireblastrank2: abType = 1; break;
                 case cardName.lightningjolt: abType = 1; break;
                 case cardName.mindspike: abType = 1; break;
                 case cardName.mindshatter: abType = 1; break;
-                case cardName.powerofthefirelord: abType = 1; break;
-                case cardName.shotgunblast: abType = 1; break;
-                case cardName.unbalancingstrike: abType = 1; break;
-                case cardName.dinomancy: abType = 3; break;
+                case CardIds.NonCollectible.Neutral.PowerOfTheFirelord: abType = 1; break;
+                case CardIds.NonCollectible.Hunter.ShotgunBlast: abType = 1; break;
+                case CardIds.NonCollectible.Neutral.UnbalancingStrike: abType = 1; break;
+                case CardIds.Collectible.Hunter.Dinomancy: abType = 3; break;
             }
 
             switch (abType)
@@ -522,14 +530,14 @@ namespace Chireiden.Silverfish
                     bool needCut = true;
                     for (int i = 0; i < tCount; i++)
                     {
-                        switch (minions[i].name)
+                        switch (minions[i].name.CardId)
                         {
-                            case cardName.shadowboxer:
+                            case CardIds.Collectible.Priest.Shadowboxer:
                                 if (own && p.enemyHero.Hp == 1 && p.enemyMinions.Count > 0) needCut = false;
                                 break;
-                            case cardName.holychampion: needCut = false; break;
-                            case cardName.lightwarden: needCut = false; break;
-                            case cardName.northshirecleric: needCut = false; break;
+                            case CardIds.Collectible.Priest.HolyChampion: needCut = false; break;
+                            case CardIds.Collectible.Neutral.Lightwarden: needCut = false; break;
+                            case CardIds.Collectible.Priest.NorthshireCleric: needCut = false; break;
 
 
                         }
@@ -563,19 +571,19 @@ namespace Chireiden.Silverfish
 
         public int calculateManaCost(Playfield p)//calculates the mana from orginal mana, needed for back-to hand effects and new draw
         {
-            int retval = this.cost;
+            int retval = this.Cost;
             int offset = 0;
 
             if (p.anzOwnShadowfiend > 0) offset -= p.anzOwnShadowfiend;
 
-            switch (this.type)
+            switch (this.Type)
             {
-                case cardtype.MOB:
+                case CardType.MINION:
                     if (p.anzOwnAviana > 0) retval = 1;
 
                     offset += p.ownMinionsCostMore;
 
-                    if (this.deathrattle) offset += p.ownDRcardsCostMore;
+                    if (this.Deathrattle) offset += p.ownDRcardsCostMore;
 
                     offset += p.managespenst;
 
@@ -588,17 +596,17 @@ namespace Chireiden.Silverfish
                         offset -= p.winzigebeschwoererin;
                     }
 
-                    if (this.battlecry)
+                    if (this.Battlecry)
                     {
                         offset += p.nerubarweblord * 2;
                     }
 
-                    if ((TAG_RACE)this.race == TAG_RACE.MECHANICAL)
+                    if ((Race)this.Race == Race.MECHANICAL)
                     { //if the number of zauberlehrlings change
                         offset -= p.anzOwnMechwarper;
                     }
                     break;
-                case cardtype.SPELL:
+                case CardType.SPELL:
                     if (p.nextSpellThisTurnCost0) return 0;
                     offset += p.ownSpelsCostMore;
                     if (p.playedPreparation)
@@ -606,81 +614,81 @@ namespace Chireiden.Silverfish
                         offset -= 2;
                     }
                     break;
-                case cardtype.WEAPON:
+                case CardType.WEAPON:
                     offset -= p.blackwaterpirate * 2;
-                    if (this.deathrattle) offset += p.ownDRcardsCostMore;
+                    if (this.Deathrattle) offset += p.ownDRcardsCostMore;
                     break;
             }
 
             offset -= p.myCardsCostLess;
 
-            switch (this.name)
+            switch (this.CardId)
             {
-                case CardDB.cardName.happyghoul:
+                case CardIds.Collectible.Neutral.HappyGhoul:
                     if (p.ownHero.anzGotHealed > 0) retval = offset;
                     break;
-                case CardDB.cardName.wildmagic:
+                case cardName.wildmagic:
                     retval = offset;
                     break;
-                case CardDB.cardName.dreadcorsair:
+                case CardIds.Collectible.Neutral.DreadCorsair:
                     retval = retval + offset - p.ownWeapon.Angr;
                     break;
-                case CardDB.cardName.volcanicdrake:
+                case CardIds.Collectible.Neutral.VolcanicDrake:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.knightofthewild:
+                case CardIds.Collectible.Druid.KnightOfTheWild:
                     retval = retval + offset - p.tempTrigger.ownBeastSummoned;
                     break;
-                case CardDB.cardName.seagiant:
+                case CardIds.Collectible.Neutral.SeaGiant:
                     retval = retval + offset - p.ownMinions.Count - p.enemyMinions.Count;
                     break;
-                case CardDB.cardName.mountaingiant:
+                case CardIds.Collectible.Neutral.MountainGiant:
                     retval = retval + offset - p.owncards.Count;
                     break;
-                case CardDB.cardName.clockworkgiant:
+                case CardIds.Collectible.Neutral.ClockworkGiant:
                     retval = retval + offset - p.enemyAnzCards;
                     break;
-                case CardDB.cardName.moltengiant:
+                case CardIds.Collectible.Neutral.MoltenGiant:
                     retval = retval + offset - p.ownHero.maxHp + p.ownHero.Hp;
                     break;
-                case CardDB.cardName.frostgiant:
+                case CardIds.Collectible.Neutral.FrostGiant:
                     retval = retval + offset - p.anzUsedOwnHeroPower;
                     break;
-                case CardDB.cardName.arcanegiant:
+                case CardIds.Collectible.Neutral.ArcaneGiant:
                     retval = retval + offset - p.spellsplayedSinceRecalc;
                     break;
-                case CardDB.cardName.snowfurygiant:
+                case CardIds.Collectible.Shaman.SnowfuryGiant:
                     retval = retval + offset - p.ueberladung;
                     break;
-                case CardDB.cardName.kabalcrystalrunner:
+                case CardIds.Collectible.Mage.KabalCrystalRunner:
                     retval = retval + offset - 2 * p.secretsplayedSinceRecalc;
                     break;
-                case CardDB.cardName.secondratebruiser:
+                case CardIds.Collectible.Neutral.SecondRateBruiser:
                     retval = retval + offset - ((p.enemyMinions.Count < 3) ? 0 : 2);
                     break;
-                case CardDB.cardName.golemagg:
+                case CardIds.NonCollectible.Neutral.Golemagg:
                     retval = retval + offset - p.ownHero.maxHp + p.ownHero.Hp;
                     break;
-                case CardDB.cardName.volcaniclumberer:
+                case CardIds.Collectible.Druid.VolcanicLumberer:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.skycapnkragg:
+                case CardIds.Collectible.Neutral.SkycapnKragg:
                     int costBonus = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) costBonus++;
+                        if ((Race)m.handcard.card.Race == Race.PIRATE) costBonus++;
                     }
                     retval = retval + offset - costBonus;
                     break;
-                case CardDB.cardName.everyfinisawesome:
+                case CardIds.Collectible.Shaman.EveryfinIsAwesome:
                     int costBonusM = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) costBonusM++;
+                        if ((Race)m.handcard.card.Race == Race.MURLOC) costBonusM++;
                     }
                     retval = retval + offset - costBonusM;
                     break;
-                case CardDB.cardName.crush:
+                case CardIds.Collectible.Warrior.Crush:
                     // cost 4 less if we have a dmged minion
                     bool dmgedminions = false;
                     foreach (Minion m in p.ownMinions)
@@ -720,7 +728,7 @@ namespace Chireiden.Silverfish
                     retval += p.ownHeroPowerCostLessOnce;
                     if (retval < 0) retval = 0;
                     return retval;
-                case cardtype.MOB:
+                case CardType.MINION:
 
                     if (p.ownMinionsCostMore != p.ownMinionsCostMoreAtStart)
                     {
@@ -728,7 +736,7 @@ namespace Chireiden.Silverfish
                     }
 
 
-                    if (this.deathrattle && p.ownDRcardsCostMore != p.ownDRcardsCostMoreAtStart)
+                    if (this.Deathrattle && p.ownDRcardsCostMore != p.ownDRcardsCostMoreAtStart)
                     {
                         offset += (p.ownDRcardsCostMore - p.ownDRcardsCostMoreAtStart);
                     }
@@ -740,7 +748,7 @@ namespace Chireiden.Silverfish
                     }
 
 
-                    if (this.battlecry && p.nerubarweblord != p.startedWithnerubarweblord)
+                    if (this.Battlecry && p.nerubarweblord != p.startedWithnerubarweblord)
                     {
                         offset += (p.nerubarweblord - p.startedWithnerubarweblord) * 2;
                     }
@@ -752,7 +760,7 @@ namespace Chireiden.Silverfish
                     }
 
 
-                    if (p.anzOwnMechwarper != p.anzOwnMechwarperStarted && (TAG_RACE)this.race == TAG_RACE.MECHANICAL)
+                    if (p.anzOwnMechwarper != p.anzOwnMechwarperStarted && (Race)this.Race == Race.MECHANICAL)
                     {
                         offset += (p.anzOwnMechwarperStarted - p.anzOwnMechwarper);
                     }
@@ -770,12 +778,12 @@ namespace Chireiden.Silverfish
                     }
 
 
-                    if (p.anzOwnDragonConsort != p.anzOwnDragonConsortStarted && (TAG_RACE)this.race == TAG_RACE.DRAGON)
+                    if (p.anzOwnDragonConsort != p.anzOwnDragonConsortStarted && (Race)this.Race == Race.DRAGON)
                     {
                         offset += (p.anzOwnDragonConsortStarted - p.anzOwnDragonConsort) * 2;
                     }
                     break;
-                case cardtype.SPELL:
+                case CardType.SPELL:
 
                     if (p.nextSpellThisTurnCost0) return 0;
 
@@ -791,14 +799,14 @@ namespace Chireiden.Silverfish
                         offset -= 2;
                     }
                     break;
-                case cardtype.WEAPON:
+                case CardType.WEAPON:
 
                     if (p.blackwaterpirateStarted != p.blackwaterpirate)
                     {
                         offset += (p.blackwaterpirateStarted - p.blackwaterpirate) * 2;
                     }
 
-                    if (this.deathrattle && p.ownDRcardsCostMore != p.ownDRcardsCostMoreAtStart)
+                    if (this.Deathrattle && p.ownDRcardsCostMore != p.ownDRcardsCostMoreAtStart)
                     {
                         offset += (p.ownDRcardsCostMore - p.ownDRcardsCostMoreAtStart);
                     }
@@ -811,73 +819,73 @@ namespace Chireiden.Silverfish
                 offset += p.startedWithmyCardsCostLess - p.myCardsCostLess;
             }
 
-            switch (this.name)
+            switch (this.CardId)
             {
-                case CardDB.cardName.volcaniclumberer:
+                case CardIds.Collectible.Druid.VolcanicLumberer:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.solemnvigil:
+                case CardIds.Collectible.Paladin.SolemnVigil:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.volcanicdrake:
+                case CardIds.Collectible.Neutral.VolcanicDrake:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.knightofthewild:
+                case CardIds.Collectible.Druid.KnightOfTheWild:
                     retval = retval + offset - p.tempTrigger.ownBeastSummoned;
                     break;
-                case CardDB.cardName.dragonsbreath:
+                case CardIds.Collectible.Mage.DragonsBreath:
                     retval = retval + offset - p.ownMinionsDiedTurn - p.enemyMinionsDiedTurn;
                     break;
-                case CardDB.cardName.dreadcorsair:
+                case CardIds.Collectible.Neutral.DreadCorsair:
                     retval = retval + offset - p.ownWeapon.Angr + p.ownWeaponAttackStarted; // if weapon attack change we change manacost
                     break;
-                case CardDB.cardName.seagiant:
+                case CardIds.Collectible.Neutral.SeaGiant:
                     retval = retval + offset - p.ownMinions.Count - p.enemyMinions.Count + p.ownMobsCountStarted + p.enemyMobsCountStarted;
                     break;
-                case CardDB.cardName.mountaingiant:
+                case CardIds.Collectible.Neutral.MountainGiant:
                     retval = retval + offset - p.owncards.Count + p.ownCardsCountStarted;
                     break;
-                case CardDB.cardName.clockworkgiant:
+                case CardIds.Collectible.Neutral.ClockworkGiant:
                     retval = retval + offset - p.enemyAnzCards + p.enemyCardsCountStarted;
                     break;
-                case CardDB.cardName.moltengiant:
+                case CardIds.Collectible.Neutral.MoltenGiant:
                     retval = retval + offset - p.ownHeroHpStarted + p.ownHero.Hp;
                     break;
-                case CardDB.cardName.frostgiant:
+                case CardIds.Collectible.Neutral.FrostGiant:
                     retval = retval + offset - p.anzUsedOwnHeroPower;
                     break;
-                case CardDB.cardName.arcanegiant:
+                case CardIds.Collectible.Neutral.ArcaneGiant:
                     retval = retval + offset - p.spellsplayedSinceRecalc;
                     break;
-                case CardDB.cardName.snowfurygiant:
+                case CardIds.Collectible.Shaman.SnowfuryGiant:
                     retval = retval + offset - p.ueberladung;
                     break;
-                case CardDB.cardName.kabalcrystalrunner:
+                case CardIds.Collectible.Mage.KabalCrystalRunner:
                     retval = retval + offset - 2 * p.secretsplayedSinceRecalc;
                     break;
-                case CardDB.cardName.secondratebruiser:
+                case CardIds.Collectible.Neutral.SecondRateBruiser:
                     retval = retval + offset - ((p.enemyMinions.Count < 3) ? 0 : 2) + ((p.enemyMobsCountStarted < 3) ? 0 : 2);
                     break;
-                case CardDB.cardName.golemagg:
+                case CardIds.NonCollectible.Neutral.Golemagg:
                     retval = retval + offset - p.ownHeroHpStarted + p.ownHero.Hp;
                     break;
-                case CardDB.cardName.skycapnkragg:
+                case CardIds.Collectible.Neutral.SkycapnKragg:
                     int costBonus = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.PIRATE) costBonus++;
+                        if ((Race)m.handcard.card.Race == Race.PIRATE) costBonus++;
                     }
                     retval = retval + offset - costBonus + p.anzOwnPiratesStarted;
                     break;
-                case CardDB.cardName.everyfinisawesome:
+                case CardIds.Collectible.Shaman.EveryfinIsAwesome:
                     int costBonusM = 0;
                     foreach (Minion m in p.ownMinions)
                     {
-                        if ((TAG_RACE)m.handcard.card.race == TAG_RACE.MURLOC) costBonusM++;
+                        if ((Race)m.handcard.card.Race == Race.MURLOC) costBonusM++;
                     }
                     retval = retval + offset - costBonusM + p.anzOwnMurlocStarted;
                     break;
-                case CardDB.cardName.crush:
+                case CardIds.Collectible.Warrior.Crush:
                     // cost 4 less if we have a dmged minion
                     bool dmgedminions = false;
                     foreach (Minion m in p.ownMinions)
@@ -896,32 +904,32 @@ namespace Chireiden.Silverfish
                         }
                     }
                     break;
-                case CardDB.cardName.happyghoul:
+                case CardIds.Collectible.Neutral.HappyGhoul:
                     if (p.ownHero.anzGotHealed > 0) retval = 0;
                     break;
-                case CardDB.cardName.wildmagic:
+                case cardName.wildmagic:
                     retval = 0;
                     break;
-                case CardDB.cardName.thingfrombelow:
+                case CardIds.Collectible.Shaman.ThingFromBelow:
                     if (p.playactions.Count > 0)
                     {
-                        foreach (Action a in p.playactions)
+                        foreach (var a in p.playactions)
                         {
                             if (a.actionType == actionEnum.playcard)
                             {
-                                switch (a.card.card.name)
+                                switch (a.card.card.CardId)
                                 {
-                                    case cardName.tuskarrtotemic: retval -= p.ownBrannBronzebeard + 1; break;
+                                    case CardIds.Collectible.Shaman.TuskarrTotemic: retval -= p.ownBrannBronzebeard + 1; break;
                                     default:
-                                        if ((TAG_RACE)a.card.card.race == TAG_RACE.TOTEM) retval--;
+                                        if ((Race)a.card.card.race == Race.TOTEM) retval--;
                                         break;
                                 }
                             }
                             else if (a.actionType == actionEnum.useHeroPower)
                             {
-                                switch (a.card.card.name)
+                                switch (a.card.card.CardId)
                                 {
-                                    case cardName.totemiccall: retval--; break;
+                                    case CardIds.NonCollectible.Shaman.TotemicCall: retval--; break;
                                     case cardName.totemicslam: retval--; break;
                                 }
                             }

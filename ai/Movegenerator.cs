@@ -201,7 +201,7 @@ namespace HREngine.Bots
 			        bool onlyNotSpecial =(!isSpecial || (isSpecial && m.silenced)) && (!otherisSpecial || (otherisSpecial && mnn.silenced));
 
 			        if(onlySpecial && (m.name != mnn.name)) continue; // different name -> take it
-                    if ((onlySpecial || onlyNotSpecial) && (mnn.Angr == m.Angr && mnn.Hp == m.Hp && mnn.divineshild == m.divineshild && mnn.taunt == m.taunt && mnn.poisonous == m.poisonous && mnn.lifesteal == m.lifesteal && m.handcard.card.isToken == mnn.handcard.card.isToken && mnn.handcard.card.Race == m.handcard.card.Race))
+                    if ((onlySpecial || onlyNotSpecial) && (mnn.Angr == m.Angr && mnn.Hp == m.Hp && mnn.divineshild == m.divineshild && mnn.taunt == m.taunt && mnn.poisonous == m.poisonous && mnn.lifesteal == m.lifesteal && m.handcard.card.IsToken == mnn.handcard.card.IsToken && mnn.handcard.card.Race == m.handcard.card.Race))
                     {
 				        goingtoadd = false;
 				        break;

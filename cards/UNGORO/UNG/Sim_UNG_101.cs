@@ -29,27 +29,21 @@ namespace HREngine.Bots
 {
 	class Sim_UNG_101 : SimTemplate //* Shellshifter
 	{
-		//Choose One - Transform into a 5/3 with Stealth or a 3/5 with Taunt.
-
-        SimCard m53 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken1;
-        SimCard m35 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken12;
-        SimCard m55 = CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken13;
-		
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
             if (p.ownFandralStaghelm > 0)
             {
-                p.minionTransform(own, m55);
+                p.minionTransform(own, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken3);
             }
             else
             {
                 if (choice == 1)
                 {
-                    p.minionTransform(own, m53);
+                    p.minionTransform(own, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken1);
                 }
                 else if (choice == 2)
                 {
-                    p.minionTransform(own, m35);
+                    p.minionTransform(own, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken2);
                 }
             }
 		}

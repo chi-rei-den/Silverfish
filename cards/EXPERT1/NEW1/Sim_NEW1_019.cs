@@ -47,8 +47,8 @@ namespace HREngine.Bots
                     foreach (Minion m in temp)
                     {
                         if (m.name == CardIds.Collectible.Neutral.NerubianEgg && m.Hp >= 2) continue; //dont attack nerubianegg!
-                        if (m.handcard.card.isToken && m.Hp == 1) continue;
-                        if (m.name == SimCard.defender) continue;
+                        if (m.handcard.card.IsToken && m.Hp == 1) continue;
+                        if (m.name == CardIds.NonCollectible.Paladin.NobleSacrifice_Defender) continue;
                         if (m.name == CardIds.Collectible.Mage.Spellbender) continue;
                         if (m.Hp >= 2 && minhp > m.Hp)
                         {

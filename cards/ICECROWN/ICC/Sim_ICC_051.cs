@@ -29,24 +29,18 @@ namespace HREngine.Bots
 {
     class Sim_ICC_051 : SimTemplate //* Druid of the Swarm
     {
-        // Choose One - Transform into a 1/2 with Poisonous; or a 1/5 with Taunt.
-
-        SimCard kid12 = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1;
-        SimCard kid15 = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken12;
-        SimCard kidMix = CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken13;
-
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (p.ownFandralStaghelm > 0)
             {
-                p.minionTransform(own, kidMix);
+                p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken3);
             }
             else
             {
                 switch (choice)
                 {
-                    case 1: p.minionTransform(own, kid12); break;
-                    case 2: p.minionTransform(own, kid15); break;
+                    case 1: p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1); break;
+                    case 2: p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken2); break;
                 }
             }
         }
