@@ -83,7 +83,7 @@ namespace HREngine.Bots
             bool printstuff = false; // if true, the best board of the tested file is printet stepp by stepp
 
             Helpfunctions.Instance.ErrorLog("----------------------------");
-            Helpfunctions.Instance.ErrorLog("您正在使用的AI版本为" + Silverfish.Instance.versionnumber);
+            Helpfunctions.Instance.ErrorLog($"您正在使用的AI版本为{Silverfish.Instance.versionnumber}");
             Helpfunctions.Instance.ErrorLog("----------------------------");
 
             if (teststuff)
@@ -831,8 +831,10 @@ def Execute():
                         HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
                         if (target != null)
                         {
-                            Helpfunctions.Instance.ErrorLog("使用: " + cardtoplay.Name + " (" + cardtoplay.EntityId + ") 瞄准: " + target.Name + " (" + target.EntityId + ")");
-                            Helpfunctions.Instance.logg("使用: " + cardtoplay.Name + " (" + cardtoplay.EntityId + ") 瞄准: " + target.Name + " (" + target.EntityId + ") 抉择: " + moveTodo.druidchoice);
+                            Helpfunctions.Instance.ErrorLog(
+                                $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 瞄准: {target.Name} ({target.EntityId})");
+                            Helpfunctions.Instance.logg(
+                                $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 瞄准: {target.Name} ({target.EntityId}) 抉择: {moveTodo.druidchoice}");
 						    if (moveTodo.druidchoice >= 1)
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
@@ -866,15 +868,16 @@ def Execute():
                         else
                         {
                             Helpfunctions.Instance.ErrorLog("[AI] 目标丢失，再试一次...");
-                            Helpfunctions.Instance.logg("[AI] 目标 " + moveTodo.target.entitiyID + "丢失. 再试一次...");
+                            Helpfunctions.Instance.logg($"[AI] 目标 {moveTodo.target.entitiyID}丢失. 再试一次...");
                         }
                         await Coroutine.Sleep(500);
 
                         return;
                     }
 
-                    Helpfunctions.Instance.ErrorLog("使用: " + cardtoplay.Name + " (" + cardtoplay.EntityId + ") 暂时没有目标");
-                    Helpfunctions.Instance.logg("使用: " + cardtoplay.Name + " (" + cardtoplay.EntityId + ") 抉择: " + moveTodo.druidchoice);
+                    Helpfunctions.Instance.ErrorLog($"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 暂时没有目标");
+                    Helpfunctions.Instance.logg(
+                        $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 抉择: {moveTodo.druidchoice}");
                     if (moveTodo.druidchoice >= 1)
                     {
                         dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
@@ -908,8 +911,8 @@ def Execute():
                     {
                         if (target != null)
                         {
-                            Helpfunctions.Instance.ErrorLog("随从攻击: " + attacker.Name + " 目标为: " + target.Name);
-                            Helpfunctions.Instance.logg("随从攻击: " + attacker.Name + " 目标为: " + target.Name);
+                            Helpfunctions.Instance.ErrorLog($"随从攻击: {attacker.Name} 目标为: {target.Name}");
+                            Helpfunctions.Instance.logg($"随从攻击: {attacker.Name} 目标为: {target.Name}");
 
 
                             await attacker.DoAttack(target);
@@ -918,13 +921,13 @@ def Execute():
                         else
                         {
                             Helpfunctions.Instance.ErrorLog("[AI] 目标丢失，再次重试...");
-                            Helpfunctions.Instance.logg("[AI] 目标 " + moveTodo.target.entitiyID + "丢失. 再次重试...");
+                            Helpfunctions.Instance.logg($"[AI] 目标 {moveTodo.target.entitiyID}丢失. 再次重试...");
                         }
                     }
                     else
                     {
                         Helpfunctions.Instance.ErrorLog("[AI] 攻击失败，再次重试...");
-                        Helpfunctions.Instance.logg("[AI] 进攻 " + moveTodo.own.entitiyID + " 失败.再次重试...");
+                        Helpfunctions.Instance.logg($"[AI] 进攻 {moveTodo.own.entitiyID} 失败.再次重试...");
                     }
                     await Coroutine.Sleep(250);
                     return;
@@ -939,8 +942,8 @@ def Execute():
                         if (target != null)
                         {
                             dirtytarget = moveTodo.target.entitiyID;
-                            Helpfunctions.Instance.ErrorLog("英雄攻击: " + attacker.Name + " 目标为: " + target.Name);
-                            Helpfunctions.Instance.logg("英雄攻击: " + attacker.Name + " 目标为: " + target.Name);
+                            Helpfunctions.Instance.ErrorLog($"英雄攻击: {attacker.Name} 目标为: {target.Name}");
+                            Helpfunctions.Instance.logg($"英雄攻击: {attacker.Name} 目标为: {target.Name}");
 
                             //safe targeting stuff for hsbuddy
                             dirtyTargetSource = moveTodo.own.entitiyID;
@@ -950,13 +953,13 @@ def Execute():
                         else
                         {
                             Helpfunctions.Instance.ErrorLog("[AI] 英雄攻击目标丢失，再次重试...");
-                            Helpfunctions.Instance.logg("[AI] 英雄攻击目标 " + moveTodo.target.entitiyID + "丢失，再次重试...");
+                            Helpfunctions.Instance.logg($"[AI] 英雄攻击目标 {moveTodo.target.entitiyID}丢失，再次重试...");
                         }
                     }
                     else
                     {
                         Helpfunctions.Instance.ErrorLog("[AI] 英雄攻击失败，再次重试...");
-                        Helpfunctions.Instance.logg("[AI] 英雄攻击 " + moveTodo.own.entitiyID + " 失败，再次重试...");
+                        Helpfunctions.Instance.logg($"[AI] 英雄攻击 {moveTodo.own.entitiyID} 失败，再次重试...");
                     }
 				    await Coroutine.Sleep(250);
                     return;
@@ -972,8 +975,9 @@ def Execute():
                         HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
                         if (target != null)
                         {
-                            Helpfunctions.Instance.ErrorLog("使用英雄技能: " + cardtoplay.Name + " 目标为 " + target.Name);
-                            Helpfunctions.Instance.logg("使用英雄技能: " + cardtoplay.Name + " 目标为 " + target.Name + (moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : ""));
+                            Helpfunctions.Instance.ErrorLog($"使用英雄技能: {cardtoplay.Name} 目标为 {target.Name}");
+                            Helpfunctions.Instance.logg(
+                                $"使用英雄技能: {cardtoplay.Name} 目标为 {target.Name}{(moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : "")}");
                             if (moveTodo.druidchoice > 0)
                             {
                                 dirtytarget = moveTodo.target.entitiyID;
@@ -990,14 +994,15 @@ def Execute():
                         else
                         {
                             Helpfunctions.Instance.ErrorLog("[AI] 目标丢失，再次重试...");
-                            Helpfunctions.Instance.logg("[AI] 目标 " + moveTodo.target.entitiyID + "丢失. 再次重试...");
+                            Helpfunctions.Instance.logg($"[AI] 目标 {moveTodo.target.entitiyID}丢失. 再次重试...");
                         }
                         await Coroutine.Sleep(500);
                     }
                     else
                     {
-                        Helpfunctions.Instance.ErrorLog("使用英雄技能: " + cardtoplay.Name + " 暂时没有目标");
-                        Helpfunctions.Instance.logg("使用英雄技能: " + cardtoplay.Name + " 暂时没有目标" + (moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : ""));
+                        Helpfunctions.Instance.ErrorLog($"使用英雄技能: {cardtoplay.Name} 暂时没有目标");
+                        Helpfunctions.Instance.logg(
+                            $"使用英雄技能: {cardtoplay.Name} 暂时没有目标{(moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : "")}");
 
                         if (moveTodo.druidchoice >= 1)
                         {
@@ -1150,12 +1155,13 @@ def Execute():
                 if (dirtychoice == 0) dirtychoice = 1;
                 else if (dirtychoice == 1) dirtychoice = 0;
                 int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;
-                Helpfunctions.Instance.logg("发现卡牌: " + dirtychoice + (discoverCardsCount > 1 ? " " + discoverCards[1].card.CardId : "") + (discoverCardsCount > 0 ? " " + discoverCards[0].card.CardId : "") + (discoverCardsCount > 2 ? " " + discoverCards[2].card.CardId : ""));
+                Helpfunctions.Instance.logg(
+                    $"发现卡牌: {this.dirtychoice}{(discoverCardsCount > 1 ? $" {discoverCards[1].card.CardId}" : "")}{(discoverCardsCount > 0 ? $" {discoverCards[0].card.CardId}" : "")}{(discoverCardsCount > 2 ? $" {discoverCards[2].card.CardId}" : "")}");
                 if (ttf < 3000) return (new Random().Next(ttf < 1300 ? 1300 - ttf : 0, 3100 - ttf));
             }
             else
             {
-                Helpfunctions.Instance.logg("选择这张卡牌: " + dirtychoice);
+                Helpfunctions.Instance.logg($"选择这张卡牌: {this.dirtychoice}");
                 return (new Random().Next(1100, 3200));
             }
             return 0;
@@ -1367,7 +1373,7 @@ def Execute():
         /// <returns></returns>
         public override string ToString()
         {
-            return Name + ": " + Description;
+            return $"{this.Name}: {this.Description}";
         }
 
         #endregion

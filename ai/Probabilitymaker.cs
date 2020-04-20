@@ -104,7 +104,7 @@ namespace HREngine.Bots
             string canbe = secdata.Split('.')[1];
             if (canbe.Length < 17)
             {
-                Helpfunctions.Instance.ErrorLog("cant read secret " + secdata + " " + canbe.Length);
+                Helpfunctions.Instance.ErrorLog($"cant read secret {secdata} {canbe.Length}");
             }
 
             this.canBe_snaketrap = false;
@@ -297,32 +297,32 @@ namespace HREngine.Bots
 
         public string returnAString()
         {
-            string retval = "" + this.entityId + ".";
-            retval += "" + ((canBe_snaketrap) ? "1" : "0");
-            retval += "" + ((canBe_snipe) ? "1" : "0");
-            retval += "" + ((canBe_explosive) ? "1" : "0");
-            retval += "" + ((canBe_beartrap) ? "1" : "0");
-            retval += "" + ((canBe_freezing) ? "1" : "0");
-            retval += "" + ((canBe_missdirection) ? "1" : "0");
-            retval += "" + ((canBe_darttrap) ? "1" : "0");
-            retval += "" + ((canBe_cattrick) ? "1" : "0");
+            string retval = $"{this.entityId}.";
+            retval += $"{((this.canBe_snaketrap) ? "1" : "0")}";
+            retval += $"{((this.canBe_snipe) ? "1" : "0")}";
+            retval += $"{((this.canBe_explosive) ? "1" : "0")}";
+            retval += $"{((this.canBe_beartrap) ? "1" : "0")}";
+            retval += $"{((this.canBe_freezing) ? "1" : "0")}";
+            retval += $"{((this.canBe_missdirection) ? "1" : "0")}";
+            retval += $"{((this.canBe_darttrap) ? "1" : "0")}";
+            retval += $"{((this.canBe_cattrick) ? "1" : "0")}";
 
-            retval += "" + ((canBe_counterspell) ? "1" : "0");
-            retval += "" + ((canBe_icebarrier) ? "1" : "0");
-            retval += "" + ((canBe_iceblock) ? "1" : "0");
-            retval += "" + ((canBe_mirrorentity) ? "1" : "0");
-            retval += "" + ((canBe_spellbender) ? "1" : "0");
-            retval += "" + ((canBe_vaporize) ? "1" : "0");
-            retval += "" + ((canBe_duplicate) ? "1" : "0");
-            retval += "" + ((canBe_effigy) ? "1" : "0");
+            retval += $"{((this.canBe_counterspell) ? "1" : "0")}";
+            retval += $"{((this.canBe_icebarrier) ? "1" : "0")}";
+            retval += $"{((this.canBe_iceblock) ? "1" : "0")}";
+            retval += $"{((this.canBe_mirrorentity) ? "1" : "0")}";
+            retval += $"{((this.canBe_spellbender) ? "1" : "0")}";
+            retval += $"{((this.canBe_vaporize) ? "1" : "0")}";
+            retval += $"{((this.canBe_duplicate) ? "1" : "0")}";
+            retval += $"{((this.canBe_effigy) ? "1" : "0")}";
 
-            retval += "" + ((canBe_eyeforaneye) ? "1" : "0");
-            retval += "" + ((canBe_noblesacrifice) ? "1" : "0");
-            retval += "" + ((canBe_redemption) ? "1" : "0");
-            retval += "" + ((canBe_repentance) ? "1" : "0");
-            retval += "" + ((canBe_avenge) ? "1" : "0");
-            retval += "" + ((canBe_sacredtrial) ? "1" : "0");
-            return retval + ",";
+            retval += $"{((this.canBe_eyeforaneye) ? "1" : "0")}";
+            retval += $"{((this.canBe_noblesacrifice) ? "1" : "0")}";
+            retval += $"{((this.canBe_redemption) ? "1" : "0")}";
+            retval += $"{((this.canBe_repentance) ? "1" : "0")}";
+            retval += $"{((this.canBe_avenge) ? "1" : "0")}";
+            retval += $"{((this.canBe_sacredtrial) ? "1" : "0")}";
+            return $"{retval},";
         }
 
         public bool isEqual(SecretItem s)
@@ -403,14 +403,14 @@ namespace HREngine.Bots
             string s = "ownDiedMinions: ";
             foreach (GraveYardItem gyi in this.turngraveyard)
             {
-                if (gyi.own) s += gyi.cardid + "," + gyi.entity + ";";
+                if (gyi.own) s += $"{gyi.cardid},{gyi.entity};";
             }
             Helpfunctions.Instance.logg(s);
 
             s = "enemyDiedMinions: ";
             foreach (GraveYardItem gyi in this.turngraveyard)
             {
-                if (!gyi.own) s += gyi.cardid + "," + gyi.entity + ";";
+                if (!gyi.own) s += $"{gyi.cardid},{gyi.entity};";
             }
             Helpfunctions.Instance.logg(s);
 
@@ -418,14 +418,14 @@ namespace HREngine.Bots
             s = "otg: ";
             foreach (GraveYardItem gyi in this.turngraveyardAll)
             {
-                if (gyi.own) s += gyi.cardid + "," + gyi.entity + ";";
+                if (gyi.own) s += $"{gyi.cardid},{gyi.entity};";
             }
             Helpfunctions.Instance.logg(s);
 
             s = "etg: ";
             foreach (GraveYardItem gyi in this.turngraveyardAll)
             {
-                if (!gyi.own) s += gyi.cardid + "," + gyi.entity + ";";
+                if (!gyi.own) s += $"{gyi.cardid},{gyi.entity};";
             }
             Helpfunctions.Instance.logg(s);
         }
@@ -531,12 +531,12 @@ namespace HREngine.Bots
             string og = "og: ";
             foreach (KeyValuePair<SimCard, int> e in this.ownCardsOut)
             {
-                og += e.Key + "," + e.Value + ";";
+                og += $"{e.Key},{e.Value};";
             }
             string eg = "eg: ";
             foreach (KeyValuePair<SimCard, int> e in this.enemyCardsOut)
             {
-                eg += e.Key + "," + e.Value + ";";
+                eg += $"{e.Key},{e.Value};";
             }
             Helpfunctions.Instance.logg(og);
             Helpfunctions.Instance.logg(eg);
@@ -582,7 +582,7 @@ namespace HREngine.Bots
             foreach (KeyValuePair<int, CardClass> eSec in enemySecretList)
             {
                 if (eSec.Key >= 1000) continue;
-                Helpfunctions.Instance.logg("detect secret with id" + eSec.Key);
+                Helpfunctions.Instance.logg($"detect secret with id{eSec.Key}");
                 SecretItem sec = getNewSecretGuessedItem(eSec.Key, eSec.Value);
 
                 newlist.Add(new SecretItem(sec));
@@ -601,19 +601,21 @@ namespace HREngine.Bots
 
             switch (SecClass)
             {
-                case CardClass.WARRIOR: break;
-                case CardClass.WARLOCK: break;
-                case CardClass.ROGUE: break;
-                case CardClass.SHAMAN: break;
-                case CardClass.PRIEST: break;
-                case CardClass.PALADIN: break;
-                case CardClass.MAGE: break;
-                case CardClass.HUNTER: break;
-                case CardClass.DRUID: break;
+                case CardClass.WARRIOR:
+                case CardClass.WARLOCK:
+                case CardClass.ROGUE:
+                case CardClass.SHAMAN:
+                case CardClass.PRIEST:
+                case CardClass.PALADIN:
+                case CardClass.MAGE:
+                case CardClass.HUNTER:
+                case CardClass.DRUID:
+                case CardClass.DEMONHUNTER:
+                    break;
                 default:
-                    Helpfunctions.Instance.ErrorLog("Problem is detected: undefined Secret class " + SecClass);
-                    SecClass = Hrtprozis.Instance.heroEnumtoTagClass(Hrtprozis.Instance.enemyHero.CardClass);
-                    Helpfunctions.Instance.ErrorLog("attempt to restore... " + SecClass);
+                    Helpfunctions.Instance.ErrorLog($"Problem is detected: undefined Secret class {SecClass}");
+                    SecClass = Hrtprozis.Instance.enemyHero.CardClass;
+                    Helpfunctions.Instance.ErrorLog($"attempt to restore... {SecClass}");
                     break;
             }
 

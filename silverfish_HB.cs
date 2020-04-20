@@ -110,11 +110,11 @@ namespace HREngine.Bots
         {
             this.singleLog = Settings.Instance.writeToSingleFile;
             Helpfunctions.Instance.ErrorLog("开始启动...");
-            string p = "." + System.IO.Path.DirectorySeparatorChar + "Routines" + System.IO.Path.DirectorySeparatorChar + "DefaultRoutine" +
-                       System.IO.Path.DirectorySeparatorChar + "Silverfish" + System.IO.Path.DirectorySeparatorChar;
-            string path = p + "UltimateLogs" + Path.DirectorySeparatorChar;
+            string p =
+                $".{System.IO.Path.DirectorySeparatorChar}Routines{System.IO.Path.DirectorySeparatorChar}DefaultRoutine{System.IO.Path.DirectorySeparatorChar}Silverfish{System.IO.Path.DirectorySeparatorChar}";
+            string path = $"{p}UltimateLogs{Path.DirectorySeparatorChar}";
             Directory.CreateDirectory(path);
-            sttngs.setFilePath(p + "Data" + Path.DirectorySeparatorChar);
+            sttngs.setFilePath($"{p}Data{Path.DirectorySeparatorChar}");
 
             if (!singleLog)
             {
@@ -160,8 +160,8 @@ namespace HREngine.Bots
 
             if (BehaviorDB.Count != BehaviorPath.Count || BehaviorDB.Count != bCount)
             {
-                Helpfunctions.Instance.ErrorLog("Behavior: registered - " + BehaviorDB.Count + ", folders - " + bCount + ", have a path - "
-                    + BehaviorPath.Count + ". These values should be the same. Maybe you have some extra files in the 'custom_behavior' folder.");
+                Helpfunctions.Instance.ErrorLog(
+                    $"Behavior: registered - {this.BehaviorDB.Count}, folders - {bCount}, have a path - {this.BehaviorPath.Count}. These values should be the same. Maybe you have some extra files in the 'custom_behavior' folder.");
             }
 
             if (BehaviorDB.ContainsKey("控场模式"))
@@ -218,10 +218,10 @@ namespace HREngine.Bots
             Questmanager.Instance.Reset();
             if (!singleLog)
             {
-                sttngs.setLoggFile("UILogg" + DateTime.Now.ToString("_yyyy-MM-dd_HH-mm-ss") + ".txt");
+                sttngs.setLoggFile($"UILogg{DateTime.Now:_yyyy-MM-dd_HH-mm-ss}.txt");
                 Helpfunctions.Instance.createNewLoggfile();
                 Helpfunctions.Instance.ErrorLog("#######################################################");
-                Helpfunctions.Instance.ErrorLog("对局日志保持在: " + sttngs.logpath + sttngs.logfile);
+                Helpfunctions.Instance.ErrorLog($"对局日志保持在: {this.sttngs.logpath}{this.sttngs.logfile}");
                 Helpfunctions.Instance.ErrorLog("#######################################################");
             }
             else
@@ -336,7 +336,7 @@ namespace HREngine.Bots
                          if (Ai.Instance.nextMoveGuess.ownHero.Ready != p.ownHero.Ready && !p.ownHero.Ready)
                          {
                              sleepRetry = true;
-                             Helpfunctions.Instance.ErrorLog("[AI] 英雄的准备状态 = " + p.ownHero.Ready + ". 再次尝试....");
+                             Helpfunctions.Instance.ErrorLog($"[AI] 英雄的准备状态 = {p.ownHero.Ready}. 再次尝试....");
                              Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
                              return false;
                          }
@@ -345,7 +345,8 @@ namespace HREngine.Bots
                              if (Ai.Instance.nextMoveGuess.ownMinions[i].Ready != p.ownMinions[i].Ready && !p.ownMinions[i].Ready)
                              {
                                  sleepRetry = true;
-                                 Helpfunctions.Instance.ErrorLog("[AI] 随从的准备状态 = " + p.ownMinions[i].Ready + " (" + p.ownMinions[i].entitiyID + " " + p.ownMinions[i].handcard.card.CardId + " " + p.ownMinions[i].name + "). 再次尝试....");
+                                 Helpfunctions.Instance.ErrorLog(
+                                     $"[AI] 随从的准备状态 = {p.ownMinions[i].Ready} ({p.ownMinions[i].entitiyID} {p.ownMinions[i].handcard.card.CardId} {p.ownMinions[i].name}). 再次尝试....");
                                  Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
                                  return false;
                              }
@@ -363,7 +364,7 @@ namespace HREngine.Bots
 
             p = new Playfield();
 
-            Helpfunctions.Instance.ErrorLog("AI计算中，请稍候... " + DateTime.Now.ToString("HH:mm:ss.ffff"));
+            Helpfunctions.Instance.ErrorLog($"AI计算中，请稍候... {DateTime.Now:HH:mm:ss.ffff}");
 
 
             using (TritonHs.Memory.ReleaseFrame(true))
@@ -372,17 +373,17 @@ namespace HREngine.Bots
                 Ai.Instance.dosomethingclever(botbase);
             }
 
-            Helpfunctions.Instance.ErrorLog("计算完成! " + DateTime.Now.ToString("HH:mm:ss.ffff"));
+            Helpfunctions.Instance.ErrorLog($"计算完成! {DateTime.Now:HH:mm:ss.ffff}");
             if (sttngs.printRules > 0)
             {
                 String[] rulesStr = Ai.Instance.bestplay.rulesUsed.Split('@');
                 if (rulesStr.Count() > 0 && rulesStr[0] != "")
                 {
-                    Helpfunctions.Instance.ErrorLog("规则权重 " + Ai.Instance.bestplay.ruleWeight * -1);
+                    Helpfunctions.Instance.ErrorLog($"规则权重 {Ai.Instance.bestplay.ruleWeight * -1}");
                     foreach (string rs in rulesStr)
                     {
                         if (rs == "") continue;
-                        Helpfunctions.Instance.ErrorLog("规则: " + rs);
+                        Helpfunctions.Instance.ErrorLog($"规则: {rs}");
                     }
                 }
             }
@@ -1052,32 +1053,33 @@ namespace HREngine.Bots
         private void updateBehaveString(Behavior botbase)
         {
             this.botbehave = botbase.BehaviorName();
-            this.botbehave += " " + Ai.Instance.maxwide;
-            this.botbehave += " face " + ComboBreaker.Instance.attackFaceHP;
-            if (Settings.Instance.berserkIfCanFinishNextTour > 0) this.botbehave += " berserk:" + Settings.Instance.berserkIfCanFinishNextTour;
-            if (Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp > 0) this.botbehave += " womob:" + Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp;
+            this.botbehave += $" {Ai.Instance.maxwide}";
+            this.botbehave += $" face {ComboBreaker.Instance.attackFaceHP}";
+            if (Settings.Instance.berserkIfCanFinishNextTour > 0) this.botbehave +=
+                $" berserk:{Settings.Instance.berserkIfCanFinishNextTour}";
+            if (Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp > 0) this.botbehave +=
+                $" womob:{Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp}";
             if (Settings.Instance.secondTurnAmount > 0)
             {
                 if (Ai.Instance.nextMoveGuess.mana == -100)
                 {
                     Ai.Instance.updateTwoTurnSim();
                 }
-                this.botbehave += " twoturnsim " + Settings.Instance.secondTurnAmount + " ntss " +
-                                  Settings.Instance.nextTurnDeep + " " + Settings.Instance.nextTurnMaxWide + " " +
-                                  Settings.Instance.nextTurnTotalBoards;
+                this.botbehave +=
+                    $" twoturnsim {Settings.Instance.secondTurnAmount} ntss {Settings.Instance.nextTurnDeep} {Settings.Instance.nextTurnMaxWide} {Settings.Instance.nextTurnTotalBoards}";
             }
 
             if (Settings.Instance.playaround)
             {
                 this.botbehave += " playaround";
-                this.botbehave += " " + Settings.Instance.playaroundprob + " " + Settings.Instance.playaroundprob2;
+                this.botbehave += $" {Settings.Instance.playaroundprob} {Settings.Instance.playaroundprob2}";
             }
 
-            this.botbehave += " ets " + Settings.Instance.enemyTurnMaxWide;
+            this.botbehave += $" ets {Settings.Instance.enemyTurnMaxWide}";
 
             if (Settings.Instance.twotsamount > 0)
             {
-                this.botbehave += " ets2 " + Settings.Instance.enemyTurnMaxWideSecondStep;
+                this.botbehave += $" ets2 {Settings.Instance.enemyTurnMaxWideSecondStep}";
             }
 
             if (Settings.Instance.useSecretsPlayAround)
@@ -1087,18 +1089,18 @@ namespace HREngine.Bots
 
             if (Settings.Instance.secondweight != 0.5f)
             {
-                this.botbehave += " weight " + (int) (Settings.Instance.secondweight*100f);
+                this.botbehave += $" weight {(int)(Settings.Instance.secondweight * 100f)}";
             }
 
             if (Settings.Instance.placement != 0)
             {
-                this.botbehave += " plcmnt:" + Settings.Instance.placement;
+                this.botbehave += $" plcmnt:{Settings.Instance.placement}";
             }
 
-            this.botbehave += " iC " + Settings.Instance.ImprovedCalculations;
+            this.botbehave += $" iC {Settings.Instance.ImprovedCalculations}";
 
-            this.botbehave += " aA " + Settings.Instance.adjustActions;
-            if (Settings.Instance.concedeMode != 0) this.botbehave += " cede:" + Settings.Instance.concedeMode;
+            this.botbehave += $" aA {Settings.Instance.adjustActions}";
+            if (Settings.Instance.concedeMode != 0) this.botbehave += $" cede:{Settings.Instance.concedeMode}";
 
         }
 
@@ -1177,14 +1179,13 @@ namespace HREngine.Bots
             enemysecretIds = Probabilitymaker.Instance.getEnemySecretData();
             Helpfunctions.Instance.logg("#######################################################################");
             Helpfunctions.Instance.logg("#######################################################################");
-            Helpfunctions.Instance.logg("开始计算, 已花费时间: " + DateTime.Now.ToString("HH:mm:ss") + " V" +
-                                        this.versionnumber + " " + this.botbehave);
+            Helpfunctions.Instance.logg($"开始计算, 已花费时间: {DateTime.Now:HH:mm:ss} V{this.versionnumber} {this.botbehave}");
             Helpfunctions.Instance.logg("#######################################################################");
-            Helpfunctions.Instance.logg("turn " + gTurn + "/" + gTurnStep);
-            Helpfunctions.Instance.logg("mana " + currentMana + "/" + ownMaxMana);
-            Helpfunctions.Instance.logg("emana " + enemyMaxMana);
-            Helpfunctions.Instance.logg("own secretsCount: " + ownSecretList.Count);
-            Helpfunctions.Instance.logg("enemy secretsCount: " + enemySecretList.Count + " ;" + enemysecretIds);
+            Helpfunctions.Instance.logg($"turn {this.gTurn}/{this.gTurnStep}");
+            Helpfunctions.Instance.logg($"mana {this.currentMana}/{this.ownMaxMana}");
+            Helpfunctions.Instance.logg($"emana {this.enemyMaxMana}");
+            Helpfunctions.Instance.logg($"own secretsCount: {this.ownSecretList.Count}");
+            Helpfunctions.Instance.logg($"enemy secretsCount: {this.enemySecretList.Count} ;{enemysecretIds}");
 
             Ai.Instance.currentCalculatedBoard = dtimes;
 

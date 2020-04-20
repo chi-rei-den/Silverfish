@@ -45,7 +45,6 @@ namespace HREngine.Bots
 
         public bool setGameRule = false;
 
-        public string heronameingame = "", enemyHeroingame = "";
         public CardClass ownHeroStartClass;
         public CardClass enemyHeroStartClass;
         public SimCard heroAbility;
@@ -144,10 +143,7 @@ namespace HREngine.Bots
             ownHeroWindfury = false;
             ownSecretList.Clear();
             enemySecretCount = 0;
-            heroname = CardClass.INVALID;
             enemyHero.CardClass = CardClass.INVALID;
-            heronameingame = "";
-            enemyHeroingame = "";
             heroAbility = new SimCard();
             enemyAbility = new SimCard();
             herofrozen = false;
@@ -367,7 +363,7 @@ namespace HREngine.Bots
                 this.ownWeapon = new Weapon(w);
 
                 this.ownHero = new Minion(hero);
-                this.heronameingame = heron;
+                this.ownHero.CardClass = heron;
                 if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.CardClass;
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
@@ -382,7 +378,7 @@ namespace HREngine.Bots
                 this.enemyWeapon = new Weapon(w);
                 this.enemyHero = new Minion(hero);;
 
-                this.enemyHeroingame = heron;
+                this.enemyHero.CardClass = heron;
                 if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.CardClass;
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
@@ -494,28 +490,34 @@ namespace HREngine.Bots
         public void printHero()
         {
             help.logg("player:");
-            help.logg(this.numMinionsPlayedThisTurn + " " + this.cardsPlayedThisTurn + " " + this.ueberladung + " " + this.lockedMana + " " + this.ownPlayerController);
+            help.logg(
+                $"{this.numMinionsPlayedThisTurn} {this.cardsPlayedThisTurn} {this.ueberladung} {this.lockedMana} {this.ownPlayerController}");
 
             help.logg("ownhero:");
-            help.logg((this.heroname == CardClass.INVALID ? this.heronameingame : this.heroname.ToString()) + " " + this.ownHero.Hp + " " + this.ownHero.maxHp + " " + this.ownHero.armor + " " + this.ownHero.immuneWhileAttacking + " " + this.ownHero.immune + " " + this.ownHero.entitiyID + " " + this.ownHero.Ready + " " + this.ownHero.numAttacksThisTurn + " " + this.ownHero.frozen + " " + this.ownHero.Angr + " " + this.ownHero.tempAttack + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + ownWeapon.Angr + " " + ownWeapon.Durability + " " + this.ownWeapon.name + " " + this.ownWeapon.card.CardId + " " + (this.ownWeapon.poisonous ? 1 : 0) + " " + (this.ownWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + this.ownAbilityisReady + " " + this.heroAbility.CardId);
+            help.logg($"{this.ownHero.CardClass} {this.ownHero.Hp} {this.ownHero.maxHp} {this.ownHero.armor} {this.ownHero.immuneWhileAttacking} {this.ownHero.immune} {this.ownHero.entitiyID} {this.ownHero.Ready} {this.ownHero.numAttacksThisTurn} {this.ownHero.frozen} {this.ownHero.Angr} {this.ownHero.tempAttack} {this.enemyHero.stealth}");
+            help.logg(
+                $"weapon: {this.ownWeapon.Angr} {this.ownWeapon.Durability} {this.ownWeapon.name} {this.ownWeapon.card.CardId} {(this.ownWeapon.poisonous ? 1 : 0)} {(this.ownWeapon.lifesteal ? 1 : 0)}");
+            help.logg($"ability: {this.ownAbilityisReady} {this.heroAbility.CardId}");
             string secs = "";
             foreach (SimCard sec in this.ownSecretList)
             {
-                secs += sec + " ";
+                secs += $"{sec} ";
             }
-            help.logg("osecrets: " + secs);
-            help.logg("cthunbonus: " + this.anzOgOwnCThunAngrBonus + " " + this.anzOgOwnCThunHpBonus + " " + this.anzOgOwnCThunTaunt);
-            help.logg("jadegolems: " + this.anzOwnJadeGolem + " " + this.anzEnemyJadeGolem);
-            help.logg("elementals: " + this.anzOwnElementalsThisTurn + " " + this.anzOwnElementalsLastTurn + " " + this.ownElementalsHaveLifesteal);
+            help.logg($"osecrets: {secs}");
+            help.logg(
+                $"cthunbonus: {this.anzOgOwnCThunAngrBonus} {this.anzOgOwnCThunHpBonus} {this.anzOgOwnCThunTaunt}");
+            help.logg($"jadegolems: {this.anzOwnJadeGolem} {this.anzEnemyJadeGolem}");
+            help.logg(
+                $"elementals: {this.anzOwnElementalsThisTurn} {this.anzOwnElementalsLastTurn} {this.ownElementalsHaveLifesteal}");
             help.logg(Questmanager.Instance.getQuestsString());
-            help.logg("advanced: " + this.ownCrystalCore + " " + (this.ownMinionsInDeckCost0 ? 1: 0));
+            help.logg($"advanced: {this.ownCrystalCore} {(this.ownMinionsInDeckCost0 ? 1 : 0)}");
             help.logg("enemyhero:");
-            help.logg((this.enemyHero.CardClass == CardClass.INVALID ? this.enemyHeroingame : this.enemyHero.CardClass.ToString()) + " " + this.enemyHero.Hp + " " + this.enemyHero.maxHp + " " + this.enemyHero.armor + " " + this.enemyHero.frozen + " " + this.enemyHero.immune + " " + this.enemyHero.entitiyID + " " + this.enemyHero.stealth);
-            help.logg("weapon: " + this.enemyWeapon.Angr + " " + this.enemyWeapon.Durability + " " + this.enemyWeapon.name + " " + this.enemyWeapon.card.CardId + " " + (this.enemyWeapon.poisonous ? 1 : 0) + " " + (this.enemyWeapon.lifesteal ? 1 : 0));
-            help.logg("ability: " + "True" + " " + this.enemyAbility.CardId);
-            help.logg("fatigue: " + this.ownDeckSize + " " + this.ownHeroFatigue + " " + this.enemyDeckSize + " " + this.enemyHeroFatigue);
+            help.logg(
+                $"{(this.enemyHero.CardClass)} {this.enemyHero.Hp} {this.enemyHero.maxHp} {this.enemyHero.armor} {this.enemyHero.frozen} {this.enemyHero.immune} {this.enemyHero.entitiyID} {this.enemyHero.stealth}");
+            help.logg(
+                $"weapon: {this.enemyWeapon.Angr} {this.enemyWeapon.Durability} {this.enemyWeapon.name} {this.enemyWeapon.card.CardId} {(this.enemyWeapon.poisonous ? 1 : 0)} {(this.enemyWeapon.lifesteal ? 1 : 0)}");
+            help.logg($"ability: True {this.enemyAbility.CardId}");
+            help.logg($"fatigue: {this.ownDeckSize} {this.ownHeroFatigue} {this.enemyDeckSize} {this.enemyHeroFatigue}");
         }
 
 
@@ -524,7 +526,8 @@ namespace HREngine.Bots
             help.logg("OwnMinions:");
             foreach (Minion m in this.ownMinions)
             {
-                string mini = m.name + " " + m.handcard.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready + " natt:" + m.numAttacksThisTurn;
+                string mini =
+                    $"{m.name} {m.handcard.card.CardId} zp:{m.zonepos} e:{m.entitiyID} A:{m.Angr} H:{m.Hp} mH:{m.maxHp} rdy:{m.Ready} natt:{m.numAttacksThisTurn}";
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -546,28 +549,28 @@ namespace HREngine.Bots
                 if (m.cantLowerHPbelowONE) mini += " cantLowerHpBelowOne";
                 if (m.cantBeTargetedBySpellsOrHeroPowers) mini += " cbtBySpells";
 
-                if (m.charge >= 1) mini += " chrg(" + m.charge + ")";
-                if (m.hChoice >= 1) mini += " hChoice(" + m.hChoice + ")";
-                if (m.AdjacentAngr >= 1) mini += " adjaattk(" + m.AdjacentAngr + ")";
-                if (m.tempAttack != 0) mini += " tmpattck(" + m.tempAttack + ")";
-                if (m.spellpower != 0) mini += " spllpwr(" + m.spellpower + ")";
+                if (m.charge >= 1) mini += $" chrg({m.charge})";
+                if (m.hChoice >= 1) mini += $" hChoice({m.hChoice})";
+                if (m.AdjacentAngr >= 1) mini += $" adjaattk({m.AdjacentAngr})";
+                if (m.tempAttack != 0) mini += $" tmpattck({m.tempAttack})";
+                if (m.spellpower != 0) mini += $" spllpwr({m.spellpower})";
 
-                if (m.ancestralspirit >= 1) mini += " ancstrl(" + m.ancestralspirit + ")";
-                if (m.desperatestand >= 1) mini += " despStand(" + m.desperatestand + ")";
-                if (m.ownBlessingOfWisdom >= 1) mini += " ownBlssng(" + m.ownBlessingOfWisdom + ")";
-                if (m.enemyBlessingOfWisdom >= 1) mini += " enemyBlssng(" + m.enemyBlessingOfWisdom + ")";
-                if (m.ownPowerWordGlory >= 1) mini += " ownGlory(" + m.ownPowerWordGlory + ")";
-                if (m.enemyPowerWordGlory >= 1) mini += " enemyGlory(" + m.enemyPowerWordGlory + ")";
-                if (m.souloftheforest >= 1) mini += " souloffrst(" + m.souloftheforest + ")";
-                if (m.stegodon >= 1) mini += " stegodon(" + m.stegodon + ")";
-                if (m.livingspores >= 1) mini += " lspores(" + m.livingspores + ")";
-                if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
-                if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
-                if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.CardId + ")";
+                if (m.ancestralspirit >= 1) mini += $" ancstrl({m.ancestralspirit})";
+                if (m.desperatestand >= 1) mini += $" despStand({m.desperatestand})";
+                if (m.ownBlessingOfWisdom >= 1) mini += $" ownBlssng({m.ownBlessingOfWisdom})";
+                if (m.enemyBlessingOfWisdom >= 1) mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
+                if (m.ownPowerWordGlory >= 1) mini += $" ownGlory({m.ownPowerWordGlory})";
+                if (m.enemyPowerWordGlory >= 1) mini += $" enemyGlory({m.enemyPowerWordGlory})";
+                if (m.souloftheforest >= 1) mini += $" souloffrst({m.souloftheforest})";
+                if (m.stegodon >= 1) mini += $" stegodon({m.stegodon})";
+                if (m.livingspores >= 1) mini += $" lspores({m.livingspores})";
+                if (m.explorershat >= 1) mini += $" explHat({m.explorershat})";
+                if (m.returnToHand >= 1) mini += $" retHand({m.returnToHand})";
+                if (m.infest >= 1) mini += $" infest({m.infest})";
+                if (m.deathrattle2 != null) mini += $" dethrl({m.deathrattle2.CardId})";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
-                    mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
+                    mini += $" respawn:{this.LurkersDB[m.entitiyID].IDEnum}:{this.LurkersDB[m.entitiyID].own}";
                 }
 
                 help.logg(mini);
@@ -580,7 +583,8 @@ namespace HREngine.Bots
             help.logg("EnemyMinions:");
             foreach (Minion m in this.enemyMinions)
             {
-                string mini = m.name + " " + m.handcard.card.CardId + " zp:" + m.zonepos + " e:" + m.entitiyID + " A:" + m.Angr + " H:" + m.Hp + " mH:" + m.maxHp + " rdy:" + m.Ready;// +" natt:" + m.numAttacksThisTurn;
+                string mini =
+                    $"{m.name} {m.handcard.card.CardId} zp:{m.zonepos} e:{m.entitiyID} A:{m.Angr} H:{m.Hp} mH:{m.maxHp} rdy:{m.Ready}";// +" natt:" + m.numAttacksThisTurn;
                 if (m.exhausted) mini += " ex";
                 if (m.taunt) mini += " tnt";
                 if (m.frozen) mini += " frz";
@@ -602,28 +606,28 @@ namespace HREngine.Bots
                 if (m.cantLowerHPbelowONE) mini += " cantLowerHpBelowOne";
                 if (m.cantBeTargetedBySpellsOrHeroPowers) mini += " cbtBySpells";
 
-                if (m.charge >= 1) mini += " chrg(" + m.charge + ")";
-                if (m.hChoice >= 1) mini += " hChoice(" + m.hChoice + ")";
-                if (m.AdjacentAngr >= 1) mini += " adjaattk(" + m.AdjacentAngr + ")";
-                if (m.tempAttack != 0) mini += " tmpattck(" + m.tempAttack + ")";
-                if (m.spellpower != 0) mini += " spllpwr(" + m.spellpower + ")";
+                if (m.charge >= 1) mini += $" chrg({m.charge})";
+                if (m.hChoice >= 1) mini += $" hChoice({m.hChoice})";
+                if (m.AdjacentAngr >= 1) mini += $" adjaattk({m.AdjacentAngr})";
+                if (m.tempAttack != 0) mini += $" tmpattck({m.tempAttack})";
+                if (m.spellpower != 0) mini += $" spllpwr({m.spellpower})";
 
-                if (m.ancestralspirit >= 1) mini += " ancstrl(" + m.ancestralspirit + ")";
-                if (m.desperatestand >= 1) mini += " despStand(" + m.desperatestand + ")";
-                if (m.ownBlessingOfWisdom >= 1) mini += " ownBlssng(" + m.ownBlessingOfWisdom + ")";
-                if (m.enemyBlessingOfWisdom >= 1) mini += " enemyBlssng(" + m.enemyBlessingOfWisdom + ")";
-                if (m.ownPowerWordGlory >= 1) mini += " ownGlory(" + m.ownPowerWordGlory + ")";
-                if (m.enemyPowerWordGlory >= 1) mini += " enemyGlory(" + m.enemyPowerWordGlory + ")";
-                if (m.souloftheforest >= 1) mini += " souloffrst(" + m.souloftheforest + ")";
-                if (m.stegodon >= 1) mini += " stegodon(" + m.stegodon + ")";
-                if (m.livingspores >= 1) mini += " lspores(" + m.livingspores + ")";
-                if (m.explorershat >= 1) mini += " explHat(" + m.explorershat + ")";
-                if (m.returnToHand >= 1) mini += " retHand(" + m.returnToHand + ")";
-                if (m.infest >= 1) mini += " infest(" + m.infest + ")";
-                if (m.deathrattle2 != null) mini += " dethrl(" + m.deathrattle2.CardId + ")";
+                if (m.ancestralspirit >= 1) mini += $" ancstrl({m.ancestralspirit})";
+                if (m.desperatestand >= 1) mini += $" despStand({m.desperatestand})";
+                if (m.ownBlessingOfWisdom >= 1) mini += $" ownBlssng({m.ownBlessingOfWisdom})";
+                if (m.enemyBlessingOfWisdom >= 1) mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
+                if (m.ownPowerWordGlory >= 1) mini += $" ownGlory({m.ownPowerWordGlory})";
+                if (m.enemyPowerWordGlory >= 1) mini += $" enemyGlory({m.enemyPowerWordGlory})";
+                if (m.souloftheforest >= 1) mini += $" souloffrst({m.souloftheforest})";
+                if (m.stegodon >= 1) mini += $" stegodon({m.stegodon})";
+                if (m.livingspores >= 1) mini += $" lspores({m.livingspores})";
+                if (m.explorershat >= 1) mini += $" explHat({m.explorershat})";
+                if (m.returnToHand >= 1) mini += $" retHand({m.returnToHand})";
+                if (m.infest >= 1) mini += $" infest({m.infest})";
+                if (m.deathrattle2 != null) mini += $" dethrl({m.deathrattle2.CardId})";
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
-                    mini += " respawn:" + this.LurkersDB[m.entitiyID].IDEnum + ":" + this.LurkersDB[m.entitiyID].own;
+                    mini += $" respawn:{this.LurkersDB[m.entitiyID].IDEnum}:{this.LurkersDB[m.entitiyID].own}";
                 }
 
                 help.logg(mini);
@@ -636,7 +640,7 @@ namespace HREngine.Bots
             string od = "od: ";
             foreach (KeyValuePair<SimCard, int> e in this.turnDeck)
             {
-                od += e.Key + "," + e.Value + ";";
+                od += $"{e.Key},{e.Value};";
             }
             Helpfunctions.Instance.logg(od);
         }

@@ -103,7 +103,7 @@ namespace HREngine.Bots
 
         public void writeToBuffer(string data)
         {
-            this.sendbuffer += "\r\n" + data;
+            this.sendbuffer += $"\r\n{data}";
         }
 
         public void writeBufferToFile()
@@ -114,7 +114,7 @@ namespace HREngine.Bots
             {
                 try
                 {
-                    System.IO.File.WriteAllText(Settings.Instance.path + "crrntbrd.txt", this.sendbuffer);
+                    System.IO.File.WriteAllText($"{Settings.Instance.path}crrntbrd.txt", this.sendbuffer);
                     writed = false;
                 }
                 catch
@@ -129,12 +129,12 @@ namespace HREngine.Bots
         {
             bool writed = true;
             this.sendbuffer += "<EoF>";
-            this.ErrorLog("write to action file: " + sendbuffer);
+            this.ErrorLog($"write to action file: {this.sendbuffer}");
             while (writed)
             {
                 try
                 {
-                    System.IO.File.WriteAllText(Settings.Instance.path + "actionstodo.txt", this.sendbuffer);
+                    System.IO.File.WriteAllText($"{Settings.Instance.path}actionstodo.txt", this.sendbuffer);
                     writed = false;
                 }
                 catch

@@ -392,7 +392,7 @@ namespace HREngine.Bots
             {
                 if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
                 {
-                    help.ErrorLog(behavName + ": 没有特定的“连招”.");
+                    help.ErrorLog($"{behavName}: 没有特定的“连招”.");
                     return;
                 }
                 pathToCombo = Path.Combine(Silverfish.Instance.BehaviorPath[behavName], "_combo.txt");
@@ -400,11 +400,11 @@ namespace HREngine.Bots
 
             if (!System.IO.File.Exists(pathToCombo))
             {
-                help.ErrorLog(behavName + ": 没有特定的“连招”.");
+                help.ErrorLog($"{behavName}: 没有特定的“连招”.");
                 return;
             }
 
-            help.ErrorLog("[连招功能] 成功加载“连招” " + behavName);
+            help.ErrorLog($"[连招功能] 成功加载“连招” {behavName}");
             string[] lines = new string[0] { };
             combos.Clear();
             playByValue.Clear();
@@ -432,8 +432,8 @@ namespace HREngine.Bots
                     }
                     catch
                     {
-                        help.logg("[连招功能]不能加载: " + line);
-                        help.ErrorLog("[连招功能]不能加载: " + line);
+                        help.logg($"[连招功能]不能加载: {line}");
+                        help.ErrorLog($"[连招功能]不能加载: {line}");
                     }
                 }
                 else
@@ -451,8 +451,8 @@ namespace HREngine.Bots
                         }
                         catch
                         {
-                            help.logg("[连招功能]不能加载: " + line);
-                            help.ErrorLog("[连招功能]不能加载: " + line);
+                            help.logg($"[连招功能]不能加载: {line}");
+                            help.ErrorLog($"[连招功能]不能加载: {line}");
                         }
                     }
                     else
@@ -464,14 +464,14 @@ namespace HREngine.Bots
                         }
                         catch
                         {
-                            help.logg("[连招功能]不能加载: " + line);
-                            help.ErrorLog("[连招功能]不能加载: " + line);
+                            help.logg($"[连招功能]不能加载: {line}");
+                            help.ErrorLog($"[连招功能]不能加载: {line}");
                         }
                     }
                 }
 
             }
-            help.ErrorLog("[连招功能] " + combos.Count + " “连招”功能激活成功, " + playByValue.Count + " 个权重值已加载");
+            help.ErrorLog($"[连招功能] {this.combos.Count} “连招”功能激活成功, {this.playByValue.Count} 个权重值已加载");
         }
 
         public int getPenalityForDestroyingCombo(SimCard crd, Playfield p)

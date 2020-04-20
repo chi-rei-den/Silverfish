@@ -87,7 +87,7 @@ as well as
 
             if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
             {
-                Helpfunctions.Instance.ErrorLog(behavName + ": no special mulligan.");
+                Helpfunctions.Instance.ErrorLog($"{behavName}: no special mulligan.");
                 return;
             }
 
@@ -95,7 +95,7 @@ as well as
 
             if (!System.IO.File.Exists(pathToMulligan))
             {
-                Helpfunctions.Instance.ErrorLog(behavName + ": no special mulligan.");
+                Helpfunctions.Instance.ErrorLog($"{behavName}: no special mulligan.");
                 return;
             }
             try
@@ -122,7 +122,7 @@ as well as
                 Helpfunctions.Instance.ErrorLog("[开局留牌] 留牌文件_mulligan.txt读取错误. 只能应用默认配置.");
                 return;
             }
-            Helpfunctions.Instance.ErrorLog("[开局留牌] 读取规则—— " + behavName);
+            Helpfunctions.Instance.ErrorLog($"[开局留牌] 读取规则—— {behavName}");
             validateRule(behavName);
         }
 
@@ -214,7 +214,7 @@ as well as
                 Helpfunctions.Instance.ErrorLog("[开局留牌] 关闭规则列表.");
             }
 
-            if (repairedRules > 0) Helpfunctions.Instance.ErrorLog(repairedRules.ToString() + " repaired rules");
+            if (repairedRules > 0) Helpfunctions.Instance.ErrorLog($"{repairedRules} repaired rules");
             MulliganRules.Clear();
 
             foreach (KeyValuePair<string, string> oneRule in MulliganRulesTmp)
@@ -222,7 +222,8 @@ as well as
                 MulliganRules.Add(oneRule.Key, oneRule.Value);
             }
 
-            Helpfunctions.Instance.ErrorLog("[开局留牌] " + (MulliganRules.Count > 0 ? (MulliganRules.Count + " 读取留牌规则成功") : "并没有特殊的规则."));
+            Helpfunctions.Instance.ErrorLog(
+                $"[开局留牌] {(this.MulliganRules.Count > 0 ? (this.MulliganRules.Count + " 读取留牌规则成功") : "并没有特殊的规则.")}");
             mulliganRulesLoaded = true;
             if (behavName == "") //oldCompatibility
             {
@@ -268,7 +269,8 @@ as well as
             if (!mulliganRulesLoaded) return false;
             if (!(mulliganData.Cards.Count == 3 || mulliganData.Cards.Count == 4))
             {
-                Helpfunctions.Instance.ErrorLog("[Mulligan] Mulligan is not used, since it got number of cards: " + cards.Count.ToString());
+                Helpfunctions.Instance.ErrorLog(
+                    $"[Mulligan] Mulligan is not used, since it got number of cards: {this.cards.Count}");
                 return false;
             }
 

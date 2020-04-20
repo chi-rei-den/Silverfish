@@ -164,14 +164,14 @@ namespace HREngine.Bots
                     {
                         if (p.complete) donec++;
                     }
-                    Helpfunctions.Instance.logg("deep " + deep + " len " + this.posmoves.Count + " dones " + donec);
+                    Helpfunctions.Instance.logg($"deep {deep} len {this.posmoves.Count} dones {donec}");
                 }
 
                 cuttingposibilities(isLethalCheck);
 
                 if (this.printNormalstuff)
                 {
-                    Helpfunctions.Instance.logg("cut to len " + this.posmoves.Count);
+                    Helpfunctions.Instance.logg($"cut to len {this.posmoves.Count}");
                 }
                 deep++;
                 temp.Clear();

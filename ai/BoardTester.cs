@@ -139,7 +139,7 @@ namespace HREngine.Bots
                 try
                 {
                     string path = Settings.Instance.path;
-                    lines = System.IO.File.ReadAllLines(path + "test.txt");
+                    lines = System.IO.File.ReadAllLines($"{path}test.txt");
                     this.datareaded = true;
                 }
                 catch
@@ -167,7 +167,7 @@ namespace HREngine.Bots
             int j = 0;
             foreach (string sss in lines)
             {
-                string s = sss + " ";
+                string s = $"{sss} ";
                 Helpfunctions.Instance.logg(s);
 
                 if (s.StartsWith("ailoop") || s.StartsWith("deep ") || s.StartsWith("cut to len"))
@@ -503,7 +503,7 @@ namespace HREngine.Bots
                 if (readstate == 1 && counter == 1) // class + hp + defence + immunewhile attacking + immune
                 {
                     String[] h = s.Split(' ');
-                    ownHero.CardClass = h[0];
+                    ownHero.CardClass = Enum.Parse(typeof(CardClass), h[0]);
                     ownherohp = Convert.ToInt32(h[1]);
                     ownheromaxhp = Convert.ToInt32(h[2]);
                     ownherodefence = Convert.ToInt32(h[3]);
@@ -556,7 +556,7 @@ namespace HREngine.Bots
                 if (readstate == 2 && counter == 1) // class + hp + defence + frozen + immune
                 {
                     String[] h = s.Split(' ');
-                    enemyHero.CardClass = h[0];
+                    enemyHero.CardClass = Enum.Parse(typeof(CardClass), h[0]);
                     enemyherohp = Convert.ToInt32(h[1]);
                     enemyheromaxhp = Convert.ToInt32(h[2]);
                     enemyherodefence = Convert.ToInt32(h[3]);
@@ -1136,38 +1136,39 @@ namespace HREngine.Bots
         public void printSettings()
         {
             Helpfunctions.Instance.logg("#################### Settings #########################################");
-            Helpfunctions.Instance.logg("path = " + Settings.Instance.path);
-            Helpfunctions.Instance.logg("logpath = " + Settings.Instance.logpath);
-            Helpfunctions.Instance.logg("logfile = " + Settings.Instance.logfile);
-            Helpfunctions.Instance.logg("twotsamount = " + Settings.Instance.twotsamount);
-            Helpfunctions.Instance.logg("secondTurnAmount = " + Settings.Instance.secondTurnAmount);
-            Helpfunctions.Instance.logg("playaroundprob2 = " + Settings.Instance.playaroundprob2);
-            Helpfunctions.Instance.logg("playaroundprob = " + Settings.Instance.playaroundprob);
-            Helpfunctions.Instance.logg("nextTurnTotalBoards = " + Settings.Instance.nextTurnTotalBoards);
-            Helpfunctions.Instance.logg("nextTurnMaxWide = " + Settings.Instance.nextTurnMaxWide);
-            Helpfunctions.Instance.logg("nextTurnDeep = " + Settings.Instance.nextTurnDeep);
-            Helpfunctions.Instance.logg("maxwide = " + Settings.Instance.maxwide);
-            Helpfunctions.Instance.logg("enfacehp = " + Settings.Instance.enfacehp);
-            Helpfunctions.Instance.logg("weaponOnlyAttackMobsUntilEnfacehp = " + Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp);
-            Helpfunctions.Instance.logg("enemyTurnMaxWideSecondStep = " + Settings.Instance.enemyTurnMaxWideSecondStep);
-            Helpfunctions.Instance.logg("enemyTurnMaxWide = " + Settings.Instance.enemyTurnMaxWide);
-            Helpfunctions.Instance.logg("alpha = " + Settings.Instance.alpha);
-            Helpfunctions.Instance.logg("secondweight = " + Settings.Instance.secondweight);
-            Helpfunctions.Instance.logg("firstweight = " + Settings.Instance.firstweight);
-            Helpfunctions.Instance.logg("writeToSingleFile = " + Settings.Instance.writeToSingleFile);
-            Helpfunctions.Instance.logg("useSecretsPlayAround = " + Settings.Instance.useSecretsPlayAround);
-            Helpfunctions.Instance.logg("useExternalProcess = " + Settings.Instance.useExternalProcess);
-            Helpfunctions.Instance.logg("placement = " + Settings.Instance.placement);
-            Helpfunctions.Instance.logg("simulateEnemysTurn = " + Settings.Instance.simulateEnemysTurn);
-            Helpfunctions.Instance.logg("printlearnmode = " + Settings.Instance.printlearnmode);
-            Helpfunctions.Instance.logg("playaround = " + Settings.Instance.playaround);
-            Helpfunctions.Instance.logg("passiveWaiting = " + Settings.Instance.passiveWaiting);
-            Helpfunctions.Instance.logg("learnmode = " + Settings.Instance.learnmode);
-            Helpfunctions.Instance.logg("enemyConcede = " + Settings.Instance.enemyConcede);
-            Helpfunctions.Instance.logg("concede = " + Settings.Instance.concede);
-            Helpfunctions.Instance.logg("ImprovedCalculations = " + Settings.Instance.ImprovedCalculations);
-            Helpfunctions.Instance.logg("speedupLevel = " + Settings.Instance.speedupLevel);
-            Helpfunctions.Instance.logg("adjustActions = " + Settings.Instance.adjustActions);
+            Helpfunctions.Instance.logg($"path = {Settings.Instance.path}");
+            Helpfunctions.Instance.logg($"logpath = {Settings.Instance.logpath}");
+            Helpfunctions.Instance.logg($"logfile = {Settings.Instance.logfile}");
+            Helpfunctions.Instance.logg($"twotsamount = {Settings.Instance.twotsamount}");
+            Helpfunctions.Instance.logg($"secondTurnAmount = {Settings.Instance.secondTurnAmount}");
+            Helpfunctions.Instance.logg($"playaroundprob2 = {Settings.Instance.playaroundprob2}");
+            Helpfunctions.Instance.logg($"playaroundprob = {Settings.Instance.playaroundprob}");
+            Helpfunctions.Instance.logg($"nextTurnTotalBoards = {Settings.Instance.nextTurnTotalBoards}");
+            Helpfunctions.Instance.logg($"nextTurnMaxWide = {Settings.Instance.nextTurnMaxWide}");
+            Helpfunctions.Instance.logg($"nextTurnDeep = {Settings.Instance.nextTurnDeep}");
+            Helpfunctions.Instance.logg($"maxwide = {Settings.Instance.maxwide}");
+            Helpfunctions.Instance.logg($"enfacehp = {Settings.Instance.enfacehp}");
+            Helpfunctions.Instance.logg(
+                $"weaponOnlyAttackMobsUntilEnfacehp = {Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp}");
+            Helpfunctions.Instance.logg($"enemyTurnMaxWideSecondStep = {Settings.Instance.enemyTurnMaxWideSecondStep}");
+            Helpfunctions.Instance.logg($"enemyTurnMaxWide = {Settings.Instance.enemyTurnMaxWide}");
+            Helpfunctions.Instance.logg($"alpha = {Settings.Instance.alpha}");
+            Helpfunctions.Instance.logg($"secondweight = {Settings.Instance.secondweight}");
+            Helpfunctions.Instance.logg($"firstweight = {Settings.Instance.firstweight}");
+            Helpfunctions.Instance.logg($"writeToSingleFile = {Settings.Instance.writeToSingleFile}");
+            Helpfunctions.Instance.logg($"useSecretsPlayAround = {Settings.Instance.useSecretsPlayAround}");
+            Helpfunctions.Instance.logg($"useExternalProcess = {Settings.Instance.useExternalProcess}");
+            Helpfunctions.Instance.logg($"placement = {Settings.Instance.placement}");
+            Helpfunctions.Instance.logg($"simulateEnemysTurn = {Settings.Instance.simulateEnemysTurn}");
+            Helpfunctions.Instance.logg($"printlearnmode = {Settings.Instance.printlearnmode}");
+            Helpfunctions.Instance.logg($"playaround = {Settings.Instance.playaround}");
+            Helpfunctions.Instance.logg($"passiveWaiting = {Settings.Instance.passiveWaiting}");
+            Helpfunctions.Instance.logg($"learnmode = {Settings.Instance.learnmode}");
+            Helpfunctions.Instance.logg($"enemyConcede = {Settings.Instance.enemyConcede}");
+            Helpfunctions.Instance.logg($"concede = {Settings.Instance.concede}");
+            Helpfunctions.Instance.logg($"ImprovedCalculations = {Settings.Instance.ImprovedCalculations}");
+            Helpfunctions.Instance.logg($"speedupLevel = {Settings.Instance.speedupLevel}");
+            Helpfunctions.Instance.logg($"adjustActions = {Settings.Instance.adjustActions}");
             Helpfunctions.Instance.logg("#################### Settings End #####################################");
         }
 

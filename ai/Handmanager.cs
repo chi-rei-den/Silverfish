@@ -121,9 +121,10 @@ namespace HREngine.Bots
             help.logg("Own Handcards: ");
             foreach (Handmanager.Handcard hc in this.handCards)
             {
-                help.logg("pos " + hc.position + " " + hc.card.CardId + " " + hc.manacost + " entity " + hc.entity + " " + hc.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp);
+                help.logg(
+                    $"pos {hc.position} {hc.card.CardId} {hc.manacost} entity {hc.entity} {hc.card.CardId} {hc.addattack} {hc.addHp} {hc.elemPoweredUp}");
             }
-            help.logg("Enemy cards: " + this.enemyAnzCards);
+            help.logg($"Enemy cards: {this.enemyAnzCards}");
         }
 
 

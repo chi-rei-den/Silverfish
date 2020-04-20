@@ -72,35 +72,35 @@ namespace HREngine.Bots
                 {
                     string playaction = "play ";
 
-                    playaction += "id " + this.card.entity;
+                    playaction += $"id {this.card.entity}";
                     if (this.target != null)
                     {
-                        playaction += " target " + this.target.entitiyID;
+                        playaction += $" target {this.target.entitiyID}";
                     }
 
                     if (this.place >= 0)
                     {
-                        playaction += " pos " + this.place;
+                        playaction += $" pos {this.place}";
                     }
 
-                    if (this.druidchoice >= 1) playaction += " choice " + this.druidchoice;
+                    if (this.druidchoice >= 1) playaction += $" choice {this.druidchoice}";
 
                     help.writeToBuffer(playaction);
                 }
                 if (this.actionType == actionEnum.attackWithMinion)
                 {
-                    help.writeToBuffer("attack " + this.own.entitiyID + " enemy " + this.target.entitiyID);
+                    help.writeToBuffer($"attack {this.own.entitiyID} enemy {this.target.entitiyID}");
                 }
                 if (this.actionType == actionEnum.attackWithHero)
                 {
-                    help.writeToBuffer("heroattack " + this.target.entitiyID);
+                    help.writeToBuffer($"heroattack {this.target.entitiyID}");
                 }
                 if (this.actionType == actionEnum.useHeroPower)
                 {
 
                     if (this.target != null)
                     {
-                        help.writeToBuffer("useability on target " + this.target.entitiyID);
+                        help.writeToBuffer($"useability on target {this.target.entitiyID}");
                     }
                     else
                     {
@@ -113,35 +113,35 @@ namespace HREngine.Bots
             {
                 string playaction = "play ";
 
-                playaction += "id " + this.card.entity;
+                playaction += $"id {this.card.entity}";
                 if (this.target != null)
                 {
-                    playaction += " target " + this.target.entitiyID;
+                    playaction += $" target {this.target.entitiyID}";
                 }
 
                 if (this.place >= 0)
                 {
-                    playaction += " pos " + this.place;
+                    playaction += $" pos {this.place}";
                 }
 
-                if (this.druidchoice >= 1) playaction += " choice " + this.druidchoice;
+                if (this.druidchoice >= 1) playaction += $" choice {this.druidchoice}";
 
                 help.logg(playaction);
             }
             if (this.actionType == actionEnum.attackWithMinion)
             {
-                help.logg("attacker: " + this.own.entitiyID + " enemy: " + this.target.entitiyID);
+                help.logg($"attacker: {this.own.entitiyID} enemy: {this.target.entitiyID}");
             }
             if (this.actionType == actionEnum.attackWithHero)
             {
-                help.logg("attack with hero, enemy: " + this.target.entitiyID);
+                help.logg($"attack with hero, enemy: {this.target.entitiyID}");
             }
             if (this.actionType == actionEnum.useHeroPower)
             {
                 help.logg("useability ");
                 if (this.target != null)
                 {
-                    help.logg("on enemy: " + this.target.entitiyID);
+                    help.logg($"on enemy: {this.target.entitiyID}");
                 }
             }
             help.logg("");
@@ -155,17 +155,17 @@ namespace HREngine.Bots
             {
                 retval += "play ";
 
-                retval += "id " + this.card.entity;
+                retval += $"id {this.card.entity}";
                 if (this.target != null)
                 {
-                    retval += " target " + this.target.entitiyID;
+                    retval += $" target {this.target.entitiyID}";
                 }
 
                 if (this.place >= 0)
                 {
-                    retval += " pos " + this.place;
+                    retval += $" pos {this.place}";
                 }
-                if (this.druidchoice >= 1) retval += " choice " + this.druidchoice;
+                if (this.druidchoice >= 1) retval += $" choice {this.druidchoice}";
             }
             if (this.actionType == actionEnum.attackWithMinion)
             {

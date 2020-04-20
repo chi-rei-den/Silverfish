@@ -84,24 +84,24 @@ namespace HREngine.Bots
             {
                 if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
                 {
-                    Helpfunctions.Instance.ErrorLog(behavName + ": 本策略没有配置文件.");
+                    Helpfunctions.Instance.ErrorLog($"{behavName}: 本策略没有配置文件.");
                     endOfSetSettings();
                     return;
                 }
                 pathToSettings = Path.Combine(Silverfish.Instance.BehaviorPath[behavName], "_settings_custom.txt");
-                if (System.IO.File.Exists(pathToSettings)) Helpfunctions.Instance.ErrorLog(behavName + ": 应用自定义配置.");
+                if (System.IO.File.Exists(pathToSettings)) Helpfunctions.Instance.ErrorLog($"{behavName}: 应用自定义配置.");
                 else pathToSettings = Path.Combine(Silverfish.Instance.BehaviorPath[behavName], "_settings.txt");
             }
 
             if (!System.IO.File.Exists(pathToSettings))
             {
-                Helpfunctions.Instance.ErrorLog(behavName + ": 没有设置.");
+                Helpfunctions.Instance.ErrorLog($"{behavName}: 没有设置.");
                 endOfSetSettings();
                 return;
             }
             try
             {
-                Helpfunctions.Instance.ErrorLog("读取战场设置 " + behavName);
+                Helpfunctions.Instance.ErrorLog($"读取战场设置 {behavName}");
                 string[] lines = System.IO.File.ReadAllLines(pathToSettings);
                 String[] tmp;
                 int valueInt;
@@ -148,7 +148,7 @@ namespace HREngine.Bots
                         case "speedupLevel": this.speedupLevel = valueInt; break;
                         case "adjustActions": this.adjustActions = valueInt; break;
                         default:
-                            Helpfunctions.Instance.ErrorLog(tmp[2] + " is not supported!!!");
+                            Helpfunctions.Instance.ErrorLog($"{tmp[2]} is not supported!!!");
                             break;
                     }
                 }
@@ -156,25 +156,25 @@ namespace HREngine.Bots
             }
             catch (Exception e)
             {
-                Helpfunctions.Instance.ErrorLog(behavName + " _settings.txt - 读取错误. 我们将使用默认配置.");
+                Helpfunctions.Instance.ErrorLog($"{behavName} _settings.txt - 读取错误. 我们将使用默认配置.");
                 endOfSetSettings();
                 return;
             }
-            Helpfunctions.Instance.ErrorLog(behavName + " 配置文件读取成功.");
+            Helpfunctions.Instance.ErrorLog($"{behavName} 配置文件读取成功.");
         }
 
         private void endOfSetSettings()
         {
             setWeights(this.alpha);
 
-            Helpfunctions.Instance.ErrorLog("设置怼脸血线值为: " + this.enfacehp);
-            Helpfunctions.Instance.ErrorLog("设置武器怼脸血线值: " + this.weaponOnlyAttackMobsUntilEnfacehp);
+            Helpfunctions.Instance.ErrorLog($"设置怼脸血线值为: {this.enfacehp}");
+            Helpfunctions.Instance.ErrorLog($"设置武器怼脸血线值: {this.weaponOnlyAttackMobsUntilEnfacehp}");
             ComboBreaker.Instance.attackFaceHP = this.enfacehp;
 
             Ai.Instance.setMaxWide(this.maxwide);
-            Helpfunctions.Instance.ErrorLog("设置AI值（maxwide）: " + this.maxwide);
+            Helpfunctions.Instance.ErrorLog($"设置AI值（maxwide）: {this.maxwide}");
             Ai.Instance.setTwoTurnSimulation(false, this.twotsamount);
-            Helpfunctions.Instance.ErrorLog("计算下个回合 " + this.twotsamount + " 线程");
+            Helpfunctions.Instance.ErrorLog($"计算下个回合 {this.twotsamount} 线程");
             if (this.twotsamount > 0) Helpfunctions.Instance.ErrorLog("推算下回合敌方行动");
             if (this.useSecretsPlayAround) Helpfunctions.Instance.ErrorLog("开启防奥秘");
             if (this.playaround)
@@ -191,7 +191,7 @@ namespace HREngine.Bots
             float a = ((float)alpha) / 100f;
             this.firstweight = 1f - a;
             this.secondweight = a;
-            Helpfunctions.Instance.ErrorLog("目前的AI值（alpha）是 " + this.secondweight);
+            Helpfunctions.Instance.ErrorLog($"目前的AI值（alpha）是 {this.secondweight}");
         }
 
         public void setFilePath(string path)

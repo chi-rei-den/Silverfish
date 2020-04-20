@@ -627,7 +627,8 @@ namespace HREngine.Bots
                         foreach (Tuple<Condition, List<actUnit>> condPen in tmpPen)
                         {
                             weight += condPen.Item1.bonus;
-                            if (this.printRules > 0) p.rulesUsed += -condPen.Item1.bonus + " broken rule:" + condPen.Item1.parentRule + "@";
+                            if (this.printRules > 0) p.rulesUsed +=
+                                $"{-condPen.Item1.bonus} broken rule:{condPen.Item1.parentRule}@";
                         }
                     }
                     else
@@ -645,14 +646,16 @@ namespace HREngine.Bots
                                         if (checkCondition(extraCond, p, au.action)) continue;
                                         actRuleBroken = true;
                                         tmpPenBonus -= condPen.Item1.bonus;
-                                        if (this.printRules > 0) p.rulesUsed += -condPen.Item1.bonus + " broken extra condition:" + condPen.Item1.parentRule + "@";
+                                        if (this.printRules > 0) p.rulesUsed +=
+                                            $"{-condPen.Item1.bonus} broken extra condition:{condPen.Item1.parentRule}@";
                                         break;
                                     }
                                 }
                                 if (!actRuleBroken)
                                 {
                                     tmpPenBonus += heapOfRules[ruleNum].bonus;
-                                    if (this.printRules > 0) p.rulesUsed += heapOfRules[ruleNum].bonus + " " + condPen.Item1.parentRule + "@";
+                                    if (this.printRules > 0) p.rulesUsed +=
+                                        $"{this.heapOfRules[ruleNum].bonus} {condPen.Item1.parentRule}@";
                                 }
                             }
                         }
@@ -664,7 +667,7 @@ namespace HREngine.Bots
                             {
                                 string ruleStr = "no conditions";
                                 if (heapOfRules[ruleNum].conditions.Count > 0) ruleStr = heapOfRules[ruleNum].conditions[0].parentRule;
-                                p.rulesUsed += heapOfRules[ruleNum].bonus + ruleStr + "@";
+                                p.rulesUsed += $"{this.heapOfRules[ruleNum].bonus}{ruleStr}@";
                             }
                         }
                     }
@@ -695,11 +698,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(ohc) && RuleEnemyClass.ContainsKey(CardClass.ALL))
+            if (RuleOwnClass.ContainsKey(ohc) && RuleEnemyClass.ContainsKey(CardClass.INVALID))
             {
                 foreach (int ruleNum in RuleOwnClass[ohc].Keys)
                 {
-                    if (RuleEnemyClass[CardClass.ALL].ContainsKey(ruleNum))
+                    if (RuleEnemyClass[CardClass.INVALID].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -707,11 +710,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(CardClass.ALL) && RuleEnemyClass.ContainsKey(ehc))
+            if (RuleOwnClass.ContainsKey(CardClass.INVALID) && RuleEnemyClass.ContainsKey(ehc))
             {
                 foreach (int ruleNum in RuleEnemyClass[ehc].Keys)
                 {
-                    if (RuleOwnClass[CardClass.ALL].ContainsKey(ruleNum))
+                    if (RuleOwnClass[CardClass.INVALID].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -719,11 +722,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (RuleOwnClass.ContainsKey(CardClass.ALL) && RuleEnemyClass.ContainsKey(CardClass.ALL))
+            if (RuleOwnClass.ContainsKey(CardClass.INVALID) && RuleEnemyClass.ContainsKey(CardClass.INVALID))
             {
-                foreach (int ruleNum in RuleOwnClass[CardClass.ALL].Keys)
+                foreach (int ruleNum in RuleOwnClass[CardClass.INVALID].Keys)
                 {
-                    if (RuleEnemyClass[CardClass.ALL].ContainsKey(ruleNum))
+                    if (RuleEnemyClass[CardClass.INVALID].ContainsKey(ruleNum))
                     {
                         if (RuleCardIdsPlay.ContainsKey(ruleNum)) addCardIdRulesGame(RuleCardIdsPlay, CardIdRulesPlayGame, ruleNum);
                         if (RuleCardIdsAttack.ContainsKey(ruleNum)) addAttackerIdRulesGame(ruleNum);
@@ -873,7 +876,7 @@ namespace HREngine.Bots
 
                 if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
                 {
-                    Helpfunctions.Instance.ErrorLog(behavName + ": no special rules.");
+                    Helpfunctions.Instance.ErrorLog($"{behavName}: no special rules.");
                     return;
                 }
                 pathToRules = Path.Combine(Silverfish.Instance.BehaviorPath[behavName], "_rules.txt");
@@ -881,7 +884,7 @@ namespace HREngine.Bots
 
             if (!System.IO.File.Exists(pathToRules))
             {
-                Helpfunctions.Instance.ErrorLog(behavName + ": no special rules.");
+                Helpfunctions.Instance.ErrorLog($"{behavName}: no special rules.");
                 return;
             }
             try
@@ -914,7 +917,8 @@ namespace HREngine.Bots
                                 try { oneRule.ruleNumber = Convert.ToInt32(tmp[1]); }
                                 catch
                                 {
-                                    Helpfunctions.Instance.ErrorLog("[RulesEngine] Wrong rule number (must be a number): " + ss);
+                                    Helpfunctions.Instance.ErrorLog(
+                                        $"[RulesEngine] Wrong rule number (must be a number): {ss}");
                                     getNextRule = true;
                                 }
                                 continue;
@@ -922,7 +926,8 @@ namespace HREngine.Bots
                                 try { oneRule.replacedRule = Convert.ToInt32(tmp[1]); }
                                 catch
                                 {
-                                    Helpfunctions.Instance.ErrorLog("[RulesEngine] Wrong replaced rule number (must be a number): " + ss);
+                                    Helpfunctions.Instance.ErrorLog(
+                                        $"[RulesEngine] Wrong replaced rule number (must be a number): {ss}");
                                     getNextRule = true;
                                 }
                                 continue;
@@ -930,7 +935,8 @@ namespace HREngine.Bots
                                 try { oneRule.bonus = Convert.ToInt32(tmp[1]); }
                                 catch
                                 {
-                                    Helpfunctions.Instance.ErrorLog("[RulesEngine] Wrong bonus (must be a number): " + ss);
+                                    Helpfunctions.Instance.ErrorLog(
+                                        $"[RulesEngine] Wrong bonus (must be a number): {ss}");
                                     getNextRule = true;
                                 }
                                 continue;
@@ -949,7 +955,8 @@ namespace HREngine.Bots
                                         {
                                             if (!validateCondition(singlecondOr, s))
                                             {
-                                                Helpfunctions.Instance.ErrorLog("[RulesEngine] " + condErr + singlecondOr);
+                                                Helpfunctions.Instance.ErrorLog(
+                                                    $"[RulesEngine] {this.condErr}{singlecondOr}");
                                                 getNextRule = true;
                                             }
                                             if (getNextRule) break;
@@ -967,7 +974,7 @@ namespace HREngine.Bots
                                     }
                                     else
                                     {
-                                        Helpfunctions.Instance.ErrorLog("[RulesEngine] " + condErr + singlecondAnd);
+                                        Helpfunctions.Instance.ErrorLog($"[RulesEngine] {this.condErr}{singlecondAnd}");
                                         getNextRule = true;
                                     }
                                 }
@@ -986,7 +993,8 @@ namespace HREngine.Bots
                     if (r.ruleNumber == 0) continue;
                     if (heapOfRules.ContainsKey(r.ruleNumber))
                     {
-                        Helpfunctions.Instance.ErrorLog("[RulesEngine] Rule rejected. Duplicate numbers: rn=" + r.ruleNumber);
+                        Helpfunctions.Instance.ErrorLog(
+                            $"[RulesEngine] Rule rejected. Duplicate numbers: rn={r.ruleNumber}");
                     }
                     else
                     {
@@ -1013,7 +1021,7 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        Helpfunctions.Instance.ErrorLog("[RulesEngine] No rule to replace: rr=" + r.replacedRule);
+                        Helpfunctions.Instance.ErrorLog($"[RulesEngine] No rule to replace: rr={r.replacedRule}");
                         r.replacedRule = 0;
                     }
                 }
@@ -1021,7 +1029,8 @@ namespace HREngine.Bots
                 {
                     if (heapOfRules.ContainsKey(r.Key))
                     {
-                        Helpfunctions.Instance.ErrorLog("[RulesEngine] Replaced rule rejected. Duplicate numbers: rr=" + r.Key);
+                        Helpfunctions.Instance.ErrorLog(
+                            $"[RulesEngine] Replaced rule rejected. Duplicate numbers: rr={r.Key}");
                     }
                     else heapOfRules.Add(r.Key, r.Value);
                 }
@@ -1063,11 +1072,13 @@ namespace HREngine.Bots
                     {
                         foreach (CardClass hClass in Enum.GetValues(typeof(CardClass)))
                         {
-                            if (hClass == CardClass.INVALID || hClass == CardClass.ALL) continue;
+                            if (hClass == CardClass.INVALID) continue;
                             if (equalOwnHeroes.ContainsKey(hClass))
                             {
-                                if (equalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double own Hero class (equal): " + hClass);
-                                if (notequalOwnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog("[RulesEngine] The same equal/notequal own Hero class: " + hClass);
+                                if (equalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog(
+                                    $"[RulesEngine] Double own Hero class (equal): {hClass}");
+                                if (notequalOwnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog(
+                                    $"[RulesEngine] The same equal/notequal own Hero class: {hClass}");
                                 if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0);
                                 else RuleOwnClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                             }
@@ -1075,7 +1086,8 @@ namespace HREngine.Bots
                             {
                                 if (!notequalOwnHeroes.ContainsKey(hClass))
                                 {
-                                    if (notequalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double own Hero class (notequal): " + hClass);
+                                    if (notequalOwnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog(
+                                        $"[RulesEngine] Double own Hero class (notequal): {hClass}");
                                     if (RuleOwnClass.ContainsKey(hClass)) RuleOwnClass[hClass].Add(r.Key, 0);
                                     else RuleOwnClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                                 }
@@ -1084,18 +1096,20 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleOwnClass.ContainsKey(CardClass.ALL)) RuleOwnClass[CardClass.ALL].Add(r.Key, 0);
-                        else RuleOwnClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
+                        if (RuleOwnClass.ContainsKey(CardClass.INVALID)) RuleOwnClass[CardClass.INVALID].Add(r.Key, 0);
+                        else RuleOwnClass.Add(CardClass.INVALID, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                     if (equalEnHeroes.Count > 0 || notequalEnHeroes.Count > 0)
                     {
                         foreach (CardClass hClass in Enum.GetValues(typeof(CardClass)))
                         {
-                            if (hClass == CardClass.INVALID || hClass == CardClass.ALL) continue;
+                            if (hClass == CardClass.INVALID || hClass == CardClass.INVALID) continue;
                             if (equalEnHeroes.ContainsKey(hClass))
                             {
-                                if (equalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double enemy Hero class (equal): " + hClass);
-                                if (notequalEnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog("[RulesEngine] The same equal/notequal enemy Hero class: " + hClass);
+                                if (equalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog(
+                                    $"[RulesEngine] Double enemy Hero class (equal): {hClass}");
+                                if (notequalEnHeroes.ContainsKey(hClass)) Helpfunctions.Instance.ErrorLog(
+                                    $"[RulesEngine] The same equal/notequal enemy Hero class: {hClass}");
                                 if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0);
                                 else RuleEnemyClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                             }
@@ -1103,7 +1117,8 @@ namespace HREngine.Bots
                             {
                                 if (!notequalEnHeroes.ContainsKey(hClass))
                                 {
-                                    if (notequalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog("[RulesEngine] Double enemy Hero class (notequal): " + hClass);
+                                    if (notequalEnHeroes[hClass] > 1) Helpfunctions.Instance.ErrorLog(
+                                        $"[RulesEngine] Double enemy Hero class (notequal): {hClass}");
                                     if (RuleEnemyClass.ContainsKey(hClass)) RuleEnemyClass[hClass].Add(r.Key, 0);
                                     else RuleEnemyClass.Add(hClass, new Dictionary<int, int>() { { r.Key, 0 } });
                                 }
@@ -1112,8 +1127,8 @@ namespace HREngine.Bots
                     }
                     else
                     {
-                        if (RuleEnemyClass.ContainsKey(CardClass.ALL)) RuleEnemyClass[CardClass.ALL].Add(r.Key, 0);
-                        else RuleEnemyClass.Add(CardClass.ALL, new Dictionary<int, int>() { { r.Key, 0 } });
+                        if (RuleEnemyClass.ContainsKey(CardClass.INVALID)) RuleEnemyClass[CardClass.INVALID].Add(r.Key, 0);
+                        else RuleEnemyClass.Add(CardClass.INVALID, new Dictionary<int, int>() { { r.Key, 0 } });
                     }
                 }
             }
@@ -1123,7 +1138,7 @@ namespace HREngine.Bots
                 return;
             }
 
-            Helpfunctions.Instance.ErrorLog("[规则编辑器] " + heapOfRules.Count + " 规则名 " + behavName + " 读取成功");
+            Helpfunctions.Instance.ErrorLog($"[规则编辑器] {this.heapOfRules.Count} 规则名 {behavName} 读取成功");
             setRuleCardIds();
         }
 
@@ -2469,42 +2484,42 @@ namespace HREngine.Bots
                     return false;
                 case param.omc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.omc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.omc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.omc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.ownMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.emc_shr_equal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter == cond.num) return true;
                     return false;
                 case param.emc_shr_notequal:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter != cond.num) return true;
                     return false;
                 case param.emc_shr_greater:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter > cond.num) return true;
                     return false;
                 case param.emc_shr_less:
                     tmp_counter = 0;
-                    foreach (Minion m in p.enemyMinions) if (m.name == SimCard.silverhandrecruit) tmp_counter++;
+                    foreach (Minion m in p.ownMinions) if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) tmp_counter++;
                     if (tmp_counter < cond.num) return true;
                     return false;
                 case param.omc_undamaged_equal:

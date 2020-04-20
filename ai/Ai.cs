@@ -126,17 +126,17 @@ namespace HREngine.Bots
 
             help.loggonoff(true);
             help.logg("-------------------------------------");
-            if (bestplay.ruleWeight != 0) help.logg("ruleWeight " + bestplay.ruleWeight * -1);
+            if (bestplay.ruleWeight != 0) help.logg($"ruleWeight {this.bestplay.ruleWeight * -1}");
             if (settings.printRules > 0)
             {
                 String[] rulesStr = bestplay.rulesUsed.Split('@');
                 foreach (string rs in rulesStr)
                 {
                     if (rs == "") continue;
-                    help.logg("rule: " + rs);
+                    help.logg($"rule: {rs}");
                 }
             }
-            help.logg("value of best board " + bestval);
+            help.logg($"value of best board {bestval}");
 
             this.bestActions.Clear();
             this.bestmove = null;
@@ -170,7 +170,7 @@ namespace HREngine.Bots
             if (isLethalCheck)
             {
                 this.lethalMissing = bestplay.enemyHero.armor + bestplay.enemyHero.Hp;//RR
-                help.logg("missing dmg to lethal " + this.lethalMissing);
+                help.logg($"missing dmg to lethal {this.lethalMissing}");
             }
         }
 
@@ -200,10 +200,10 @@ namespace HREngine.Bots
                 catch (Exception ex)
                 {
                     Helpfunctions.Instance.logg("Message ---");
-                    Helpfunctions.Instance.logg("Message ---" + ex.Message);
-                    Helpfunctions.Instance.logg("Source ---" + ex.Source);
-                    Helpfunctions.Instance.logg("StackTrace ---" + ex.StackTrace);
-                    Helpfunctions.Instance.logg("TargetSite ---\n{0}" + ex.TargetSite);
+                    Helpfunctions.Instance.logg($"Message ---{ex.Message}");
+                    Helpfunctions.Instance.logg($"Source ---{ex.Source}");
+                    Helpfunctions.Instance.logg($"StackTrace ---{ex.StackTrace}");
+                    Helpfunctions.Instance.logg($"TargetSite ---\n{{0}}{ex.TargetSite}");
 
                 }
                 Helpfunctions.Instance.logg("nmgsime-");
@@ -254,7 +254,7 @@ namespace HREngine.Bots
                 {
                     strt = DateTime.Now;
                     doallmoves(false, true);
-                    help.logg("calculated " + (DateTime.Now - strt).TotalSeconds);
+                    help.logg($"calculated {(DateTime.Now - strt).TotalSeconds}");
                 }
 
                 if (bestmoveValue < 10000)
@@ -264,7 +264,7 @@ namespace HREngine.Bots
                     help.logg("no lethal, do something random######");
                     strt = DateTime.Now;
                     doallmoves(false, false);
-                    help.logg("calculated " + (DateTime.Now - strt).TotalSeconds);
+                    help.logg($"calculated {(DateTime.Now - strt).TotalSeconds}");
 
                 }
             }
@@ -297,14 +297,16 @@ namespace HREngine.Bots
             {
                 p.printBoard();
             }
-            help.logg("ownminionscount " + posmoves[0].ownMinions.Count);
-            help.logg("owncardscount " + posmoves[0].owncards.Count);
+            help.logg($"ownminionscount {this.posmoves[0].ownMinions.Count}");
+            help.logg($"owncardscount {this.posmoves[0].owncards.Count}");
 
             foreach (var item in this.posmoves[0].owncards)
             {
-                help.logg("card " + item.card + " is playable :" + item.canplayCard(posmoves[0], true) + " cost/mana: " + item.manacost + "/" + posmoves[0].mana);
+                help.logg(
+                    $"card {item.card} is playable :{item.canplayCard(this.posmoves[0], true)} cost/mana: {item.manacost}/{this.posmoves[0].mana}");
             }
-            help.logg("ability " + posmoves[0].ownHeroAblility.card + " is playable :" + posmoves[0].ownHeroAblility.card.canplayCard(posmoves[0], 2, true) + " cost/mana: " + posmoves[0].ownHeroAblility.card.getManaCost(posmoves[0], 2) + "/" + posmoves[0].mana);
+            help.logg(
+                $"ability {this.posmoves[0].ownHeroAblility.card} is playable :{this.posmoves[0].ownHeroAblility.card.canplayCard(this.posmoves[0], 2, true)} cost/mana: {this.posmoves[0].ownHeroAblility.card.getManaCost(this.posmoves[0], 2)}/{this.posmoves[0].mana}");
 
             DateTime strt = DateTime.Now;
             // lethalcheck
@@ -312,7 +314,7 @@ namespace HREngine.Bots
             {
                 doallmoves(false, true);
                 calcTime = (DateTime.Now - strt).TotalSeconds;
-                help.logg("calculated " + calcTime);
+                help.logg($"calculated {calcTime}");
                 retval.Add(calcTime);
             }
 
@@ -332,7 +334,7 @@ namespace HREngine.Bots
                     strt = DateTime.Now;
                     doallmoves(false, false);
                     calcTime = (DateTime.Now - strt).TotalSeconds;
-                    help.logg("calculated " + calcTime);
+                    help.logg($"calculated {calcTime}");
                     retval.Add(calcTime);
                 }
             }
@@ -341,7 +343,7 @@ namespace HREngine.Bots
             {
                 this.mainTurnSimulator.printPosmoves();
                 simmulateWholeTurn();
-                help.logg("calculated " + calcTime);
+                help.logg($"calculated {calcTime}");
             }
 
             return retval;
@@ -445,7 +447,7 @@ namespace HREngine.Bots
 
         public void updateEntitiy(int old, int newone)
         {
-            Helpfunctions.Instance.logg("entityupdate! " + old + " to " + newone);
+            Helpfunctions.Instance.logg($"entityupdate! {old} to {newone}");
             if (this.nextMoveGuess != null)
             {
                 foreach (Minion m in this.nextMoveGuess.ownMinions)
