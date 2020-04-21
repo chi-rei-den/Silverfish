@@ -299,7 +299,7 @@ namespace HREngine.Bots
                             Minion target = p.ownHero;
                             for (; anz > 0; anz--)
                             {
-                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP);
+                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth);
                                 if (target == null) target = p.ownHero;
                                 p.minionGetDamageOrHeal(target, 1);
                             }
@@ -386,7 +386,7 @@ namespace HREngine.Bots
                             p.minionGetDamageOrHeal(target, 1);
                             for (; anz > 0; anz--)
                             {
-                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP);
+                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth);
                                 if (target == null) target = p.ownHero;
                                 p.minionGetDamageOrHeal(target, 1);
                             }
@@ -449,7 +449,7 @@ namespace HREngine.Bots
                             Minion target = p.ownHero;
                             for (; anz > 0; anz--)
                             {
-                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP);
+                                if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth);
                                 if (target == null) target = p.ownHero;
                                 p.minionGetDamageOrHeal(target, 1);
                             }
@@ -459,7 +459,7 @@ namespace HREngine.Bots
                         if (p.enemyAnzCards >= 2)
                         {
                             Minion target = p.ownHero;
-                            if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP);
+                            if (p.ownMinions.Count > 0) target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth);
                             if (target == null) target = p.ownHero;
                             p.minionGetDamageOrHeal(target, 1);
                         }

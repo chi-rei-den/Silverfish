@@ -504,18 +504,18 @@ namespace Chireiden.Silverfish
             int abType = 0; //0 none, 1 damage, 2 heal, 3 baff
             switch (abName)
             {
-                case cardName.heal:
+                case CardIds.NonCollectible.Priest.JusticarTrueheart_Heal:
                 case CardIds.NonCollectible.Priest.LesserHeal:
                     if (p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0) abType = 1;
                     else abType = 2;
                     break;
-                case cardName.ballistashot: abType = 1; break;
+                case CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot: abType = 1; break;
                 case CardIds.NonCollectible.Hunter.SteadyShot: abType = 1; break;
                 case CardIds.NonCollectible.Mage.Fireblast: abType = 1; break;
-                case CardIds.NonCollectible.Mage.Fireblastrank2: abType = 1; break;
-                case cardName.lightningjolt: abType = 1; break;
-                case cardName.mindspike: abType = 1; break;
-                case cardName.mindshatter: abType = 1; break;
+                case CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2: abType = 1; break;
+                case CardIds.NonCollectible.Shaman.ChargedHammer_LightningJoltToken: abType = 1; break;
+                case CardIds.NonCollectible.Priest.Shadowform_MindSpikeToken: abType = 1; break;
+                case CardIds.NonCollectible.Priest.Shadowform_MindShatterToken: abType = 1; break;
                 case CardIds.NonCollectible.Neutral.PowerOfTheFirelord: abType = 1; break;
                 case CardIds.NonCollectible.Hunter.ShotgunBlast: abType = 1; break;
                 case CardIds.NonCollectible.Neutral.UnbalancingStrike: abType = 1; break;
@@ -626,9 +626,6 @@ namespace Chireiden.Silverfish
             {
                 case CardIds.Collectible.Neutral.HappyGhoul:
                     if (p.ownHero.anzGotHealed > 0) retval = offset;
-                    break;
-                case cardName.wildmagic:
-                    retval = offset;
                     break;
                 case CardIds.Collectible.Neutral.DreadCorsair:
                     retval = retval + offset - p.ownWeapon.Angr;
@@ -921,7 +918,7 @@ namespace Chireiden.Silverfish
                                 switch (a.card.card.CardId)
                                 {
                                     case CardIds.NonCollectible.Shaman.TotemicCall: retval--; break;
-                                    case cardName.totemicslam: retval--; break;
+                                    case CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam: retval--; break;
                                 }
                             }
                         }

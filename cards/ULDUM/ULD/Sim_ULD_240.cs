@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         //After you play a <b>Secret</b>, deal 2 damage to all enemy minions.
         //在你使用一张<b>奥秘</b>牌后，对所有敌方随从造成2点伤害。
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
     

@@ -35,7 +35,7 @@ namespace HREngine.Bots
             p.minionGetDamageOrHeal(target, dmg);
         }
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Handmanager.Handcard triggerhc)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Handcard triggerhc)
         {
             if (ownplay) p.ownAbilityReady = true;
             else p.enemyAbilityReady = true;

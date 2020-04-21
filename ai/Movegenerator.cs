@@ -40,7 +40,7 @@ namespace HREngine.Bots
                 List<string> playedcards = new List<string>();
                 System.Text.StringBuilder cardNcost = new System.Text.StringBuilder();
 
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     int cardCost = hc.card.getManaCost(p, hc.manacost);
                     if ((p.nextSpellThisTurnCostHealth && hc.card.Type == CardType.SPELL) || (p.nextMurlocThisTurnCostHealth && hc.card.Race == Race.MURLOC))

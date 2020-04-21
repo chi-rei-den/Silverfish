@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		//Whenever you cast a spell on another friendly minion, cast a copy of it on this one.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (hc.card.Type == CardType.SPELL && hc.target != null && hc.target.own == wasOwnCard)
             {

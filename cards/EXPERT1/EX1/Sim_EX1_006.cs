@@ -36,13 +36,13 @@ namespace HREngine.Bots
         {
             if (turnStartOfOwner && triggerEffectMinion.own == turnStartOfOwner)
             {
-                List<Handmanager.Handcard> temp2 = new List<Handmanager.Handcard>();
-                foreach (Handmanager.Handcard hc in p.owncards)
+                List<Handcard> temp2 = new List<Handcard>();
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION) temp2.Add(hc);
                 }
                 temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
-                foreach (Handmanager.Handcard mins in temp2)
+                foreach (Handcard mins in temp2)
                 {
                     SimCard c = (mins.card.CardId);
                     p.minionTransform(triggerEffectMinion, c);

@@ -36,7 +36,7 @@ namespace HREngine.Bots
             return 0;
         }
 
-        public virtual int getSirFinleyPriority(List<Handmanager.Handcard> discoverCards)
+        public virtual int getSirFinleyPriority(List<Handcard> discoverCards)
         {
             return -1;
         }

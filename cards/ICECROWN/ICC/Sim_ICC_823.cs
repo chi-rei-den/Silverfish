@@ -34,8 +34,8 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                Handmanager.Handcard hcCopy = null;
-                foreach (Handmanager.Handcard hc in p.owncards)
+                Handcard hcCopy = null;
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION)
                     {

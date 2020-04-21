@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
 //    erhaltet jedes mal einen „feuerball“-zauber auf eure hand, wenn ihr einen zauber wirkt.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.Type == CardType.SPELL)
             {

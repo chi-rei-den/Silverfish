@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -37,7 +38,7 @@ namespace HREngine.Bots
             if (temp.Count >= 1)
             {
                 // Drew: Null check for searchRandomMinion.
-                var found = p.searchRandomMinion(temp, searchmode.searchLowestHP);
+                var found = p.searchRandomMinion(temp, SearchMode.LowHealth);
                 if (found != null)
                 {
                     p.minionGetDestroyed(found);

@@ -28,7 +28,7 @@ namespace HREngine.Bots
     class Sim_EX1_258 : SimTemplate//Unbound Elemental
     {
         // erhält jedes Mal +1/+1, wenn Ihr eine Karte mit uberladung&lt; ausspielt.
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.Overload > 0)
             {

@@ -34,7 +34,7 @@ namespace HREngine.Bots
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 {
 
-foreach (Handmanager.Handcard hc in p.owncards)
+foreach (Handcard hc in p.owncards)
 {
 if (hc.card.Type == CardType.MINION)
 {

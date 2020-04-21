@@ -29,7 +29,7 @@ namespace HREngine.Bots
     {
         // After you play a Secret, put another random Hunter secret into play.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (hc.card.Secret) p.evaluatePenality -= 9;
         }

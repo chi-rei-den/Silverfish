@@ -219,7 +219,7 @@ namespace HREngine.Bots
         public Questmanager.QuestItem enemyQuest = new Questmanager.QuestItem();
 
 
-        public List<Handmanager.Handcard> owncards = new List<Handmanager.Handcard>();
+        public List<Handcard> owncards = new List<Handcard>();
         public int owncarddraw = 0;
 
         public List<Action> playactions = new List<Action>();
@@ -300,10 +300,10 @@ namespace HREngine.Bots
         public int enemyHeroFatigue = 0;
 
         public bool ownAbilityReady = false;
-        public Handmanager.Handcard ownHeroAblility;
+        public Handcard ownHeroAblility;
 
         public bool enemyAbilityReady = false;
-        public Handmanager.Handcard enemyHeroAblility;
+        public Handcard enemyHeroAblility;
         public Playfield bestEnemyPlay = null;
         public Playfield endTurnState = null;
 
@@ -325,12 +325,12 @@ namespace HREngine.Bots
 
         }
 
-        private void addCardsReal(List<Handmanager.Handcard> source)
+        private void addCardsReal(List<Handcard> source)
         {
 
-            foreach (Handmanager.Handcard hc in source)
+            foreach (Handcard hc in source)
             {
-                this.owncards.Add(new Handmanager.Handcard(hc));
+                this.owncards.Add(new Handcard(hc));
             }
 
         }
@@ -469,8 +469,8 @@ namespace HREngine.Bots
             this.enemyAnzCards = Handmanager.Instance.enemyAnzCards;
 
             this.ownAbilityReady = prozis.ownAbilityisReady;
-            this.ownHeroAblility = new Handmanager.Handcard { card = prozis.heroAbility, manacost = prozis.ownHeroPowerCost };
-            this.enemyHeroAblility = new Handmanager.Handcard { card = prozis.enemyAbility, manacost = prozis.enemyHeroPowerCost };
+            this.ownHeroAblility = new Handcard { card = prozis.heroAbility, manacost = prozis.ownHeroPowerCost };
+            this.enemyHeroAblility = new Handcard { card = prozis.enemyAbility, manacost = prozis.enemyHeroPowerCost };
             this.enemyAbilityReady = false;
             this.bestEnemyPlay = null;
 
@@ -729,7 +729,7 @@ namespace HREngine.Bots
 
             }
 
-            foreach (Handmanager.Handcard hc in this.owncards)
+            foreach (Handcard hc in this.owncards)
             {
 
                 if (hc.card.CardId == CardIds.Collectible.Neutral.Kelthuzad)
@@ -968,8 +968,8 @@ namespace HREngine.Bots
 
             this.ownAbilityReady = p.ownAbilityReady;
             this.enemyAbilityReady = p.enemyAbilityReady;
-            this.ownHeroAblility = new Handmanager.Handcard(p.ownHeroAblility);
-            this.enemyHeroAblility = new Handmanager.Handcard(p.enemyHeroAblility);
+            this.ownHeroAblility = new Handcard(p.ownHeroAblility);
+            this.enemyHeroAblility = new Handcard(p.enemyHeroAblility);
 
             this.ownQuest.Copy(p.ownQuest);
             this.enemyQuest.Copy(p.enemyQuest);
@@ -1279,7 +1279,7 @@ namespace HREngine.Bots
 
             for (int i = 0; i < this.owncards.Count; i++)
             {
-                Handmanager.Handcard dishc = this.owncards[i]; Handmanager.Handcard pishc = p.owncards[i];
+                Handcard dishc = this.owncards[i]; Handcard pishc = p.owncards[i];
                 if (dishc.position != pishc.position || dishc.entity != pishc.entity || dishc.getManaCost(this) != pishc.getManaCost(p))
                 {
                     if (logg) Helpfunctions.Instance.logg($"handcard changed: {dishc.card.CardId}");
@@ -1392,7 +1392,7 @@ namespace HREngine.Bots
 
             for (int i = 0; i < this.owncards.Count; i++)
             {
-                Handmanager.Handcard dishc = this.owncards[i]; Handmanager.Handcard pishc = p.owncards[i];
+                Handcard dishc = this.owncards[i]; Handcard pishc = p.owncards[i];
                 if (dishc.position != pishc.position || dishc.entity != pishc.entity || dishc.manacost != pishc.manacost)
                 {
                     return false;
@@ -2998,7 +2998,7 @@ namespace HREngine.Bots
             //CREATE NEW MINIONS (cant use a.target or a.own) (dont belong to this board)
             Minion trgt = null;
             Minion o = null;
-            Handmanager.Handcard ha = null;
+            Handcard ha = null;
             if (aa.target != null)
             {
                 if (aa.target.own)
@@ -3123,7 +3123,7 @@ namespace HREngine.Bots
 
             if (aa.card != null)
             {
-                foreach (Handmanager.Handcard hh in this.owncards)
+                foreach (Handcard hh in this.owncards)
                 {
                     if (hh.entity == aa.card.entity)
                     {
@@ -3486,7 +3486,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (own)
                     {
-                        Handmanager.Handcard hc = this.searchRandomMinionInHand(this.owncards, searchmode.searchLowestCost, GameTag.Mob);
+                        Handcard hc = this.searchRandomMinionInHand(this.owncards, SearchMode.LowCost, GameTag.Mob);
                         if (hc != null)
                         {
                             hc.addattack++;
@@ -3574,7 +3574,7 @@ namespace HREngine.Bots
         // 4.1 dmg/died/dthrttl triggers
         // 5 after you summon a minion triggers
         // 5.1 dmg/died/dthrttl triggers
-        public void playACard(Handmanager.Handcard hc, Minion target, int position, int choice, int penality)
+        public void playACard(Handcard hc, Minion target, int position, int choice, int penality)
         {
             SimCard c = hc.card;
             this.evaluatePenality += penality;
@@ -3725,7 +3725,7 @@ namespace HREngine.Bots
         public void enemyplaysACard(SimCard c, Minion target, int position, int choice, int penality)
         {
 
-            Handmanager.Handcard hc = new Handmanager.Handcard(c);
+            Handcard hc = new Handcard(c);
             hc.entity = this.getNextEntity();
             if (logging) Helpfunctions.Instance.logg($"enemy play crd {c.CardId} trgt {target}");
 
@@ -4085,7 +4085,7 @@ namespace HREngine.Bots
                 m.handcard.card.Simulator.onMinionDiedTrigger(this, m, m);
             }
 
-            foreach (Handmanager.Handcard hc in this.owncards)
+            foreach (Handcard hc in this.owncards)
             {
                 if (hc.card.CardId == CardIds.Collectible.Paladin.BolvarFordragon) hc.addattack += this.tempTrigger.ownMinionsDied;
             }
@@ -4213,7 +4213,7 @@ namespace HREngine.Bots
             }
         }
 
-        public void triggerACardWillBePlayed(Handmanager.Handcard hc, bool own)
+        public void triggerACardWillBePlayed(Handcard hc, bool own)
         {
             if (own)
             {
@@ -4237,7 +4237,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                foreach (Handmanager.Handcard ohc in this.owncards)
+                foreach (Handcard ohc in this.owncards)
                 {
                     switch (ohc.card.CardId)
                     {
@@ -4491,7 +4491,7 @@ namespace HREngine.Bots
             }
 
             Minion hero;
-            Handmanager.Handcard ab;
+            Handcard ab;
             if (ownturn)
             {
                 hero = this.ownHero;
@@ -5624,10 +5624,10 @@ namespace HREngine.Bots
             }
         }
 
-        public Minion createNewMinion(Handmanager.Handcard hc, int zonepos, bool own)
+        public Minion createNewMinion(Handcard hc, int zonepos, bool own)
         {
             Minion m = new Minion();
-            Handmanager.Handcard handc = new Handmanager.Handcard(hc);
+            Handcard handc = new Handcard(hc);
             m.handcard = handc;
             m.own = own;
             m.isHero = false;
@@ -5690,7 +5690,7 @@ namespace HREngine.Bots
             return m;
         }
 
-        public void placeAmobSomewhere(Handmanager.Handcard hc, int choice, int zonepos)
+        public void placeAmobSomewhere(Handcard hc, int choice, int zonepos)
         {
             int mobplace = zonepos;
 
@@ -5829,7 +5829,7 @@ namespace HREngine.Bots
             int mobplace = zonepos + 1;
 
             //create minion (+triggers)
-            Handmanager.Handcard hc = new Handmanager.Handcard(c) { entity = this.getNextEntity() };
+            Handcard hc = new Handcard(c) { entity = this.getNextEntity() };
             Minion m = createNewMinion(hc, mobplace, own);
             //put it on battle field (+triggers)
             addMinionToBattlefield(m);
@@ -5974,14 +5974,14 @@ namespace HREngine.Bots
             if (s == SimCard.None)
             {
                 SimCard c = s;
-                Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
+                Handcard hc = new Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
             }
             else
             {
                 SimCard c = s;
-                Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = c.calculateManaCost(this), entity = this.getNextEntity() };
+                Handcard hc = new Handcard { card = c, position = this.owncards.Count + 1, manacost = c.calculateManaCost(this), entity = this.getNextEntity() };
                 this.owncards.Add(hc);
                 this.triggerCardsChanged(true);
             }
@@ -5998,7 +5998,7 @@ namespace HREngine.Bots
                     }
                     this.owncarddraw++;
 
-                    Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
+                    Handcard hc = new Handcard { card = c, position = this.owncards.Count + 1, manacost = 1000, entity = this.getNextEntity() };
                     this.owncards.Add(hc);
                     this.triggerCardsChanged(true);
                 }
@@ -6006,12 +6006,12 @@ namespace HREngine.Bots
 
         }
 
-        public void removeCard(Handmanager.Handcard hcc)
+        public void removeCard(Handcard hcc)
         {
             int cardPos = 1;
             int cardNum = 0;
-            Handmanager.Handcard hcTmp = null;
-            foreach (Handmanager.Handcard hc in this.owncards)
+            Handcard hcTmp = null;
+            foreach (Handcard hc in this.owncards)
             {
                 if (hc.entity == hcc.entity)
                 {
@@ -6026,7 +6026,7 @@ namespace HREngine.Bots
             if (hcTmp != null) this.owncards.Remove(hcTmp);
         }
 
-        public void renumHandCards(List<Handmanager.Handcard> list)
+        public void renumHandCards(List<Handcard> list)
         {
             int count = list.Count;
             for (int i = 0; i < count; i++) list[0].position = i + 1;
@@ -6081,7 +6081,7 @@ namespace HREngine.Bots
             if (own)
             {
                 SimCard c = m.handcard.card;
-                Handmanager.Handcard hc = new Handmanager.Handcard { card = c, position = this.owncards.Count + 1, entity = m.entitiyID, manacost = c.calculateManaCost(this) + manachange };
+                Handcard hc = new Handcard { card = c, position = this.owncards.Count + 1, entity = m.entitiyID, manacost = c.calculateManaCost(this) + manachange };
                 if (this.owncards.Count < 10)
                 {
                     this.owncards.Add(hc);
@@ -6112,7 +6112,7 @@ namespace HREngine.Bots
         {
             m.handcard.card.Simulator.onAuraEnds(this, m);//end aura of the minion
 
-            Handmanager.Handcard hc = new Handmanager.Handcard(c) { entity = m.entitiyID };
+            Handcard hc = new Handcard(c) { entity = m.entitiyID };
             if ((m.ancestralspirit >= 1 || m.desperatestand >= 1) && !m.own)
             {
                 this.evaluatePenality -= Ai.Instance.botBase.getEnemyMinionValue(m, this) - 1;
@@ -6175,12 +6175,15 @@ namespace HREngine.Bots
             this.guessHeroDamage();
             if (this.guessingHeroHP < 0)
             {
-                target = this.searchRandomMinionByMaxHP(this.enemyMinions, searchmode.searchHighestAttack, damage); //the last chance (optimistic)
+                target = this.searchRandomMinion(this.enemyMinions, SearchMode.HighAttack, SearchMode.HighHealth); //the last chance (optimistic)
                 if ((target == null || this.enemyHero.Hp <= damage) && !onlyMinions) target = this.enemyHero;
             }
             else
             {
-                target = this.searchRandomMinion(this.enemyMinions, damage > 3 ? searchmode.searchLowestHP : searchmode.searchHighestHP); //damage the lowest (pessimistic)
+                target = damage > 3
+                    ? this.searchRandomMinion(this.enemyMinions, SearchMode.LowHealth)
+                    : this.searchRandomMinion(this.enemyMinions, SearchMode.HighHealth);
+
                 if (target == null && !onlyMinions) target = this.enemyHero;
             }
             this.guessingHeroHP = tmp;
@@ -6392,8 +6395,8 @@ namespace HREngine.Bots
                 int bestSecondCardValue = -1;
                 int bestSecondCardPos = -1;
                 int ratio = 100;
-                List<Handmanager.Handcard> discardedCardsBonusList = new List<Handmanager.Handcard>();
-                Handmanager.Handcard hc;
+                List<Handcard> discardedCardsBonusList = new List<Handcard>();
+                Handcard hc;
                 SimCard c;
                 Dictionary<int, int> cardsValDict = new Dictionary<int, int>();
                 for (int i = 0; i < this.owncards.Count; i++)
@@ -6448,7 +6451,7 @@ namespace HREngine.Bots
                     }
                 }
 
-                Handmanager.Handcard removedhc;
+                Handcard removedhc;
                 int first = bestCardPos;
                 int firstVal = bestCardValue;
                 int second = bestSecondCardPos;
@@ -6518,7 +6521,7 @@ namespace HREngine.Bots
                 this.evaluatePenality += summPen;
 
 
-                foreach (Handmanager.Handcard dc in discardedCardsBonusList)
+                foreach (Handcard dc in discardedCardsBonusList)
                 {
                     dc.card.Simulator.onCardDicscard(this, dc, null, 0);
                 }
@@ -6816,19 +6819,21 @@ namespace HREngine.Bots
         }
 
 
-        private void FilterHand(List<Handmanager.Handcard> cards, Func<Handmanager.Handcard, bool> predicate)
+        private void FilterHand(List<Handcard> cards, Func<Handcard, bool> predicate)
         {
             cards.Where(predicate).ToList().ForEach(card => card.filterPass = true);
         }
 
-        public Handmanager.Handcard searchRandomMinionInHand(List<Handmanager.Handcard> cards, Func<Handmanager.Handcard, int> predicate)
+        public Handcard searchRandomMinionInHand(IEnumerable<Handcard> cards, params Func<Handcard, int>[] predicates)
         {
-            return cards.OrderBy(predicate).FirstOrDefault();
+            var predicate = SearchMode.Combine(predicates);
+            return cards.OrderBy(predicate).Where(item => predicate(item) != int.MinValue).FirstOrDefault();
         }
 
-        public Minion searchRandomMinion(List<Minion> minions, Func<Minion, int> predicate)
+        public Minion searchRandomMinion(IEnumerable<Minion> minions, params Func<Minion, int>[] predicates)
         {
-            return minions.OrderBy(predicate).FirstOrDefault();
+            var predicate = SearchMode.Combine(predicates);
+            return minions.OrderBy(predicate).Where(item => predicate(item) != int.MinValue).FirstOrDefault();
         }
 
         public SimCard getNextJadeGolem(bool own)
@@ -6905,7 +6910,7 @@ namespace HREngine.Bots
             }
 
             Helpfunctions.Instance.logg("Own Handcards: ");
-            foreach (Handmanager.Handcard hc in this.owncards)
+            foreach (Handcard hc in this.owncards)
             {
                 Helpfunctions.Instance.logg(
                     $"pos {hc.position} {hc.card.CardId} {hc.manacost} entity {hc.entity} {hc.card.CardId} {hc.addattack} {hc.addHp} {hc.elemPoweredUp}");
@@ -6979,7 +6984,7 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
             retval += "\r\nOwn Handcards\t\r\n";
             for (int i = 0; i < this.owncards.Count; i++)
             {
-                Handmanager.Handcard hc = this.owncards[i];
+                Handcard hc = this.owncards[i];
                 retval +=
                     $"\r\n{(i + 1)} CARD\t{(hc.position + " " + hc.entity + ":" + hc.card.CardId + " " + hc.manacost + " " + hc.card.CardId + " " + hc.addattack + " " + hc.addHp + " " + hc.elemPoweredUp + "\r\n")}";
             }
@@ -7002,7 +7007,7 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
                 Helpfunctions.Instance.logg($"{m.name} {m.entitiyID}");
             }
             Helpfunctions.Instance.logg("-");
-            foreach (Handmanager.Handcard hc in this.owncards)
+            foreach (Handcard hc in this.owncards)
             {
                 Helpfunctions.Instance.logg($"{hc.position} {hc.card.CardId} {hc.entity}");
             }

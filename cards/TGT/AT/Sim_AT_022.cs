@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -39,13 +40,13 @@ namespace HREngine.Bots
             }
             else
             {
-                target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP); //(pessimistic)
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth); //(pessimistic)
                 if (target == null) target = p.ownHero;
             }
             p.minionGetDamageOrHeal(target, dmg);
         }
 
-        public override bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus)
+        public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
             if (checkBonus) return true;
 
@@ -60,7 +61,7 @@ namespace HREngine.Bots
             }
             else
             {
-                target = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestHP); //(pessimistic)
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth); //(pessimistic)
                 if (target == null) target = p.ownHero;
             }
             p.minionGetDamageOrHeal(target, dmg);

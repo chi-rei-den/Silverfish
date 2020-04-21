@@ -38,7 +38,7 @@ namespace HREngine.Bots
 				if (p.ownMinions.Count < 7)
 				{
 					bool needTrigger = false;
-					foreach (Handmanager.Handcard hc in p.owncards.ToArray())
+					foreach (Handcard hc in p.owncards.ToArray())
 					{
 						if (hc.card.Race == Race.DRAGON)
 						{

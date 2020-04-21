@@ -37,7 +37,7 @@ namespace HREngine.Bots
                 int atkBuff = 0;
                 int hpBuff = 0;
 
-                foreach(Handmanager.Handcard hc in p.owncards.ToArray())
+                foreach(Handcard hc in p.owncards.ToArray())
                 {
                     if (hc.card.Type == CardType.WEAPON)
                     {

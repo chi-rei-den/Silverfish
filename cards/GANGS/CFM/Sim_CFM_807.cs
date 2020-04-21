@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		// After you cast a spell, refresh your Hero Power.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (m.own == ownplay && hc.card.Type == CardType.SPELL)
             {

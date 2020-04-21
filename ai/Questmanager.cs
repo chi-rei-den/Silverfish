@@ -158,7 +158,7 @@ namespace HREngine.Bots
             }
         }
 
-        public void updatePlayedCardFromHand(Handmanager.Handcard hc)
+        public void updatePlayedCardFromHand(Handcard hc)
         {
             nextMobName = SimCard.None;
             nextMobId = 0;

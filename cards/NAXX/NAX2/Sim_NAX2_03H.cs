@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -49,7 +50,7 @@ namespace HREngine.Bots
 						
             for (int i = 0; i < cardCount; i++)
             {
-				target = (ownplay)? p.searchRandomMinion(p.enemyMinions, searchmode.searchHighAttackLowHP) : p.searchRandomMinion(p.ownMinions, searchmode.searchHighAttackLowHP);
+				target = (ownplay)? p.searchRandomMinion(p.enemyMinions, SearchMode.searchHighAttackLowHP) : p.searchRandomMinion(p.ownMinions, SearchMode.searchHighAttackLowHP);
 				if (target == null) target = (ownplay) ? p.enemyHero : p.ownHero;
 				p.minionGetDamageOrHeal(target, dmg);
             }

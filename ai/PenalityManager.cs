@@ -229,7 +229,7 @@ namespace HREngine.Bots
                     }
                     break;
                 case CardIds.Collectible.Shaman.Doomhammer:
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card == CardIds.Collectible.Shaman.RockbiterWeapon && hc.canplayCard(p, true)) return 10;
                     }
@@ -237,13 +237,13 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Hunter.EaglehornBow:
                     if (p.ownWeapon.Durability == 1)
                     {
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card == CardIds.Collectible.Hunter.ArcaneShot || hc.card == CardIds.Collectible.Hunter.KillCommand) return -p.ownWeapon.Angr - 1;
                         }
                         if (p.ownSecretsIDList.Count >= 1) return 20;
 
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card.Secret) return 20;
                         }
@@ -263,7 +263,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (target.own)
                     {
-                        if (p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob) != null)
+                        if (p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.Mob) != null)
                         {
                             return -5;
                         }
@@ -291,7 +291,7 @@ namespace HREngine.Bots
 
         public int weaponInHandAttackNextTurn(Playfield p)
         {
-            foreach (Handmanager.Handcard c in p.owncards)
+            foreach (Handcard c in p.owncards)
             {
                 if (c.card.Type == CardType.WEAPON && c.card.getManaCost(p, c.manacost) <= p.ownMaxMana + 1)
                 {
@@ -377,7 +377,7 @@ namespace HREngine.Bots
             {
                 if (card.Type == CardType.MINION && p.ownMinions.Count == 0) return 2;
 
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     switch (hc.card.CardId)
                     {
@@ -402,7 +402,7 @@ namespace HREngine.Bots
 
                     if (!m.wounded && (m.Angr >= 4 || m.Hp >= 5))
                     {
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card.CardId == CardIds.Collectible.Warrior.Execute) return 0;
                         }
@@ -479,7 +479,7 @@ namespace HREngine.Bots
             if (!target.isHero && !target.own)
             {
                 //allow it if you have black knight
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.Collectible.Neutral.TheBlackKnight) return 0;
                 }
@@ -938,7 +938,7 @@ namespace HREngine.Bots
                         if (MinionBalance > 0 && preventDamage <= lostOwnDamage) return 80;
                         if (survivedEnemyMinions > 0)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) return 0;
+                            foreach (Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) return 0;
                         }
                         if (lostOwnHp <= preventDamage)
                         {
@@ -962,7 +962,7 @@ namespace HREngine.Bots
                     if (survivedEnemyMinions > 0)
                     {
                         int hasExecute = 0;
-                        foreach (Handmanager.Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) hasExecute++;
+                        foreach (Handcard hc in p.owncards) if (hc.card == CardIds.Collectible.Warrior.Execute) hasExecute++;
                         if (hasExecute > 0)
                         {
                             if (survivedEnemyMinions <= hasExecute) return 0;
@@ -1054,7 +1054,7 @@ namespace HREngine.Bots
                             case CardIds.Collectible.Warlock.ImpGangBoss: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.GrimPatron: if (p.ownMinions.Count <= 6) return 0; break;
                         }
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card == CardIds.Collectible.Warrior.BattleRage) return pen;
                             if (hc.card == CardIds.Collectible.Warrior.Rampage) return pen;
@@ -1113,7 +1113,7 @@ namespace HREngine.Bots
                             return pen;
                         }
 
-                        foreach (Handmanager.Handcard hc in p.owncards) // no pen if we have battlerage for example
+                        foreach (Handcard hc in p.owncards) // no pen if we have battlerage for example
                         {
                             switch (hc.card.CardId)
                             {
@@ -1204,7 +1204,7 @@ namespace HREngine.Bots
                     {
                         pen = (p.ownHero.Hp - 15) / 2;
                         if (p.ownAbilityReady && cardDrawBattleCryDatabase.ContainsKey(p.ownHeroAblility.card.CardId)) pen += 20;
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (!cardDrawBattleCryDatabase.ContainsKey(hc.card.CardId)) continue;
                             pen += 20;
@@ -1278,7 +1278,7 @@ namespace HREngine.Bots
 
                     // no pen if we have slam
 
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card == CardIds.Collectible.Warrior.Slam && m.Hp < 2) return pen;
                         if (hc.card == CardIds.Collectible.Rogue.Backstab) return pen;
@@ -1327,7 +1327,7 @@ namespace HREngine.Bots
                         {
                             if (p.ownMinions.Count == 0 && p.mana > 6)
                             {
-                                foreach (Handmanager.Handcard hc in p.owncards)
+                                foreach (Handcard hc in p.owncards)
                                 {
                                     if (hc.card.Type == CardType.MINION) return 500;
                                 }
@@ -1421,7 +1421,7 @@ namespace HREngine.Bots
                 if (p.isLethalCheck) return 500; //RR no benefit for lethal check
                 int minmana = 10;
                 bool cardOnLimit = false;
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.manacost <= minmana)
                     {
@@ -1677,36 +1677,36 @@ namespace HREngine.Bots
         {
             if (!buffHandDatabase.ContainsKey(name)) return 0;
 
-            Handmanager.Handcard hc;
+            Handcard hc;
             int anz = 0;
             switch (name.CardId)
             {
                 case CardIds.Collectible.Hunter.TroggBeastrager:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.PET);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.BeastOnly);
                     if (hc != null) return -5;
                     break;
                 case CardIds.Collectible.Neutral.GrimestreetSmuggler:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
                     if (hc != null) return -5;
                     break;
                 case CardIds.Collectible.Neutral.DonHancho:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
                     if (hc != null) return -20;
                     break;
                 case CardIds.Collectible.Neutral.DeathaxePunisher:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.LIFESTEAL);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.LifestealOnly);
                     if (hc != null) return -10;
                     break;
                 case CardIds.Collectible.Paladin.GrimscaleChum:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.MURLOC);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MurlocOnly);
                     if (hc == null) return -5;
                     break;
                 case CardIds.Collectible.Warrior.GrimestreetPawnbroker:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Weapon);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.WeaponOnly);
                     if (hc == null) return -5;
                     break;
                 case CardIds.Collectible.Paladin.GrimestreetOutfitter:
-                    foreach (Handmanager.Handcard hc1 in p.owncards)
+                    foreach (Handcard hc1 in p.owncards)
                     {
                         if (hc1.card.Type == CardType.MINION) anz++;
                     }
@@ -1715,7 +1715,7 @@ namespace HREngine.Bots
                     else return 5;
                     break;
                 case CardIds.Collectible.Shaman.TheMistcaller:
-                    foreach (Handmanager.Handcard hc1 in p.owncards)
+                    foreach (Handcard hc1 in p.owncards)
                     {
                         if (hc1.card.Type == CardType.MINION) anz++;
                     }
@@ -1724,7 +1724,7 @@ namespace HREngine.Bots
                     return -1 * anz * 4;
                     break;
                 case CardIds.Collectible.Warrior.HobartGrapplehammer:
-                    foreach (Handmanager.Handcard hc2 in p.owncards)
+                    foreach (Handcard hc2 in p.owncards)
                     {
                         if (hc2.card.Type == CardType.WEAPON) anz++;
                     }
@@ -1732,17 +1732,17 @@ namespace HREngine.Bots
                     else return -1 * anz * 2;
                     break;
                 case CardIds.Collectible.Hunter.SmugglersCrate:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.PET);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.BeastOnly);
                     if (hc != null) return -10;
                     else return 10;
                     break;
                 case CardIds.Collectible.Warrior.StolenGoods:
-                    hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.TAUNT);
+                    hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.BeastOnly);
                     if (hc != null) return -15;
                     else return 10;
                     break;
                 case CardIds.Collectible.Paladin.SmugglersRun:
-                    foreach (Handmanager.Handcard hc3 in p.owncards)
+                    foreach (Handcard hc3 in p.owncards)
                     {
                         if (hc3.card.Type == CardType.MINION) anz++;
                     }
@@ -1764,7 +1764,7 @@ namespace HREngine.Bots
                 int newmana = p.mana - cardDiscardDatabase[name];
                 bool canplaythisturn = false;
                 bool haveChargeInHand = false;
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (this.cardDiscardDatabase.ContainsKey(hc.card.CardId)) continue;
                     switch (hc.card.CardId)
@@ -2039,7 +2039,7 @@ namespace HREngine.Bots
                     {
                         if ((target.taunt && target.handcard.card.Rarity == Rarity.LEGENDARY) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards)
+                            foreach (Handcard hc in p.owncards)
                             {
                                 if ((Race)hc.card.Race == Race.DRAGON) return 0;
                             }
@@ -2084,7 +2084,7 @@ namespace HREngine.Bots
             if (dragonDependentDatabase.ContainsKey(name))
             {
                 pen += 10;
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Race == Race.DRAGON)
                     {
@@ -2107,7 +2107,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Rogue.GoblinAutoBarber: if (p.ownWeapon.Durability == 0) return 5; return 0;
                 case CardIds.Collectible.Neutral.DreadCorsair: if (p.ownWeapon.Durability == 0) return 5; return 0;
                 case CardIds.Collectible.Warrior.GrimestreetPawnbroker:
-                    foreach (Handmanager.Handcard hc in p.owncards) if (hc.card.Type == CardType.WEAPON) return 0;
+                    foreach (Handcard hc in p.owncards) if (hc.card.Type == CardType.WEAPON) return 0;
                     return 5;
                 case CardIds.Collectible.Warrior.BloodsailCultist:
                     ;
@@ -2179,12 +2179,12 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warlock.DarkshireCouncilman:
                     if (p.enemyMinions.Count == 0)
                     {
-                        List<Handmanager.Handcard> temp = new List<Handmanager.Handcard>(p.owncards);
+                        List<Handcard> temp = new List<Handcard>(p.owncards);
                         temp.Sort((a, b) => a.card.Cost.CompareTo(b.card.Cost));
                         int cnum = 0;
                         int pcards = 0;
                         int nextTurnMana = p.ownMaxMana + 1;
-                        foreach (Handmanager.Handcard hc in temp)
+                        foreach (Handcard hc in temp)
                         {
                             if (hc.card.CardId == name && cnum == 0)
                             {
@@ -2233,7 +2233,7 @@ namespace HREngine.Bots
                     }
                     bool menageriewarden = false;
                     bool pet = false;
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.CardId == CardIds.Collectible.Druid.MenagerieWarden) { menageriewarden = true; continue; }
                         if ((Race)hc.card.Race == Race.PET && hc.card.Cost <= p.ownMaxMana) pet = true;
@@ -2272,7 +2272,7 @@ namespace HREngine.Bots
 
             if (name == CardIds.Collectible.Mage.Duplicate)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.Collectible.Mage.MirrorEntity)
                     {
@@ -2335,7 +2335,7 @@ namespace HREngine.Bots
             //rule for coin on early game
             if (p.ownMaxMana < 3 && card.CardId == CardIds.NonCollectible.Neutral.TheCoin)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.manacost <= p.ownMaxMana && hc.card.Type == CardType.MINION) return 5;
                 }
@@ -2353,7 +2353,7 @@ namespace HREngine.Bots
                     {
                         bool canPlayMinion = false;
                         bool canPlaySpell = false;
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card.CardId == CardIds.Collectible.Hunter.Flare) continue;
                             if (hc.card.Cost <= p.mana - 2)
@@ -2417,7 +2417,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.SmugglersRun:
                 {
                     int iii = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.Type == CardType.MINION)
                         {
@@ -2441,7 +2441,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Paladin.GlowstoneTechnician:
                 {
                     int iii = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.Type == CardType.MINION)
                         {
@@ -2456,7 +2456,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.Galvanizer:
                 {
                     int iii = 0;
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.Race == Race.MECHANICAL)
                         {
@@ -2520,7 +2520,7 @@ namespace HREngine.Bots
                     return -2;
                 //暗金教侍从添加
                 case CardIds.Collectible.Mage.KabalLackey:
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (p.ownMaxMana == 1 && hc.card.Secret) return -50;
                     }
@@ -2541,7 +2541,7 @@ namespace HREngine.Bots
                         return 50;//不推荐使用
                     }
                     //如果对面随从大于1
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.Secret && p.mana >= (hc.card.Cost + card.Cost))
                         {
@@ -2728,7 +2728,7 @@ namespace HREngine.Bots
                     if (target.own) return 100;
                     if ((target.taunt && target.handcard.card.Rarity == Rarity.LEGENDARY) || target.handcard.card.CardId == CardIds.Collectible.Warlock.Malganis)
                     {
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if ((Race)hc.card.Race == Race.DRAGON) return 0;
                         }
@@ -2921,7 +2921,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Neutral.BloodsailRaider:
                     if (p.ownWeapon.Durability == 0)
                     {
-                        foreach (Handmanager.Handcard hc in p.owncards)
+                        foreach (Handcard hc in p.owncards)
                         {
                             if (hc.card.Type == CardType.WEAPON) return 10;
                         }
@@ -2958,7 +2958,7 @@ namespace HREngine.Bots
                     break;
 
                 case CardIds.Collectible.Neutral.DeathwingDragonlord:
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if ((Race)hc.card.Race == Race.DRAGON) pen -= 3;
                     }
@@ -3214,7 +3214,7 @@ namespace HREngine.Bots
 
                         if (DragonReq)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards)
+                            foreach (Handcard hc in p.owncards)
                             {
                                 if (hc.card.Race == Race.DRAGON) return 0;
                             }
@@ -3233,7 +3233,7 @@ namespace HREngine.Bots
             int pen = 0;
             if (card.Secret)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     //肯瑞托法师
                     if (hc.card.CardId == CardIds.Collectible.Mage.KirinTorMage && p.mana >= hc.getManaCost(p))
@@ -3395,18 +3395,19 @@ namespace HREngine.Bots
                     {
                         foreach (Action a in p.playactions)
                         {
-                            switch (a.actionType)
-                            {
-                                case actionEnum.useHeroPower:
-                                    if (a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS)) pen += 22;
-                                    break;
-                                case actionEnum.playcard:
-                                    if (a.card.card.Type == CardType.MINION || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
-                                    {
-                                        pen += 20;
-                                    }
-                                    break;
-                            }
+                            // TODO: PlayRequirement no longer exist, Add penalty back
+                            //switch (a.actionType)
+                            //{
+                            //    case actionEnum.useHeroPower:
+                            //        if (a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS)) pen += 22;
+                            //        break;
+                            //    case actionEnum.playcard:
+                            //        if (a.card.card.Type == CardType.MINION || a.card.card.playrequires.Contains(CardDB.ErrorType2.REQ_NUM_MINION_SLOTS))
+                            //        {
+                            //            pen += 20;
+                            //        }
+                            //        break;
+                            //}
                         }
                     }
                 }
@@ -3451,7 +3452,7 @@ namespace HREngine.Bots
 
                         if (p.mobsplayedThisTurn == 0)
                         {
-                            foreach (Handmanager.Handcard hc in p.owncards)
+                            foreach (Handcard hc in p.owncards)
                             {
                                 if (hc.card.Type == CardType.MINION && hc.canplayCard(p, true)) { pen += 10; break; }
                             }
@@ -3553,7 +3554,7 @@ namespace HREngine.Bots
             bool ret = true;
             Minion m = new Minion();
             int val = getValueOfMinion(mnn);
-            foreach (Handmanager.Handcard card in p.owncards)
+            foreach (Handcard card in p.owncards)
             {
                 if (card.card.Type != CardType.MINION) continue;
                 SimCard c = card.card;

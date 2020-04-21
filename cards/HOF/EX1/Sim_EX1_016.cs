@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -34,11 +35,11 @@ namespace HREngine.Bots
             Minion target;
             if (m.own)
             {
-                target = p.searchRandomMinion(p.enemyMinions, searchmode.searchLowestHP);
+                target = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
             }
             else
             {
-                target = p.searchRandomMinion(p.ownMinions, searchmode.searchHighestHP);
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighestHP);
                 if (p.isOwnTurn && target != null && target.Ready) p.evaluatePenality += 5;
             }
             if (target != null) p.minionGetControlled(target, m.own, false);

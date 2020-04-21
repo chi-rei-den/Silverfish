@@ -35,7 +35,7 @@ namespace HREngine.Bots
 			if (own.own)
 			{
                 var heroClass = p.ownHeroStartClass;
-				foreach (Handmanager.Handcard hc in p.owncards)
+				foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Class != heroClass && hc.card.Class != CardClass.INVALID) hc.manacost = Math.Max(0, hc.manacost - 2);
                 }

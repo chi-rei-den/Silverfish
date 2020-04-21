@@ -761,7 +761,7 @@ def Execute():
                         bool lastChance = false;
                         if (lastChancePl.owncarddraw > 0)
                         {
-                            foreach (Handmanager.Handcard hc in lastChancePl.owncards)
+                            foreach (Handcard hc in lastChancePl.owncards)
                             {
                                 if (hc.card.CardId == SimCard.None) lastChance = true;
                             }
@@ -1057,14 +1057,14 @@ def Execute():
                 }
 
                 Ai ai = Ai.Instance;
-                List<Handmanager.Handcard> discoverCards = new List<Handmanager.Handcard>();
+                List<Handcard> discoverCards = new List<Handcard>();
                 float bestDiscoverValue = -2000000;
                 var choiceCardMgr = ChoiceCardMgr.Get();
                 var cards = choiceCardMgr.GetFriendlyCards();
 
                 for (int i = 0; i < cards.Count; i++)
                 {
-                    var hc = new Handmanager.Handcard();
+                    var hc = new Handcard();
                     hc.card = ((cards[i].GetCardId()));
                     hc.position = 100 + i;
                     hc.entity = cards[i].GetEntityId();

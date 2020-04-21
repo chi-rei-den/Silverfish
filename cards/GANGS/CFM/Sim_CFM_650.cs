@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (own.own)
             {
-                Handmanager.Handcard hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.CARDRACE, Race.MURLOC);
+                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.CARDRACE, Race.MURLOC);
                 if (hc != null)
                 {
                     hc.addattack++;

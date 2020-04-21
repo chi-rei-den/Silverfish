@@ -40,7 +40,7 @@ namespace HREngine.Bots
         public SimCard name = SimCard.None;
         public CardClass CardClass = CardClass.INVALID;
         public int synergy = 0;
-        public Handmanager.Handcard handcard;
+        public Handcard handcard;
         public int entitiyID = -1;
         //public int id = -1;//delete this
         public int zonepos = 0;
@@ -118,7 +118,7 @@ namespace HREngine.Bots
 
         public Minion()
         {
-            this.handcard = new Handmanager.Handcard();
+            this.handcard = new Handcard();
         }
 
         public Minion(Minion m)

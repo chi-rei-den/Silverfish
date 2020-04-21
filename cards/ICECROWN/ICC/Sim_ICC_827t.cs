@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         //handled
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Handmanager.Handcard triggerhc)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Handcard triggerhc)
         {
             triggerhc.setHCtoHC(hc);
         }

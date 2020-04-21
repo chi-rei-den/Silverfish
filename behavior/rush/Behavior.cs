@@ -76,7 +76,7 @@ namespace HREngine.Bots
                 if (a.card.card.CardId == CardIds.NonCollectible.Neutral.TheCoin || a.card.card.CardId == CardIds.Collectible.Druid.Innervate) usecoin++;
 
                 if(a.card.card.Type == CardType.SPELL && a.card.card.CardId == CardIds.Collectible.Mage.Fireball && (a.target.isHero && !a.target.own)) retval += 2;
-                if (a.card.card.Type == CardType.SPELL && a.card.card.CardId == SimCard.roaringtorch && (a.target.isHero && !a.target.own)) retval += 2;
+                if (a.card.card.Type == CardType.SPELL && a.card.card.CardId == CardIds.NonCollectible.Mage.ForgottenTorch_RoaringTorchToken && (a.target.isHero && !a.target.own)) retval += 2;
                 if(a.card.card.Secret) retval += 5;
             }
             if (usecoin > 0)
@@ -89,7 +89,7 @@ namespace HREngine.Bots
             {
                 switch (p.ownHeroAblility.card.CardId)
                 {
-                    case SimCard.heal: goto case CardIds.NonCollectible.Priest.LesserHeal;
+                    case CardIds.NonCollectible.Priest.JusticarTrueheart_Heal:
                     case CardIds.NonCollectible.Priest.LesserHeal:
                         bool wereTarget = false;
                         if (p.ownHero.Hp < p.ownHero.maxHp) wereTarget = true;
@@ -138,7 +138,7 @@ namespace HREngine.Bots
             {
                 retval += m.Hp * 1;
                 retval += m.Angr * 2;
-                retval += m.handcard.card.Rarity;
+                retval += (int)m.handcard.card.Rarity;
                 if (m.windfury) retval += m.Angr;
                 if (m.taunt) retval += 1;
                 if (!m.taunt && m.stealth && m.handcard.card.isSpecialMinion && !m.silenced) retval += 20;
@@ -152,7 +152,7 @@ namespace HREngine.Bots
                 retval += m.synergy;
             }
 
-            foreach (Handmanager.Handcard hc in p.owncards)
+            foreach (Handcard hc in p.owncards)
             {
                 if (hc.card.Type == CardType.MINION)
                 {

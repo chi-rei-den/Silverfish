@@ -37,7 +37,7 @@ namespace HREngine.Bots
             bool found = false;
             if (turnStartOfOwner)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken)
                     {

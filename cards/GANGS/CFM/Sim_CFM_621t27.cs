@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -35,7 +36,7 @@ namespace HREngine.Bots
 			if (temp.Count > 3)
 			{
 				int anz = 0;
-				target = p.searchRandomMinion(temp, searchmode.searchLowestHP);
+				target = p.searchRandomMinion(temp, SearchMode.LowHealth);
                 if (target != null && !target.frozen)
                 {
                     p.minionGetFrozen(target);

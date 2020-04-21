@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Whenever you play a card with Battlecry, gain +1/+1.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Battlecry)
             {

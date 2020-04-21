@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//If you discard this minion, summon it.
 
-        public override bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus)
+        public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
             if (checkBonus) return true;
 			if (own != null) return false;

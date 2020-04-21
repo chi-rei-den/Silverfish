@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         //handled
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Handmanager.Handcard triggerhc)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Handcard triggerhc)
         {
             if (hc.card.Battlecry && hc.card.Type == CardType.MINION)
             {

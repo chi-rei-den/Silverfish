@@ -27,7 +27,7 @@ namespace HREngine.Bots
 
         private List<Minion> ownMinions = new List<Minion>();
         private List<Minion> enemyMinions = new List<Minion>();
-        private List<Handmanager.Handcard> handCards = new List<Handmanager.Handcard>();
+        private List<Handcard> handCards = new List<Handcard>();
         private int ownPlayerController = 0;
         private List<string> ownSecretList = new List<string>();
         private Dictionary<int, CardClass> enemySecretList = new Dictionary<int, CardClass>();
@@ -539,7 +539,7 @@ namespace HREngine.Bots
                 if (!this.ownHero.windfury) this.ownHero.windfury = ownWeapon.windfury;
             }
 
-            this.enemyHero.CardClass = Hrtprozis.Instance.heroIDtoName(TritonHs.EnemyHero.Id);
+            this.enemyHero.CardClass = SimCard.FromName(TritonHs.EnemyHero.Id).Class;
 
             this.enemyHero.Angr = enemHeroCard.GetTag(GAME_TAG.ATK);
             this.enemyHero.Hp = enemHeroCard.GetTag(GAME_TAG.HEALTH) - enemHeroCard.GetTag(GAME_TAG.DAMAGE);
@@ -847,7 +847,7 @@ namespace HREngine.Bots
 
 
 
-                    Handmanager.Handcard hc = new Handmanager.Handcard();
+                    Handcard hc = new Handcard();
                     hc.card = c;
                     hc.position = entitiy.ZonePosition;
                     hc.entity = entitiy.EntityId;
@@ -1115,7 +1115,7 @@ namespace HREngine.Bots
         public void updateCThunInfobyCThun()
         {
             bool found = false;
-            foreach (Handmanager.Handcard hc in this.handCards)
+            foreach (Handcard hc in this.handCards)
             {
                 if (hc.card.CardId == CardIds.Collectible.Neutral.Cthun)
                 {

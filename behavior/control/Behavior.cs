@@ -255,7 +255,7 @@ namespace HREngine.Bots
 
             int mobsInHand = 0;
             int bigMobsInHand = 0;
-            foreach (Handmanager.Handcard hc in p.owncards)
+            foreach (Handcard hc in p.owncards)
             {
                 if (hc.card.Type == CardType.MINION)
                 {
@@ -361,9 +361,8 @@ namespace HREngine.Bots
         }
 
 
-        public override int getSirFinleyPriority(List<Handmanager.Handcard> discoverCards)
+        public override int getSirFinleyPriority(List<Handcard> discoverCards)
         {
-
             return -1; //comment out or remove this to set manual priority
             int sirFinleyChoice = -1;
             int tmp = int.MinValue;
@@ -382,15 +381,15 @@ namespace HREngine.Bots
         private Dictionary<SimCard, int> SirFinleyPriorityList = new Dictionary<SimCard, int>
         {
             //{HeroPowerName, Priority}, where 0-9 = manual priority
-            { CardIds.NonCollectible.Priest.LesserHeal, 0 },
-            { CardIds.NonCollectible.Druid.Shapeshift, 6 },
-            { CardIds.NonCollectible.Mage.Fireblast, 7 },
-            { CardIds.NonCollectible.Shaman.TotemicCall, 1 },
             { CardIds.NonCollectible.Warlock.LifeTap, 9 },
+            { CardIds.NonCollectible.Hunter.SteadyShot, 8 },
+            { CardIds.NonCollectible.Mage.Fireblast, 7 },
+            { CardIds.NonCollectible.Druid.Shapeshift, 6 },
             { CardIds.NonCollectible.Rogue.DaggerMastery, 5 },
-            { SimCard.reinforce, 4 },
-            { SimCard.armorup, 2 },
-            { CardIds.NonCollectible.Hunter.SteadyShot, 8 }
+            { CardIds.NonCollectible.Paladin.ReinforceBasic, 4 },
+            { CardIds.NonCollectible.Warrior.ArmorUpBasic, 2 },
+            { CardIds.NonCollectible.Shaman.TotemicCall, 1 },
+            { CardIds.NonCollectible.Priest.LesserHeal, 0 },
         };
 
     }

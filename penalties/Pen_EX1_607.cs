@@ -24,7 +24,7 @@ namespace HREngine.Bots
             {
                 //if (m.handcard.card.type == CardType.MINION && p.ownMinions.Count == 0) return 0;
                 //allow it if you have biggamehunter
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.Collectible.Neutral.BigGameHunter || hc.card.CardId == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
                 }
@@ -36,7 +36,7 @@ namespace HREngine.Bots
 
                 if (!m.wounded && (m.Angr >= 4 || m.Hp >= 5))
                 {
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.CardId == CardIds.Collectible.Warrior.Execute) return 0;
                     }

@@ -34,7 +34,7 @@ namespace HREngine.Bots
 		{
             if (own.own)
             {
-                foreach (Handmanager.Handcard hc in p.owncards.ToArray())
+                foreach (Handcard hc in p.owncards.ToArray())
                 {
                     if (hc.manacost == 1 && hc.card.Type == CardType.SPELL) p.owncards.Remove(hc);
                 }

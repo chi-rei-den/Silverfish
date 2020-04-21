@@ -1,3 +1,4 @@
+using Chireiden.Silverfish;
 using HearthDb;
 using System;
 using System.Collections.Generic;
@@ -30,7 +31,7 @@ namespace HREngine.Bots
 	{
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			target = (ownplay) ? p.searchRandomMinion(p.enemyMinions, searchmode.searchLowestAttack) : p.searchRandomMinion(p.ownMinions, searchmode.searchLowestAttack);
+			target = (ownplay) ? p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack) : p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack);
 			if (target != null) p.minionTransform(target, CardIds.NonCollectible.Neutral.Kazakus_Sheep);
         }
     }

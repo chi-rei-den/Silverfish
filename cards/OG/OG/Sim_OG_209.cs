@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		//Whenever your spells deal damage, restore that much Health to your hero.
 		
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (m.own == ownplay && hc.card.Type == CardType.SPELL)
             {

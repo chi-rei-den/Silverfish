@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		//Spell Damage +1. After you cast a spell, give your C'Thun +1/+1 (wherever it is).
 		
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (m.own == ownplay && hc.card.Type == CardType.SPELL) p.cthunGetBuffed(1, 1, 0);
         }

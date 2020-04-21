@@ -34,7 +34,7 @@ namespace HREngine.Bots
 
         public SimCard card = CardIds.NonCollectible.Neutral.VioletTeacher_VioletApprenticeToken;
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.Type == CardType.SPELL)
             {

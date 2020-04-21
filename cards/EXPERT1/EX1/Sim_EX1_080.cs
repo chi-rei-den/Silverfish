@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		// Whenever a Secret: is played, gain +1/+1.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (hc.card.Secret) p.minionGetBuffed(m, 1, 1);
         }

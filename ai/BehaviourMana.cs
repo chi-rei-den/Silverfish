@@ -27,7 +27,7 @@ namespace HREngine.Bots
                 retval -= this.getEnemyMinionValue(m, p);
             }
 
-            foreach (Handmanager.Handcard hc in p.owncards)
+            foreach (Handcard hc in p.owncards)
             {
                 int r = Math.Max(hc.getManaCost(p), 1);
                 if (hc.card == SimCard.None) r = 4;

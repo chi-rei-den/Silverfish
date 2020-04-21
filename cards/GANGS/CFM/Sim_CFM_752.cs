@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                Handmanager.Handcard hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.TAUNT);
+                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.TAUNT);
                 if (hc != null)
                 {
                     hc.addattack += 3;

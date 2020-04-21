@@ -36,7 +36,7 @@ namespace HREngine.Bots
         SimCard healing = CardIds.NonCollectible.Shaman.HealingTotem;
         SimCard wrathofair = CardIds.NonCollectible.Shaman.WrathOfAirTotem;
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {

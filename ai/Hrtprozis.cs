@@ -449,11 +449,11 @@ namespace HREngine.Bots
             this.OwnLastDiedMinion = cid;
         }
 
-        private Minion createNewMinion(Handmanager.Handcard hc, int id)
+        private Minion createNewMinion(Handcard hc, int id)
         {
             Minion m = new Minion
             {
-                handcard = new Handmanager.Handcard(hc),
+                handcard = new Handcard(hc),
                 zonepos = id + 1,
                 entitiyID = hc.entity,
                 Angr = hc.card.Attack,

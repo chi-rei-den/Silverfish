@@ -32,7 +32,7 @@ namespace HREngine.Bots
         SimCard d = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken;//flameofazzinoth
 //    beschwört jedes mal eine flamme von azzinoth (2/1), wenn ihr eine karte ausspielt.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own)
             {

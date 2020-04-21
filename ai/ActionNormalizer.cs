@@ -224,7 +224,7 @@ namespace HREngine.Bots
             switch (a.actionType)
             {
                 case actionEnum.playcard:
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.entity == a.card.entity)
                         {

@@ -36,7 +36,7 @@ public override void getBattlecryEffect(Playfield p, Minion own, Minion target, 
 {
 if (own.own && p.ownMinions != null)
 {
-foreach (Handmanager.Handcard hc in p.owncards)
+foreach (Handcard hc in p.owncards)
 {
 if (hc.card.Race == Race.MECHANICAL)
 {

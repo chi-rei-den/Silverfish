@@ -31,8 +31,8 @@ namespace HREngine.Bots
 
 		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
 		{
-			if (m.own) p.ownHeroAblility = new Handmanager.Handcard(p.enemyHeroAblility);
-            else p.enemyHeroAblility = new Handmanager.Handcard(p.ownHeroAblility);
+			if (m.own) p.ownHeroAblility = new Handcard(p.enemyHeroAblility);
+            else p.enemyHeroAblility = new Handcard(p.ownHeroAblility);
 		}
 	}
 }

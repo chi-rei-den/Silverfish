@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 
 /* _BEGIN_TEMPLATE_
@@ -35,7 +36,7 @@ namespace HREngine.Bots
 if (triggerEffectMinion.own == turnEndOfOwner && p.ownMinions.Count>1)
 {
 List<Minion> minions = p.ownMinions;
-Minion a = p.searchRandomMinion(minions, searchmode.searchLowestHP);
+Minion a = p.searchRandomMinion(minions, SearchMode.LowHealth);
 p.minionGetBuffed(a, 1, 0);
 }
 

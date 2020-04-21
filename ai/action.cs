@@ -26,7 +26,7 @@ namespace HREngine.Bots
     {
 
         public actionEnum actionType;
-        public Handmanager.Handcard card;
+        public Handcard card;
         //public int cardEntitiy;
         public int place; //= target where card/minion is placed
         public Minion own;
@@ -37,7 +37,7 @@ namespace HREngine.Bots
         public int prevHpOwn = -1;
         public int prevHpTarget = -1;
 
-        public Action(actionEnum type, Handmanager.Handcard hc, Minion ownM, int place, Minion targetM, int pen, int choice)
+        public Action(actionEnum type, Handcard hc, Minion ownM, int place, Minion targetM, int pen, int choice)
         {
             this.actionType = type;
             this.card = hc;

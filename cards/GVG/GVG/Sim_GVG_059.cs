@@ -37,7 +37,7 @@ namespace HREngine.Bots
             p.equipWeapon(w, ownplay);
             List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
             if (temp.Count <= 0) return;
-            Minion m = p.searchRandomMinion(temp, searchmode.searchLowestHP);
+            Minion m = p.searchRandomMinion(temp, SearchMode.LowHealth);
             if (m != null)
             {
                 m.divineshild = true;

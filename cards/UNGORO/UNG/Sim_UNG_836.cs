@@ -31,7 +31,7 @@ namespace HREngine.Bots
 		//Whenever you discard this, give it +2/+2 and return it to your hand.
 
 
-        public override bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus)
+        public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
             if (checkBonus) return true;
 			if (own != null) return false;

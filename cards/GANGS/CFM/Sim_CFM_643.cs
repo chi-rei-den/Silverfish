@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (m.own)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.WEAPON) hc.addattack++;
                 }

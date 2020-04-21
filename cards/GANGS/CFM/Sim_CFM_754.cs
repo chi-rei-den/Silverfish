@@ -36,7 +36,7 @@ namespace HREngine.Bots
             {
                 if (triggerEffectMinion.own)
                 {
-                    Handmanager.Handcard hc = p.searchRandomMinionInHand(p.owncards, searchmode.searchLowestCost, GameTag.Mob);
+                    Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.Mob);
                     if (hc != null)
                     {
                         hc.addattack += 2;

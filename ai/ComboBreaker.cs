@@ -221,11 +221,11 @@ namespace HREngine.Bots
                 this.bonusForPlayingT1 = Math.Max(bonusForPlayingT1, 1);
             }
 
-            public int isInCombo(List<Handmanager.Handcard> hand, int omm)
+            public int isInCombo(List<Handcard> hand, int omm)
             {
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -239,12 +239,12 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            public int isMultiTurnComboTurn1(List<Handmanager.Handcard> hand, int omm, List<Minion> ownmins, SimCard weapon)
+            public int isMultiTurnComboTurn1(List<Handcard> hand, int omm, List<Minion> ownmins, SimCard weapon)
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -280,12 +280,12 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            public int isMultiTurnComboTurn0(List<Handmanager.Handcard> hand, int omm)
+            public int isMultiTurnComboTurn0(List<Handcard> hand, int omm)
             {
                 if (!twoTurnCombo) return 0;
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -322,11 +322,11 @@ namespace HREngine.Bots
                 return false;
             }
 
-            public int hasPlayedCombo(List<Handmanager.Handcard> hand)
+            public int hasPlayedCombo(List<Handcard> hand)
             {
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -339,12 +339,12 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            public int hasPlayedTurn0Combo(List<Handmanager.Handcard> hand)
+            public int hasPlayedTurn0Combo(List<Handcard> hand)
             {
                 if (this.combocardsTurn0All.Count == 0) return 0;
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -357,12 +357,12 @@ namespace HREngine.Bots
                 return 0;
             }
 
-            public int hasPlayedTurn1Combo(List<Handmanager.Handcard> hand)
+            public int hasPlayedTurn1Combo(List<Handcard> hand)
             {
                 if (this.combocardsTurn1.Count == 0) return 0;
                 int cardsincombo = 0;
                 Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
-                foreach (Handmanager.Handcard hc in hand)
+                foreach (Handcard hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -512,7 +512,7 @@ namespace HREngine.Bots
             var heroname = p.ownHero.CardClass;
 
             //returns a penalty only if the combo could be played, but is not played completely
-            List<Handmanager.Handcard> playedcards = new List<Handmanager.Handcard>();
+            List<Handcard> playedcards = new List<Handcard>();
             List<combo> searchingCombo = new List<combo>();
             // only check the cards, that are in a combo that can be played:
             int mana = Math.Max(p.ownMaxMana, p.mana);

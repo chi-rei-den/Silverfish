@@ -34,7 +34,7 @@ namespace HREngine.Bots
 		{
             if (own.own)
             {
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Race == Race.ELEMENTAL) hc.manacost--;
                 }

@@ -23,7 +23,7 @@ namespace HREngine.Bots
             return;
         }
 
-        public virtual bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus = false)
+        public virtual bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus = false)
         {
             return false;
         }
@@ -102,12 +102,12 @@ namespace HREngine.Bots
             return;
         }
 
-        public virtual void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public virtual void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             return;
         }
 
-        public virtual void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Handmanager.Handcard triggerhc)
+        public virtual void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Handcard triggerhc)
         {
             return;
         }

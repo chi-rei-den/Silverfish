@@ -33,7 +33,7 @@ namespace HREngine.Bots
 
         SimCard kid = CardIds.Collectible.Rogue.SherazinCorpseFlower; //Sherazin, Corpse Flower
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             triggerEffectMinion.Angr++;
             triggerEffectMinion.cantAttack = true;

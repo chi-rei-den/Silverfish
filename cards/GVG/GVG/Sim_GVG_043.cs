@@ -39,7 +39,7 @@ namespace HREngine.Bots
             List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
             if (temp.Count <= 0) return;
             // Drew: Null check for searchRandomMinion.
-            var found = p.searchRandomMinion(temp, searchmode.searchLowestAttack);
+            var found = p.searchRandomMinion(temp, SearchMode.searchLowestAttack);
             if (found != null)
             {
                 p.minionGetBuffed(found, 1, 0);

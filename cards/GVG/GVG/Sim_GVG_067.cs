@@ -31,7 +31,7 @@ namespace HREngine.Bots
 
         //   Whenever your opponent casts a spell, gain +1 Attack.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (hc.card.Type == CardType.SPELL && wasOwnCard != triggerEffectMinion.own)
             {

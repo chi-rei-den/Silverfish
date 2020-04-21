@@ -37,8 +37,8 @@ namespace HREngine.Bots
         {
             if (m.own)
             {
-                List<Handmanager.Handcard> temp = new List<Handmanager.Handcard>();
-                foreach (Handmanager.Handcard hc in p.owncards)
+                List<Handcard> temp = new List<Handcard>();
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.Race == Race.DEMON)
                     {
@@ -48,7 +48,7 @@ namespace HREngine.Bots
 
                 temp.Sort((x, y) => x.card.Attack.CompareTo(y.card.Attack));
 
-                foreach (Handmanager.Handcard mnn in temp)
+                foreach (Handcard mnn in temp)
                 {
                     p.callKid(mnn.card, p.ownMinions.Count, true, false);
                     p.removeCard(mnn);

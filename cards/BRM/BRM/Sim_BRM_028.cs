@@ -34,7 +34,7 @@ namespace HREngine.Bots
         {
             if (m.own == turnEndOfOwner)
             {
-				foreach (Handmanager.Handcard hc in p.owncards)
+				foreach (Handcard hc in p.owncards)
                 {
                     if (hc.manacost >= 1) hc.manacost--;
                 }

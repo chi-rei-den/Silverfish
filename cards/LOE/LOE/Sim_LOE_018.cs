@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 		//Whenether you Overloaded, gain +1 Attack per locked Mana Crystal.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.Overload > 0)
             {

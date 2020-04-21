@@ -30,7 +30,7 @@ namespace HREngine.Bots
         // Lifesteal. Has +1 Attack for each card you've discarded this game.
         //Only on the board
 
-        public override bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus)
+        public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
             if (own == null) return false;
             if (checkBonus) return false;

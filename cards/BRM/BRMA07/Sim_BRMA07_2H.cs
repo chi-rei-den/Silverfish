@@ -2,6 +2,7 @@ using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 				
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-		    Minion m = p.searchRandomMinion(ownplay ? p.enemyMinions : p.ownMinions, searchmode.searchLowestHP);
+		    Minion m = p.searchRandomMinion(ownplay ? p.enemyMinions : p.ownMinions, SearchMode.LowHealth);
             if (m != null) p.minionGetDestroyed(m);
         }
 	}

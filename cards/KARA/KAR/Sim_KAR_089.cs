@@ -30,7 +30,7 @@ namespace HREngine.Bots
 	{
 		//Whenever you discard a card, draw a card.
 
-        public override bool onCardDicscard(Playfield p, Handmanager.Handcard hc, Minion own, int num, bool checkBonus)
+        public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
             if (own == null) return false;
             if (checkBonus) return false;

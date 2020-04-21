@@ -23,7 +23,7 @@ namespace HREngine.Bots
             {
                 if (m.handcard.card.Type == CardType.MINION && p.ownMinions.Count == 0) return 0;
                 //allow it if you have biggamehunter
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.Collectible.Neutral.BigGameHunter || hc.card.CardId == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
                 }

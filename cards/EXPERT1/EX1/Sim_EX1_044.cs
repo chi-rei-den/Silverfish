@@ -29,7 +29,7 @@ namespace HREngine.Bots
 	{
 
 //    erhält jedes mal +1/+1, wenn ihr eine karte ausspielt.
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard)
             {

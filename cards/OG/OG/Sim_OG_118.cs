@@ -33,7 +33,7 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                foreach (Handmanager.Handcard hc in p.owncards) hc.manacost--;
+                foreach (Handcard hc in p.owncards) hc.manacost--;
             }
         }
     }

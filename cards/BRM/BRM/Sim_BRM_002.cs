@@ -2,6 +2,7 @@ using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -30,7 +31,7 @@ namespace HREngine.Bots
     {
         // After you cast a spell, deal 2 damage randomly split among all enemies.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool ownplay, Minion m)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (m.own == ownplay && hc.card.Type == CardType.SPELL)
             {
@@ -38,7 +39,7 @@ namespace HREngine.Bots
                 p.minionGetDamageOrHeal(target, 1);
 
                 List<Minion> temp = (ownplay) ? p.enemyMinions : p.ownMinions;
-                if (temp.Count > 0) target = p.searchRandomMinion(temp, searchmode.searchLowestHP);
+                if (temp.Count > 0) target = p.searchRandomMinion(temp, SearchMode.LowHealth);
                 if (target == null) target = (ownplay) ? p.enemyHero : p.ownHero;
                 p.minionGetDamageOrHeal(target, 1);
             }

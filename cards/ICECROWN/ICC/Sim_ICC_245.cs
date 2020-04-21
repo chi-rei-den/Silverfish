@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -34,7 +35,7 @@ namespace HREngine.Bots
             int dmg = charsGotHealed;
             Minion target = null;
             if (triggerEffectMinion.own) target = p.getEnemyCharTargetForRandomSingleDamage(dmg, true);
-            else target = p.searchRandomMinion(p.ownMinions, searchmode.searchHighestAttack); //damage the Highest (pessimistic)
+            else target = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighestAttack); //damage the Highest (pessimistic)
             if (target != null) p.minionGetDamageOrHeal(target, dmg);
         }
 	}

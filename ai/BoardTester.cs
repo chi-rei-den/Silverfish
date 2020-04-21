@@ -87,7 +87,7 @@ namespace HREngine.Bots
 
         List<Minion> ownminions = new List<Minion>();
         List<Minion> enemyminions = new List<Minion>();
-        List<Handmanager.Handcard> handcards = new List<Handmanager.Handcard>();
+        List<Handcard> handcards = new List<Handcard>();
         List<SimCard> enemycards = new List<SimCard>();
         List<GraveYardItem> turnGraveYard = new List<GraveYardItem>();
         List<GraveYardItem> turnGraveYardAll = new List<GraveYardItem>();
@@ -697,7 +697,7 @@ namespace HREngine.Bots
                         if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
-                        tempminion = createNewMinion(new Handmanager.Handcard(((minionid))), zp, true);
+                        tempminion = createNewMinion(new Handcard(((minionid))), zp, true);
                         tempminion.own = true;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -852,7 +852,7 @@ namespace HREngine.Bots
                         if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
 
 
-                        tempminion = createNewMinion(new Handmanager.Handcard(((minionid))), zp, false);
+                        tempminion = createNewMinion(new Handcard(((minionid))), zp, false);
                         tempminion.own = false;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -915,7 +915,7 @@ namespace HREngine.Bots
                 if (readstate == 5) // minion or enchantment
                 {
 
-                    Handmanager.Handcard card = new Handmanager.Handcard();
+                    Handcard card = new Handcard();
 
                     String[] hc = s.Split(' ');
                     card.position = Convert.ToInt32(hc[1]);
@@ -1092,11 +1092,11 @@ namespace HREngine.Bots
 
 
 
-        public Minion createNewMinion(Handmanager.Handcard hc, int zonepos, bool own)
+        public Minion createNewMinion(Handcard hc, int zonepos, bool own)
         {
             Minion m = new Minion
             {
-                handcard = new Handmanager.Handcard(hc),
+                handcard = new Handcard(hc),
                 zonepos = zonepos,
                 entitiyID = hc.entity,
                 Angr = hc.card.Attack,

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -42,7 +43,7 @@ namespace HREngine.Bots
                 if (p.cardsPlayedThisTurn >= 1 && p.ownMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
-                    var found = p.searchRandomMinion(p.ownMinions, searchmode.searchLowestAttack);
+                    var found = p.searchRandomMinion(p.ownMinions, SearchMode.searchLowestAttack);
                     if (found != null)
                     {
                         p.minionGetBuffed(found, 3, 0);
@@ -59,7 +60,7 @@ namespace HREngine.Bots
                 if (p.cardsPlayedThisTurn >= 1 && p.enemyMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
-                    var found = p.searchRandomMinion(p.enemyMinions, searchmode.searchLowestAttack);
+                    var found = p.searchRandomMinion(p.enemyMinions, SearchMode.searchLowestAttack);
                     if (found != null)
                     {
                         p.minionGetBuffed(found, 3, 0);

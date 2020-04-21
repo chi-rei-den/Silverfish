@@ -40,7 +40,7 @@ namespace HREngine.Bots
                     p.minionSetLifetoX(m, 5);
                 }
 
-                foreach (Handmanager.Handcard hc in p.owncards)
+                foreach (Handcard hc in p.owncards)
                 {
                     hc.addattack = 5 - hc.card.Attack;
                     hc.addHp += 5 - hc.card.Health;

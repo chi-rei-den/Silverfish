@@ -36,7 +36,7 @@ namespace HREngine.Bots
             {
                 if (triggerEffectMinion.own)
                 {
-                    foreach (Handmanager.Handcard hc in p.owncards)
+                    foreach (Handcard hc in p.owncards)
                     {
                         if (hc.card.Type == CardType.MINION)
                         {

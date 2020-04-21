@@ -33,9 +33,9 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            Handmanager.Handcard c = null;
+            Handcard c = null;
             int sum = 10000;
-            foreach (Handmanager.Handcard hc in p.owncards)
+            foreach (Handcard hc in p.owncards)
             {
                 if (hc.card.Type == CardType.MINION)
                 {

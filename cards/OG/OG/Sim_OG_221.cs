@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			Minion target = (m.own) ? p.searchRandomMinion(p.ownMinions, searchmode.searchLowestAttack) : p.searchRandomMinion(p.enemyMinions, searchmode.searchLowestAttack);
+			Minion target = (m.own) ? p.searchRandomMinion(p.ownMinions, SearchMode.searchLowestAttack) : p.searchRandomMinion(p.enemyMinions, SearchMode.searchLowestAttack);
 			if (target != null) target.divineshild = true;
         }
     }

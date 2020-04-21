@@ -32,7 +32,7 @@ namespace HREngine.Bots
 
         //    Whenever your opponent casts a spell, gain a copy of it and give them a Coin.
 
-        public override void onCardIsGoingToBePlayed(Playfield p, Handmanager.Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
+        public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             SimCard c = hc.card;
             if (c.Type == CardType.SPELL && c.CardId != SimCard.gallywixscoin && wasOwnCard != triggerEffectMinion.own)
