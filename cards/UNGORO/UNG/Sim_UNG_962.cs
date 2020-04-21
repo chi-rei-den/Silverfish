@@ -2,6 +2,7 @@ using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb;
 
 /* _BEGIN_TEMPLATE_
 {

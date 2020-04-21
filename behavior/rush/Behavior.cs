@@ -117,10 +117,10 @@ namespace HREngine.Bots
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case SimCard.soultap: 
+                    case SimCard.soultap:
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
-                    case CardIds.NonCollectible.Warlock.LifeTap: 
+                    case CardIds.NonCollectible.Warlock.LifeTap:
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0)
                         {
                             retval -= 10;
@@ -174,15 +174,15 @@ namespace HREngine.Bots
             if (p.ownMinions.Count == 0) retval -= 20;
             if (p.enemyMinions.Count >= 4) retval -= 20;
             if (p.enemyHero.Hp <= 0) retval = 10000;
-            
+
             retval += p.anzOwnExtraAngrHp - p.anzEnemyExtraAngrHp / 2;
             //soulfire etc
             int deletecardsAtLast = 0;
             foreach (Action a in p.playactions)
             {
                 if (a.actionType != actionEnum.playcard) continue;
-                if (a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == SimCard.succubus) deletecardsAtLast = 1;
-                if (deletecardsAtLast == 1 && !(a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == SimCard.succubus)) retval -= 20;
+                if (a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == CardIds.Collectible.Warlock.Felstalker) deletecardsAtLast = 1;
+                if (deletecardsAtLast == 1 && !(a.card.card.CardId == CardIds.Collectible.Warlock.Soulfire || a.card.card.CardId == CardIds.Collectible.Warlock.Doomguard || a.card.card.CardId == CardIds.Collectible.Warlock.Felstalker)) retval -= 20;
             }
             if (p.enemyHero.Hp >= 1 && p.guessingHeroHP <= 0)
             {

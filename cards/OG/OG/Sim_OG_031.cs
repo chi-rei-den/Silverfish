@@ -31,18 +31,15 @@ namespace HREngine.Bots
     {
         //Deathrattle: Summon a 4/2 Elemental.
 
-        SimCard weapon = CardIds.Collectible.Shaman.HammerOfTwilight;
-        SimCard kid = CardIds.Collectible.Shaman.HammerOfTwilighta;
-
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(CardIds.Collectible.Shaman.HammerOfTwilight, ownplay);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             int pos = (m.own) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, m.own);
+            p.callKid(CardIds.NonCollectible.Shaman.HammerofTwilight_TwilightElemental, pos, m.own);
         }
     }
 }

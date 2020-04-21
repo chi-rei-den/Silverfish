@@ -36,13 +36,11 @@ namespace HREngine.Bots
 
             if (own.own)
             {
-                p.ownHero.CardClass = HeroEnum.lordjaraxxus;
                 p.ownHero.Hp = own.Hp;
                 p.ownHero.maxHp = own.maxHp;
             }
             else
             {
-                p.enemyHero.CardClass = HeroEnum.lordjaraxxus;
                 p.enemyHero.Hp = own.Hp;
                 p.enemyHero.maxHp = own.maxHp;
             }

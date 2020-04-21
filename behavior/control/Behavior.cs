@@ -179,7 +179,7 @@ namespace HREngine.Bots
                     case CardIds.Collectible.Warlock.DarkshireLibrarian: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.DarkBargain: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.Doomguard: goto case CardIds.Collectible.Warlock.Soulfire;
-                    case SimCard.succubus: goto case CardIds.Collectible.Warlock.Soulfire;
+                    case CardIds.Collectible.Warlock.Felstalker: goto case CardIds.Collectible.Warlock.Soulfire;
                     case CardIds.Collectible.Warlock.Soulfire: deletecardsAtLast = 1; break;
                     default:
                         if (deletecardsAtLast == 1) retval -= 20;
@@ -236,10 +236,10 @@ namespace HREngine.Bots
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case SimCard.soultap: 
+                    case SimCard.soultap:
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
-                    case CardIds.NonCollectible.Warlock.LifeTap: 
+                    case CardIds.NonCollectible.Warlock.LifeTap:
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0)
                         {
                             retval -= 10;
@@ -338,7 +338,7 @@ namespace HREngine.Bots
                 else if (m.Angr <= 2 && m.Hp <= 2 && !m.divineshild) retval -= 5;
             }
             else retval += m.handcard.card.Rarity;
-			
+
             if (m.taunt) retval += 5;
             if (m.divineshild) retval += m.Angr;
             if (m.divineshild && m.taunt) retval += 5;
@@ -363,7 +363,7 @@ namespace HREngine.Bots
 
         public override int getSirFinleyPriority(List<Handmanager.Handcard> discoverCards)
         {
-            
+
             return -1; //comment out or remove this to set manual priority
             int sirFinleyChoice = -1;
             int tmp = int.MinValue;
@@ -382,7 +382,7 @@ namespace HREngine.Bots
         private Dictionary<SimCard, int> SirFinleyPriorityList = new Dictionary<SimCard, int>
         {
             //{HeroPowerName, Priority}, where 0-9 = manual priority
-            { CardIds.NonCollectible.Priest.LesserHeal, 0 }, 
+            { CardIds.NonCollectible.Priest.LesserHeal, 0 },
             { CardIds.NonCollectible.Druid.Shapeshift, 6 },
             { CardIds.NonCollectible.Mage.Fireblast, 7 },
             { CardIds.NonCollectible.Shaman.TotemicCall, 1 },
@@ -392,7 +392,7 @@ namespace HREngine.Bots
             { SimCard.armorup, 2 },
             { CardIds.NonCollectible.Hunter.SteadyShot, 8 }
         };
-		
+
     }
 
 }

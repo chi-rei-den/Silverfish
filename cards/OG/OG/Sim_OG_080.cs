@@ -2,6 +2,7 @@ using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,12 +33,12 @@ namespace HREngine.Bots
 		
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.drawACard(SimCard.briarthorntoxin, own.own, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.XarilPoisonedMind_BriarthornToxin, own.own, true);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(SimCard.fadeleaftoxin, m.own, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.XarilPoisonedMind_FadeleafToxinEnchantment, m.own, true);
         }
     }
 }

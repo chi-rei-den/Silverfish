@@ -21,6 +21,8 @@ using System.Reflection;
 
         public bool Charge => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.CHARGE));
 
+        public CardClass Class => (CardClass)this.CardDef.Entity.GetTag(GameTag.CLASS);
+
         public bool Combo => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.COMBO));
 
         public int Cost => this.CardDef.Entity.GetTag(GameTag.COST);

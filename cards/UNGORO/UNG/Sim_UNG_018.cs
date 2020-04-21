@@ -2,6 +2,7 @@ using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -34,7 +35,7 @@ namespace HREngine.Bots
         {
             int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
             p.minionGetDamageOrHeal(target, dmg);
-            p.drawACard(SimCard.flameelemental, ownplay, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.FireFly_FlameElementalToken, ownplay, true);
 		}
 	}
 }

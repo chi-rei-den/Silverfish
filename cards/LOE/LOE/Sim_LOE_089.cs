@@ -29,12 +29,12 @@ namespace HREngine.Bots
 	class Sim_LOE_089 : SimTemplate //* Wobbling Runts
 	{
 		//Deathrattle: Summon three 2/2 Runts.
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_RascallyRuntToken, m.zonepos - 1, m.own); //Rascally Runt
-            p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_RascallyRuntToken2, m.zonepos, m.own); //Wily Runt
-            p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_RascallyRuntToken3, m.zonepos + 1, m.own); //Grumbly Runt
+            p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_WilyRuntToken, m.zonepos, m.own); //Wily Runt
+            p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_GrumblyRuntToken, m.zonepos + 1, m.own); //Grumbly Runt
         }
 	}
 }
