@@ -39,7 +39,7 @@ namespace HREngine.Bots
                 {
                     p.minionGetDestroyed(found);
                 }
-				found = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighHPLowAttack);
+				found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
                 if (found != null)
                 {
                     p.minionGetDestroyed(found);

@@ -13,7 +13,6 @@ namespace HREngine.Bots
         public SimCard name = SimCard.None;
         public SimCard card;
         public int numAttacksThisTurn = 0;
-        public bool immuneWhileAttacking = false;
 
         public int Angr = 0;
         public int Durability = 0;
@@ -34,7 +33,6 @@ namespace HREngine.Bots
             this.name = w.name;
             this.card = w.card;
             this.numAttacksThisTurn = w.numAttacksThisTurn;
-            this.immuneWhileAttacking = w.immuneWhileAttacking;
 
             this.Angr = w.Angr;
             this.Durability = w.Durability;
@@ -61,7 +59,6 @@ namespace HREngine.Bots
             this.name = c.CardId;
             this.card = c;
             this.numAttacksThisTurn = 0;
-            this.immuneWhileAttacking = c.immuneWhileAttacking;
 
             this.Angr = c.Attack;
             this.Durability = c.Durability;
@@ -78,6 +75,5 @@ namespace HREngine.Bots
             return
                 $"{this.Angr} {this.Durability} {this.name} {this.card.CardId} {(this.poisonous ? 1 : 0)} {(this.lifesteal ? 1 : 0)}";
         }
-
     }
 }

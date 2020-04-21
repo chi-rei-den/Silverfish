@@ -38,8 +38,6 @@ namespace HREngine.Bots
             {
                 p.drawACard(SimCard.None, wasOwnCard);
             }
-
         }
-
 	}
 }

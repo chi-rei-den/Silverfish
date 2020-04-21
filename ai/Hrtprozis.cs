@@ -421,7 +421,6 @@ namespace HREngine.Bots
             {
                 i++;
                 m.zonepos = i;
-
             }
             i = 0;
             foreach (Minion m in this.enemyMinions)
@@ -429,7 +428,6 @@ namespace HREngine.Bots
                 i++;
                 m.zonepos = i;
             }
-
         }
 
         public void updateDiscoverCards(List<string> discoverCardsList)
@@ -575,7 +573,6 @@ namespace HREngine.Bots
 
                 help.logg(mini);
             }
-
         }
 
         public void printEnemyMinions()
@@ -632,7 +629,6 @@ namespace HREngine.Bots
 
                 help.logg(mini);
             }
-
         }
 
         public void printOwnDeck()
@@ -644,7 +640,6 @@ namespace HREngine.Bots
             }
             Helpfunctions.Instance.logg(od);
         }
-
     }
 
 }

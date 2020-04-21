@@ -46,8 +46,6 @@ namespace HREngine.Bots
             }
             if (p.cardsPlayedThisTurn >= 1) p.lowerWeaponDurability(1000, !ownplay);
         }
-
-
     }
 
 }

@@ -38,9 +38,6 @@ namespace HREngine.Bots
                 triggerEffectMinion.divineshild = true;
             }
         }
-
-
-
     }
 
 }

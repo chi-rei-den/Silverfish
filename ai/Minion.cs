@@ -22,7 +22,6 @@ namespace HREngine.Bots
             this.controllerOfCreator = controler;
             this.copyDeathrattle = copydr;
         }
-
     }
 
     public class Minion
@@ -505,7 +504,6 @@ namespace HREngine.Bots
             {
                 this.minionDied(p);
             }
-
         }
 
         public void minionDied(Playfield p)
@@ -580,7 +578,6 @@ namespace HREngine.Bots
             {
                 Ready = true;
                 cantAttackHeroes = false;
-
             }
         }
 
@@ -859,11 +856,9 @@ namespace HREngine.Bots
 
 
 
-
                 }
             }
         }
-
     }
 
 }

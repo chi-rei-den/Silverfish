@@ -48,8 +48,6 @@ namespace HREngine.Bots
 
             p.allMinionsGetDamage(dmgdone);
         }
-
-
     }
 
 }

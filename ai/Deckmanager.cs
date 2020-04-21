@@ -16,7 +16,6 @@ namespace HREngine.Bots
         
         public Deck()
         {
-
         }
 
         public Deck(Playfield p, SimCard cardId, int number, bool own)
@@ -165,7 +164,6 @@ namespace HREngine.Bots
 
             return retval;
         }*/
-
     }
     /*
     public class Deckmanager
@@ -202,7 +200,6 @@ namespace HREngine.Bots
             }
             help.logg("Enemy cards: " + this.enemyAnzCards);
         }
-
 
     }*/
 

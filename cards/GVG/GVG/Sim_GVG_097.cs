@@ -41,9 +41,7 @@ namespace HREngine.Bots
             }
             if(gain>=1) p.minionGetBuffed(own, gain, gain);
         }
-
       
-
     }
 
 }

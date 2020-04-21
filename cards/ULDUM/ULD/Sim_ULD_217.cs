@@ -39,9 +39,6 @@ List<Minion> minions = p.ownMinions;
 Minion a = p.searchRandomMinion(minions, SearchMode.LowHealth);
 p.minionGetBuffed(a, 1, 0);
 }
-
-
-
 	}
 }
 }

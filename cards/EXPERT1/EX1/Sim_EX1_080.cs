@@ -33,6 +33,5 @@ namespace HREngine.Bots
         {
             if (hc.card.Secret) p.minionGetBuffed(m, 1, 1);
         }
-
 	}
 }

@@ -31,14 +31,20 @@ namespace HREngine.Bots
 	class Sim_BRM_017 : SimTemplate //* Resurrect
 	{
 		// Summon a random friendly minion that died this game.
-		
+
 		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
 		{
             if (p.ownMaxMana >= 6)
             {
                 int posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
-                SimCard kid = ((p.OwnLastDiedMinion == SimCard.None) ? CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
-                p.callKid(kid, posi, ownplay, false);
+                if (p.OwnLastDiedMinion == SimCard.None)
+                {
+                    p.callKid(CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken, posi, ownplay, false);
+                }
+                else
+                {
+                    p.callKid(p.OwnLastDiedMinion, posi, ownplay, false);
+                }
             }
 		}
 	}

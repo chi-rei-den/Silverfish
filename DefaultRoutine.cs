@@ -916,7 +916,6 @@ def Execute():
 
 
                             await attacker.DoAttack(target);
-
                         }
                         else
                         {
@@ -1174,8 +1173,6 @@ def Execute():
         public async Task OpponentTurnLogic()
         {
             Log.InfoFormat("[对手回合]");
-
-
         }
 
         #endregion
@@ -1386,7 +1383,6 @@ def Execute():
 
         private void GameEventManagerOnNewGame(object sender, NewGameEventArgs newGameEventArgs)
         {
-
         }
 
         private void GameEventManagerOnQuestUpdate(object sender, QuestUpdateEventArgs questUpdateEventArgs)

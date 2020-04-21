@@ -37,6 +37,5 @@ namespace HREngine.Bots
                 p.minionGetTempBuff(triggerEffectMinion, 2, 0);
             }
         }
-
 	}
 }

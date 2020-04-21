@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb;
 using HearthDb.Enums;
 using System;
 using System.Collections.Generic;
@@ -41,9 +42,8 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(SimCard.excessmana, true, true);
+                    p.drawACard(CardIds.NonCollectible.Druid.WildGrowth_ExcessManaToken, true, true);
                 }
-
             }
             else
             {
@@ -53,10 +53,9 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.drawACard(SimCard.excessmana, false, true);
+                    p.drawACard(CardIds.NonCollectible.Druid.WildGrowth_ExcessManaToken, false, true);
                 }
             }
 		}
-
 	}
 }

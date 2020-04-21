@@ -96,7 +96,6 @@ namespace HREngine.Bots
             {
                 this.isindeck = b;
             }
-
         }
 
         private static Silverfish instance;
@@ -411,12 +410,10 @@ namespace HREngine.Bots
                     if (ent.ControllerId == 1 && this.ownHero.CardClass == CardClass.INVALID)
                     {
                         this.ownHero.CardClass = (CardClass)ent.Class;
-
                     }
                     if (ent.ControllerId == 2 && this.enemyHero.CardClass == CardClass.INVALID)
                     {
                         this.enemyHero.CardClass = (CardClass)ent.Class;
-
                     }
                     if (ent.EntityId == enemyheroentity) enemHeroCard = ent;
                     if (ent.EntityId == ownheroentity) ownHeroCard = ent;
@@ -609,7 +606,6 @@ namespace HREngine.Bots
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                     miniEnchlist.Add(new miniEnch(id, creator, controler, copyDeathrattle));
                 }
-
             }
 
             this.ownHero.loadEnchantments(miniEnchlist, ownHeroCard.GetTag(GAME_TAG.CONTROLLER));
@@ -627,7 +623,6 @@ namespace HREngine.Bots
                     int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                     miniEnchlist.Add(new miniEnch(id, creator, controler, copyDeathrattle));
                 }
-
             }
 
             this.enemyHero.loadEnchantments(miniEnchlist, enemHeroCard.GetTag(GAME_TAG.CONTROLLER));
@@ -809,7 +804,6 @@ namespace HREngine.Bots
                     {
                         needSleep = true;
                         Helpfunctions.Instance.ErrorLog("[AI] 冲锋的随从还没有准备好");
-
                     }
 
                     if (entitiy.GetTag(GAME_TAG.CONTROLLER) == this.ownPlayerController)
@@ -826,7 +820,6 @@ namespace HREngine.Bots
                     }
                 }
             }
-
         }
 
         private void getHandcards()
@@ -872,7 +865,6 @@ namespace HREngine.Bots
                 if (hs.GetTag(GAME_TAG.ZONE) == 3 && hs.ControllerId != ownPlayerController &&
                     hs.GetTag(GAME_TAG.ZONE_POSITION) >= 1) enemyAnzCards++;
             }
-
         }
 
         private void getDecks()
@@ -1101,7 +1093,6 @@ namespace HREngine.Bots
 
             this.botbehave += $" aA {Settings.Instance.adjustActions}";
             if (Settings.Instance.concedeMode != 0) this.botbehave += $" cede:{Settings.Instance.concedeMode}";
-
         }
 
         public void updateCThunInfo(int OgOwnCThunAngrBonus, int OgOwnCThunHpBonus, int OgOwnCThunTaunt)
@@ -1166,7 +1157,6 @@ namespace HREngine.Bots
             }
 
             return 0;
-
         }
 
 
@@ -1197,7 +1187,6 @@ namespace HREngine.Bots
             Probabilitymaker.Instance.printGraveyards();
             Hrtprozis.Instance.printOwnDeck();
         }
-
     }
 }
 

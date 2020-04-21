@@ -43,7 +43,7 @@ namespace HREngine.Bots
                 if (p.cardsPlayedThisTurn >= 1 && p.ownMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
-                    var found = p.searchRandomMinion(p.ownMinions, SearchMode.searchLowestAttack);
+                    var found = p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack);
                     if (found != null)
                     {
                         p.minionGetBuffed(found, 3, 0);
@@ -60,7 +60,7 @@ namespace HREngine.Bots
                 if (p.cardsPlayedThisTurn >= 1 && p.enemyMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
-                    var found = p.searchRandomMinion(p.enemyMinions, SearchMode.searchLowestAttack);
+                    var found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack);
                     if (found != null)
                     {
                         p.minionGetBuffed(found, 3, 0);
@@ -68,8 +68,6 @@ namespace HREngine.Bots
                 }
             }
         }
-
-
     }
 
 }

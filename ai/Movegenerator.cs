@@ -56,7 +56,7 @@ namespace HREngine.Bots
                     if (playedcards.Contains(cardNcost.ToString())) continue; // dont play the same card in one loop
                     playedcards.Add(cardNcost.ToString());
 
-                    int isChoice = (c.choice) ? 1 : 0;
+                    int isChoice = (c.ChooseOne) ? 1 : 0;
                     bool choiceDamageFound = false;
                     for (int choice = 0 + 1 * isChoice; choice < 1 + 2 * isChoice; choice++)
                     {
@@ -151,7 +151,7 @@ namespace HREngine.Bots
                 if (p.ownAbilityReady && p.mana >= p.ownHeroAblility.card.getManaCost(p, p.ownHeroAblility.manacost)) // if ready and enough manna
                 {
                     SimCard c = p.ownHeroAblility.card;
-                    int isChoice = (c.choice) ? 1 : 0;
+                    int isChoice = (c.ChooseOne) ? 1 : 0;
                     for (int choice = 0 + 1 * isChoice; choice < 1 + 2 * isChoice; choice++)
                     {
                         if (isChoice == 1)
@@ -233,7 +233,6 @@ namespace HREngine.Bots
             {
                 if (p.enemySecretCount >= 1) return true;
                 if (p.enemyHero.immune) return true;
-
             }
             else
             {
@@ -286,7 +285,6 @@ namespace HREngine.Bots
                     if (m.name == CardIds.Collectible.Hunter.ScavengingHyena) hashyena = true;
                     if (m.handcard.card.Race == Race.BEAST) haspets++;
                     if (m.name == CardIds.Collectible.Neutral.HarvestGolem || m.name == CardIds.Collectible.Neutral.HauntedCreeper || m.souloftheforest >= 1 || m.stegodon >= 1 || m.livingspores >= 1 || m.infest >= 1 || m.ancestralspirit >= 1 || m.desperatestand  >= 1 || m.explorershat >= 1 || m.returnToHand >= 1 || m.name == CardIds.Collectible.Neutral.NerubianEgg || m.name == CardIds.Collectible.Hunter.SavannahHighmane || m.name == CardIds.Collectible.Neutral.SludgeBelcher || m.name == CardIds.Collectible.Neutral.CairneBloodhoof || m.name == CardIds.Collectible.Neutral.Feugen || m.name == CardIds.Collectible.Neutral.Stalagg || m.name == CardIds.Collectible.Neutral.TheBeast) spawnminions = true;
-
                 }
             }
 

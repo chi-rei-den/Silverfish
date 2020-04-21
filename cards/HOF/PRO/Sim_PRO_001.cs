@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,9 +33,8 @@ namespace HREngine.Bots
 //    kampfschrei:/ verleiht beiden spielern die macht des rock! (durch eine powerakkordkarte)
 		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
 		{
-            p.drawACard(SimCard.roguesdoit, true, true);
-            p.drawACard(SimCard.roguesdoit, false, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_RoguesDoIt, true, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.EliteTaurenChieftain_RoguesDoIt, false, true);
 		}
-
 	}
 }

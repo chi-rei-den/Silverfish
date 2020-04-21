@@ -42,7 +42,7 @@ namespace HREngine.Bots
                 p.callKid(kid, pos, true, true, true);
                 if (p.ownMinions.Count >= 1)
                 {
-                    if (p.ownMinions[p.ownMinions.Count - 1].name == SimCard.defender)
+                    if (p.ownMinions[p.ownMinions.Count - 1].name == CardIds.NonCollectible.Paladin.NobleSacrifice_Defender)
                     {
                         number = p.ownMinions[p.ownMinions.Count - 1].entitiyID;
                     }
@@ -55,7 +55,7 @@ namespace HREngine.Bots
 
                 if (p.enemyMinions.Count >= 1)
                 {
-                    if (p.enemyMinions[p.enemyMinions.Count - 1].name == SimCard.defender)
+                    if (p.enemyMinions[p.enemyMinions.Count - 1].name == CardIds.NonCollectible.Paladin.NobleSacrifice_Defender)
                     {
                         number = p.enemyMinions[p.enemyMinions.Count - 1].entitiyID;
                     }

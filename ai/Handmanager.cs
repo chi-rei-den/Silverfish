@@ -31,7 +31,6 @@ namespace HREngine.Bots
         private Handmanager()
         {
             this.help = Helpfunctions.Instance;
-
         }
 
         public void clearAllRecalc()
@@ -73,7 +72,6 @@ namespace HREngine.Bots
             }
             help.logg($"Enemy cards: {this.enemyAnzCards}");
         }
-
 
     }
 

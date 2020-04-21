@@ -282,7 +282,6 @@ namespace HREngine.Bots
                     }
  
                     p.complete = true;
-
                 }
                 else
                 {
@@ -412,7 +411,6 @@ namespace HREngine.Bots
             twoturnfields.AddRange(temp);
 
 
-
         }
 
         public void printPosmoves()
@@ -425,7 +423,6 @@ namespace HREngine.Bots
                 if (i >= 200) break;
             }
         }
-
     }
 
 }

@@ -35,7 +35,7 @@ namespace HREngine.Bots
             p.minionGetDestroyed(target);
             Minion found = null;
             if (ownplay) found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
-            else found = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighHPLowAttack);
+            else found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
             if (found != null) p.minionGetDestroyed(found);
         }
     }

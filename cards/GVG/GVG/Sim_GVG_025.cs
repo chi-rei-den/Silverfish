@@ -38,8 +38,6 @@ namespace HREngine.Bots
                 triggerEffectMinion.stealth = true;
             }
         }
-
-
     }
 
 }

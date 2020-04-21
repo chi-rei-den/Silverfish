@@ -48,7 +48,6 @@ namespace HREngine.Bots
                     if (m.handcard.card.Race == Race.PET && m.entitiyID != own.entitiyID) p.minionGetBuffed(m, 1, 0);
                 }
             }
-
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
@@ -70,6 +69,5 @@ namespace HREngine.Bots
                 }
             }
         }
-
 	}
 }

@@ -43,6 +43,5 @@ namespace HREngine.Bots
             }
         }
 
-
 	}
 }

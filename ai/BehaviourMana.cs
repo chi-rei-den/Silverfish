@@ -57,7 +57,6 @@ namespace HREngine.Bots
             return retval;
         }
 
-
     }
 
 }

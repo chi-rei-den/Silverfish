@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Chireiden.Silverfish;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -34,7 +35,7 @@ namespace HREngine.Bots
         {
             if (own.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.CARDRACE, Race.MURLOC);
+                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MurlocOnly);
                 if (hc != null)
                 {
                     hc.addattack++;

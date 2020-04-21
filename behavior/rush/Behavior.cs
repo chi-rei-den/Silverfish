@@ -102,22 +102,22 @@ namespace HREngine.Bots
                         }
                         if (wereTarget && !(p.anzOwnAuchenaiSoulpriest > 0 || p.embracetheshadow > 0)) retval -= 10;
                         break;
-                    case SimCard.poisoneddaggers: goto case CardIds.NonCollectible.Rogue.DaggerMastery;
+                    case CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers:
                     case CardIds.NonCollectible.Rogue.DaggerMastery:
                         if (!(p.ownWeapon.Durability > 1 || p.ownWeapon.Angr > 1)) retval -= 10;
                         break;
-                    case SimCard.totemicslam: goto case CardIds.NonCollectible.Shaman.TotemicCall;
+                    case CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam:
                     case CardIds.NonCollectible.Shaman.TotemicCall:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case SimCard.thetidalhand: goto case SimCard.reinforce;
-                    case CardIds.NonCollectible.Paladin.TheSilverHand: goto case SimCard.reinforce;
-                    case SimCard.reinforce:
+                    case CardIds.NonCollectible.Paladin.VilefinInquisitor_TheTidalHand:
+                    case CardIds.NonCollectible.Paladin.JusticarTrueheart_TheSilverHand:
+                    case CardIds.NonCollectible.Paladin.ReinforceBasic:
                         if (p.ownMinions.Count < 7) retval -= 10;
                         else retval -= 3;
                         break;
-                    case SimCard.soultap:
+                    case CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap:
                         if (p.owncards.Count < 10 && p.ownDeckSize > 0) retval -= 10;
                         break;
                     case CardIds.NonCollectible.Warlock.LifeTap:
@@ -225,7 +225,6 @@ namespace HREngine.Bots
             if (m.name == CardIds.Collectible.Neutral.NerubianEgg && m.Angr <= 3 && !m.taunt) retval = 0;
             return retval;
         }
-
 
     }
 

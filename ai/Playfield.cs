@@ -322,7 +322,6 @@ namespace HREngine.Bots
             {
                 trgt.Add(new Minion(m));
             }
-
         }
 
         private void addCardsReal(List<Handcard> source)
@@ -332,7 +331,6 @@ namespace HREngine.Bots
             {
                 this.owncards.Add(new Handcard(hc));
             }
-
         }
 
         public Playfield()
@@ -726,7 +724,6 @@ namespace HREngine.Bots
                 if (m.name == CardIds.Collectible.Paladin.DragonConsort && anzOwnDragonConsort > 0) this.anzOwnDragonConsortStarted++;
                 if (m.handcard.card.Race == Race.PIRATE) this.anzOwnPiratesStarted++;
                 if (m.handcard.card.Race == Race.MURLOC) this.anzOwnMurlocStarted++;
-
             }
 
             foreach (Handcard hc in this.owncards)
@@ -880,7 +877,6 @@ namespace HREngine.Bots
 
             this.tempanzOwnCards = this.owncards.Count;
             this.tempanzEnemyCards = this.enemyAnzCards;
-
 
         }
 
@@ -1132,12 +1128,10 @@ namespace HREngine.Bots
 
             this.tempanzOwnCards = this.owncards.Count;
             this.tempanzEnemyCards = this.enemyAnzCards;
-
         }
 
         public void copyValuesFrom(Playfield p)
         {
-
         }
 
         public bool isEqual(Playfield p, bool logg)
@@ -1291,14 +1285,12 @@ namespace HREngine.Bots
             {
                 Minion dis = this.ownMinions[i]; Minion pis = p.ownMinions[i];
                 if (dis.entitiyID != pis.entitiyID) Ai.Instance.updateEntitiy(pis.entitiyID, dis.entitiyID);
-
             }
 
             for (int i = 0; i < this.enemyMinions.Count; i++)
             {
                 Minion dis = this.enemyMinions[i]; Minion pis = p.enemyMinions[i];
                 if (dis.entitiyID != pis.entitiyID) Ai.Instance.updateEntitiy(pis.entitiyID, dis.entitiyID);
-
             }
             if (this.ownSecretsIDList.Count != p.ownSecretsIDList.Count)
             {
@@ -1468,7 +1460,6 @@ namespace HREngine.Bots
                 }
                 else if (Settings.Instance.ImprovedCalculations == 2)
                 {
-
                 }
                 retval += this.anzOgOwnCThunAngrBonus + this.anzOwnJadeGolem + this.anzOwnElementalsLastTurn;
                 retval *= 1000;
@@ -2235,7 +2226,6 @@ namespace HREngine.Bots
                         }
                     }
                 }
-
             }
 
             return bestplace + 1;
@@ -3199,7 +3189,6 @@ namespace HREngine.Bots
                         }
                         else
                         {
-
                         }
                     }
                     else
@@ -3221,7 +3210,6 @@ namespace HREngine.Bots
             {
                 this.enemyOptionsDoneThisTurn++;
             }
-
         }
 
         //minion attacks a minion
@@ -3301,7 +3289,6 @@ namespace HREngine.Bots
                 {
                     attacker.Ready = false;
                 }
-
             }
 
 
@@ -3486,7 +3473,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (own)
                     {
-                        Handcard hc = this.searchRandomMinionInHand(this.owncards, SearchMode.LowCost, GameTag.Mob);
+                        Handcard hc = this.searchRandomMinionInHand(this.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
                         if (hc != null)
                         {
                             hc.addattack++;
@@ -3530,7 +3517,6 @@ namespace HREngine.Bots
                     if (this.ownHero.entitiyID == newTarget) target = this.ownHero;
                     if (this.enemyHero.entitiyID == newTarget) target = this.enemyHero;
                 }
-
             }
             this.minionAttacksMinion(hero, target);
 
@@ -3560,7 +3546,6 @@ namespace HREngine.Bots
                     this.lowerWeaponDurability(1, false);
                 }
             }
-
         }
 
         //play a minion trigger stuff:
@@ -3697,7 +3682,6 @@ namespace HREngine.Bots
                     }
                     this.doDmgTriggers();
 
-
                 }
             }
             if (newTarget != 0) //if it canBe_counterspell/spellbender
@@ -3719,7 +3703,6 @@ namespace HREngine.Bots
 
 
             this.cardsPlayedThisTurn++;
-
         }
 
         public void enemyplaysACard(SimCard c, Minion target, int position, int choice, int penality)
@@ -3764,14 +3747,12 @@ namespace HREngine.Bots
                 {
                     //todo mob playing
                     //this.placeAmobSomewhere(hc, target, choice, position);
-
                 }
                 else
                 {
                     c.Simulator.onCardPlay(this, false, target, choice);
                     //lockandload
                     this.doDmgTriggers();
-
 
 
                 }
@@ -4298,7 +4279,6 @@ namespace HREngine.Bots
                     this.callKid(CardIds.Collectible.Neutral.BurlyRockjawTrogg, pos, own);
                 }
             }
-
         }
 
         // public void triggerACardWasPlayed(SimCard c, bool own) {        }
@@ -4359,7 +4339,6 @@ namespace HREngine.Bots
                         break;
                 }
             }
-
         }
 
         public void triggerEndTurn(bool ownturn)
@@ -4809,7 +4788,6 @@ namespace HREngine.Bots
             {
                 this.evaluatePenality -= triggered * 50;
             }
-
         }
 
         public void secretTrigger_MinionIsPlayed(Minion playedMinion)
@@ -4872,7 +4850,6 @@ namespace HREngine.Bots
             {
                 this.evaluatePenality -= triggered * 50;
             }
-
         }
 
         public int secretTrigger_SpellIsPlayed(Minion target, SimCard c)
@@ -4928,7 +4905,6 @@ namespace HREngine.Bots
                         else SimCard.FromName(CardIds.Collectible.Mage.Spellbender).Simulator.onSecretPlay(this, false, null, target, out retval);
                     }
                 }
-
             }
 
             if (turnCounter == 0)
@@ -4937,7 +4913,6 @@ namespace HREngine.Bots
             }
 
             return retval; // the new target
-
         }
 
         public void secretTrigger_MinionDied(bool own)
@@ -4985,7 +4960,6 @@ namespace HREngine.Bots
             {
                 this.evaluatePenality -= triggered * 50;
             }
-
         }
 
         public void secretTrigger_HeroPowerUsed()
@@ -5376,7 +5350,6 @@ namespace HREngine.Bots
                         temp.Add(m);
                         i++;
                     }
-
                 }
                 this.ownMinions = temp;
                 this.updateAdjacentBuffs(true);
@@ -5416,7 +5389,6 @@ namespace HREngine.Bots
                         temp.Add(m);
                         i++;
                     }
-
                 }
                 this.enemyMinions = temp;
                 this.updateAdjacentBuffs(false);
@@ -5548,15 +5520,12 @@ namespace HREngine.Bots
                 {
                     angr += anzOwnSouthseacaptain;
                     vert += anzOwnSouthseacaptain;
-
                 }
                 if (m.handcard.card.Race == Race.DEMON)
                 {
                     angr += anzOwnMalGanis * 2;
                     vert += anzOwnMalGanis * 2;
-
                 }
-
             }
             else
             {
@@ -5580,13 +5549,11 @@ namespace HREngine.Bots
                 {
                     angr += anzEnemyMalGanis * 2;
                     vert += anzEnemyMalGanis * 2;
-
                 }
             }
 
             if (get) this.minionGetBuffed(m, angr, vert);
             else this.minionGetBuffed(m, -angr, -vert);
-
         }
 
         public void updateAdjacentBuffs(bool own)
@@ -5662,7 +5629,7 @@ namespace HREngine.Bots
             m.lifesteal = hc.card.Lifesteal;
             if (this.prozis.ownElementalsHaveLifesteal > 0 && (Race)m.handcard.card.Race == Race.ELEMENTAL) m.lifesteal = true;
             m.stealth = hc.card.Stealth;
-            m.untouchable = hc.card.untouchable;
+            m.untouchable = hc.card.Untouchable;
 
             switch (m.name.CardId)
             {
@@ -5797,7 +5764,6 @@ namespace HREngine.Bots
                         break;
                 }
             }
-
         }
 
 
@@ -5833,7 +5799,6 @@ namespace HREngine.Bots
             Minion m = createNewMinion(hc, mobplace, own);
             //put it on battle field (+triggers)
             addMinionToBattlefield(m);
-
         }
 
         public void minionGetFrozen(Minion target)
@@ -5869,7 +5834,6 @@ namespace HREngine.Bots
         {
             //minion cant die due to silencing!
             m.becomeSilence(this);
-
         }
 
         public void allMinionsGetSilenced(bool own)
@@ -5907,7 +5871,6 @@ namespace HREngine.Bots
                         }
                         this.owncarddraw++;
                     }
-
                 }
                 else
                 {
@@ -5950,7 +5913,6 @@ namespace HREngine.Bots
                     }
                     this.enemycarddraw++;
                     this.enemyAnzCards++;
-
                 }
                 this.triggerCardsChanged(false);
 
@@ -6003,7 +5965,6 @@ namespace HREngine.Bots
                     this.triggerCardsChanged(true);
                 }
             }
-
         }
 
         public void removeCard(Handcard hcc)
@@ -6051,7 +6012,6 @@ namespace HREngine.Bots
                 m.Hp = 0;
                 m.minionDied(this);
             }
-
         }
 
         public void allMinionsGetDestroyed()
@@ -6242,7 +6202,6 @@ namespace HREngine.Bots
                 }
                 else m.updateReadyness();
             }
-
         }
 
         public void Magnetic(Minion mOwn)
@@ -6287,7 +6246,6 @@ namespace HREngine.Bots
             {
                 m.cantAttackHeroes = true;
             }
-
         }
         public void minionLostCharge(Minion m)
         {
@@ -6654,7 +6612,6 @@ namespace HREngine.Bots
             m.Angr = m.Hp;
             m.tempAttack = 0;
             this.minionGetOrEraseAllAreaBuffs(m, true);
-
         }
 
         public void minionSwapAngrAndHP(Minion m)
@@ -7066,7 +7023,6 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
                         Helpfunctions.Instance.ErrorLog("and target to the enemy hero");
                     }
                 }
-
             }
             if (a.actionType == actionEnum.attackWithMinion)
             {
@@ -7080,7 +7036,6 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
                     string ename = $"{a.target.name}";
                     Helpfunctions.Instance.ErrorLog($"attack with: {name} the enemy: {ename}");
                 }
-
             }
 
             if (a.actionType == actionEnum.attackWithHero)
@@ -7121,11 +7076,9 @@ Hp : armor enemyhero{this.enemyHero.Hp}:{this.enemyHero.armor} immune {this.enem
                     {
                         Helpfunctions.Instance.ErrorLog("on your the enemy hero");
                     }
-
                 }
             }
             Helpfunctions.Instance.ErrorLog("");
-
         }
     }
 }

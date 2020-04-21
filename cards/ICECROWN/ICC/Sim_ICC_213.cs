@@ -36,8 +36,14 @@ namespace HREngine.Bots
             if (p.ownMaxMana >= 6)
             {
                 int pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
-                SimCard kid = ((p.OwnLastDiedMinion == SimCard.None) ? CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken : p.OwnLastDiedMinion); // Shadow of Nothing 0:1 or ownMinion
-                p.callKid(kid, pos, ownplay, false);
+                if (p.OwnLastDiedMinion == SimCard.None)
+                {
+                    p.callKid(CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken, pos, ownplay, false);
+                }
+                else
+                {
+                    p.callKid(p.OwnLastDiedMinion, pos, ownplay, false);
+                }
             }
         }
     }

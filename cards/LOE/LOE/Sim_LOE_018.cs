@@ -36,6 +36,5 @@ namespace HREngine.Bots
                 p.minionGetBuffed(triggerEffectMinion, hc.card.Overload, 0);
             }
         }
-
     }
 }

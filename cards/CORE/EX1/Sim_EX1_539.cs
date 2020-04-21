@@ -49,6 +49,5 @@ namespace HREngine.Bots
                 p.minionGetDamageOrHeal(target, dmg);
             }
 		}
-
 	}
 }

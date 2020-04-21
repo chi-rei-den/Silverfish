@@ -69,6 +69,5 @@ namespace HREngine.Bots
                 p.minionGetBuffed(m, -1 * residual, 0);
 			}
         }
-
 	}
 }

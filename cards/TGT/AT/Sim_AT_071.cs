@@ -47,7 +47,6 @@ namespace HREngine.Bots
 				{
 					p.minionGetBuffed(m, 1, 0);
 					p.minionGetCharge(m);
-
 				}
 			}
 			else

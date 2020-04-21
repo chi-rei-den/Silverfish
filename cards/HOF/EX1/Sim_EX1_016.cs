@@ -39,7 +39,7 @@ namespace HREngine.Bots
             }
             else
             {
-                target = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighestHP);
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth);
                 if (p.isOwnTurn && target != null && target.Ready) p.evaluatePenality += 5;
             }
             if (target != null) p.minionGetControlled(target, m.own, false);

@@ -38,6 +38,5 @@ namespace HREngine.Bots
                 p.drawACard(SimCard.None, triggerEffectMinion.own);
             }
         }
-
 	}
 }

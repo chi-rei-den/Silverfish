@@ -213,7 +213,6 @@ namespace HREngine.Bots
 
 
 
-
             }
         }
 
@@ -227,7 +226,6 @@ namespace HREngine.Bots
                 p = posmoves[i];
                 Int64 hash = p.GetPHash();
                 if (!tempDict.ContainsKey(hash)) tempDict.Add(hash, p);
-
             }
             posmoves.Clear();
             foreach (KeyValuePair<Int64, Playfield> d in tempDict)

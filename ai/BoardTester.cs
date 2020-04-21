@@ -299,7 +299,6 @@ namespace HREngine.Bots
                             if (sec == "" || sec == String.Empty || sec == " ") continue;
                             this.enemySecrets.Add(new SecretItem(sec));
                         }
-
                     }
                     continue;
                 }
@@ -516,7 +515,6 @@ namespace HREngine.Bots
                     ownHeroAttack = Convert.ToInt32(h[10]);
                     ownHeroTempAttack = Convert.ToInt32(h[11]);
                     if (h.Length > 12) ownHeroStealth = (h[12] == "True") ? true : false;
-
                 }
 
                 if (readstate == 1 && counter == 2) // own hero weapon
@@ -752,9 +750,7 @@ namespace HREngine.Bots
                         this.ownminions.Add(tempminion);
 
 
-
                     }
-
                 }
 
                 if (readstate == 4) // minion or enchantment
@@ -906,9 +902,7 @@ namespace HREngine.Bots
                         tempminion.updateReadyness();
                         this.enemyminions.Add(tempminion);
 
-
                     }
-
 
                 }
 
@@ -1171,7 +1165,6 @@ namespace HREngine.Bots
             Helpfunctions.Instance.logg($"adjustActions = {Settings.Instance.adjustActions}");
             Helpfunctions.Instance.logg("#################### Settings End #####################################");
         }
-
     }
 
 }

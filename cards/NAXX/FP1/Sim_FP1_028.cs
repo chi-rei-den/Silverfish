@@ -37,6 +37,5 @@ namespace HREngine.Bots
                 if (summonedMinion.handcard.card.Deathrattle) p.minionGetBuffed(triggerEffectMinion,1,0);
             }
         }
-
 	}
 }

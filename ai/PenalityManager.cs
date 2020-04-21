@@ -1,81 +1,83 @@
 using Chireiden.Silverfish;
+using HearthDb;
+using HearthDb.Enums;
+using System;
+using System.Collections.Generic;
+using Triton.Game.Mapping;
+
 namespace HREngine.Bots
 {
-    using HearthDb;
-    using HearthDb.Enums;
-    using System;
-    using System.Collections.Generic;
-    using Triton.Game.Mapping;
-
     public class PenalityManager
     {
         //todo acolyteofpain
         //todo better aoe-penality
 
-        public Dictionary<SimCard, int> HealTargetDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> HealHeroDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> HealAllDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> HealTargetDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> HealHeroDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> HealAllDatabase = new Dictionary<string, int>();
 
 
-        Dictionary<SimCard, int> DamageAllDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> DamageHeroDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> DamageRandomDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> DamageAllEnemysDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> HeroPowerEquipWeapon = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> DamageAllDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> DamageHeroDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> DamageRandomDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> DamageAllEnemysDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> HeroPowerEquipWeapon = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> enrageDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> silenceDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> OwnNeedSilenceDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> enrageDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> silenceDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> OwnNeedSilenceDatabase = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> heroAttackBuffDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> attackBuffDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> healthBuffDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> tauntBuffDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> heroAttackBuffDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> attackBuffDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> healthBuffDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> tauntBuffDatabase = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> lethalHelpers = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> lethalHelpers = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> spellDependentDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> dragonDependentDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> elementalLTDependentDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> spellDependentDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> dragonDependentDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> elementalLTDependentDatabase = new Dictionary<string, int>();
 
-        public Dictionary<SimCard, int> cardDiscardDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> destroyOwnDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> destroyDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> buffingMinionsDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> buffing1TurnDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> heroDamagingAoeDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> randomEffects = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> cardDiscardDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> destroyOwnDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> destroyDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> buffingMinionsDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> buffing1TurnDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> heroDamagingAoeDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> randomEffects = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> silenceTargets = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> silenceTargets = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> returnHandDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> GangUpDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> buffHandDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> equipWeaponPlayDatabase = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> returnHandDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> GangUpDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> buffHandDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> equipWeaponPlayDatabase = new Dictionary<string, int>();
 
-        Dictionary<SimCard, int> priorityDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, int> UsefulNeedKeepDatabase = new Dictionary<SimCard, int>();
-        Dictionary<SimCard, SimCard> choose1database = new Dictionary<SimCard, SimCard>();
-        Dictionary<SimCard, SimCard> choose2database = new Dictionary<SimCard, SimCard>();
+        public Dictionary<string, int> priorityDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> UsefulNeedKeepDatabase = new Dictionary<string, int>();
+        public Dictionary<string, string> choose1database = new Dictionary<string, string>();
+        public Dictionary<string, string> choose2database = new Dictionary<string, string>();
 
-        public Dictionary<SimCard, int> DamageTargetDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> DamageTargetSpecialDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> maycauseharmDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> cardDrawBattleCryDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> cardDrawDeathrattleDatabase = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> priorityTargets = new Dictionary<SimCard, int>();
-        public Dictionary<SimCard, int> specialMinions = new Dictionary<SimCard, int>(); //minions with cardtext, but no battlecry
-        public Dictionary<SimCard, int> ownSummonFromDeathrattle = new Dictionary<SimCard, int>();
+        public Dictionary<string, int> DamageTargetDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> DamageTargetSpecialDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> maycauseharmDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> cardDrawBattleCryDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> cardDrawDeathrattleDatabase = new Dictionary<string, int>();
+        public Dictionary<string, int> priorityTargets = new Dictionary<string, int>();
 
-        Dictionary<Race, int> ClassRacePriorityWarloc = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityHunter = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityMage = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityShaman = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityDruid = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityPaladin = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityPriest = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityRouge = new Dictionary<Race, int>();
-        Dictionary<Race, int> ClassRacePriorityWarrior = new Dictionary<Race, int>();
+        //minions with cardtext, but no battlecry
+        public Dictionary<string, int> specialMinions = new Dictionary<string, int>();
+        public Dictionary<string, int> ownSummonFromDeathrattle = new Dictionary<string, int>();
+
+        public Dictionary<Race, int> ClassRacePriorityWarloc = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityHunter = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityMage = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityShaman = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityDruid = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityPaladin = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityPriest = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityRouge = new Dictionary<Race, int>();
+        public Dictionary<Race, int> ClassRacePriorityWarrior = new Dictionary<Race, int>();
 
         ComboBreaker cb;
         Hrtprozis prozis;
@@ -263,7 +265,7 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Warrior.BrassKnuckles:
                     if (target.own)
                     {
-                        if (p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, GameTag.Mob) != null)
+                        if (p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly) != null)
                         {
                             return -5;
                         }
@@ -578,7 +580,6 @@ namespace HREngine.Bots
             }
 
             return pen;
-
         }
 
         private int getDamagePenality(SimCard card, Minion target, Playfield p)
@@ -1047,7 +1048,6 @@ namespace HREngine.Bots
                             case CardIds.Collectible.Neutral.GurubashiBerserker: return 0;
                             case CardIds.Collectible.Warrior.AxeFlinger: return 0;
                             case CardIds.Collectible.Hunter.Gahzrilla: return 0;
-                            case SimCard.garr: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.HoggerDoomOfElwynn: if (p.ownMinions.Count <= 6) return 0; break;
                             case CardIds.Collectible.Neutral.AcolyteOfPain: if (p.owncards.Count <= 3) return 0; break;
                             case CardIds.Collectible.Neutral.DragonEgg: if (p.ownMinions.Count <= 6) return 5; break;
@@ -1287,7 +1287,6 @@ namespace HREngine.Bots
                     pen = 500;
                 }
 
-
             }
 
             return pen;
@@ -1433,7 +1432,6 @@ namespace HREngine.Bots
                     {
                         cardOnLimit = true;
                     }
-
                 }
 
                 if (ai.botBase is BehaviorRush && p.ownMaxMana <= 3 && cardOnLimit) return 6; //RR penalization for drawing the 3 first turns if we have a card in hand that we won't be able to play in Rush
@@ -1611,7 +1609,7 @@ namespace HREngine.Bots
                 }
 
                 if (a.actionType == actionEnum.useHeroPower
-                    && (p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.CardId == SimCard.soultap))
+                    && (p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Shaman.TotemicCall || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.LifeTap || p.ownHeroAblility.card.CardId == CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap))
                 {
                     first = false;
                     continue;
@@ -1886,7 +1884,6 @@ namespace HREngine.Bots
                             break;
                     }
 
-
                 }
                 return 500;
             }
@@ -1948,7 +1945,6 @@ namespace HREngine.Bots
                 {
                     pen = 5;
                 }
-
             }
 
             return pen;
@@ -2207,7 +2203,6 @@ namespace HREngine.Bots
                     int tmp = 0;
                     foreach (Minion m in p.ownMinions) if (m.taunt) tmp++;
                     return 12 - tmp * 2;
-
             }
 
             if (name == CardIds.Collectible.Mage.UnstablePortal && p.owncards.Count <= 9) return -15;
@@ -2339,7 +2334,6 @@ namespace HREngine.Bots
                 {
                     if (hc.manacost <= p.ownMaxMana && hc.card.Type == CardType.MINION) return 5;
                 }
-
             }
 
             //destroySecretPenality
@@ -2587,7 +2581,6 @@ namespace HREngine.Bots
                     foreach (Minion mnn1 in p.ownMinions)
                     {
                         if (mnn1.name == CardIds.Collectible.Mage.KabalCrystalRunner || mnn1.name == CardIds.Collectible.Mage.CloudPrince) found1 = true;
-
                     }
                     if (found1) return -10;
 
@@ -2774,7 +2767,6 @@ namespace HREngine.Bots
                 case CardIds.Collectible.Druid.Bite:
                     if ((p.ownHero.numAttacksThisTurn == 0 || (p.ownHero.windfury && p.ownHero.numAttacksThisTurn == 1)) && !p.ownHero.frozen)
                     {
-
                     }
                     else return 20;
                     break;
@@ -3458,7 +3450,6 @@ namespace HREngine.Bots
                             }
                         }
                     }
-
                 }
                 else
                 {
@@ -3501,7 +3492,6 @@ namespace HREngine.Bots
                 {
                     pen += 5;
                 }
-
             }
 
 
@@ -5699,7 +5689,6 @@ namespace HREngine.Bots
             randomEffects.Add(CardIds.Collectible.Neutral.TombLurker, 1);
             randomEffects.Add(CardIds.Collectible.Mage.GhastlyConjurer, 1);
             randomEffects.Add(CardIds.Collectible.Priest.ShadowEssence, 1);
-
         }
 
 

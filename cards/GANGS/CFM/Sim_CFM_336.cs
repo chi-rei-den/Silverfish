@@ -35,7 +35,7 @@ namespace HREngine.Bots
         {
             if (m.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.ByCost);
+                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost);
                 if (hc != null)
                 {
                     hc.addattack += 2;

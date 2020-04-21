@@ -183,7 +183,6 @@ namespace HREngine.Bots
                 Helpfunctions.Instance.ErrorLog("开启防AOE");
             }
             if (this.writeToSingleFile) Helpfunctions.Instance.ErrorLog("write log to single file");
-
         }
 
         public void setWeights(int alpha)

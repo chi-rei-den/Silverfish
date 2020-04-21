@@ -39,7 +39,7 @@ namespace HREngine.Bots
             }
             else
             {
-                target = p.searchRandomMinion(p.ownMinions, SearchMode.searchHighestAttack); //damage the Highest (pessimistic)
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
             }
             if (target != null) p.minionGetDamageOrHeal(target, 3);
         }

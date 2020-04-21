@@ -38,6 +38,5 @@ namespace HREngine.Bots
                 p.drawACard(hc.card.CardId, !wasOwnCard, true);
             }
         }
-
 	}
 }

@@ -45,6 +45,5 @@ if (hc.manacost >= 1) hc.manacost--;
 }
 }
 }
-
 	}
 }

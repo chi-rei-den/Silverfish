@@ -31,6 +31,5 @@ namespace HREngine.Bots
             }
             return 0;
 		}
-
 	}
 }

@@ -38,8 +38,6 @@ namespace HREngine.Bots
                 p.minionGetBuffed(triggerEffectMinion, 2, 0);
             }
         }
-
-
     }
 
 }

@@ -20,6 +20,8 @@ namespace Chireiden.Silverfish
 
         public bool Charge => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.CHARGE));
 
+        public bool ChooseOne => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.CHOOSE_ONE));
+
         public CardClass Class => (CardClass)this.CardDef.Entity.GetTag(GameTag.CLASS);
 
         public bool Combo => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.COMBO));
@@ -74,6 +76,8 @@ namespace Chireiden.Silverfish
 
         public CardType Type => (CardType)this.CardDef.Entity.GetTag(GameTag.CARDTYPE);
 
+        public bool Untouchable => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.UNTOUCHABLE));
+
         public bool Windfury => Convert.ToBoolean(this.CardDef.Entity.GetTag(GameTag.WINDFURY));
 
         public string LocName => this.CardDef.GetLocName(Locale);
@@ -126,6 +130,8 @@ namespace Chireiden.Silverfish
         public static bool operator !=(SimCard a, SimCard b) => !(a == b);
 
         public static implicit operator SimCard(string name) => FromName(name);
+
+        public static implicit operator string(SimCard card) => card.CardId;
 
         public static SimCard FromName(string name)
         {

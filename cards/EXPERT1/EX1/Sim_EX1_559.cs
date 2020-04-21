@@ -39,6 +39,5 @@ namespace HREngine.Bots
                 p.drawACard(CardIds.Collectible.Mage.Fireball, wasOwnCard, true);
             }
         }
-
 	}
 }

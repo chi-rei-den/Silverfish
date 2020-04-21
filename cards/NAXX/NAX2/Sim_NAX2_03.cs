@@ -50,7 +50,7 @@ namespace HREngine.Bots
 						
             for (int i = 0; i < cardCount; i++)
             {
-				target = (ownplay)? p.searchRandomMinion(p.enemyMinions, SearchMode.searchHighAttackLowHP) : p.searchRandomMinion(p.ownMinions, SearchMode.searchHighAttackLowHP);
+				target = (ownplay)? p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth, SearchMode.HighAttack) : p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth, SearchMode.HighAttack);
 				if (target == null) target = (ownplay) ? p.enemyHero : p.ownHero;
 				p.minionGetDamageOrHeal(target, dmg);
             }

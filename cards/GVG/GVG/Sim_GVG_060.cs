@@ -40,7 +40,6 @@ namespace HREngine.Bots
                 if (m.name == CardIds.NonCollectible.Paladin.Reinforce_SilverHandRecruitToken) p.minionGetBuffed(m, 2, 2);
             }
         }
-
        
     }
 

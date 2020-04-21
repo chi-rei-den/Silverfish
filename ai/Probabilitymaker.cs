@@ -94,7 +94,6 @@ namespace HREngine.Bots
             this.canBe_sacredtrial = sec.canBe_sacredtrial;
 
             this.entityId = sec.entityId;
-
         }
 
         public SecretItem(string secdata)
@@ -242,7 +241,6 @@ namespace HREngine.Bots
 
                 this.canBe_icebarrier = false;
                 this.canBe_vaporize = false;
-
             }
             else
             {
@@ -338,7 +336,6 @@ namespace HREngine.Bots
             }
             return result;
         }
-
     }
 
     public class Probabilitymaker
@@ -366,7 +363,6 @@ namespace HREngine.Bots
 
         private Probabilitymaker()
         {
-
         }
 
         public void setOwnCardsOut(Dictionary<SimCard, int> og)
@@ -523,7 +519,6 @@ namespace HREngine.Bots
                 return 0;
             }
             return ret;
-
         }
 
         public void printGraveyards()
@@ -679,7 +674,6 @@ namespace HREngine.Bots
                 {
                     sec.canBe_cattrick = false;
                 }
-
             }
 
             if (SecClass == CardClass.MAGE)
@@ -858,7 +852,6 @@ namespace HREngine.Bots
 
             this.enemySecrets.Clear();
             this.enemySecrets.AddRange(temp);
-
         }
 
 
@@ -1106,7 +1099,6 @@ namespace HREngine.Bots
                 if (sacredtrial) si.canBe_sacredtrial = false;
             }
         }
-
 
     }
 

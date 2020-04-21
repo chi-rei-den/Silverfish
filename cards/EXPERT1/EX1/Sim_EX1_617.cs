@@ -35,6 +35,5 @@ namespace HREngine.Bots
             Minion m = p.searchRandomMinion(ownplay ? p.enemyMinions : p.ownMinions, SearchMode.LowHealth);
             if (m != null) p.minionGetDestroyed(m);
 		}
-
 	}
 }

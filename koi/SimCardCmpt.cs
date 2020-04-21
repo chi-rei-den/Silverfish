@@ -16,6 +16,9 @@ namespace Chireiden.Silverfish
     partial class SimCard
     {
         public bool IsToken => CardId.EndsWith("t");
+        public int targetPriority => PenalityManager.Instance.priorityTargets[this.CardId];
+        public bool isSpecialMinion => PenalityManager.Instance.specialMinions.ContainsKey(this.CardId);
+
         public List<Minion> getTargetsForCard(Playfield p, bool isLethalCheck, bool own)
         {
             //if wereTargets=true and 0 targets at end -> then can not play this card

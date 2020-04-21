@@ -66,7 +66,6 @@ namespace HREngine.Bots
                     {
                         p.minionGetDamageOrHeal(triggerEffectMinion.own ? p.enemyHero : p.ownHero, 1);
                     }
-
                 }
                 else
                 {
@@ -76,7 +75,6 @@ namespace HREngine.Bots
                 triggerEffectMinion.stealth = false;
             }
         }
-
     }
 
 }

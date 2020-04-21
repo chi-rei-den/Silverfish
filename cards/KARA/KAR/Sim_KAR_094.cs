@@ -1,4 +1,5 @@
 using Chireiden.Silverfish;
+using HearthDb;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -32,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.drawACard(SimCard.sharpfork, m.own, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.DeadlyFork_SharpFork, m.own, true);
         }
     }
 }

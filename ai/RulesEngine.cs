@@ -2775,35 +2775,34 @@ namespace HREngine.Bots
                     if (p.enemyWeapon.card.CardId != cond.cardID) return true;
                     return false;
                 case param.ownhero_equal:
-                    if (cond.hClass == CardClass.ALL) return true;
+                    if (cond.hClass == CardClass.INVALID) return true;
                     if (p.ownHeroStartClass == cond.hClass) return true;
                     return false;
                 case param.ownhero_notequal:
                     if (p.ownHeroStartClass != cond.hClass) return true;
                     return false;
                 case param.enhero_equal:
-                    if (cond.hClass == CardClass.ALL) return true;
+                    if (cond.hClass == CardClass.INVALID) return true;
                     if (p.enemyHeroStartClass == cond.hClass) return true;
                     return false;
                 case param.enhero_notequal:
                     if (p.enemyHeroStartClass != cond.hClass) return true;
                     return false;
-                case param.tgt_equal:
-                    if (a.target!= null && (a.target.handcard.card.CardId == cond.cardID || (a.target.isHero && cond.cardID == SimCard.hero))) return true;
-                    return false;
-                case param.tgt_notequal:
-                    if (a.target != null)
-                    {
-                        if (a.target.isHero)
-                        {
-                            if (cond.cardID != SimCard.hero) return true;
-                            else return false;
-                        }
-                        else if (a.target.handcard.card.CardId != cond.cardID) return true;
-                    }
-                    return false;
-
-
+                    // TODO: What's this?
+                //case param.tgt_equal:
+                //    if (a.target!= null && (a.target.handcard.card.CardId == cond.cardID || (a.target.isHero && cond.cardID == SimCard.hero))) return true;
+                //    return false;
+                //case param.tgt_notequal:
+                //    if (a.target != null)
+                //    {
+                //        if (a.target.isHero)
+                //        {
+                //            if (cond.cardID != SimCard.hero) return true;
+                //            else return false;
+                //        }
+                //        else if (a.target.handcard.card.CardId != cond.cardID) return true;
+                //    }
+                //    return false;
                 case param.noduplicates:
                     return p.prozis.noDuplicates;
                 default:
@@ -2811,7 +2810,5 @@ namespace HREngine.Bots
                     return false;
             }
         }
-
     }
-
 }

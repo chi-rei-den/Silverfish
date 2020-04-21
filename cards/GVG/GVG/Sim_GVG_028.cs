@@ -3,6 +3,7 @@ using Chireiden.Silverfish;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using HearthDb;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -35,14 +36,12 @@ namespace HREngine.Bots
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             SimCard c = hc.card;
-            if (c.Type == CardType.SPELL && c.CardId != SimCard.gallywixscoin && wasOwnCard != triggerEffectMinion.own)
+            if (c.Type == CardType.SPELL && c.CardId != CardIds.NonCollectible.Neutral.TradePrinceGallywix_GallywixsCoinToken && wasOwnCard != triggerEffectMinion.own)
             {
                 p.drawACard(c.CardId, triggerEffectMinion.own, true);
-                p.drawACard(SimCard.gallywixscoin, wasOwnCard, true);
+                p.drawACard(CardIds.NonCollectible.Neutral.TradePrinceGallywix_GallywixsCoinToken, wasOwnCard, true);
             }
         }
-
-
     }
 
 }

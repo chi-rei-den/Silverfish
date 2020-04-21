@@ -48,7 +48,6 @@ namespace HREngine.Bots
                     if (m.handcard.card.Race == Race.PIRATE && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
                 }
             }
-
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
@@ -70,7 +69,6 @@ namespace HREngine.Bots
                 }
             }
         }
-
 
 	}
 }

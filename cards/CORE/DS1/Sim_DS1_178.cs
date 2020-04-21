@@ -49,7 +49,6 @@ namespace HREngine.Bots
                     if (m.handcard.card.Race == Race.PET) p.minionGetCharge(m);
                 }
             }
-
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
@@ -71,6 +70,5 @@ namespace HREngine.Bots
                 }
             }
         }
-
 	}
 }
