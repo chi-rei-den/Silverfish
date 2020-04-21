@@ -40,7 +40,7 @@ namespace HREngine.Bots
             }
             else
             {
-                if (p.enemyHero.CardClass != HeroEnum.mage && p.enemyHero.CardClass != HeroEnum.priest)
+                if (p.enemyHero.CardClass != CardClass.MAGE && p.enemyHero.CardClass != CardClass.PRIEST)
                 {
                     retval += 11;
                 }
@@ -215,7 +215,7 @@ namespace HREngine.Bots
                     if (p.ownMinions.Count < p.enemyMinions.Count) retval += 10;
                 }
                 if (m.lifesteal) retval += m.Angr;
-                if (m.handcard.card.isSpecialMinion) retval += m.handcard.card.Rarity;
+                if (m.handcard.card.isSpecialMinion) retval += (int)m.handcard.card.Rarity;
             }
 
             retval += m.synergy;

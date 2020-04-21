@@ -503,7 +503,7 @@ namespace HREngine.Bots
                 if (readstate == 1 && counter == 1) // class + hp + defence + immunewhile attacking + immune
                 {
                     String[] h = s.Split(' ');
-                    ownHero.CardClass = (CardClass)Enum.Parse(typeof(CardClass), h[0]);
+                    ownHero.CardClass = h[0].ParseEnum<CardClass>();
                     ownherohp = Convert.ToInt32(h[1]);
                     ownheromaxhp = Convert.ToInt32(h[2]);
                     ownherodefence = Convert.ToInt32(h[3]);
@@ -556,7 +556,7 @@ namespace HREngine.Bots
                 if (readstate == 2 && counter == 1) // class + hp + defence + frozen + immune
                 {
                     String[] h = s.Split(' ');
-                    enemyHero.CardClass = (CardClass)Enum.Parse(typeof(CardClass), h[0]);
+                    enemyHero.CardClass = h[0].ParseEnum<CardClass>();
                     enemyherohp = Convert.ToInt32(h[1]);
                     enemyheromaxhp = Convert.ToInt32(h[2]);
                     enemyherodefence = Convert.ToInt32(h[3]);

@@ -18,7 +18,7 @@ namespace HREngine.Bots
             if (p.value >= -2000000) return p.value;
             int retval = 0;
             int hpboarder = 10;
-            if (p.ownHero.CardClass == HeroEnum.warlock && p.enemyHero.CardClass != HeroEnum.mage) hpboarder = 6;
+            if (p.ownHero.CardClass == CardClass.WARLOCK && p.enemyHero.CardClass != CardClass.MAGE) hpboarder = 6;
             int aggroboarder = 11;
 
             retval -= p.evaluatePenality;
@@ -36,7 +36,7 @@ namespace HREngine.Bots
                 else retval -= 3;
             }
 
-            if (p.enemyHero.CardClass == HeroEnum.mage || p.enemyHero.CardClass == HeroEnum.druid) retval -= 2 * p.enemyspellpower;
+            if (p.enemyHero.CardClass == CardClass.MAGE || p.enemyHero.CardClass == CardClass.DRUID) retval -= 2 * p.enemyspellpower;
 
             if (p.ownHero.Hp + p.ownHero.armor > hpboarder)
             {
@@ -101,7 +101,7 @@ namespace HREngine.Bots
                 retval += 5;
                 retval += m.Hp * 2;
                 retval += m.Angr * 2;
-                retval += m.handcard.card.Rarity;
+                retval += (int)m.handcard.card.Rarity;
                 if (!m.playedThisTurn && m.windfury) retval += m.Angr;
                 if (m.divineshild) retval += 1;
                 if (m.stealth) retval += 1;
@@ -337,7 +337,7 @@ namespace HREngine.Bots
                 if (m.Angr == 0) retval -= 7;
                 else if (m.Angr <= 2 && m.Hp <= 2 && !m.divineshild) retval -= 5;
             }
-            else retval += m.handcard.card.Rarity;
+            else retval += (int)m.handcard.card.Rarity;
 
             if (m.taunt) retval += 5;
             if (m.divineshild) retval += m.Angr;

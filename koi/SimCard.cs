@@ -1,17 +1,16 @@
-using Chireiden.Silverfish;
 using HearthDb;
 using HearthDb.Enums;
 using HREngine.Bots;
 using System;
 using System.Reflection;
 
- namespace Chireiden.Silverfish
+namespace Chireiden.Silverfish
 {
     public partial class SimCard
     {
         public Card CardDef { get; private set; }
 
-        public string CardId => this.CardDef.Id;
+        public string CardId => this.CardDef?.Id;
 
         public int DbfId => this.CardDef.DbfId;
 
@@ -102,7 +101,27 @@ using System.Reflection;
 
         public static Locale Locale { get; private set; }
 
-        public static bool operator ==(SimCard a, SimCard b) => a.CardDef.DbfId == b.CardDef.DbfId;
+        public static bool operator ==(SimCard a, SimCard b)
+        {
+            if (a == null && b == null)
+            {
+                return true;
+            }
+
+            var acid = a?.CardId;
+            var bcid = b?.CardId;
+
+            if (string.IsNullOrEmpty(acid) && bcid == CardIds.NonCollectible.Neutral.GoldenLegendary)
+            {
+                return true;
+            }
+
+            if (string.IsNullOrEmpty(bcid) && acid == CardIds.NonCollectible.Neutral.GoldenLegendary)
+            {
+                return true;
+            }
+            return acid == bcid;
+        }
 
         public static bool operator !=(SimCard a, SimCard b) => !(a == b);
 
@@ -110,7 +129,6 @@ using System.Reflection;
 
         public static SimCard FromName(string name)
         {
-            var i =CardIds.Collectible.Demonhunter.Battlefiend;
             if (!Cards.Collectible.TryGetValue(name, out var card) && !Cards.All.TryGetValue(name, out card))
             {
                 card = Cards.GetFromName(name, Locale.enUS)

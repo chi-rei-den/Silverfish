@@ -1581,7 +1581,7 @@ namespace HREngine.Bots
                     }
                     break;
                 case 2:
-                    CardClass hClass = prozis.heroEnumtoTagClass(prozis.heroNametoEnum(pval.ToLower()));
+                    CardClass hClass = pval.ParseEnum<CardClass>();
                     if (hClass == CardClass.INVALID)
                     {
                         condErr = "Wrong Hero Class: ";

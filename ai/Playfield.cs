@@ -4282,7 +4282,9 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (this.enemyHeroAblility.card.CardId == SimCard.voidform) this.enemyHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.enemyHeroAblility);
+                // TODO: Add Void Form
+                //if (this.enemyHeroAblility.card.CardId == SimCard.voidform)
+                //    this.enemyHeroAblility.card.Simulator.onCardIsGoingToBePlayed(this, hc, own, this.enemyHeroAblility);
 
                 if (this.enemyWeapon.name == CardIds.NonCollectible.Neutral.Atiesh)
                 {
@@ -4293,7 +4295,7 @@ namespace HREngine.Bots
                 for (int i = 0; i < burly; i++)//summon for us
                 {
                     int pos = this.ownMinions.Count;
-                    this.callKid(CardDB.Instance.burlyrockjaw, pos, own);
+                    this.callKid(CardIds.Collectible.Neutral.BurlyRockjawTrogg, pos, own);
                 }
             }
 
