@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,13 +25,13 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_409 : SimTemplate //* Upgrade!
-	{
+    {
         // If you have a weapon, give it +1/+1. Otherwise equip a 1/3 weapon.
 
-        SimCard wcard = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken;//Heavy Axe
+        SimCard wcard = CardIds.NonCollectible.Warrior.Upgrade_HeavyAxeToken; //Heavy Axe
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 if (p.ownWeapon.Durability > 0)
@@ -45,7 +42,7 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.equipWeapon(wcard, true);
+                    p.equipWeapon(this.wcard, true);
                 }
             }
             else
@@ -58,9 +55,9 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    p.equipWeapon(wcard, false);
+                    p.equipWeapon(this.wcard, false);
                 }
             }
-		}
-	}
+        }
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_312 : SimTemplate //* N'Zoth's First Mate
-	{
-		//Battlecry: Equip a 1/3 Rusty Hook.
+    class Sim_OG_312 : SimTemplate //* N'Zoth's First Mate
+    {
+        //Battlecry: Equip a 1/3 Rusty Hook.
 
         SimCard w = CardIds.NonCollectible.Warrior.RustyHook;
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.equipWeapon(w, own.own);
+            p.equipWeapon(this.w, own.own);
         }
     }
 }

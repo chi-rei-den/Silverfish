@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,20 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_701: SimTemplate //* Skulking Geist
+    class Sim_ICC_701 : SimTemplate //* Skulking Geist
     {
         // Battlecry: Destroy all 1-Cost spells in both hands and decks.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        {
             if (own.own)
             {
-                foreach (Handcard hc in p.owncards.ToArray())
+                foreach (var hc in p.owncards.ToArray())
                 {
-                    if (hc.manacost == 1 && hc.card.Type == CardType.SPELL) p.owncards.Remove(hc);
+                    if (hc.manacost == 1 && hc.card.Type == CardType.SPELL)
+                    {
+                        p.owncards.Remove(hc);
+                    }
                 }
+
                 p.renumHandCards(p.owncards);
             }
-		}
-	}
+        }
+    }
 }

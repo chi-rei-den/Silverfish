@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_BOSS_46pe : SimTemplate
-	{
-	}
+    class Sim_LOOTA_BOSS_46pe : SimTemplate
+    {
+    }
 }

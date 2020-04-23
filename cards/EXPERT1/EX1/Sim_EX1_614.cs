@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_614 : SimTemplate //illidanstormrage
-	{
-        SimCard d = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken;//flameofazzinoth
+    class Sim_EX1_614 : SimTemplate //illidanstormrage
+    {
+        SimCard d = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken; //flameofazzinoth
 //    beschwört jedes mal eine flamme von azzinoth (2/1), wenn ihr eine karte ausspielt.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (wasOwnCard == triggerEffectMinion.own)
             {
-                    p.callKid(d, triggerEffectMinion.zonepos, triggerEffectMinion.own);
+                p.callKid(this.d, triggerEffectMinion.zonepos, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

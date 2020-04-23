@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,13 +29,13 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, Minion target, int number)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
             p.callKid(target.handcard.card, pos, ownplay);
             if (ownplay)
             {
                 if (p.ownMinions.Count >= 1 && p.ownMinions[p.ownMinions.Count - 1].name == target.handcard.card.CardId)
                 {
-                    int e = p.ownMinions[p.ownMinions.Count - 1].entitiyID;
+                    var e = p.ownMinions[p.ownMinions.Count - 1].entitiyID;
                     p.ownMinions[p.ownMinions.Count - 1].setMinionToMinion(target);
                     p.ownMinions[p.ownMinions.Count - 1].entitiyID = e;
                     p.ownMinions[p.ownMinions.Count - 1].own = true;
@@ -47,7 +45,7 @@ namespace HREngine.Bots
             {
                 if (p.enemyMinions.Count >= 1 && p.enemyMinions[p.enemyMinions.Count - 1].name == target.handcard.card.CardId)
                 {
-                    int e = p.enemyMinions[p.enemyMinions.Count - 1].entitiyID;
+                    var e = p.enemyMinions[p.enemyMinions.Count - 1].entitiyID;
                     p.enemyMinions[p.enemyMinions.Count - 1].setMinionToMinion(target);
                     p.enemyMinions[p.enemyMinions.Count - 1].entitiyID = e;
                     p.enemyMinions[p.enemyMinions.Count - 1].own = false;

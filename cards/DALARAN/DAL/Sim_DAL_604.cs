@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_604",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_604 : SimTemplate //* 机械巨熊 Ursatron
-	{
-		//<b>Deathrattle:</b> Draw a Mech from your deck.
-		//<b>亡语：</b>从你的牌库中抽一张机械牌。
-
-
-	}
+    class Sim_DAL_604 : SimTemplate //* 机械巨熊 Ursatron
+    {
+        //<b>Deathrattle:</b> Draw a Mech from your deck.
+        //<b>亡语：</b>从你的牌库中抽一张机械牌。
+    }
 }

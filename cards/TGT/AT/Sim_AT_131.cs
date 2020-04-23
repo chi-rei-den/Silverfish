@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_131 : SimTemplate //* Eydis Darkbane
-	{
-		//Whenever you target this minion with a spell, deal 3 damage to a random enemy.
-		// handled in public void playACard
-	}
+    class Sim_AT_131 : SimTemplate //* Eydis Darkbane
+    {
+        //Whenever you target this minion with a spell, deal 3 damage to a random enemy.
+        // handled in public void playACard
+    }
 }

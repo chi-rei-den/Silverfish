@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_790 : SimTemplate //* Dirty Rat
-	{
-		// Taunt. Battlecry: Your opponent summons a random minion from their hand.
+    class Sim_CFM_790 : SimTemplate //* Dirty Rat
+    {
+        // Taunt. Battlecry: Your opponent summons a random minion from their hand.
 
         SimCard kid = CardIds.Collectible.Neutral.AcidicSwampOoze; //acidicswampooze
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            int zonepos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(kid, zonepos, !m.own);
+            var zonepos = m.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.kid, zonepos, !m.own);
         }
     }
 }

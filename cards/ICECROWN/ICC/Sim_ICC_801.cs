@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_801: SimTemplate //* Howling Commander
+    class Sim_ICC_801 : SimTemplate //* Howling Commander
     {
         // Battlecry: Draw a Divine Shield minion from your deck.
 

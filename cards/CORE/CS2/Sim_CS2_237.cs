@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_237 : SimTemplate //starvingbuzzard
-	{
-
+    class Sim_CS2_237 : SimTemplate //starvingbuzzard
+    {
 //    zieht jedes mal eine karte, wenn ihr ein wildtier herbeiruft.
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
@@ -38,5 +34,5 @@ namespace HREngine.Bots
                 p.drawACard(SimCard.None, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

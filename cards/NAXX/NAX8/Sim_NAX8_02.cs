@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX8_02 : SimTemplate //* Harvest
-	{
-
+    class Sim_NAX8_02 : SimTemplate //* Harvest
+    {
 //    Hero PowerDraw a card.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.drawACard(SimCard.None, ownplay);
         }
-	}
+    }
 }

@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,11 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GAME_002 : SimTemplate //avatarofthecoin
-	{
-
+    class Sim_GAME_002 : SimTemplate //avatarofthecoin
+    {
 //    i&gt;ihr habt den münzwurf verloren, aber einen freund gewonnen./i&gt;
-
-
-	}
+    }
 }

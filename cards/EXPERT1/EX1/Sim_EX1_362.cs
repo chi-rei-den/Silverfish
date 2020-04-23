@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_362 : SimTemplate //argentprotector
-	{
-
+    class Sim_EX1_362 : SimTemplate //argentprotector
+    {
 //    kampfschrei:/ verleiht einem befreundeten diener gottesschild/.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            if (target != null) target.divineshild = true;
-		}
-
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (target != null)
+            {
+                target.divineshild = true;
+            }
+        }
+    }
 }

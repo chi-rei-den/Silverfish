@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,20 +24,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-
-    class Sim_EX1_133 : SimTemplate//pertitions blade
+    class Sim_EX1_133 : SimTemplate //pertitions blade
     {
         SimCard w = CardIds.Collectible.Rogue.PerditionsBlade;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
-            if (p.cardsPlayedThisTurn >= 1) dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+            var dmg = ownplay ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
+            if (p.cardsPlayedThisTurn >= 1)
+            {
+                dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+            }
+
             p.minionGetDamageOrHeal(target, dmg);
-            p.equipWeapon(w, ownplay);
+            p.equipWeapon(this.w, ownplay);
         }
-
     }
-
-    
 }

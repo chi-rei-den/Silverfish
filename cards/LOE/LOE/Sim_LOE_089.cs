@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_089 : SimTemplate //* Wobbling Runts
-	{
-		//Deathrattle: Summon three 2/2 Runts.
+    class Sim_LOE_089 : SimTemplate //* Wobbling Runts
+    {
+        //Deathrattle: Summon three 2/2 Runts.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
@@ -36,5 +33,5 @@ namespace HREngine.Bots
             p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_WilyRuntToken, m.zonepos, m.own); //Wily Runt
             p.callKid(CardIds.NonCollectible.Neutral.WobblingRunts_GrumblyRuntToken, m.zonepos + 1, m.own); //Grumbly Runt
         }
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_390 : SimTemplate //taurenwarrior
-	{
-
+    class Sim_EX1_390 : SimTemplate //taurenwarrior
+    {
 //    spott/, wutanfall:/ +3 angriff
 
         public override void onEnrageStart(Playfield p, Minion m)
@@ -39,6 +36,5 @@ namespace HREngine.Bots
         {
             m.Angr -= 3;
         }
-
-	}
+    }
 }

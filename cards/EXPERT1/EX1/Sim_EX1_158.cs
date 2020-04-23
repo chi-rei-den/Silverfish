@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,20 +23,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_158 : SimTemplate //souloftheforest
-	{
-
+    class Sim_EX1_158 : SimTemplate //souloftheforest
+    {
 //    verleiht euren dienern „todesröcheln:/ ruft einen treant (2/2) herbei.“
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
 
-            foreach (Minion m in temp)
+            foreach (var m in temp)
             {
                 m.souloftheforest++;
             }
-		}
-
-	}
+        }
+    }
 }

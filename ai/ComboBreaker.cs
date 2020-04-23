@@ -1,15 +1,13 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using Chireiden.Silverfish;
+using HearthDb.Enums;
+
 namespace HREngine.Bots
 {
-    using Chireiden.Silverfish;
-    using HearthDb.Enums;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-
-
     public class ComboBreaker
     {
-
         enum combotype
         {
             combo,
@@ -36,7 +34,7 @@ namespace HREngine.Bots
 
         public void setInstances()
         {
-            help = Helpfunctions.Instance;
+            this.help = Helpfunctions.Instance;
         }
 
 
@@ -44,34 +42,41 @@ namespace HREngine.Bots
         {
             private ComboBreaker cb;
             public combotype type = combotype.combo;
-            public int neededMana = 0;
+            public int neededMana;
             public Dictionary<SimCard, int> combocards = new Dictionary<SimCard, int>();
             public Dictionary<SimCard, int> cardspen = new Dictionary<SimCard, int>();
             public Dictionary<SimCard, int> combocardsTurn0Mobs = new Dictionary<SimCard, int>();
             public Dictionary<SimCard, int> combocardsTurn0All = new Dictionary<SimCard, int>();
             public Dictionary<SimCard, int> combocardsTurn1 = new Dictionary<SimCard, int>();
             public int penality = 0;
-            public int combolength = 0;
-            public int combot0len = 0;
-            public int combot1len = 0;
-            public int combot0lenAll = 0;
-            public bool twoTurnCombo = false;
-            public int bonusForPlaying = 0;
-            public int bonusForPlayingT0 = 0;
-            public int bonusForPlayingT1 = 0;
+            public int combolength;
+            public int combot0len;
+            public int combot1len;
+            public int combot0lenAll;
+            public bool twoTurnCombo;
+            public int bonusForPlaying;
+            public int bonusForPlayingT0;
+            public int bonusForPlayingT1;
             public SimCard requiredWeapon = SimCard.None;
             public CardClass oHero;
 
             public combo(string s)
             {
-                int i = 0;
+                var i = 0;
                 this.neededMana = 0;
-                requiredWeapon = SimCard.None;
+                this.requiredWeapon = SimCard.None;
                 this.type = combotype.combo;
                 this.twoTurnCombo = false;
-                bool fixmana = false;
-                if (s.Contains("nxttrn")) this.twoTurnCombo = true;
-                if (s.Contains("mana:")) fixmana = true;
+                var fixmana = false;
+                if (s.Contains("nxttrn"))
+                {
+                    this.twoTurnCombo = true;
+                }
+
+                if (s.Contains("mana:"))
+                {
+                    fixmana = true;
+                }
 
                 /*foreach (string ding in s.Split(':'))
                 {
@@ -90,49 +95,59 @@ namespace HREngine.Bots
                         if (m >= 1) neededMana = m;
                     }
                 */
-                if (type == combotype.combo)
+                if (this.type == combotype.combo)
                 {
                     this.combolength = 0;
                     this.combot0len = 0;
                     this.combot1len = 0;
                     this.combot0lenAll = 0;
-                    int manat0 = 0;
-                    int manat1 = -1;
-                    bool t1 = false;
-                    foreach (string crdl in s.Split(';')) //ding.Split
+                    var manat0 = 0;
+                    var manat1 = -1;
+                    var t1 = false;
+                    foreach (var crdl in s.Split(';')) //ding.Split
                     {
-                        if (crdl == "" || crdl == string.Empty) continue;
+                        if (crdl == "" || crdl == string.Empty)
+                        {
+                            continue;
+                        }
+
                         if (crdl == "nxttrn")
                         {
                             t1 = true;
                             continue;
                         }
+
                         if (crdl.StartsWith("mana:"))
                         {
                             this.neededMana = Convert.ToInt32(crdl.Replace("mana:", ""));
                             continue;
                         }
+
                         if (crdl.StartsWith("hero:"))
                         {
                             this.oHero = SimCard.FromName(crdl.Replace("hero:", "")).CardDef.Class;
                             continue;
                         }
+
                         if (crdl.StartsWith("bonus:"))
                         {
                             this.bonusForPlaying = Convert.ToInt32(crdl.Replace("bonus:", ""));
                             continue;
                         }
+
                         if (crdl.StartsWith("bonusfirst:"))
                         {
                             this.bonusForPlayingT0 = Convert.ToInt32(crdl.Replace("bonusfirst:", ""));
                             continue;
                         }
+
                         if (crdl.StartsWith("bonussecond:"))
                         {
                             this.bonusForPlayingT1 = Convert.ToInt32(crdl.Replace("bonussecond:", ""));
                             continue;
                         }
-                        string crd = crdl.Split(',')[0];
+
+                        var crd = crdl.Split(',')[0];
                         if (t1)
                         {
                             manat1 += SimCard.FromName(crd).Cost;
@@ -141,31 +156,32 @@ namespace HREngine.Bots
                         {
                             manat0 += SimCard.FromName(crd).Cost;
                         }
+
                         this.combolength++;
 
-                        if (combocards.ContainsKey(crd))
+                        if (this.combocards.ContainsKey(crd))
                         {
-                            combocards[crd]++;
+                            this.combocards[crd]++;
                         }
                         else
                         {
-                            combocards.Add(crd, 1);
-                            cardspen.Add(crd, Convert.ToInt32(crdl.Split(',')[1]));
+                            this.combocards.Add(crd, 1);
+                            this.cardspen.Add(crd, Convert.ToInt32(crdl.Split(',')[1]));
                         }
 
                         if (this.twoTurnCombo)
                         {
-
                             if (t1)
                             {
                                 if (this.combocardsTurn1.ContainsKey(crd))
                                 {
-                                    combocardsTurn1[crd]++;
+                                    this.combocardsTurn1[crd]++;
                                 }
                                 else
                                 {
-                                    combocardsTurn1.Add(crd, 1);
+                                    this.combocardsTurn1.Add(crd, 1);
                                 }
+
                                 this.combot1len++;
                             }
                             else
@@ -175,32 +191,35 @@ namespace HREngine.Bots
                                 {
                                     if (this.combocardsTurn0Mobs.ContainsKey(crd))
                                     {
-                                        combocardsTurn0Mobs[crd]++;
+                                        this.combocardsTurn0Mobs[crd]++;
                                     }
                                     else
                                     {
-                                        combocardsTurn0Mobs.Add(crd, 1);
+                                        this.combocardsTurn0Mobs.Add(crd, 1);
                                     }
+
                                     this.combot0len++;
                                 }
+
                                 if (lolcrd.Type == CardType.WEAPON)
                                 {
                                     this.requiredWeapon = lolcrd.CardId;
                                 }
-                                if (this.combocardsTurn0All.ContainsKey((crd)))
+
+                                if (this.combocardsTurn0All.ContainsKey(crd))
                                 {
-                                    combocardsTurn0All[(crd)]++;
+                                    this.combocardsTurn0All[crd]++;
                                 }
                                 else
                                 {
-                                    combocardsTurn0All.Add((crd), 1);
+                                    this.combocardsTurn0All.Add(crd, 1);
                                 }
+
                                 this.combot0lenAll++;
                             }
                         }
-
-
                     }
+
                     if (!fixmana)
                     {
                         this.neededMana = Math.Max(manat1, manat0);
@@ -216,16 +235,16 @@ namespace HREngine.Bots
 
                 i++;
             }*/
-                this.bonusForPlaying = Math.Max(bonusForPlaying, 1);
-                this.bonusForPlayingT0 = Math.Max(bonusForPlayingT0, 1);
-                this.bonusForPlayingT1 = Math.Max(bonusForPlayingT1, 1);
+                this.bonusForPlaying = Math.Max(this.bonusForPlaying, 1);
+                this.bonusForPlayingT0 = Math.Max(this.bonusForPlayingT0, 1);
+                this.bonusForPlayingT1 = Math.Max(this.bonusForPlayingT1, 1);
             }
 
             public int isInCombo(List<Handcard> hand, int omm)
             {
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
-                foreach (Handcard hc in hand)
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocards);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -233,18 +252,35 @@ namespace HREngine.Bots
                         combocardscopy[hc.card.CardId]--;
                     }
                 }
-                if (cardsincombo == this.combolength && omm < this.neededMana) return 1;
-                if (cardsincombo == this.combolength) return 2;
-                if (cardsincombo >= 1) return 1;
+
+                if (cardsincombo == this.combolength && omm < this.neededMana)
+                {
+                    return 1;
+                }
+
+                if (cardsincombo == this.combolength)
+                {
+                    return 2;
+                }
+
+                if (cardsincombo >= 1)
+                {
+                    return 1;
+                }
+
                 return 0;
             }
 
             public int isMultiTurnComboTurn1(List<Handcard> hand, int omm, List<Minion> ownmins, SimCard weapon)
             {
-                if (!twoTurnCombo) return 0;
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
-                foreach (Handcard hc in hand)
+                if (!this.twoTurnCombo)
+                {
+                    return 0;
+                }
+
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -252,15 +288,19 @@ namespace HREngine.Bots
                         combocardscopy[hc.card.CardId]--;
                     }
                 }
-                if (cardsincombo == this.combot1len && omm < this.neededMana) return 1;
+
+                if (cardsincombo == this.combot1len && omm < this.neededMana)
+                {
+                    return 1;
+                }
 
                 if (cardsincombo == this.combot1len)
                 {
                     //search for required minions on field
-                    int turn0requires = 0;
-                    foreach (SimCard s in combocardsTurn0Mobs.Keys)
+                    var turn0requires = 0;
+                    foreach (var s in this.combocardsTurn0Mobs.Keys)
                     {
-                        foreach (Minion m in ownmins)
+                        foreach (var m in ownmins)
                         {
                             if (!m.playedThisTurn && m.handcard.card.CardId == s)
                             {
@@ -270,22 +310,37 @@ namespace HREngine.Bots
                         }
                     }
 
-                    if (requiredWeapon != SimCard.None && requiredWeapon != weapon) return 1;
+                    if (this.requiredWeapon != SimCard.None && this.requiredWeapon != weapon)
+                    {
+                        return 1;
+                    }
 
-                    if (turn0requires >= combot0len) return 2;
+                    if (turn0requires >= this.combot0len)
+                    {
+                        return 2;
+                    }
 
                     return 1;
                 }
-                if (cardsincombo >= 1) return 1;
+
+                if (cardsincombo >= 1)
+                {
+                    return 1;
+                }
+
                 return 0;
             }
 
             public int isMultiTurnComboTurn0(List<Handcard> hand, int omm)
             {
-                if (!twoTurnCombo) return 0;
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
-                foreach (Handcard hc in hand)
+                if (!this.twoTurnCombo)
+                {
+                    return 0;
+                }
+
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -293,13 +348,22 @@ namespace HREngine.Bots
                         combocardscopy[hc.card.CardId]--;
                     }
                 }
-                if (cardsincombo == this.combot0lenAll && omm < this.neededMana) return 1;
+
+                if (cardsincombo == this.combot0lenAll && omm < this.neededMana)
+                {
+                    return 1;
+                }
 
                 if (cardsincombo == this.combot0lenAll)
                 {
                     return 2;
                 }
-                if (cardsincombo >= 1) return 1;
+
+                if (cardsincombo >= 1)
+                {
+                    return 1;
+                }
+
                 return 0;
             }
 
@@ -310,6 +374,7 @@ namespace HREngine.Bots
                 {
                     return true;
                 }
+
                 return false;
             }
 
@@ -319,14 +384,15 @@ namespace HREngine.Bots
                 {
                     return true;
                 }
+
                 return false;
             }
 
             public int hasPlayedCombo(List<Handcard> hand)
             {
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocards);
-                foreach (Handcard hc in hand)
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocards);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -335,16 +401,24 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (cardsincombo == this.combolength) return this.bonusForPlaying;
+                if (cardsincombo == this.combolength)
+                {
+                    return this.bonusForPlaying;
+                }
+
                 return 0;
             }
 
             public int hasPlayedTurn0Combo(List<Handcard> hand)
             {
-                if (this.combocardsTurn0All.Count == 0) return 0;
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
-                foreach (Handcard hc in hand)
+                if (this.combocardsTurn0All.Count == 0)
+                {
+                    return 0;
+                }
+
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn0All);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -353,16 +427,24 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (cardsincombo == this.combot0lenAll) return this.bonusForPlayingT0;
+                if (cardsincombo == this.combot0lenAll)
+                {
+                    return this.bonusForPlayingT0;
+                }
+
                 return 0;
             }
 
             public int hasPlayedTurn1Combo(List<Handcard> hand)
             {
-                if (this.combocardsTurn1.Count == 0) return 0;
-                int cardsincombo = 0;
-                Dictionary<SimCard, int> combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
-                foreach (Handcard hc in hand)
+                if (this.combocardsTurn1.Count == 0)
+                {
+                    return 0;
+                }
+
+                var cardsincombo = 0;
+                var combocardscopy = new Dictionary<SimCard, int>(this.combocardsTurn1);
+                foreach (var hc in hand)
                 {
                     if (combocardscopy.ContainsKey(hc.card.CardId) && combocardscopy[hc.card.CardId] >= 1)
                     {
@@ -371,59 +453,72 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (cardsincombo == this.combot1len) return this.bonusForPlayingT1;
+                if (cardsincombo == this.combot1len)
+                {
+                    return this.bonusForPlayingT1;
+                }
+
                 return 0;
             }
-
         }
 
         private ComboBreaker()
         {
-            if (attackFaceHP != -1)
+            if (this.attackFaceHP != -1)
             {
-                Hrtprozis.Instance.setAttackFaceHP(attackFaceHP);
+                Hrtprozis.Instance.setAttackFaceHP(this.attackFaceHP);
             }
         }
 
         public void readCombos(string behavName, bool nameIsPath = false)
         {
-            string pathToCombo = behavName;
+            var pathToCombo = behavName;
             if (!nameIsPath)
             {
                 if (!Silverfish.Instance.BehaviorPath.ContainsKey(behavName))
                 {
-                    help.ErrorLog($"{behavName}: 没有特定的“连招”.");
+                    this.help.ErrorLog($"{behavName}: 没有特定的“连招”.");
                     return;
                 }
+
                 pathToCombo = Path.Combine(Silverfish.Instance.BehaviorPath[behavName], "_combo.txt");
             }
 
-            if (!System.IO.File.Exists(pathToCombo))
+            if (!File.Exists(pathToCombo))
             {
-                help.ErrorLog($"{behavName}: 没有特定的“连招”.");
+                this.help.ErrorLog($"{behavName}: 没有特定的“连招”.");
                 return;
             }
 
-            help.ErrorLog($"[连招功能] 成功加载“连招” {behavName}");
-            string[] lines = new string[0] { };
-            combos.Clear();
-            playByValue.Clear();
+            this.help.ErrorLog($"[连招功能] 成功加载“连招” {behavName}");
+            var lines = new string[0] { };
+            this.combos.Clear();
+            this.playByValue.Clear();
             try
             {
-                lines = System.IO.File.ReadAllLines(pathToCombo);
+                lines = File.ReadAllLines(pathToCombo);
             }
             catch
             {
-                help.logg("没有发现“连招功能”文本 _combo.txt");
-                help.ErrorLog("“连招功能”文本 _combo.txt ");
+                this.help.logg("没有发现“连招功能”文本 _combo.txt");
+                this.help.ErrorLog("“连招功能”文本 _combo.txt ");
                 return;
             }
-            help.logg("加载“连招功能”文本 _combo.txt...");
-            help.ErrorLog("加载“连招功能”文本 _combo.txt...");
-            foreach (string line in lines)
+
+            this.help.logg("加载“连招功能”文本 _combo.txt...");
+            this.help.ErrorLog("加载“连招功能”文本 _combo.txt...");
+            foreach (var line in lines)
             {
-                if (line == "" || line == null) continue;
-                if (line.StartsWith("//")) continue;
+                if (line == "" || line == null)
+                {
+                    continue;
+                }
+
+                if (line.StartsWith("//"))
+                {
+                    continue;
+                }
+
                 if (line.Contains("weapon:"))
                 {
                     try
@@ -432,8 +527,8 @@ namespace HREngine.Bots
                     }
                     catch
                     {
-                        help.logg($"[连招功能]不能加载: {line}");
-                        help.ErrorLog($"[连招功能]不能加载: {line}");
+                        this.help.logg($"[连招功能]不能加载: {line}");
+                        this.help.ErrorLog($"[连招功能]不能加载: {line}");
                     }
                 }
                 else
@@ -442,95 +537,123 @@ namespace HREngine.Bots
                     {
                         try
                         {
-                            string cardvalue = line.Replace("cardvalue:", "");
+                            var cardvalue = line.Replace("cardvalue:", "");
                             SimCard ce = cardvalue.Split(',')[0];
-                            int val = Convert.ToInt32(cardvalue.Split(',')[1]);
-                            if (this.playByValue.ContainsKey(ce)) continue;
+                            var val = Convert.ToInt32(cardvalue.Split(',')[1]);
+                            if (this.playByValue.ContainsKey(ce))
+                            {
+                                continue;
+                            }
+
                             this.playByValue.Add(ce, val);
                             //help.ErrorLog("adding: " + line);
                         }
                         catch
                         {
-                            help.logg($"[连招功能]不能加载: {line}");
-                            help.ErrorLog($"[连招功能]不能加载: {line}");
+                            this.help.logg($"[连招功能]不能加载: {line}");
+                            this.help.ErrorLog($"[连招功能]不能加载: {line}");
                         }
                     }
                     else
                     {
                         try
                         {
-                            combo c = new combo(line);
+                            var c = new combo(line);
                             this.combos.Add(c);
                         }
                         catch
                         {
-                            help.logg($"[连招功能]不能加载: {line}");
-                            help.ErrorLog($"[连招功能]不能加载: {line}");
+                            this.help.logg($"[连招功能]不能加载: {line}");
+                            this.help.ErrorLog($"[连招功能]不能加载: {line}");
                         }
                     }
                 }
-
             }
-            help.ErrorLog($"[连招功能] {this.combos.Count} “连招”功能激活成功, {this.playByValue.Count} 个权重值已加载");
+
+            this.help.ErrorLog($"[连招功能] {this.combos.Count} “连招”功能激活成功, {this.playByValue.Count} 个权重值已加载");
         }
 
         public int getPenalityForDestroyingCombo(SimCard crd, Playfield p)
         {
-            if (this.combos.Count == 0) return 0;
-            int pen = int.MaxValue;
-            bool found = false;
-            int mana = Math.Max(p.ownMaxMana, p.mana);
-            foreach (combo c in this.combos)
+            if (this.combos.Count == 0)
+            {
+                return 0;
+            }
+
+            var pen = int.MaxValue;
+            var found = false;
+            var mana = Math.Max(p.ownMaxMana, p.mana);
+            foreach (var c in this.combos)
             {
                 if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHero.CardClass) && c.isCardInCombo(crd))
                 {
-                    int iia = c.isInCombo(p.owncards, p.ownMaxMana);//check if we have all cards for a combo, and if the choosen card is one
-                    int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, p.ownWeapon.name);
+                    var iia = c.isInCombo(p.owncards, p.ownMaxMana); //check if we have all cards for a combo, and if the choosen card is one
+                    var iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, p.ownWeapon.name);
 
-                    int iic = Math.Max(iia, iib);
-                    if (iia == 2 && iib != 2 && c.isMultiTurn1Card(crd))// it is a card of the combo, is a turn 1 card, but turn 1 is not possible -> we have to play turn 0 cards first
+                    var iic = Math.Max(iia, iib);
+                    if (iia == 2 && iib != 2 && c.isMultiTurn1Card(crd)) // it is a card of the combo, is a turn 1 card, but turn 1 is not possible -> we have to play turn 0 cards first
                     {
                         iic = 1;
                     }
-                    if (iic == 1) found = true;
-                    if (iic == 1 && pen > c.cardspen[crd.CardId]) pen = c.cardspen[crd.CardId];//iic==1 will destroy combo
-                    if (iic == 2) pen = 0;//card is ok to play
+
+                    if (iic == 1)
+                    {
+                        found = true;
+                    }
+
+                    if (iic == 1 && pen > c.cardspen[crd.CardId])
+                    {
+                        pen = c.cardspen[crd.CardId]; //iic==1 will destroy combo
+                    }
+
+                    if (iic == 2)
+                    {
+                        pen = 0; //card is ok to play
+                    }
                 }
-
             }
-            if (found) { return pen; }
-            return 0;
 
+            if (found) { return pen; }
+
+            return 0;
         }
 
         public int checkIfComboWasPlayed(Playfield p)
         {
-            if (this.combos.Count == 0) return 0;
+            if (this.combos.Count == 0)
+            {
+                return 0;
+            }
 
-            List<Action> alist = p.playactions;
-            SimCard weapon = p.ownWeapon.name;
+            var alist = p.playactions;
+            var weapon = p.ownWeapon.name;
             var heroname = p.ownHero.CardClass;
 
             //returns a penalty only if the combo could be played, but is not played completely
-            List<Handcard> playedcards = new List<Handcard>();
-            List<combo> searchingCombo = new List<combo>();
+            var playedcards = new List<Handcard>();
+            var searchingCombo = new List<combo>();
             // only check the cards, that are in a combo that can be played:
-            int mana = Math.Max(p.ownMaxMana, p.mana);
-            foreach (Action a in alist)
+            var mana = Math.Max(p.ownMaxMana, p.mana);
+            foreach (var a in alist)
             {
-                if (a.actionType != actionEnum.playcard) continue;
-                SimCard crd = a.card.card;
-                foreach (combo c in this.combos)
+                if (a.actionType != actionEnum.playcard)
+                {
+                    continue;
+                }
+
+                var crd = a.card.card;
+                foreach (var c in this.combos)
                 {
                     if ((c.oHero == CardClass.INVALID || c.oHero == p.ownHero.CardClass) && c.isCardInCombo(crd))
                     {
-                        int iia = c.isInCombo(p.owncards, p.ownMaxMana);
-                        int iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, weapon);
-                        int iic = Math.Max(iia, iib);
+                        var iia = c.isInCombo(p.owncards, p.ownMaxMana);
+                        var iib = c.isMultiTurnComboTurn1(p.owncards, mana, p.ownMinions, weapon);
+                        var iic = Math.Max(iia, iib);
                         if (iia == 2 && iib != 2 && c.isMultiTurn1Card(crd))
                         {
                             iic = 1;
                         }
+
                         if (iic == 2)
                         {
                             playedcards.Add(a.card); // add only the cards, which dont get a penalty
@@ -539,16 +662,20 @@ namespace HREngine.Bots
                 }
             }
 
-            if (playedcards.Count == 0) return 0;
-            bool wholeComboPlayed = false;
-
-            int bonus = 0;
-            foreach (combo c in this.combos)
+            if (playedcards.Count == 0)
             {
-                int iia = c.hasPlayedCombo(playedcards);
-                int iib = c.hasPlayedTurn0Combo(playedcards);
-                int iic = c.hasPlayedTurn1Combo(playedcards);
-                int iie = iia + iib + iic;
+                return 0;
+            }
+
+            var wholeComboPlayed = false;
+
+            var bonus = 0;
+            foreach (var c in this.combos)
+            {
+                var iia = c.hasPlayedCombo(playedcards);
+                var iib = c.hasPlayedTurn0Combo(playedcards);
+                var iic = c.hasPlayedTurn1Combo(playedcards);
+                var iie = iia + iib + iic;
                 if (iie >= 1)
                 {
                     wholeComboPlayed = true;
@@ -556,23 +683,27 @@ namespace HREngine.Bots
                 }
             }
 
-            if (wholeComboPlayed) return bonus;
-            return 250;
+            if (wholeComboPlayed)
+            {
+                return bonus;
+            }
 
+            return 250;
         }
 
         public int getPlayValue(SimCard ce)
         {
-            if (this.playByValue.Count == 0) return 0;
+            if (this.playByValue.Count == 0)
+            {
+                return 0;
+            }
+
             if (this.playByValue.ContainsKey(ce))
             {
                 return -this.playByValue[ce];
             }
+
             return 0;
-
         }
-
     }
-
-
 }

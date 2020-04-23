@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Druid_11 : SimTemplate //* 叹息之壁 Taunt
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Druid_11 : SimTemplate //* 叹息之壁 Taunt
+    {
+        //
+        //
+    }
 }

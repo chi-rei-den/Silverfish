@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Elise_04 : SimTemplate //* 自我超越 Embrace the Beyond
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Elise_04 : SimTemplate //* 自我超越 Embrace the Beyond
+    {
+        //
+        //
+    }
 }

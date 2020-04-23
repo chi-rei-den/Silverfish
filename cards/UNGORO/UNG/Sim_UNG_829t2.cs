@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829t2 : SimTemplate //* Nether Portal
-	{
-		//At the end of your turn, summon two 3/2 Imps.
+    class Sim_UNG_829t2 : SimTemplate //* Nether Portal
+    {
+        //At the end of your turn, summon two 3/2 Imps.
 
         SimCard kid = CardIds.NonCollectible.Warlock.LakkariSacrifice_NetherImpToken; //Nether Imp
 
@@ -37,9 +34,9 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                p.callKid(kid, triggerEffectMinion.zonepos - 1, triggerEffectMinion.own); //1st left
-                p.callKid(kid, triggerEffectMinion.zonepos, triggerEffectMinion.own); 
+                p.callKid(this.kid, triggerEffectMinion.zonepos - 1, triggerEffectMinion.own); //1st left
+                p.callKid(this.kid, triggerEffectMinion.zonepos, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

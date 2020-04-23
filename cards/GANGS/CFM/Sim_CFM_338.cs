@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_338 : SimTemplate //* Trogg Beastrager
-	{
+    class Sim_CFM_338 : SimTemplate //* Trogg Beastrager
+    {
         // Battlecry: Give a random Beast in your hand +1/+1.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (own.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.BeastOnly);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.BeastOnly);
                 if (hc != null)
                 {
                     hc.addattack++;
@@ -44,5 +40,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

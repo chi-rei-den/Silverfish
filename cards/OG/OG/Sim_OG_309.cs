@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +29,10 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (target != null) p.doDeathrattles(new List<Minion>() { target });
+            if (target != null)
+            {
+                p.doDeathrattles(new List<Minion> {target});
+            }
         }
     }
 }

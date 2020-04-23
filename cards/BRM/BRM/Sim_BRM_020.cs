@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_020 : SimTemplate //* Dragonkin Sorcerer
-	{
-		// Whenever you target this minion with a spell, gain +1/+1.
-		// handled in public void playACard
-	}
+    class Sim_BRM_020 : SimTemplate //* Dragonkin Sorcerer
+    {
+        // Whenever you target this minion with a spell, gain +1/+1.
+        // handled in public void playACard
+    }
 }

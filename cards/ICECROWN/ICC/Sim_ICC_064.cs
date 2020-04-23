@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_064: SimTemplate //* Blood Razor
+    class Sim_ICC_064 : SimTemplate //* Blood Razor
     {
         // Battlecry and Deathrattle: Deal 1 damage to all minions.
 
@@ -35,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
 
             p.allMinionsGetDamage(1);
             p.doDmgTriggers();

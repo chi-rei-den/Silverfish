@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_154b : SimTemplate //wrath
-	{
-
+    class Sim_EX1_154b : SimTemplate //wrath
+    {
 //    fügt einem diener $1 schaden zu. zieht eine karte.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int damage = (ownplay) ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
+            var damage = ownplay ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
             //this.owncarddraw++;
 
             p.minionGetDamageOrHeal(target, damage);
             p.drawACard(SimCard.None, ownplay);
         }
-
-	}
+    }
 }

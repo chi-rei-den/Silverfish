@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,12 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_316 : SimTemplate //poweroverwhelming
-	{
+    class Sim_EX1_316 : SimTemplate //poweroverwhelming
+    {
         //Give a friendly minion +4/+4 until end of turn. Then, it dies. Horribly.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.minionGetBuffed(target, 4, 4);
             if (ownplay)
             {
@@ -40,6 +38,6 @@ namespace HREngine.Bots
             {
                 target.destroyOnEnemyTurnEnd = true;
             }
-		}
-	}
+        }
+    }
 }

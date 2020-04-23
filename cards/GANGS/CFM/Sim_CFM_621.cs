@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621 : SimTemplate //* Kazakus
-	{
-		// Battlecry: If your deck has no duplicates, create a custom spell.
+    class Sim_CFM_621 : SimTemplate //* Kazakus
+    {
+        // Battlecry: If your deck has no duplicates, create a custom spell.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            if (m.own && p.prozis.noDuplicates) p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, m.own, true);
+            if (m.own && p.prozis.noDuplicates)
+            {
+                p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, m.own, true);
+            }
         }
     }
 }

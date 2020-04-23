@@ -1,17 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
-
 namespace HREngine.Bots
 {
-	class Pen_EX1_626 : PenTemplate //massdispel
-	{
-
+    class Pen_EX1_626 : PenTemplate //massdispel
+    {
 //    bringt alle feindlichen diener zum schweigen/. zieht eine karte.
-		public override int getPlayPenalty(Playfield p, Minion m, Minion target, int choice, bool isLethal)
-		{
-		return 0;
-		}
-
-	}
+        public override int getPlayPenalty(Playfield p, Minion m, Minion target, int choice, bool isLethal)
+        {
+            return 0;
+        }
+    }
 }

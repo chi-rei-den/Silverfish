@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_235",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_235 : SimTemplate //* 雷霆万钧 Unbeakered Lightning
-	{
-		//Deal $8 damage to all minions.
-		//对所有随从造成$8点伤害。
-
-
-	}
+    class Sim_BOTA_235 : SimTemplate //* 雷霆万钧 Unbeakered Lightning
+    {
+        //Deal $8 damage to all minions.
+        //对所有随从造成$8点伤害。
+    }
 }

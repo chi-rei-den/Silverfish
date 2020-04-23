@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Vargoth_ench : SimTemplate
-	{
-	}
+    class Sim_TB_Vargoth_ench : SimTemplate
+    {
+    }
 }

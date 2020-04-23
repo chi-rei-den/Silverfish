@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t28 : SimTemplate //* Netherbloom
-	{
-		// Summon an 8/8 Demon.
+    class Sim_CFM_621t28 : SimTemplate //* Netherbloom
+    {
+        // Summon an 8/8 Demon.
 
         SimCard kid = CardIds.NonCollectible.Neutral.Kazakus_KabalDemon2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay, false);
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
         }
     }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -36,31 +33,39 @@ namespace HREngine.Bots
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {
-            if(turnStartOfOwner != triggerEffectMinion.own) return;
-            List<Minion> temp = (turnStartOfOwner) ? p.ownMinions : p.enemyMinions;
-            int anz =0;
-            foreach (Minion m in temp)
+            if (turnStartOfOwner != triggerEffectMinion.own)
             {
-                if (m.handcard.card.Race == Race.MECHANICAL && m.Hp >=1 )
+                return;
+            }
+
+            var temp = turnStartOfOwner ? p.ownMinions : p.enemyMinions;
+            var anz = 0;
+            foreach (var m in temp)
+            {
+                if (m.handcard.card.Race == Race.MECHANICAL && m.Hp >= 1)
                 {
                     anz++;
                 }
             }
+
             if (anz >= 3)
             {
                 anz = 0;
-                foreach (Minion m in temp)
+                foreach (var m in temp)
                 {
                     if (m.handcard.card.Race == Race.MECHANICAL)
                     {
                         p.minionGetDestroyed(m);
                         anz++;
-                        if (anz == 3) break;
+                        if (anz == 3)
+                        {
+                            break;
+                        }
                     }
                 }
 
-                int pos = (triggerEffectMinion.own) ? p.ownMinions.Count : p.enemyMinions.Count;
-                p.callKid(kid, pos, triggerEffectMinion.own, false, true); // we allow to summon one minion more (because 3 are destroyed)
+                var pos = triggerEffectMinion.own ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(this.kid, pos, triggerEffectMinion.own, false, true); // we allow to summon one minion more (because 3 are destroyed)
             }
         }
     }

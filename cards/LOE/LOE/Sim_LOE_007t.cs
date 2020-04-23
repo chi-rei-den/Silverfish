@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_007t : SimTemplate //* Cursed!
-	{
-		//While this is in your hand, take 2 damage at the start of your turn.
+    class Sim_LOE_007t : SimTemplate //* Cursed!
+    {
+        //While this is in your hand, take 2 damage at the start of your turn.
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {

@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_753 : SimTemplate //* Grimestreet Outfitter
-	{
-		// Battlecry: Give all minions in your hand +1/+1.
+    class Sim_CFM_753 : SimTemplate //* Grimestreet Outfitter
+    {
+        // Battlecry: Give all minions in your hand +1/+1.
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (own.own)
             {
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION)
                     {
@@ -44,5 +41,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

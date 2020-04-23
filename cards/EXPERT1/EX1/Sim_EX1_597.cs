@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,24 +24,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_597 : SimTemplate //impmaster
-	{
-
+    class Sim_EX1_597 : SimTemplate //impmaster
+    {
 //    fügt am ende eures zuges diesem diener 1 schaden zu und beschwört einen wichtel (1/1).
 
-        SimCard kid = CardIds.NonCollectible.Neutral.Imp;//imp
+        SimCard kid = CardIds.NonCollectible.Neutral.Imp; //imp
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int posi = triggerEffectMinion.zonepos;
-                if (triggerEffectMinion.Hp == 1) posi--;
+                var posi = triggerEffectMinion.zonepos;
+                if (triggerEffectMinion.Hp == 1)
+                {
+                    posi--;
+                }
+
                 p.minionGetDamageOrHeal(triggerEffectMinion, 1);
-                p.callKid(kid, posi, triggerEffectMinion.own);
+                p.callKid(this.kid, posi, triggerEffectMinion.own);
                 triggerEffectMinion.stealth = false;
             }
         }
-
-	}
+    }
 }

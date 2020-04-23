@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,7 +26,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_078 : SimTemplate //* Mechanical Yeti
     {
-
         //   Deathrattle: Give each player a Spare Part
 
         public override void onDeathrattle(Playfield p, Minion m)

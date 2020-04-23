@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_066 : SimTemplate //acidicswampooze
-	{
-
+    class Sim_EX1_066 : SimTemplate //acidicswampooze
+    {
 //    kampfschrei:/ zerstört die waffe eures gegners.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.lowerWeaponDurability(1000, !own.own);
-		}
-
-
-	}
+        }
+    }
 }

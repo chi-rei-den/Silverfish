@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,13 +29,20 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            foreach (Minion m in p.enemyMinions)
+            foreach (var m in p.enemyMinions)
             {
-                if (m.Angr < 3) p.minionGetDestroyed(m);
+                if (m.Angr < 3)
+                {
+                    p.minionGetDestroyed(m);
+                }
             }
-            foreach (Minion m in p.ownMinions)
+
+            foreach (var m in p.ownMinions)
             {
-                if (m.Angr < 3) p.minionGetDestroyed(m);
+                if (m.Angr < 3)
+                {
+                    p.minionGetDestroyed(m);
+                }
             }
         }
     }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_207: SimTemplate //* Devour Mind
+    class Sim_ICC_207 : SimTemplate //* Devour Mind
     {
         // Copy 3 cards in your opponent's deck and add them to your hand.
 

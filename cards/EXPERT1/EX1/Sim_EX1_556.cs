@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_556 : SimTemplate //* harvestgolem
-	{
+    class Sim_EX1_556 : SimTemplate //* harvestgolem
+    {
         //Deathrattle: Summon a 2/1 Damaged Golem.
 
         SimCard card = CardIds.NonCollectible.Neutral.DamagedGolemClassic;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(card, m.zonepos - 1, m.own);
+            p.callKid(this.card, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

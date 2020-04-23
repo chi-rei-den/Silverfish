@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_025: SimTemplate //* Rattling Rascal
+    class Sim_ICC_025 : SimTemplate //* Rattling Rascal
     {
         // Battlecry: Summon a 5/5 Skeleton. Deathrattle: Summon a 5/5 Skeleton for your opponent.
 
@@ -35,13 +32,13 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            p.callKid(kid, m.zonepos, m.own);
+            p.callKid(this.kid, m.zonepos, m.own);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            int pos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(kid, pos, !m.own);
+            var pos = m.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.kid, pos, !m.own);
         }
     }
 }

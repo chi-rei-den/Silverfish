@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_648 : SimTemplate //* Big-Time Racketeer
-	{
-		// Battlecry: Summon a 6/6 Ogre.
+    class Sim_CFM_648 : SimTemplate //* Big-Time Racketeer
+    {
+        // Battlecry: Summon a 6/6 Ogre.
 
         SimCard kid = CardIds.NonCollectible.Neutral.BigTimeRacketeer_LittleFriendToken; //6/6 Ogre
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            p.callKid(kid, m.zonepos, m.own);
+            p.callKid(this.kid, m.zonepos, m.own);
         }
     }
 }

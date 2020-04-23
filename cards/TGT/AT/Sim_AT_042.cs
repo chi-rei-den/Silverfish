@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042 : SimTemplate //* Druid of the Saber
-	{
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_AT_042 : SimTemplate //* Druid of the Saber
+    {
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (p.ownFandralStaghelm > 0)
             {
                 p.minionTransform(own, CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheSaber);
@@ -41,11 +37,12 @@ namespace HREngine.Bots
                 {
                     p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1);
                 }
+
                 if (choice == 2)
                 {
                     p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2);
                 }
             }
-		}
-	}
+        }
+    }
 }

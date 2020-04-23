@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Shaman_07 : SimTemplate //* 鱼人指挥 Murlocs
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Shaman_07 : SimTemplate //* 鱼人指挥 Murlocs
+    {
+        //
+        //
+    }
 }

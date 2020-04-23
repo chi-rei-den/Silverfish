@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,11 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211aa : SimTemplate //* Stone Elemental
-	{
-		
-
-
-
-	}
+    class Sim_UNG_211aa : SimTemplate //* Stone Elemental
+    {
+    }
 }

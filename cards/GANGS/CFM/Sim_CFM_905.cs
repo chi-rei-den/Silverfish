@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,28 +23,35 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_905 : SimTemplate //* Small-Time Recruits
-	{
-		// Draw three 1-Cost minions from your deck.
+    class Sim_CFM_905 : SimTemplate //* Small-Time Recruits
+    {
+        // Draw three 1-Cost minions from your deck.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (ownplay)
             {
                 SimCard c;
-                int count = 0;
-                foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
+                var count = 0;
+                foreach (var cid in p.prozis.turnDeck)
                 {
-                    c = (cid.Key);
+                    c = cid.Key;
                     if (c.Cost == 1)
                     {
-                        for (int i = 0; i < cid.Value; i++)
+                        for (var i = 0; i < cid.Value; i++)
                         {
                             p.drawACard(c.CardId, true);
                             count++;
-                            if (count > 2) break;
+                            if (count > 2)
+                            {
+                                break;
+                            }
                         }
-						if (count > 2) break;
+
+                        if (count > 2)
+                        {
+                            break;
+                        }
                     }
                 }
             }

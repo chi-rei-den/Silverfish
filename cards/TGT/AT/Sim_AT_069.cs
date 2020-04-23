@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,18 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_069 : SimTemplate //* Sparring Partner
-	{
-		//Taunt Battlecry: Give a minion Taunt.
+    class Sim_AT_069 : SimTemplate //* Sparring Partner
+    {
+        //Taunt Battlecry: Give a minion Taunt.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (target != null && !target.taunt)
             {
                 target.taunt = true;
-                if (target.own) p.anzOwnTaunt++;
-                else p.anzEnemyTaunt++;
+                if (target.own)
+                {
+                    p.anzOwnTaunt++;
+                }
+                else
+                {
+                    p.anzEnemyTaunt++;
+                }
             }
-		}
-	}
+        }
+    }
 }

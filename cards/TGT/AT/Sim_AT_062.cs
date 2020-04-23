@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,17 +26,17 @@ namespace HREngine.Bots
 {
     class Sim_AT_062 : SimTemplate //* Ball of Spiders
     {
-		//Summon three 1/1 Webspinners.
-		
-        SimCard kid = CardIds.Collectible.Hunter.Webspinner;//Webspinner
+        //Summon three 1/1 Webspinners.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+        SimCard kid = CardIds.Collectible.Hunter.Webspinner; //Webspinner
 
-            p.callKid(kid, place, ownplay, false);
-            p.callKid(kid, place, ownplay);
-            p.callKid(kid, place, ownplay);
-		}
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+
+            p.callKid(this.kid, place, ownplay, false);
+            p.callKid(this.kid, place, ownplay);
+            p.callKid(this.kid, place, ownplay);
+        }
+    }
 }

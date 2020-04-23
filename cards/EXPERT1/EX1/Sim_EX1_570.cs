@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_570 : SimTemplate //bite
-	{
-
+    class Sim_EX1_570 : SimTemplate //bite
+    {
 //    verleiht eurem helden +4 angriff in diesem zug und 4 rüstung.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.minionGetTempBuff(p.ownHero, 4, 0);
@@ -41,9 +38,7 @@ namespace HREngine.Bots
             {
                 p.minionGetTempBuff(p.enemyHero, 4, 0);
                 p.minionGetArmor(p.enemyHero, 4);
-
             }
-		}
-
-	}
+        }
+    }
 }

@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_100 : SimTemplate //lorewalkercho
-	{
-
+    class Sim_EX1_100 : SimTemplate //lorewalkercho
+    {
 //    wenn ein spieler einen zauber wirkt, erhält der andere spieler eine kopie desselben auf seine hand.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
@@ -38,5 +34,5 @@ namespace HREngine.Bots
                 p.drawACard(hc.card.CardId, !wasOwnCard, true);
             }
         }
-	}
+    }
 }

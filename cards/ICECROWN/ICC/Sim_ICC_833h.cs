@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_833h: SimTemplate //* Icy Touch
+    class Sim_ICC_833h : SimTemplate //* Icy Touch
     {
         // Hero Power: Deal 1 damage. If this kills a minion, summon a Water Elemental.
 
         SimCard kid = CardIds.Collectible.Mage.WaterElemental; //Water Elemental
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getHeroPowerDamage(1) : p.getEnemyHeroPowerDamage(1);
+            var dmg = ownplay ? p.getHeroPowerDamage(1) : p.getEnemyHeroPowerDamage(1);
             p.minionGetDamageOrHeal(target, dmg);
 
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            if (target.Hp <= 0) p.callKid(kid, place, ownplay);
-		}
-	}
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            if (target.Hp <= 0)
+            {
+                p.callKid(this.kid, place, ownplay);
+            }
+        }
+    }
 }

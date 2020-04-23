@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 
 /* _BEGIN_TEMPLATE_
@@ -27,20 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-class Sim_ULD_276 : SimTemplate 
-{
-
-
-
-
-public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
-{
-if (turnEndOfOwner == triggerEffectMinion.own)
-{
-p.drawACard(SimCard.None, turnEndOfOwner);
-}
-}
-
-
-}
+    class Sim_ULD_276 : SimTemplate
+    {
+        public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
+        {
+            if (turnEndOfOwner == triggerEffectMinion.own)
+            {
+                p.drawACard(SimCard.None, turnEndOfOwner);
+            }
+        }
+    }
 }

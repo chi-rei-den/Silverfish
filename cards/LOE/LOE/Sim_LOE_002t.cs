@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_002t : SimTemplate //* Roaring Torch
-	{
-		//Deal 6 damage.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(6) : p.getEnemySpellDamageDamage(6);
+    class Sim_LOE_002t : SimTemplate //* Roaring Torch
+    {
+        //Deal 6 damage.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(6) : p.getEnemySpellDamageDamage(6);
             p.minionGetDamageOrHeal(target, dmg);
-		}
-	}
+        }
+    }
 }

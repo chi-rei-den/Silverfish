@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -29,14 +26,13 @@ namespace HREngine.Bots
 {
     class Sim_GVG_102 : SimTemplate //Tinkertown Technician
     {
-
         // Battlecry: If you have a Mech, gain +1/+1 and add a Spare Part to your hand.  
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
 
-            foreach (Minion m in temp)
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.MECHANICAL)
                 {
@@ -47,5 +43,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

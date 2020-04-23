@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_339 : SimTemplate //thoughtsteal
-	{
-
+    class Sim_EX1_339 : SimTemplate //thoughtsteal
+    {
 //    kopiert 2 karten aus dem deck eures gegners und fügt sie eurer hand hinzu.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, ownplay, true);
             p.drawACard(SimCard.None, ownplay, true);
-		}
-
-	}
+        }
+    }
 }

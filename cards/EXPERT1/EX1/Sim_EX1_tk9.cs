@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_tk9 : SimTemplate //treant
-	{
-
+    class Sim_EX1_tk9 : SimTemplate //treant
+    {
 //    ansturm/. vernichtet diesen diener am ende des zuges.
 
 
@@ -38,6 +35,5 @@ namespace HREngine.Bots
                 p.minionGetDestroyed(triggerEffectMinion);
             }
         }
-
-	}
+    }
 }

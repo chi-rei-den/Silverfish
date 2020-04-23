@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Rogue_01 : SimTemplate //* 致命连击 Combo
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Rogue_01 : SimTemplate //* 致命连击 Combo
+    {
+        //
+        //
+    }
 }

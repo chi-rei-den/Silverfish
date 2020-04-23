@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_LK_Raid_Hero_Battledamaged : SimTemplate
-	{
-	}
+    class Sim_FB_LK_Raid_Hero_Battledamaged : SimTemplate
+    {
+    }
 }

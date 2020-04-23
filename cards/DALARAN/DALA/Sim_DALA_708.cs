@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_708",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_708 : SimTemplate //* 未知的宝物 Untold Splendor
-	{
-		//Shuffle 5 random treasures into your deck.
-		//随机将五张宝藏牌洗入你的牌库。
-
-
-	}
+    class Sim_DALA_708 : SimTemplate //* 未知的宝物 Untold Splendor
+    {
+        //Shuffle 5 random treasures into your deck.
+        //随机将五张宝藏牌洗入你的牌库。
+    }
 }

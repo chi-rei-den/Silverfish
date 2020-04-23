@@ -1,14 +1,10 @@
-using HearthDb.Enums;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HearthDb.Enums;
 using Triton.Game.Mapping;
 
 namespace Chireiden.Silverfish
 {
-  public static  class Helper
+    public static class Helper
     {
         public static T ParseEnum<T>(this string value) where T : Enum
         {

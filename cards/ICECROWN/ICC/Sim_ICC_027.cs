@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_027: SimTemplate //* Bone Drake
+    class Sim_ICC_027 : SimTemplate //* Bone Drake
     {
         // Deathrattle: Add a random Dragon to your hand.
 

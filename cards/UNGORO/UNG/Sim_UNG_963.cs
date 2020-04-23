@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_963 : SimTemplate //* Lyra the Sunshard
-	{
-		//Whenever you cast a spell, add a random Priest spell to your hand.
+    class Sim_UNG_963 : SimTemplate //* Lyra the Sunshard
+    {
+        //Whenever you cast a spell, add a random Priest spell to your hand.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
@@ -38,5 +35,5 @@ namespace HREngine.Bots
                 p.drawACard(SimCard.None, wasOwnCard);
             }
         }
-	}
+    }
 }

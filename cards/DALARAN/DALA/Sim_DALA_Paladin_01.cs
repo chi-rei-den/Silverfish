@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Paladin_01 : SimTemplate //* 神秘私语 Secret Whispers
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Paladin_01 : SimTemplate //* 神秘私语 Secret Whispers
+    {
+        //
+        //
+    }
 }

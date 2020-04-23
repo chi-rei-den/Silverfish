@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_028 : SimTemplate //* Emperor Thaurissan
-	{
-		// At the end of your turn, reduce the Cost of cards in your hand by (1).
-		
+    class Sim_BRM_028 : SimTemplate //* Emperor Thaurissan
+    {
+        // At the end of your turn, reduce the Cost of cards in your hand by (1).
+
         public override void onTurnEndsTrigger(Playfield p, Minion m, bool turnEndOfOwner)
         {
             if (m.own == turnEndOfOwner)
             {
-				foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
-                    if (hc.manacost >= 1) hc.manacost--;
+                    if (hc.manacost >= 1)
+                    {
+                        hc.manacost--;
+                    }
                 }
             }
         }
-	}
+    }
 }

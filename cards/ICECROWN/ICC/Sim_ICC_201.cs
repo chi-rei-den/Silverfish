@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_201: SimTemplate //* Roll the Bones
+    class Sim_ICC_201 : SimTemplate //* Roll the Bones
     {
         // Draw a card. If it has Deathrattle, cast this again.
 

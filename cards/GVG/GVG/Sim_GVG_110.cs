@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,18 +26,14 @@ namespace HREngine.Bots
 {
     class Sim_GVG_110 : SimTemplate //Dr. Boom
     {
-
         //  Battlecry: Summon two 1/1 Boom Bots. WARNING: Bots may explode. 
 
-        SimCard kid = CardIds.NonCollectible.Neutral.DrBoom_BoomBotToken;//chillwind
+        SimCard kid = CardIds.NonCollectible.Neutral.DrBoom_BoomBotToken; //chillwind
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.callKid(kid, own.zonepos, own.own);
-            p.callKid(kid, own.zonepos - 1, own.own);
+            p.callKid(this.kid, own.zonepos, own.own);
+            p.callKid(this.kid, own.zonepos - 1, own.own);
         }
-
-
     }
-
 }

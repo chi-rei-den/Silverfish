@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,12 +23,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_301 : SimTemplate //felguard
-	{
-
+    class Sim_EX1_301 : SimTemplate //felguard
+    {
 //    spott/. kampfschrei:/ zerstört einen eurer manakristalle.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (own.own)
             {
                 p.ownMaxMana--;
@@ -39,8 +36,6 @@ namespace HREngine.Bots
             {
                 p.enemyMaxMana--;
             }
-		}
-
-
-	}
+        }
+    }
 }

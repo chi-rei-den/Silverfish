@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,23 +24,29 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_207 : SimTemplate //* Faceless Summoner
-	{
-		//Battlecry: Summon a random 3-Cost minion.
-		
-		SimCard kid = CardIds.Collectible.Neutral.LightsChampion; //Light's Champion
-				
-		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
+    class Sim_OG_207 : SimTemplate //* Faceless Summoner
+    {
+        //Battlecry: Summon a random 3-Cost minion.
+
+        SimCard kid = CardIds.Collectible.Neutral.LightsChampion; //Light's Champion
+
+        public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            List<Minion> list = (m.own) ? p.ownMinions : p.enemyMinions;
-            int anz = list.Count;
-            p.callKid(kid, m.zonepos, m.own);
+            var list = m.own ? p.ownMinions : p.enemyMinions;
+            var anz = list.Count;
+            p.callKid(this.kid, m.zonepos, m.own);
             if (anz < 7 && !list[m.zonepos].taunt)
             {
                 list[m.zonepos].taunt = true;
-                if (m.own) p.anzOwnTaunt++;
-                else p.anzEnemyTaunt++;
+                if (m.own)
+                {
+                    p.anzOwnTaunt++;
+                }
+                else
+                {
+                    p.anzEnemyTaunt++;
+                }
             }
         }
-	}
+    }
 }

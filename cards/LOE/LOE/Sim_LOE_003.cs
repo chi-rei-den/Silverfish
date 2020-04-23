@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_003 : SimTemplate //* Ethereal Conjurer
-	{
-		//Battlecry: Discover a spell.
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_LOE_003 : SimTemplate //* Ethereal Conjurer
+    {
+        //Battlecry: Discover a spell.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, own.own, true);
-		}
-	}
+        }
+    }
 }

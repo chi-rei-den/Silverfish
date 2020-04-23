@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_FP1_003 : SimTemplate //* Echoing Ooze
-	{
+    {
         //Battlecry: Summon an exact copy of this minion at the end of the turn.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
@@ -35,8 +32,8 @@ namespace HREngine.Bots
             if (triggerEffectMinion.playedThisTurn && triggerEffectMinion.own == turnEndOfOwner)
             {
                 p.callKid(triggerEffectMinion.handcard.card, triggerEffectMinion.zonepos, turnEndOfOwner);
-                List<Minion> temp = (turnEndOfOwner) ? p.ownMinions : p.enemyMinions;
-                foreach (Minion mnn in temp)
+                var temp = turnEndOfOwner ? p.ownMinions : p.enemyMinions;
+                foreach (var mnn in temp)
                 {
                     if (mnn.name == CardIds.Collectible.Neutral.EchoingOoze && triggerEffectMinion.entitiyID != mnn.entitiyID)
                     {
@@ -46,6 +43,5 @@ namespace HREngine.Bots
                 }
             }
         }
-
-	}
+    }
 }

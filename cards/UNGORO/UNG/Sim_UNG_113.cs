@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_113 : SimTemplate //* Bright-Eyed Scout
-	{
-		//Battlecry: Draw a card. Change its Cost to (5).
+    class Sim_UNG_113 : SimTemplate //* Bright-Eyed Scout
+    {
+        //Battlecry: Draw a card. Change its Cost to (5).
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, own.own);
-                p.owncards[p.owncards.Count - 1].manacost = 5;
-		}
-	}
+            p.owncards[p.owncards.Count - 1].manacost = 5;
+        }
+    }
 }

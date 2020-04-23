@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMC_94 : SimTemplate //* Sulfuras
-	{
-		// Deathrattle:: Your Hero Power becomes 'Deal 8 damage to a random enemy'.
-		
+    class Sim_BRMC_94 : SimTemplate //* Sulfuras
+    {
+        // Deathrattle:: Your Hero Power becomes 'Deal 8 damage to a random enemy'.
+
         SimCard weapon = CardIds.NonCollectible.Neutral.Sulfuras;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)

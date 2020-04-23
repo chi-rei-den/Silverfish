@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_090 : SimTemplate //* Cabalist's Tome
-	{
-		//Add 3 random Mage spells to your hand.
-		
+    class Sim_OG_090 : SimTemplate //* Cabalist's Tome
+    {
+        //Add 3 random Mage spells to your hand.
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.drawACard(CardIds.Collectible.Mage.Frostbolt, ownplay, true);

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_609 : SimTemplate //* Fel Orc Soulfiend
-	{
-		// At the start of your turn, deal 2 damage to this minion.
+    class Sim_CFM_609 : SimTemplate //* Fel Orc Soulfiend
+    {
+        // At the start of your turn, deal 2 damage to this minion.
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {

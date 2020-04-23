@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BT_187e2",
@@ -22,7 +22,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BT_187e2 : SimTemplate
-	{
-	}
+    class Sim_BT_187e2 : SimTemplate
+    {
+    }
 }

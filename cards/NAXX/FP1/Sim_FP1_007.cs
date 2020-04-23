@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,13 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_007 : SimTemplate //* nerubianegg
-	{
+    class Sim_FP1_007 : SimTemplate //* nerubianegg
+    {
         //todesröcheln:/ ruft einen neruber (4/4) herbei.
-        SimCard c = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//nerubian
+        SimCard c = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken; //nerubian
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(c, m.zonepos-1, m.own);
+            p.callKid(this.c, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -39,8 +35,12 @@ namespace HREngine.Bots
             {
                 switch (choice)
                 {
-                    case 1: p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1); break;
-                    case 2: p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken2); break;
+                    case 1:
+                        p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken1);
+                        break;
+                    case 2:
+                        p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheSwarm_DruidOfTheSwarmToken2);
+                        break;
                 }
             }
         }

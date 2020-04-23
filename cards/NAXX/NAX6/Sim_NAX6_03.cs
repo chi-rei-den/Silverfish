@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX6_03 : SimTemplate //* Deathbloom
-	{
-		// Deal $5 damage to a minion. Summon a Spore.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.Deathbloom_SporeToken;//Spore
+    class Sim_NAX6_03 : SimTemplate //* Deathbloom
+    {
+        // Deal $5 damage to a minion. Summon a Spore.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-			int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+        SimCard kid = CardIds.NonCollectible.Neutral.Deathbloom_SporeToken; //Spore
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             p.minionGetDamageOrHeal(target, dmg);
-			
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay);
-		}
-	}
+
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay);
+        }
+    }
 }

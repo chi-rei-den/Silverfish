@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_064 : SimTemplate //* Vilespine Slayer
-	{
-		//Combo: Destroy a minion.
+    class Sim_UNG_064 : SimTemplate //* Vilespine Slayer
+    {
+        //Combo: Destroy a minion.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (p.cardsPlayedThisTurn >= 1 && target != null && own.own)
             {
                 p.minionGetDestroyed(target);
             }
-		}
-	}
+        }
+    }
 }

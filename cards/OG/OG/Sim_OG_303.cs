@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,25 +23,40 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_303 : SimTemplate //* Cult Sorcerer
-	{
-		//Spell Damage +1. After you cast a spell, give your C'Thun +1/+1 (wherever it is).
-		
+    class Sim_OG_303 : SimTemplate //* Cult Sorcerer
+    {
+        //Spell Damage +1. After you cast a spell, give your C'Thun +1/+1 (wherever it is).
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
-            if (m.own == ownplay && hc.card.Type == CardType.SPELL) p.cthunGetBuffed(1, 1, 0);
+            if (m.own == ownplay && hc.card.Type == CardType.SPELL)
+            {
+                p.cthunGetBuffed(1, 1, 0);
+            }
         }
-		
+
         public override void onAuraStarts(Playfield p, Minion own)
-		{
-            if (own.own) p.spellpower++;
-            else p.enemyspellpower++;
-		}
+        {
+            if (own.own)
+            {
+                p.spellpower++;
+            }
+            else
+            {
+                p.enemyspellpower++;
+            }
+        }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
-            if (m.own) p.spellpower--;
-            else p.enemyspellpower--;
+            if (m.own)
+            {
+                p.spellpower--;
+            }
+            else
+            {
+                p.enemyspellpower--;
+            }
         }
-	}
+    }
 }

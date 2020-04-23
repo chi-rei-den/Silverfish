@@ -1,17 +1,13 @@
 using Chireiden.Silverfish;
+using HearthDb;
+using HearthDb.Enums;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
 using System.Linq;
-using Buddy.Coroutines;
-using Triton.Bot;
-using Triton.Common;
+using System.Reflection;
 using Triton.Game;
 using Triton.Game.Mapping;
-using HearthDb.Enums;
-using HearthDb;
 
 namespace HREngine.Bots
 {
@@ -34,11 +30,11 @@ namespace HREngine.Bots
         private Dictionary<int, IDEnumOwner> LurkersDB = new Dictionary<int, IDEnumOwner>();
         public Dictionary<string, Behavior> BehaviorDB = new Dictionary<string, Behavior>();
         public Dictionary<string, string> BehaviorPath = new Dictionary<string, string>();
-        List<HSCard> ETallcards = new List<HSCard>();
-        Dictionary<string, int> startDeck = new Dictionary<string, int>();
-        Dictionary<SimCard, int> turnDeck = new Dictionary<SimCard, int>();
-        Dictionary<int, extraCard> extraDeck = new Dictionary<int, extraCard>();
-        bool noDuplicates = false;
+        private List<HSCard> ETallcards = new List<HSCard>();
+        private Dictionary<string, int> startDeck = new Dictionary<string, int>();
+        private Dictionary<SimCard, int> turnDeck = new Dictionary<SimCard, int>();
+        private Dictionary<int, extraCard> extraDeck = new Dictionary<int, extraCard>();
+        private bool noDuplicates = false;
 
         private int currentMana = 0;
         private int ownMaxMana = 0;
@@ -100,32 +96,29 @@ namespace HREngine.Bots
 
         private static Silverfish instance;
 
-        public static Silverfish Instance
-        {
-            get { return instance ?? (instance = new Silverfish()); }
-        }
+        public static Silverfish Instance => instance ?? (instance = new Silverfish());
 
         private Silverfish()
         {
             this.singleLog = Settings.Instance.writeToSingleFile;
             Helpfunctions.Instance.ErrorLog("开始启动...");
-            string p =
+            var p =
                 $".{System.IO.Path.DirectorySeparatorChar}Routines{System.IO.Path.DirectorySeparatorChar}DefaultRoutine{System.IO.Path.DirectorySeparatorChar}Silverfish{System.IO.Path.DirectorySeparatorChar}";
-            string path = $"{p}UltimateLogs{Path.DirectorySeparatorChar}";
+            var path = $"{p}UltimateLogs{Path.DirectorySeparatorChar}";
             Directory.CreateDirectory(path);
-            sttngs.setFilePath($"{p}Data{Path.DirectorySeparatorChar}");
+            this.sttngs.setFilePath($"{p}Data{Path.DirectorySeparatorChar}");
 
-            if (!singleLog)
+            if (!this.singleLog)
             {
-                sttngs.setLoggPath(path);
+                this.sttngs.setLoggPath(path);
             }
             else
             {
-                sttngs.setLoggPath(p);
-                sttngs.setLoggFile("UILogg.txt");
+                this.sttngs.setLoggPath(p);
+                this.sttngs.setLoggFile("UILogg.txt");
                 Helpfunctions.Instance.createNewLoggfile();
             }
-            setBehavior();
+            this.setBehavior();
         }
 
         private bool setBehavior()
@@ -133,39 +126,46 @@ namespace HREngine.Bots
             var types = Assembly.GetExecutingAssembly().GetTypes().Where(t => t.BaseType == typeof(Behavior)).ToArray();
             foreach (var t in types)
             {
-                string s = t.Name;
-                if (s == "BehaviorMana") continue;
+                var s = t.Name;
+                if (s == "BehaviorMana")
+                {
+                    continue;
+                }
+
                 if (s.Length > 8 && s.Substring(0, 8) == "Behavior")
                 {
-                    Behavior b = (Behavior)Activator.CreateInstance(t);
-                    BehaviorDB.Add(b.BehaviorName(), b);
+                    var b = (Behavior)Activator.CreateInstance(t);
+                    this.BehaviorDB.Add(b.BehaviorName(), b);
                 }
             }
 
-            string p = Path.Combine("Routines", "DefaultRoutine", "Silverfish", "behavior");
-            string[] files = Directory.GetFiles(p, "Behavior*.cs", SearchOption.AllDirectories);
-            int bCount = 0;
-            foreach (string file in files)
+            var p = Path.Combine("Routines", "DefaultRoutine", "Silverfish", "behavior");
+            var files = Directory.GetFiles(p, "Behavior*.cs", SearchOption.AllDirectories);
+            var bCount = 0;
+            foreach (var file in files)
             {
                 bCount++;
-                string bPath = Path.GetDirectoryName(file);
+                var bPath = Path.GetDirectoryName(file);
                 var fullPath = Path.GetFullPath(file);
                 var bNane = Path.GetFileNameWithoutExtension(file).Remove(0, 8);
-                if (BehaviorDB.ContainsKey(bNane))
+                if (this.BehaviorDB.ContainsKey(bNane))
                 {
-                    if (!BehaviorPath.ContainsKey(bNane)) BehaviorPath.Add(bNane, bPath);
+                    if (!this.BehaviorPath.ContainsKey(bNane))
+                    {
+                        this.BehaviorPath.Add(bNane, bPath);
+                    }
                 }
             }
 
-            if (BehaviorDB.Count != BehaviorPath.Count || BehaviorDB.Count != bCount)
+            if (this.BehaviorDB.Count != this.BehaviorPath.Count || this.BehaviorDB.Count != bCount)
             {
                 Helpfunctions.Instance.ErrorLog(
                     $"Behavior: registered - {this.BehaviorDB.Count}, folders - {bCount}, have a path - {this.BehaviorPath.Count}. These values should be the same. Maybe you have some extra files in the 'custom_behavior' folder.");
             }
 
-            if (BehaviorDB.ContainsKey("控场模式"))
+            if (this.BehaviorDB.ContainsKey("控场模式"))
             {
-                Ai.Instance.botBase = BehaviorDB["控场模式"];
+                Ai.Instance.botBase = this.BehaviorDB["控场模式"];
                 return true;
             }
             else
@@ -181,16 +181,19 @@ namespace HREngine.Bots
         }
         public Behavior getBehaviorByName(string bName)
         {
-            if (BehaviorDB.ContainsKey(bName))
+            if (this.BehaviorDB.ContainsKey(bName))
             {
-                sttngs.setSettings(bName);
+                this.sttngs.setSettings(bName);
                 ComboBreaker.Instance.readCombos(bName);
                 RulesEngine.Instance.readRules(bName);
-                return BehaviorDB[bName];
+                return this.BehaviorDB[bName];
             }
             else
             {
-                if (BehaviorDB.ContainsKey("控场模式")) return BehaviorDB["控场模式"];
+                if (this.BehaviorDB.ContainsKey("控场模式"))
+                {
+                    return this.BehaviorDB["控场模式"];
+                }
                 else
                 {
                     Helpfunctions.Instance.ErrorLog("ERROR#################################################");
@@ -207,17 +210,17 @@ namespace HREngine.Bots
 
         public void setnewLoggFile()
         {
-            gTurn = 0;
-            gTurnStep = 0;
-            anzOgOwnCThunHpBonus = 0;
-            anzOgOwnCThunAngrBonus = 0;
-            anzOgOwnCThunTaunt = 0;
-            ownCrystalCore = 0;
-            ownMinionsCost0 = false;
+            this.gTurn = 0;
+            this.gTurnStep = 0;
+            this.anzOgOwnCThunHpBonus = 0;
+            this.anzOgOwnCThunAngrBonus = 0;
+            this.anzOgOwnCThunTaunt = 0;
+            this.ownCrystalCore = 0;
+            this.ownMinionsCost0 = false;
             Questmanager.Instance.Reset();
-            if (!singleLog)
+            if (!this.singleLog)
             {
-                sttngs.setLoggFile($"UILogg{DateTime.Now:_yyyy-MM-dd_HH-mm-ss}.txt");
+                this.sttngs.setLoggFile($"UILogg{DateTime.Now:_yyyy-MM-dd_HH-mm-ss}.txt");
                 Helpfunctions.Instance.createNewLoggfile();
                 Helpfunctions.Instance.ErrorLog("#######################################################");
                 Helpfunctions.Instance.ErrorLog($"对局日志保持在: {this.sttngs.logpath}{this.sttngs.logfile}");
@@ -225,20 +228,26 @@ namespace HREngine.Bots
             }
             else
             {
-                sttngs.setLoggFile("UILogg.txt");
+                this.sttngs.setLoggFile("UILogg.txt");
             }
 
-            startDeck.Clear();
-            extraDeck.Clear();
-            long DeckId = Triton.Bot.Logic.Bots.DefaultBot.DefaultBotSettings.Instance.LastDeckId;
+            this.startDeck.Clear();
+            this.extraDeck.Clear();
+            var DeckId = Triton.Bot.Logic.Bots.DefaultBot.DefaultBotSettings.Instance.LastDeckId;
             foreach (var deck in Triton.Bot.Settings.MainSettings.Instance.CustomDecks)
             {
                 if (deck.DeckId == DeckId)
                 {
-                    foreach (string s in deck.CardIds)
+                    foreach (var s in deck.CardIds)
                     {
-                        if (startDeck.ContainsKey(s)) startDeck[s]++;
-                        else startDeck.Add(s, 1);
+                        if (this.startDeck.ContainsKey(s))
+                        {
+                            this.startDeck[s]++;
+                        }
+                        else
+                        {
+                            this.startDeck.Add(s, 1);
+                        }
                     }
                     break;
                 }
@@ -249,34 +258,37 @@ namespace HREngine.Bots
         {
             this.needSleep = false;
             this.updateBehaveString(botbase);
-            ownPlayerController = TritonHs.OurHero.ControllerId;
+            this.ownPlayerController = TritonHs.OurHero.ControllerId;
 
             Hrtprozis.Instance.clearAllRecalc();
             Handmanager.Instance.clearAllRecalc();
 
-            getHerostuff();
-            getMinions();
-            getHandcards();
-            getDecks();
+            this.getHerostuff();
+            this.getMinions();
+            this.getHandcards();
+            this.getDecks();
 
 
-            Hrtprozis.Instance.updateTurnDeck(turnDeck, noDuplicates);
-            Hrtprozis.Instance.setOwnPlayer(ownPlayerController);
-            Handmanager.Instance.setOwnPlayer(ownPlayerController);
+            Hrtprozis.Instance.updateTurnDeck(this.turnDeck, this.noDuplicates);
+            Hrtprozis.Instance.setOwnPlayer(this.ownPlayerController);
+            Handmanager.Instance.setOwnPlayer(this.ownPlayerController);
 
             this.numOptionPlayedThisTurn = 0;
             this.numOptionPlayedThisTurn += this.cardsPlayedThisTurn + this.ownHero.numAttacksThisTurn;
-            foreach (Minion m in this.ownMinions)
+            foreach (var m in this.ownMinions)
             {
-                if (m.Hp >= 1) this.numOptionPlayedThisTurn += m.numAttacksThisTurn;
+                if (m.Hp >= 1)
+                {
+                    this.numOptionPlayedThisTurn += m.numAttacksThisTurn;
+                }
             }
 
-            List<HSCard> list = TritonHs.GetCards(CardZone.Graveyard, true);
-            foreach (GraveYardItem gi in Probabilitymaker.Instance.turngraveyard)
+            var list = TritonHs.GetCards(CardZone.Graveyard, true);
+            foreach (var gi in Probabilitymaker.Instance.turngraveyard)
             {
                 if (gi.own)
                 {
-                    foreach (HSCard entiti in list)
+                    foreach (var entiti in list)
                     {
                         if (gi.entity == entiti.EntityId)
                         {
@@ -303,15 +315,17 @@ namespace HREngine.Bots
             Hrtprozis.Instance.updateJadeGolemsInfo(GameState.Get().GetFriendlySidePlayer().GetTag(GAME_TAG.JADE_GOLEM), GameState.Get().GetOpposingSidePlayer().GetTag(GAME_TAG.JADE_GOLEM));
 
             Hrtprozis.Instance.updateTurnInfo(this.gTurn, this.gTurnStep);
-            updateCThunInfobyCThun();
+            this.updateCThunInfobyCThun();
             Hrtprozis.Instance.updateCThunInfo(this.anzOgOwnCThunAngrBonus, this.anzOgOwnCThunHpBonus, this.anzOgOwnCThunTaunt);
             Hrtprozis.Instance.updateCrystalCore(this.ownCrystalCore);
             Hrtprozis.Instance.updateOwnMinionsInDeckCost0(this.ownMinionsCost0);
             Probabilitymaker.Instance.setEnemySecretGuesses(this.enemySecretList);
 
             sleepRetry = this.needSleep;
-            if (sleepRetry && numcal == 0) return false;
-
+            if (sleepRetry && numcal == 0)
+            {
+                return false;
+            }
 
             if (!Hrtprozis.Instance.setGameRule)
             {
@@ -319,46 +333,48 @@ namespace HREngine.Bots
                 Hrtprozis.Instance.setGameRule = true;
             }
 
-            Playfield p = new Playfield();
-            p.enemyCardsOut = new Dictionary<SimCard, int>(Probabilitymaker.Instance.enemyCardsOut);
-
-            if (lastpf != null)
+            var p = new Playfield
             {
-                if (lastpf.isEqualf(p))
+                enemyCardsOut = new Dictionary<SimCard, int>(Probabilitymaker.Instance.enemyCardsOut)
+            };
+
+            if (this.lastpf != null)
+            {
+                if (this.lastpf.isEqualf(p))
                 {
                     return false;
                 }
                 else
                 {
-                     if (p.gTurnStep > 0 && Ai.Instance.nextMoveGuess.ownMinions.Count == p.ownMinions.Count)
-                     {
-                         if (Ai.Instance.nextMoveGuess.ownHero.Ready != p.ownHero.Ready && !p.ownHero.Ready)
-                         {
-                             sleepRetry = true;
-                             Helpfunctions.Instance.ErrorLog($"[AI] 英雄的准备状态 = {p.ownHero.Ready}. 再次尝试....");
-                             Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
-                             return false;
-                         }
-                         for (int i = 0; i < p.ownMinions.Count; i++)
-                         {
-                             if (Ai.Instance.nextMoveGuess.ownMinions[i].Ready != p.ownMinions[i].Ready && !p.ownMinions[i].Ready)
-                             {
-                                 sleepRetry = true;
-                                 Helpfunctions.Instance.ErrorLog(
-                                     $"[AI] 随从的准备状态 = {p.ownMinions[i].Ready} ({p.ownMinions[i].entitiyID} {p.ownMinions[i].handcard.card.CardId} {p.ownMinions[i].name}). 再次尝试....");
-                                 Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
-                                 return false;
-                             }
-                         }
-                     }
+                    if (p.gTurnStep > 0 && Ai.Instance.nextMoveGuess.ownMinions.Count == p.ownMinions.Count)
+                    {
+                        if (Ai.Instance.nextMoveGuess.ownHero.Ready != p.ownHero.Ready && !p.ownHero.Ready)
+                        {
+                            sleepRetry = true;
+                            Helpfunctions.Instance.ErrorLog($"[AI] 英雄的准备状态 = {p.ownHero.Ready}. 再次尝试....");
+                            Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
+                            return false;
+                        }
+                        for (var i = 0; i < p.ownMinions.Count; i++)
+                        {
+                            if (Ai.Instance.nextMoveGuess.ownMinions[i].Ready != p.ownMinions[i].Ready && !p.ownMinions[i].Ready)
+                            {
+                                sleepRetry = true;
+                                Helpfunctions.Instance.ErrorLog(
+                                    $"[AI] 随从的准备状态 = {p.ownMinions[i].Ready} ({p.ownMinions[i].entitiyID} {p.ownMinions[i].handcard.card.CardId} {p.ownMinions[i].name}). 再次尝试....");
+                                Ai.Instance.nextMoveGuess = new Playfield { mana = -100 };
+                                return false;
+                            }
+                        }
+                    }
                 }
 
-                Probabilitymaker.Instance.updateSecretList(p, lastpf);
-                lastpf = p;
+                Probabilitymaker.Instance.updateSecretList(p, this.lastpf);
+                this.lastpf = p;
             }
             else
             {
-                lastpf = p;
+                this.lastpf = p;
             }
 
             p = new Playfield();
@@ -368,20 +384,24 @@ namespace HREngine.Bots
 
             using (TritonHs.Memory.ReleaseFrame(true))
             {
-                printstuff();
+                this.printstuff();
                 Ai.Instance.dosomethingclever(botbase);
             }
 
             Helpfunctions.Instance.ErrorLog($"计算完成! {DateTime.Now:HH:mm:ss.ffff}");
-            if (sttngs.printRules > 0)
+            if (this.sttngs.printRules > 0)
             {
-                String[] rulesStr = Ai.Instance.bestplay.rulesUsed.Split('@');
+                var rulesStr = Ai.Instance.bestplay.rulesUsed.Split('@');
                 if (rulesStr.Count() > 0 && rulesStr[0] != "")
                 {
                     Helpfunctions.Instance.ErrorLog($"规则权重 {Ai.Instance.bestplay.ruleWeight * -1}");
-                    foreach (string rs in rulesStr)
+                    foreach (var rs in rulesStr)
                     {
-                        if (rs == "") continue;
+                        if (rs == "")
+                        {
+                            continue;
+                        }
+
                         Helpfunctions.Instance.ErrorLog($"规则: {rs}");
                     }
                 }
@@ -394,16 +414,16 @@ namespace HREngine.Bots
 
         private void getHerostuff()
         {
-            List<HSCard> allcards = TritonHs.GetAllCards();
+            var allcards = TritonHs.GetAllCards();
 
-            HSCard ownHeroCard = TritonHs.OurHero;
-            HSCard enemHeroCard = TritonHs.EnemyHero;
-            int ownheroentity = TritonHs.OurHero.EntityId;
-            int enemyheroentity = TritonHs.EnemyHero.EntityId;
+            var ownHeroCard = TritonHs.OurHero;
+            var enemHeroCard = TritonHs.EnemyHero;
+            var ownheroentity = TritonHs.OurHero.EntityId;
+            var enemyheroentity = TritonHs.EnemyHero.EntityId;
             this.ownHero = new Minion();
             this.enemyHero = new Minion();
 
-            foreach (HSCard ent in allcards)
+            foreach (var ent in allcards)
             {
                 if (ent.IsHero == true)
                 {
@@ -415,8 +435,15 @@ namespace HREngine.Bots
                     {
                         this.enemyHero.CardClass = (CardClass)ent.Class;
                     }
-                    if (ent.EntityId == enemyheroentity) enemHeroCard = ent;
-                    if (ent.EntityId == ownheroentity) ownHeroCard = ent;
+                    if (ent.EntityId == enemyheroentity)
+                    {
+                        enemHeroCard = ent;
+                    }
+
+                    if (ent.EntityId == ownheroentity)
+                    {
+                        ownHeroCard = ent;
+                    }
                 }
             }
 
@@ -424,20 +451,20 @@ namespace HREngine.Bots
 
             this.currentMana = TritonHs.CurrentMana;
             this.ownMaxMana = TritonHs.Resources;
-            this.enemyMaxMana = ownMaxMana;
+            this.enemyMaxMana = this.ownMaxMana;
 
 
-            ownSecretList.Clear();
-            enemySecretList.Clear();
-            foreach (HSCard ent in allcards)
+            this.ownSecretList.Clear();
+            this.enemySecretList.Clear();
+            foreach (var ent in allcards)
             {
-                if (ent.IsSecret && ent.ControllerId != ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
+                if (ent.IsSecret && ent.ControllerId != this.ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
                 {
-                    enemySecretList.Add(ent.EntityId, (CardClass)ent.Class);
+                    this.enemySecretList.Add(ent.EntityId, (CardClass)ent.Class);
                 }
-                if (ent.IsSecret && ent.ControllerId == ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
+                if (ent.IsSecret && ent.ControllerId == this.ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 7)
                 {
-                    ownSecretList.Add(ent.Id);
+                    this.ownSecretList.Add(ent.Id);
                 }
             }
 
@@ -449,15 +476,15 @@ namespace HREngine.Bots
                 {
                     if (entity.m_card != null)
                     {
-                        string eId = "";
+                        var eId = "";
 
 
 
 
                         if (entity.IsQuest())
                         {
-                            int currentQuestProgress = entity.GetTag(GAME_TAG.QUEST_PROGRESS);
-                            int questProgressTotal = entity.GetTag(GAME_TAG.QUEST_PROGRESS_TOTAL);
+                            var currentQuestProgress = entity.GetTag(GAME_TAG.QUEST_PROGRESS);
+                            var questProgressTotal = entity.GetTag(GAME_TAG.QUEST_PROGRESS_TOTAL);
 
                             var entityDef = DefLoader.Get().GetEntityDef(entity.GetTag(GAME_TAG.QUEST_CONTRIBUTOR));
                             if (entityDef != null)
@@ -479,25 +506,25 @@ namespace HREngine.Bots
                 {
                     if (entity.m_card != null)
                     {
-                        string eId = "";
+                        var eId = "";
 
 
 
 
                         if (entity.IsQuest())
                         {
-                            int currentQuestProgress = entity.GetTag(GAME_TAG.QUEST_PROGRESS);
-                            int questProgressTotal = entity.GetTag(GAME_TAG.QUEST_PROGRESS_TOTAL);
+                            var currentQuestProgress = entity.GetTag(GAME_TAG.QUEST_PROGRESS);
+                            var questProgressTotal = entity.GetTag(GAME_TAG.QUEST_PROGRESS_TOTAL);
                             Questmanager.Instance.updateQuestStuff(eId, currentQuestProgress, questProgressTotal, false);
                         }
                     }
                 }
             }
 
-            numMinionsPlayedThisTurn = TritonHs.NumMinionsPlayedThisTurn;
-            cardsPlayedThisTurn = TritonHs.NumCardsPlayedThisTurn;
-            ueberladung = TritonHs.OverloadOwed;
-            lockedMana = TritonHs.OverloadLocked;
+            this.numMinionsPlayedThisTurn = TritonHs.NumMinionsPlayedThisTurn;
+            this.cardsPlayedThisTurn = TritonHs.NumCardsPlayedThisTurn;
+            this.ueberladung = TritonHs.OverloadOwed;
+            this.lockedMana = TritonHs.OverloadLocked;
 
             this.ownHeroFatigue = ownHeroCard.GetTag(GAME_TAG.FATIGUE);
             this.enemyHeroFatigue = enemHeroCard.GetTag(GAME_TAG.FATIGUE);
@@ -505,10 +532,17 @@ namespace HREngine.Bots
             this.ownDecksize = 0;
             this.enemyDecksize = 0;
 
-            foreach (HSCard ent in allcards)
+            foreach (var ent in allcards)
             {
-                if (ent.ControllerId == ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 2) ownDecksize++;
-                if (ent.ControllerId != ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 2) enemyDecksize++;
+                if (ent.ControllerId == this.ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 2)
+                {
+                    this.ownDecksize++;
+                }
+
+                if (ent.ControllerId != this.ownPlayerController && ent.GetTag(GAME_TAG.ZONE) == 2)
+                {
+                    this.enemyDecksize++;
+                }
             }
 
             this.ownHero.CardClass = SimCard.FromName(TritonHs.OurHero.Id).CardDef.Class;
@@ -521,19 +555,25 @@ namespace HREngine.Bots
             this.ownHero.numAttacksThisTurn = ownHeroCard.GetTag(GAME_TAG.NUM_ATTACKS_THIS_TURN);
             this.ownHero.windfury = (ownHeroCard.GetTag(GAME_TAG.WINDFURY) == 0) ? false : true;
             this.ownHero.immune = (ownHeroCard.GetTag(GAME_TAG.IMMUNE) == 0) ? false : true;
-            if (!ownHero.immune) this.ownHero.immune = (ownHeroCard.GetTag(GAME_TAG.IMMUNE_WHILE_ATTACKING) == 0) ? false : true; //turn immune
+            if (!this.ownHero.immune)
+            {
+                this.ownHero.immune = (ownHeroCard.GetTag(GAME_TAG.IMMUNE_WHILE_ATTACKING) == 0) ? false : true; //turn immune
+            }
 
-            ownWeapon = new Weapon();
+            this.ownWeapon = new Weapon();
             if (TritonHs.DoWeHaveWeapon)
             {
-                HSCard weapon = TritonHs.OurWeaponCard;
+                var weapon = TritonHs.OurWeaponCard;
 
-                ownWeapon.equip(((weapon.Id)));
-                ownWeapon.Angr = weapon.GetTag(GAME_TAG.ATK);
-                ownWeapon.Durability = weapon.GetTag(GAME_TAG.DURABILITY) - weapon.GetTag(GAME_TAG.DAMAGE);
-                ownWeapon.poisonous = (weapon.GetTag(GAME_TAG.POISONOUS) == 1) ? true : false;
-                ownWeapon.lifesteal = (weapon.GetTag(GAME_TAG.LIFESTEAL) == 1) ? true : false;
-                if (!this.ownHero.windfury) this.ownHero.windfury = ownWeapon.windfury;
+                this.ownWeapon.equip(((weapon.Id)));
+                this.ownWeapon.Angr = weapon.GetTag(GAME_TAG.ATK);
+                this.ownWeapon.Durability = weapon.GetTag(GAME_TAG.DURABILITY) - weapon.GetTag(GAME_TAG.DAMAGE);
+                this.ownWeapon.poisonous = (weapon.GetTag(GAME_TAG.POISONOUS) == 1) ? true : false;
+                this.ownWeapon.lifesteal = (weapon.GetTag(GAME_TAG.LIFESTEAL) == 1) ? true : false;
+                if (!this.ownHero.windfury)
+                {
+                    this.ownHero.windfury = this.ownWeapon.windfury;
+                }
             }
 
             this.enemyHero.CardClass = SimCard.FromName(TritonHs.EnemyHero.Id).Class;
@@ -546,17 +586,20 @@ namespace HREngine.Bots
             this.enemyHero.windfury = (enemHeroCard.GetTag(GAME_TAG.WINDFURY) == 0) ? false : true;
             this.enemyHero.immune = (enemHeroCard.GetTag(GAME_TAG.IMMUNE) == 0) ? false : true; //don't use turn immune
 
-            enemyWeapon = new Weapon();
+            this.enemyWeapon = new Weapon();
             if (TritonHs.DoesEnemyHasWeapon)
             {
-                HSCard weapon = TritonHs.EnemyWeaponCard;
+                var weapon = TritonHs.EnemyWeaponCard;
 
-                enemyWeapon.equip(((weapon.Id)));
-                enemyWeapon.Angr = weapon.GetTag(GAME_TAG.ATK);
-                enemyWeapon.Durability = weapon.GetTag(GAME_TAG.DURABILITY) - weapon.GetTag(GAME_TAG.DAMAGE);
-                enemyWeapon.poisonous = (weapon.GetTag(GAME_TAG.POISONOUS) == 1) ? true : false;
-                enemyWeapon.lifesteal = (weapon.GetTag(GAME_TAG.LIFESTEAL) == 1) ? true : false;
-                if (!this.enemyHero.windfury) this.enemyHero.windfury = enemyWeapon.windfury;
+                this.enemyWeapon.equip(((weapon.Id)));
+                this.enemyWeapon.Angr = weapon.GetTag(GAME_TAG.ATK);
+                this.enemyWeapon.Durability = weapon.GetTag(GAME_TAG.DURABILITY) - weapon.GetTag(GAME_TAG.DAMAGE);
+                this.enemyWeapon.poisonous = (weapon.GetTag(GAME_TAG.POISONOUS) == 1) ? true : false;
+                this.enemyWeapon.lifesteal = (weapon.GetTag(GAME_TAG.LIFESTEAL) == 1) ? true : false;
+                if (!this.enemyHero.windfury)
+                {
+                    this.enemyHero.windfury = this.enemyWeapon.windfury;
+                }
             }
 
             this.heroAbility =
@@ -564,11 +607,11 @@ namespace HREngine.Bots
             this.ownAbilityisReady = (TritonHs.OurHeroPowerCard.GetTag(GAME_TAG.EXHAUSTED) == 0) ? true : false;
             this.enemyAbility =
                 ((TritonHs.EnemyHeroPowerCard.Id));
-            int ownHeroAbilityEntity = TritonHs.OurHeroPowerCard.EntityId;
-            int enemyHeroAbilityEntity = TritonHs.EnemyHeroPowerCard.EntityId;
+            var ownHeroAbilityEntity = TritonHs.OurHeroPowerCard.EntityId;
+            var enemyHeroAbilityEntity = TritonHs.EnemyHeroPowerCard.EntityId;
 
-            int needBreak = 0;
-            foreach (HSCard ent in allcards)
+            var needBreak = 0;
+            foreach (var ent in allcards)
             {
                 if (ent.EntityId == ownHeroAbilityEntity)
                 {
@@ -580,7 +623,10 @@ namespace HREngine.Bots
                     this.enemyHeroPowerCost = ent.Cost;
                     needBreak++;
                 }
-                if (needBreak > 1) break;
+                if (needBreak > 1)
+                {
+                    break;
+                }
             }
 
             this.ownHero.isHero = true;
@@ -595,15 +641,15 @@ namespace HREngine.Bots
             this.ownHero.Ready = ownHeroCard.CanBeUsed;
             this.enemyHero.Ready = false;
 
-            List<miniEnch> miniEnchlist = new List<miniEnch>();
-            foreach (HSCard ent in allcards)
+            var miniEnchlist = new List<miniEnch>();
+            foreach (var ent in allcards)
             {
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.ownHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
                 {
                     SimCard id = (ent.Id);
-                    int controler = ent.GetTag(GAME_TAG.CONTROLLER);
-                    int creator = ent.GetTag(GAME_TAG.CREATOR);
-                    int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
+                    var controler = ent.GetTag(GAME_TAG.CONTROLLER);
+                    var creator = ent.GetTag(GAME_TAG.CREATOR);
+                    var copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                     miniEnchlist.Add(new miniEnch(id, creator, controler, copyDeathrattle));
                 }
             }
@@ -612,53 +658,67 @@ namespace HREngine.Bots
 
             miniEnchlist.Clear();
 
-            foreach (HSCard ent in allcards)
+            foreach (var ent in allcards)
             {
                 if (ent.GetTag(GAME_TAG.ATTACHED) == this.enemyHero.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
 
                 {
                     SimCard id = (ent.Id);
-                    int controler = ent.GetTag(GAME_TAG.CONTROLLER);
-                    int creator = ent.GetTag(GAME_TAG.CREATOR);
-                    int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
+                    var controler = ent.GetTag(GAME_TAG.CONTROLLER);
+                    var creator = ent.GetTag(GAME_TAG.CREATOR);
+                    var copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                     miniEnchlist.Add(new miniEnch(id, creator, controler, copyDeathrattle));
                 }
             }
 
             this.enemyHero.loadEnchantments(miniEnchlist, enemHeroCard.GetTag(GAME_TAG.CONTROLLER));
 
-            if (this.ownHero.Angr < this.ownWeapon.Angr) this.ownHero.Angr = this.ownWeapon.Angr;
-            if (this.enemyHero.Angr < this.enemyWeapon.Angr) this.enemyHero.Angr = this.enemyWeapon.Angr;
+            if (this.ownHero.Angr < this.ownWeapon.Angr)
+            {
+                this.ownHero.Angr = this.ownWeapon.Angr;
+            }
+
+            if (this.enemyHero.Angr < this.enemyWeapon.Angr)
+            {
+                this.enemyHero.Angr = this.enemyWeapon.Angr;
+            }
         }
 
 
 
         private void getMinions()
         {
-            int tmp = Triton.Game.Mapping.GameState.Get().GetTurn();
-            if (gTurn == tmp) gTurnStep++;
-            else gTurnStep = 0;
-            gTurn = tmp;
+            var tmp = Triton.Game.Mapping.GameState.Get().GetTurn();
+            if (this.gTurn == tmp)
+            {
+                this.gTurnStep++;
+            }
+            else
+            {
+                this.gTurnStep = 0;
+            }
 
-            List<HSCard> list = TritonHs.GetCards(CardZone.Battlefield, true);
+            this.gTurn = tmp;
+
+            var list = TritonHs.GetCards(CardZone.Battlefield, true);
             list.AddRange(TritonHs.GetCards(CardZone.Battlefield, false));
 
             var enchantments = new List<HSCard>();
-            ownMinions.Clear();
-            enemyMinions.Clear();
-            LurkersDB.Clear();
-            List<HSCard> allcards = TritonHs.GetAllCards();
+            this.ownMinions.Clear();
+            this.enemyMinions.Clear();
+            this.LurkersDB.Clear();
+            var allcards = TritonHs.GetAllCards();
 
-            foreach (HSCard entiti in list)
+            foreach (var entiti in list)
             {
-                int zp = entiti.GetTag(GAME_TAG.ZONE_POSITION);
+                var zp = entiti.GetTag(GAME_TAG.ZONE_POSITION);
 
                 if (entiti.IsMinion && zp >= 1)
                 {
 
-                    HSCard entitiy = entiti;
+                    var entitiy = entiti;
 
-                    foreach (HSCard ent in allcards)
+                    foreach (var ent in allcards)
                     {
                         if (ent.EntityId == entiti.EntityId)
                         {
@@ -669,25 +729,34 @@ namespace HREngine.Bots
 
 
                     SimCard c = ((entitiy.Id));
-                    Minion m = new Minion();
-                    m.name = c.CardId;
+                    var m = new Minion
+                    {
+                        name = c.CardId
+                    };
                     m.handcard.card = c;
 
                     m.Angr = entitiy.GetTag(GAME_TAG.ATK);
                     m.maxHp = entitiy.GetTag(GAME_TAG.HEALTH);
                     m.Hp = entitiy.GetTag(GAME_TAG.HEALTH) - entitiy.GetTag(GAME_TAG.DAMAGE);
-                    if (m.Hp <= 0) continue;
-                    m.wounded = false;
-                    if (m.maxHp > m.Hp) m.wounded = true;
+                    if (m.Hp <= 0)
+                    {
+                        continue;
+                    }
 
-                    int ctarget = entitiy.GetTag(GAME_TAG.CARD_TARGET);
+                    m.wounded = false;
+                    if (m.maxHp > m.Hp)
+                    {
+                        m.wounded = true;
+                    }
+
+                    var ctarget = entitiy.GetTag(GAME_TAG.CARD_TARGET);
                     if (ctarget > 0)
                     {
-                        foreach (HSCard hcard in allcards)
+                        foreach (var hcard in allcards)
                         {
                             if (hcard.EntityId == ctarget)
                             {
-                                LurkersDB.Add(entitiy.EntityId, new IDEnumOwner()
+                                this.LurkersDB.Add(entitiy.EntityId, new IDEnumOwner()
                                 {
                                     IDEnum = (hcard.Id),
                                     own = (hcard.GetTag(GAME_TAG.CONTROLLER) == this.ownPlayerController) ? true : false
@@ -703,7 +772,7 @@ namespace HREngine.Bots
 
                     m.numAttacksThisTurn = entitiy.GetTag(GAME_TAG.NUM_ATTACKS_THIS_TURN);
 
-                    int temp = entitiy.GetTag(GAME_TAG.NUM_TURNS_IN_PLAY);
+                    var temp = entitiy.GetTag(GAME_TAG.NUM_TURNS_IN_PLAY);
                     m.playedThisTurn = (temp == 0) ? true : false;
 
                     m.windfury = (entitiy.GetTag(GAME_TAG.WINDFURY) == 0) ? false : true;
@@ -719,7 +788,10 @@ namespace HREngine.Bots
                     m.lifesteal = (entitiy.GetTag(GAME_TAG.LIFESTEAL) == 0) ? false : true;
 
                     m.immune = (entitiy.GetTag(GAME_TAG.IMMUNE) == 0) ? false : true;
-                    if (!m.immune) m.immune = (entitiy.GetTag(GAME_TAG.IMMUNE_WHILE_ATTACKING) == 0) ? false : true;
+                    if (!m.immune)
+                    {
+                        m.immune = (entitiy.GetTag(GAME_TAG.IMMUNE_WHILE_ATTACKING) == 0) ? false : true;
+                    }
 
                     m.untouchable = (entitiy.GetTag(GAME_TAG.UNTOUCHABLE) == 0) ? false : true;
 
@@ -743,15 +815,15 @@ namespace HREngine.Bots
 
                     m.hChoice = entitiy.GetTag(GAME_TAG.HIDDEN_CHOICE);
 
-                    List<miniEnch> enchs = new List<miniEnch>();
-                    foreach (HSCard ent in allcards)
+                    var enchs = new List<miniEnch>();
+                    foreach (var ent in allcards)
                     {
                         if (ent.GetTag(GAME_TAG.ATTACHED) == m.entitiyID && ent.GetTag(GAME_TAG.ZONE) == 1)
                         {
                             SimCard id = (ent.Id);
-                            int controler = ent.GetTag(GAME_TAG.CONTROLLER);
-                            int creator = ent.GetTag(GAME_TAG.CREATOR);
-                            int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
+                            var controler = ent.GetTag(GAME_TAG.CONTROLLER);
+                            var creator = ent.GetTag(GAME_TAG.CREATOR);
+                            var copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                             enchs.Add(new miniEnch(id, creator, controler, copyDeathrattle));
                         }
                     }
@@ -759,16 +831,16 @@ namespace HREngine.Bots
                     m.loadEnchantments(enchs, entitiy.GetTag(GAME_TAG.CONTROLLER));
                     if (m.extraParam2 != 0)
                     {
-                        bool needBreak = false;
-                        foreach (HSCard ent in allcards)
+                        var needBreak = false;
+                        foreach (var ent in allcards)
                         {
                             if (m.extraParam2 == ent.EntityId)
                             {
-                                int copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
+                                var copyDeathrattle = ent.GetTag(GAME_TAG.COPY_DEATHRATTLE);
                                 switch (ent.Id)
                                 {
                                     case "LOE_019":
-                                        foreach (HSCard ent2 in allcards)
+                                        foreach (var ent2 in allcards)
                                         {
                                             if (copyDeathrattle == ent2.EntityId)
                                             {
@@ -789,7 +861,10 @@ namespace HREngine.Bots
                                         break;
                                 }
                             }
-                            if (needBreak) break;
+                            if (needBreak)
+                            {
+                                break;
+                            }
                         }
                     }
 
@@ -802,7 +877,7 @@ namespace HREngine.Bots
 
                     if (m.charge > 0 && m.playedThisTurn && !m.Ready && m.numAttacksThisTurn == 0)
                     {
-                        needSleep = true;
+                        this.needSleep = true;
                         Helpfunctions.Instance.ErrorLog("[AI] 冲锋的随从还没有准备好");
                     }
 
@@ -824,15 +899,15 @@ namespace HREngine.Bots
 
         private void getHandcards()
         {
-            handCards.Clear();
-            anzcards = 0;
-            enemyAnzCards = 0;
-            List<HSCard> list = TritonHs.GetCards(CardZone.Hand);
+            this.handCards.Clear();
+            this.anzcards = 0;
+            this.enemyAnzCards = 0;
+            var list = TritonHs.GetCards(CardZone.Hand);
 
 
 
-            int wereElementalsLastTurn = 0;
-            foreach (HSCard entitiy in list)
+            var wereElementalsLastTurn = 0;
+            foreach (var entitiy in list)
             {
                 if (entitiy.ZonePosition >= 1)
                 {
@@ -840,103 +915,156 @@ namespace HREngine.Bots
 
 
 
-                    Handcard hc = new Handcard();
-                    hc.card = c;
-                    hc.position = entitiy.ZonePosition;
-                    hc.entity = entitiy.EntityId;
-                    hc.manacost = entitiy.Cost;
-                    hc.elemPoweredUp = entitiy.GetTag(GAME_TAG.ELEMENTAL_POWERED_UP);
-                    if (hc.elemPoweredUp > 0) wereElementalsLastTurn = 1;
+                    var hc = new Handcard
+                    {
+                        card = c,
+                        position = entitiy.ZonePosition,
+                        entity = entitiy.EntityId,
+                        manacost = entitiy.Cost,
+                        elemPoweredUp = entitiy.GetTag(GAME_TAG.ELEMENTAL_POWERED_UP)
+                    };
+                    if (hc.elemPoweredUp > 0)
+                    {
+                        wereElementalsLastTurn = 1;
+                    }
 
                     hc.addattack = entitiy.Attack - entitiy.DefATK;
-                    if (entitiy.IsWeapon) hc.addHp = entitiy.Durability - entitiy.DefDurability;
-                    else hc.addHp = entitiy.Health - entitiy.DefHealth;
+                    if (entitiy.IsWeapon)
+                    {
+                        hc.addHp = entitiy.Durability - entitiy.DefDurability;
+                    }
+                    else
+                    {
+                        hc.addHp = entitiy.Health - entitiy.DefHealth;
+                    }
 
-                    handCards.Add(hc);
-                    anzcards++;
+                    this.handCards.Add(hc);
+                    this.anzcards++;
                 }
             }
             Hrtprozis.Instance.updateElementals(0, wereElementalsLastTurn, 0); //TODO
 
-            List<HSCard> allcards = TritonHs.GetAllCards();
-            enemyAnzCards = 0;
-            foreach (HSCard hs in allcards)
+            var allcards = TritonHs.GetAllCards();
+            this.enemyAnzCards = 0;
+            foreach (var hs in allcards)
             {
-                if (hs.GetTag(GAME_TAG.ZONE) == 3 && hs.ControllerId != ownPlayerController &&
-                    hs.GetTag(GAME_TAG.ZONE_POSITION) >= 1) enemyAnzCards++;
+                if (hs.GetTag(GAME_TAG.ZONE) == 3 && hs.ControllerId != this.ownPlayerController &&
+                    hs.GetTag(GAME_TAG.ZONE_POSITION) >= 1)
+                {
+                    this.enemyAnzCards++;
+                }
             }
         }
 
         private void getDecks()
         {
-            Dictionary<string, int> tmpDeck = new Dictionary<string, int>(startDeck);
-            List<GraveYardItem> graveYard = new List<GraveYardItem>();
-            Dictionary<SimCard, int> og = new Dictionary<SimCard, int>();
-            Dictionary<SimCard, int> eg = new Dictionary<SimCard, int>();
-            int owncontroler = TritonHs.OurHero.GetTag(GAME_TAG.CONTROLLER);
-            int enemycontroler = TritonHs.EnemyHero.GetTag(GAME_TAG.CONTROLLER);
-            turnDeck.Clear();
-            noDuplicates = false;
+            var tmpDeck = new Dictionary<string, int>(this.startDeck);
+            var graveYard = new List<GraveYardItem>();
+            var og = new Dictionary<SimCard, int>();
+            var eg = new Dictionary<SimCard, int>();
+            var owncontroler = TritonHs.OurHero.GetTag(GAME_TAG.CONTROLLER);
+            var enemycontroler = TritonHs.EnemyHero.GetTag(GAME_TAG.CONTROLLER);
+            this.turnDeck.Clear();
+            this.noDuplicates = false;
 
-            List<HSCard> allcards = TritonHs.GetAllCards();
+            var allcards = TritonHs.GetAllCards();
 
-            int allcardscount = allcards.Count;
-            for (int i = 0; i < allcardscount; i++)
+            var allcardscount = allcards.Count;
+            for (var i = 0; i < allcardscount; i++)
             {
-                HSCard entity = allcards[i];
-                if (entity.Id == null || entity.Id == "") continue;
+                var entity = allcards[i];
+                if (entity.Id == null || entity.Id == "")
+                {
+                    continue;
+                }
 
-                if ((entity.Id) == CardIds.NonCollectible.Druid.JungleGiants_BarnabusTheStomperToken) ownMinionsCost0 = true;
+                if ((entity.Id) == CardIds.NonCollectible.Druid.JungleGiants_BarnabusTheStomperToken)
+                {
+                    this.ownMinionsCost0 = true;
+                }
 
                 if (entity.GetZone() == Triton.Game.Mapping.TAG_ZONE.GRAVEYARD)
                 {
                     SimCard cide = (entity.Id);
-                    GraveYardItem gyi = new GraveYardItem(cide, entity.EntityId, entity.GetTag(GAME_TAG.CONTROLLER) == owncontroler);
+                    var gyi = new GraveYardItem(cide, entity.EntityId, entity.GetTag(GAME_TAG.CONTROLLER) == owncontroler);
                     graveYard.Add(gyi);
 
                     if (entity.GetTag(GAME_TAG.CONTROLLER) == owncontroler)
                     {
-                        if (og.ContainsKey(cide)) og[cide]++;
-                        else og.Add(cide, 1);
+                        if (og.ContainsKey(cide))
+                        {
+                            og[cide]++;
+                        }
+                        else
+                        {
+                            og.Add(cide, 1);
+                        }
                     }
                     else if (entity.GetTag(GAME_TAG.CONTROLLER) == enemycontroler)
                     {
-                        if (eg.ContainsKey(cide)) eg[cide]++;
-                        else eg.Add(cide, 1);
+                        if (eg.ContainsKey(cide))
+                        {
+                            eg[cide]++;
+                        }
+                        else
+                        {
+                            eg.Add(cide, 1);
+                        }
                     }
-                    if (cide == CardIds.NonCollectible.Rogue.TheCavernsBelow_CrystalCoreTokenUNGORO) ownCrystalCore = 5;
+                    if (cide == CardIds.NonCollectible.Rogue.TheCavernsBelow_CrystalCoreTokenUNGORO)
+                    {
+                        this.ownCrystalCore = 5;
+                    }
                 }
 
-                string entityId = entity.Id;
-                Triton.Game.Mapping.TAG_ZONE entZone =  entity.GetZone();
+                var entityId = entity.Id;
+                var entZone = entity.GetZone();
                 if (i < 30)
                 {
                     if (entityId != "")
                     {
-                        if (entZone == Triton.Game.Mapping.TAG_ZONE.DECK) continue;
-                        if (tmpDeck.ContainsKey(entityId)) tmpDeck[entityId]--;
+                        if (entZone == Triton.Game.Mapping.TAG_ZONE.DECK)
+                        {
+                            continue;
+                        }
+
+                        if (tmpDeck.ContainsKey(entityId))
+                        {
+                            tmpDeck[entityId]--;
+                        }
                     }
                 }
                 else if (i >= 60 && entity.ControllerId == owncontroler)
                 {
-                    if (extraDeck.ContainsKey(i))
+                    if (this.extraDeck.ContainsKey(i))
                     {
-                        if (entityId != "" && entityId != extraDeck[i].id) extraDeck[i].setId(entityId);
-                        if ((entZone == Triton.Game.Mapping.TAG_ZONE.DECK) != extraDeck[i].isindeck) extraDeck[i].setisindeck(entZone == Triton.Game.Mapping.TAG_ZONE.DECK);
+                        if (entityId != "" && entityId != this.extraDeck[i].id)
+                        {
+                            this.extraDeck[i].setId(entityId);
+                        }
+
+                        if ((entZone == Triton.Game.Mapping.TAG_ZONE.DECK) != this.extraDeck[i].isindeck)
+                        {
+                            this.extraDeck[i].setisindeck(entZone == Triton.Game.Mapping.TAG_ZONE.DECK);
+                        }
                     }
                     else if (entZone == Triton.Game.Mapping.TAG_ZONE.DECK)
                     {
-                        extraDeck.Add(i, new extraCard(entityId, true));
+                        this.extraDeck.Add(i, new extraCard(entityId, true));
                     }
                 }
             }
 
-            Action a = Ai.Instance.bestmove;
-            foreach (var c in extraDeck)
+            var a = Ai.Instance.bestmove;
+            foreach (var c in this.extraDeck)
             {
-                if (c.Value.isindeck == false) continue;
+                if (c.Value.isindeck == false)
+                {
+                    continue;
+                }
+
                 SimCard ce;
-                string entityId = c.Value.id;
+                var entityId = c.Value.id;
                 if (entityId == "")
                 {
                     if (a != null)
@@ -948,7 +1076,11 @@ namespace HREngine.Bots
                                 {
                                     case CardIds.Collectible.Priest.Entomb: goto case CardIds.Collectible.Rogue.GangUp;
                                     case CardIds.Collectible.Rogue.GangUp:
-                                        if (a.target != null) entityId = a.target.handcard.card.CardId;
+                                        if (a.target != null)
+                                        {
+                                            entityId = a.target.handcard.card.CardId;
+                                        }
+
                                         break;
                                     case CardIds.Collectible.Mage.ForgottenTorch: entityId = "LOE_002t"; break;
                                     case CardIds.Collectible.Neutral.EliseStarseeker: entityId = "LOE_019t"; break;
@@ -963,7 +1095,11 @@ namespace HREngine.Bots
                         var oldCardsOut = Probabilitymaker.Instance.enemyCardsOut;
                         foreach (var tmp in eg)
                         {
-                            if (oldCardsOut.ContainsKey(tmp.Key) && tmp.Value == oldCardsOut[tmp.Key]) continue;
+                            if (oldCardsOut.ContainsKey(tmp.Key) && tmp.Value == oldCardsOut[tmp.Key])
+                            {
+                                continue;
+                            }
+
                             switch (tmp.Key.CardId)
                             {
                                 case CardIds.Collectible.Rogue.BeneathTheGrounds: entityId = "AT_035t"; break;
@@ -971,58 +1107,99 @@ namespace HREngine.Bots
                                 case CardIds.Collectible.Priest.ExcavatedEvil: entityId = "LOE_111"; break;
                             }
                         }
-                        if (entityId == "" && lastpf != null)
+                        if (entityId == "" && this.lastpf != null)
                         {
-                            int num = 0;
-                            foreach (Minion m in this.enemyMinions)
+                            var num = 0;
+                            foreach (var m in this.enemyMinions)
                             {
-                                if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num++;
+                                if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut)
+                                {
+                                    num++;
+                                }
                             }
                             if (num > 0)
                             {
-                                foreach (Minion m in lastpf.enemyMinions)
+                                foreach (var m in this.lastpf.enemyMinions)
                                 {
-                                    if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut) num--;
+                                    if (m.handcard.card.CardId == CardIds.Collectible.Warrior.IronJuggernaut)
+                                    {
+                                        num--;
+                                    }
                                 }
                             }
-                            if (num > 0) entityId = "GVG_056t";
+                            if (num > 0)
+                            {
+                                entityId = "GVG_056t";
+                            }
                             else
                             {
                                 num = 0;
-                                foreach (Minion m in lastpf.ownMinions)
+                                foreach (var m in this.lastpf.ownMinions)
                                 {
-                                    if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne) num++;
+                                    if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne)
+                                    {
+                                        num++;
+                                    }
                                 }
                                 if (num > 0)
                                 {
-                                    foreach (Minion m in this.ownMinions)
+                                    foreach (var m in this.ownMinions)
                                     {
-                                        if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne) num--;
+                                        if (m.handcard.card.CardId == CardIds.Collectible.Druid.Malorne)
+                                        {
+                                            num--;
+                                        }
                                     }
                                 }
-                                if (num > 0) entityId = "GVG_035";
+                                if (num > 0)
+                                {
+                                    entityId = "GVG_035";
+                                }
                             }
                         }
                     }
-                    if (entityId == "") entityId = "aiextra1";
+                    if (entityId == "")
+                    {
+                        entityId = "aiextra1";
+                    }
                 }
                 c.Value.setId(entityId);
                 ce = (entityId);
-                if (turnDeck.ContainsKey(ce)) turnDeck[ce]++;
-                else turnDeck.Add(ce, 1);
+                if (this.turnDeck.ContainsKey(ce))
+                {
+                    this.turnDeck[ce]++;
+                }
+                else
+                {
+                    this.turnDeck.Add(ce, 1);
+                }
             }
             foreach (var c in tmpDeck)
             {
-                if (c.Value < 1) continue;
+                if (c.Value < 1)
+                {
+                    continue;
+                }
+
                 SimCard ce = (c.Key);
-                if (ce == SimCard.None) continue;
-                if (turnDeck.ContainsKey(ce)) turnDeck[ce] += c.Value;
-                else turnDeck.Add(ce, c.Value);
+                if (ce == SimCard.None)
+                {
+                    continue;
+                }
+
+                if (this.turnDeck.ContainsKey(ce))
+                {
+                    this.turnDeck[ce] += c.Value;
+                }
+                else
+                {
+                    this.turnDeck.Add(ce, c.Value);
+                }
             }
 
             Probabilitymaker.Instance.setOwnCardsOut(og);
             Probabilitymaker.Instance.setEnemyCardsOut(eg);
-            bool isTurnStart = false;
+            var isTurnStart = false;
             if (Ai.Instance.nextMoveGuess.mana == -100)
             {
                 isTurnStart = true;
@@ -1030,27 +1207,39 @@ namespace HREngine.Bots
             }
             Probabilitymaker.Instance.setGraveYard(graveYard, isTurnStart);
 
-            if (startDeck.Count == 0) return;
-            noDuplicates = true;
-            foreach (int i in turnDeck.Values)
+            if (this.startDeck.Count == 0)
+            {
+                return;
+            }
+
+            this.noDuplicates = true;
+            foreach (var i in this.turnDeck.Values)
             {
                 if (i > 1)
                 {
-                    noDuplicates = false;
+                    this.noDuplicates = false;
                     break;
                 }
             }
-		}
+        }
 
         private void updateBehaveString(Behavior botbase)
         {
             this.botbehave = botbase.BehaviorName();
             this.botbehave += $" {Ai.Instance.maxwide}";
             this.botbehave += $" face {ComboBreaker.Instance.attackFaceHP}";
-            if (Settings.Instance.berserkIfCanFinishNextTour > 0) this.botbehave +=
+            if (Settings.Instance.berserkIfCanFinishNextTour > 0)
+            {
+                this.botbehave +=
                 $" berserk:{Settings.Instance.berserkIfCanFinishNextTour}";
-            if (Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp > 0) this.botbehave +=
+            }
+
+            if (Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp > 0)
+            {
+                this.botbehave +=
                 $" womob:{Settings.Instance.weaponOnlyAttackMobsUntilEnfacehp}";
+            }
+
             if (Settings.Instance.secondTurnAmount > 0)
             {
                 if (Ai.Instance.nextMoveGuess.mana == -100)
@@ -1092,7 +1281,10 @@ namespace HREngine.Bots
             this.botbehave += $" iC {Settings.Instance.ImprovedCalculations}";
 
             this.botbehave += $" aA {Settings.Instance.adjustActions}";
-            if (Settings.Instance.concedeMode != 0) this.botbehave += $" cede:{Settings.Instance.concedeMode}";
+            if (Settings.Instance.concedeMode != 0)
+            {
+                this.botbehave += $" cede:{Settings.Instance.concedeMode}";
+            }
         }
 
         public void updateCThunInfo(int OgOwnCThunAngrBonus, int OgOwnCThunHpBonus, int OgOwnCThunTaunt)
@@ -1105,8 +1297,8 @@ namespace HREngine.Bots
 
         public void updateCThunInfobyCThun()
         {
-            bool found = false;
-            foreach (Handcard hc in this.handCards)
+            var found = false;
+            foreach (var hc in this.handCards)
             {
                 if (hc.card.CardId == CardIds.Collectible.Neutral.Cthun)
                 {
@@ -1119,13 +1311,25 @@ namespace HREngine.Bots
 
             if (!found)
             {
-                foreach (Minion m in this.ownMinions)
+                foreach (var m in this.ownMinions)
                 {
                     if (m.name == CardIds.Collectible.Neutral.Cthun)
                     {
-                        if (this.anzOgOwnCThunAngrBonus < m.Angr - 6) this.anzOgOwnCThunAngrBonus = m.Angr - 6;
-                        if (this.anzOgOwnCThunHpBonus < m.Hp - 6) this.anzOgOwnCThunHpBonus = m.Angr - 6;
-                        if (m.taunt && this.anzOgOwnCThunTaunt < 1) this.anzOgOwnCThunTaunt++;
+                        if (this.anzOgOwnCThunAngrBonus < m.Angr - 6)
+                        {
+                            this.anzOgOwnCThunAngrBonus = m.Angr - 6;
+                        }
+
+                        if (this.anzOgOwnCThunHpBonus < m.Hp - 6)
+                        {
+                            this.anzOgOwnCThunHpBonus = m.Angr - 6;
+                        }
+
+                        if (m.taunt && this.anzOgOwnCThunTaunt < 1)
+                        {
+                            this.anzOgOwnCThunTaunt++;
+                        }
+
                         found = true;
                         break;
                     }
@@ -1136,11 +1340,14 @@ namespace HREngine.Bots
         public static int getLastAffected(int entityid)
         {
 
-            List<HSCard> allEntitys = TritonHs.GetAllCards();
+            var allEntitys = TritonHs.GetAllCards();
 
-            foreach (HSCard ent in allEntitys)
+            foreach (var ent in allEntitys)
             {
-                if (ent.GetTag(GAME_TAG.LAST_AFFECTED_BY) == entityid) return ent.GetTag(GAME_TAG.ENTITY_ID);
+                if (ent.GetTag(GAME_TAG.LAST_AFFECTED_BY) == entityid)
+                {
+                    return ent.GetTag(GAME_TAG.ENTITY_ID);
+                }
             }
 
             return 0;
@@ -1149,11 +1356,14 @@ namespace HREngine.Bots
         public static int getCardTarget(int entityid)
         {
 
-            List<HSCard> allEntitys = TritonHs.GetAllCards();
+            var allEntitys = TritonHs.GetAllCards();
 
-            foreach (HSCard ent in allEntitys)
+            foreach (var ent in allEntitys)
             {
-                if (ent.GetTag(GAME_TAG.ENTITY_ID) == entityid) return ent.GetTag(GAME_TAG.CARD_TARGET);
+                if (ent.GetTag(GAME_TAG.ENTITY_ID) == entityid)
+                {
+                    return ent.GetTag(GAME_TAG.CARD_TARGET);
+                }
             }
 
             return 0;
@@ -1164,8 +1374,8 @@ namespace HREngine.Bots
         {
 
 
-            string dtimes = DateTime.Now.ToString("HH:mm:ss:ffff");
-            string enemysecretIds = "";
+            var dtimes = DateTime.Now.ToString("HH:mm:ss:ffff");
+            var enemysecretIds = "";
             enemysecretIds = Probabilitymaker.Instance.getEnemySecretData();
             Helpfunctions.Instance.logg("#######################################################################");
             Helpfunctions.Instance.logg("#######################################################################");

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,12 +25,12 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_323w : SimTemplate //* Blood Fury
-	{
+    {
         SimCard weapon = CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
-	}
+    }
 }

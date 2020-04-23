@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_009 : SimTemplate //* Rhonin
-	{
-		//Deathrattle: Add 3 copies of Arcane Missiles to your hand.
+    class Sim_AT_009 : SimTemplate //* Rhonin
+    {
+        //Deathrattle: Add 3 copies of Arcane Missiles to your hand.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
@@ -36,5 +33,5 @@ namespace HREngine.Bots
             p.drawACard(CardIds.Collectible.Mage.ArcaneMissiles, m.own, true);
             p.drawACard(CardIds.Collectible.Mage.ArcaneMissiles, m.own, true);
         }
-	}
+    }
 }

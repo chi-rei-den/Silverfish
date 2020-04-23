@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -38,12 +35,26 @@ namespace HREngine.Bots
             {
                 if (p.enemySecretList.Count >= 1)
                 {
-                    if (p.enemyHeroStartClass == CardClass.HUNTER) p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.ExplosiveTrap);
-                    if (p.enemyHeroStartClass == CardClass.MAGE) p.ownSecretsIDList.Add(CardIds.Collectible.Mage.Vaporize);
-                    if (p.enemyHeroStartClass == CardClass.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
+                    if (p.enemyHeroStartClass == CardClass.HUNTER)
+                    {
+                        p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.ExplosiveTrap);
+                    }
 
-                    if (p.enemyHeroStartClass != CardClass.HUNTER && p.enemyHeroStartClass != CardClass.MAGE && p.enemyHeroStartClass != CardClass.PALADIN) p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
-                    
+                    if (p.enemyHeroStartClass == CardClass.MAGE)
+                    {
+                        p.ownSecretsIDList.Add(CardIds.Collectible.Mage.Vaporize);
+                    }
+
+                    if (p.enemyHeroStartClass == CardClass.PALADIN)
+                    {
+                        p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
+                    }
+
+                    if (p.enemyHeroStartClass != CardClass.HUNTER && p.enemyHeroStartClass != CardClass.MAGE && p.enemyHeroStartClass != CardClass.PALADIN)
+                    {
+                        p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
+                    }
+
                     p.enemySecretList.RemoveAt(0);
                 }
             }
@@ -52,7 +63,7 @@ namespace HREngine.Bots
                 if (p.ownSecretsIDList.Count >= 1)
                 {
                     p.ownSecretsIDList.RemoveAt(0);
-                    SecretItem s = new SecretItem();
+                    var s = new SecretItem();
                     s.canBe_avenge = false;
                     s.canBe_sacredtrial = false;
                     s.canBe_counterspell = false;
@@ -76,14 +87,11 @@ namespace HREngine.Bots
                     s.canBe_vaporize = false;
 
                     s.entityId = 1050;
-                    s.canBe_explosive=true;
+                    s.canBe_explosive = true;
 
                     p.enemySecretList.Add(s);
                 }
             }
         }
-
-
     }
-
 }

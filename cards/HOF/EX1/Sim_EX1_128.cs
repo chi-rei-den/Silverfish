@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_128 : SimTemplate //conceal
-	{
-
+    class Sim_EX1_128 : SimTemplate //conceal
+    {
 //    verleiht euren dienern bis zu eurem nächsten zug verstohlenheit/.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
                     if (!m.stealth)
                     {
@@ -45,7 +42,7 @@ namespace HREngine.Bots
             }
             else
             {
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
                     if (!m.stealth)
                     {
@@ -54,8 +51,6 @@ namespace HREngine.Bots
                     }
                 }
             }
-		}
-
-	}
-
+        }
+    }
 }

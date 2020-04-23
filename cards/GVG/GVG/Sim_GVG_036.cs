@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -36,22 +33,22 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
+            var temp = m.own ? p.ownMinions : p.enemyMinions;
             if (temp.Count >= 1)
             {
-                int sum = 1000;
+                var sum = 1000;
                 Minion t = null;
 
-                foreach (Minion mnn in temp)
+                foreach (var mnn in temp)
                 {
                     if (mnn.handcard.card.Race == Race.MECHANICAL)
                     {
-                        int s = mnn.maxHp + mnn.Angr;
+                        var s = mnn.maxHp + mnn.Angr;
                         if (s < sum)
                         {
                             t = mnn;

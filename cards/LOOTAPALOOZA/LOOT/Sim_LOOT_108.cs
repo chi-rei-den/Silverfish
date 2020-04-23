@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,12 +28,11 @@ namespace HREngine.Bots
     {
         //At the end of your turn, draw 3 cards.
         //在你的回合结束时，抽三张牌。
-    SimCard weapon = CardIds.Collectible.Mage.Aluneth;
- 
-    public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-    {
-        p.equipWeapon(weapon, ownplay);
-    }
+        SimCard weapon = CardIds.Collectible.Mage.Aluneth;
 
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.equipWeapon(this.weapon, ownplay);
+        }
     }
 }

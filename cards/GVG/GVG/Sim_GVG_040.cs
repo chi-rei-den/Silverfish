@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,17 +29,24 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (own.own) p.ueberladung++;
+            if (own.own)
+            {
+                p.ueberladung++;
+            }
         }
-		
+
         public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {
-            int diedMinions = (m.own) ? p.tempTrigger.ownMurlocDied : p.tempTrigger.enemyMurlocDied;
-            if (diedMinions == 0) return;
-            int residual = (p.pID == m.pID) ? diedMinions - m.extraParam2 : diedMinions;
+            var diedMinions = m.own ? p.tempTrigger.ownMurlocDied : p.tempTrigger.enemyMurlocDied;
+            if (diedMinions == 0)
+            {
+                return;
+            }
+
+            var residual = p.pID == m.pID ? diedMinions - m.extraParam2 : diedMinions;
             m.pID = p.pID;
             m.extraParam2 = diedMinions;
-            for (int i = 0; i < residual; i++)
+            for (var i = 0; i < residual; i++)
             {
                 p.drawACard(SimCard.None, m.own);
             }

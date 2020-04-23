@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,19 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_414 : SimTemplate //grommashhellscream
-	{
-
+    class Sim_EX1_414 : SimTemplate //grommashhellscream
+    {
 //    ansturm/, wutanfall:/ +6 angriff
         public override void onEnrageStart(Playfield p, Minion m)
         {
-            m.Angr+=6;
+            m.Angr += 6;
         }
 
         public override void onEnrageStop(Playfield p, Minion m)
         {
-            m.Angr-=6;
+            m.Angr -= 6;
         }
-
-	}
+    }
 }

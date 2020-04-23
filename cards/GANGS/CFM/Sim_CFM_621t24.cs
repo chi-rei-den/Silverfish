@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t24 : SimTemplate //* Goldthorn
-	{
-		// Give your minions +4 Health.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+    class Sim_CFM_621t24 : SimTemplate //* Goldthorn
+    {
+        // Give your minions +4 Health.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			p.allMinionOfASideGetBuffed(ownplay, 0, 4);
-		}
-	}
+            p.allMinionOfASideGetBuffed(ownplay, 0, 4);
+        }
+    }
 }

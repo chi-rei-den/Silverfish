@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_912",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_912 : SimTemplate //* 生力军 Brood
-	{
-		//Fill the tavern with new minions.
-		//用新的随从占满全场。
-
-
-	}
+    class Sim_DALA_912 : SimTemplate //* 生力军 Brood
+    {
+        //Fill the tavern with new minions.
+        //用新的随从占满全场。
+    }
 }

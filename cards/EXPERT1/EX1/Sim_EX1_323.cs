@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,8 +24,8 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_323 : SimTemplate //* Lord Jaraxxus
-	{
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+    {
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             p.equipWeapon(CardIds.NonCollectible.Warlock.LordJaraxxus_BloodFury, own.own);
             p.setNewHeroPower(CardIds.NonCollectible.Warlock.Inferno, own.own); // INFERNO!
@@ -44,6 +40,6 @@ namespace HREngine.Bots
                 p.enemyHero.Hp = own.Hp;
                 p.enemyHero.maxHp = own.maxHp;
             }
-		}
-	}
+        }
+    }
 }

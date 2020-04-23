@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,23 +24,23 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_019 : SimTemplate //* Grim Patron
-	{
-		// Whenever this minion survives damage, summon another Grim Patron.
+    class Sim_BRM_019 : SimTemplate //* Grim Patron
+    {
+        // Whenever this minion survives damage, summon another Grim Patron.
 
-		SimCard kid = CardIds.Collectible.Neutral.GrimPatron;//Grim Patron
+        SimCard kid = CardIds.Collectible.Neutral.GrimPatron; //Grim Patron
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {
             if (m.anzGotDmg > 0 && m.Hp > 0)
             {
-                int tmp = m.anzGotDmg;
+                var tmp = m.anzGotDmg;
                 m.anzGotDmg = 0;
-                for (int i = 0; i < tmp; i++)
+                for (var i = 0; i < tmp; i++)
                 {
-                    p.callKid(kid, m.zonepos, m.own);
+                    p.callKid(this.kid, m.zonepos, m.own);
                 }
             }
         }
-	}
+    }
 }

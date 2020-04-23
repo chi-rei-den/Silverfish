@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_023 : SimTemplate //Goblin Auto-Barber
     {
-
         //    Battlecry: Give your weapon +1 Attack.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
@@ -39,7 +36,6 @@ namespace HREngine.Bots
                     p.ownWeapon.Angr += 1;
                     p.minionGetBuffed(p.ownHero, 1, 0);
                 }
-                
             }
             else
             {
@@ -48,11 +44,7 @@ namespace HREngine.Bots
                     p.enemyWeapon.Angr += 1;
                     p.minionGetBuffed(p.enemyHero, 1, 0);
                 }
-                
             }
         }
-
-
     }
-
 }

@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_305 : SimTemplate //* Smuggler's Run
-	{
-		// Gige all minions in your hand +1/+1.
+    class Sim_CFM_305 : SimTemplate //* Smuggler's Run
+    {
+        // Gige all minions in your hand +1/+1.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (ownplay)
             {
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION)
                     {
@@ -45,5 +42,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

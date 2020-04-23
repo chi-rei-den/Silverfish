@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Jaraxxus_BoomHero : SimTemplate
-	{
-	}
+    class Sim_TB_Jaraxxus_BoomHero : SimTemplate
+    {
+    }
 }

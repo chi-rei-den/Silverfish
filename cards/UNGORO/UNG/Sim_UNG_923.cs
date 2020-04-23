@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,12 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_923 : SimTemplate //* Iron Hide
-	{
-		//Gain 5 Armor.
+    class Sim_UNG_923 : SimTemplate //* Iron Hide
+    {
+        //Gain 5 Armor.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.minionGetArmor(p.ownHero, 5);
@@ -39,7 +37,6 @@ namespace HREngine.Bots
             {
                 p.minionGetArmor(p.enemyHero, 5);
             }
-		}
-
-	}
+        }
+    }
 }

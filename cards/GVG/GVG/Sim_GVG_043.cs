@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,15 +26,19 @@ namespace HREngine.Bots
 {
     class Sim_GVG_043 : SimTemplate //Glaivezooka
     {
-
         //   Battlecry: Give a random friendly minion +1 Attack.
 
         SimCard w = CardIds.Collectible.Hunter.Glaivezooka;
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(w, ownplay);
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            if (temp.Count <= 0) return;
+            p.equipWeapon(this.w, ownplay);
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            if (temp.Count <= 0)
+            {
+                return;
+            }
+
             // Drew: Null check for searchRandomMinion.
             var found = p.searchRandomMinion(temp, SearchMode.LowAttack);
             if (found != null)
@@ -46,5 +47,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

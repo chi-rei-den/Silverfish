@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_PART_007 : SimTemplate //Whirling Blades
     {
-
         //Give a minion +1 Attack.   
 
 
@@ -35,8 +32,5 @@ namespace HREngine.Bots
         {
             p.minionGetBuffed(target, 1, 0);
         }
-
-
     }
-
 }

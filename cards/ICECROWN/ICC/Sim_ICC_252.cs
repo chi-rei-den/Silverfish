@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_252: SimTemplate //* Coldwraith
+    class Sim_ICC_252 : SimTemplate //* Coldwraith
     {
         // Battlecry: If an enemy is Frozen, draw a card.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            bool frozen = false;
-            if (m.own ? p.enemyHero.frozen : p.ownHero.frozen) frozen = true;
+            var frozen = false;
+            if (m.own ? p.enemyHero.frozen : p.ownHero.frozen)
+            {
+                frozen = true;
+            }
 
             if (!frozen)
             {
-                List<Minion> temp = (m.own) ? p.enemyMinions : p.ownMinions;
-                foreach (Minion mnn in temp)
+                var temp = m.own ? p.enemyMinions : p.ownMinions;
+                foreach (var mnn in temp)
                 {
                     if (mnn.frozen)
                     {
@@ -48,7 +48,10 @@ namespace HREngine.Bots
                 }
             }
 
-            if (frozen) p.drawACard(SimCard.None, m.own);
+            if (frozen)
+            {
+                p.drawACard(SimCard.None, m.own);
+            }
         }
     }
 }

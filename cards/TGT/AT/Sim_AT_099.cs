@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_099 : SimTemplate //* Kodorider
-	{
-		//Inspire: Summon a 3/5 War Kodo.
+    class Sim_AT_099 : SimTemplate //* Kodorider
+    {
+        //Inspire: Summon a 3/5 War Kodo.
 
         SimCard kid = CardIds.NonCollectible.Neutral.Kodorider_WarKodoToken; //War Kodo
-		
-		public override void onInspire(Playfield p, Minion m, bool own)
+
+        public override void onInspire(Playfield p, Minion m, bool own)
         {
-            if (m.own == own) p.callKid(kid, m.zonepos, own);
+            if (m.own == own)
+            {
+                p.callKid(this.kid, m.zonepos, own);
+            }
         }
-	}
+    }
 }

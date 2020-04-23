@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -30,16 +27,23 @@ namespace HREngine.Bots
     {
         //Battlecry: Deal 2 damage to all non-Murloc minions.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            foreach (Minion m in p.ownMinions)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            foreach (var m in p.ownMinions)
             {
-                if (m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if (m.handcard.card.Race != Race.MURLOC)
+                {
+                    p.minionGetDamageOrHeal(m, 2);
+                }
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
-                if (m.handcard.card.Race != Race.MURLOC) p.minionGetDamageOrHeal(m, 2);
+                if (m.handcard.card.Race != Race.MURLOC)
+                {
+                    p.minionGetDamageOrHeal(m, 2);
+                }
             }
-		}
-	}
+        }
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_012 : SimTemplate //* Sludge Belcher
-	{
-		//Taunt. Deathrattle: Summon a 1/2 Slime with Taunt.
-		
+    class Sim_FP1_012 : SimTemplate //* Sludge Belcher
+    {
+        //Taunt. Deathrattle: Summon a 1/2 Slime with Taunt.
+
         SimCard c = CardIds.NonCollectible.Neutral.SludgeBelcher_PutridSlimeToken;
-		
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(c, m.zonepos - 1, m.own);
+            p.callKid(this.c, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,17 +23,27 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_245: SimTemplate //* Blackguard
+    class Sim_ICC_245 : SimTemplate //* Blackguard
     {
         // Whenever your hero is healed, deal that much damage to a random enemy minion.
 
         public override void onACharGotHealed(Playfield p, Minion triggerEffectMinion, int charsGotHealed)
         {
-            int dmg = charsGotHealed;
+            var dmg = charsGotHealed;
             Minion target = null;
-            if (triggerEffectMinion.own) target = p.getEnemyCharTargetForRandomSingleDamage(dmg, true);
-            else target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-            if (target != null) p.minionGetDamageOrHeal(target, dmg);
+            if (triggerEffectMinion.own)
+            {
+                target = p.getEnemyCharTargetForRandomSingleDamage(dmg, true);
+            }
+            else
+            {
+                target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
+            }
+
+            if (target != null)
+            {
+                p.minionGetDamageOrHeal(target, dmg);
+            }
         }
-	}
+    }
 }

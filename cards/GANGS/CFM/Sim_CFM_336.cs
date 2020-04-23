@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_336 : SimTemplate //* Shaky Zipgunner
-	{
-		// Deathrattle: Give a random minion in your hand +2/+2.
+    class Sim_CFM_336 : SimTemplate //* Shaky Zipgunner
+    {
+        // Deathrattle: Give a random minion in your hand +2/+2.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (m.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost);
                 if (hc != null)
                 {
                     hc.addattack += 2;
@@ -44,5 +40,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

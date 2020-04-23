@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_035 : SimTemplate //* Curious Glimmerroot
-	{
-		//Battlecry: Look at 3 cards. Guess which one started in your opponent's deck to get a copy of it.
+    class Sim_UNG_035 : SimTemplate //* Curious Glimmerroot
+    {
+        //Battlecry: Look at 3 cards. Guess which one started in your opponent's deck to get a copy of it.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, own.own, true);
-		}
-	}
+        }
+    }
 }

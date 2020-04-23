@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_853: SimTemplate //* Prince Valanar
+    class Sim_ICC_853 : SimTemplate //* Prince Valanar
     {
         // Battlecry: If your deck has no 4-Cost cards, gain Lifesteal and Taunt.
 

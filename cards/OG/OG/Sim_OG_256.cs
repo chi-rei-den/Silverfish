@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_256 : SimTemplate //* Spawn of N'Zoth
-	{
-		//Deathive your minions +1/+1.
-		
-		public override void onDeathrattle(Playfield p, Minion m)
+    class Sim_OG_256 : SimTemplate //* Spawn of N'Zoth
+    {
+        //Deathive your minions +1/+1.
+
+        public override void onDeathrattle(Playfield p, Minion m)
         {
-            List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion mn in temp)
+            var temp = m.own ? p.ownMinions : p.enemyMinions;
+            foreach (var mn in temp)
             {
-				p.minionGetBuffed(mn, 1, 1);
+                p.minionGetBuffed(mn, 1, 1);
             }
         }
     }

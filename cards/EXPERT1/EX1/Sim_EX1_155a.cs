@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_155a : SimTemplate //markofnature
-	{
-
+    class Sim_EX1_155a : SimTemplate //markofnature
+    {
 //    +4 angriff.
 
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        {
             p.minionGetBuffed(target, 4, 0);
-		}
-
-	}
+        }
+    }
 }

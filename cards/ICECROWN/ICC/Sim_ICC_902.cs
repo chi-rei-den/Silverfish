@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_902: SimTemplate //* Mindbreaker
+    class Sim_ICC_902 : SimTemplate //* Mindbreaker
     {
         // Hero Powers are disabled.
 
@@ -40,18 +37,26 @@ namespace HREngine.Bots
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
-            bool another = false;
-            foreach (Minion m in p.ownMinions)
+            var another = false;
+            foreach (var m in p.ownMinions)
             {
-                if (m.name == CardIds.Collectible.Neutral.Mindbreaker && own.entitiyID != m.entitiyID) another = true;
-            }
-            if (!another)
-            {
-                foreach (Minion m in p.enemyMinions)
+                if (m.name == CardIds.Collectible.Neutral.Mindbreaker && own.entitiyID != m.entitiyID)
                 {
-                    if (m.name == CardIds.Collectible.Neutral.Mindbreaker && own.entitiyID != m.entitiyID) another = true;
+                    another = true;
                 }
             }
+
+            if (!another)
+            {
+                foreach (var m in p.enemyMinions)
+                {
+                    if (m.name == CardIds.Collectible.Neutral.Mindbreaker && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
+                }
+            }
+
             if (!another)
             {
                 p.ownHeroAblility.manacost = 2;

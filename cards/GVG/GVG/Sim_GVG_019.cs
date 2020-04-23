@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_019 : SimTemplate //Demonheart
     {
-
         //    Deal $5 damage to a minion.  If it's a friendly Demon, give it +5/+5 instead.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
@@ -40,12 +36,10 @@ namespace HREngine.Bots
             }
             else
             {
-                int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+                var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
 
                 p.minionGetDamageOrHeal(target, dmg);
             }
         }
-
     }
-
 }

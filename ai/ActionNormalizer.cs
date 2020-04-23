@@ -1,7 +1,7 @@
-using HearthDb;
-using HearthDb.Enums;
 using System.Collections.Generic;
 using System.Linq;
+using HearthDb;
+using HearthDb.Enums;
 
 namespace HREngine.Bots
 {
@@ -26,34 +26,60 @@ namespace HREngine.Bots
 
         public void adjustActions(Playfield p, bool isLethalCheck)
         {
-            if (p.enemySecretCount > 0) return;
-            if (p.playactions.Count < 2) return;
+            if (p.enemySecretCount > 0)
+            {
+                return;
+            }
 
-            List<Action> reorderedActions = new List<Action>();
-            Dictionary<int, Dictionary<int, int>> rndActIdsDmg = new Dictionary<int, Dictionary<int, int>>();
-            Playfield tmpPlOld = new Playfield();
+            if (p.playactions.Count < 2)
+            {
+                return;
+            }
+
+            var reorderedActions = new List<Action>();
+            var rndActIdsDmg = new Dictionary<int, Dictionary<int, int>>();
+            var tmpPlOld = new Playfield();
 
             if (isLethalCheck)
             {
-                if (Ai.Instance.botBase.getPlayfieldValue(p) < 10000) return;
-                Playfield tmpPf = new Playfield();
-                if (tmpPf.anzEnemyTaunt > 0) return;
+                if (Ai.Instance.botBase.getPlayfieldValue(p) < 10000)
+                {
+                    return;
+                }
 
-                Dictionary<Action, int> actDmgDict = new Dictionary<Action, int>();
+                var tmpPf = new Playfield();
+                if (tmpPf.anzEnemyTaunt > 0)
+                {
+                    return;
+                }
+
+                var actDmgDict = new Dictionary<Action, int>();
                 tmpPf.enemyHero.Hp = 30;
                 try
                 {
-                    int useability = 0;
-                    foreach (Action a in p.playactions)
+                    var useability = 0;
+                    foreach (var a in p.playactions)
                     {
-                        if (a.actionType == actionEnum.useHeroPower) useability = 1;
-                        if (a.actionType == actionEnum.attackWithHero) useability++;
-                        int actDmd = tmpPf.enemyHero.Hp + tmpPf.enemyHero.armor;
+                        if (a.actionType == actionEnum.useHeroPower)
+                        {
+                            useability = 1;
+                        }
+
+                        if (a.actionType == actionEnum.attackWithHero)
+                        {
+                            useability++;
+                        }
+
+                        var actDmd = tmpPf.enemyHero.Hp + tmpPf.enemyHero.armor;
                         tmpPf.doAction(a);
-                        actDmd -= (tmpPf.enemyHero.Hp + tmpPf.enemyHero.armor);
+                        actDmd -= tmpPf.enemyHero.Hp + tmpPf.enemyHero.armor;
                         actDmgDict.Add(a, actDmd);
                     }
-                    if (useability > 1) return;
+
+                    if (useability > 1)
+                    {
+                        return;
+                    }
                 }
                 catch { return; }
 
@@ -63,9 +89,13 @@ namespace HREngine.Bots
                 }
 
                 tmpPf = new Playfield();
-                foreach (Action a in reorderedActions)
+                foreach (var a in reorderedActions)
                 {
-                    if (!isActionPossible(tmpPf, a)) return;
+                    if (!this.isActionPossible(tmpPf, a))
+                    {
+                        return;
+                    }
+
                     try
                     {
                         tmpPf.doAction(a);
@@ -77,31 +107,41 @@ namespace HREngine.Bots
                     }
                 }
 
-                if (Ai.Instance.botBase.getPlayfieldValue(tmpPf) < 10000) return;
+                if (Ai.Instance.botBase.getPlayfieldValue(tmpPf) < 10000)
+                {
+                    return;
+                }
             }
             else
             {
-                bool damageRandom = false;
-                bool rndBeforeDamageAll = false;
+                var damageRandom = false;
+                var rndBeforeDamageAll = false;
                 Action aa;
-                for (int i = 0; i < p.playactions.Count; i++)
+                for (var i = 0; i < p.playactions.Count; i++)
                 {
                     aa = p.playactions[i];
                     switch (aa.actionType)
                     {
                         case actionEnum.playcard:
-                            if (damageRandom && penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card)) rndBeforeDamageAll = true;
-                            else if (penman.DamageRandomDatabase.ContainsKey(aa.card.card)) damageRandom = true;
+                            if (damageRandom && this.penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card))
+                            {
+                                rndBeforeDamageAll = true;
+                            }
+                            else if (this.penman.DamageRandomDatabase.ContainsKey(aa.card.card))
+                            {
+                                damageRandom = true;
+                            }
+
                             break;
                     }
                 }
 
-                int aoeEnNum = 0;
-                int outOfPlace = 0;
-                bool totemiccall = false;
-                List<Action> rndAct = new List<Action>();
-                List<Action> rndActTmp = new List<Action>();
-                for (int i = 0; i < p.playactions.Count; i++)
+                var aoeEnNum = 0;
+                var outOfPlace = 0;
+                var totemiccall = false;
+                var rndAct = new List<Action>();
+                var rndActTmp = new List<Action>();
+                for (var i = 0; i < p.playactions.Count; i++)
                 {
                     damageRandom = false;
                     aa = p.playactions[i];
@@ -109,122 +149,193 @@ namespace HREngine.Bots
                     switch (aa.actionType)
                     {
                         case actionEnum.useHeroPower:
-                            if (aa.card.card == CardIds.NonCollectible.Shaman.TotemicCall) totemiccall = true;
+                            if (aa.card.card == CardIds.NonCollectible.Shaman.TotemicCall)
+                            {
+                                totemiccall = true;
+                            }
+
                             break;
                         case actionEnum.playcard:
-                            if (penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card))
+                            if (this.penman.DamageAllEnemysDatabase.ContainsKey(aa.card.card))
                             {
                                 if (i != aoeEnNum)
                                 {
-                                    if (totemiccall && aa.card.card.Type == CardType.SPELL) return;
+                                    if (totemiccall && aa.card.card.Type == CardType.SPELL)
+                                    {
+                                        return;
+                                    }
+
                                     reorderedActions.RemoveAt(i);
                                     reorderedActions.Insert(aoeEnNum, aa);
                                     outOfPlace++;
                                 }
+
                                 aoeEnNum++;
                             }
-                            else if (rndBeforeDamageAll && aa.card.card.Type == CardType.SPELL && penman.DamageRandomDatabase.ContainsKey(aa.card.card))
+                            else if (rndBeforeDamageAll && aa.card.card.Type == CardType.SPELL && this.penman.DamageRandomDatabase.ContainsKey(aa.card.card))
                             {
                                 damageRandom = true;
-                                Playfield tmp = new Playfield(tmpPlOld);
+                                var tmp = new Playfield(tmpPlOld);
                                 tmpPlOld.doAction(aa);
 
-                                Dictionary<int, int> actIdDmg = new Dictionary<int, int>();
-                                if (tmp.enemyHero.Hp != tmpPlOld.enemyHero.Hp) actIdDmg.Add(tmpPlOld.enemyHero.entitiyID, tmp.enemyHero.Hp - tmpPlOld.enemyHero.Hp);
-                                if (tmp.ownHero.Hp != tmpPlOld.ownHero.Hp) actIdDmg.Add(tmpPlOld.ownHero.entitiyID, tmp.ownHero.Hp - tmpPlOld.ownHero.Hp);
-                                bool found = false;
-                                foreach (Minion m in tmp.enemyMinions)
+                                var actIdDmg = new Dictionary<int, int>();
+                                if (tmp.enemyHero.Hp != tmpPlOld.enemyHero.Hp)
+                                {
+                                    actIdDmg.Add(tmpPlOld.enemyHero.entitiyID, tmp.enemyHero.Hp - tmpPlOld.enemyHero.Hp);
+                                }
+
+                                if (tmp.ownHero.Hp != tmpPlOld.ownHero.Hp)
+                                {
+                                    actIdDmg.Add(tmpPlOld.ownHero.entitiyID, tmp.ownHero.Hp - tmpPlOld.ownHero.Hp);
+                                }
+
+                                var found = false;
+                                foreach (var m in tmp.enemyMinions)
                                 {
                                     found = false;
-                                    foreach (Minion nm in tmpPlOld.enemyMinions)
+                                    foreach (var nm in tmpPlOld.enemyMinions)
                                     {
                                         if (m.entitiyID == nm.entitiyID)
                                         {
                                             found = true;
-                                            if (m.Hp != nm.Hp) actIdDmg.Add(m.entitiyID, m.Hp - nm.Hp);
+                                            if (m.Hp != nm.Hp)
+                                            {
+                                                actIdDmg.Add(m.entitiyID, m.Hp - nm.Hp);
+                                            }
+
                                             break;
                                         }
                                     }
-                                    if (!found) actIdDmg.Add(m.entitiyID, m.Hp);
+
+                                    if (!found)
+                                    {
+                                        actIdDmg.Add(m.entitiyID, m.Hp);
+                                    }
                                 }
-                                foreach (Minion m in tmp.ownMinions)
+
+                                foreach (var m in tmp.ownMinions)
                                 {
                                     found = false;
-                                    foreach (Minion nm in tmpPlOld.ownMinions)
+                                    foreach (var nm in tmpPlOld.ownMinions)
                                     {
                                         if (m.entitiyID == nm.entitiyID)
                                         {
                                             found = true;
-                                            if (m.Hp != nm.Hp) actIdDmg.Add(m.entitiyID, m.Hp - nm.Hp);
+                                            if (m.Hp != nm.Hp)
+                                            {
+                                                actIdDmg.Add(m.entitiyID, m.Hp - nm.Hp);
+                                            }
+
                                             break;
                                         }
                                     }
-                                    if (!found) actIdDmg.Add(m.entitiyID, m.Hp);
+
+                                    if (!found)
+                                    {
+                                        actIdDmg.Add(m.entitiyID, m.Hp);
+                                    }
                                 }
+
                                 rndActIdsDmg.Add(aa.card.entity, actIdDmg);
                             }
+
                             break;
                     }
-                    if (!damageRandom) tmpPlOld.doAction(aa);
+
+                    if (!damageRandom)
+                    {
+                        tmpPlOld.doAction(aa);
+                    }
                 }
 
-                if (outOfPlace == 0) return;
-
-                Playfield tmpPf = new Playfield();
-                foreach (Action a in reorderedActions)
+                if (outOfPlace == 0)
                 {
-                    if (!isActionPossible(tmpPf, a)) return;
+                    return;
+                }
+
+                var tmpPf = new Playfield();
+                foreach (var a in reorderedActions)
+                {
+                    if (!this.isActionPossible(tmpPf, a))
+                    {
+                        return;
+                    }
+
                     try
                     {
-
-                        if (!(a.actionType == actionEnum.playcard && rndActIdsDmg.ContainsKey(a.card.entity))) tmpPf.doAction(a);
+                        if (!(a.actionType == actionEnum.playcard && rndActIdsDmg.ContainsKey(a.card.entity)))
+                        {
+                            tmpPf.doAction(a);
+                        }
                         else
                         {
                             tmpPf.playactions.Add(a);
-                            Dictionary<int, int> actIdDmg = rndActIdsDmg[a.card.entity];
-                            if (actIdDmg.ContainsKey(tmpPf.enemyHero.entitiyID)) tmpPf.minionGetDamageOrHeal(tmpPf.enemyHero, actIdDmg[tmpPf.enemyHero.entitiyID]);
-                            if (actIdDmg.ContainsKey(tmpPf.ownHero.entitiyID)) tmpPf.minionGetDamageOrHeal(tmpPf.ownHero, actIdDmg[tmpPf.ownHero.entitiyID]);
-                            foreach (Minion m in tmpPf.enemyMinions)
+                            var actIdDmg = rndActIdsDmg[a.card.entity];
+                            if (actIdDmg.ContainsKey(tmpPf.enemyHero.entitiyID))
                             {
-                                if (actIdDmg.ContainsKey(m.entitiyID)) tmpPf.minionGetDamageOrHeal(m, actIdDmg[m.entitiyID]);
+                                tmpPf.minionGetDamageOrHeal(tmpPf.enemyHero, actIdDmg[tmpPf.enemyHero.entitiyID]);
                             }
-                            foreach (Minion m in tmpPf.ownMinions)
+
+                            if (actIdDmg.ContainsKey(tmpPf.ownHero.entitiyID))
                             {
-                                if (actIdDmg.ContainsKey(m.entitiyID)) tmpPf.minionGetDamageOrHeal(m, actIdDmg[m.entitiyID]);
+                                tmpPf.minionGetDamageOrHeal(tmpPf.ownHero, actIdDmg[tmpPf.ownHero.entitiyID]);
                             }
+
+                            foreach (var m in tmpPf.enemyMinions)
+                            {
+                                if (actIdDmg.ContainsKey(m.entitiyID))
+                                {
+                                    tmpPf.minionGetDamageOrHeal(m, actIdDmg[m.entitiyID]);
+                                }
+                            }
+
+                            foreach (var m in tmpPf.ownMinions)
+                            {
+                                if (actIdDmg.ContainsKey(m.entitiyID))
+                                {
+                                    tmpPf.minionGetDamageOrHeal(m, actIdDmg[m.entitiyID]);
+                                }
+                            }
+
                             tmpPf.doDmgTriggers();
                         }
                     }
                     catch
                     {
-                        printError(p.playactions, reorderedActions, a);
+                        this.printError(p.playactions, reorderedActions, a);
                         return;
                     }
                 }
 
                 tmpPf.lostDamage = tmpPlOld.lostDamage;
-                float newval = Ai.Instance.botBase.getPlayfieldValue(tmpPf);
-                float oldval = Ai.Instance.botBase.getPlayfieldValue(tmpPlOld);
+                var newval = Ai.Instance.botBase.getPlayfieldValue(tmpPf);
+                var oldval = Ai.Instance.botBase.getPlayfieldValue(tmpPlOld);
 
-                if (oldval > newval) return;
+                if (oldval > newval)
+                {
+                    return;
+                }
             }
-            help.logg("Old order of actions:");
-            foreach (Action a in p.playactions) a.print();
+
+            this.help.logg("Old order of actions:");
+            foreach (var a in p.playactions)
+            {
+                a.print();
+            }
 
             p.playactions.Clear();
             p.playactions.AddRange(reorderedActions);
 
-            help.logg("New order of actions:");
-
+            this.help.logg("New order of actions:");
         }
 
         private bool isActionPossible(Playfield p, Action a)
         {
-            bool actionFound = false;
+            var actionFound = false;
             switch (a.actionType)
             {
                 case actionEnum.playcard:
-                    foreach (Handcard hc in p.owncards)
+                    foreach (var hc in p.owncards)
                     {
                         if (hc.entity == a.card.entity)
                         {
@@ -232,42 +343,71 @@ namespace HREngine.Bots
                             {
                                 if (p.ownMinions.Count > 6)
                                 {
-                                    if (hc.card.Type == CardType.MINION) return false;
+                                    if (hc.card.Type == CardType.MINION)
+                                    {
+                                        return false;
+                                    }
                                 }
+
                                 actionFound = true;
                             }
+
                             break;
                         }
                     }
+
                     break;
                 case actionEnum.attackWithMinion:
-                    foreach (Minion m in p.ownMinions)
+                    foreach (var m in p.ownMinions)
                     {
                         if (m.entitiyID == a.own.entitiyID)
                         {
-                            if (!m.Ready) return false;
+                            if (!m.Ready)
+                            {
+                                return false;
+                            }
+
                             actionFound = true;
                             break;
                         }
                     }
+
                     break;
                 case actionEnum.attackWithHero:
-                    if (p.ownHero.Ready) actionFound = true;
+                    if (p.ownHero.Ready)
+                    {
+                        actionFound = true;
+                    }
+
                     break;
                 case actionEnum.useHeroPower:
-                    if (p.ownAbilityReady && p.mana >= p.ownHeroAblility.card.getManaCost(p, p.ownHeroAblility.manacost)) actionFound = true;
+                    if (p.ownAbilityReady && p.mana >= p.ownHeroAblility.card.getManaCost(p, p.ownHeroAblility.manacost))
+                    {
+                        actionFound = true;
+                    }
+
                     break;
             }
-            if (!actionFound) return false;
+
+            if (!actionFound)
+            {
+                return false;
+            }
 
             if (a.target != null)
             {
                 actionFound = false;
-                if (p.enemyHero.entitiyID == a.target.entitiyID) actionFound = true;
-                else if (p.ownHero.entitiyID == a.target.entitiyID) actionFound = true;
+                if (p.enemyHero.entitiyID == a.target.entitiyID)
+                {
+                    actionFound = true;
+                }
+                else if (p.ownHero.entitiyID == a.target.entitiyID)
+                {
+                    actionFound = true;
+                }
                 else
                 {
-                    foreach (Minion m in p.enemyMinions)
+                    foreach (var m in p.enemyMinions)
                     {
                         if (m.entitiyID == a.target.entitiyID)
                         {
@@ -275,9 +415,10 @@ namespace HREngine.Bots
                             break;
                         }
                     }
+
                     if (!actionFound)
                     {
-                        foreach (Minion m in p.ownMinions)
+                        foreach (var m in p.ownMinions)
                         {
                             if (m.entitiyID == a.target.entitiyID)
                             {
@@ -288,37 +429,49 @@ namespace HREngine.Bots
                     }
                 }
             }
+
             return actionFound;
         }
 
         private void printError(List<Action> mainActList, List<Action> newActList, Action aError)
         {
-            help.ErrorLog("Reordering actions error!");
-            help.logg("Reordering actions error!\r\nError in action:");
+            this.help.ErrorLog("Reordering actions error!");
+            this.help.logg("Reordering actions error!\r\nError in action:");
             aError.print();
-            help.logg("Main order of actions:");
-            foreach (Action a in mainActList) a.print();
-            help.logg("New order of actions:");
-            foreach (Action a in newActList) a.print();
-            return;
+            this.help.logg("Main order of actions:");
+            foreach (var a in mainActList)
+            {
+                a.print();
+            }
+
+            this.help.logg("New order of actions:");
+            foreach (var a in newActList)
+            {
+                a.print();
+            }
         }
 
         public void checkLostActions(Playfield p)
         {
-            Playfield tmpPf = new Playfield();
-            foreach (Action a in p.playactions)
+            var tmpPf = new Playfield();
+            foreach (var a in p.playactions)
             {
-                if (a.target != null && a.own != null) a.own.own = !a.target.own;
+                if (a.target != null && a.own != null)
+                {
+                    a.own.own = !a.target.own;
+                }
+
                 tmpPf.doAction(a);
             }
-            MiniSimulator mainTurnSimulator = new MiniSimulator(6, 3000, 0);
-            mainTurnSimulator.setSecondTurnSimu(settings.simulateEnemysTurn, settings.secondTurnAmount);
-            mainTurnSimulator.setPlayAround(settings.playaround, settings.playaroundprob, settings.playaroundprob2);
+
+            var mainTurnSimulator = new MiniSimulator(6, 3000, 0);
+            mainTurnSimulator.setSecondTurnSimu(this.settings.simulateEnemysTurn, this.settings.secondTurnAmount);
+            mainTurnSimulator.setPlayAround(this.settings.playaround, this.settings.playaroundprob, this.settings.playaroundprob2);
 
             tmpPf.checkLostAct = true;
             tmpPf.isLethalCheck = p.isLethalCheck;
 
-            float bestval = mainTurnSimulator.doallmoves(tmpPf);
+            var bestval = mainTurnSimulator.doallmoves(tmpPf);
             if (bestval > p.value)
             {
                 p.playactions.Clear();
@@ -327,6 +480,4 @@ namespace HREngine.Bots
             }
         }
     }
-
-
 }

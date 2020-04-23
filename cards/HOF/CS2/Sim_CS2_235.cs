@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_235 : SimTemplate //* northshirecleric
-	{
+    class Sim_CS2_235 : SimTemplate //* northshirecleric
+    {
         //Whenever a minion is healed, draw a card.
 
         public override void onAMinionGotHealedTrigger(Playfield p, Minion triggerEffectMinion, int minionsGotHealed)
         {
-            for (int i = 0; i < minionsGotHealed; i++)
+            for (var i = 0; i < minionsGotHealed; i++)
             {
                 p.drawACard(SimCard.None, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

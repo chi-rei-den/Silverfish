@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_025 : SimTemplate //One-eyed Cheat
     {
-
         //    Whenever you summon a Pirate, gain Stealth.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
@@ -39,5 +35,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

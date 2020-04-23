@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_328",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_328 : SimTemplate //* 驱狼呑狮 Pride's Fall
-	{
-		//Start Lethal Puzzle 4-2.
-		//Start Lethal Puzzle 4-2.
-
-
-	}
+    class Sim_BOTA_328 : SimTemplate //* 驱狼呑狮 Pride's Fall
+    {
+        //Start Lethal Puzzle 4-2.
+        //Start Lethal Puzzle 4-2.
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_028: SimTemplate //* Sunborne Val'kyr
+    class Sim_ICC_028 : SimTemplate //* Sunborne Val'kyr
     {
         // Battlecry: Give adjacent minions +2 Health.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.zonepos == own.zonepos - 1 || m.zonepos == own.zonepos + 1)
                 {

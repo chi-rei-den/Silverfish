@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_575 : SimTemplate //manatidetotem
-	{
-
+    class Sim_EX1_575 : SimTemplate //manatidetotem
+    {
 //    zieht am ende eures zuges eine karte.
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
@@ -37,6 +33,5 @@ namespace HREngine.Bots
                 p.drawACard(SimCard.None, turnEndOfOwner);
             }
         }
-
-	}
+    }
 }

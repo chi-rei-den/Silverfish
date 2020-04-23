@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_071: SimTemplate //* Light's Sorrow
+    class Sim_ICC_071 : SimTemplate //* Light's Sorrow
     {
         // After a friendly minion loses Divine Shield, gain +1 Attack.
         // Handled in triggerAMinionLosesDivineShield()
@@ -36,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
     }
 }

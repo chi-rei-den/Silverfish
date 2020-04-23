@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,23 +23,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_668t : SimTemplate //* Doppelgangster
-	{
-		// Battlecry: Summon 2 copies of this minion.
+    class Sim_CFM_668t : SimTemplate //* Doppelgangster
+    {
+        // Battlecry: Summon 2 copies of this minion.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
             p.callKid(m.handcard.card, m.zonepos, m.own);
             p.callKid(m.handcard.card, m.zonepos, m.own);
-            List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
-            int count = 0;
-            foreach (Minion mnn in temp)
+            var temp = m.own ? p.ownMinions : p.enemyMinions;
+            var count = 0;
+            foreach (var mnn in temp)
             {
                 if (mnn.name == CardIds.Collectible.Neutral.Doppelgangster && m.entitiyID != mnn.entitiyID && mnn.playedThisTurn)
                 {
                     mnn.setMinionToMinion(m);
                     count++;
-                    if (count >= 2) break;
+                    if (count >= 2)
+                    {
+                        break;
+                    }
                 }
             }
         }

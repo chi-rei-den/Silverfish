@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,54 +23,90 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_080 : SimTemplate //* Garrison Commander
-	{
-		//You can use your Hero Power twice on your turn.
-	
+    class Sim_AT_080 : SimTemplate //* Garrison Commander
+    {
+        //You can use your Hero Power twice on your turn.
+
         public override void onAuraStarts(Playfield p, Minion own)
-		{
+        {
             if (own.own)
             {
-                bool another = false;
-                foreach (Minion m in p.ownMinions)
+                var another = false;
+                foreach (var m in p.ownMinions)
                 {
-                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-                if (!another) p.ownHeroPowerAllowedQuantity++;
+
+                if (!another)
+                {
+                    p.ownHeroPowerAllowedQuantity++;
+                }
             }
             else
             {
-                bool another = false;
-                foreach (Minion m in p.enemyMinions)
+                var another = false;
+                foreach (var m in p.enemyMinions)
                 {
-                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-                if (!another) p.enemyHeroPowerAllowedQuantity++;
+
+                if (!another)
+                {
+                    p.enemyHeroPowerAllowedQuantity++;
+                }
             }
-		}
+        }
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
             if (own.own)
             {
-                bool another = false;
-                foreach (Minion m in p.ownMinions)
+                var another = false;
+                foreach (var m in p.ownMinions)
                 {
-                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-                if (!another) p.ownHeroPowerAllowedQuantity--;
-                if (p.anzUsedOwnHeroPower >= p.ownHeroPowerAllowedQuantity) p.ownAbilityReady = false;
+
+                if (!another)
+                {
+                    p.ownHeroPowerAllowedQuantity--;
+                }
+
+                if (p.anzUsedOwnHeroPower >= p.ownHeroPowerAllowedQuantity)
+                {
+                    p.ownAbilityReady = false;
+                }
             }
             else
             {
-                bool another = false;
-                foreach (Minion m in p.enemyMinions)
+                var another = false;
+                foreach (var m in p.enemyMinions)
                 {
-                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.GarrisonCommander && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-                if (!another) p.enemyHeroPowerAllowedQuantity--;
-                if (p.anzUsedEnemyHeroPower >= p.enemyHeroPowerAllowedQuantity) p.enemyAbilityReady = false;
+
+                if (!another)
+                {
+                    p.enemyHeroPowerAllowedQuantity--;
+                }
+
+                if (p.anzUsedEnemyHeroPower >= p.enemyHeroPowerAllowedQuantity)
+                {
+                    p.enemyAbilityReady = false;
+                }
             }
         }
-	}
+    }
 }

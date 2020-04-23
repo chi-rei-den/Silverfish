@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -36,12 +33,15 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
 
-            p.callKid(kid, pos, ownplay, false);
-            for (int i = 0; i < 2; i++) p.callKid(kid, pos, ownplay);
+            p.callKid(this.kid, pos, ownplay, false);
+            for (var i = 0; i < 2; i++)
+            {
+                p.callKid(this.kid, pos, ownplay);
+            }
 
-            p.equipWeapon(w, ownplay);
+            p.equipWeapon(this.w, ownplay);
         }
     }
 }

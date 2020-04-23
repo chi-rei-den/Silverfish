@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,22 +23,29 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_005 : SimTemplate //* Demonwrath
-	{
-		// Deal 2 damage to all non-Demon minions.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
-			
-			foreach (Minion m in p.ownMinions)
+    class Sim_BRM_005 : SimTemplate //* Demonwrath
+    {
+        // Deal 2 damage to all non-Demon minions.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+
+            foreach (var m in p.ownMinions)
             {
-                if (m.handcard.card.Race != Race.DEMON) p.minionGetDamageOrHeal(m, dmg);
+                if (m.handcard.card.Race != Race.DEMON)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
-                if (m.handcard.card.Race != Race.DEMON) p.minionGetDamageOrHeal(m, dmg);
+                if (m.handcard.card.Race != Race.DEMON)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
-		}
-	}
+        }
+    }
 }

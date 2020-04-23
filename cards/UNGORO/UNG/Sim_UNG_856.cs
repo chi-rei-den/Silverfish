@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_856 : SimTemplate //* Hallucination
-	{
-		//Discover a card from your opponent's class.
+    class Sim_UNG_856 : SimTemplate //* Hallucination
+    {
+        //Discover a card from your opponent's class.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.drawACard(SimCard.None, ownplay, true);
             p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, ownplay, true);
-			p.owncarddraw--;
+            p.owncarddraw--;
         }
     }
 }

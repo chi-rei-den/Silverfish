@@ -1,9 +1,7 @@
-using HearthDb.Enums;
+using System.Collections.Generic;
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,22 +27,26 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_006 : SimTemplate //* Alarm-o-Bot
-	{
+    {
         //At the start of your turn, swap this minion with a random one in your hand.
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {
             if (turnStartOfOwner && triggerEffectMinion.own == turnStartOfOwner)
             {
-                List<Handcard> temp2 = new List<Handcard>();
-                foreach (Handcard hc in p.owncards)
+                var temp2 = new List<Handcard>();
+                foreach (var hc in p.owncards)
                 {
-                    if (hc.card.Type == CardType.MINION) temp2.Add(hc);
+                    if (hc.card.Type == CardType.MINION)
+                    {
+                        temp2.Add(hc);
+                    }
                 }
-                temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack));//damage the stronges
-                foreach (Handcard mins in temp2)
+
+                temp2.Sort((a, b) => -a.card.Attack.CompareTo(b.card.Attack)); //damage the stronges
+                foreach (var mins in temp2)
                 {
-                    SimCard c = (mins.card.CardId);
+                    SimCard c = mins.card.CardId;
                     p.minionTransform(triggerEffectMinion, c);
                     triggerEffectMinion.playedThisTurn = false;
                     triggerEffectMinion.Ready = true;
@@ -52,6 +54,7 @@ namespace HREngine.Bots
                     p.drawACard(CardIds.Collectible.Neutral.AlarmOBot, true, true);
                     break;
                 }
+
                 return;
             }
 
@@ -61,5 +64,5 @@ namespace HREngine.Bots
                 triggerEffectMinion.Hp = triggerEffectMinion.maxHp;
             }
         }
-	}
+    }
 }

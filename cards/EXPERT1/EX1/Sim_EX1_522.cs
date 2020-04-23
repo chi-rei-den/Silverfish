@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_522 : SimTemplate//patient assasin
+    class Sim_EX1_522 : SimTemplate //patient assasin
     {
-       
-
     }
 }

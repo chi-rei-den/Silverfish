@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_LEAGUE_REVIVAL_Druid_08 : SimTemplate
-	{
-	}
+    class Sim_TB_LEAGUE_REVIVAL_Druid_08 : SimTemplate
+    {
+    }
 }

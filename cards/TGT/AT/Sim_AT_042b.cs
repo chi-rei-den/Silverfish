@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042b : SimTemplate //* Panther Form
-	{
-		//Transform into a +1/+1 and Stealth
-		
+    class Sim_AT_042b : SimTemplate //* Panther Form
+    {
+        //Transform into a +1/+1 and Stealth
+
         SimCard Stealth = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.minionTransform(target, Stealth);
+            p.minionTransform(target, this.Stealth);
         }
-	}
+    }
 }

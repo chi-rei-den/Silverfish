@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,7 +29,10 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            if (target != null) p.minionGetDamageOrHeal(target, 3);
+            if (target != null)
+            {
+                p.minionGetDamageOrHeal(target, 3);
+            }
         }
     }
 }

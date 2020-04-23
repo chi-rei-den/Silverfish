@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,25 +24,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_538 : SimTemplate //* unleashthehounds
-	{
+    class Sim_EX1_538 : SimTemplate //* unleashthehounds
+    {
         // For each enemy minion, summon a 1/1 Hound with Charge.
-        
+
         SimCard kid = CardIds.NonCollectible.Hunter.UnleashtheHounds_HoundToken; //hound
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            int anz = (ownplay) ? p.enemyMinions.Count : p.ownMinions.Count;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            var anz = ownplay ? p.enemyMinions.Count : p.ownMinions.Count;
             if (anz > 0)
             {
-                p.callKid(kid, pos, ownplay, false);
+                p.callKid(this.kid, pos, ownplay, false);
                 anz--;
-                for (int i = 0; i < anz; i++)
+                for (var i = 0; i < anz; i++)
                 {
-                    p.callKid(kid, pos, ownplay);
+                    p.callKid(this.kid, pos, ownplay);
                 }
             }
-		}
-	}
+        }
+    }
 }

@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_012 : SimTemplate //* Mana Wyrm
-	{
-		//Whenever you cast a spell, gain +1 Attack.
+    class Sim_NEW1_012 : SimTemplate //* Mana Wyrm
+    {
+        //Whenever you cast a spell, gain +1 Attack.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
-				p.minionGetBuffed(triggerEffectMinion, 1, 0);
+                p.minionGetBuffed(triggerEffectMinion, 1, 0);
             }
         }
-	}
+    }
 }

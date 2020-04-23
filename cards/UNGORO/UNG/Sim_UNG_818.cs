@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_818 : SimTemplate //* Volatile Elemental
-	{
-		//Deathrattle: Deal 3 damage to a random enemy minion.
+    class Sim_UNG_818 : SimTemplate //* Volatile Elemental
+    {
+        //Deathrattle: Deal 3 damage to a random enemy minion.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
@@ -41,7 +38,11 @@ namespace HREngine.Bots
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
             }
-            if (target != null) p.minionGetDamageOrHeal(target, 3);
+
+            if (target != null)
+            {
+                p.minionGetDamageOrHeal(target, 3);
+            }
         }
     }
 }

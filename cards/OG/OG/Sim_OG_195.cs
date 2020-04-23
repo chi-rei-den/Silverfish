@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,23 +24,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_195 : SimTemplate //* Wisps of the Old Gods
-	{
-		//Choose One - Summon seven 1/1 Wisps; or Give your minions +2/+2.
-		
+    class Sim_OG_195 : SimTemplate //* Wisps of the Old Gods
+    {
+        //Choose One - Summon seven 1/1 Wisps; or Give your minions +2/+2.
+
         SimCard kid = CardIds.Collectible.Neutral.Wisp;
-		
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))
+            if (choice == 1 || p.ownFandralStaghelm > 0 && ownplay)
             {
-                for (int i = 0; i < 7; i++)
+                for (var i = 0; i < 7; i++)
                 {
-                    int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-                    p.callKid(kid, pos, ownplay);
+                    var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                    p.callKid(this.kid, pos, ownplay);
                 }
             }
-            if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
+
+            if (choice == 2 || p.ownFandralStaghelm > 0 && ownplay)
             {
                 p.allMinionOfASideGetBuffed(ownplay, 2, 2);
             }

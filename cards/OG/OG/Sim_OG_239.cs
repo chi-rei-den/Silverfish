@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,18 +23,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_239 : SimTemplate //* DOOM!
-	{
-		//Destroy all minions. Draw a card for each.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int anz = p.ownMinions.Count + p.enemyMinions.Count;
-			p.allMinionsGetDestroyed();
-            for (int i = 0; i < anz; i++)
+    class Sim_OG_239 : SimTemplate //* DOOM!
+    {
+        //Destroy all minions. Draw a card for each.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var anz = p.ownMinions.Count + p.enemyMinions.Count;
+            p.allMinionsGetDestroyed();
+            for (var i = 0; i < anz; i++)
             {
                 p.drawACard(SimCard.None, ownplay);
             }
-		}
-	}
+        }
+    }
 }

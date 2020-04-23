@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_415: SimTemplate //* Stitched Tracker
+    class Sim_ICC_415 : SimTemplate //* Stitched Tracker
     {
         // Battlecry: Discover a copy of a minion in your deck.
 

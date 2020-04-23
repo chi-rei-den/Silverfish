@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_061 : SimTemplate //* The Curator
-	{
-		//Taunt. Battlecry: Draw a Beast, Dragon, and Murloc from your deck.
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_KAR_061 : SimTemplate //* The Curator
+    {
+        //Taunt. Battlecry: Draw a Beast, Dragon, and Murloc from your deck.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, own.own);
             p.drawACard(SimCard.None, own.own);
-		}
-	}
+        }
+    }
 }

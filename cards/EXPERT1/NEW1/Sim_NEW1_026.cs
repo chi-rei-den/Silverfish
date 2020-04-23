@@ -1,9 +1,6 @@
-using HearthDb.Enums;
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -38,7 +35,7 @@ namespace HREngine.Bots
         {
             if (wasOwnCard == triggerEffectMinion.own && hc.card.Type == CardType.SPELL)
             {
-                p.callKid(card, triggerEffectMinion.zonepos, wasOwnCard);
+                p.callKid(this.card, triggerEffectMinion.zonepos, wasOwnCard);
             }
         }
     }

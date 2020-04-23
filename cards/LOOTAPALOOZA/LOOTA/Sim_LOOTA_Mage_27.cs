@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Mage_27 : SimTemplate //* 强力法术 Big Spells
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Mage_27 : SimTemplate //* 强力法术 Big Spells
+    {
+        //
+        //
+    }
 }

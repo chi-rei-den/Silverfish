@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,14 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_061 : SimTemplate //* Anubisath Sentinel
-	{
-		//Deathrattle: Give a random friendly minion +3/+3.
-		
+    class Sim_LOE_061 : SimTemplate //* Anubisath Sentinel
+    {
+        //Deathrattle: Give a random friendly minion +3/+3.
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			Minion target = (m.own) ? p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack) : p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack);
-			if (target != null) p.minionGetBuffed(target, 3, 3);
+            var target = m.own ? p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack) : p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack);
+            if (target != null)
+            {
+                p.minionGetBuffed(target, 3, 3);
+            }
         }
     }
 }

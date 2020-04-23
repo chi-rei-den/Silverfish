@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA17_6 : SimTemplate //* 2/1 Bone Construct
-	{
-		//-
-	}
+    class Sim_BRMA17_6 : SimTemplate //* 2/1 Bone Construct
+    {
+        //-
+    }
 }

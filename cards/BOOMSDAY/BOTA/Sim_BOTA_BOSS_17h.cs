@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_17h",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_17h : SimTemplate //* 格洛顿2000型 Glow-Tron 2000
-	{
-		//
-		//
-
-
-	}
+    class Sim_BOTA_BOSS_17h : SimTemplate //* 格洛顿2000型 Glow-Tron 2000
+    {
+        //
+        //
+    }
 }

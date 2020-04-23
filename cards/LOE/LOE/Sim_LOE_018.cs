@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_018 : SimTemplate //* Tunnel Trogg
-	{
-		//Whenether you Overloaded, gain +1 Attack per locked Mana Crystal.
+    class Sim_LOE_018 : SimTemplate //* Tunnel Trogg
+    {
+        //Whenether you Overloaded, gain +1 Attack per locked Mana Crystal.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

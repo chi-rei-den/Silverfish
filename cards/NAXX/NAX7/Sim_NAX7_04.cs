@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX7_04 : SimTemplate //* 5/2 Massive Runeblade
-	{
-		//Deals double damage to heroes.
-		//Handled in minionAttacksMinion()
+    class Sim_NAX7_04 : SimTemplate //* 5/2 Massive Runeblade
+    {
+        //Deals double damage to heroes.
+        //Handled in minionAttacksMinion()
 
-		SimCard weapon = CardIds.NonCollectible.Neutral.MassiveRuneblade;
+        SimCard weapon = CardIds.NonCollectible.Neutral.MassiveRuneblade;
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.equipWeapon(weapon, ownplay);
-		}
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.equipWeapon(this.weapon, ownplay);
+        }
+    }
 }

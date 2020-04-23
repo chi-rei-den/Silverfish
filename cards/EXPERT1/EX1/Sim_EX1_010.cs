@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,10 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_010 : SimTemplate//Worgen Infiltrator
+    class Sim_EX1_010 : SimTemplate //Worgen Infiltrator
     {
-
-      
-
     }
 }

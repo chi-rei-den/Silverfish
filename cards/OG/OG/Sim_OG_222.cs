@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -35,11 +32,14 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(w, ownplay);
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            p.equipWeapon(this.w, ownplay);
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.divineshild) p.minionGetBuffed(m, 1, 1);
+                if (m.divineshild)
+                {
+                    p.minionGetBuffed(m, 1, 1);
+                }
             }
         }
     }

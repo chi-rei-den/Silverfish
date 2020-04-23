@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,29 +23,36 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_123 : SimTemplate //* Chillmaw
-	{
-		//Taunt Deathrattle: If you're holding a Dragon, deal 3 damage to all minions.
+    class Sim_AT_123 : SimTemplate //* Chillmaw
+    {
+        //Taunt Deathrattle: If you're holding a Dragon, deal 3 damage to all minions.
 
-		public override void onDeathrattle(Playfield p, Minion m)
+        public override void onDeathrattle(Playfield p, Minion m)
         {
-			if(m.own)
-			{
-				bool dragonInHand = false;
-				foreach (Handcard hc in p.owncards)
-				{
-					if (hc.card.Race == Race.DRAGON)
-					{
-						dragonInHand = true;
-						break;
-					}
-				}
-				if(dragonInHand) p.allMinionsGetDamage(3);
-			}
-			else
-			{
-				if (p.enemyAnzCards >= 1) p.allMinionsGetDamage(3);
-			}
+            if (m.own)
+            {
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Race == Race.DRAGON)
+                    {
+                        dragonInHand = true;
+                        break;
+                    }
+                }
+
+                if (dragonInHand)
+                {
+                    p.allMinionsGetDamage(3);
+                }
+            }
+            else
+            {
+                if (p.enemyAnzCards >= 1)
+                {
+                    p.allMinionsGetDamage(3);
+                }
+            }
         }
     }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_257: SimTemplate //* Corpse Raiser
+    class Sim_ICC_257 : SimTemplate //* Corpse Raiser
     {
         // Battlecry: Give a friendly minion "Deathrattle: Resummon this minion."
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            if (target != null) target.ancestralspirit++;
-		}
-	}
+        {
+            if (target != null)
+            {
+                target.ancestralspirit++;
+            }
+        }
+    }
 }

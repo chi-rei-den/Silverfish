@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,21 +24,22 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_NEW1_007 : SimTemplate //* Starfall
-	{
+    {
         // Choose One - Deal $5 damage to a minion; or $2 damage to all enemy minions.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            if (choice == 1 || (target != null && p.ownFandralStaghelm > 0 && ownplay))
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            if (choice == 1 || target != null && p.ownFandralStaghelm > 0 && ownplay)
             {
-                int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+                var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
                 p.minionGetDamageOrHeal(target, dmg);
             }
-            if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
+
+            if (choice == 2 || p.ownFandralStaghelm > 0 && ownplay)
             {
-                int damage = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+                var damage = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
                 p.allMinionOfASideGetDamage(!ownplay, damage);
             }
-		}
-	}
+        }
+    }
 }

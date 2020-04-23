@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_236",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_236 : SimTemplate //* 水晶工匠坎格尔 Crystalsmith Kangor
-	{
-		//<b>Divine Shield</b>, <b>Lifesteal</b>Your healing is doubled.
-		//<b>圣盾，吸血</b>你的治疗效果翻倍。
-
-
-	}
+    class Sim_BOT_236 : SimTemplate //* 水晶工匠坎格尔 Crystalsmith Kangor
+    {
+        //<b>Divine Shield</b>, <b>Lifesteal</b>Your healing is doubled.
+        //<b>圣盾，吸血</b>你的治疗效果翻倍。
+    }
 }

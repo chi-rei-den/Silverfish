@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_146t",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_146t : SimTemplate //* 青铜龙 Bronze Dragon
-	{
-		//
-		//
-
-
-	}
+    class Sim_DAL_146t : SimTemplate //* 青铜龙 Bronze Dragon
+    {
+        //
+        //
+    }
 }

@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_045 : SimTemplate //rockbiterweapon
-	{
-
+    class Sim_CS2_045 : SimTemplate //rockbiterweapon
+    {
 //    verleiht einem befreundeten charakter +3 angriff in diesem zug.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.minionGetTempBuff(target, 3,0);
-		}
-
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.minionGetTempBuff(target, 3, 0);
+        }
+    }
 }

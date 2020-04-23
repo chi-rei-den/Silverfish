@@ -1,8 +1,4 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,12 +23,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_606 : SimTemplate //shieldblock
-	{
-
+    class Sim_EX1_606 : SimTemplate //shieldblock
+    {
 //    erhaltet 5 rüstung. zieht eine karte.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.minionGetArmor(p.ownHero, 5);
@@ -41,8 +36,8 @@ namespace HREngine.Bots
             {
                 p.minionGetArmor(p.enemyHero, 5);
             }
-            p.drawACard(SimCard.None, ownplay);
-		}
 
-	}
+            p.drawACard(SimCard.None, ownplay);
+        }
+    }
 }

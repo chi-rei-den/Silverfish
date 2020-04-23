@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,20 +23,27 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_716 : SimTemplate //* Sleep with the Fishes
-	{
-		// Deal 3 damage to all damaged minions.
+    class Sim_CFM_716 : SimTemplate //* Sleep with the Fishes
+    {
+        // Deal 3 damage to all damaged minions.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
-            foreach (Minion m in p.ownMinions)
+            var dmg = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+            foreach (var m in p.ownMinions)
             {
-                if (m.wounded) p.minionGetDamageOrHeal(m, dmg);
+                if (m.wounded)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
-                if (m.wounded) p.minionGetDamageOrHeal(m, dmg);
+                if (m.wounded)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
         }
     }

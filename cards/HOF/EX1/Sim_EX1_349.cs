@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,22 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_349 : SimTemplate //divinefavor
-	{
-
+    class Sim_EX1_349 : SimTemplate //divinefavor
+    {
 //    zieht so viele karten, bis ihr genauso viele karten auf eurer hand habt wie euer gegner.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int diff = (ownplay) ? p.enemyAnzCards - p.owncards.Count :  p.owncards.Count - p.enemyAnzCards;
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var diff = ownplay ? p.enemyAnzCards - p.owncards.Count : p.owncards.Count - p.enemyAnzCards;
             if (diff >= 1)
             {
-                for (int i = 0; i < diff; i++)
+                for (var i = 0; i < diff; i++)
                 {
                     //this.owncarddraw++;
                     p.drawACard(SimCard.None, ownplay);
                 }
             }
-		}
-
-	}
+        }
+    }
 }

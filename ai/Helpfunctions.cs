@@ -1,35 +1,38 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using log4net;
 using Triton.Common.LogUtilities;
 
 namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-
     /// <summary>
     ///     The helpfunctions.
     /// </summary>
-
     public class Helpfunctions
     {
         /// <summary>The logger for this type.</summary>
         private static readonly ILog Log = Logger.GetLoggerInstanceForType();
+
         public List<Playfield> storedBoards = new List<Playfield>();
 
 
         public static List<T> TakeList<T>(IEnumerable<T> source, int limit)
         {
-            List<T> retlist = new List<T>();
-            int i = 0;
+            var retlist = new List<T>();
+            var i = 0;
 
-            foreach (T item in source)
+            foreach (var item in source)
             {
                 retlist.Add(item);
                 i++;
 
-                if (i >= limit) break;
+                if (i >= limit)
+                {
+                    break;
+                }
             }
+
             return retlist;
         }
 
@@ -45,7 +48,6 @@ namespace HREngine.Bots
 
         private Helpfunctions()
         {
-
             //System.IO.File.WriteAllText(Settings.Instance.logpath + Settings.Instance.logfile, "");
         }
 
@@ -63,12 +65,14 @@ namespace HREngine.Bots
 
         public void logg(string s)
         {
+            if (!this.writelogg)
+            {
+                return;
+            }
 
-
-            if (!writelogg) return;
             try
             {
-                using (StreamWriter sw = File.AppendText(Settings.Instance.logpath + Settings.Instance.logfile))
+                using (var sw = File.AppendText(Settings.Instance.logpath + Settings.Instance.logfile))
                 {
                     sw.WriteLine(s);
                 }
@@ -76,13 +80,14 @@ namespace HREngine.Bots
             catch
             {
             }
+
             //Console.WriteLine(s);
         }
 
         public DateTime UnixTimeStampToDateTime(int unixTimeStamp)
         {
             // Unix timestamp is seconds past epoch
-            System.DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
+            var dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddSeconds(unixTimeStamp).ToLocalTime();
             return dtDateTime;
         }
@@ -108,13 +113,13 @@ namespace HREngine.Bots
 
         public void writeBufferToFile()
         {
-            bool writed = true;
+            var writed = true;
             this.sendbuffer += "<EoF>";
             while (writed)
             {
                 try
                 {
-                    System.IO.File.WriteAllText($"{Settings.Instance.path}crrntbrd.txt", this.sendbuffer);
+                    File.WriteAllText($"{Settings.Instance.path}crrntbrd.txt", this.sendbuffer);
                     writed = false;
                 }
                 catch
@@ -122,19 +127,20 @@ namespace HREngine.Bots
                     writed = true;
                 }
             }
+
             this.sendbuffer = "";
         }
 
         public void writeBufferToActionFile()
         {
-            bool writed = true;
+            var writed = true;
             this.sendbuffer += "<EoF>";
             this.ErrorLog($"write to action file: {this.sendbuffer}");
             while (writed)
             {
                 try
                 {
-                    System.IO.File.WriteAllText($"{Settings.Instance.path}actionstodo.txt", this.sendbuffer);
+                    File.WriteAllText($"{Settings.Instance.path}actionstodo.txt", this.sendbuffer);
                     writed = false;
                 }
                 catch
@@ -142,9 +148,8 @@ namespace HREngine.Bots
                     writed = true;
                 }
             }
+
             this.sendbuffer = "";
         }
-
-
     }
 }

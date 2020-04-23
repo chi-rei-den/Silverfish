@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,17 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_276 : SimTemplate //* Blood Warriors
-	{
-		//Add a copy of each damaged friendly minion to your hand.
+    class Sim_OG_276 : SimTemplate //* Blood Warriors
+    {
+        //Add a copy of each damaged friendly minion to your hand.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
 
-            foreach (Minion m in temp)
+            foreach (var m in temp)
             {
-                if (m.wounded) p.drawACard(m.handcard.card.CardId, ownplay, true);
+                if (m.wounded)
+                {
+                    p.drawACard(m.handcard.card.CardId, ownplay, true);
+                }
             }
         }
     }

@@ -1,8 +1,8 @@
+using System;
+using System.Collections.Generic;
+
 namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-
     public class MiniSimulatorNextTurn
     {
         //#####################################################################################################################
@@ -20,52 +20,45 @@ namespace HREngine.Bots
 
         List<Playfield> posmoves = new List<Playfield>(7000);
 
-        public Action bestmove = null;
-        public float bestmoveValue = 0;
+        public Action bestmove;
+        public float bestmoveValue;
         public Playfield bestboard = new Playfield();
 
-        public Behavior botBase = null;
-        private int calculated = 0;
+        public Behavior botBase;
+        private int calculated;
 
         private bool simulateSecondTurn = false;
 
         Movegenerator movegen = Movegenerator.Instance;
 
 
-        public MiniSimulatorNextTurn()
-        {
-        }
-
-
-
-
         private void startEnemyTurnSim(Playfield p, bool simulateTwoTurns, bool print, bool playaround, int playaroundprob, int playaroundprob2)
         {
             if (p.guessingHeroHP >= 1)
             {
-
                 Ai.Instance.enemySecondTurnSim[this.thread].simulateEnemysTurn(p, simulateTwoTurns, playaround, print, playaroundprob, playaroundprob2);
             }
+
             p.complete = true;
         }
 
         public float doallmoves(Playfield playf, bool print = false)
         {
             //todo only one time!
-            bool isLethalCheck = playf.isLethalCheck;
-            int totalboards = Settings.Instance.nextTurnTotalBoards;
-            int maxwide = Settings.Instance.nextTurnMaxWide;
-            int maxdeep = Settings.Instance.nextTurnDeep;
-            bool playaround = Settings.Instance.playaround;
-            int playaroundprob = Settings.Instance.playaroundprob;
-            int playaroundprob2 = Settings.Instance.playaroundprob2;
+            var isLethalCheck = playf.isLethalCheck;
+            var totalboards = Settings.Instance.nextTurnTotalBoards;
+            var maxwide = Settings.Instance.nextTurnMaxWide;
+            var maxdeep = Settings.Instance.nextTurnDeep;
+            var playaround = Settings.Instance.playaround;
+            var playaroundprob = Settings.Instance.playaroundprob;
+            var playaroundprob2 = Settings.Instance.playaroundprob2;
 
-            botBase = Ai.Instance.botBase;
+            this.botBase = Ai.Instance.botBase;
             this.posmoves.Clear();
             this.posmoves.Add(new Playfield(playf));
-            bool havedonesomething = true;
-            List<Playfield> temp = new List<Playfield>();
-            int deep = 0;
+            var havedonesomething = true;
+            var temp = new List<Playfield>();
+            var deep = 0;
             this.calculated = 0;
             Playfield bestold = null;
             float bestoldval = -20000000;
@@ -75,79 +68,113 @@ namespace HREngine.Bots
                 temp.Clear();
                 temp.AddRange(this.posmoves);
                 havedonesomething = false;
-                foreach (Playfield p in temp)
+                foreach (var p in temp)
                 {
                     if (p.complete || p.ownHero.Hp <= 0)
                     {
                         continue;
                     }
 
-                    List<Action> actions = movegen.getMoveList(p, usePenalityManager, useCutingTargets, true);
-                    foreach (Action a in actions)
+                    var actions = this.movegen.getMoveList(p, this.usePenalityManager, this.useCutingTargets, true);
+                    foreach (var a in actions)
                     {
                         havedonesomething = true;
-                        Playfield pf = new Playfield(p);
+                        var pf = new Playfield(p);
                         pf.doAction(a);
-                        if (pf.ownHero.Hp > 0) this.posmoves.Add(pf);
-                        if (totalboards > 0) this.calculated++;
+                        if (pf.ownHero.Hp > 0)
+                        {
+                            this.posmoves.Add(pf);
+                        }
+
+                        if (totalboards > 0)
+                        {
+                            this.calculated++;
+                        }
                     }
 
 
                     p.endTurn();
 
-                    if (!isLethalCheck) this.startEnemyTurnSim(p, this.simulateSecondTurn, false, playaround, playaroundprob, playaroundprob2);
+                    if (!isLethalCheck)
+                    {
+                        this.startEnemyTurnSim(p, this.simulateSecondTurn, false, playaround, playaroundprob, playaroundprob2);
+                    }
 
                     //sort stupid stuff ouf
 
-                    if (botBase.getPlayfieldValue(p) > bestoldval)
+                    if (this.botBase.getPlayfieldValue(p) > bestoldval)
                     {
-                        bestoldval = botBase.getPlayfieldValue(p);
+                        bestoldval = this.botBase.getPlayfieldValue(p);
                         bestold = p;
                     }
-                    posmoves.Remove(p);
 
-                    if (this.calculated > totalboards) break;
+                    this.posmoves.Remove(p);
+
+                    if (this.calculated > totalboards)
+                    {
+                        break;
+                    }
                 }
-                cuttingposibilities(maxwide);
+
+                this.cuttingposibilities(maxwide);
 
                 deep++;
 
-                if (this.calculated > totalboards) break;
-                if (deep >= maxdeep) break;
+                if (this.calculated > totalboards)
+                {
+                    break;
+                }
+
+                if (deep >= maxdeep)
+                {
+                    break;
+                }
             }
 
-            posmoves.Add(bestold);
-            foreach (Playfield p in posmoves)
+            this.posmoves.Add(bestold);
+            foreach (var p in this.posmoves)
             {
                 if (!p.complete)
                 {
-
                     p.endTurn();
-                    if (!isLethalCheck) this.startEnemyTurnSim(p, this.simulateSecondTurn, false, playaround, playaroundprob, playaroundprob2);
+                    if (!isLethalCheck)
+                    {
+                        this.startEnemyTurnSim(p, this.simulateSecondTurn, false, playaround, playaroundprob, playaroundprob2);
+                    }
                 }
             }
             // find best
 
-            if (posmoves.Count >= 1)
+            if (this.posmoves.Count >= 1)
             {
-                posmoves.Sort((a, b) => botBase.getPlayfieldValue(b).CompareTo(botBase.getPlayfieldValue(a)));
+                this.posmoves.Sort((a, b) => this.botBase.getPlayfieldValue(b).CompareTo(this.botBase.getPlayfieldValue(a)));
 
-                Playfield bestplay = posmoves[0];
-                float bestval = botBase.getPlayfieldValue(bestplay);
-                int pcount = posmoves.Count;
-                for (int i = 1; i < pcount; i++)
+                var bestplay = this.posmoves[0];
+                var bestval = this.botBase.getPlayfieldValue(bestplay);
+                var pcount = this.posmoves.Count;
+                for (var i = 1; i < pcount; i++)
                 {
-                    float val = botBase.getPlayfieldValue(posmoves[i]);
-                    if (bestval > val) break;
-                    if (bestplay.playactions.Count <= posmoves[i].playactions.Count) continue; //priority to the minimum acts
-                    bestplay = posmoves[i];
+                    var val = this.botBase.getPlayfieldValue(this.posmoves[i]);
+                    if (bestval > val)
+                    {
+                        break;
+                    }
+
+                    if (bestplay.playactions.Count <= this.posmoves[i].playactions.Count)
+                    {
+                        continue; //priority to the minimum acts
+                    }
+
+                    bestplay = this.posmoves[i];
                     bestval = val;
                 }
+
                 this.bestmove = bestplay.getNextAction();
                 this.bestmoveValue = bestval;
                 this.bestboard = new Playfield(bestplay);
                 return bestval;
             }
+
             this.bestmove = null;
             this.bestmoveValue = -100000;
             this.bestboard = playf;
@@ -157,46 +184,48 @@ namespace HREngine.Bots
         public void cuttingposibilities(int maxwide)
         {
             // take the x best values
-            List<Playfield> temp = new List<Playfield>();
-            Dictionary<Int64, Playfield> tempDict = new Dictionary<Int64, Playfield>();
-            posmoves.Sort((a, b) => -(botBase.getPlayfieldValue(a)).CompareTo(botBase.getPlayfieldValue(b)));//want to keep the best
+            var temp = new List<Playfield>();
+            var tempDict = new Dictionary<long, Playfield>();
+            this.posmoves.Sort((a, b) => -this.botBase.getPlayfieldValue(a).CompareTo(this.botBase.getPlayfieldValue(b))); //want to keep the best
 
             if (this.useComparison)
             {
-                int i = 0;
-                int max = Math.Min(posmoves.Count, maxwide);
+                var i = 0;
+                var max = Math.Min(this.posmoves.Count, maxwide);
 
                 Playfield p = null;
                 //foreach (Playfield p in posmoves)
                 for (i = 0; i < max; i++)
                 {
-                    p = posmoves[i];
-                    Int64 hash = p.GetPHash();
+                    p = this.posmoves[i];
+                    var hash = p.GetPHash();
                     p.hashcode = hash;
-                    if (!tempDict.ContainsKey(hash)) tempDict.Add(hash, p);
+                    if (!tempDict.ContainsKey(hash))
+                    {
+                        tempDict.Add(hash, p);
+                    }
                 }
-                foreach (KeyValuePair<Int64, Playfield> d in tempDict)
+
+                foreach (var d in tempDict)
                 {
                     temp.Add(d.Value);
                 }
             }
             else
             {
-                temp.AddRange(posmoves);
+                temp.AddRange(this.posmoves);
             }
-            posmoves.Clear();
-            posmoves.AddRange(temp.GetRange(0, Math.Min(maxwide, temp.Count)));
+
+            this.posmoves.Clear();
+            this.posmoves.AddRange(temp.GetRange(0, Math.Min(maxwide, temp.Count)));
         }
 
         public void printPosmoves()
         {
-            foreach (Playfield p in this.posmoves)
+            foreach (var p in this.posmoves)
             {
                 p.printBoard();
             }
         }
-
     }
-
-
 }

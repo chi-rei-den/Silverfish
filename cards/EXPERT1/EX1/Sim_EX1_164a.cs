@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,16 +30,14 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-				p.mana = Math.Min(10, p.mana+2);
-				p.ownMaxMana = Math.Min(10, p.ownMaxMana+2);
+                p.mana = Math.Min(10, p.mana + 2);
+                p.ownMaxMana = Math.Min(10, p.ownMaxMana + 2);
             }
             else
             {
-				p.mana = Math.Min(10, p.mana+2);
-				p.enemyMaxMana = Math.Min(10, p.enemyMaxMana+2);
+                p.mana = Math.Min(10, p.mana + 2);
+                p.enemyMaxMana = Math.Min(10, p.enemyMaxMana + 2);
             }
         }
-
     }
-
 }

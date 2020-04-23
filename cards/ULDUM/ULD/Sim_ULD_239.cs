@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,9 +29,8 @@ namespace HREngine.Bots
         //<b>奥秘：</b>在一个随从攻击你的英雄后，对所有敌方随从造成$3点伤害。
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+            var dmg = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
             p.allMinionOfASideGetDamage(!ownplay, dmg);
         }
-
     }
 }

@@ -1,45 +1,53 @@
+using System.Collections.Generic;
 using Chireiden.Silverfish;
+
 namespace HREngine.Bots
 {
-    using System.Collections.Generic;
-
-
     public class Deck
     {
         public Dictionary<SimCard, int> deckDiff = new Dictionary<SimCard, int>();
-        public int deckSize = 0;
-        public bool deckChanged = false;
+        public int deckSize;
+
+        public bool deckChanged;
         //public int anzcards = 0;
         //public int enemyAnzCards = 0;
         //Helpfunctions help;
         //CardDB cdb = CardDB.Instance;
-        
+
         public Deck()
         {
         }
 
         public Deck(Playfield p, SimCard cardId, int number, bool own)
         {
-            Deck newDeck = new Deck();
+            var newDeck = new Deck();
             newDeck.deckChanged = true;
             if (this.deckChanged)
             {
                 newDeck.deckSize += this.deckSize;
-                foreach (KeyValuePair<SimCard, int> diff in this.deckDiff)
+                foreach (var diff in this.deckDiff)
                 {
                     newDeck.deckDiff.Add(diff.Key, diff.Value);
                 }
             }
+
             if (number > 0)
             {
                 newDeck.deckSize += number;
-                if (newDeck.deckDiff.ContainsKey(cardId)) newDeck.deckDiff[cardId] += number;
-                else newDeck.deckDiff.Add(cardId, number);
+                if (newDeck.deckDiff.ContainsKey(cardId))
+                {
+                    newDeck.deckDiff[cardId] += number;
+                }
+                else
+                {
+                    newDeck.deckDiff.Add(cardId, number);
+                }
             }
 
             //if (own) p.ownDeck = newDeck;
             //else p.enemyDeck = newDeck;
         }
+
         /*
         public void print(bool tobuffer = false)
         {
@@ -165,6 +173,7 @@ namespace HREngine.Bots
             return retval;
         }*/
     }
+
     /*
     public class Deckmanager
     {
@@ -202,5 +211,4 @@ namespace HREngine.Bots
         }
 
     }*/
-
 }

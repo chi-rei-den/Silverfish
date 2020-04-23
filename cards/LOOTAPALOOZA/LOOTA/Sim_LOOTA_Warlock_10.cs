@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Warlock_10 : SimTemplate //* 鲜血即力量 Blood
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Warlock_10 : SimTemplate //* 鲜血即力量 Blood
+    {
+        //
+        //
+    }
 }

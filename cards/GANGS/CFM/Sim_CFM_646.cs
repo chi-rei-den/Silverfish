@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_646 : SimTemplate //* Backstreet Leper
-	{
-		// Deathrattle: Deal 2 damage to the enemy hero.
+    class Sim_CFM_646 : SimTemplate //* Backstreet Leper
+    {
+        // Deathrattle: Deal 2 damage to the enemy hero.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

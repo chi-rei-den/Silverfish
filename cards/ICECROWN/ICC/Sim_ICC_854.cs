@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_854: SimTemplate //* Arfus
+    class Sim_ICC_854 : SimTemplate //* Arfus
     {
         // Deathrattle: Add a random Death Knight card to your hand.
 

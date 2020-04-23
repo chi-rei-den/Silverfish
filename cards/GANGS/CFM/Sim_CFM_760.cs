@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_760 : SimTemplate //* Kabal Crystal Runner
-	{
-		// Costs (2) less for each Secret you've played this game.
-	}
+    class Sim_CFM_760 : SimTemplate //* Kabal Crystal Runner
+    {
+        // Costs (2) less for each Secret you've played this game.
+    }
 }

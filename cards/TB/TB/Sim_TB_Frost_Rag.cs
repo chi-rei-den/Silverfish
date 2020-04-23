@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Frost_Rag : SimTemplate
-	{
-	}
+    class Sim_TB_Frost_Rag : SimTemplate
+    {
+    }
 }

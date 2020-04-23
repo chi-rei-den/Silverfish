@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_204 : SimTemplate //* Onyx Bishop
-	{
-		//Battlecry: Summon a friendly minion that died this game.
-				
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_KAR_204 : SimTemplate //* Onyx Bishop
+    {
+        //Battlecry: Summon a friendly minion that died this game.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (own.own)
             {
                 if (p.OwnLastDiedMinion != SimCard.None)
                 {
-                    p.callKid((p.OwnLastDiedMinion), own.zonepos, own.own);
+                    p.callKid(p.OwnLastDiedMinion, own.zonepos, own.own);
                 }
             }
-		}
-	}
+        }
+    }
 }

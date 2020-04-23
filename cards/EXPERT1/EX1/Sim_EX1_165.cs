@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_165 : SimTemplate  //* Druid of the Claw
+    class Sim_EX1_165 : SimTemplate //* Druid of the Claw
     {
         // Choose One - Charge; or +2 Health and Taunt.
 
@@ -35,23 +32,24 @@ namespace HREngine.Bots
         SimCard bear = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic2;
         SimCard bearcat = CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheClaw;
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (p.ownFandralStaghelm > 0)
             {
-                p.minionTransform(own, bearcat);
+                p.minionTransform(own, this.bearcat);
             }
             else
             {
                 if (choice == 1)
                 {
-                    p.minionTransform(own, cat);
+                    p.minionTransform(own, this.cat);
                 }
+
                 if (choice == 2)
                 {
-                    p.minionTransform(own, bear);
+                    p.minionTransform(own, this.bear);
                 }
             }
-		}
-	}
+        }
+    }
 }

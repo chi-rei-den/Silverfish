@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_060 : SimTemplate //* Red Mana Wyrm
-	{
-		// Whenever you cast a spell, gain +2 Attack.
+    class Sim_CFM_060 : SimTemplate //* Red Mana Wyrm
+    {
+        // Whenever you cast a spell, gain +2 Attack.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

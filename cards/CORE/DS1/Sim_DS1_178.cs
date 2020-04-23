@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DS1_178 : SimTemplate //tundrarhino
-	{
-
+    class Sim_DS1_178 : SimTemplate //tundrarhino
+    {
 //    eure wildtiere haben ansturm/.
         //todo charge?
         public override void onAuraStarts(Playfield p, Minion own)
@@ -36,17 +32,23 @@ namespace HREngine.Bots
             if (own.own)
             {
                 p.anzOwnTundrarhino++;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (m.handcard.card.Race == Race.PET) p.minionGetCharge(m);
+                    if (m.handcard.card.Race == Race.PET)
+                    {
+                        p.minionGetCharge(m);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyTundrarhino++;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (m.handcard.card.Race == Race.PET) p.minionGetCharge(m);
+                    if (m.handcard.card.Race == Race.PET)
+                    {
+                        p.minionGetCharge(m);
+                    }
                 }
             }
         }
@@ -56,19 +58,25 @@ namespace HREngine.Bots
             if (own.own)
             {
                 p.anzOwnTundrarhino--;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (m.handcard.card.Race == Race.PET) p.minionLostCharge(m);
+                    if (m.handcard.card.Race == Race.PET)
+                    {
+                        p.minionLostCharge(m);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyTundrarhino--;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (m.handcard.card.Race == Race.PET) p.minionLostCharge(m);
+                    if (m.handcard.card.Race == Race.PET)
+                    {
+                        p.minionLostCharge(m);
+                    }
                 }
             }
         }
-	}
+    }
 }

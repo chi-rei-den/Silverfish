@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_209 : SimTemplate //* Hallazeal the Ascended
-	{
-		//Whenever your spells deal damage, restore that much Health to your hero.
-		
+    class Sim_OG_209 : SimTemplate //* Hallazeal the Ascended
+    {
+        //Whenever your spells deal damage, restore that much Health to your hero.
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
             if (m.own == ownplay && hc.card.Type == CardType.SPELL)
             {
-                Minion target = (ownplay) ? p.ownHero : p.enemyHero;
+                var target = ownplay ? p.ownHero : p.enemyHero;
                 p.minionGetDamageOrHeal(target, -p.prozis.penman.guessTotalSpellDamage(p, hc.card.CardId, ownplay));
             }
         }

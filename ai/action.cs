@@ -1,5 +1,4 @@
-
- //TODO:
+//TODO:
 
 //cardids of duplicate + avenge
 //nozdormu (for computing time :D)
@@ -8,10 +7,9 @@
 //scharmuetzel kills all :D
 //todo deathlord-guessing
 //todo kelthuzad dont know which minion died this turn in rl
+
 namespace HREngine.Bots
 {
-    using System;
-
     public enum actionEnum
     {
         endturn = 0,
@@ -24,9 +22,10 @@ namespace HREngine.Bots
 
     public class Action
     {
-
         public actionEnum actionType;
+
         public Handcard card;
+
         //public int cardEntitiy;
         public int place; //= target where card/minion is placed
         public Minion own;
@@ -46,8 +45,15 @@ namespace HREngine.Bots
             this.target = targetM;
             this.penalty = pen;
             this.druidchoice = choice;
-            if (ownM != null) prevHpOwn = ownM.Hp;
-            if (targetM != null) prevHpTarget = targetM.Hp;
+            if (ownM != null)
+            {
+                this.prevHpOwn = ownM.Hp;
+            }
+
+            if (targetM != null)
+            {
+                this.prevHpTarget = targetM.Hp;
+            }
         }
 
         public Action(Action a)
@@ -65,12 +71,12 @@ namespace HREngine.Bots
 
         public void print(bool tobuffer = false)
         {
-            Helpfunctions help = Helpfunctions.Instance;
+            var help = Helpfunctions.Instance;
             if (tobuffer)
             {
                 if (this.actionType == actionEnum.playcard)
                 {
-                    string playaction = "play ";
+                    var playaction = "play ";
 
                     playaction += $"id {this.card.entity}";
                     if (this.target != null)
@@ -83,21 +89,26 @@ namespace HREngine.Bots
                         playaction += $" pos {this.place}";
                     }
 
-                    if (this.druidchoice >= 1) playaction += $" choice {this.druidchoice}";
+                    if (this.druidchoice >= 1)
+                    {
+                        playaction += $" choice {this.druidchoice}";
+                    }
 
                     help.writeToBuffer(playaction);
                 }
+
                 if (this.actionType == actionEnum.attackWithMinion)
                 {
                     help.writeToBuffer($"attack {this.own.entitiyID} enemy {this.target.entitiyID}");
                 }
+
                 if (this.actionType == actionEnum.attackWithHero)
                 {
                     help.writeToBuffer($"heroattack {this.target.entitiyID}");
                 }
+
                 if (this.actionType == actionEnum.useHeroPower)
                 {
-
                     if (this.target != null)
                     {
                         help.writeToBuffer($"useability on target {this.target.entitiyID}");
@@ -107,11 +118,13 @@ namespace HREngine.Bots
                         help.writeToBuffer("useability");
                     }
                 }
+
                 return;
             }
+
             if (this.actionType == actionEnum.playcard)
             {
-                string playaction = "play ";
+                var playaction = "play ";
 
                 playaction += $"id {this.card.entity}";
                 if (this.target != null)
@@ -124,18 +137,24 @@ namespace HREngine.Bots
                     playaction += $" pos {this.place}";
                 }
 
-                if (this.druidchoice >= 1) playaction += $" choice {this.druidchoice}";
+                if (this.druidchoice >= 1)
+                {
+                    playaction += $" choice {this.druidchoice}";
+                }
 
                 help.logg(playaction);
             }
+
             if (this.actionType == actionEnum.attackWithMinion)
             {
                 help.logg($"attacker: {this.own.entitiyID} enemy: {this.target.entitiyID}");
             }
+
             if (this.actionType == actionEnum.attackWithHero)
             {
                 help.logg($"attack with hero, enemy: {this.target.entitiyID}");
             }
+
             if (this.actionType == actionEnum.useHeroPower)
             {
                 help.logg("useability ");
@@ -144,12 +163,13 @@ namespace HREngine.Bots
                     help.logg($"on enemy: {this.target.entitiyID}");
                 }
             }
+
             help.logg("");
         }
 
         public string printString()
         {
-            string retval = "";
+            var retval = "";
 
             if (this.actionType == actionEnum.playcard)
             {
@@ -165,29 +185,33 @@ namespace HREngine.Bots
                 {
                     retval += $" pos {this.place}";
                 }
-                if (this.druidchoice >= 1) retval += $" choice {this.druidchoice}";
+
+                if (this.druidchoice >= 1)
+                {
+                    retval += $" choice {this.druidchoice}";
+                }
             }
+
             if (this.actionType == actionEnum.attackWithMinion)
             {
-                retval += ("attacker: " + this.own.entitiyID + " enemy: " + this.target.entitiyID);
+                retval += "attacker: " + this.own.entitiyID + " enemy: " + this.target.entitiyID;
             }
+
             if (this.actionType == actionEnum.attackWithHero)
             {
-                retval += ("attack with hero, enemy: " + this.target.entitiyID);
+                retval += "attack with hero, enemy: " + this.target.entitiyID;
             }
+
             if (this.actionType == actionEnum.useHeroPower)
             {
-                retval += ("useability ");
+                retval += "useability ";
                 if (this.target != null)
                 {
-                    retval += ("on target: " + this.target.entitiyID);
+                    retval += "on target: " + this.target.entitiyID;
                 }
             }
 
             return retval;
         }
-
     }
-
-
 }

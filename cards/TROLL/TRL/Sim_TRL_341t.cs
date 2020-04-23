@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRL_341t : SimTemplate //* 古树 Ancient
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRL_341t : SimTemplate //* 古树 Ancient
+    {
+        //
+        //
+    }
 }

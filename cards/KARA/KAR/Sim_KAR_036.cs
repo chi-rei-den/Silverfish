@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_036 : SimTemplate //* Arcane Anomaly
-	{
-		//Whenever you cast a spell, give this minion +1 Health.
-		
+    class Sim_KAR_036 : SimTemplate //* Arcane Anomaly
+    {
+        //Whenever you cast a spell, give this minion +1 Health.
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
-				p.minionGetBuffed(triggerEffectMinion, 0, 1);
+                p.minionGetBuffed(triggerEffectMinion, 0, 1);
             }
         }
-	}
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,18 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_018 : SimTemplate //* Confessor Paletress
-	{
-		//Inspire: Summon a random Legendary minion.
+    class Sim_AT_018 : SimTemplate //* Confessor Paletress
+    {
+        //Inspire: Summon a random Legendary minion.
 
-		SimCard kid = CardIds.Collectible.Neutral.KingMukla;//King Mukla 5/5
-		
-		public override void onInspire(Playfield p, Minion m, bool own)
+        SimCard kid = CardIds.Collectible.Neutral.KingMukla; //King Mukla 5/5
+
+        public override void onInspire(Playfield p, Minion m, bool own)
         {
-			if (m.own == own)
-			{				
-				p.callKid(kid, m.zonepos, m.own);
-			}
+            if (m.own == own)
+            {
+                p.callKid(this.kid, m.zonepos, m.own);
+            }
         }
-	}
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_009 : SimTemplate //* deathlord
-	{
+    class Sim_FP1_009 : SimTemplate //* deathlord
+    {
         //Taunt. Deathrattle: Your opponent puts a minion from their deck into the battlefield.
-        SimCard c = CardIds.Collectible.Mage.KirinTorMage;//kirintormage
+        SimCard c = CardIds.Collectible.Mage.KirinTorMage; //kirintormage
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            int place = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(c, place, !m.own, false);
+            var place = m.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.c, place, !m.own, false);
         }
-	}
+    }
 }

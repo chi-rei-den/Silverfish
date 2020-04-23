@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_688 : SimTemplate //* Spiked Hogrider
-	{
-		// Battlecry: If an enemy minion has Taunt, gain Charge.
+    class Sim_CFM_688 : SimTemplate //* Spiked Hogrider
+    {
+        // Battlecry: If an enemy minion has Taunt, gain Charge.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            int anz = m.own ? p.anzEnemyTaunt : p.anzOwnTaunt;
-            if (anz > 0) p.minionGetCharge(m);
+            var anz = m.own ? p.anzEnemyTaunt : p.anzOwnTaunt;
+            if (anz > 0)
+            {
+                p.minionGetCharge(m);
+            }
         }
     }
 }

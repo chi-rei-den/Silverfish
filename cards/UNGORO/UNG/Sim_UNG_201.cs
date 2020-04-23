@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_201 : SimTemplate //* Primalfin Totem
-	{
-		//At the end of your turn, summon a 1/1 Murloc.
+    class Sim_UNG_201 : SimTemplate //* Primalfin Totem
+    {
+        //At the end of your turn, summon a 1/1 Murloc.
 
         SimCard kid = CardIds.NonCollectible.Neutral.PrimalfinTotem_PrimalfinToken; //Primalfin
 
@@ -37,9 +34,9 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int pos = triggerEffectMinion.zonepos;
-                p.callKid(kid, pos, triggerEffectMinion.own);
+                var pos = triggerEffectMinion.zonepos;
+                p.callKid(this.kid, pos, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

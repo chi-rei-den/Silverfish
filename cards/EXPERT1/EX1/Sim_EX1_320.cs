@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,18 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_320 : SimTemplate //baneofdoom
-	{
-
+    class Sim_EX1_320 : SimTemplate //baneofdoom
+    {
 //    fügt einem charakter $2 schaden zu. beschwört einen zufälligen dämon, wenn der schaden tödlich ist.
-        SimCard kid = CardIds.Collectible.Warlock.BloodImp;//bloodimp
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        SimCard kid = CardIds.Collectible.Warlock.BloodImp; //bloodimp
 
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
 
-            int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
-
-            bool summondemon = false;
+            var summondemon = false;
 
             if (!target.isHero && dmg >= target.Hp && !target.divineshild && !target.immune)
             {
@@ -49,13 +44,17 @@ namespace HREngine.Bots
 
             if (summondemon)
             {
-                int posi = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-                
-                if (target.own && ownplay) p.callKid(kid, posi, ownplay);
-                else p.callKid(kid, posi, ownplay);
+                var posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+
+                if (target.own && ownplay)
+                {
+                    p.callKid(this.kid, posi, ownplay);
+                }
+                else
+                {
+                    p.callKid(this.kid, posi, ownplay);
+                }
             }
-
-		}
-
-	}
+        }
+    }
 }

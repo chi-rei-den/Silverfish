@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,17 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_086 : SimTemplate //* Summoning Stone
-	{
-		//Whenever you cast a spell, summon a random minion of the same Cost.
-		
+    class Sim_LOE_086 : SimTemplate //* Summoning Stone
+    {
+        //Whenever you cast a spell, summon a random minion of the same Cost.
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
-                int pos = (wasOwnCard) ? p.ownMinions.Count : p.enemyMinions.Count;
+                var pos = wasOwnCard ? p.ownMinions.Count : p.enemyMinions.Count;
                 p.callKid(p.getRandomCardForManaMinion(hc.manacost), pos, wasOwnCard);
             }
         }
-	}
+    }
 }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_082 : SimTemplate //* Clockwork Gnome
     {
-
         //Deathrattle: Add a Spare Part card to your hand.
 
         public override void onDeathrattle(Playfield p, Minion m)

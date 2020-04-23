@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_412 : SimTemplate //ragingworgen
-	{
-
+    class Sim_EX1_412 : SimTemplate //ragingworgen
+    {
 //    wutanfall:/ windzorn/ und +1 angriff
         public override void onEnrageStart(Playfield p, Minion m)
         {
@@ -39,9 +36,10 @@ namespace HREngine.Bots
         {
             m.Angr--;
             m.windfury = false;
-            if (m.numAttacksThisTurn == 1) m.Ready = false;
+            if (m.numAttacksThisTurn == 1)
+            {
+                m.Ready = false;
+            }
         }
-
-
-	}
+    }
 }

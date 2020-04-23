@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,15 +23,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_608 : SimTemplate //* Blastcrystal Potion
-	{
-		// Destroy a minion and one of your Mana Crystals.
+    class Sim_CFM_608 : SimTemplate //* Blastcrystal Potion
+    {
+        // Destroy a minion and one of your Mana Crystals.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionGetDestroyed(target);
-            if (ownplay) p.ownMaxMana--;
-            else p.enemyMaxMana--;
+            if (ownplay)
+            {
+                p.ownMaxMana--;
+            }
+            else
+            {
+                p.enemyMaxMana--;
+            }
         }
     }
 }

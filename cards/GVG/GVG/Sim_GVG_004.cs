@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -30,16 +27,16 @@ namespace HREngine.Bots
     {
         //Battlecry: If you have a Mech, deal 4 damage randomly split among all enemies.
 
-        public override void  getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.MECHANICAL)
-				{
+                {
                     p.allCharsOfASideGetRandomDamage(!own.own, 4);
-					break;
-				}
+                    break;
+                }
             }
         }
     }

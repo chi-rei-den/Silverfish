@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_007 : SimTemplate //* Spellslinger
-	{
-		//Battlecry: Add a random spell card to each player's hand.
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_AT_007 : SimTemplate //* Spellslinger
+    {
+        //Battlecry: Add a random spell card to each player's hand.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.Collectible.Mage.Frostbolt, true, true);
             p.drawACard(CardIds.Collectible.Mage.Frostbolt, false, true);
-		}
-	}
+        }
+    }
 }

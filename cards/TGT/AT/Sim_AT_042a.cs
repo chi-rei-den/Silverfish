@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_042a : SimTemplate //* Lion Form
-	{
-		//Transform into a Charge
-		
+    class Sim_AT_042a : SimTemplate //* Lion Form
+    {
+        //Transform into a Charge
+
         SimCard Charge = CardIds.NonCollectible.Druid.DruidoftheSaber_DruidOfTheSaberToken1;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.minionTransform(target, Charge);
+            p.minionTransform(target, this.Charge);
         }
-	}
+    }
 }

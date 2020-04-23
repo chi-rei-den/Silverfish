@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_075: SimTemplate //* Despicable Dreadlord
+    class Sim_ICC_075 : SimTemplate //* Despicable Dreadlord
     {
         // At the end of your turn, deal 1 damage to all enemy minions.
 

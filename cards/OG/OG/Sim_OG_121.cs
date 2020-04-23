@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +29,10 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            if (m.own) p.nextSpellThisTurnCostHealth = true;
+            if (m.own)
+            {
+                p.nextSpellThisTurnCostHealth = true;
+            }
         }
     }
 }

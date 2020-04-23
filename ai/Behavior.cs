@@ -1,6 +1,5 @@
-using Chireiden.Silverfish;
-
 using System.Collections.Generic;
+using Chireiden.Silverfish;
 
 namespace HREngine.Bots
 {
@@ -41,5 +40,4 @@ namespace HREngine.Bots
             return -1;
         }
     }
-
 }

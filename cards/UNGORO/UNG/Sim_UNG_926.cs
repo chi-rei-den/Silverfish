@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,18 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_926 : SimTemplate //* Cornered Sentry
-	{
-		//Taunt. Battlecry: Summon three 1/1 Raptors for your opponent.
+    class Sim_UNG_926 : SimTemplate //* Cornered Sentry
+    {
+        //Taunt. Battlecry: Summon three 1/1 Raptors for your opponent.
 
         SimCard kid = CardIds.NonCollectible.Neutral.Eggnapper_RaptorToken; //1/1 Raptor
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            int pos = (own.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(kid, pos, !own.own);
-            p.callKid(kid, pos, !own.own);
-            p.callKid(kid, pos, !own.own);
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var pos = own.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.kid, pos, !own.own);
+            p.callKid(this.kid, pos, !own.own);
+            p.callKid(this.kid, pos, !own.own);
+        }
+    }
 }

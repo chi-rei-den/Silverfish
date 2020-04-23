@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,23 +23,23 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_109 : SimTemplate //* Elder Longneck
-	{
-		//Battlecry: If you're holding a minion with 5 or more Attack, Adapt.
+    class Sim_UNG_109 : SimTemplate //* Elder Longneck
+    {
+        //Battlecry: If you're holding a minion with 5 or more Attack, Adapt.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			if(own.own)
-			{
-				foreach (Handcard hc in p.owncards)
-				{
-					if ((hc.card.Attack + hc.addattack) >= 5)
-					{
-						p.getBestAdapt(own);
-						break;
-					}
-				}
-			}
+            if (own.own)
+            {
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Attack + hc.addattack >= 5)
+                    {
+                        p.getBestAdapt(own);
+                        break;
+                    }
+                }
+            }
         }
     }
 }

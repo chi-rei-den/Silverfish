@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_029 : SimTemplate //* Runic Egg
-	{
-		//Deathrattle: Draw a card.
+    class Sim_KAR_029 : SimTemplate //* Runic Egg
+    {
+        //Deathrattle: Draw a card.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(SimCard.None, m.own);
         }
-	}
+    }
 }

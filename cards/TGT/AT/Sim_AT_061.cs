@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_061 : SimTemplate //* Lock and Load
-	{
-		//Each time you cast a spell this turn, add a random Hunter card to your hand.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{			
+    class Sim_AT_061 : SimTemplate //* Lock and Load
+    {
+        //Each time you cast a spell this turn, add a random Hunter card to your hand.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.lockandload++;
             }
-		}
-	}
+        }
+    }
 }

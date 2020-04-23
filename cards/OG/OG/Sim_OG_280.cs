@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,9 +29,16 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            int times = p.anzOgOwnCThunAngrBonus + 6 - own.Angr;
-            if (times < 1) times = own.Angr;
-            else times += own.Angr;
+            var times = p.anzOgOwnCThunAngrBonus + 6 - own.Angr;
+            if (times < 1)
+            {
+                times = own.Angr;
+            }
+            else
+            {
+                times += own.Angr;
+            }
+
             p.allCharsOfASideGetRandomDamage(!own.own, times);
             p.allMinionOfASideGetDamage(!own.own, 1);
         }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_829p: SimTemplate //* The Four Horsemen
+    class Sim_ICC_829p : SimTemplate //* The Four Horsemen
     {
         // Hero Power: Summon a 2/2 Horseman. If you have all 4, destroy the enemy hero.
 
@@ -38,8 +35,8 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid1, pos, ownplay, false);
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid1, pos, ownplay, false);
         }
     }
 }

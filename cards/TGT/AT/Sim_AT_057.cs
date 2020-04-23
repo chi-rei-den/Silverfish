@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_057 : SimTemplate //* Stablemaster
-	{
-		//Battlecry: Give a friendly Beast Immune this Turn.
+    class Sim_AT_057 : SimTemplate //* Stablemaster
+    {
+        //Battlecry: Give a friendly Beast Immune this Turn.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            if (target != null) target.immune = true;
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (target != null)
+            {
+                target.immune = true;
+            }
+        }
+    }
 }

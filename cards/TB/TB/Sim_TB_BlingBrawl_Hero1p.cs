@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_BlingBrawl_Hero1p : SimTemplate
-	{
-	}
+    class Sim_TB_BlingBrawl_Hero1p : SimTemplate
+    {
+    }
 }

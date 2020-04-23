@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_539 : SimTemplate //killcommand
-	{
-
+    class Sim_EX1_539 : SimTemplate //killcommand
+    {
 //    verursacht $3 schaden. verursacht stattdessen $5 schaden, wenn ihr ein wildtier besitzt.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
-                bool haspet = false;
-                foreach (Minion m in p.ownMinions)
+                var haspet = false;
+                foreach (var m in p.ownMinions)
                 {
                     if (m.handcard.card.Race == Race.PET)
                     {
@@ -44,10 +40,14 @@ namespace HREngine.Bots
                     }
                 }
 
-                int dmg = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
-                if (haspet) dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+                var dmg = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+                if (haspet)
+                {
+                    dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+                }
+
                 p.minionGetDamageOrHeal(target, dmg);
             }
-		}
-	}
+        }
+    }
 }

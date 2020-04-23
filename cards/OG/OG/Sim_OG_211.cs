@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,20 +24,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_211 : SimTemplate //* Call of the Wild
-	{
-		//Summon all 3 Animal Companions.
-		
-        SimCard c1 = CardIds.NonCollectible.Hunter.Huffer;//Huffer
-        SimCard c2 = CardIds.NonCollectible.Hunter.Leokk;//Leokk
-        SimCard c3 = CardIds.NonCollectible.Hunter.Misha;//Misha
-        
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int pos = (ownplay)?  p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(c1, pos, ownplay, false);
-            p.callKid(c2, pos, ownplay);
-            p.callKid(c3, pos, ownplay);
-		}
-	}
+    class Sim_OG_211 : SimTemplate //* Call of the Wild
+    {
+        //Summon all 3 Animal Companions.
+
+        SimCard c1 = CardIds.NonCollectible.Hunter.Huffer; //Huffer
+        SimCard c2 = CardIds.NonCollectible.Hunter.Leokk; //Leokk
+        SimCard c3 = CardIds.NonCollectible.Hunter.Misha; //Misha
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.c1, pos, ownplay, false);
+            p.callKid(this.c2, pos, ownplay);
+            p.callKid(this.c3, pos, ownplay);
+        }
+    }
 }

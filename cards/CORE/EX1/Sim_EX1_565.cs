@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_565 : SimTemplate//Flametongue Totem
+    class Sim_EX1_565 : SimTemplate //Flametongue Totem
     {
         // note buff and debuff is handled by playfield (faster)
         // Handled in updateBoards()
@@ -81,7 +78,5 @@ namespace HREngine.Bots
             }
         }
         */
-
-
     }
 }

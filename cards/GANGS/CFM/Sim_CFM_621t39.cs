@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t39 : SimTemplate //* Ichor of Undeath
-	{
-		// Summon 3 friendly minions that died this game.
+    class Sim_CFM_621t39 : SimTemplate //* Ichor of Undeath
+    {
+        // Summon 3 friendly minions that died this game.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-			if (p.OwnLastDiedMinion != SimCard.None)
-			{
-				p.callKid((p.OwnLastDiedMinion), pos, ownplay, false); //presurmise - OwnLastDiedMinion also for enemy
-				p.callKid((p.OwnLastDiedMinion), pos, ownplay);
-				p.callKid((p.OwnLastDiedMinion), pos, ownplay);
-			}
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            if (p.OwnLastDiedMinion != SimCard.None)
+            {
+                p.callKid(p.OwnLastDiedMinion, pos, ownplay, false); //presurmise - OwnLastDiedMinion also for enemy
+                p.callKid(p.OwnLastDiedMinion, pos, ownplay);
+                p.callKid(p.OwnLastDiedMinion, pos, ownplay);
+            }
         }
     }
 }

@@ -1,7 +1,5 @@
-using Chireiden.Silverfish;
-using System;
 using System.Collections.Generic;
-using System.Text;
+using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_086: SimTemplate //* Glacial Mysteries
+    class Sim_ICC_086 : SimTemplate //* Glacial Mysteries
     {
         // Put one of each Secret from your deck into the battlefield.
 
@@ -34,27 +32,33 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                List<SimCard> secrets = new List<SimCard>();
+                var secrets = new List<SimCard>();
                 SimCard c;
-                foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
+                foreach (var cid in p.prozis.turnDeck)
                 {
-                    c = (cid.Key);
-                    if (c.Secret) secrets.Add(cid.Key);
+                    c = cid.Key;
+                    if (c.Secret)
+                    {
+                        secrets.Add(cid.Key);
+                    }
                 }
 
-                foreach (SimCard cId in secrets)
+                foreach (var cId in secrets)
                 {
-                    if (p.ownSecretsIDList.Count < 5 && !p.ownSecretsIDList.Contains(cId)) p.ownSecretsIDList.Add(cId);
+                    if (p.ownSecretsIDList.Count < 5 && !p.ownSecretsIDList.Contains(cId))
+                    {
+                        p.ownSecretsIDList.Add(cId);
+                    }
                 }
             }
             else
             {
-                for (int i = p.enemySecretCount; i < 5; i++)
+                for (var i = p.enemySecretCount; i < 5; i++)
                 {
                     p.enemySecretCount++;
                     p.enemySecretList.Add(Probabilitymaker.Instance.getNewSecretGuessedItem(p.getNextEntity(), p.enemyHeroStartClass));
                 }
             }
         }
-	}
+    }
 }

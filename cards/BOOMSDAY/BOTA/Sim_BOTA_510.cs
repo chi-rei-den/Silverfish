@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_510",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_510 : SimTemplate //* 爆炸突击 Explosive Assault
-	{
-		//Start Mirror Puzzle 2-2.
-		//Start Mirror Puzzle 2-2.
-
-
-	}
+    class Sim_BOTA_510 : SimTemplate //* 爆炸突击 Explosive Assault
+    {
+        //Start Mirror Puzzle 2-2.
+        //Start Mirror Puzzle 2-2.
+    }
 }

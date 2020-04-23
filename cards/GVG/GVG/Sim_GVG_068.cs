@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_068 : SimTemplate //Burly Rockjaw Trogg
     {
-
         //   Whenever your opponent casts a spell, gain +2 Attack.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
@@ -39,5 +35,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

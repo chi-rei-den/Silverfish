@@ -1,7 +1,3 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -27,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_027p : SimTemplate //* DIE, INSECT!
-	{
-		// Hero Power: Deal 8 damage to a random enemy.
+    class Sim_BRM_027p : SimTemplate //* DIE, INSECT!
+    {
+        // Hero Power: Deal 8 damage to a random enemy.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getHeroPowerDamage(8) : p.getEnemyHeroPowerDamage(8);
+            var dmg = ownplay ? p.getHeroPowerDamage(8) : p.getEnemyHeroPowerDamage(8);
             if (ownplay)
             {
                 target = p.getEnemyCharTargetForRandomSingleDamage(dmg);
@@ -41,9 +37,13 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-                if (target == null) target = p.ownHero;
+                if (target == null)
+                {
+                    target = p.ownHero;
+                }
             }
+
             p.minionGetDamageOrHeal(target, dmg, true);
         }
-	}
+    }
 }

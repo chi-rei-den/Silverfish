@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,15 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_031 : SimTemplate //baronrivendare
-	{
-
+    class Sim_FP1_031 : SimTemplate //baronrivendare
+    {
 //    die todesröcheln/-effekte eurer diener werden 2-mal ausgelöst.
         public override void onAuraStarts(Playfield p, Minion own)
-		{
-            if (own.own) p.ownBaronRivendare++;
-            else p.enemyBaronRivendare++;
-		}
+        {
+            if (own.own)
+            {
+                p.ownBaronRivendare++;
+            }
+            else
+            {
+                p.enemyBaronRivendare++;
+            }
+        }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
@@ -46,6 +49,5 @@ namespace HREngine.Bots
                 p.enemyBaronRivendare--;
             }
         }
-
-	}
+    }
 }

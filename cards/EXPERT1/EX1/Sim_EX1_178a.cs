@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +24,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_178a : SimTemplate //* Rooted
-	{
+    {
         //+5 Health and Taunt.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
@@ -35,9 +33,15 @@ namespace HREngine.Bots
             if (!target.taunt)
             {
                 target.taunt = true;
-                if (target.own) p.anzOwnTaunt++;
-                else p.anzEnemyTaunt++;
+                if (target.own)
+                {
+                    p.anzOwnTaunt++;
+                }
+                else
+                {
+                    p.anzEnemyTaunt++;
+                }
             }
         }
-	}
+    }
 }

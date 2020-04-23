@@ -1,10 +1,7 @@
-﻿using HearthDb.Enums;
-using HREngine.Bots;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using HearthDb.Enums;
+using HREngine.Bots;
 
 namespace Chireiden.Silverfish
 {
@@ -13,7 +10,7 @@ namespace Chireiden.Silverfish
         public static Func<T, int> Combine<T>(params Func<T, int>[] delegates)
         {
             return value => delegates.Aggregate(default(int), (prev, func) =>
-                (prev == int.MinValue || func(value) == int.MinValue) ? int.MinValue : prev + func(value));
+                prev == int.MinValue || func(value) == int.MinValue ? int.MinValue : prev + func(value));
         }
 
         public static int LowAttack(Minion minion) { return minion.Angr; }

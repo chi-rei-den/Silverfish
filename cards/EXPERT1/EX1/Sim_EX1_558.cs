@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,30 +23,30 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_558 : SimTemplate //harrisonjones
-	{
+    class Sim_EX1_558 : SimTemplate //harrisonjones
+    {
 //    kampfschrei:/ zerstört die waffe eures gegners. zieht ihrer haltbarkeit entsprechend karten.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (own.own)
             {
                 //this.owncarddraw += enemyWeaponDurability;
-                for (int i = 0; i < p.enemyWeapon.Durability; i++)
+                for (var i = 0; i < p.enemyWeapon.Durability; i++)
                 {
                     p.drawACard(SimCard.None, true);
                 }
+
                 p.lowerWeaponDurability(1000, false);
             }
             else
             {
-                for (int i = 0; i < p.enemyWeapon.Durability; i++)
+                for (var i = 0; i < p.enemyWeapon.Durability; i++)
                 {
                     p.drawACard(SimCard.None, false);
                 }
+
                 p.lowerWeaponDurability(1000, true);
             }
-		}
-
-
-	}
+        }
+    }
 }

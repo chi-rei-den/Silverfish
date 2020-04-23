@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_829: SimTemplate //* Uther of the Ebon Blade
+    class Sim_ICC_829 : SimTemplate //* Uther of the Ebon Blade
     {
         // Battlecry: Equip a 5/3 Lifesteal weapon.
 
@@ -36,10 +33,16 @@ namespace HREngine.Bots
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.setNewHeroPower(CardIds.NonCollectible.Neutral.UtheroftheEbonBlade_TheFourHorsemen, ownplay); // The Four Horsemen
-            if (ownplay) p.ownHero.armor += 5;
-            else p.enemyHero.armor += 5;
+            if (ownplay)
+            {
+                p.ownHero.armor += 5;
+            }
+            else
+            {
+                p.enemyHero.armor += 5;
+            }
 
-            p.equipWeapon(w, ownplay);
+            p.equipWeapon(this.w, ownplay);
         }
     }
 }

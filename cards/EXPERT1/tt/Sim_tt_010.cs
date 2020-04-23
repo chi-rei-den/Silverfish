@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -39,9 +36,13 @@ namespace HREngine.Bots
             number = 0;
             if (ownplay)
             {
-                int posi = p.ownMinions.Count;
-                if (posi > 6) return;
-                p.callKid(kid, posi, true);
+                var posi = p.ownMinions.Count;
+                if (posi > 6)
+                {
+                    return;
+                }
+
+                p.callKid(this.kid, posi, true);
                 if (p.ownMinions.Count >= 1)
                 {
                     if (p.ownMinions[p.ownMinions.Count - 1].name == CardIds.Collectible.Mage.Spellbender)
@@ -52,9 +53,13 @@ namespace HREngine.Bots
             }
             else
             {
-                int posi = p.enemyMinions.Count;
-                if (posi > 6) return;
-                p.callKid(kid, posi, false);
+                var posi = p.enemyMinions.Count;
+                if (posi > 6)
+                {
+                    return;
+                }
+
+                p.callKid(this.kid, posi, false);
 
                 if (p.enemyMinions.Count >= 1)
                 {
@@ -64,9 +69,6 @@ namespace HREngine.Bots
                     }
                 }
             }
-
         }
-
     }
-
 }

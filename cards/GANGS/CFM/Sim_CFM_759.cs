@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_759 : SimTemplate //* Meanstreet Marshal
-	{
-		// Deathrattle: If this minion has 2 or more Attack, draw a card.
+    class Sim_CFM_759 : SimTemplate //* Meanstreet Marshal
+    {
+        // Deathrattle: If this minion has 2 or more Attack, draw a card.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            if (m.Angr >= 2) p.drawACard(SimCard.None, m.own);
+            if (m.Angr >= 2)
+            {
+                p.drawACard(SimCard.None, m.own);
+            }
         }
     }
 }

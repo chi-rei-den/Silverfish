@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_754 : SimTemplate //* Grimy Gadgeteer
-	{
-		// At the end of your turn, give a random minion in your hand +2/+2.
+    class Sim_CFM_754 : SimTemplate //* Grimy Gadgeteer
+    {
+        // At the end of your turn, give a random minion in your hand +2/+2.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
@@ -37,7 +33,7 @@ namespace HREngine.Bots
             {
                 if (triggerEffectMinion.own)
                 {
-                    Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
+                    var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
                     if (hc != null)
                     {
                         hc.addattack += 2;
@@ -47,7 +43,10 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    if (p.enemyAnzCards > 0) p.anzEnemyExtraAngrHp += 4;
+                    if (p.enemyAnzCards > 0)
+                    {
+                        p.anzEnemyExtraAngrHp += 4;
+                    }
                 }
             }
         }

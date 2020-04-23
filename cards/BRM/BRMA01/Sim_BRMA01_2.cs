@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,25 +24,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA01_2 : SimTemplate //* Pile On!
-	{
-		// Hero Power: Put a minion from each deck into the battlefield.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//4/4Nerubian
+    class Sim_BRMA01_2 : SimTemplate //* Pile On!
+    {
+        // Hero Power: Put a minion from each deck into the battlefield.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-			if (p.ownDeckSize > 0)
+        SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken; //4/4Nerubian
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            if (p.ownDeckSize > 0)
             {
-				p.callKid(kid, p.ownMinions.Count, true, false);
+                p.callKid(this.kid, p.ownMinions.Count, true, false);
                 p.ownDeckSize--;
             }
-			
+
             if (p.enemyDeckSize > 0)
             {
-				p.callKid(kid, p.enemyMinions.Count, false, false);
+                p.callKid(this.kid, p.enemyMinions.Count, false, false);
                 p.enemyDeckSize--;
             }
-		}
-	}
+        }
+    }
 }

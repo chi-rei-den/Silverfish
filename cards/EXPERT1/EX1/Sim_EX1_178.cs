@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,12 +31,15 @@ namespace HREngine.Bots
         {
             if (p.ownFandralStaghelm > 0 && own.own)
             {
-                for (int iChoice = 1; iChoice < 3; iChoice++)
+                for (var iChoice = 1; iChoice < 3; iChoice++)
                 {
                     PenalityManager.Instance.getChooseCard(own.handcard.card, choice).Simulator.onCardPlay(p, own.own, own, iChoice);
                 }
             }
-            else PenalityManager.Instance.getChooseCard(own.handcard.card, choice).Simulator.onCardPlay(p, own.own, own, choice);
+            else
+            {
+                PenalityManager.Instance.getChooseCard(own.handcard.card, choice).Simulator.onCardPlay(p, own.own, own, choice);
+            }
         }
     }
 }

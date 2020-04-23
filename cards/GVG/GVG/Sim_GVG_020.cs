@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_020 : SimTemplate //Fel Cannon
     {
-
         //    At the end of your turn, deal 2 damage to a non-Mech minion.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
@@ -36,24 +32,32 @@ namespace HREngine.Bots
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
                 //count non-mechs
-                int ownNonMechs = 0;
+                var ownNonMechs = 0;
                 Minion ownTemp = null;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
                     if (m.handcard.card.Race != Race.MECHANICAL)
                     {
-                        if (ownTemp == null) ownTemp = m;
+                        if (ownTemp == null)
+                        {
+                            ownTemp = m;
+                        }
+
                         ownNonMechs++;
                     }
                 }
 
-                int enemyNonMechs = 0;
+                var enemyNonMechs = 0;
                 Minion enemyTemp = null;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
                     if (m.handcard.card.Race != Race.MECHANICAL)
                     {
-                        if (enemyTemp == null) enemyTemp = m;
+                        if (enemyTemp == null)
+                        {
+                            enemyTemp = m;
+                        }
+
                         enemyNonMechs++;
                     }
                 }
@@ -66,6 +70,7 @@ namespace HREngine.Bots
                         p.minionGetDamageOrHeal(ownTemp, 2, true);
                         return;
                     }
+
                     p.minionGetDamageOrHeal(enemyTemp, 2, true);
                     return;
                 }
@@ -79,7 +84,6 @@ namespace HREngine.Bots
                 if (enemyNonMechs >= 1)
                 {
                     p.minionGetDamageOrHeal(enemyTemp, 2, true);
-                    return;
                 }
             }
         }

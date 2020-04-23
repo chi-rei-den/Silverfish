@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,31 +24,33 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_072 : SimTemplate //* Varian Wrynn
-	{
-		//Battlecry: Draw 3 cards. Put any minion you drew directly into the battlefield.
+    class Sim_AT_072 : SimTemplate //* Varian Wrynn
+    {
+        //Battlecry: Draw 3 cards. Put any minion you drew directly into the battlefield.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-			if (own.own)
-			{
-				int tmpCard = p.owncards.Count;
-				p.drawACard(SimCard.None, own.own);
-				if (tmpCard < 10)
-				{
-					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
-					p.owncarddraw--;
-                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, p.ownMinions.Count, own.own, false);//river crocolisk
-				}
-				p.drawACard(SimCard.None, own.own);
-				if (tmpCard < 10)
-				{
-					p.owncards.RemoveRange(p.owncards.Count - 1, 1);
-					p.owncarddraw--;
-                    p.callKid(CardIds.Collectible.Neutral.Spellbreaker, p.ownMinions.Count, own.own, false);//spellbreaker
-				}
-				p.drawACard(SimCard.None, own.own);
-			}
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (own.own)
+            {
+                var tmpCard = p.owncards.Count;
+                p.drawACard(SimCard.None, own.own);
+                if (tmpCard < 10)
+                {
+                    p.owncards.RemoveRange(p.owncards.Count - 1, 1);
+                    p.owncarddraw--;
+                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, p.ownMinions.Count, own.own, false); //river crocolisk
+                }
+
+                p.drawACard(SimCard.None, own.own);
+                if (tmpCard < 10)
+                {
+                    p.owncards.RemoveRange(p.owncards.Count - 1, 1);
+                    p.owncarddraw--;
+                    p.callKid(CardIds.Collectible.Neutral.Spellbreaker, p.ownMinions.Count, own.own, false); //spellbreaker
+                }
+
+                p.drawACard(SimCard.None, own.own);
+            }
+        }
+    }
 }

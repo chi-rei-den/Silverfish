@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +29,10 @@ namespace HREngine.Bots
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
-            if (hc.card.Secret) p.evaluatePenality -= 9;
+            if (hc.card.Secret)
+            {
+                p.evaluatePenality -= 9;
+            }
         }
     }
 }

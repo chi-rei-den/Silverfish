@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,19 +25,20 @@ namespace HREngine.Bots
 {
     class Sim_EX1_544 : SimTemplate //flare
     {
-
         //    alle diener verlieren verstohlenheit/. zerstört alle feindlichen geheimnisse/. zieht eine karte.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            foreach (Minion m in p.ownMinions)
+            foreach (var m in p.ownMinions)
             {
                 m.stealth = false;
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
                 m.stealth = false;
             }
+
             if (ownplay)
             {
                 p.enemySecretCount = 0;
@@ -50,9 +48,8 @@ namespace HREngine.Bots
             {
                 p.ownSecretsIDList.Clear();
             }
+
             p.drawACard(SimCard.None, ownplay);
         }
-
     }
-
 }

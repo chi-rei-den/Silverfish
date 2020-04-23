@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_835 : SimTemplate //* Chittering Tunneler
-	{
-		//Battlecry: Discover a spell. Deal damage to your hero equal to its Cost.
+    class Sim_UNG_835 : SimTemplate //* Chittering Tunneler
+    {
+        //Battlecry: Discover a spell. Deal damage to your hero equal to its Cost.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, own.own, true);
             p.minionGetDamageOrHeal(own.own ? p.ownHero : p.enemyHero, 3);
-		}
-	}
+        }
+    }
 }

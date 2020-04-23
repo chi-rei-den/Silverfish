@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_832t",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_832t : SimTemplate //* 紫罗兰囚室 Violet Prison
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_832t : SimTemplate //* 紫罗兰囚室 Violet Prison
+    {
+        //
+        //
+    }
 }

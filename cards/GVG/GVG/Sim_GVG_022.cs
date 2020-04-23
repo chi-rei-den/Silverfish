@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_022 : SimTemplate //Tinker's Sharpsword Oil
     {
-
         //    Give your weapon +3 Attack. Combo: Give a random friendly minion +3 Attack.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
@@ -40,6 +36,7 @@ namespace HREngine.Bots
                     p.ownWeapon.Angr += 3;
                     p.minionGetBuffed(p.ownHero, 3, 0);
                 }
+
                 if (p.cardsPlayedThisTurn >= 1 && p.ownMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
@@ -57,6 +54,7 @@ namespace HREngine.Bots
                     p.enemyWeapon.Angr += 3;
                     p.minionGetBuffed(p.enemyHero, 3, 0);
                 }
+
                 if (p.cardsPlayedThisTurn >= 1 && p.enemyMinions.Count >= 1)
                 {
                     // Drew: Null check for searchRandomMinion.
@@ -69,5 +67,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

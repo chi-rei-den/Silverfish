@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Priest_04 : SimTemplate //* 复制大师 Double Down
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRLA_Priest_04 : SimTemplate //* 复制大师 Double Down
+    {
+        //
+        //
+    }
 }

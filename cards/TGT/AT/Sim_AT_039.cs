@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_039 : SimTemplate //* Savage Combatant
-	{
-		//Inspire: Give your hero +2 Attack this turn.
+    class Sim_AT_039 : SimTemplate //* Savage Combatant
+    {
+        //Inspire: Give your hero +2 Attack this turn.
 
-		public override void onInspire(Playfield p, Minion m, bool own)
+        public override void onInspire(Playfield p, Minion m, bool own)
         {
-			if (m.own == own)
-			{
-				p.minionGetTempBuff(own ? p.ownHero : p.enemyHero, 2, 0);
-			}
+            if (m.own == own)
+            {
+                p.minionGetTempBuff(own ? p.ownHero : p.enemyHero, 2, 0);
+            }
         }
-	}
+    }
 }

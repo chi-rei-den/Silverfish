@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_342 : SimTemplate //* Luckydo Buccaneer
-	{
-		// Battlecry: If your weapon has at least 3 Attack, gain +4/+4.
+    class Sim_CFM_342 : SimTemplate //* Luckydo Buccaneer
+    {
+        // Battlecry: If your weapon has at least 3 Attack, gain +4/+4.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

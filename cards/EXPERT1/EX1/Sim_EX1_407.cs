@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,31 +23,34 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_407 : SimTemplate //* Brawl
-	{
+    class Sim_EX1_407 : SimTemplate //* Brawl
+    {
         // Destroy all minions except one. (chosen randomly)
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            bool hasWinner = false;
-            foreach (Minion m in p.enemyMinions)
+            var hasWinner = false;
+            foreach (var m in p.enemyMinions)
             {
                 if ((m.name == CardIds.NonCollectible.Neutral.DarkIronBouncer || m.name == CardIds.NonCollectible.Neutral.CorenDirebrew2) && !hasWinner)
                 {
                     hasWinner = true;
                     continue;
                 }
+
                 p.minionGetDestroyed(m);
             }
-            foreach (Minion m in p.ownMinions)
+
+            foreach (var m in p.ownMinions)
             {
                 if ((m.name == CardIds.NonCollectible.Neutral.DarkIronBouncer || m.name == CardIds.NonCollectible.Neutral.CorenDirebrew2) && !hasWinner)
                 {
                     hasWinner = true;
                     continue;
                 }
+
                 p.minionGetDestroyed(m);
             }
-		}
-	}
+        }
+    }
 }

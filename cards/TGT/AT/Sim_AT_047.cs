@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_047 : SimTemplate //* Draenei Totemcarver
-	{
-		//Battlecry: Gain +1/+1 for each friendly Totem.
+    class Sim_AT_047 : SimTemplate //* Draenei Totemcarver
+    {
+        //Battlecry: Gain +1/+1 for each friendly Totem.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            int gain = 0;
-            List<Minion> temp  = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var gain = 0;
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.handcard.card.Race == Race.TOTEM) gain++;
+                if (m.handcard.card.Race == Race.TOTEM)
+                {
+                    gain++;
+                }
             }
-            if(gain >= 1) p.minionGetBuffed(own, gain, gain);
-		}
-	}
+
+            if (gain >= 1)
+            {
+                p.minionGetBuffed(own, gain, gain);
+            }
+        }
+    }
 }

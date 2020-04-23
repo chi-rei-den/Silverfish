@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,18 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_010 : SimTemplate //* Ram Wrangler
-	{
-		//Battlecry: If you have a Beast, summon a random Beast.
+    class Sim_AT_010 : SimTemplate //* Ram Wrangler
+    {
+        //Battlecry: If you have a Beast, summon a random Beast.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.PET)
                 {
-                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, temp.Count, own.own);//river crocolisk
+                    p.callKid(CardIds.Collectible.Neutral.RiverCrocolisk, temp.Count, own.own); //river crocolisk
                     break;
                 }
             }

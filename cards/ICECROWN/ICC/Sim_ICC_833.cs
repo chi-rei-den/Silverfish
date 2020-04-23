@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_833: SimTemplate //* Frost Lich Jaina
+    class Sim_ICC_833 : SimTemplate //* Frost Lich Jaina
     {
         // Battlecry: Summon a 3/6 Water Elemental. Your Elementals have Lifesteal for the rest of the game.
 
@@ -36,11 +33,17 @@ namespace HREngine.Bots
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.setNewHeroPower(CardIds.NonCollectible.Neutral.IcyTouchHeroic, ownplay); // Icy Touch
-            if (ownplay) p.ownHero.armor += 5;
-            else p.enemyHero.armor += 5;
-            
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay);
+            if (ownplay)
+            {
+                p.ownHero.armor += 5;
+            }
+            else
+            {
+                p.enemyHero.armor += 5;
+            }
+
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay);
         }
     }
 }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_089 : SimTemplate //* Malchezaar's Imp
-	{
-		//Whenever you discard a card, draw a card.
+    class Sim_KAR_089 : SimTemplate //* Malchezaar's Imp
+    {
+        //Whenever you discard a card, draw a card.
 
         public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
-            if (own == null) return false;
-            if (checkBonus) return false;
-			
+            if (own == null)
+            {
+                return false;
+            }
+
+            if (checkBonus)
+            {
+                return false;
+            }
+
             p.drawACard(SimCard.None, own.own);
             return false;
         }

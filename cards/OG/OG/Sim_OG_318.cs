@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_318 : SimTemplate //* Hogger, Doom of Elwynn
-	{
-		//Whenever this minion takes damage, summon a 2/2 Gnoll with Taunt.
+    class Sim_OG_318 : SimTemplate //* Hogger, Doom of Elwynn
+    {
+        //Whenever this minion takes damage, summon a 2/2 Gnoll with Taunt.
 
         SimCard kid = CardIds.NonCollectible.Neutral.HoggerDoomofElwynn_GnollToken;
 
@@ -37,13 +34,13 @@ namespace HREngine.Bots
         {
             if (m.anzGotDmg >= 1)
             {
-                int tmp = m.anzGotDmg;
+                var tmp = m.anzGotDmg;
                 m.anzGotDmg = 0;
-                for (int i = 0; i < tmp; i++)
+                for (var i = 0; i < tmp; i++)
                 {
-					p.callKid(kid, m.zonepos, m.own);
+                    p.callKid(this.kid, m.zonepos, m.own);
                 }
             }
         }
-	}
+    }
 }

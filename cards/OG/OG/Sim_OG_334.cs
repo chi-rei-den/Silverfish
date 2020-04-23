@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_334 : SimTemplate //* Hooded Acolyte
-	{
-		// Whenever a character is healed, give your C'Thun +1/+1 (wherever it is)
+    class Sim_OG_334 : SimTemplate //* Hooded Acolyte
+    {
+        // Whenever a character is healed, give your C'Thun +1/+1 (wherever it is)
 
         public override void onACharGotHealed(Playfield p, Minion triggerEffectMinion, int charsGotHealed)
         {
             p.cthunGetBuffed(charsGotHealed, charsGotHealed, 0);
         }
-	}
+    }
 }

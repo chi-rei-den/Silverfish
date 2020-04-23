@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_575",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_575 : SimTemplate //* 卡德加 Khadgar
-	{
-		//Your cards that summon minions summon twice as many.
-		//你的召唤随从的卡牌召唤数量翻倍。
-
-
-	}
+    class Sim_DAL_575 : SimTemplate //* 卡德加 Khadgar
+    {
+        //Your cards that summon minions summon twice as many.
+        //你的召唤随从的卡牌召唤数量翻倍。
+    }
 }

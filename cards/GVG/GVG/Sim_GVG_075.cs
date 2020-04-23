@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 using HearthDb.Enums;
 
@@ -29,7 +26,6 @@ namespace HREngine.Bots
 {
     internal class Sim_GVG_075 : SimTemplate //* Ship's Cannon
     {
-
         //   Whenever you summon a Pirate, deal 2 damage to a random enemy.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
@@ -45,8 +41,12 @@ namespace HREngine.Bots
                 else
                 {
                     target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-                    if (target == null) target = p.ownHero;
+                    if (target == null)
+                    {
+                        target = p.ownHero;
+                    }
                 }
+
                 p.minionGetDamageOrHeal(target, 2, true);
             }
         }

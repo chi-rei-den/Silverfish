@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,12 +23,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_005 : SimTemplate //claw
-	{
-
+    class Sim_CS2_005 : SimTemplate //claw
+    {
 //    verleiht eurem helden +2 angriff in diesem zug und 2 rüstung.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.minionGetArmor(p.ownHero, 2);
@@ -42,7 +38,6 @@ namespace HREngine.Bots
                 p.minionGetArmor(p.enemyHero, 2);
                 p.minionGetTempBuff(p.enemyHero, 2, 0);
             }
-		}
-
-	}
+        }
+    }
 }

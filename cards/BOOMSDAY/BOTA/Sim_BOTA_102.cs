@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_102",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_102 : SimTemplate //* 蓄电池组 Battery Pack
-	{
-		//Refresh all your Mana Crystals.
-		//复原你所有的法力水晶。
-
-
-	}
+    class Sim_BOTA_102 : SimTemplate //* 蓄电池组 Battery Pack
+    {
+        //Refresh all your Mana Crystals.
+        //复原你所有的法力水晶。
+    }
 }

@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_650 : SimTemplate //* Grimscale Chum
-	{
-		// Battlecry: Give a random Murloc in your hand +1/+1.
+    class Sim_CFM_650 : SimTemplate //* Grimscale Chum
+    {
+        // Battlecry: Give a random Murloc in your hand +1/+1.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (own.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MurlocOnly);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MurlocOnly);
                 if (hc != null)
                 {
                     hc.addattack++;
@@ -44,5 +40,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

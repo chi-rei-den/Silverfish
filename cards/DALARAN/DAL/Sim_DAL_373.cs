@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_373",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_373 : SimTemplate //* 急速射击 Rapid Fire
-	{
-		//<b>Twinspell</b>Deal $1 damage.
-		//<b>双生法术</b>造成$1点伤害。
-
-
-	}
+    class Sim_DAL_373 : SimTemplate //* 急速射击 Rapid Fire
+    {
+        //<b>Twinspell</b>Deal $1 damage.
+        //<b>双生法术</b>造成$1点伤害。
+    }
 }

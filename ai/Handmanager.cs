@@ -1,19 +1,17 @@
+using System.Collections.Generic;
+using Chireiden.Silverfish;
+
 namespace HREngine.Bots
 {
-    using Chireiden.Silverfish;
-    using System.Collections.Generic;
-
     public class Handmanager
     {
-
-
         public List<Handcard> handCards = new List<Handcard>();
 
-        public int anzcards = 0;
+        public int anzcards;
 
-        public int enemyAnzCards = 0;
+        public int enemyAnzCards;
 
-        private int ownPlayerController = 0;
+        private int ownPlayerController;
 
         Helpfunctions help;
 
@@ -47,15 +45,14 @@ namespace HREngine.Bots
         }
 
 
-
-
         public void setHandcards(List<Handcard> hc, int anzown, int anzenemy)
         {
             this.handCards.Clear();
-            foreach (Handcard h in hc)
+            foreach (var h in hc)
             {
                 this.handCards.Add(new Handcard(h));
             }
+
             //this.handCards.AddRange(hc);
             this.handCards.Sort((a, b) => a.position.CompareTo(b.position));
             this.anzcards = anzown;
@@ -64,68 +61,72 @@ namespace HREngine.Bots
 
         public void printcards()
         {
-            help.logg("Own Handcards: ");
-            foreach (Handcard hc in this.handCards)
+            this.help.logg("Own Handcards: ");
+            foreach (var hc in this.handCards)
             {
-                help.logg(
+                this.help.logg(
                     $"pos {hc.position} {hc.card.CardId} {hc.manacost} entity {hc.entity} {hc.card.CardId} {hc.addattack} {hc.addHp} {hc.elemPoweredUp}");
             }
-            help.logg($"Enemy cards: {this.enemyAnzCards}");
-        }
 
+            this.help.logg($"Enemy cards: {this.enemyAnzCards}");
+        }
     }
 
-        public class Handcard
+    public class Handcard
+    {
+        public int position;
+        public int entity = -1;
+        public int manacost = 1000;
+        public int addattack;
+        public int addHp;
+        public SimCard card;
+        public Minion target;
+        public int elemPoweredUp;
+        public int extraParam2 = 0;
+        public bool filterPass = false;
+
+        public Handcard()
         {
-            public int position = 0;
-            public int entity = -1;
-            public int manacost = 1000;
-            public int addattack = 0;
-            public int addHp = 0;
-            public SimCard card;
-            public Minion target;
-            public int elemPoweredUp = 0;
-            public int extraParam2 = 0;
-            public bool filterPass = false;
-
-            public Handcard()
-            {
-                card = SimCard.None;
-            }
-            public Handcard(Handcard hc)
-            {
-                this.position = hc.position;
-                this.entity = hc.entity;
-                this.manacost = hc.manacost;
-                this.card = hc.card;
-                this.addattack = hc.addattack;
-                this.addHp = hc.addHp;
-                this.elemPoweredUp = hc.elemPoweredUp;
-            }
-            public Handcard(SimCard c)
-            {
-                this.position = 0;
-                this.entity = -1;
-                this.card = c;
-                this.addattack = 0;
-                this.addHp = 0;
-            }
-            public void setHCtoHC(Handcard hc)
-            {
-                this.manacost = hc.manacost;
-                this.addattack = hc.addattack;
-                this.addHp = hc.addHp;
-                this.card = hc.card;
-                this.elemPoweredUp = hc.elemPoweredUp;
-            }
-
-            public int getManaCost(Playfield p)
-            {
-                return this.card.getManaCost(p, this.manacost);
-            }
-            public bool canplayCard(Playfield p, bool own)
-            {
-                return this.card.canplayCard(p, this.manacost, own);
-            }
+            this.card = SimCard.None;
         }
+
+        public Handcard(Handcard hc)
+        {
+            this.position = hc.position;
+            this.entity = hc.entity;
+            this.manacost = hc.manacost;
+            this.card = hc.card;
+            this.addattack = hc.addattack;
+            this.addHp = hc.addHp;
+            this.elemPoweredUp = hc.elemPoweredUp;
+        }
+
+        public Handcard(SimCard c)
+        {
+            this.position = 0;
+            this.entity = -1;
+            this.card = c;
+            this.addattack = 0;
+            this.addHp = 0;
+        }
+
+        public void setHCtoHC(Handcard hc)
+        {
+            this.manacost = hc.manacost;
+            this.addattack = hc.addattack;
+            this.addHp = hc.addHp;
+            this.card = hc.card;
+            this.elemPoweredUp = hc.elemPoweredUp;
+        }
+
+        public int getManaCost(Playfield p)
+        {
+            return this.card.getManaCost(p, this.manacost);
+        }
+
+        public bool canplayCard(Playfield p, bool own)
+        {
+            return this.card.canplayCard(p, this.manacost, own);
+        }
+    }
 }

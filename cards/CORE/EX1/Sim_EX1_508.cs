@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,25 +29,43 @@ namespace HREngine.Bots
 
         public override void onAuraStarts(Playfield p, Minion own)
         {
-            if (own.own) p.anzOwnGrimscaleOracle++;
-            else p.anzEnemyGrimscaleOracle++;
-
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            if (own.own)
             {
-                if (m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 0);
+                p.anzOwnGrimscaleOracle++;
+            }
+            else
+            {
+                p.anzEnemyGrimscaleOracle++;
+            }
+
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
+            {
+                if (m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID)
+                {
+                    p.minionGetBuffed(m, 1, 0);
+                }
             }
         }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
-            if (m.own) p.anzOwnGrimscaleOracle--;
-            else p.anzEnemyGrimscaleOracle--;
-
-            List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion mn in temp)
+            if (m.own)
             {
-                if (mn.handcard.card.Race == Race.MURLOC && mn.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, 0);
+                p.anzOwnGrimscaleOracle--;
+            }
+            else
+            {
+                p.anzEnemyGrimscaleOracle--;
+            }
+
+            var temp = m.own ? p.ownMinions : p.enemyMinions;
+            foreach (var mn in temp)
+            {
+                if (mn.handcard.card.Race == Race.MURLOC && mn.entitiyID != m.entitiyID)
+                {
+                    p.minionGetBuffed(m, -1, 0);
+                }
             }
         }
     }

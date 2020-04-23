@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Shaman_08 : SimTemplate //* 能量过载 Overload
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRLA_Shaman_08 : SimTemplate //* 能量过载 Overload
+    {
+        //
+        //
+    }
 }

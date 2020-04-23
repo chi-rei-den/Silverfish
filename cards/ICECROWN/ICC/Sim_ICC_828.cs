@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_828: SimTemplate //* Deathstalker Rexxar
+    class Sim_ICC_828 : SimTemplate //* Deathstalker Rexxar
     {
         // Battlecry: Deal 2 damage to all enemy minions.
-        
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.setNewHeroPower(CardIds.NonCollectible.Neutral.DeathstalkerRexxar_BuildABeast, ownplay); // Build-a-Beast
-            if (ownplay) p.ownHero.armor += 5;
-            else p.enemyHero.armor += 5;
+            if (ownplay)
+            {
+                p.ownHero.armor += 5;
+            }
+            else
+            {
+                p.enemyHero.armor += 5;
+            }
 
             p.allMinionOfASideGetDamage(!ownplay, 2);
         }

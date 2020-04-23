@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 
 /* _BEGIN_TEMPLATE_
@@ -30,11 +28,12 @@ namespace HREngine.Bots
     {
         //<b>Battlecry:</b> If you control a <b>Secret</b>, deal 6 damage.
         //<b>战吼：</b>如果你控制一个<b>奥秘</b>，则造成6点伤害。
-    public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-    {
-        if (target != null) p.minionGetDamageOrHeal(target, 6);
- 
-    }
-
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (target != null)
+            {
+                p.minionGetDamageOrHeal(target, 6);
+            }
+        }
     }
 }

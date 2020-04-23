@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_BountyHunt_Brushwood : SimTemplate
-	{
-	}
+    class Sim_TB_BountyHunt_Brushwood : SimTemplate
+    {
+    }
 }

@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_701",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_701 : SimTemplate //* 魔盒 The Box
-	{
-		//Each turn this is in your hand, transform it into a random treasure.
-		//如果这张牌在你的手牌中，每个回合都会随机变成一张宝藏牌。
-
-
-	}
+    class Sim_DALA_701 : SimTemplate //* 魔盒 The Box
+    {
+        //Each turn this is in your hand, transform it into a random treasure.
+        //如果这张牌在你的手牌中，每个回合都会随机变成一张宝藏牌。
+    }
 }

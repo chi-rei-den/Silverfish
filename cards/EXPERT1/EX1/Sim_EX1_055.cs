@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_055 : SimTemplate //manaaddict
-	{
-
+    class Sim_EX1_055 : SimTemplate //manaaddict
+    {
 //    erhält jedes mal +2 angriff in diesem zug, wenn ihr einen zauber wirkt.
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
@@ -37,5 +33,5 @@ namespace HREngine.Bots
                 p.minionGetTempBuff(triggerEffectMinion, 2, 0);
             }
         }
-	}
+    }
 }

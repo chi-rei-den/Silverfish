@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_063 : SimTemplate //* Kooky Chemist
-	{
-		// Battlecry: Swap the Attack and Health of a minion.
+    class Sim_CFM_063 : SimTemplate //* Kooky Chemist
+    {
+        // Battlecry: Swap the Attack and Health of a minion.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            if (target != null) p.minionSwapAngrAndHP(target);
+            if (target != null)
+            {
+                p.minionSwapAngrAndHP(target);
+            }
         }
     }
 }

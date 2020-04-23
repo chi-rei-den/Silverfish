@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_750 : SimTemplate //* Krul the Unshackled
-	{
-		// Battlecry: If your deck has no duplicates, summon all Demons from your hand.
+    class Sim_CFM_750 : SimTemplate //* Krul the Unshackled
+    {
+        // Battlecry: If your deck has no duplicates, summon all Demons from your hand.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
@@ -37,28 +34,35 @@ namespace HREngine.Bots
             {
                 if (p.prozis.noDuplicates)
                 {
-				    if (p.ownMinions.Count < 7)
-				    {
-					    bool needTrigger = false;
-					    foreach (Handcard hc in p.owncards.ToArray())
-					    {
+                    if (p.ownMinions.Count < 7)
+                    {
+                        var needTrigger = false;
+                        foreach (var hc in p.owncards.ToArray())
+                        {
                             if (hc.card.Race == Race.DEMON)
-						    {
-							    p.callKid(hc.card, p.ownMinions.Count, true);
-							    p.removeCard(hc);
-							    needTrigger = true;
-							    if (p.ownMinions.Count > 6) break;
-						    }
-					    }
-					    if (needTrigger) p.triggerCardsChanged(true);
-				    }
+                            {
+                                p.callKid(hc.card, p.ownMinions.Count, true);
+                                p.removeCard(hc);
+                                needTrigger = true;
+                                if (p.ownMinions.Count > 6)
+                                {
+                                    break;
+                                }
+                            }
+                        }
+
+                        if (needTrigger)
+                        {
+                            p.triggerCardsChanged(true);
+                        }
+                    }
                 }
             }
             else
             {
                 if (p.enemyAnzCards > 1)
                 {
-                    int pos = p.enemyMinions.Count;
+                    var pos = p.enemyMinions.Count;
                     p.callKid(CardIds.Collectible.Warlock.Felstalker, pos, false); //Succubus
                     p.enemyAnzCards--;
                     p.triggerCardsChanged(false);

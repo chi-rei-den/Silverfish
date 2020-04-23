@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,11 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_022 : SimTemplate //dreadcorsair
-	{
-
+    class Sim_NEW1_022 : SimTemplate //dreadcorsair
+    {
 //    spott./ kostet (1) weniger für jeden angriffspunkt eurer waffe.
-		
-
-	}
+    }
 }

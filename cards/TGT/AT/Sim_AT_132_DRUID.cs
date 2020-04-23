@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,22 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_DRUID : SimTemplate //* Dire Shapeshift
-	{
-		//Hero Power. Gain 2 Armor and +2 Attack this turn.
-		
+    class Sim_AT_132_DRUID : SimTemplate //* Dire Shapeshift
+    {
+        //Hero Power. Gain 2 Armor and +2 Attack this turn.
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (ownplay)
             {
                 p.minionGetTempBuff(p.ownHero, 2, 0);
-                p.minionGetArmor(p.ownHero,2);
+                p.minionGetArmor(p.ownHero, 2);
             }
             else
             {
                 p.minionGetTempBuff(p.enemyHero, 2, 0);
-                p.minionGetArmor(p.enemyHero,2);
+                p.minionGetArmor(p.enemyHero, 2);
             }
         }
-	}
+    }
 }

@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_029 : SimTemplate //* Jeweled Scarab
-	{
-		//Battlecry: Discover a (3)-Cost card.
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_LOE_029 : SimTemplate //* Jeweled Scarab
+    {
+        //Battlecry: Discover a (3)-Cost card.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.Collectible.Neutral.SpiderTank, own.own, true);
-		}
-	}
+        }
+    }
 }

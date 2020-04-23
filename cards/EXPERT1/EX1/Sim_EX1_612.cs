@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_612 : SimTemplate //kirintormage
-	{
-
+    class Sim_EX1_612 : SimTemplate //kirintormage
+    {
 //    kampfschrei:/ das nächste geheimnis/, das ihr in diesem zug ausspielt, kostet (0).
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            if (own.own) p.nextSecretThisTurnCost0 = true;
-		}
-
-
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (own.own)
+            {
+                p.nextSecretThisTurnCost0 = true;
+            }
+        }
+    }
 }

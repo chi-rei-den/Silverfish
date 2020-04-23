@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,18 +30,18 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            List<Minion> temp = new List<Minion>();
+            var temp = new List<Minion>();
 
 
             if (ownplay)
             {
-                List<Minion> temp2 = new List<Minion>(p.ownMinions);
+                var temp2 = new List<Minion>(p.ownMinions);
                 temp2.Sort((a, b) => -a.Angr.CompareTo(b.Angr));
                 temp.AddRange(temp2);
             }
             else
             {
-                List<Minion> temp2 = new List<Minion>(p.enemyMinions);
+                var temp2 = new List<Minion>(p.enemyMinions);
                 temp2.Sort((a, b) => a.Angr.CompareTo(b.Angr));
                 temp.AddRange(temp2);
             }
@@ -52,21 +50,25 @@ namespace HREngine.Bots
             {
                 if (ownplay)
                 {
-                    Minion trgt = temp[0];
-                    if (temp.Count >= 2 && trgt.taunt && !temp[1].taunt) trgt = temp[1];
+                    var trgt = temp[0];
+                    if (temp.Count >= 2 && trgt.taunt && !temp[1].taunt)
+                    {
+                        trgt = temp[1];
+                    }
+
                     p.minionGetBuffed(trgt, 3, 2);
                 }
                 else
                 {
+                    var trgt = temp[0];
+                    if (temp.Count >= 2 && !trgt.taunt && temp[1].taunt)
+                    {
+                        trgt = temp[1];
+                    }
 
-                    Minion trgt = temp[0];
-                    if (temp.Count >= 2 && !trgt.taunt && temp[1].taunt) trgt = temp[1];
                     p.minionGetBuffed(trgt, 3, 2);
                 }
             }
-
-
         }
     }
-
 }

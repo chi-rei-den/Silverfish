@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_912: SimTemplate //* Corpsetaker
+    class Sim_ICC_912 : SimTemplate //* Corpsetaker
     {
         // Battlecry: Gain Taunt if your deck has a Taunt minion. Repeat for Divine Shield, Lifesteal, Windfury.
 
@@ -39,9 +36,21 @@ namespace HREngine.Bots
                     own.taunt = true;
                     p.anzOwnTaunt++;
                 }
-                if (p.prozis.numDeckCardsByTag(GameTag.DIVINE_SHIELD) > 0) own.divineshild = true;
-                if (p.prozis.numDeckCardsByTag(GameTag.LIFESTEAL) > 0) own.lifesteal = true;
-                if (p.prozis.numDeckCardsByTag(GameTag.WINDFURY) > 0) own.windfury = true;
+
+                if (p.prozis.numDeckCardsByTag(GameTag.DIVINE_SHIELD) > 0)
+                {
+                    own.divineshild = true;
+                }
+
+                if (p.prozis.numDeckCardsByTag(GameTag.LIFESTEAL) > 0)
+                {
+                    own.lifesteal = true;
+                }
+
+                if (p.prozis.numDeckCardsByTag(GameTag.WINDFURY) > 0)
+                {
+                    own.windfury = true;
+                }
             }
         }
     }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,20 +23,23 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_019t : SimTemplate //* Map to the Golden Monkey
-	{
-		//Shuffle the Golden Monkey into your deck. Draw a card.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+    class Sim_LOE_019t : SimTemplate //* Map to the Golden Monkey
+    {
+        //Shuffle the Golden Monkey into your deck. Draw a card.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
-			{
-				p.ownDeckSize++;
-				p.evaluatePenality -= 12;
-			}
-            else p.enemyDeckSize++;
-			
-			p.drawACard(SimCard.None, ownplay);
-		}
-	}
+            {
+                p.ownDeckSize++;
+                p.evaluatePenality -= 12;
+            }
+            else
+            {
+                p.enemyDeckSize++;
+            }
+
+            p.drawACard(SimCard.None, ownplay);
+        }
+    }
 }

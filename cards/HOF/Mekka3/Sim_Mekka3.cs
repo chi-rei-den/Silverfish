@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka3 : SimTemplate //emboldener3000
-	{
-
+    class Sim_Mekka3 : SimTemplate //emboldener3000
+    {
 //    verleiht am ende eures zuges einem zufälligen diener +1/+1.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
@@ -35,8 +32,8 @@ namespace HREngine.Bots
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
                 Minion tm = null;
-                int ges = 1000;
-                foreach (Minion m in p.ownMinions)
+                var ges = 1000;
+                foreach (var m in p.ownMinions)
                 {
                     if (m.Angr + m.Hp < ges)
                     {
@@ -44,7 +41,8 @@ namespace HREngine.Bots
                         ges = m.Angr + m.Hp;
                     }
                 }
-                foreach (Minion m in p.enemyMinions)
+
+                foreach (var m in p.enemyMinions)
                 {
                     if (m.Angr + m.Hp < ges)
                     {
@@ -52,12 +50,12 @@ namespace HREngine.Bots
                         ges = m.Angr + m.Hp;
                     }
                 }
+
                 if (ges <= 999)
                 {
                     p.minionGetBuffed(tm, 1, 1);
                 }
             }
         }
-
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,20 +25,19 @@ namespace HREngine.Bots
 {
     class Sim_GVG_099 : SimTemplate //Bomb Lobber
     {
-
         // Battlecry: Deal 4 damage to a random enemy minion.  
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.enemyMinions : p.ownMinions;
-            int times = (own.own) ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
+            var temp = own.own ? p.enemyMinions : p.ownMinions;
+            var times = own.own ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
 
             if (temp.Count >= 1)
             {
                 //search Minion with lowest hp
-                Minion enemy = temp[0];
-                int minhp = 10000;
-                foreach (Minion m in temp)
+                var enemy = temp[0];
+                var minhp = 10000;
+                foreach (var m in temp)
                 {
                     if (m.Hp >= times + 1 && minhp > m.Hp)
                     {
@@ -50,10 +47,7 @@ namespace HREngine.Bots
                 }
 
                 p.minionGetDamageOrHeal(enemy, times);
-
-            } 
+            }
         }
-
     }
-
 }

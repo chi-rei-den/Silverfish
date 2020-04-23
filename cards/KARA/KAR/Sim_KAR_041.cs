@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,27 +23,27 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_041 : SimTemplate //* Moat Lurker
-	{
-		//Battlecry: Destroy a minion. Deathrattle: Resummon it.
+    class Sim_KAR_041 : SimTemplate //* Moat Lurker
+    {
+        //Battlecry: Destroy a minion. Deathrattle: Resummon it.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (target != null)
             {
-                p.LurkersDB.Add(own.entitiyID, new IDEnumOwner() { IDEnum = target.handcard.card.CardId, own = target.own });
+                p.LurkersDB.Add(own.entitiyID, new IDEnumOwner {IDEnum = target.handcard.card.CardId, own = target.own});
                 p.minionGetDestroyed(target);
             }
         }
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (p.LurkersDB.ContainsKey(m.entitiyID))
             {
-                bool own = p.LurkersDB[m.entitiyID].own;
-                int pos = own ? p.ownMinions.Count : p.enemyMinions.Count;
-                p.callKid((p.LurkersDB[m.entitiyID].IDEnum), pos, own);
+                var own = p.LurkersDB[m.entitiyID].own;
+                var pos = own ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(p.LurkersDB[m.entitiyID].IDEnum, pos, own);
             }
         }
-	}
+    }
 }

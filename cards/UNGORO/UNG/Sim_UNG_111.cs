@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,31 +24,43 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_111 : SimTemplate //* Living Mana
-	{
-		//Transform your Mana Crystals into 2/2 minions. Recover the mana when they die.
+    class Sim_UNG_111 : SimTemplate //* Living Mana
+    {
+        //Transform your Mana Crystals into 2/2 minions. Recover the mana when they die.
 
-		SimCard kid = CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken; //Mana Treant
+        SimCard kid = CardIds.NonCollectible.Druid.LivingMana_ManaTreantToken; //Mana Treant
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-			int num = 7 - temp.Count;
-			if (num > (ownplay ? p.ownMaxMana : p.enemyMaxMana))
-			{
-				num = ownplay ? p.ownMaxMana : p.enemyMaxMana;
-				if (num > p.mana) num = p.mana;
-			}
-			else if (num > p.mana) num = p.mana;
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            var num = 7 - temp.Count;
+            if (num > (ownplay ? p.ownMaxMana : p.enemyMaxMana))
+            {
+                num = ownplay ? p.ownMaxMana : p.enemyMaxMana;
+                if (num > p.mana)
+                {
+                    num = p.mana;
+                }
+            }
+            else if (num > p.mana)
+            {
+                num = p.mana;
+            }
 
-			p.mana -= num;
-			if (ownplay) p.ownMaxMana -= num;
-			else p.enemyMaxMana -= num;
+            p.mana -= num;
+            if (ownplay)
+            {
+                p.ownMaxMana -= num;
+            }
+            else
+            {
+                p.enemyMaxMana -= num;
+            }
 
-			for (int i = 7 - num; i < 7; i++)
-			{
-			p.callKid(kid, i, ownplay);
-			}
+            for (var i = 7 - num; i < 7; i++)
+            {
+                p.callKid(this.kid, i, ownplay);
+            }
         }
     }
 }

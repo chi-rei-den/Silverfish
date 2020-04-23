@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Paladin_11 : SimTemplate //* 怜悯之手 Helping Hand
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Paladin_11 : SimTemplate //* 怜悯之手 Helping Hand
+    {
+        //
+        //
+    }
 }

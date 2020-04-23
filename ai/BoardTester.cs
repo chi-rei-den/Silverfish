@@ -1,24 +1,23 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
 using Chireiden.Silverfish;
+using HearthDb;
+using HearthDb.Enums;
+
 namespace HREngine.Bots
 {
-    using HearthDb;
-    using HearthDb.Enums;
-    using System;
-    using System.Collections.Generic;
-    using System.IO;
-
     public class BoardTester
     {
-
         public string botBehavior = "None";
         int maxwide = 3000;
         int twoturnsim = 256;
         int pprob1 = 50;
         int pprob2 = 80;
-        bool playaround = false;
+        bool playaround;
 
         int ownPlayer = 1;
-        int enemmaxman = 0;
+        int enemmaxman;
 
         Minion ownHero;
         Minion enemyHero;
@@ -26,62 +25,62 @@ namespace HREngine.Bots
         Weapon ownWeapon;
         Weapon enemyWeapon;
 
-        int ownHEntity = 0;
+        int ownHEntity;
         int enemyHEntity = 1;
-        bool enemyHeroStealth = false;
+        bool enemyHeroStealth;
 
 
-        int gTurn = 0;
-        int gTurnStep = 0;
-        int mana = 0;
-        int maxmana = 0;
-        int ownherohp = 0;
+        int gTurn;
+        int gTurnStep;
+        int mana;
+        int maxmana;
+        int ownherohp;
         int ownheromaxhp = 30;
         int enemyheromaxhp = 30;
-        int ownherodefence = 0;
-        bool ownheroready = false;
-        bool ownHeroimmunewhileattacking = false;
-        int ownheroattacksThisRound = 0;
-        int ownHeroAttack = 0;
-        int ownHeroTempAttack = 0;
-        bool ownHeroStealth = false;
-        int numOptionPlayedThisTurn = 0;
-        int numMinionsPlayedThisTurn = 0;
-        int cardsPlayedThisTurn = 0;
-        int overload = 0;
-        int lockedMana = 0;
+        int ownherodefence;
+        bool ownheroready;
+        bool ownHeroimmunewhileattacking;
+        int ownheroattacksThisRound;
+        int ownHeroAttack;
+        int ownHeroTempAttack;
+        bool ownHeroStealth;
+        int numOptionPlayedThisTurn;
+        int numMinionsPlayedThisTurn;
+        int cardsPlayedThisTurn;
+        int overload;
+        int lockedMana;
 
-        int anzOgOwnCThunHpBonus = 0;
-        int anzOgOwnCThunAngrBonus = 0;
-        int anzOgOwnCThunTaunt = 0;
-        int anzOwnJadeGolem = 0;
-        int anzEnemyJadeGolem = 0;
-        int anzOwnElementalsThisTurn = 0;
-        int anzOwnElementalsLastTurn = 0;
-        int ownElementalsHaveLifesteal = 0;
-        int ownCrystalCore = 0;
-        bool ownMinionsInDeckCost0 = false;
+        int anzOgOwnCThunHpBonus;
+        int anzOgOwnCThunAngrBonus;
+        int anzOgOwnCThunTaunt;
+        int anzOwnJadeGolem;
+        int anzEnemyJadeGolem;
+        int anzOwnElementalsThisTurn;
+        int anzOwnElementalsLastTurn;
+        int ownElementalsHaveLifesteal;
+        int ownCrystalCore;
+        bool ownMinionsInDeckCost0;
 
         int ownDecksize = 30;
         int enemyDecksize = 30;
-        int ownFatigue = 0;
-        int enemyFatigue = 0;
+        int ownFatigue;
+        int enemyFatigue;
 
-        bool heroImmune = false;
-        bool enemyHeroImmune = false;
+        bool heroImmune;
+        bool enemyHeroImmune;
 
         int ownHeroPowerCost = 2;
         int enemyHeroPowerCost = 2;
 
-        int enemySecretAmount = 0;
+        int enemySecretAmount;
         List<SecretItem> enemySecrets = new List<SecretItem>();
 
-        bool ownHeroFrozen = false;
+        bool ownHeroFrozen;
 
         List<string> ownsecretlist = new List<string>();
-        int enemyherohp = 0;
-        int enemyherodefence = 0;
-        bool enemyFrozen = false;
+        int enemyherohp;
+        int enemyherodefence;
+        bool enemyFrozen;
         bool fistRun = true;
         int enemyNumberHand = 5;
 
@@ -96,50 +95,50 @@ namespace HREngine.Bots
         Dictionary<SimCard, int> og = new Dictionary<SimCard, int>();
         Dictionary<SimCard, int> eg = new Dictionary<SimCard, int>();
 
-        bool feugendead = false;
-        bool stalaggdead = false;
-        public bool datareaded = false;
+        bool feugendead;
+        bool stalaggdead;
+        public bool datareaded;
 
         public BoardTester(string data = "")
         {
-            og.Clear();
-            eg.Clear();
+            this.og.Clear();
+            this.eg.Clear();
 
-            string omd = "";
-            string emd = "";
+            var omd = "";
+            var emd = "";
 
-            int weaponOnlyAttackMobsUntilEnfacehp = 0;
-            int berserkIfCanFinishNextTour = 0;
-            int facehp = 15;
-            int placement = 0;
+            var weaponOnlyAttackMobsUntilEnfacehp = 0;
+            var berserkIfCanFinishNextTour = 0;
+            var facehp = 15;
+            var placement = 0;
 
-            int ets = 20;
-            int ets2 = 200;
+            var ets = 20;
+            var ets2 = 200;
 
-            int ntssw = 10;
-            int ntssd = 6;
-            int ntssm = 50;
+            var ntssw = 10;
+            var ntssd = 6;
+            var ntssm = 50;
 
-            int iC = 0;
-            int speedup = 0;
-            int adjustActions = 0;
-            int concedeMode = 0;
+            var iC = 0;
+            var speedup = 0;
+            var adjustActions = 0;
+            var concedeMode = 0;
 
-            int alpha = 50;
+            var alpha = 50;
 
-            bool dosecrets = false;
+            var dosecrets = false;
 
             Settings.Instance.placement = 0;
             Hrtprozis.Instance.clearAllNewGame();
             Handmanager.Instance.clearAllRecalc();
-            string[] lines = new string[0] { };
+            var lines = new string[0] { };
             if (data == "")
             {
                 this.datareaded = false;
                 try
                 {
-                    string path = Settings.Instance.path;
-                    lines = System.IO.File.ReadAllLines($"{path}test.txt");
+                    var path = Settings.Instance.path;
+                    lines = File.ReadAllLines($"{path}test.txt");
                     this.datareaded = true;
                 }
                 catch
@@ -153,21 +152,21 @@ namespace HREngine.Bots
             else
             {
                 this.datareaded = true;
-                lines = data.Split(new string[] { "\n" }, StringSplitOptions.RemoveEmptyEntries);
+                lines = data.Split(new[] {"\n"}, StringSplitOptions.RemoveEmptyEntries);
             }
 
             SimCard heroability = CardIds.NonCollectible.Mage.Fireblast;
             SimCard enemyability = CardIds.NonCollectible.Mage.Fireblast;
-            bool abilityReady = false;
+            var abilityReady = false;
 
-            int readstate = 0;
-            int counter = 0;
+            var readstate = 0;
+            var counter = 0;
 
-            Minion tempminion = new Minion();
-            int j = 0;
-            foreach (string sss in lines)
+            var tempminion = new Minion();
+            var j = 0;
+            foreach (var sss in lines)
             {
-                string s = $"{sss} ";
+                var s = $"{sss} ";
                 Helpfunctions.Instance.logg(s);
 
                 if (s.StartsWith("ailoop") || s.StartsWith("deep ") || s.StartsWith("cut to len"))
@@ -187,8 +186,12 @@ namespace HREngine.Bots
 
                 if (s.StartsWith("start calculations, current time: "))
                 {
-                    if (!fistRun) break;
-                    fistRun = false;
+                    if (!this.fistRun)
+                    {
+                        break;
+                    }
+
+                    this.fistRun = false;
 
                     Ai.Instance.currentCalculatedBoard = s.Split(' ')[4].Split(' ')[0];
 
@@ -198,36 +201,39 @@ namespace HREngine.Bots
 
                     //following params are optional
                     this.twoturnsim = 0;
-                    if (s.Contains("twoturnsim ")) this.twoturnsim = Convert.ToInt32(s.Split(new string[] { "twoturnsim " }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                    if (s.Contains("twoturnsim "))
+                    {
+                        this.twoturnsim = Convert.ToInt32(s.Split(new[] {"twoturnsim "}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                    }
 
                     if (s.Contains(" face "))
                     {
-                        string tmp = s.Split(new string[] { "face " }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                        var tmp = s.Split(new[] {"face "}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         facehp = Convert.ToInt32(tmp);
                     }
 
                     if (s.Contains(" womob:"))
                     {
-                        string tmp = s.Split(new string[] { " womob:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                        var tmp = s.Split(new[] {" womob:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         weaponOnlyAttackMobsUntilEnfacehp = Convert.ToInt32(tmp);
                     }
 
                     if (s.Contains(" berserk:"))
                     {
-                        string tmp = s.Split(new string[] { " berserk:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                        var tmp = s.Split(new[] {" berserk:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         berserkIfCanFinishNextTour = Convert.ToInt32(tmp);
                     }
 
                     if (s.Contains(" cede:"))
                     {
-                        string tmp = s.Split(new string[] { " cede:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                        var tmp = s.Split(new[] {" cede:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         concedeMode = Convert.ToInt32(tmp);
                     }
 
                     this.playaround = false;
                     if (s.Contains("playaround "))
                     {
-                        string probs = s.Split(new string[] { "playaround " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var probs = s.Split(new[] {"playaround "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         this.playaround = true;
                         this.pprob1 = Convert.ToInt32(probs.Split(' ')[0]);
                         this.pprob2 = Convert.ToInt32(probs.Split(' ')[1]);
@@ -235,19 +241,19 @@ namespace HREngine.Bots
 
                     if (s.Contains(" ets "))
                     {
-                        string eturnsim = s.Split(new string[] { " ets " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var eturnsim = s.Split(new[] {" ets "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         ets = Convert.ToInt32(eturnsim.Split(' ')[0]);
                     }
 
                     if (s.Contains(" ets2 "))
                     {
-                        string eturnsim2 = s.Split(new string[] { " ets2 " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var eturnsim2 = s.Split(new[] {" ets2 "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         ets2 = Convert.ToInt32(eturnsim2.Split(' ')[0]);
                     }
 
                     if (s.Contains(" ntss "))
                     {
-                        string ss = s.Split(new string[] { " ntss " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var ss = s.Split(new[] {" ntss "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         ntssd = Convert.ToInt32(ss.Split(' ')[0]);
                         ntssw = Convert.ToInt32(ss.Split(' ')[1]);
                         ntssm = Convert.ToInt32(ss.Split(' ')[2]);
@@ -255,35 +261,39 @@ namespace HREngine.Bots
 
                     if (s.Contains(" iC "))
                     {
-                        string ss = s.Split(new string[] { " iC " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var ss = s.Split(new[] {" iC "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         iC = Convert.ToInt32(ss.Split(' ')[0]);
                     }
 
                     if (s.Contains(" speedup "))
                     {
-                        string ss = s.Split(new string[] { " speedup " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var ss = s.Split(new[] {" speedup "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         speedup = Convert.ToInt32(ss.Split(' ')[0]);
                     }
 
                     if (s.Contains(" aA "))
                     {
-                        string ss = s.Split(new string[] { " aA " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var ss = s.Split(new[] {" aA "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         adjustActions = Convert.ToInt32(ss.Split(' ')[0]);
                     }
 
-                    if (s.Contains(" secret")) dosecrets = true;
+                    if (s.Contains(" secret"))
+                    {
+                        dosecrets = true;
+                    }
 
                     if (s.Contains(" weight "))
                     {
-                        string alphaval = s.Split(new string[] { " weight " }, StringSplitOptions.RemoveEmptyEntries)[1];
+                        var alphaval = s.Split(new[] {" weight "}, StringSplitOptions.RemoveEmptyEntries)[1];
                         alpha = Convert.ToInt32(alphaval.Split(' ')[0]);
                     }
 
                     if (s.Contains(" plcmnt:"))
                     {
-                        string tmp = s.Split(new string[] { " plcmnt:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
+                        var tmp = s.Split(new[] {" plcmnt:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0];
                         placement = Convert.ToInt32(tmp);
                     }
+
                     continue;
                 }
 
@@ -293,186 +303,238 @@ namespace HREngine.Bots
                     this.enemySecrets.Clear();
                     if (this.enemySecretAmount >= 1 && s.Contains(";"))
                     {
-                        string secretstuff = s.Split(';')[1];
-                        foreach (string sec in secretstuff.Split(','))
+                        var secretstuff = s.Split(';')[1];
+                        foreach (var sec in secretstuff.Split(','))
                         {
-                            if (sec == "" || sec == String.Empty || sec == " ") continue;
+                            if (sec == "" || sec == string.Empty || sec == " ")
+                            {
+                                continue;
+                            }
+
                             this.enemySecrets.Add(new SecretItem(sec));
                         }
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("turn "))
                 {
-                    string ss = s.Replace("turn ", "");
-                    gTurn = Convert.ToInt32(ss.Split('/')[0]);
-                    gTurnStep = Convert.ToInt32(ss.Split('/')[1]);
+                    var ss = s.Replace("turn ", "");
+                    this.gTurn = Convert.ToInt32(ss.Split('/')[0]);
+                    this.gTurnStep = Convert.ToInt32(ss.Split('/')[1]);
                 }
 
                 if (s.StartsWith("mana "))
                 {
-                    string ss = s.Replace("mana ", "");
-                    mana = Convert.ToInt32(ss.Split('/')[0]);
-                    maxmana = Convert.ToInt32(ss.Split('/')[1]);
+                    var ss = s.Replace("mana ", "");
+                    this.mana = Convert.ToInt32(ss.Split('/')[0]);
+                    this.maxmana = Convert.ToInt32(ss.Split('/')[1]);
                 }
 
                 if (s.StartsWith("emana "))
                 {
-                    string ss = s.Replace("emana ", "");
-                    enemmaxman = Convert.ToInt32(ss);
+                    var ss = s.Replace("emana ", "");
+                    this.enemmaxman = Convert.ToInt32(ss);
                 }
 
                 if (s.StartsWith("Enemy cards: "))
                 {
-                    enemyNumberHand = Convert.ToInt32(s.Split(' ')[2]);
+                    this.enemyNumberHand = Convert.ToInt32(s.Split(' ')[2]);
                     readstate = 0;
                     continue;
                 }
 
                 if (s.StartsWith("GraveYard:"))
                 {
-                    if (s.Contains("fgn")) this.feugendead = true;
-                    if (s.Contains("stlgg")) this.stalaggdead = true;
+                    if (s.Contains("fgn"))
+                    {
+                        this.feugendead = true;
+                    }
+
+                    if (s.Contains("stlgg"))
+                    {
+                        this.stalaggdead = true;
+                    }
+
                     continue;
                 }
 
                 if (s.StartsWith("osecrets: "))
                 {
-                    string secs = s.Replace("osecrets: ", "");
-                    foreach (string sec in secs.Split(' '))
+                    var secs = s.Replace("osecrets: ", "");
+                    foreach (var sec in secs.Split(' '))
                     {
-                        if (sec == "" || sec == string.Empty) continue;
+                        if (sec == "" || sec == string.Empty)
+                        {
+                            continue;
+                        }
+
                         this.ownsecretlist.Add(sec);
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("cthunbonus: "))
                 {
-                    String[] ss = s.Split(' ');
-                    anzOgOwnCThunAngrBonus = Convert.ToInt32(ss[1]);
-                    anzOgOwnCThunHpBonus = Convert.ToInt32(ss[2]);
-                    anzOgOwnCThunTaunt = Convert.ToInt32(ss[3]);
+                    var ss = s.Split(' ');
+                    this.anzOgOwnCThunAngrBonus = Convert.ToInt32(ss[1]);
+                    this.anzOgOwnCThunHpBonus = Convert.ToInt32(ss[2]);
+                    this.anzOgOwnCThunTaunt = Convert.ToInt32(ss[3]);
                 }
 
                 if (s.StartsWith("jadegolems: "))
                 {
-                    String[] ss = s.Split(' ');
-                    anzOwnJadeGolem = Convert.ToInt32(ss[1]);
-                    anzEnemyJadeGolem = Convert.ToInt32(ss[2]);
+                    var ss = s.Split(' ');
+                    this.anzOwnJadeGolem = Convert.ToInt32(ss[1]);
+                    this.anzEnemyJadeGolem = Convert.ToInt32(ss[2]);
                 }
 
                 if (s.StartsWith("elementals: "))
                 {
-                    String[] ss = s.Split(' ');
-                    anzOwnElementalsThisTurn = Convert.ToInt32(ss[1]);
-                    anzOwnElementalsLastTurn = Convert.ToInt32(ss[2]);
-                    if (ss.Length > 3) ownElementalsHaveLifesteal = (ss[3] == "1") ? 1 : 0;
+                    var ss = s.Split(' ');
+                    this.anzOwnElementalsThisTurn = Convert.ToInt32(ss[1]);
+                    this.anzOwnElementalsLastTurn = Convert.ToInt32(ss[2]);
+                    if (ss.Length > 3)
+                    {
+                        this.ownElementalsHaveLifesteal = ss[3] == "1" ? 1 : 0;
+                    }
                 }
 
                 if (s.StartsWith("quests: "))
                 {
-                    String[] ss = s.Split(' ');
+                    var ss = s.Split(' ');
                     Questmanager.Instance.updateQuestStuff(ss[1], Convert.ToInt32(ss[2]), Convert.ToInt32(ss[3]), true);
                     Questmanager.Instance.updateQuestStuff(ss[4], Convert.ToInt32(ss[5]), Convert.ToInt32(ss[6]), false);
                 }
 
                 if (s.StartsWith("advanced: "))
                 {
-                    String[] ss = s.Split(' ');
+                    var ss = s.Split(' ');
                     this.ownCrystalCore = Convert.ToInt32(ss[1]);
                     this.ownMinionsInDeckCost0 = Convert.ToInt32(ss[2]) == 1 ? true : false;
                 }
 
                 if (s.StartsWith("ownDiedMinions: "))
                 {
-                    string temp = "";
+                    var temp = "";
                     temp = s.Replace("ownDiedMinions: ", "");
 
-                    foreach (string str in temp.Split(';'))
+                    foreach (var str in temp.Split(';'))
                     {
-                        if (str == "" || str == " ") continue;
-                        string id = str.Split(',')[0];
-                        string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
+                        if (str == "" || str == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = str.Split(',')[0];
+                        var ent = str.Split(',')[1];
+                        var gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
                         this.turnGraveYard.Add(gyi);
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("enemyDiedMinions: "))
                 {
-                    string temp = "";
+                    var temp = "";
                     temp = s.Replace("enemyDiedMinions: ", "");
 
-                    foreach (string str in temp.Split(';'))
+                    foreach (var str in temp.Split(';'))
                     {
-                        if (str == "" || str == " ") continue;
-                        string id = str.Split(',')[0];
-                        string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
+                        if (str == "" || str == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = str.Split(',')[0];
+                        var ent = str.Split(',')[1];
+                        var gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
                         this.turnGraveYard.Add(gyi);
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("otg: "))
                 {
-                    string temp = "";
+                    var temp = "";
                     temp = s.Replace("otg: ", "");
 
-                    foreach (string str in temp.Split(';'))
+                    foreach (var str in temp.Split(';'))
                     {
-                        if (str == "" || str == " ") continue;
-                        string id = str.Split(',')[0];
-                        string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
+                        if (str == "" || str == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = str.Split(',')[0];
+                        var ent = str.Split(',')[1];
+                        var gyi = new GraveYardItem(id, Convert.ToInt32(ent), true);
                         this.turnGraveYardAll.Add(gyi);
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("etg: "))
                 {
-                    string temp = "";
+                    var temp = "";
                     temp = s.Replace("etg: ", "");
 
-                    foreach (string str in temp.Split(';'))
+                    foreach (var str in temp.Split(';'))
                     {
-                        if (str == "" || str == " ") continue;
-                        string id = str.Split(',')[0];
-                        string ent = str.Split(',')[1];
-                        GraveYardItem gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
+                        if (str == "" || str == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = str.Split(',')[0];
+                        var ent = str.Split(',')[1];
+                        var gyi = new GraveYardItem(id, Convert.ToInt32(ent), false);
                         this.turnGraveYardAll.Add(gyi);
                     }
+
                     continue;
                 }
 
                 if (s.StartsWith("og:"))
                 {
-                    string temp = s.Replace("og: ", "");
-                    foreach (string tmp in temp.Split(';'))
+                    var temp = s.Replace("og: ", "");
+                    foreach (var tmp in temp.Split(';'))
                     {
-                        if (tmp == "" || tmp == " ") continue;
-                        string id = tmp.Split(',')[0];
-                        int anz = Convert.ToInt32(tmp.Split(',')[1]);
+                        if (tmp == "" || tmp == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = tmp.Split(',')[0];
+                        var anz = Convert.ToInt32(tmp.Split(',')[1]);
                         SimCard cide = id;
                         this.og.Add(cide, anz);
                     }
+
                     continue;
                 }
+
                 if (s.StartsWith("eg:"))
                 {
-                    string temp = s.Replace("eg: ", "");
-                    foreach (string tmp in temp.Split(';'))
+                    var temp = s.Replace("eg: ", "");
+                    foreach (var tmp in temp.Split(';'))
                     {
-                        if (tmp == "" || tmp == " ") continue;
-                        string id = tmp.Split(',')[0];
-                        int anz = Convert.ToInt32(tmp.Split(',')[1]);
+                        if (tmp == "" || tmp == " ")
+                        {
+                            continue;
+                        }
+
+                        var id = tmp.Split(',')[0];
+                        var anz = Convert.ToInt32(tmp.Split(',')[1]);
                         SimCard cide = id;
                         this.eg.Add(cide, anz);
                     }
+
                     continue;
                 }
 
@@ -487,11 +549,14 @@ namespace HREngine.Bots
 
                 if (readstate == 42 && counter == 1) // player
                 {
-                    String[] ss = s.Split(' ');
+                    var ss = s.Split(' ');
                     this.numMinionsPlayedThisTurn = Convert.ToInt32(ss[0]);
                     this.cardsPlayedThisTurn = Convert.ToInt32(ss[1]);
                     this.overload = Convert.ToInt32(ss[2]);
-                    if (ss.Length == 5) this.ownPlayer = Convert.ToInt32(ss[3]);
+                    if (ss.Length == 5)
+                    {
+                        this.ownPlayer = Convert.ToInt32(ss[3]);
+                    }
                     else
                     {
                         this.lockedMana = Convert.ToInt32(ss[3]);
@@ -501,45 +566,59 @@ namespace HREngine.Bots
 
                 if (readstate == 1 && counter == 1) // class + hp + defence + immunewhile attacking + immune
                 {
-                    String[] h = s.Split(' ');
-                    ownHero.CardClass = h[0].ParseEnum<CardClass>();
-                    ownherohp = Convert.ToInt32(h[1]);
-                    ownheromaxhp = Convert.ToInt32(h[2]);
-                    ownherodefence = Convert.ToInt32(h[3]);
-                    this.ownHeroimmunewhileattacking = (h[4] == "True") ? true : false;
-                    this.heroImmune = (h[5] == "True") ? true : false;
-                    ownHEntity = Convert.ToInt32(h[6]);
-                    ownheroready = (h[7] == "True") ? true : false;
-                    ownheroattacksThisRound = Convert.ToInt32(h[8]);
-                    ownHeroFrozen = (h[9] == "True") ? true : false;
-                    ownHeroAttack = Convert.ToInt32(h[10]);
-                    ownHeroTempAttack = Convert.ToInt32(h[11]);
-                    if (h.Length > 12) ownHeroStealth = (h[12] == "True") ? true : false;
+                    var h = s.Split(' ');
+                    this.ownHero.CardClass = h[0].ParseEnum<CardClass>();
+                    this.ownherohp = Convert.ToInt32(h[1]);
+                    this.ownheromaxhp = Convert.ToInt32(h[2]);
+                    this.ownherodefence = Convert.ToInt32(h[3]);
+                    this.ownHeroimmunewhileattacking = h[4] == "True" ? true : false;
+                    this.heroImmune = h[5] == "True" ? true : false;
+                    this.ownHEntity = Convert.ToInt32(h[6]);
+                    this.ownheroready = h[7] == "True" ? true : false;
+                    this.ownheroattacksThisRound = Convert.ToInt32(h[8]);
+                    this.ownHeroFrozen = h[9] == "True" ? true : false;
+                    this.ownHeroAttack = Convert.ToInt32(h[10]);
+                    this.ownHeroTempAttack = Convert.ToInt32(h[11]);
+                    if (h.Length > 12)
+                    {
+                        this.ownHeroStealth = h[12] == "True" ? true : false;
+                    }
                 }
 
                 if (readstate == 1 && counter == 2) // own hero weapon
                 {
-                    String[] w = s.Split(' ');
+                    var w = s.Split(' ');
 
-                    ownWeapon = new Weapon();
-                    int d = Convert.ToInt32(w[2]);
+                    this.ownWeapon = new Weapon();
+                    var d = Convert.ToInt32(w[2]);
                     if (d > 0)
                     {
                         if (w.Length > 5)
                         {
-                            ownWeapon.equip(w[4]);
-                            if (w.Length > 6) ownWeapon.poisonous = (w[5] == "1") ? true : false;
-                            if (w.Length > 7) ownWeapon.lifesteal = (w[6] == "1") ? true : false;
+                            this.ownWeapon.equip(w[4]);
+                            if (w.Length > 6)
+                            {
+                                this.ownWeapon.poisonous = w[5] == "1" ? true : false;
+                            }
+
+                            if (w.Length > 7)
+                            {
+                                this.ownWeapon.lifesteal = w[6] == "1" ? true : false;
+                            }
                         }
-                        else ownWeapon.equip(w[3]);
+                        else
+                        {
+                            this.ownWeapon.equip(w[3]);
+                        }
                     }
-                    ownWeapon.Angr = Convert.ToInt32(w[1]);
-                    ownWeapon.Durability = Convert.ToInt32(w[2]);
+
+                    this.ownWeapon.Angr = Convert.ToInt32(w[1]);
+                    this.ownWeapon.Durability = Convert.ToInt32(w[2]);
                 }
 
                 if (readstate == 1 && counter == 3) // ability + abilityready
                 {
-                    abilityReady = (s.Split(' ')[1] == "True");
+                    abilityReady = s.Split(' ')[1] == "True";
                     heroability = s.Split(' ')[2];
                 }
 
@@ -547,46 +626,62 @@ namespace HREngine.Bots
                 {
                     if (!(s.StartsWith("enemyhero:") || s.StartsWith("cthunbonus:") || s.StartsWith("jadegolems:") || s.StartsWith("elementals:") || s.StartsWith("quests:") || s.StartsWith("advanced:")))
                     {
-                        ownsecretlist.Add(s.Replace(" ", ""));
+                        this.ownsecretlist.Add(s.Replace(" ", ""));
                     }
                 }
 
                 if (readstate == 2 && counter == 1) // class + hp + defence + frozen + immune
                 {
-                    String[] h = s.Split(' ');
-                    enemyHero.CardClass = h[0].ParseEnum<CardClass>();
-                    enemyherohp = Convert.ToInt32(h[1]);
-                    enemyheromaxhp = Convert.ToInt32(h[2]);
-                    enemyherodefence = Convert.ToInt32(h[3]);
-                    enemyFrozen = (h[4] == "True") ? true : false;
-                    enemyHeroImmune = (h[5] == "True") ? true : false;
-                    enemyHEntity = Convert.ToInt32(h[6]);
-                    if (h.Length > 7) enemyHeroStealth = (h[7] == "True") ? true : false;
+                    var h = s.Split(' ');
+                    this.enemyHero.CardClass = h[0].ParseEnum<CardClass>();
+                    this.enemyherohp = Convert.ToInt32(h[1]);
+                    this.enemyheromaxhp = Convert.ToInt32(h[2]);
+                    this.enemyherodefence = Convert.ToInt32(h[3]);
+                    this.enemyFrozen = h[4] == "True" ? true : false;
+                    this.enemyHeroImmune = h[5] == "True" ? true : false;
+                    this.enemyHEntity = Convert.ToInt32(h[6]);
+                    if (h.Length > 7)
+                    {
+                        this.enemyHeroStealth = h[7] == "True" ? true : false;
+                    }
                 }
 
                 if (readstate == 2 && counter == 2) // weapon + stuff
                 {
-                    String[] w = s.Split(' ');
+                    var w = s.Split(' ');
 
-                    enemyWeapon = new Weapon();
-                    int d = Convert.ToInt32(w[2]);
+                    this.enemyWeapon = new Weapon();
+                    var d = Convert.ToInt32(w[2]);
                     if (d > 0)
                     {
                         if (w.Length > 5)
                         {
-                            enemyWeapon.equip((w[4]));
-                            if (w.Length > 6) enemyWeapon.poisonous = (w[5] == "1") ? true : false;
-                            if (w.Length > 7) enemyWeapon.lifesteal = (w[6] == "1") ? true : false;
+                            this.enemyWeapon.equip(w[4]);
+                            if (w.Length > 6)
+                            {
+                                this.enemyWeapon.poisonous = w[5] == "1" ? true : false;
+                            }
+
+                            if (w.Length > 7)
+                            {
+                                this.enemyWeapon.lifesteal = w[6] == "1" ? true : false;
+                            }
                         }
-                        else enemyWeapon.equip((w[3]));
+                        else
+                        {
+                            this.enemyWeapon.equip(w[3]);
+                        }
                     }
-                    enemyWeapon.Angr = Convert.ToInt32(w[1]);
-                    enemyWeapon.Durability = Convert.ToInt32(w[2]);
+
+                    this.enemyWeapon.Angr = Convert.ToInt32(w[1]);
+                    this.enemyWeapon.Durability = Convert.ToInt32(w[2]);
                 }
+
                 if (readstate == 2 && counter == 3) // ability
                 {
-                    enemyability = (s.Split(' ')[2]);
+                    enemyability = s.Split(' ')[2];
                 }
+
                 if (readstate == 2 && counter == 4) // fatigue
                 {
                     this.ownDecksize = Convert.ToInt32(s.Split(' ')[1]);
@@ -599,103 +694,165 @@ namespace HREngine.Bots
                 {
                     if (s.Contains(" zp:"))
                     {
+                        var minionname = s.Split(' ')[0];
+                        var minionid = s.Split(' ')[1];
+                        var zp = Convert.ToInt32(s.Split(new[] {" zp:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var ent = 1000 + j;
+                        if (s.Contains(" e:"))
+                        {
+                            ent = Convert.ToInt32(s.Split(new[] {" e:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        }
 
-                        string minionname = s.Split(' ')[0];
-                        string minionid = s.Split(' ')[1];
-                        int zp = Convert.ToInt32(s.Split(new string[] { " zp:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int ent = 1000 + j;
-                        if (s.Contains(" e:")) ent = Convert.ToInt32(s.Split(new string[] { " e:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int attack = Convert.ToInt32(s.Split(new string[] { " A:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int hp = Convert.ToInt32(s.Split(new string[] { " H:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int maxhp = Convert.ToInt32(s.Split(new string[] { " mH:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        bool ready = s.Split(new string[] { " rdy:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0] == "True";
+                        var attack = Convert.ToInt32(s.Split(new[] {" A:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var hp = Convert.ToInt32(s.Split(new[] {" H:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var maxhp = Convert.ToInt32(s.Split(new[] {" mH:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var ready = s.Split(new[] {" rdy:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0] == "True";
                         if (s.Contains(" respawn:"))
                         {
-                            string[] tmp = s.Split(new string[] { " respawn:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0].Split(':');
-                            LurkersDB.Add(ent, new IDEnumOwner() { IDEnum = (tmp[0]), own = (tmp[1] == "True" ? true : false) });
+                            var tmp = s.Split(new[] {" respawn:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0].Split(':');
+                            this.LurkersDB.Add(ent, new IDEnumOwner {IDEnum = tmp[0], own = tmp[1] == "True" ? true : false});
                         }
-                        int natt = 0;
-                        if (s.Contains(" natt:")) natt = Convert.ToInt32(s.Split(new string[] { " natt:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int hChoice = 0;//hidden choice
-                        if (s.Contains(" hChoice:")) hChoice = Convert.ToInt32(s.Split(new string[] { " hChoice:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+
+                        var natt = 0;
+                        if (s.Contains(" natt:"))
+                        {
+                            natt = Convert.ToInt32(s.Split(new[] {" natt:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        }
+
+                        var hChoice = 0; //hidden choice
+                        if (s.Contains(" hChoice:"))
+                        {
+                            hChoice = Convert.ToInt32(s.Split(new[] {" hChoice:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        }
 
                         // optional params (bools)
-                        bool ex = s.Contains(" ex");
-                        bool taunt = s.Contains(" tnt");
-                        bool frzn = s.Contains(" frz");
-                        bool silenced = s.Contains(" silenced");
-                        bool divshield = s.Contains(" divshield");
-                        bool ptt = s.Contains(" ptt");
-                        bool wndfry = s.Contains(" wndfr");
-                        bool stl = s.Contains(" stlth");
-                        bool pois = s.Contains(" poi");
-                        bool lfst = s.Contains(" lfst");
-                        bool immn = s.Contains(" imm");
-                        bool untch = s.Contains(" untch");
-                        bool cncdl = s.Contains(" cncdl");
-                        bool destroyOnOwnTurnStart = s.Contains(" dstrOwnTrnStrt");
-                        bool destroyOnOwnTurnEnd = s.Contains(" dstrOwnTrnnd");
-                        bool destroyOnEnemyTurnStart = s.Contains(" dstrEnmTrnStrt");
-                        bool destroyOnEnemyTurnEnd = s.Contains(" dstrEnmTrnnd");
-                        bool shadowmadnessed = s.Contains(" shdwmdnssd");
-                        bool cntlower = s.Contains(" cantLowerHpBelowOne");
-                        bool cbtBySpells = s.Contains(" cbtBySpells");
+                        var ex = s.Contains(" ex");
+                        var taunt = s.Contains(" tnt");
+                        var frzn = s.Contains(" frz");
+                        var silenced = s.Contains(" silenced");
+                        var divshield = s.Contains(" divshield");
+                        var ptt = s.Contains(" ptt");
+                        var wndfry = s.Contains(" wndfr");
+                        var stl = s.Contains(" stlth");
+                        var pois = s.Contains(" poi");
+                        var lfst = s.Contains(" lfst");
+                        var immn = s.Contains(" imm");
+                        var untch = s.Contains(" untch");
+                        var cncdl = s.Contains(" cncdl");
+                        var destroyOnOwnTurnStart = s.Contains(" dstrOwnTrnStrt");
+                        var destroyOnOwnTurnEnd = s.Contains(" dstrOwnTrnnd");
+                        var destroyOnEnemyTurnStart = s.Contains(" dstrEnmTrnStrt");
+                        var destroyOnEnemyTurnEnd = s.Contains(" dstrEnmTrnnd");
+                        var shadowmadnessed = s.Contains(" shdwmdnssd");
+                        var cntlower = s.Contains(" cantLowerHpBelowOne");
+                        var cbtBySpells = s.Contains(" cbtBySpells");
                         //optional params (ints)
 
 
-                        int chrg = 0;//charge
-                        if (s.Contains(" chrg(")) chrg = Convert.ToInt32(s.Split(new string[] { " chrg(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var chrg = 0; //charge
+                        if (s.Contains(" chrg("))
+                        {
+                            chrg = Convert.ToInt32(s.Split(new[] {" chrg("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int adjadmg = 0;//adjadmg
-                        if (s.Contains(" adjaattk(")) adjadmg = Convert.ToInt32(s.Split(new string[] { " adjaattk(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var adjadmg = 0; //adjadmg
+                        if (s.Contains(" adjaattk("))
+                        {
+                            adjadmg = Convert.ToInt32(s.Split(new[] {" adjaattk("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int tmpdmg = 0;//adjadmg
-                        if (s.Contains(" tmpattck(")) tmpdmg = Convert.ToInt32(s.Split(new string[] { " tmpattck(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var tmpdmg = 0; //adjadmg
+                        if (s.Contains(" tmpattck("))
+                        {
+                            tmpdmg = Convert.ToInt32(s.Split(new[] {" tmpattck("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int spllpwr = 0;//adjadmg
-                        if (s.Contains(" spllpwr(")) spllpwr = Convert.ToInt32(s.Split(new string[] { " spllpwr(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var spllpwr = 0; //adjadmg
+                        if (s.Contains(" spllpwr("))
+                        {
+                            spllpwr = Convert.ToInt32(s.Split(new[] {" spllpwr("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ancestralspirit = 0;//adjadmg
-                        if (s.Contains(" ancstrl(")) ancestralspirit = Convert.ToInt32(s.Split(new string[] { " ancstrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ancestralspirit = 0; //adjadmg
+                        if (s.Contains(" ancstrl("))
+                        {
+                            ancestralspirit = Convert.ToInt32(s.Split(new[] {" ancstrl("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int desperatestand = 0;//adjadmg
-                        if (s.Contains(" despStand(")) desperatestand = Convert.ToInt32(s.Split(new string[] { " despStand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var desperatestand = 0; //adjadmg
+                        if (s.Contains(" despStand("))
+                        {
+                            desperatestand = Convert.ToInt32(s.Split(new[] {" despStand("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ownBlessingOfWisdom = 0;//adjadmg
-                        if (s.Contains(" ownBlssng(")) ownBlessingOfWisdom = Convert.ToInt32(s.Split(new string[] { " ownBlssng(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ownBlessingOfWisdom = 0; //adjadmg
+                        if (s.Contains(" ownBlssng("))
+                        {
+                            ownBlessingOfWisdom = Convert.ToInt32(s.Split(new[] {" ownBlssng("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int enemyBlessingOfWisdom = 0;//adjadmg
-                        if (s.Contains(" enemyBlssng(")) enemyBlessingOfWisdom = Convert.ToInt32(s.Split(new string[] { " enemyBlssng(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var enemyBlessingOfWisdom = 0; //adjadmg
+                        if (s.Contains(" enemyBlssng("))
+                        {
+                            enemyBlessingOfWisdom = Convert.ToInt32(s.Split(new[] {" enemyBlssng("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ownPowerWordGlory = 0;//adjadmg
-                        if (s.Contains(" ownGlory(")) ownPowerWordGlory = Convert.ToInt32(s.Split(new string[] { " ownGlory(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ownPowerWordGlory = 0; //adjadmg
+                        if (s.Contains(" ownGlory("))
+                        {
+                            ownPowerWordGlory = Convert.ToInt32(s.Split(new[] {" ownGlory("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int enemyPowerWordGlory = 0;//adjadmg
-                        if (s.Contains(" enemyGlory(")) enemyPowerWordGlory = Convert.ToInt32(s.Split(new string[] { " enemyGlory(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var enemyPowerWordGlory = 0; //adjadmg
+                        if (s.Contains(" enemyGlory("))
+                        {
+                            enemyPowerWordGlory = Convert.ToInt32(s.Split(new[] {" enemyGlory("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int souloftheforest = 0;//adjadmg
-                        if (s.Contains(" souloffrst(")) souloftheforest = Convert.ToInt32(s.Split(new string[] { " souloffrst(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var souloftheforest = 0; //adjadmg
+                        if (s.Contains(" souloffrst("))
+                        {
+                            souloftheforest = Convert.ToInt32(s.Split(new[] {" souloffrst("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int stegodon = 0;//adjadmg
-                        if (s.Contains(" stegodon(")) stegodon = Convert.ToInt32(s.Split(new string[] { " stegodon(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var stegodon = 0; //adjadmg
+                        if (s.Contains(" stegodon("))
+                        {
+                            stegodon = Convert.ToInt32(s.Split(new[] {" stegodon("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int livingspores = 0;//adjadmg
-                        if (s.Contains(" lspores(")) livingspores = Convert.ToInt32(s.Split(new string[] { " lspores(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var livingspores = 0; //adjadmg
+                        if (s.Contains(" lspores("))
+                        {
+                            livingspores = Convert.ToInt32(s.Split(new[] {" lspores("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int explorershat = 0;//adjadmg
-                        if (s.Contains(" explHat(")) explorershat = Convert.ToInt32(s.Split(new string[] { " explHat(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var explorershat = 0; //adjadmg
+                        if (s.Contains(" explHat("))
+                        {
+                            explorershat = Convert.ToInt32(s.Split(new[] {" explHat("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int returnToHand = 0;//adjadmg
-                        if (s.Contains(" retHand(")) returnToHand = Convert.ToInt32(s.Split(new string[] { " retHand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var returnToHand = 0; //adjadmg
+                        if (s.Contains(" retHand("))
+                        {
+                            returnToHand = Convert.ToInt32(s.Split(new[] {" retHand("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int infest = 0;//adjadmg
-                        if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var infest = 0; //adjadmg
+                        if (s.Contains(" infest("))
+                        {
+                            infest = Convert.ToInt32(s.Split(new[] {" infest("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
                         SimCard deathrattle2 = null;
-                        if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
+                        if (s.Contains(" dethrl("))
+                        {
+                            deathrattle2 = s.Split(new[] {" dethrl("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0];
+                        }
 
 
-                        tempminion = createNewMinion(new Handcard(((minionid))), zp, true);
+                        tempminion = this.createNewMinion(new Handcard(minionid), zp, true);
                         tempminion.own = true;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -745,11 +902,13 @@ namespace HREngine.Bots
                         tempminion.infest = infest;
                         tempminion.deathrattle2 = deathrattle2;
 
-                        if (maxhp > hp) tempminion.wounded = true;
+                        if (maxhp > hp)
+                        {
+                            tempminion.wounded = true;
+                        }
+
                         tempminion.updateReadyness();
                         this.ownminions.Add(tempminion);
-
-
                     }
                 }
 
@@ -757,98 +916,155 @@ namespace HREngine.Bots
                 {
                     if (s.Contains(" zp:"))
                     {
+                        var minionname = s.Split(' ')[0];
+                        var minionid = s.Split(' ')[1];
+                        var zp = Convert.ToInt32(s.Split(new[] {" zp:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var ent = 1000 + j;
+                        if (s.Contains(" e:"))
+                        {
+                            ent = Convert.ToInt32(s.Split(new[] {" e:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        }
 
-                        string minionname = s.Split(' ')[0];
-                        string minionid = s.Split(' ')[1];
-                        int zp = Convert.ToInt32(s.Split(new string[] { " zp:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int ent = 1000 + j;
-                        if (s.Contains(" e:")) ent = Convert.ToInt32(s.Split(new string[] { " e:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int attack = Convert.ToInt32(s.Split(new string[] { " A:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int hp = Convert.ToInt32(s.Split(new string[] { " H:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int maxhp = Convert.ToInt32(s.Split(new string[] { " mH:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        bool ready = s.Split(new string[] { " rdy:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0] == "True" ? true : false;
-                        int natt = 0;
+                        var attack = Convert.ToInt32(s.Split(new[] {" A:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var hp = Convert.ToInt32(s.Split(new[] {" H:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var maxhp = Convert.ToInt32(s.Split(new[] {" mH:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var ready = s.Split(new[] {" rdy:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0] == "True" ? true : false;
+                        var natt = 0;
                         //if (s.Contains(" natt:")) natt = Convert.ToInt32(s.Split(new string[] { " natt:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
-                        int hChoice = 0;//hidden choice
-                        if (s.Contains(" hChoice:")) hChoice = Convert.ToInt32(s.Split(new string[] { " hChoice:" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        var hChoice = 0; //hidden choice
+                        if (s.Contains(" hChoice:"))
+                        {
+                            hChoice = Convert.ToInt32(s.Split(new[] {" hChoice:"}, StringSplitOptions.RemoveEmptyEntries)[1].Split(' ')[0]);
+                        }
 
                         // optional params (bools)
-                        bool ex = s.Contains(" ex");
-                        bool taunt = s.Contains(" tnt");
-                        bool frzn = s.Contains(" frz");
-                        bool silenced = s.Contains(" silenced");
-                        bool divshield = s.Contains(" divshield");
-                        bool ptt = s.Contains(" ptt");
-                        bool wndfry = s.Contains(" wndfr");
-                        bool stl = s.Contains(" stlth");
-                        bool pois = s.Contains(" poi");
-                        bool lfst = s.Contains(" lfst");
-                        bool immn = s.Contains(" imm");
-                        bool untch = s.Contains(" untch");
-                        bool cncdl = s.Contains(" cncdl");
-                        bool destroyOnOwnTurnStart = s.Contains(" dstrOwnTrnStrt");
-                        bool destroyOnOwnTurnEnd = s.Contains(" dstrOwnTrnnd");
-                        bool destroyOnEnemyTurnStart = s.Contains(" dstrEnmTrnStrt");
-                        bool destroyOnEnemyTurnEnd = s.Contains(" dstrEnmTrnnd");
-                        bool shadowmadnessed = s.Contains(" shdwmdnssd");
-                        bool cntlower = s.Contains(" cantLowerHpBelowOne");
-                        bool cbtBySpells = s.Contains(" cbtBySpells");
+                        var ex = s.Contains(" ex");
+                        var taunt = s.Contains(" tnt");
+                        var frzn = s.Contains(" frz");
+                        var silenced = s.Contains(" silenced");
+                        var divshield = s.Contains(" divshield");
+                        var ptt = s.Contains(" ptt");
+                        var wndfry = s.Contains(" wndfr");
+                        var stl = s.Contains(" stlth");
+                        var pois = s.Contains(" poi");
+                        var lfst = s.Contains(" lfst");
+                        var immn = s.Contains(" imm");
+                        var untch = s.Contains(" untch");
+                        var cncdl = s.Contains(" cncdl");
+                        var destroyOnOwnTurnStart = s.Contains(" dstrOwnTrnStrt");
+                        var destroyOnOwnTurnEnd = s.Contains(" dstrOwnTrnnd");
+                        var destroyOnEnemyTurnStart = s.Contains(" dstrEnmTrnStrt");
+                        var destroyOnEnemyTurnEnd = s.Contains(" dstrEnmTrnnd");
+                        var shadowmadnessed = s.Contains(" shdwmdnssd");
+                        var cntlower = s.Contains(" cantLowerHpBelowOne");
+                        var cbtBySpells = s.Contains(" cbtBySpells");
                         //optional params (ints)
 
 
-                        int chrg = 0;//charge
-                        if (s.Contains(" chrg(")) chrg = Convert.ToInt32(s.Split(new string[] { " chrg(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var chrg = 0; //charge
+                        if (s.Contains(" chrg("))
+                        {
+                            chrg = Convert.ToInt32(s.Split(new[] {" chrg("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int adjadmg = 0;//adjadmg
-                        if (s.Contains(" adjaattk(")) adjadmg = Convert.ToInt32(s.Split(new string[] { " adjaattk(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var adjadmg = 0; //adjadmg
+                        if (s.Contains(" adjaattk("))
+                        {
+                            adjadmg = Convert.ToInt32(s.Split(new[] {" adjaattk("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int tmpdmg = 0;//adjadmg
-                        if (s.Contains(" tmpattck(")) tmpdmg = Convert.ToInt32(s.Split(new string[] { " tmpattck(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var tmpdmg = 0; //adjadmg
+                        if (s.Contains(" tmpattck("))
+                        {
+                            tmpdmg = Convert.ToInt32(s.Split(new[] {" tmpattck("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int spllpwr = 0;//adjadmg
-                        if (s.Contains(" spllpwr(")) spllpwr = Convert.ToInt32(s.Split(new string[] { " spllpwr(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var spllpwr = 0; //adjadmg
+                        if (s.Contains(" spllpwr("))
+                        {
+                            spllpwr = Convert.ToInt32(s.Split(new[] {" spllpwr("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ancestralspirit = 0;//adjadmg
-                        if (s.Contains(" ancstrl(")) ancestralspirit = Convert.ToInt32(s.Split(new string[] { " ancstrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ancestralspirit = 0; //adjadmg
+                        if (s.Contains(" ancstrl("))
+                        {
+                            ancestralspirit = Convert.ToInt32(s.Split(new[] {" ancstrl("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int desperatestand = 0;//adjadmg
-                        if (s.Contains(" despStand(")) desperatestand = Convert.ToInt32(s.Split(new string[] { " despStand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var desperatestand = 0; //adjadmg
+                        if (s.Contains(" despStand("))
+                        {
+                            desperatestand = Convert.ToInt32(s.Split(new[] {" despStand("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ownBlessingOfWisdom = 0;//adjadmg
-                        if (s.Contains(" ownBlssng(")) ownBlessingOfWisdom = Convert.ToInt32(s.Split(new string[] { " ownBlssng(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ownBlessingOfWisdom = 0; //adjadmg
+                        if (s.Contains(" ownBlssng("))
+                        {
+                            ownBlessingOfWisdom = Convert.ToInt32(s.Split(new[] {" ownBlssng("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int enemyBlessingOfWisdom = 0;//adjadmg
-                        if (s.Contains(" enemyBlssng(")) enemyBlessingOfWisdom = Convert.ToInt32(s.Split(new string[] { " enemyBlssng(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var enemyBlessingOfWisdom = 0; //adjadmg
+                        if (s.Contains(" enemyBlssng("))
+                        {
+                            enemyBlessingOfWisdom = Convert.ToInt32(s.Split(new[] {" enemyBlssng("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int ownPowerWordGlory = 0;//adjadmg
-                        if (s.Contains(" ownGlory(")) ownPowerWordGlory = Convert.ToInt32(s.Split(new string[] { " ownGlory(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var ownPowerWordGlory = 0; //adjadmg
+                        if (s.Contains(" ownGlory("))
+                        {
+                            ownPowerWordGlory = Convert.ToInt32(s.Split(new[] {" ownGlory("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int enemyPowerWordGlory = 0;//adjadmg
-                        if (s.Contains(" enemyGlory(")) enemyPowerWordGlory = Convert.ToInt32(s.Split(new string[] { " enemyGlory(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var enemyPowerWordGlory = 0; //adjadmg
+                        if (s.Contains(" enemyGlory("))
+                        {
+                            enemyPowerWordGlory = Convert.ToInt32(s.Split(new[] {" enemyGlory("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int souloftheforest = 0;//adjadmg
-                        if (s.Contains(" souloffrst(")) souloftheforest = Convert.ToInt32(s.Split(new string[] { " souloffrst(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var souloftheforest = 0; //adjadmg
+                        if (s.Contains(" souloffrst("))
+                        {
+                            souloftheforest = Convert.ToInt32(s.Split(new[] {" souloffrst("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int stegodon = 0;//adjadmg
-                        if (s.Contains(" stegodon(")) stegodon = Convert.ToInt32(s.Split(new string[] { " stegodon(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var stegodon = 0; //adjadmg
+                        if (s.Contains(" stegodon("))
+                        {
+                            stegodon = Convert.ToInt32(s.Split(new[] {" stegodon("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int livingspores = 0;//adjadmg
-                        if (s.Contains(" lspores(")) livingspores = Convert.ToInt32(s.Split(new string[] { " lspores(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var livingspores = 0; //adjadmg
+                        if (s.Contains(" lspores("))
+                        {
+                            livingspores = Convert.ToInt32(s.Split(new[] {" lspores("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int explorershat = 0;//adjadmg
-                        if (s.Contains(" explHat(")) explorershat = Convert.ToInt32(s.Split(new string[] { " explHat(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var explorershat = 0; //adjadmg
+                        if (s.Contains(" explHat("))
+                        {
+                            explorershat = Convert.ToInt32(s.Split(new[] {" explHat("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int returnToHand = 0;//adjadmg
-                        if (s.Contains(" retHand(")) returnToHand = Convert.ToInt32(s.Split(new string[] { " retHand(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var returnToHand = 0; //adjadmg
+                        if (s.Contains(" retHand("))
+                        {
+                            returnToHand = Convert.ToInt32(s.Split(new[] {" retHand("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
-                        int infest = 0;//adjadmg
-                        if (s.Contains(" infest(")) infest = Convert.ToInt32(s.Split(new string[] { " infest(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        var infest = 0; //adjadmg
+                        if (s.Contains(" infest("))
+                        {
+                            infest = Convert.ToInt32(s.Split(new[] {" infest("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]);
+                        }
 
                         SimCard deathrattle2 = null;
-                        if (s.Contains(" dethrl(")) deathrattle2 = ((s.Split(new string[] { " dethrl(" }, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0]));
+                        if (s.Contains(" dethrl("))
+                        {
+                            deathrattle2 = s.Split(new[] {" dethrl("}, StringSplitOptions.RemoveEmptyEntries)[1].Split(')')[0];
+                        }
 
 
-                        tempminion = createNewMinion(new Handcard(((minionid))), zp, false);
+                        tempminion = this.createNewMinion(new Handcard(minionid), zp, false);
                         tempminion.own = false;
                         tempminion.entitiyID = ent;
                         tempminion.handcard.entity = ent;
@@ -898,29 +1114,42 @@ namespace HREngine.Bots
                         tempminion.infest = infest;
                         tempminion.deathrattle2 = deathrattle2;
 
-                        if (maxhp > hp) tempminion.wounded = true;
+                        if (maxhp > hp)
+                        {
+                            tempminion.wounded = true;
+                        }
+
                         tempminion.updateReadyness();
                         this.enemyminions.Add(tempminion);
-
                     }
-
                 }
 
                 if (readstate == 5) // minion or enchantment
                 {
+                    var card = new Handcard();
 
-                    Handcard card = new Handcard();
-
-                    String[] hc = s.Split(' ');
+                    var hc = s.Split(' ');
                     card.position = Convert.ToInt32(hc[1]);
-                    string minionname = hc[2];
+                    var minionname = hc[2];
                     card.manacost = Convert.ToInt32(hc[3]);
                     card.entity = Convert.ToInt32(hc[5]);
-                    card.card = ((hc[6]));
-                    if (hc.Length > 8) card.addattack = Convert.ToInt32(hc[7]);
-                    if (hc.Length > 9) card.addHp = Convert.ToInt32(hc[8]);
-                    if (hc.Length > 10) card.elemPoweredUp = Convert.ToInt32(hc[9]);
-                    handcards.Add(card);
+                    card.card = hc[6];
+                    if (hc.Length > 8)
+                    {
+                        card.addattack = Convert.ToInt32(hc[7]);
+                    }
+
+                    if (hc.Length > 9)
+                    {
+                        card.addHp = Convert.ToInt32(hc[8]);
+                    }
+
+                    if (hc.Length > 10)
+                    {
+                        card.elemPoweredUp = Convert.ToInt32(hc[9]);
+                    }
+
+                    this.handcards.Add(card);
                 }
 
 
@@ -961,10 +1190,10 @@ namespace HREngine.Bots
                 }
 
 
-
                 counter++;
                 j++;
             }
+
             Helpfunctions.Instance.logg("rdy");
 
             //Set default settings for behaviour
@@ -996,26 +1225,26 @@ namespace HREngine.Bots
 
             //set Simulation stuff
             Ai.Instance.botBase = Silverfish.Instance.getBehaviorByName(this.botBehavior);
-            RulesEngine.Instance.setCardIdRulesGame((this.ownHero.CardClass), (this.enemyHero.CardClass));
-            RulesEngine.Instance.setRulesTurn((gTurn + 1) / 2);
+            RulesEngine.Instance.setCardIdRulesGame(this.ownHero.CardClass, this.enemyHero.CardClass);
+            RulesEngine.Instance.setRulesTurn((this.gTurn + 1) / 2);
             Ai.Instance.setMaxWide(this.maxwide);
             Ai.Instance.setTwoTurnSimulation(false, this.twoturnsim);
             Ai.Instance.setPlayAround();
 
 
-            Hrtprozis.Instance.setOwnPlayer(ownPlayer);
-            Handmanager.Instance.setOwnPlayer(ownPlayer);
+            Hrtprozis.Instance.setOwnPlayer(this.ownPlayer);
+            Handmanager.Instance.setOwnPlayer(this.ownPlayer);
 
             this.numOptionPlayedThisTurn = 0;
-            this.numOptionPlayedThisTurn += this.cardsPlayedThisTurn + ownheroattacksThisRound;
-            foreach (Minion m in this.ownminions)
+            this.numOptionPlayedThisTurn += this.cardsPlayedThisTurn + this.ownheroattacksThisRound;
+            foreach (var m in this.ownminions)
             {
                 this.numOptionPlayedThisTurn += m.numAttacksThisTurn;
             }
 
             Hrtprozis.Instance.updateTurnInfo(this.gTurn, this.gTurnStep);
-            Hrtprozis.Instance.updatePlayer(this.maxmana, this.mana, this.cardsPlayedThisTurn, this.numMinionsPlayedThisTurn, this.numOptionPlayedThisTurn, this.overload, this.lockedMana, ownHEntity, enemyHEntity);
-            Hrtprozis.Instance.updateSecretStuff(this.ownsecretlist, enemySecretAmount);
+            Hrtprozis.Instance.updatePlayer(this.maxmana, this.mana, this.cardsPlayedThisTurn, this.numMinionsPlayedThisTurn, this.numOptionPlayedThisTurn, this.overload, this.lockedMana, this.ownHEntity, this.enemyHEntity);
+            Hrtprozis.Instance.updateSecretStuff(this.ownsecretlist, this.enemySecretAmount);
             Hrtprozis.Instance.updateCThunInfo(this.anzOgOwnCThunAngrBonus, this.anzOgOwnCThunHpBonus, this.anzOgOwnCThunTaunt);
             Hrtprozis.Instance.updateJadeGolemsInfo(this.anzOwnJadeGolem, this.anzEnemyJadeGolem);
             Hrtprozis.Instance.updateElementals(this.anzOwnElementalsThisTurn, this.anzOwnElementalsLastTurn, this.ownElementalsHaveLifesteal);
@@ -1023,8 +1252,11 @@ namespace HREngine.Bots
             Hrtprozis.Instance.updateOwnMinionsInDeckCost0(this.ownMinionsInDeckCost0);
             Hrtprozis.Instance.updateDiscoverCards(this.discover);
 
-            bool herowindfury = false;
-            if (this.ownWeapon.windfury) herowindfury = true;
+            var herowindfury = false;
+            if (this.ownWeapon.windfury)
+            {
+                herowindfury = true;
+            }
 
             //create heros:
 
@@ -1036,27 +1268,27 @@ namespace HREngine.Bots
             this.enemyHero.own = false;
             this.ownHero.maxHp = this.ownheromaxhp;
             this.enemyHero.maxHp = this.enemyheromaxhp;
-            this.ownHero.entitiyID = ownHEntity;
-            this.enemyHero.entitiyID = enemyHEntity;
-            this.ownHero.CardClass = (this.ownHero.CardClass);
-            this.enemyHero.CardClass = (this.enemyHero.CardClass);
+            this.ownHero.entitiyID = this.ownHEntity;
+            this.enemyHero.entitiyID = this.enemyHEntity;
+            this.ownHero.CardClass = this.ownHero.CardClass;
+            this.enemyHero.CardClass = this.enemyHero.CardClass;
 
-            this.ownHero.Angr = ownHeroAttack;
-            this.ownHero.Hp = ownherohp;
-            this.ownHero.armor = ownherodefence;
-            this.ownHero.frozen = ownHeroFrozen;
-            this.ownHero.immuneWhileAttacking = ownHeroimmunewhileattacking;
-            this.ownHero.immune = heroImmune;
-            this.ownHero.numAttacksThisTurn = ownheroattacksThisRound;
+            this.ownHero.Angr = this.ownHeroAttack;
+            this.ownHero.Hp = this.ownherohp;
+            this.ownHero.armor = this.ownherodefence;
+            this.ownHero.frozen = this.ownHeroFrozen;
+            this.ownHero.immuneWhileAttacking = this.ownHeroimmunewhileattacking;
+            this.ownHero.immune = this.heroImmune;
+            this.ownHero.numAttacksThisTurn = this.ownheroattacksThisRound;
             this.ownHero.windfury = herowindfury;
-            this.ownHero.stealth = ownHeroStealth;
+            this.ownHero.stealth = this.ownHeroStealth;
 
-            this.enemyHero.Angr = enemyWeapon.Angr;
-            this.enemyHero.Hp = enemyherohp;
-            this.enemyHero.frozen = enemyFrozen;
-            this.enemyHero.armor = enemyherodefence;
-            this.enemyHero.immune = enemyHeroImmune;
-            this.enemyHero.stealth = enemyHeroStealth;
+            this.enemyHero.Angr = this.enemyWeapon.Angr;
+            this.enemyHero.Hp = this.enemyherohp;
+            this.enemyHero.frozen = this.enemyFrozen;
+            this.enemyHero.armor = this.enemyherodefence;
+            this.enemyHero.immune = this.enemyHeroImmune;
+            this.enemyHero.stealth = this.enemyHeroStealth;
             this.enemyHero.Ready = false;
 
             this.ownHero.updateReadyness();
@@ -1064,31 +1296,30 @@ namespace HREngine.Bots
 
             //save data
             Hrtprozis.Instance.updateHero(this.ownWeapon, this.ownHero.CardClass, heroability, abilityReady, this.ownHeroPowerCost, this.ownHero);
-            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyHero.CardClass, enemyability, false, this.enemyHeroPowerCost, this.enemyHero, enemmaxman);
-            Hrtprozis.Instance.updateHeroStartClass((this.ownHero.CardClass), (this.enemyHero.CardClass));
+            Hrtprozis.Instance.updateHero(this.enemyWeapon, this.enemyHero.CardClass, enemyability, false, this.enemyHeroPowerCost, this.enemyHero, this.enemmaxman);
+            Hrtprozis.Instance.updateHeroStartClass(this.ownHero.CardClass, this.enemyHero.CardClass);
 
             Hrtprozis.Instance.updateMinions(this.ownminions, this.enemyminions);
             Hrtprozis.Instance.updateLurkersDB(this.LurkersDB);
 
             Hrtprozis.Instance.updateFatigueStats(this.ownDecksize, this.ownFatigue, this.enemyDecksize, this.enemyFatigue);
 
-            Handmanager.Instance.setHandcards(this.handcards, this.handcards.Count, enemyNumberHand);
+            Handmanager.Instance.setHandcards(this.handcards, this.handcards.Count, this.enemyNumberHand);
 
-            Probabilitymaker.Instance.setEnemySecretData(enemySecrets);
+            Probabilitymaker.Instance.setEnemySecretData(this.enemySecrets);
 
             Probabilitymaker.Instance.setTurnGraveYard(this.turnGraveYard, this.turnGraveYardAll);
             Probabilitymaker.Instance.stalaggDead = this.stalaggdead;
             Probabilitymaker.Instance.feugenDead = this.feugendead;
 
-            Probabilitymaker.Instance.setOwnCardsOut(og);
-            Probabilitymaker.Instance.setEnemyCardsOut(eg);
+            Probabilitymaker.Instance.setOwnCardsOut(this.og);
+            Probabilitymaker.Instance.setEnemyCardsOut(this.eg);
         }
-
 
 
         public Minion createNewMinion(Handcard hc, int zonepos, bool own)
         {
-            Minion m = new Minion
+            var m = new Minion
             {
                 handcard = new Handcard(hc),
                 zonepos = zonepos,
@@ -1108,15 +1339,25 @@ namespace HREngine.Bots
             m.numAttacksThisTurn = 0;
             m.windfury = hc.card.Windfury;
             m.taunt = hc.card.Taunt;
-            m.charge = (hc.card.Charge) ? 1 : 0;
+            m.charge = hc.card.Charge ? 1 : 0;
             m.divineshild = hc.card.DivineShield;
             m.poisonous = hc.card.Poisonous;
             m.lifesteal = hc.card.Lifesteal;
             m.stealth = hc.card.Stealth;
 
-            if (own) m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.ownHero.CardClass), hc.card.Race);
-            else m.synergy = PenalityManager.Instance.getClassRacePriorityPenality((this.enemyHero.CardClass), hc.card.Race);
-            if (m.synergy > 0 && hc.card.Stealth) m.synergy++;
+            if (own)
+            {
+                m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.ownHero.CardClass, hc.card.Race);
+            }
+            else
+            {
+                m.synergy = PenalityManager.Instance.getClassRacePriorityPenality(this.enemyHero.CardClass, hc.card.Race);
+            }
+
+            if (m.synergy > 0 && hc.card.Stealth)
+            {
+                m.synergy++;
+            }
 
             m.updateReadyness();
 
@@ -1124,6 +1365,7 @@ namespace HREngine.Bots
             {
                 m.Angr = m.Hp;
             }
+
             return m;
         }
 
@@ -1166,5 +1408,4 @@ namespace HREngine.Bots
             Helpfunctions.Instance.logg("#################### Settings End #####################################");
         }
     }
-
 }

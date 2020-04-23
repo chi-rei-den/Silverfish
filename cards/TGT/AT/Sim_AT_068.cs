@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_068 : SimTemplate //* Bolster
-	{
-		//Give your Taunt minions +2/+2.
+    class Sim_AT_068 : SimTemplate //* Bolster
+    {
+        //Give your Taunt minions +2/+2.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-				if (m.taunt) p.minionGetBuffed(m, 2, 2);
+                if (m.taunt)
+                {
+                    p.minionGetBuffed(m, 2, 2);
+                }
             }
         }
     }

@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,17 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_031 : SimTemplate //* animalcompanion
-	{
+    class Sim_NEW1_031 : SimTemplate //* animalcompanion
+    {
         //Summon a random Beast Companion.
 
-        SimCard kid = CardIds.NonCollectible.Hunter.Misha;//misha
-        
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int pos = (ownplay)?  p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay, false);
-		}
+        SimCard kid = CardIds.NonCollectible.Hunter.Misha; //misha
 
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
+        }
+    }
 }

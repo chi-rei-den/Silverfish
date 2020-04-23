@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,39 +25,40 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_010 : SimTemplate //* Nightbane Templar
-	{
-		//Battlecry: If you're holding a Dragon, summon two 1/1 Whelps.
-		
-        SimCard kid = CardIds.NonCollectible.Paladin.NightbaneTemplar_Whelp;//Whelp
-		
+    class Sim_KAR_010 : SimTemplate //* Nightbane Templar
+    {
+        //Battlecry: If you're holding a Dragon, summon two 1/1 Whelps.
+
+        SimCard kid = CardIds.NonCollectible.Paladin.NightbaneTemplar_Whelp; //Whelp
+
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			if(own.own)
-			{
-				bool dragonInHand = false;
-				foreach (Handcard hc in p.owncards)
-				{
-					if (hc.card.Race == Race.DRAGON)
-					{
-						dragonInHand = true;
-						break;
-					}
-				}
-				if(dragonInHand)
-				{
-					p.callKid(kid, own.zonepos, own.own);
-					p.callKid(kid, own.zonepos, own.own);
-				}
-			}
-			else
-			{
+            if (own.own)
+            {
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Race == Race.DRAGON)
+                    {
+                        dragonInHand = true;
+                        break;
+                    }
+                }
+
+                if (dragonInHand)
+                {
+                    p.callKid(this.kid, own.zonepos, own.own);
+                    p.callKid(this.kid, own.zonepos, own.own);
+                }
+            }
+            else
+            {
                 if (p.enemyAnzCards > 1)
-				{
-					p.callKid(kid, own.zonepos, own.own);
-					p.callKid(kid, own.zonepos, own.own);
-				}
-			}
+                {
+                    p.callKid(this.kid, own.zonepos, own.own);
+                    p.callKid(this.kid, own.zonepos, own.own);
+                }
+            }
         }
     }
 }

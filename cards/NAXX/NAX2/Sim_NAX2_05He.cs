@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX2_05He : SimTemplate
-	{
-	}
+    class Sim_NAX2_05He : SimTemplate
+    {
+    }
 }

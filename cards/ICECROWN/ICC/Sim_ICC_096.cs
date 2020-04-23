@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_096: SimTemplate //* Furnacefire Colossus
+    class Sim_ICC_096 : SimTemplate //* Furnacefire Colossus
     {
         // Battlecry: Discard all weapons from your hand and gain their stats.
 
@@ -34,10 +31,10 @@ namespace HREngine.Bots
         {
             if (own.own)
             {
-                int atkBuff = 0;
-                int hpBuff = 0;
+                var atkBuff = 0;
+                var hpBuff = 0;
 
-                foreach(Handcard hc in p.owncards.ToArray())
+                foreach (var hc in p.owncards.ToArray())
                 {
                     if (hc.card.Type == CardType.WEAPON)
                     {
@@ -46,7 +43,11 @@ namespace HREngine.Bots
                         p.owncards.Remove(hc);
                     }
                 }
-                if (atkBuff + hpBuff > 0) p.minionGetBuffed(own, atkBuff, hpBuff);
+
+                if (atkBuff + hpBuff > 0)
+                {
+                    p.minionGetBuffed(own, atkBuff, hpBuff);
+                }
             }
         }
     }

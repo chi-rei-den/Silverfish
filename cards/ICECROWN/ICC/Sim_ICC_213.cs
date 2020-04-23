@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_213: SimTemplate //* Eternal Servitude
+    class Sim_ICC_213 : SimTemplate //* Eternal Servitude
     {
         // Discover a friendly minion that died this game. Summon it.
 
@@ -35,7 +32,7 @@ namespace HREngine.Bots
         {
             if (p.ownMaxMana >= 6)
             {
-                int pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
                 if (p.OwnLastDiedMinion == SimCard.None)
                 {
                     p.callKid(CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken, pos, ownplay, false);

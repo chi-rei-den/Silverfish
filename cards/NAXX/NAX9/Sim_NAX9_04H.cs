@@ -1,7 +1,5 @@
-using HearthDb;
 using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +24,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_04H : SimTemplate //* Sir Zeliek
-	{
+    class Sim_NAX9_04H : SimTemplate //* Sir Zeliek
+    {
         // Your hero is Immune.
 
         public override void onAuraStarts(Playfield p, Minion own)
@@ -37,10 +35,11 @@ namespace HREngine.Bots
                 p.ownHero.immune = true;
                 if (p.ownWeapon.name == CardIds.NonCollectible.Neutral.Runeblade && p.anzOwnHorsemen < 1)
                 {
-                    int bonus = (p.ownWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
-                    p.minionGetBuffed(p.ownHero, -1 * Math.Min(bonus, p.ownWeapon.Angr- 1), 0);
-                    p.ownWeapon.Angr= Math.Min(1, p.ownWeapon.Angr- bonus);
+                    var bonus = p.ownWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic ? 6 : 3;
+                    p.minionGetBuffed(p.ownHero, -1 * Math.Min(bonus, p.ownWeapon.Angr - 1), 0);
+                    p.ownWeapon.Angr = Math.Min(1, p.ownWeapon.Angr - bonus);
                 }
+
                 p.anzOwnHorsemen++;
             }
             else
@@ -48,10 +47,11 @@ namespace HREngine.Bots
                 p.enemyHero.immune = true;
                 if (p.enemyWeapon.name == CardIds.NonCollectible.Neutral.Runeblade && p.anzEnemyHorsemen < 1)
                 {
-                    int bonus = (p.enemyWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                    var bonus = p.enemyWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic ? 6 : 3;
                     p.minionGetBuffed(p.enemyHero, -1 * Math.Min(bonus, p.enemyWeapon.Angr - 1), 0);
                     p.enemyWeapon.Angr = Math.Min(1, p.enemyWeapon.Angr - bonus);
                 }
+
                 p.anzEnemyHorsemen++;
             }
         }
@@ -66,7 +66,7 @@ namespace HREngine.Bots
                     p.ownHero.immune = false;
                     if (p.ownWeapon.name == CardIds.NonCollectible.Neutral.Runeblade)
                     {
-                        int bonus = (p.ownWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                        var bonus = p.ownWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic ? 6 : 3;
                         p.minionGetBuffed(p.ownHero, bonus, 0);
                         p.ownWeapon.Angr += bonus;
                     }
@@ -80,7 +80,7 @@ namespace HREngine.Bots
                     p.enemyHero.immune = false;
                     if (p.enemyWeapon.name == CardIds.NonCollectible.Neutral.Runeblade)
                     {
-                        int bonus = (p.enemyWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic) ? 6 : 3;
+                        var bonus = p.enemyWeapon.card.CardId == CardIds.NonCollectible.Neutral.RunebladeHeroic ? 6 : 3;
                         p.minionGetBuffed(p.enemyHero, bonus, 0);
                         p.enemyWeapon.Angr += bonus;
                     }

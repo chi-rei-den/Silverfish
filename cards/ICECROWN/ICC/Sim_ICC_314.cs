@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -40,7 +37,10 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    if (p.enemyAnzCards < 10) p.enemyAnzCards++;
+                    if (p.enemyAnzCards < 10)
+                    {
+                        p.enemyAnzCards++;
+                    }
                 }
             }
         }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,18 +23,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_098: SimTemplate //* Tomb Lurker
+    class Sim_ICC_098 : SimTemplate //* Tomb Lurker
     {
         // Battlecry: Add a random Deathrattle minion that died this game to your hand.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            var temp = (own.own) ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
+        {
+            var temp = own.own ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
             SimCard c;
-            bool found = false;
+            var found = false;
             foreach (var gi in temp)
             {
-                c = (gi.Key);
+                c = gi.Key;
                 if (c.Deathrattle)
                 {
                     p.drawACard(c.CardId, own.own, true);
@@ -45,13 +42,14 @@ namespace HREngine.Bots
                     break;
                 }
             }
+
             if (!found)
             {
                 foreach (var gi in p.diedMinions)
                 {
                     if (gi.own == own.own)
                     {
-                        c = (gi.cardid);
+                        c = gi.cardid;
                         if (c.Deathrattle)
                         {
                             p.drawACard(c.CardId, own.own, true);

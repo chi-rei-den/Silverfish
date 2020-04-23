@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_067: SimTemplate //* Vryghoul
+    class Sim_ICC_067 : SimTemplate //* Vryghoul
     {
         // Deathrattle: If it's your opponent's turn, summon a 2/2 Ghoul.
 
@@ -35,7 +32,10 @@ namespace HREngine.Bots
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            if (!p.isOwnTurn) p.callKid(kid, m.zonepos, m.own);
+            if (!p.isOwnTurn)
+            {
+                p.callKid(this.kid, m.zonepos, m.own);
+            }
         }
     }
 }

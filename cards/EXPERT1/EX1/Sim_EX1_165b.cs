@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_165b : SimTemplate //bearform
-	{
-
+    class Sim_EX1_165b : SimTemplate //bearform
+    {
 //    +2 leben und spott/.
         SimCard bear = CardIds.NonCollectible.Druid.DruidoftheClaw_DruidOfTheClawTokenClassic2;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.minionTransform(target, bear);
+            p.minionTransform(target, this.bear);
         }
-	}
+    }
 }

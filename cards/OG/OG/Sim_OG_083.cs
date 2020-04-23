@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_083 : SimTemplate //* Twilight Flamecaller
-	{
-		//Battlecry: Deal 1 damage to all enemy minions
-		
+    class Sim_OG_083 : SimTemplate //* Twilight Flamecaller
+    {
+        //Battlecry: Deal 1 damage to all enemy minions
+
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			p.allMinionOfASideGetDamage(!own.own, 1);
+            p.allMinionOfASideGetDamage(!own.own, 1);
         }
     }
 }

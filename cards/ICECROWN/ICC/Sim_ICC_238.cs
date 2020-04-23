@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_238: SimTemplate //* Animated Berserker
+    class Sim_ICC_238 : SimTemplate //* Animated Berserker
     {
         // After you play a minion deal 1 damage to it.
 

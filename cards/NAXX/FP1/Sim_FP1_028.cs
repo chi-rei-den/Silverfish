@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,17 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_028 : SimTemplate //undertaker
-	{
-
+    class Sim_FP1_028 : SimTemplate //undertaker
+    {
 //    Whenever you summon a minion with Deathrattle, gain +1 Attack.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
             if (triggerEffectMinion.own == summonedMinion.own)
             {
-                if (summonedMinion.handcard.card.Deathrattle) p.minionGetBuffed(triggerEffectMinion,1,0);
+                if (summonedMinion.handcard.card.Deathrattle)
+                {
+                    p.minionGetBuffed(triggerEffectMinion, 1, 0);
+                }
             }
         }
-	}
+    }
 }

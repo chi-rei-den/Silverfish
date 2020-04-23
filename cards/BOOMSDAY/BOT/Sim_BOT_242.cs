@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_242",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_242 : SimTemplate //* 迈拉的不稳定元素 Myra's Unstable Element
-	{
-		//Draw the rest ofyour deck.
-		//抽取你牌库剩下的牌。
-
-
-	}
+    class Sim_BOT_242 : SimTemplate //* 迈拉的不稳定元素 Myra's Unstable Element
+    {
+        //Draw the rest ofyour deck.
+        //抽取你牌库剩下的牌。
+    }
 }

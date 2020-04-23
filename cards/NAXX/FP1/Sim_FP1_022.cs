@@ -1,8 +1,6 @@
+using System.Collections.Generic;
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,17 +26,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_022 : SimTemplate //* voidcaller
-	{
+    class Sim_FP1_022 : SimTemplate //* voidcaller
+    {
         //Deathrattle: Put a random Demon from your hand into the battlefield.
-        SimCard c = CardIds.Collectible.Warlock.Felguard;//felguard
+        SimCard c = CardIds.Collectible.Warlock.Felguard; //felguard
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (m.own)
             {
-                List<Handcard> temp = new List<Handcard>();
-                foreach (Handcard hc in p.owncards)
+                var temp = new List<Handcard>();
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Race == Race.DEMON)
                     {
@@ -48,7 +46,7 @@ namespace HREngine.Bots
 
                 temp.Sort((x, y) => x.card.Attack.CompareTo(y.card.Attack));
 
-                foreach (Handcard mnn in temp)
+                foreach (var mnn in temp)
                 {
                     p.callKid(mnn.card, p.ownMinions.Count, true, false);
                     p.removeCard(mnn);
@@ -59,9 +57,9 @@ namespace HREngine.Bots
             {
                 if (p.enemyAnzCards >= 1)
                 {
-                    p.callKid(c, p.enemyMinions.Count, false, false);
+                    p.callKid(this.c, p.enemyMinions.Count, false, false);
                 }
             }
         }
-	}
+    }
 }

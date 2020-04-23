@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t23 : SimTemplate //* Shadow Oil
-	{
-		// Add 2 random Demons to your hand.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-		    p.drawACard(CardIds.Collectible.Warlock.MalchezaarsImp, ownplay, true);
-		    p.drawACard(CardIds.NonCollectible.Neutral.Kazakus_KabalDemon1, ownplay, true);
-		}
-	}
+    class Sim_CFM_621t23 : SimTemplate //* Shadow Oil
+    {
+        // Add 2 random Demons to your hand.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.drawACard(CardIds.Collectible.Warlock.MalchezaarsImp, ownplay, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.Kazakus_KabalDemon1, ownplay, true);
+        }
+    }
 }

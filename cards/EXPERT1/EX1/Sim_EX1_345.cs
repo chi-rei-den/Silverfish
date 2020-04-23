@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_345 : SimTemplate //* Mindgames
-	{
+    class Sim_EX1_345 : SimTemplate //* Mindgames
+    {
         // Put a copy of a random minion from your opponent's deck into the battlefield.
 
         SimCard copymin = CardIds.Collectible.Neutral.ChillwindYeti; // we take a icewindjety :D
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            if (p.enemyDeckSize < 1) copymin = CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken; // Shadow of Nothing
-            p.callKid(copymin, p.ownMinions.Count, ownplay, false);
-		}
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            if (p.enemyDeckSize < 1)
+            {
+                this.copymin = CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken; // Shadow of Nothing
+            }
+
+            p.callKid(this.copymin, p.ownMinions.Count, ownplay, false);
+        }
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,11 +25,14 @@ namespace HREngine.Bots
 {
     class Sim_GVG_014 : SimTemplate //* Vol'jin
     {
-       //Battlecry: Swap Health with another minion.
+        //Battlecry: Swap Health with another minion.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (target == null) return;
+            if (target == null)
+            {
+                return;
+            }
 
             own.maxHp = target.Hp;
             target.maxHp = own.Hp;

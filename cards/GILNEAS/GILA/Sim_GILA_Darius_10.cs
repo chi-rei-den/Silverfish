@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_10 : SimTemplate //* 战吼 Warcry
-	{
-		//
-		//
-
-
-	}
+    class Sim_GILA_Darius_10 : SimTemplate //* 战吼 Warcry
+    {
+        //
+        //
+    }
 }

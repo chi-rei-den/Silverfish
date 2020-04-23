@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_281: SimTemplate //* Forge of Souls
+    class Sim_ICC_281 : SimTemplate //* Forge of Souls
     {
         // Draw 2 weapons from your deck.
 

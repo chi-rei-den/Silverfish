@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,7 +31,10 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnStartOfOwner)
             {
-                if (triggerEffectMinion.Angr != 7) triggerEffectMinion.Angr = 7;
+                if (triggerEffectMinion.Angr != 7)
+                {
+                    triggerEffectMinion.Angr = 7;
+                }
             }
         }
     }

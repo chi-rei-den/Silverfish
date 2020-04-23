@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_Toki_do_auto : SimTemplate
-	{
-	}
+    class Sim_FB_Toki_do_auto : SimTemplate
+    {
+    }
 }

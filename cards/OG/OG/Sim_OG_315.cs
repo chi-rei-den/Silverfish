@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -32,10 +29,14 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.entitiyID == own.entitiyID) continue;
+                if (m.entitiyID == own.entitiyID)
+                {
+                    continue;
+                }
+
                 if (m.handcard.card.Race == Race.PIRATE)
                 {
                     if (own.own)
@@ -56,6 +57,7 @@ namespace HREngine.Bots
                             p.minionGetBuffed(p.enemyHero, 1, 0);
                         }
                     }
+
                     break;
                 }
             }

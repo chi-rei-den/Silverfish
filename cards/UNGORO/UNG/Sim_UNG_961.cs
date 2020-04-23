@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_961 : SimTemplate //* Adaptation
-	{
-		//Adapt a friendly minion.
+    class Sim_UNG_961 : SimTemplate //* Adaptation
+    {
+        //Adapt a friendly minion.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.evaluatePenality -= 15;
-		}
-	}
+        }
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829 : SimTemplate //* Lakkari Sacrifice
-	{
-		//Quest: Discard 6 cards. Reward: Nether Portal.
+    class Sim_UNG_829 : SimTemplate //* Lakkari Sacrifice
+    {
+        //Quest: Discard 6 cards. Reward: Nether Portal.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (p.playactions.Count < 2) p.evaluatePenality -= 30;
+            if (p.playactions.Count < 2)
+            {
+                p.evaluatePenality -= 30;
+            }
         }
     }
 }

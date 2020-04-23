@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,6 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-
     public class Sim_GIL_530 : SimTemplate //��ȼ����
     {
         /// <summary>
@@ -40,7 +37,7 @@ namespace HREngine.Bots
         {
             if (target != null)
             {
-                int damage = 2;
+                var damage = 2;
                 p.minionGetDamageOrHeal(target, damage);
                 if (p.enemyMinions.Count == 0 && !p.isLethalCheck)
                 {
@@ -49,5 +46,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

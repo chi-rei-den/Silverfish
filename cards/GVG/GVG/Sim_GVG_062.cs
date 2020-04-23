@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,16 +25,14 @@ namespace HREngine.Bots
 {
     class Sim_GVG_062 : SimTemplate //Cobalt Guardian
     {
-
         //   Whenever you summon a Mech, gain Divine Shield.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
-            if (triggerEffectMinion.own==summonedMinion.own && summonedMinion.handcard.card.Race == Race.MECHANICAL)
+            if (triggerEffectMinion.own == summonedMinion.own && summonedMinion.handcard.card.Race == Race.MECHANICAL)
             {
                 triggerEffectMinion.divineshild = true;
             }
         }
     }
-
 }

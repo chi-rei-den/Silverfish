@@ -1,8 +1,6 @@
+using System.Collections.Generic;
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,41 +25,45 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_083 : SimTemplate //tinkmasteroverspark
-	{
+    class Sim_EX1_083 : SimTemplate //tinkmasteroverspark
+    {
         SimCard card1 = CardIds.NonCollectible.Neutral.Devilsaur; // rex
+
         SimCard card2 = CardIds.NonCollectible.Neutral.Squirrel; // squirrel
+
         //todo better
 //    kampfschrei:/ verwandelt einen anderen zufälligen diener in einen teufelssaurier (5/5) oder ein eichhörnchen (1/1).
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            int oc = p.ownMinions.Count;
-            int ec = p.enemyMinions.Count;
-            if (oc == 0 && ec == 0) return;
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var oc = p.ownMinions.Count;
+            var ec = p.enemyMinions.Count;
+            if (oc == 0 && ec == 0)
+            {
+                return;
+            }
+
             if (oc > ec)
             {
-                List<Minion> temp = new List<Minion>(p.ownMinions);
+                var temp = new List<Minion>(p.ownMinions);
                 temp.AddRange(p.enemyMinions);
-                temp.Sort((a, b) => a.Hp.CompareTo(b.Hp));//transform the weakest
-                foreach (Minion m in temp)
+                temp.Sort((a, b) => a.Hp.CompareTo(b.Hp)); //transform the weakest
+                foreach (var m in temp)
                 {
-                    p.minionTransform(m, card1);
+                    p.minionTransform(m, this.card1);
                     break;
                 }
             }
             else
             {
-                List<Minion> temp = new List<Minion>(p.ownMinions);
+                var temp = new List<Minion>(p.ownMinions);
                 temp.AddRange(p.enemyMinions);
-                temp.Sort((a, b) => -a.Hp.CompareTo(b.Hp));//transform the strongest
-                foreach (Minion m in temp)
+                temp.Sort((a, b) => -a.Hp.CompareTo(b.Hp)); //transform the strongest
+                foreach (var m in temp)
                 {
-                    p.minionTransform(m, card2);
+                    p.minionTransform(m, this.card2);
                     break;
                 }
             }
-		}
-
-
-	}
+        }
+    }
 }

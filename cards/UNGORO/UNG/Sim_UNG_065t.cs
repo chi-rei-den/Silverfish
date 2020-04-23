@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_065t : SimTemplate //* Sherazin, Seed
-	{
-		//When you play 4 cards in a turn, revive this minion.
+    class Sim_UNG_065t : SimTemplate //* Sherazin, Seed
+    {
+        //When you play 4 cards in a turn, revive this minion.
 
         SimCard kid = CardIds.Collectible.Rogue.SherazinCorpseFlower; //Sherazin, Corpse Flower
 
@@ -37,7 +34,10 @@ namespace HREngine.Bots
         {
             triggerEffectMinion.Angr++;
             triggerEffectMinion.cantAttack = true;
-            if (triggerEffectMinion.Angr > 3) p.minionTransform(triggerEffectMinion, kid);
+            if (triggerEffectMinion.Angr > 3)
+            {
+                p.minionTransform(triggerEffectMinion, this.kid);
+            }
         }
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)

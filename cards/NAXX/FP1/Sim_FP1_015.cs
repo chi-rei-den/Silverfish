@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_015 : SimTemplate //* feugen
-	{
+    class Sim_FP1_015 : SimTemplate //* feugen
+    {
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (p.stalaggDead)
@@ -35,5 +32,5 @@ namespace HREngine.Bots
                 p.callKid(CardIds.NonCollectible.Neutral.Stalagg_ThaddiusToken, m.zonepos - 1, m.own);
             }
         }
-	}
+    }
 }

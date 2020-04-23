@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,22 +23,29 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_623 : SimTemplate //* Greater Arcane Missiles
-	{
-		// Shoot three missiles at random enemies that deal 3 damage each.
+    class Sim_CFM_623 : SimTemplate //* Greater Arcane Missiles
+    {
+        // Shoot three missiles at random enemies that deal 3 damage each.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int times = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+            var times = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
 
             while (times > 0)
             {
-                if (ownplay) target = p.getEnemyCharTargetForRandomSingleDamage(3);
+                if (ownplay)
+                {
+                    target = p.getEnemyCharTargetForRandomSingleDamage(3);
+                }
                 else
                 {
                     target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-                    if (target == null) target = p.ownHero;
+                    if (target == null)
+                    {
+                        target = p.ownHero;
+                    }
                 }
+
                 p.minionGetDamageOrHeal(target, 3);
                 times--;
             }

@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,39 +23,43 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t19 : SimTemplate //* Icecap
-	{
-		// Freeze: 2 random enemy minions.
+    class Sim_CFM_621t19 : SimTemplate //* Icecap
+    {
+        // Freeze: 2 random enemy minions.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			List<Minion> temp = (ownplay) ? p.enemyMinions : p.ownMinions;
-			if (temp.Count > 2)
-			{
-				int anz = 0;
-				target = p.searchRandomMinion(temp, SearchMode.LowHealth);
+            var temp = ownplay ? p.enemyMinions : p.ownMinions;
+            if (temp.Count > 2)
+            {
+                var anz = 0;
+                target = p.searchRandomMinion(temp, SearchMode.LowHealth);
                 if (target != null && !target.frozen)
-				{
+                {
                     p.minionGetFrozen(target);
-					anz++;
-				}
-				foreach (Minion m in temp)
-				{
-					if (!m.frozen)
+                    anz++;
+                }
+
+                foreach (var m in temp)
+                {
+                    if (!m.frozen)
                     {
                         p.minionGetFrozen(m);
-						anz++;
-						if (anz > 1) break;
-					}
-				}
-			}
-			else
-			{
-				foreach (Minion m in temp)
+                        anz++;
+                        if (anz > 1)
+                        {
+                            break;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                foreach (var m in temp)
                 {
                     p.minionGetFrozen(m);
-				}
-			}
+                }
+            }
         }
     }
 }

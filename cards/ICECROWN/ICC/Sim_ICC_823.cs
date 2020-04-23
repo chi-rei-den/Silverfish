@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_823: SimTemplate //* Simulacrum
+    class Sim_ICC_823 : SimTemplate //* Simulacrum
     {
         // Copy the lowest Cost minion in your hand.
 
@@ -35,18 +32,28 @@ namespace HREngine.Bots
             if (ownplay)
             {
                 Handcard hcCopy = null;
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION)
                     {
-                        if (hcCopy == null) hcCopy = hc;
+                        if (hcCopy == null)
+                        {
+                            hcCopy = hc;
+                        }
                         else
                         {
-                            if (hcCopy.manacost > hc.manacost) hcCopy = hc;
+                            if (hcCopy.manacost > hc.manacost)
+                            {
+                                hcCopy = hc;
+                            }
                         }
                     }
                 }
-                if (hcCopy != null) p.drawACard(hcCopy.card.CardId, ownplay, true);
+
+                if (hcCopy != null)
+                {
+                    p.drawACard(hcCopy.card.CardId, ownplay, true);
+                }
             }
         }
     }

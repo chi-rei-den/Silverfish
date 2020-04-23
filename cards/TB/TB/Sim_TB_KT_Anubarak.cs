@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_KT_Anubarak : SimTemplate
-	{
-	}
+    class Sim_TB_KT_Anubarak : SimTemplate
+    {
+    }
 }

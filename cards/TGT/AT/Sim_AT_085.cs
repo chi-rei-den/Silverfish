@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,41 +23,61 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_085 : SimTemplate //* Maiden of the Lake
-	{
-		//Your Hero Power costs (1).
-		
+    class Sim_AT_085 : SimTemplate //* Maiden of the Lake
+    {
+        //Your Hero Power costs (1).
+
         public override void onAuraStarts(Playfield p, Minion own)
-		{
+        {
             if (own.own)
             {
-				if (p.ownHeroAblility.manacost > 1) p.ownHeroAblility.manacost--;
+                if (p.ownHeroAblility.manacost > 1)
+                {
+                    p.ownHeroAblility.manacost--;
+                }
             }
             else
-            {				
-				if (p.enemyHeroAblility.manacost > 1) p.enemyHeroAblility.manacost--;
+            {
+                if (p.enemyHeroAblility.manacost > 1)
+                {
+                    p.enemyHeroAblility.manacost--;
+                }
             }
-		}
+        }
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
-			bool another = false;
+            var another = false;
             if (own.own)
             {
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-					if (m.name == CardIds.Collectible.Neutral.MaidenOfTheLake && !m.silenced && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.MaidenOfTheLake && !m.silenced && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-				if (!another) p.ownHeroAblility.manacost++;
+
+                if (!another)
+                {
+                    p.ownHeroAblility.manacost++;
+                }
             }
             else
             {
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-					if (m.name == CardIds.Collectible.Neutral.MaidenOfTheLake && !m.silenced && own.entitiyID != m.entitiyID) another = true;
+                    if (m.name == CardIds.Collectible.Neutral.MaidenOfTheLake && !m.silenced && own.entitiyID != m.entitiyID)
+                    {
+                        another = true;
+                    }
                 }
-				if (!another) p.enemyHeroAblility.manacost++;
+
+                if (!another)
+                {
+                    p.enemyHeroAblility.manacost++;
+                }
             }
         }
-	}
+    }
 }

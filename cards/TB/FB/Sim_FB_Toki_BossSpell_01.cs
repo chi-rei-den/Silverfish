@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_Toki_BossSpell_01 : SimTemplate
-	{
-	}
+    class Sim_FB_Toki_BossSpell_01 : SimTemplate
+    {
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_010 : SimTemplate //* Sated Threshadon
-	{
-		//Deathrattle: Summon three 1/1 Murlocs.
+    class Sim_UNG_010 : SimTemplate //* Sated Threshadon
+    {
+        //Deathrattle: Summon three 1/1 Murlocs.
 
         SimCard kid = CardIds.NonCollectible.Neutral.PrimalfinTotem_PrimalfinToken; //Primalfin
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(kid, m.zonepos-1, m.own);
-            p.callKid(kid, m.zonepos-1, m.own);
-            p.callKid(kid, m.zonepos-1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,7 +29,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int times = (ownplay) ? p.getSpellDamageDamage(8) : p.getEnemySpellDamageDamage(8);
+            var times = ownplay ? p.getSpellDamageDamage(8) : p.getEnemySpellDamageDamage(8);
             p.allCharsOfASideGetRandomDamage(!ownplay, times);
         }
     }

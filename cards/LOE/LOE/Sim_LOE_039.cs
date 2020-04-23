@@ -1,8 +1,5 @@
 using HearthDb;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,22 +24,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_039 : SimTemplate //* Gorillabot A-3
-	{
-		//Battlecry: If you control another Mech, Discover a Mech.
+    class Sim_LOE_039 : SimTemplate //* Gorillabot A-3
+    {
+        //Battlecry: If you control another Mech, Discover a Mech.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.entitiyID == own.entitiyID) continue;
+                if (m.entitiyID == own.entitiyID)
+                {
+                    continue;
+                }
+
                 if (m.handcard.card.Race == Race.MECHANICAL)
-				{
-					p.drawACard(CardIds.Collectible.Neutral.SpiderTank, own.own, true);
-					break;
-				}
+                {
+                    p.drawACard(CardIds.Collectible.Neutral.SpiderTank, own.own, true);
+                    break;
+                }
             }
-		}
-	}
+        }
+    }
 }

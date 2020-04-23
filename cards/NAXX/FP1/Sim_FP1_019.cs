@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,25 +24,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_019 : SimTemplate //poisonseeds
-	{
+    class Sim_FP1_019 : SimTemplate //poisonseeds
+    {
         SimCard d = CardIds.NonCollectible.Druid.SouloftheForest_TreantToken;
 //    vernichtet alle diener und ruft für jeden einen treant (2/2) als ersatz herbei.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int ownanz = p.ownMinions.Count;
-            int enemanz = p.enemyMinions.Count;
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var ownanz = p.ownMinions.Count;
+            var enemanz = p.enemyMinions.Count;
             p.allMinionsGetDestroyed();
-            for (int i = 0; i < ownanz; i++)
+            for (var i = 0; i < ownanz; i++)
             {
-                p.callKid(d, 1, true);
+                p.callKid(this.d, 1, true);
             }
-            for (int i = 0; i < enemanz; i++)
-            {
-                p.callKid(d, 1, false);
-            }
-		}
 
-	}
+            for (var i = 0; i < enemanz; i++)
+            {
+                p.callKid(this.d, 1, false);
+            }
+        }
+    }
 }

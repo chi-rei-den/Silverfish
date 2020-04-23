@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_752 : SimTemplate //* Stolen Goods
-	{
+    class Sim_CFM_752 : SimTemplate //* Stolen Goods
+    {
         // Give a random Taunt minion in your hand +3/+3.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             if (ownplay)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.TauntOnly);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.TauntOnly);
                 if (hc != null)
                 {
                     hc.addattack += 3;
@@ -44,5 +40,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

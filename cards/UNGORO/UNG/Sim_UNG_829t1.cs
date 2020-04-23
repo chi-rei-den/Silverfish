@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_829t1 : SimTemplate //* Nether Portal
-	{
-		//Open a permanent portal that summons 3/2 Imps.
+    class Sim_UNG_829t1 : SimTemplate //* Nether Portal
+    {
+        //Open a permanent portal that summons 3/2 Imps.
 
         SimCard kid = CardIds.NonCollectible.Warlock.LakkariSacrifice_NetherPortalToken2; //Nether Portal
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay, false);
-			p.evaluatePenality -= 15;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
+            p.evaluatePenality -= 15;
         }
     }
 }

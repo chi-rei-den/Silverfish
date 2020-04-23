@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_PRO_001c : SimTemplate //* powerofthehorde
-	{
+    class Sim_PRO_001c : SimTemplate //* powerofthehorde
+    {
         //Summon a random Horde Warrior.
         SimCard kid = CardIds.Collectible.Neutral.TaurenWarrior;
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay, false);
-		}
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
+        }
+    }
 }

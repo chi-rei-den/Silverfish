@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_850: SimTemplate //* Shadowblade
+    class Sim_ICC_850 : SimTemplate //* Shadowblade
     {
         // Battlecry: Your hero is Immune this turn.
 
@@ -35,10 +32,16 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
 
-            if (ownplay) p.ownHero.immune = true;
-            else p.enemyHero.immune = true;
+            if (ownplay)
+            {
+                p.ownHero.immune = true;
+            }
+            else
+            {
+                p.enemyHero.immune = true;
+            }
         }
     }
 }

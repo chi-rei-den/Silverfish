@@ -1,8 +1,4 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_015 : SimTemplate //noviceengineer
-	{
-
+    class Sim_EX1_015 : SimTemplate //noviceengineer
+    {
 //    kampfschrei:/ zieht eine karte.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, own.own);
-		}
-
-
-	}
+        }
+    }
 }

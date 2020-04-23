@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_085: SimTemplate //* Ultimate Infestation
+    class Sim_ICC_085 : SimTemplate //* Ultimate Infestation
     {
         // Deal 5 damage. Draw 5 cards. Gain 5 Armor. Summon a 5/5 Ghoul.
 
@@ -35,7 +32,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+            var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
             p.minionGetDamageOrHeal(target, dmg);
 
             p.drawACard(SimCard.None, ownplay);
@@ -46,8 +43,8 @@ namespace HREngine.Bots
 
             p.minionGetArmor(ownplay ? p.ownHero : p.enemyHero, 5);
 
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay);
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay);
         }
     }
 }

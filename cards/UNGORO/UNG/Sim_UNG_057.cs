@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_057 : SimTemplate //* Razorpetal Volley
-	{
-		//Add two Razorpetals to your hand that deal 1 damage.
+    class Sim_UNG_057 : SimTemplate //* Razorpetal Volley
+    {
+        //Add two Razorpetals to your hand that deal 1 damage.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.drawACard(CardIds.NonCollectible.Rogue.RazorpetalVolley_RazorpetalToken,ownplay, true);
+            p.drawACard(CardIds.NonCollectible.Rogue.RazorpetalVolley_RazorpetalToken, ownplay, true);
             p.drawACard(CardIds.NonCollectible.Rogue.RazorpetalVolley_RazorpetalToken, ownplay, true);
         }
     }

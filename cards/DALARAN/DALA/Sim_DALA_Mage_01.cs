@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Mage_01 : SimTemplate //* 多重施法 Multi-Cast
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Mage_01 : SimTemplate //* 多重施法 Multi-Cast
+    {
+        //
+        //
+    }
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,20 +23,27 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_662 : SimTemplate //* Dragonfire Potion
-	{
-		// Deal 5 damage to all minions except Dragons.
+    class Sim_CFM_662 : SimTemplate //* Dragonfire Potion
+    {
+        // Deal 5 damage to all minions except Dragons.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
-            foreach (Minion m in p.ownMinions)
+            var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+            foreach (var m in p.ownMinions)
             {
-                if (m.handcard.card.Race != Race.DRAGON) p.minionGetDamageOrHeal(m, dmg);
+                if (m.handcard.card.Race != Race.DRAGON)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
-                if (m.handcard.card.Race != Race.DRAGON) p.minionGetDamageOrHeal(m, dmg);
+                if (m.handcard.card.Race != Race.DRAGON)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
         }
     }

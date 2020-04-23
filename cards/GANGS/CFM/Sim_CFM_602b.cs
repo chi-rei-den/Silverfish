@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_602b : SimTemplate //* Jade Idol
-	{
-		// Shuffle 3 Jade Idols into your deck.
+    class Sim_CFM_602b : SimTemplate //* Jade Idol
+    {
+        // Shuffle 3 Jade Idols into your deck.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -36,7 +34,10 @@ namespace HREngine.Bots
                 p.ownDeckSize += 3;
                 p.evaluatePenality -= 11;
             }
-            else p.enemyDeckSize += 3;
+            else
+            {
+                p.enemyDeckSize += 3;
+            }
         }
     }
 }

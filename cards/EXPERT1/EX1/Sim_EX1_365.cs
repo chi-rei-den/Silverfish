@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,17 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_365 : SimTemplate //holywrath
-	{
+    class Sim_EX1_365 : SimTemplate //holywrath
+    {
         // todo ask the posibility manager!
 //    zieht eine karte und verursacht schaden, der ihren kosten entspricht.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, ownplay);
 
-            int dmg = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+            var dmg = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
             p.minionGetDamageOrHeal(target, dmg);
-		}
-
-	}
+        }
+    }
 }

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_CoOpv3_Boss_NewClasses : SimTemplate
-	{
-	}
+    class Sim_TB_CoOpv3_Boss_NewClasses : SimTemplate
+    {
+    }
 }

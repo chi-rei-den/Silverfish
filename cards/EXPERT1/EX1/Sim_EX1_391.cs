@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,23 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_391 : SimTemplate //slam
-	{
-
+    class Sim_EX1_391 : SimTemplate //slam
+    {
 //    fügt einem diener $2 schaden zu. zieht eine karte, wenn er überlebt.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-
-            int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
             if (target.Hp > dmg || target.immune || target.divineshild)
             {
                 //this.owncarddraw++;
                 p.drawACard(SimCard.None, ownplay);
             }
-            p.minionGetDamageOrHeal(target, dmg);
-            
-		}
 
-	}
+            p.minionGetDamageOrHeal(target, dmg);
+        }
+    }
 }

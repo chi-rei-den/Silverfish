@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,8 +30,15 @@ namespace HREngine.Bots
 
         public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
-            if (own == null) return false;
-            if (checkBonus) return false;
+            if (own == null)
+            {
+                return false;
+            }
+
+            if (checkBonus)
+            {
+                return false;
+            }
 
             p.minionGetBuffed(own, num, 0);
             return false;

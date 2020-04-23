@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,7 +25,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_021 : SimTemplate //Mal'Ganis
     {
-
         //    Your other Demons have +2/+2.Your hero is Immune;
 
         public override void onAuraStarts(Playfield p, Minion own)
@@ -37,18 +33,24 @@ namespace HREngine.Bots
             {
                 p.anzOwnMalGanis++;
                 p.ownHero.immune = true;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON)
+                    {
+                        p.minionGetBuffed(m, 2, 2);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyMalGanis++;
                 p.enemyHero.immune = true;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, 2, 2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON)
+                    {
+                        p.minionGetBuffed(m, 2, 2);
+                    }
                 }
             }
         }
@@ -59,21 +61,26 @@ namespace HREngine.Bots
             {
                 p.anzOwnMalGanis--;
                 p.ownHero.immune = false;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON)
+                    {
+                        p.minionGetBuffed(m, -2, -2);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyMalGanis--;
                 p.enemyHero.immune = false;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON) p.minionGetBuffed(m, -2, -2);
+                    if (own.entitiyID != m.entitiyID && m.handcard.card.Race == Race.DEMON)
+                    {
+                        p.minionGetBuffed(m, -2, -2);
+                    }
                 }
             }
         }
     }
-
 }

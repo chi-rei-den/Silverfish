@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -41,8 +38,12 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-                if (target == null) target = p.ownHero;
+                if (target == null)
+                {
+                    target = p.ownHero;
+                }
             }
+
             p.minionGetDamageOrHeal(target, charsGotHealed, true);
         }
     }

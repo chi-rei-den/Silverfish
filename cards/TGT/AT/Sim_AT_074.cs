@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_074 : SimTemplate //* Seal of Champions
-	{
-		//Give a minion +3 Attack and Divine Shield.
+    class Sim_AT_074 : SimTemplate //* Seal of Champions
+    {
+        //Give a minion +3 Attack and Divine Shield.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionGetBuffed(target, 3, 0);
-			target.divineshild = true;
+            target.divineshild = true;
         }
     }
 }

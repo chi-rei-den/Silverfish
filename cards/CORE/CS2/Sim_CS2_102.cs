@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_102 : SimTemplate //armorup
-	{
-
+    class Sim_CS2_102 : SimTemplate //armorup
+    {
 //    heldenfähigkeit/\nerhaltet 2 rüstung.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 p.minionGetArmor(p.ownHero, 2);
@@ -41,7 +37,6 @@ namespace HREngine.Bots
             {
                 p.minionGetArmor(p.enemyHero, 2);
             }
-		}
-
-	}
+        }
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_044 : SimTemplate //* Moroes
-	{
-		//Stealth. At the end of your turn, summon a 1/1 Steward.
-		
+    class Sim_KAR_044 : SimTemplate //* Moroes
+    {
+        //Stealth. At the end of your turn, summon a 1/1 Steward.
+
         SimCard kid = CardIds.NonCollectible.Neutral.Moroes_Steward; //Steward
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int pos = triggerEffectMinion.zonepos;
-                p.callKid(kid, pos, triggerEffectMinion.own);
+                var pos = triggerEffectMinion.zonepos;
+                p.callKid(this.kid, pos, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

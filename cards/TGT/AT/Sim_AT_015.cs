@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_015 : SimTemplate //* Convert
-	{
-		//Put a copy of an enemy minion into your hand.
+    class Sim_AT_015 : SimTemplate //* Convert
+    {
+        //Put a copy of an enemy minion into your hand.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

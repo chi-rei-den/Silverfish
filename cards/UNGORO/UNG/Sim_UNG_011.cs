@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_011 : SimTemplate //* Hydrologist
-	{
-		//Battlecry: Discover a Secret.
+    class Sim_UNG_011 : SimTemplate //* Hydrologist
+    {
+        //Battlecry: Discover a Secret.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {

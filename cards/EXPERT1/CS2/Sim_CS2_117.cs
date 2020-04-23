@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,15 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_117 : SimTemplate //earthenringfarseer
-	{
-
+    class Sim_CS2_117 : SimTemplate //earthenringfarseer
+    {
 //    kampfschrei:/ stellt 3 leben wieder her.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            int heal = (own.own) ? p.getMinionHeal(3) : p.getEnemyMinionHeal(3);
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var heal = own.own ? p.getMinionHeal(3) : p.getEnemyMinionHeal(3);
             p.minionGetDamageOrHeal(target, -heal);
-		}
-
-	}
+        }
+    }
 }

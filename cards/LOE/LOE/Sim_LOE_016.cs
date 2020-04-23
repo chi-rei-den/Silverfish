@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_016 : SimTemplate //* Rumbling Elemental
-	{
-		//After you play a Battlecry minion, deal 2 damage to a random enemy.
-		
+    class Sim_LOE_016 : SimTemplate //* Rumbling Elemental
+    {
+        //After you play a Battlecry minion, deal 2 damage to a random enemy.
+
         public override void onMinionWasSummoned(Playfield p, Minion m, Minion summonedMinion)
         {
             if (summonedMinion.handcard.card.Battlecry && summonedMinion.playedFromHand && summonedMinion.own == m.own && summonedMinion.entitiyID != m.entitiyID)
@@ -43,8 +40,12 @@ namespace HREngine.Bots
                 else
                 {
                     target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
-                    if (target == null) target = p.ownHero;
+                    if (target == null)
+                    {
+                        target = p.ownHero;
+                    }
                 }
+
                 p.minionGetDamageOrHeal(target, 2, true);
             }
         }

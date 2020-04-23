@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_010t : SimTemplate //* Druid of the Flame - Firecat Form
-	{
-
-	}
+    class Sim_BRM_010t : SimTemplate //* Druid of the Flame - Firecat Form
+    {
+    }
 }

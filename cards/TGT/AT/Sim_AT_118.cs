@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_118 : SimTemplate //* Grand Crusader
-	{
-		//Battlecry: Add a random Paladin card to your hand.
+    class Sim_AT_118 : SimTemplate //* Grand Crusader
+    {
+        //Battlecry: Add a random Paladin card to your hand.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-			p.drawACard(SimCard.None, m.own, true);
+            p.drawACard(SimCard.None, m.own, true);
         }
     }
 }

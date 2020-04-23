@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,11 +29,9 @@ namespace HREngine.Bots
         //    geheimnis:/ wenn euer held schaden erleidet, wird dem feindlichen helden ebenso viel schaden zugefügt.
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(number) : p.getEnemySpellDamageDamage(number);
+            var dmg = ownplay ? p.getSpellDamageDamage(number) : p.getEnemySpellDamageDamage(number);
 
             p.minionGetDamageOrHeal(ownplay ? p.enemyHero : p.ownHero, dmg);
         }
-
     }
-
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_509 : SimTemplate //* Murloc Tidecaller
-	{
+    {
         //Whenever you summon a Murloc, gain +1 Attack.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
@@ -37,5 +34,5 @@ namespace HREngine.Bots
                 p.minionGetBuffed(triggerEffectMinion, 1, 0);
             }
         }
-	}
+    }
 }

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Mage_03 : SimTemplate //* 召唤之力 Summoning
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Mage_03 : SimTemplate //* 召唤之力 Summoning
+    {
+        //
+        //
+    }
 }

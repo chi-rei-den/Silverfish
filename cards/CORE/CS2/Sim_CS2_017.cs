@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_017 : SimTemplate //shapeshift
-	{
-
+    class Sim_CS2_017 : SimTemplate //shapeshift
+    {
 //    heldenfähigkeit/\n+1 angriff in diesem zug.\n+1 rüstung.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
@@ -36,14 +32,13 @@ namespace HREngine.Bots
             if (ownplay)
             {
                 p.minionGetTempBuff(p.ownHero, 1, 0);
-                p.minionGetArmor(p.ownHero,1);
+                p.minionGetArmor(p.ownHero, 1);
             }
             else
             {
                 p.minionGetTempBuff(p.enemyHero, 1, 0);
-                p.minionGetArmor(p.enemyHero,1);
+                p.minionGetArmor(p.enemyHero, 1);
             }
         }
-
-	}
+    }
 }

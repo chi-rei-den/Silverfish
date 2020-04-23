@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_080 : SimTemplate //* Secretkeeper
-	{
-		// Whenever a Secret: is played, gain +1/+1.
+    class Sim_EX1_080 : SimTemplate //* Secretkeeper
+    {
+        // Whenever a Secret: is played, gain +1/+1.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
-            if (hc.card.Secret) p.minionGetBuffed(m, 1, 1);
+            if (hc.card.Secret)
+            {
+                p.minionGetBuffed(m, 1, 1);
+            }
         }
-	}
+    }
 }

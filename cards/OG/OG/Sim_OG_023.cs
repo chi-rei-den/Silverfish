@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -32,13 +29,20 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int gain = 0;
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var gain = 0;
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.handcard.card.Race == Race.TOTEM) gain++;
+                if (m.handcard.card.Race == Race.TOTEM)
+                {
+                    gain++;
+                }
             }
-            if (gain > 0) p.minionGetBuffed(target, gain, gain);
+
+            if (gain > 0)
+            {
+                p.minionGetBuffed(target, gain, gain);
+            }
         }
     }
 }

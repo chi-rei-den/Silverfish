@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULD_439t : SimTemplate //* 沙漠胡蜂 Sandwasp
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULD_439t : SimTemplate //* 沙漠胡蜂 Sandwasp
+    {
+        //
+        //
+    }
 }

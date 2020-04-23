@@ -1,8 +1,8 @@
+using System;
+using System.Reflection;
 using HearthDb;
 using HearthDb.Enums;
 using HREngine.Bots;
-using System;
-using System.Reflection;
 
 namespace Chireiden.Silverfish
 {
@@ -124,6 +124,7 @@ namespace Chireiden.Silverfish
             {
                 return true;
             }
+
             return acid == bcid;
         }
 
@@ -138,11 +139,12 @@ namespace Chireiden.Silverfish
             if (!Cards.Collectible.TryGetValue(name, out var card) && !Cards.All.TryGetValue(name, out card))
             {
                 card = Cards.GetFromName(name, Locale.enUS)
-                ?? Cards.GetFromName(name, Locale.zhCN)
-                ?? Cards.GetFromName(name, Locale.enUS, false)
-                ?? Cards.GetFromName(name, Locale.zhCN, false);
+                       ?? Cards.GetFromName(name, Locale.zhCN)
+                       ?? Cards.GetFromName(name, Locale.enUS, false)
+                       ?? Cards.GetFromName(name, Locale.zhCN, false);
             }
-            return card != null ? new SimCard { CardDef = card } : null;
+
+            return card != null ? new SimCard {CardDef = card} : null;
         }
 
         public const string None = CardIds.NonCollectible.Neutral.GoldenLegendary; // A do-nothing card

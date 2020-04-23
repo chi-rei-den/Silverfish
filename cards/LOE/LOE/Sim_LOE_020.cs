@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_020 : SimTemplate //* Desert Camel
-	{
+    class Sim_LOE_020 : SimTemplate //* Desert Camel
+    {
         //Battlecry: Put a 1-Cost minion from each deck into the battlefield.
-		
+
         SimCard kid = CardIds.Collectible.Priest.TwilightWhelp; //Twilight Whelp
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            p.callKid(kid, p.ownMinions.Count, true);
-			p.callKid(kid, p.enemyMinions.Count, false);
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            p.callKid(this.kid, p.ownMinions.Count, true);
+            p.callKid(this.kid, p.enemyMinions.Count, false);
+        }
+    }
 }

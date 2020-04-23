@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_101 : SimTemplate //* Shellshifter
-	{
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_UNG_101 : SimTemplate //* Shellshifter
+    {
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (p.ownFandralStaghelm > 0)
             {
                 p.minionTransform(own, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken3);
@@ -46,6 +42,6 @@ namespace HREngine.Bots
                     p.minionTransform(own, CardIds.NonCollectible.Druid.Shellshifter_ShellshifterToken2);
                 }
             }
-		}
-	}
+        }
+    }
 }

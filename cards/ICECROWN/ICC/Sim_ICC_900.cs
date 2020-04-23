@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_900: SimTemplate //* Necrotic Geist
+    class Sim_ICC_900 : SimTemplate //* Necrotic Geist
     {
         // Whenever one of your other minions dies, summon a 2/2 Ghoul.
 
@@ -35,14 +32,18 @@ namespace HREngine.Bots
 
         public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {
-            int diedMinions = (m.own) ? p.tempTrigger.ownMinionsDied : p.tempTrigger.enemyMinionsDied;
-            if (diedMinions == 0) return;
-            int residual = (p.pID == m.pID) ? diedMinions - m.extraParam2 : diedMinions;
+            var diedMinions = m.own ? p.tempTrigger.ownMinionsDied : p.tempTrigger.enemyMinionsDied;
+            if (diedMinions == 0)
+            {
+                return;
+            }
+
+            var residual = p.pID == m.pID ? diedMinions - m.extraParam2 : diedMinions;
             m.pID = p.pID;
             m.extraParam2 = diedMinions;
-            for (int i = 0; i < residual; i++)
+            for (var i = 0; i < residual; i++)
             {
-                p.callKid(kid, m.zonepos, m.own);
+                p.callKid(this.kid, m.zonepos, m.own);
             }
         }
     }

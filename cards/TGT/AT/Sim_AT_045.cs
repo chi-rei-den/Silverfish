@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,18 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_045 : SimTemplate //* Aviana
-	{
-		//Your minions cost (1).
+    class Sim_AT_045 : SimTemplate //* Aviana
+    {
+        //Your minions cost (1).
 
-		public override void onAuraStarts(Playfield p, Minion m)
-		{
-            if (m.own) p.anzOwnAviana++;
-		}
+        public override void onAuraStarts(Playfield p, Minion m)
+        {
+            if (m.own)
+            {
+                p.anzOwnAviana++;
+            }
+        }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
-            if (m.own) p.anzOwnAviana--;
+            if (m.own)
+            {
+                p.anzOwnAviana--;
+            }
         }
-	}
+    }
 }

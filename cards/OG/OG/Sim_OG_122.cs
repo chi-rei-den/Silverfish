@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_122 : SimTemplate //* Mukla, Tyrant of the Vale
-	{
-		//Battlecry: Add 2 Bananas to your hand.
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_OG_122 : SimTemplate //* Mukla, Tyrant of the Vale
+    {
+        //Battlecry: Add 2 Bananas to your hand.
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.NonCollectible.Neutral.Bananas, own.own, true);
             p.drawACard(CardIds.NonCollectible.Neutral.Bananas, own.own, true);
-		}
-	}
+        }
+    }
 }

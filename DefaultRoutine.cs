@@ -1,6 +1,9 @@
+using Buddy.Coroutines;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
+using HearthDb.Enums;
+using log4net;
+using Microsoft.Scripting.Hosting;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,24 +12,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Markup;
-using Buddy.Coroutines;
-using HREngine.Bots;
-using log4net;
-using Microsoft.Scripting.Hosting;
 using Triton.Bot;
+using Triton.Bot.Logic.Bots.DefaultBot;
 using Triton.Common;
 using Triton.Game;
 using Triton.Game.Data;
-
 //!CompilerOption|AddRef|IronPython.dll
 //!CompilerOption|AddRef|IronPython.Modules.dll
 //!CompilerOption|AddRef|Microsoft.Scripting.dll
 //!CompilerOption|AddRef|Microsoft.Dynamic.dll
 //!CompilerOption|AddRef|Microsoft.Scripting.Metadata.dll
 using Triton.Game.Mapping;
-using Triton.Bot.Logic.Bots.DefaultBot;
 using Logger = Triton.Common.LogUtilities.Logger;
 
 namespace HREngine.Bots
@@ -44,43 +41,30 @@ namespace HREngine.Bots
         private int dirtytarget = -1;
         private int dirtychoice = -1;
         private string choiceCardId = "";
-        DateTime starttime = DateTime.Now;
-        bool enemyConcede = false;
+        private DateTime starttime = DateTime.Now;
+        private bool enemyConcede = false;
 
         public bool learnmode = false;
         public bool printlearnmode = true;
+        private Silverfish sf = Silverfish.Instance;
 
-        Silverfish sf = Silverfish.Instance;
-        DefaultBotSettings botset
-        {
-            get { return DefaultBotSettings.Instance; }
-        }
+        private DefaultBotSettings botset => DefaultBotSettings.Instance;
+
         //uncomment the desired option, or leave it as is to select via the interface
-        Behavior behave = new BehaviorControl();
+        private Behavior behave = new BehaviorControl();
         //Behavior behave = new BehaviorRush();
 
 
         public DefaultRoutine()
         {
             // Global rules. Never keep a 4+ minion, unless it's Bolvar Fordragon (paladin).
-            _mulliganRules.Add(new Tuple<string, string>("True", "card.Entity.Cost >= 4 and card.Entity.Id != \"GVG_063\""));
+            this._mulliganRules.Add(new Tuple<string, string>("True", "card.Entity.Cost >= 4 and card.Entity.Id != \"GVG_063\""));
 
             // Never keep Tracking.
-            _mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == CardClass.HUNTER", "card.Entity.Id == \"DS1_184\""));
-
-            // Example rule for self.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == CardClass.MAGE", "card.Cost >= 5"));
-
-            // Example rule for opponents.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.OpponentClass == CardClass.MAGE", "card.Cost >= 3"));
-
-            // Example rule for matchups.
-            //_mulliganRules.Add(new Tuple<string, string>("mulliganData.userClass == CardClass.HUNTER && mulliganData.OpponentClass == CardClass.DRUID", "card.Cost >= 2"));
-
-            bool concede = false;
-            bool teststuff = false;
+            this._mulliganRules.Add(new Tuple<string, string>("mulliganData.UserClass == CardClass.HUNTER", "card.Entity.Id == \"DS1_184\""));
+            var teststuff = false;
             // set to true, to run a testfile (requires test.txt file in folder where _cardDB.txt file is located)
-            bool printstuff = false; // if true, the best board of the tested file is printet stepp by stepp
+            var printstuff = false; // if true, the best board of the tested file is printet stepp by stepp
 
             Helpfunctions.Instance.ErrorLog("----------------------------");
             Helpfunctions.Instance.ErrorLog($"您正在使用的AI版本为{Silverfish.Instance.versionnumber}");
@@ -106,9 +90,9 @@ def Execute():
         public bool GetCondition(string expression, IEnumerable<RegisterScriptVariableDelegate> variables)
         {
             var code = string.Format(BoilerPlateExecute, expression);
-            var scope = _scriptManager.Scope;
-            var scriptSource = _scriptManager.Engine.CreateScriptSourceFromString(code);
-            scope.SetVariable("ioproxy", _scriptManager.IoProxy);
+            var scope = this._scriptManager.Scope;
+            var scriptSource = this._scriptManager.Engine.CreateScriptSourceFromString(code);
+            scope.SetVariable("ioproxy", this._scriptManager.IoProxy);
             foreach (var variable in variables)
             {
                 variable(scope);
@@ -124,9 +108,9 @@ def Execute():
             try
             {
                 var code = string.Format(BoilerPlateExecute, expression);
-                var scope = _scriptManager.Scope;
-                var scriptSource = _scriptManager.Engine.CreateScriptSourceFromString(code);
-                scope.SetVariable("ioproxy", _scriptManager.IoProxy);
+                var scope = this._scriptManager.Scope;
+                var scriptSource = this._scriptManager.Engine.CreateScriptSourceFromString(code);
+                scope.SetVariable("ioproxy", this._scriptManager.IoProxy);
                 foreach (var variable in variables)
                 {
                     scope.SetVariable(variable, new object());
@@ -146,28 +130,16 @@ def Execute():
         #region Implementation of IAuthored
 
         /// <summary> The name of the routine. </summary>
-        public string Name
-        {
-            get { return "策略"; }
-        }
+        public string Name => "策略";
 
         /// <summary> The description of the routine. </summary>
-        public string Description
-        {
-            get { return "炉石兄弟的默认策略."; }
-        }
+        public string Description => "炉石兄弟的默认策略.";
 
         /// <summary>The author of this routine.</summary>
-        public string Author
-        {
-            get { return "Bossland GmbH"; }
-        }
+        public string Author => "Bossland GmbH";
 
         /// <summary>The version of this routine.</summary>
-        public string Version
-        {
-            get { return "0.0.1.1"; }
-        }
+        public string Version => "0.0.1.1";
 
         #endregion
 
@@ -176,7 +148,7 @@ def Execute():
         /// <summary>Initializes this routine.</summary>
         public void Initialize()
         {
-            _scriptManager.Initialize(null,
+            this._scriptManager.Initialize(null,
                 new List<string>
                 {
                     "Triton.Game",
@@ -190,7 +162,7 @@ def Execute():
         /// <summary>Deinitializes this routine.</summary>
         public void Deinitialize()
         {
-            _scriptManager.Deinitialize();
+            this._scriptManager.Deinitialize();
         }
 
         #endregion
@@ -200,10 +172,10 @@ def Execute():
         /// <summary> The routine start callback. Do any initialization here. </summary>
         public void Start()
         {
-            GameEventManager.NewGame += GameEventManagerOnNewGame;
-            GameEventManager.GameOver += GameEventManagerOnGameOver;
-            GameEventManager.QuestUpdate += GameEventManagerOnQuestUpdate;
-            GameEventManager.ArenaRewards += GameEventManagerOnArenaRewards;
+            GameEventManager.NewGame += this.GameEventManagerOnNewGame;
+            GameEventManager.GameOver += this.GameEventManagerOnGameOver;
+            GameEventManager.QuestUpdate += this.GameEventManagerOnQuestUpdate;
+            GameEventManager.ArenaRewards += this.GameEventManagerOnArenaRewards;
 
             if (Hrtprozis.Instance.settings == null)
             {
@@ -211,12 +183,11 @@ def Execute():
                 ComboBreaker.Instance.setInstances();
                 PenalityManager.Instance.setInstances();
             }
-            behave = sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
-            foreach (var tuple in _mulliganRules)
+            this.behave = this.sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
+            foreach (var tuple in this._mulliganRules)
             {
-                Exception ex;
                 if (
-                    !VerifyCondition(tuple.Item1, new List<string> {"mulliganData"}, out ex))
+                    !this.VerifyCondition(tuple.Item1, new List<string> { "mulliganData" }, out var ex))
                 {
                     Log.ErrorFormat("[开始] 发现一个错误的留牌策略为 [{1}]: {0}.", ex,
                         tuple.Item1);
@@ -224,7 +195,7 @@ def Execute():
                 }
 
                 if (
-                    !VerifyCondition(tuple.Item2, new List<string> {"mulliganData", "card"},
+                    !this.VerifyCondition(tuple.Item2, new List<string> { "mulliganData", "card" },
                         out ex))
                 {
                     Log.ErrorFormat("[开始] 发现一个错误的留牌策略为 [{1}]: {0}.", ex,
@@ -242,10 +213,10 @@ def Execute():
         /// <summary> The routine stop callback. Do any pre-dispose cleanup here. </summary>
         public void Stop()
         {
-            GameEventManager.NewGame -= GameEventManagerOnNewGame;
-            GameEventManager.GameOver -= GameEventManagerOnGameOver;
-            GameEventManager.QuestUpdate -= GameEventManagerOnQuestUpdate;
-            GameEventManager.ArenaRewards -= GameEventManagerOnArenaRewards;
+            GameEventManager.NewGame -= this.GameEventManagerOnNewGame;
+            GameEventManager.GameOver -= this.GameEventManagerOnGameOver;
+            GameEventManager.QuestUpdate -= this.GameEventManagerOnQuestUpdate;
+            GameEventManager.ArenaRewards -= this.GameEventManagerOnArenaRewards;
         }
 
         #endregion
@@ -259,7 +230,7 @@ def Execute():
             {
                 using (var fs = new FileStream(@"Routines\DefaultRoutine\SettingsGui.xaml", FileMode.Open))
                 {
-                    var root = (UserControl) XamlReader.Load(fs);
+                    var root = (UserControl)XamlReader.Load(fs);
 
                     // Your settings binding here.
 
@@ -384,10 +355,7 @@ def Execute():
         }
 
         /// <summary>The settings object. This will be registered in the current configuration.</summary>
-        public JsonSettings Settings
-        {
-            get { return DefaultRoutineSettings.Instance; }
-        }
+        public JsonSettings Settings => DefaultRoutineSettings.Instance;
 
         #endregion
 
@@ -425,56 +393,56 @@ def Execute():
             // The bot is requesting mulligan logic.
             if (type == "mulligan")
             {
-                await MulliganLogic(context as MulliganData);
+                await this.MulliganLogic(context as MulliganData);
                 return true;
             }
 
             // The bot is requesting emote logic.
             if (type == "emote")
             {
-                await EmoteLogic(context as EmoteData);
+                await this.EmoteLogic(context as EmoteData);
                 return true;
             }
 
             // The bot is requesting our turn logic.
             if (type == "our_turn")
             {
-                await OurTurnLogic();
+                await this.OurTurnLogic();
                 return true;
             }
 
             // The bot is requesting opponent turn logic.
             if (type == "opponent_turn")
             {
-                await OpponentTurnLogic();
+                await this.OpponentTurnLogic();
                 return true;
             }
 
-	        // The bot is requesting our turn logic.
-	        if (type == "our_turn_combat")
-	        {
-		        await OurTurnCombatLogic();
-		        return true;
-	        }
-
-	        // The bot is requesting opponent turn logic.
-	        if (type == "opponent_turn_combat")
-	        {
-		        await OpponentTurnCombatLogic();
-		        return true;
-	        }
-
-			// The bot is requesting arena draft logic.
-			if (type == "arena_draft")
+            // The bot is requesting our turn logic.
+            if (type == "our_turn_combat")
             {
-                await ArenaDraftLogic(context as ArenaDraftData);
+                await this.OurTurnCombatLogic();
+                return true;
+            }
+
+            // The bot is requesting opponent turn logic.
+            if (type == "opponent_turn_combat")
+            {
+                await this.OpponentTurnCombatLogic();
+                return true;
+            }
+
+            // The bot is requesting arena draft logic.
+            if (type == "arena_draft")
+            {
+                await this.ArenaDraftLogic(context as ArenaDraftData);
                 return true;
             }
 
             // The bot is requesting quest handling logic.
             if (type == "handle_quests")
             {
-                await HandleQuestsLogic(context as QuestData);
+                await this.HandleQuestsLogic(context as QuestData);
                 return true;
             }
 
@@ -487,11 +455,23 @@ def Execute():
         private int RandomMulliganThinkTime()
         {
             var random = Client.Random;
-            var type = random.Next(0, 100)%4;
+            var type = random.Next(0, 100) % 4;
 
-            if (type == 0) return random.Next(800, 1200);
-            if (type == 1) return random.Next(1200, 2500);
-            if (type == 2) return random.Next(2500, 3700);
+            if (type == 0)
+            {
+                return random.Next(800, 1200);
+            }
+
+            if (type == 1)
+            {
+                return random.Next(1200, 2500);
+            }
+
+            if (type == 2)
+            {
+                return random.Next(2500, 3700);
+            }
+
             return 0;
         }
 
@@ -507,20 +487,20 @@ def Execute():
         /// <returns></returns>
         public async Task MulliganLogic(MulliganData mulliganData)
         {
-            if (!botset.AutoConcedeLag && !botset.ForceConcedeAtMulligan)
+            if (!this.botset.AutoConcedeLag && !this.botset.ForceConcedeAtMulligan)
             {
-            Log.InfoFormat("[日志档案:] 开始创建");
-            Hrtprozis prozis = Hrtprozis.Instance;
-            prozis.clearAllNewGame();
-            Silverfish.Instance.setnewLoggFile();
-            Log.InfoFormat("[日志档案:] 创建完成");
+                Log.InfoFormat("[日志档案:] 开始创建");
+                var prozis = Hrtprozis.Instance;
+                prozis.clearAllNewGame();
+                Silverfish.Instance.setnewLoggFile();
+                Log.InfoFormat("[日志档案:] 创建完成");
             }
             Log.InfoFormat("[开局留牌] {0} 对阵 {1}.", mulliganData.UserClass, mulliganData.OpponentClass);
             var count = mulliganData.Cards.Count;
 
             if (this.behave.BehaviorName() != DefaultRoutineSettings.Instance.DefaultBehavior)
             {
-                behave = sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
+                this.behave = this.sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
             }
             if (!Mulligan.Instance.getHoldList(mulliganData, this.behave))
             {
@@ -530,15 +510,15 @@ def Execute():
 
                     try
                     {
-                        foreach (var tuple in _mulliganRules)
+                        foreach (var tuple in this._mulliganRules)
                         {
-                            if (GetCondition(tuple.Item1,
+                            if (this.GetCondition(tuple.Item1,
                                 new List<RegisterScriptVariableDelegate>
                             {
                                 scope => scope.SetVariable("mulliganData", mulliganData)
                             }))
                             {
-                                if (GetCondition(tuple.Item2,
+                                if (this.GetCondition(tuple.Item2,
                                     new List<RegisterScriptVariableDelegate>
                                 {
                                     scope => scope.SetVariable("mulliganData", mulliganData),
@@ -571,7 +551,7 @@ def Execute():
             var thinkList = new List<KeyValuePair<int, int>>();
             for (var i = 0; i < count; i++)
             {
-                thinkList.Add(new KeyValuePair<int, int>(i%count, RandomMulliganThinkTime()));
+                thinkList.Add(new KeyValuePair<int, int>(i % count, this.RandomMulliganThinkTime()));
             }
             thinkList.Shuffle();
 
@@ -583,7 +563,9 @@ def Execute():
 
                 // Instant think time, skip the card.
                 if (entry.Value == 0)
+                {
                     continue;
+                }
 
                 Client.MouseOver(card.InteractPoint);
 
@@ -628,37 +610,37 @@ def Execute():
 
         #region Turn
 
-	    public async Task OurTurnCombatLogic()
-	    {
+        public async Task OurTurnCombatLogic()
+        {
             Log.InfoFormat("[我方回合]");
-            await Coroutine.Sleep(555 + makeChoice());
-            switch (dirtychoice)
+            await Coroutine.Sleep(555 + this.makeChoice());
+            switch (this.dirtychoice)
             {
                 case 0: TritonHs.ChooseOneClickMiddle(); break;
                 case 1: TritonHs.ChooseOneClickLeft(); break;
                 case 2: TritonHs.ChooseOneClickRight(); break;
             }
 
-            dirtychoice = -1;
+            this.dirtychoice = -1;
             await Coroutine.Sleep(555);
             Silverfish.Instance.lastpf = null;
             return;
-		}
+        }
 
-	    public async Task OpponentTurnCombatLogic()
-	    {
-		    Log.Info("[对手回合]");
-	    }
+        public async Task OpponentTurnCombatLogic()
+        {
+            Log.Info("[对手回合]");
+        }
 
-		/// <summary>
-		/// Under construction.
-		/// </summary>
-		/// <returns></returns>
-		public async Task OurTurnLogic()
+        /// <summary>
+        /// Under construction.
+        /// </summary>
+        /// <returns></returns>
+        public async Task OurTurnLogic()
         {
             if (this.behave.BehaviorName() != DefaultRoutineSettings.Instance.DefaultBehavior)
             {
-                behave = sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
+                this.behave = this.sf.getBehaviorByName(DefaultRoutineSettings.Instance.DefaultBehavior);
                 Silverfish.Instance.lastpf = null;
             }
 
@@ -670,19 +652,19 @@ def Execute():
 
             if (TritonHs.IsInTargetMode())
             {
-                if (dirtytarget >= 0)
+                if (this.dirtytarget >= 0)
                 {
                     Log.Info("瞄准中...");
                     HSCard source = null;
-                    if (dirtyTargetSource == 9000) // 9000 = ability
+                    if (this.dirtyTargetSource == 9000) // 9000 = ability
                     {
                         source = TritonHs.OurHeroPowerCard;
                     }
                     else
                     {
-                        source = getEntityWithNumber(dirtyTargetSource);
+                        source = this.getEntityWithNumber(this.dirtyTargetSource);
                     }
-                    HSCard target = getEntityWithNumber(dirtytarget);
+                    var target = this.getEntityWithNumber(this.dirtytarget);
 
                     if (target == null)
                     {
@@ -691,11 +673,17 @@ def Execute():
                         return;
                     }
 
-                    dirtytarget = -1;
-                    dirtyTargetSource = -1;
+                    this.dirtytarget = -1;
+                    this.dirtyTargetSource = -1;
 
-                    if (source == null) await TritonHs.DoTarget(target);
-                    else await source.DoTarget(target);
+                    if (source == null)
+                    {
+                        await TritonHs.DoTarget(target);
+                    }
+                    else
+                    {
+                        await source.DoTarget(target);
+                    }
 
                     await Coroutine.Sleep(555);
 
@@ -709,29 +697,31 @@ def Execute():
 
             if (TritonHs.IsInChoiceMode())
             {
-                await Coroutine.Sleep(555 + makeChoice());
-                switch (dirtychoice)
+                await Coroutine.Sleep(555 + this.makeChoice());
+                switch (this.dirtychoice)
                 {
                     case 0: TritonHs.ChooseOneClickMiddle(); break;
                     case 1: TritonHs.ChooseOneClickLeft(); break;
                     case 2: TritonHs.ChooseOneClickRight(); break;
                 }
 
-                dirtychoice = -1;
+                this.dirtychoice = -1;
                 await Coroutine.Sleep(555);
                 return;
             }
 
-            bool sleepRetry = false;
-            bool templearn = Silverfish.Instance.updateEverything(behave, 0, out sleepRetry);
+            var templearn = Silverfish.Instance.updateEverything(this.behave, 0, out var sleepRetry);
             if (sleepRetry)
             {
                 Log.Error("[AI] 随从没能动起来，再试一次...");
                 await Coroutine.Sleep(500);
-                templearn = Silverfish.Instance.updateEverything(behave, 1, out sleepRetry);
+                templearn = Silverfish.Instance.updateEverything(this.behave, 1, out sleepRetry);
             }
 
-            if (templearn == true) this.printlearnmode = true;
+            if (templearn == true)
+            {
+                this.printlearnmode = true;
+            }
 
             if (this.learnmode)
             {
@@ -749,45 +739,70 @@ def Execute():
             var moveTodo = Ai.Instance.bestmove;
             if (moveTodo == null || moveTodo.actionType == actionEnum.endturn || Ai.Instance.bestmoveValue < -9999)
             {
-                bool doEndTurn = false;
-                bool doConcede = false;
-                if (Ai.Instance.bestmoveValue > -10000) doEndTurn = true;
-                else if (HREngine.Bots.Settings.Instance.concedeMode != 0) doConcede = true;
+                var doEndTurn = false;
+                var doConcede = false;
+                if (Ai.Instance.bestmoveValue > -10000)
+                {
+                    doEndTurn = true;
+                }
+                else if (HREngine.Bots.Settings.Instance.concedeMode != 0)
+                {
+                    doConcede = true;
+                }
                 else
                 {
                     if (new Playfield().ownHeroHasDirectLethal())
                     {
-                        Playfield lastChancePl = Ai.Instance.bestplay;
-                        bool lastChance = false;
+                        var lastChancePl = Ai.Instance.bestplay;
+                        var lastChance = false;
                         if (lastChancePl.owncarddraw > 0)
                         {
-                            foreach (Handcard hc in lastChancePl.owncards)
+                            foreach (var hc in lastChancePl.owncards)
                             {
-                                if (hc.card.CardId == SimCard.None) lastChance = true;
+                                if (hc.card.CardId == SimCard.None)
+                                {
+                                    lastChance = true;
+                                }
                             }
-                            if (!lastChance) doConcede = true;
+                            if (!lastChance)
+                            {
+                                doConcede = true;
+                            }
                         }
-                        else doConcede = true;
+                        else
+                        {
+                            doConcede = true;
+                        }
 
                         if (doConcede)
                         {
-                            foreach (Minion m in lastChancePl.ownMinions)
+                            foreach (var m in lastChancePl.ownMinions)
                             {
-                                if (!m.playedThisTurn) continue;
+                                if (!m.playedThisTurn)
+                                {
+                                    continue;
+                                }
+
                                 switch (m.handcard.card.CardId)
                                 {
                                     case CardIds.Collectible.Neutral.Cthun: lastChance = true; break;
                                     case CardIds.Collectible.Neutral.NzothTheCorruptor: lastChance = true; break;
                                     case CardIds.Collectible.Neutral.YoggSaronHopesEnd: lastChance = true; break;
                                     case CardIds.Collectible.Neutral.SirFinleyMrrgglton: lastChance = true; break;
-                                    case CardIds.Collectible.Neutral.RagnarosTheFirelord: if (lastChancePl.enemyHero.Hp < 9) lastChance = true; break;
-                                    case CardIds.Collectible.Neutral.BaronGeddon: if (lastChancePl.enemyHero.Hp < 3) lastChance = true; break;
+                                    case CardIds.Collectible.Neutral.RagnarosTheFirelord: if (lastChancePl.enemyHero.Hp < 9) { lastChance = true; } break;
+                                    case CardIds.Collectible.Neutral.BaronGeddon: if (lastChancePl.enemyHero.Hp < 3) { lastChance = true; } break;
                                 }
                             }
                         }
-                        if (lastChance) doConcede = false;
+                        if (lastChance)
+                        {
+                            doConcede = false;
+                        }
                     }
-                    else if (moveTodo == null || moveTodo.actionType == actionEnum.endturn) doEndTurn = true;
+                    else if (moveTodo == null || moveTodo.actionType == actionEnum.endturn)
+                    {
+                        doEndTurn = true;
+                    }
                 }
                 if (doEndTurn)
                 {
@@ -820,7 +835,7 @@ def Execute():
                 if (moveTodo.actionType == actionEnum.playcard)
                 {
                     Questmanager.Instance.updatePlayedCardFromHand(moveTodo.card);
-                    HSCard cardtoplay = getCardWithNumber(moveTodo.card.entity);
+                    var cardtoplay = this.getCardWithNumber(moveTodo.card.entity);
                     if (cardtoplay == null)
                     {
                         Helpfunctions.Instance.ErrorLog("[提示] 实在支不出招啦");
@@ -828,23 +843,23 @@ def Execute():
                     }
                     if (moveTodo.target != null)
                     {
-                        HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
+                        var target = this.getEntityWithNumber(moveTodo.target.entitiyID);
                         if (target != null)
                         {
                             Helpfunctions.Instance.ErrorLog(
                                 $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 瞄准: {target.Name} ({target.EntityId})");
                             Helpfunctions.Instance.logg(
                                 $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 瞄准: {target.Name} ({target.EntityId}) 抉择: {moveTodo.druidchoice}");
-						    if (moveTodo.druidchoice >= 1)
+                            if (moveTodo.druidchoice >= 1)
                             {
-                                dirtytarget = moveTodo.target.entitiyID;
-                                dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.CardId.ToString();
+                                this.dirtytarget = moveTodo.target.entitiyID;
+                                this.dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
+                                this.choiceCardId = moveTodo.card.card.CardId.ToString();
                             }
 
                             //safe targeting stuff for hsbuddy
-                            dirtyTargetSource = moveTodo.card.entity;
-                            dirtytarget = moveTodo.target.entitiyID;
+                            this.dirtyTargetSource = moveTodo.card.entity;
+                            this.dirtytarget = moveTodo.target.entitiyID;
 
                             await cardtoplay.Pickup();
 
@@ -880,12 +895,12 @@ def Execute():
                         $"使用: {cardtoplay.Name} ({cardtoplay.EntityId}) 抉择: {moveTodo.druidchoice}");
                     if (moveTodo.druidchoice >= 1)
                     {
-                        dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                        choiceCardId = moveTodo.card.card.CardId.ToString();
+                        this.dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
+                        this.choiceCardId = moveTodo.card.card.CardId.ToString();
                     }
 
-                    dirtyTargetSource = -1;
-                    dirtytarget = -1;
+                    this.dirtyTargetSource = -1;
+                    this.dirtytarget = -1;
 
                     await cardtoplay.Pickup();
 
@@ -905,8 +920,8 @@ def Execute():
                 //attack with minion
                 if (moveTodo.actionType == actionEnum.attackWithMinion)
                 {
-                    HSCard attacker = getEntityWithNumber(moveTodo.own.entitiyID);
-                    HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
+                    var attacker = this.getEntityWithNumber(moveTodo.own.entitiyID);
+                    var target = this.getEntityWithNumber(moveTodo.target.entitiyID);
                     if (attacker != null)
                     {
                         if (target != null)
@@ -934,19 +949,19 @@ def Execute():
                 //attack with hero
                 if (moveTodo.actionType == actionEnum.attackWithHero)
                 {
-                    HSCard attacker = getEntityWithNumber(moveTodo.own.entitiyID);
-                    HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
+                    var attacker = this.getEntityWithNumber(moveTodo.own.entitiyID);
+                    var target = this.getEntityWithNumber(moveTodo.target.entitiyID);
                     if (attacker != null)
                     {
                         if (target != null)
                         {
-                            dirtytarget = moveTodo.target.entitiyID;
+                            this.dirtytarget = moveTodo.target.entitiyID;
                             Helpfunctions.Instance.ErrorLog($"英雄攻击: {attacker.Name} 目标为: {target.Name}");
                             Helpfunctions.Instance.logg($"英雄攻击: {attacker.Name} 目标为: {target.Name}");
 
                             //safe targeting stuff for hsbuddy
-                            dirtyTargetSource = moveTodo.own.entitiyID;
-                            dirtytarget = moveTodo.target.entitiyID;
+                            this.dirtyTargetSource = moveTodo.own.entitiyID;
+                            this.dirtytarget = moveTodo.target.entitiyID;
                             await attacker.DoAttack(target);
                         }
                         else
@@ -960,18 +975,18 @@ def Execute():
                         Helpfunctions.Instance.ErrorLog("[AI] 英雄攻击失败，再次重试...");
                         Helpfunctions.Instance.logg($"[AI] 英雄攻击 {moveTodo.own.entitiyID} 失败，再次重试...");
                     }
-				    await Coroutine.Sleep(250);
+                    await Coroutine.Sleep(250);
                     return;
                 }
 
                 //use ability
                 if (moveTodo.actionType == actionEnum.useHeroPower)
                 {
-                    HSCard cardtoplay = TritonHs.OurHeroPowerCard;
+                    var cardtoplay = TritonHs.OurHeroPowerCard;
 
                     if (moveTodo.target != null)
                     {
-                        HSCard target = getEntityWithNumber(moveTodo.target.entitiyID);
+                        var target = this.getEntityWithNumber(moveTodo.target.entitiyID);
                         if (target != null)
                         {
                             Helpfunctions.Instance.ErrorLog($"使用英雄技能: {cardtoplay.Name} 目标为 {target.Name}");
@@ -979,13 +994,13 @@ def Execute():
                                 $"使用英雄技能: {cardtoplay.Name} 目标为 {target.Name}{(moveTodo.druidchoice > 0 ? (" 抉择: " + moveTodo.druidchoice) : "")}");
                             if (moveTodo.druidchoice > 0)
                             {
-                                dirtytarget = moveTodo.target.entitiyID;
-                                dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                                choiceCardId = moveTodo.card.card.CardId.ToString();
+                                this.dirtytarget = moveTodo.target.entitiyID;
+                                this.dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
+                                this.choiceCardId = moveTodo.card.card.CardId.ToString();
                             }
 
-                            dirtyTargetSource = 9000;
-                            dirtytarget = moveTodo.target.entitiyID;
+                            this.dirtyTargetSource = 9000;
+                            this.dirtytarget = moveTodo.target.entitiyID;
 
                             await cardtoplay.Pickup();
                             await cardtoplay.UseOn(target.Card);
@@ -1005,12 +1020,12 @@ def Execute():
 
                         if (moveTodo.druidchoice >= 1)
                         {
-                            dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
-                            choiceCardId = moveTodo.card.card.CardId.ToString();
+                            this.dirtychoice = moveTodo.druidchoice; //1=leftcard, 2= rightcard
+                            this.choiceCardId = moveTodo.card.card.CardId.ToString();
                         }
 
-                        dirtyTargetSource = -1;
-                        dirtytarget = -1;
+                        this.dirtyTargetSource = -1;
+                        this.dirtytarget = -1;
 
                         await cardtoplay.Pickup();
                     }
@@ -1024,17 +1039,17 @@ def Execute():
 
         private int makeChoice()
         {
-            if (dirtychoice < 1)
+            if (this.dirtychoice < 1)
             {
                 var ccm = ChoiceCardMgr.Get();
                 var lscc = ccm.m_lastShownChoiceState;
-                GAME_TAG choiceMode = GAME_TAG.CHOOSE_ONE;
-                int sourceEntityId = -1;
+                var choiceMode = GAME_TAG.CHOOSE_ONE;
+                var sourceEntityId = -1;
                 SimCard sourceEntityCId = SimCard.None;
                 if (lscc != null)
                 {
                     sourceEntityId = lscc.m_sourceEntityId;
-                    Entity entity = GameState.Get().GetEntity(lscc.m_sourceEntityId);
+                    var entity = GameState.Get().GetEntity(lscc.m_sourceEntityId);
                     sourceEntityCId = (entity.GetCardId());
                     if (entity != null)
                     {
@@ -1044,57 +1059,70 @@ def Execute():
                             if (sourceCard.GetEntity().HasReferencedTag(GAME_TAG.DISCOVER))
                             {
                                 choiceMode = GAME_TAG.DISCOVER;
-                                dirtychoice = -1;
+                                this.dirtychoice = -1;
                             }
                             else if (sourceCard.GetEntity().HasReferencedTag(GAME_TAG.ADAPT))
                             {
                                 choiceMode = GAME_TAG.ADAPT;
-                                dirtychoice = -1;
+                                this.dirtychoice = -1;
                             }
                         }
                     }
                 }
 
-                Ai ai = Ai.Instance;
-                List<Handcard> discoverCards = new List<Handcard>();
+                var ai = Ai.Instance;
+                var discoverCards = new List<Handcard>();
                 float bestDiscoverValue = -2000000;
                 var choiceCardMgr = ChoiceCardMgr.Get();
                 var cards = choiceCardMgr.GetFriendlyCards();
 
-                for (int i = 0; i < cards.Count; i++)
+                for (var i = 0; i < cards.Count; i++)
                 {
-                    var hc = new Handcard();
-                    hc.card = ((cards[i].GetCardId()));
-                    hc.position = 100 + i;
-                    hc.entity = cards[i].GetEntityId();
+                    var hc = new Handcard
+                    {
+                        card = ((cards[i].GetCardId())),
+                        position = 100 + i,
+                        entity = cards[i].GetEntityId()
+                    };
                     hc.manacost = hc.card.calculateManaCost(ai.nextMoveGuess);
                     discoverCards.Add(hc);
                 }
 
-                int sirFinleyChoice = -1;
-                if (ai.bestmove == null) Log.ErrorFormat("[提示] 没有获得卡牌数据");
+                var sirFinleyChoice = -1;
+                if (ai.bestmove == null)
+                {
+                    Log.ErrorFormat("[提示] 没有获得卡牌数据");
+                }
                 else if (ai.bestmove.actionType == actionEnum.playcard && ai.bestmove.card.card.CardId == CardIds.Collectible.Neutral.SirFinleyMrrgglton)
                 {
                     sirFinleyChoice = ai.botBase.getSirFinleyPriority(discoverCards);
                 }
-                if (choiceMode != GAME_TAG.DISCOVER) sirFinleyChoice = -1;
+                if (choiceMode != GAME_TAG.DISCOVER)
+                {
+                    sirFinleyChoice = -1;
+                }
 
-                DateTime tmp = DateTime.Now;
-                int discoverCardsCount = discoverCards.Count;
-                if (sirFinleyChoice != -1) dirtychoice = sirFinleyChoice;
+                var tmp = DateTime.Now;
+                var discoverCardsCount = discoverCards.Count;
+                if (sirFinleyChoice != -1)
+                {
+                    this.dirtychoice = sirFinleyChoice;
+                }
                 else
                 {
-                    int dirtyTwoTurnSim = ai.mainTurnSimulator.getSecondTurnSimu();
+                    var dirtyTwoTurnSim = ai.mainTurnSimulator.getSecondTurnSimu();
                     ai.mainTurnSimulator.setSecondTurnSimu(true, 50);
                     using (TritonHs.Memory.ReleaseFrame(true))
                     {
-                        Playfield testPl = new Playfield();
-                        Playfield basePlf = new Playfield(ai.nextMoveGuess);
-                        for (int i = 0; i < discoverCardsCount; i++)
+                        var testPl = new Playfield();
+                        var basePlf = new Playfield(ai.nextMoveGuess);
+                        for (var i = 0; i < discoverCardsCount; i++)
                         {
-                            Playfield tmpPlf = new Playfield(basePlf);
-                            tmpPlf.isLethalCheck = false;
-                            float bestval = bestDiscoverValue;
+                            var tmpPlf = new Playfield(basePlf)
+                            {
+                                isLethalCheck = false
+                            };
+                            var bestval = bestDiscoverValue;
                             switch (choiceMode)
                             {
                                 case GAME_TAG.DISCOVER:
@@ -1102,7 +1130,7 @@ def Execute():
                                     {
                                         case CardIds.Collectible.Priest.EternalServitude:
                                         case CardIds.Collectible.Priest.FreeFromAmber:
-                                            Minion m = tmpPlf.createNewMinion(discoverCards[i], tmpPlf.ownMinions.Count, true);
+                                            var m = tmpPlf.createNewMinion(discoverCards[i], tmpPlf.ownMinions.Count, true);
                                             tmpPlf.ownMinions[tmpPlf.ownMinions.Count - 1] = m;
                                             break;
                                         default:
@@ -1110,25 +1138,32 @@ def Execute():
                                             break;
                                     }
                                     bestval = ai.mainTurnSimulator.doallmoves(tmpPlf);
-                                    if (discoverCards[i].card.CardId == CardIds.Collectible.Warlock.BloodImp) bestval -= 20;
+                                    if (discoverCards[i].card.CardId == CardIds.Collectible.Warlock.BloodImp)
+                                    {
+                                        bestval -= 20;
+                                    }
+
                                     break;
                                 case GAME_TAG.ADAPT:
-                                    bool found = false;
-                                    foreach (Minion m in tmpPlf.ownMinions)
+                                    var found = false;
+                                    foreach (var m in tmpPlf.ownMinions)
                                     {
                                         if (m.entitiyID == sourceEntityId)
                                         {
-                                            bool forbidden = false;
+                                            var forbidden = false;
                                             switch (discoverCards[i].card.CardId)
                                             {
-                                                case CardIds.NonCollectible.Neutral.LiquidMembraneToken1: if (m.cantBeTargetedBySpellsOrHeroPowers) forbidden = true; break;
-                                                case CardIds.NonCollectible.Neutral.MassiveToken1: if (m.taunt) forbidden = true; break;
-                                                case CardIds.NonCollectible.Neutral.LightningSpeedToken1: if (m.windfury) forbidden = true; break;
-                                                case CardIds.NonCollectible.Neutral.CracklingShieldToken1: if (m.divineshild) forbidden = true; break;
-                                                case CardIds.NonCollectible.Neutral.ShroudingMistToken1: if (m.stealth) forbidden = true; break;
-                                                case CardIds.NonCollectible.Neutral.PoisonSpitToken1: if (m.poisonous) forbidden = true; break;
+                                                case CardIds.NonCollectible.Neutral.LiquidMembraneToken1: if (m.cantBeTargetedBySpellsOrHeroPowers) { forbidden = true; } break;
+                                                case CardIds.NonCollectible.Neutral.MassiveToken1: if (m.taunt) { forbidden = true; } break;
+                                                case CardIds.NonCollectible.Neutral.LightningSpeedToken1: if (m.windfury) { forbidden = true; } break;
+                                                case CardIds.NonCollectible.Neutral.CracklingShieldToken1: if (m.divineshild) { forbidden = true; } break;
+                                                case CardIds.NonCollectible.Neutral.ShroudingMistToken1: if (m.stealth) { forbidden = true; } break;
+                                                case CardIds.NonCollectible.Neutral.PoisonSpitToken1: if (m.poisonous) { forbidden = true; } break;
                                             }
-                                            if (forbidden) bestval = -2000000;
+                                            if (forbidden)
+                                            {
+                                                bestval = -2000000;
+                                            }
                                             else
                                             {
                                                 discoverCards[i].card.Simulator.onCardPlay(tmpPlf, true, m, 0);
@@ -1138,25 +1173,43 @@ def Execute():
                                             break;
                                         }
                                     }
-                                    if (!found) Log.ErrorFormat("[AI] sourceEntityId is missing");
+                                    if (!found)
+                                    {
+                                        Log.ErrorFormat("[AI] sourceEntityId is missing");
+                                    }
+
                                     break;
                             }
                             if (bestDiscoverValue <= bestval)
                             {
                                 bestDiscoverValue = bestval;
-                                dirtychoice = i;
+                                this.dirtychoice = i;
                             }
                         }
                     }
                     ai.mainTurnSimulator.setSecondTurnSimu(true, dirtyTwoTurnSim);
                 }
-                if (sourceEntityCId == CardIds.Collectible.Priest.CuriousGlimmerroot) dirtychoice = new Random().Next(0, 2);
-                if (dirtychoice == 0) dirtychoice = 1;
-                else if (dirtychoice == 1) dirtychoice = 0;
-                int ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;
+                if (sourceEntityCId == CardIds.Collectible.Priest.CuriousGlimmerroot)
+                {
+                    this.dirtychoice = new Random().Next(0, 2);
+                }
+
+                if (this.dirtychoice == 0)
+                {
+                    this.dirtychoice = 1;
+                }
+                else if (this.dirtychoice == 1)
+                {
+                    this.dirtychoice = 0;
+                }
+
+                var ttf = (int)(DateTime.Now - tmp).TotalMilliseconds;
                 Helpfunctions.Instance.logg(
                     $"发现卡牌: {this.dirtychoice}{(discoverCardsCount > 1 ? $" {discoverCards[1].card.CardId}" : "")}{(discoverCardsCount > 0 ? $" {discoverCards[0].card.CardId}" : "")}{(discoverCardsCount > 2 ? $" {discoverCards[2].card.CardId}" : "")}");
-                if (ttf < 3000) return (new Random().Next(ttf < 1300 ? 1300 - ttf : 0, 3100 - ttf));
+                if (ttf < 3000)
+                {
+                    return (new Random().Next(ttf < 1300 ? 1300 - ttf : 0, 3100 - ttf));
+                }
             }
             else
             {
@@ -1327,15 +1380,15 @@ def Execute():
                 // If we can't cancel a quest, we shouldn't try to.
                 if (questTile.IsCancelable)
                 {
-	                if (DefaultRoutineSettings.Instance.QuestIdsToCancel.Contains(questTile.Achievement.Id))
-	                {
-						// Mark the quest tile to be canceled.
-						questTile.ShouldCancel = true;
+                    if (DefaultRoutineSettings.Instance.QuestIdsToCancel.Contains(questTile.Achievement.Id))
+                    {
+                        // Mark the quest tile to be canceled.
+                        questTile.ShouldCancel = true;
 
-                        StringBuilder questsInfo = new StringBuilder("", 1000);
+                        var questsInfo = new StringBuilder("", 1000);
                         questsInfo.Append("[处理日常任务] 任务列表: ");
-                        int qNum = data.QuestTiles.Count;
-                        for (int i = 0; i < qNum; i++ )
+                        var qNum = data.QuestTiles.Count;
+                        for (var i = 0; i < qNum; i++)
                         {
                             var q = data.QuestTiles[i].Achievement;
                             if (q.RewardData.Count > 0)
@@ -1343,13 +1396,16 @@ def Execute():
                                 questsInfo.Append("[").Append(q.RewardData[0].Count).Append("x ").Append(q.RewardData[0].Type).Append("] ");
                             }
                             questsInfo.Append(q.Name);
-                            if (i < qNum - 1) questsInfo.Append(", ");
+                            if (i < qNum - 1)
+                            {
+                                questsInfo.Append(", ");
+                            }
                         }
                         questsInfo.Append(". 尝试取消任务: ").Append(questTile.Achievement.Name);
                         Log.InfoFormat(questsInfo.ToString());
                         await Coroutine.Sleep(new Random().Next(4000, 8000));
-						return;
-					}
+                        return;
+                    }
                 }
                 else if (DefaultRoutineSettings.Instance.QuestIdsToCancel.Count > 0)
                 {
@@ -1406,18 +1462,24 @@ def Execute():
 
         private HSCard getEntityWithNumber(int number)
         {
-            foreach (HSCard e in getallEntitys())
+            foreach (var e in this.getallEntitys())
             {
-                if (number == e.EntityId) return e;
+                if (number == e.EntityId)
+                {
+                    return e;
+                }
             }
             return null;
         }
 
         private HSCard getCardWithNumber(int number)
         {
-            foreach (HSCard e in getallHandCards())
+            foreach (var e in this.getallHandCards())
             {
-                if (number == e.EntityId) return e;
+                if (number == e.EntityId)
+                {
+                    return e;
+                }
             }
             return null;
         }
@@ -1425,11 +1487,11 @@ def Execute():
         private List<HSCard> getallEntitys()
         {
             var result = new List<HSCard>();
-            HSCard ownhero = TritonHs.OurHero;
-            HSCard enemyhero = TritonHs.EnemyHero;
-            HSCard ownHeroAbility = TritonHs.OurHeroPowerCard;
-            List<HSCard> list2 = TritonHs.GetCards(CardZone.Battlefield, true);
-            List<HSCard> list3 = TritonHs.GetCards(CardZone.Battlefield, false);
+            var ownhero = TritonHs.OurHero;
+            var enemyhero = TritonHs.EnemyHero;
+            var ownHeroAbility = TritonHs.OurHeroPowerCard;
+            var list2 = TritonHs.GetCards(CardZone.Battlefield, true);
+            var list3 = TritonHs.GetCards(CardZone.Battlefield, false);
 
             result.Add(ownhero);
             result.Add(enemyhero);
@@ -1443,7 +1505,7 @@ def Execute():
 
         private List<HSCard> getallHandCards()
         {
-            List<HSCard> list = TritonHs.GetCards(CardZone.Hand, true);
+            var list = TritonHs.GetCards(CardZone.Hand, true);
             return list;
         }
     }

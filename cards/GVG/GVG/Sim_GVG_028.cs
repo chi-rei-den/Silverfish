@@ -1,9 +1,5 @@
-using HearthDb.Enums;
-using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -30,12 +26,11 @@ namespace HREngine.Bots
 {
     class Sim_GVG_028 : SimTemplate //Trade Prince Gallywix
     {
-
         //    Whenever your opponent casts a spell, gain a copy of it and give them a Coin.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            SimCard c = hc.card;
+            var c = hc.card;
             if (c.Type == CardType.SPELL && c.CardId != CardIds.NonCollectible.Neutral.TradePrinceGallywix_GallywixsCoinToken && wasOwnCard != triggerEffectMinion.own)
             {
                 p.drawACard(c.CardId, triggerEffectMinion.own, true);
@@ -43,5 +38,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

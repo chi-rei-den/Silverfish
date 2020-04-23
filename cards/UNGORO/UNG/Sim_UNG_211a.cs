@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,22 +24,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_211a : SimTemplate //* Invocation of Earth
-	{
-		//Fill your board with 1/1 Elementals.
+    class Sim_UNG_211a : SimTemplate //* Invocation of Earth
+    {
+        //Fill your board with 1/1 Elementals.
 
-		SimCard kid = CardIds.NonCollectible.Shaman.KalimosPrimalLord_StoneElemental; //Stone Elemental
+        SimCard kid = CardIds.NonCollectible.Shaman.KalimosPrimalLord_StoneElemental; //Stone Elemental
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-			int MinionsCount = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var MinionsCount = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
 
-            p.callKid(kid, MinionsCount, ownplay, false);
-            int kids = 6 - MinionsCount;
-            for (int i = 0; i < kids; i++)
+            p.callKid(this.kid, MinionsCount, ownplay, false);
+            var kids = 6 - MinionsCount;
+            for (var i = 0; i < kids; i++)
             {
-                p.callKid(kid, MinionsCount, ownplay);
-            }			
-		}
-	}
+                p.callKid(this.kid, MinionsCount, ownplay);
+            }
+        }
+    }
 }

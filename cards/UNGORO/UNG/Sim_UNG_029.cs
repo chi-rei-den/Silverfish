@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_029 : SimTemplate //* Shadow Visions
-	{
-		//Discover a copy of a spell in your deck.
+    class Sim_UNG_029 : SimTemplate //* Shadow Visions
+    {
+        //Discover a copy of a spell in your deck.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.drawACard(CardIds.Collectible.Priest.ShadowWordDeath, ownplay, true);
             p.drawACard(CardIds.Collectible.Priest.HolyNova, ownplay, true);
-			p.owncarddraw--;
-		}
-	}
+            p.owncarddraw--;
+        }
+    }
 }

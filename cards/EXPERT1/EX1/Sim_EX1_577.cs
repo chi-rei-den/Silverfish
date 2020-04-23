@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_577 : SimTemplate //* thebeast
-	{
+    class Sim_EX1_577 : SimTemplate //* thebeast
+    {
         //Deathrattle: Summon a 3/3 Finkle Einhorn for your opponent.
 
-        SimCard c = CardIds.NonCollectible.Neutral.FinkleEinhorn;//finkleeinhorn
+        SimCard c = CardIds.NonCollectible.Neutral.FinkleEinhorn; //finkleeinhorn
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            int pos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(c, pos, !m.own);
+            var pos = m.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.c, pos, !m.own);
         }
-	}
+    }
 }

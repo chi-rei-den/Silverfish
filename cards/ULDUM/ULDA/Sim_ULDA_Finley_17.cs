@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_17 : SimTemplate //* 法力过载 Overloaded
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Finley_17 : SimTemplate //* 法力过载 Overloaded
+    {
+        //
+        //
+    }
 }

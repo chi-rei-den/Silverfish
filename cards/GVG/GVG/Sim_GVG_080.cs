@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -35,9 +32,9 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            bool hasbeast = false;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            var hasbeast = false;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.PET)
                 {
@@ -45,7 +42,11 @@ namespace HREngine.Bots
                     break;
                 }
             }
-            if(hasbeast) p.minionTransform(own, betterguy);
+
+            if (hasbeast)
+            {
+                p.minionTransform(own, this.betterguy);
+            }
         }
     }
 }

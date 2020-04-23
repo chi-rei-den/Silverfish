@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +25,17 @@ namespace HREngine.Bots
 {
     class Sim_GVG_033 : SimTemplate //* Tree of Life
     {
-
         //    Restore all characters to full Health.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			int heal = 1000;
-            foreach (Minion m in p.ownMinions)
+            var heal = 1000;
+            foreach (var m in p.ownMinions)
             {
                 p.minionGetDamageOrHeal(m, -heal);
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
                 p.minionGetDamageOrHeal(m, -heal);
             }
@@ -45,8 +43,5 @@ namespace HREngine.Bots
             p.minionGetDamageOrHeal(p.enemyHero, -heal);
             p.minionGetDamageOrHeal(p.ownHero, -heal);
         }
-
-
     }
-
 }

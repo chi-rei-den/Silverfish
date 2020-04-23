@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_065: SimTemplate //* Bone Baron
+    class Sim_ICC_065 : SimTemplate //* Bone Baron
     {
         // Deathrattle: Add two 1/1 Skeletons to your hand.
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(CardIds.NonCollectible.Neutral.GrimNecromancer_SkeletonToken, m.own, true); //Skeleton 1/1

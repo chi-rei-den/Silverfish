@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_054 : SimTemplate //* The Mistcaller
-	{
-		//Battlecry: Give all minions in your hand and deck +1/+1.
+    class Sim_AT_054 : SimTemplate //* The Mistcaller
+    {
+        //Battlecry: Give all minions in your hand and deck +1/+1.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-			if (own.own)
-			{
-				foreach (Handcard hc in p.owncards)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (own.own)
+            {
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Type == CardType.MINION)
                     {
@@ -42,7 +39,7 @@ namespace HREngine.Bots
                         hc.addHp++;
                     }
                 }
-			}
-		}
-	}
+            }
+        }
+    }
 }

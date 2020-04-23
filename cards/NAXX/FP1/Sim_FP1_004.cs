@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_004 : SimTemplate//* Mad Scientist
+    class Sim_FP1_004 : SimTemplate //* Mad Scientist
     {
         // Deathrattle: Put a Secret: from your deck into the battlefield.
 
@@ -39,10 +36,12 @@ namespace HREngine.Bots
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Mage.IceBarrier);
                 }
+
                 if (p.ownHeroStartClass == CardClass.HUNTER)
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Hunter.SnakeTrap);
                 }
+
                 if (p.ownHeroStartClass == CardClass.PALADIN)
                 {
                     p.ownSecretsIDList.Add(CardIds.Collectible.Paladin.NobleSacrifice);
@@ -55,11 +54,12 @@ namespace HREngine.Bots
                     if (p.enemySecretCount <= 4)
                     {
                         p.enemySecretCount++;
-                        SecretItem si = Probabilitymaker.Instance.getNewSecretGuessedItem(p.getNextEntity(), p.ownHeroStartClass);
+                        var si = Probabilitymaker.Instance.getNewSecretGuessedItem(p.getNextEntity(), p.ownHeroStartClass);
                         if (p.enemyHeroStartClass == CardClass.PALADIN)
                         {
                             si.canBe_redemption = false;
                         }
+
                         if (Settings.Instance.useSecretsPlayAround)
                         {
                             p.enemySecretList.Add(si);
@@ -69,5 +69,4 @@ namespace HREngine.Bots
             }
         }
     }
-
 }

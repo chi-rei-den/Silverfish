@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_215: SimTemplate //* Archbishop Benedictus
+    class Sim_ICC_215 : SimTemplate //* Archbishop Benedictus
     {
         // Battlecry: Shuffle a copy of your opponent's deck into your deck.
 
@@ -36,7 +34,10 @@ namespace HREngine.Bots
                 p.ownDeckSize += p.enemyDeckSize;
                 p.evaluatePenality -= 6;
             }
-            else p.enemyDeckSize += p.ownDeckSize;
+            else
+            {
+                p.enemyDeckSize += p.ownDeckSize;
+            }
         }
     }
 }

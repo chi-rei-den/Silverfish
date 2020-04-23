@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_CoOp_Mechazod_OLD : SimTemplate
-	{
-	}
+    class Sim_TB_CoOp_Mechazod_OLD : SimTemplate
+    {
+    }
 }

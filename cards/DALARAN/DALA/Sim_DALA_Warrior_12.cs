@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_12 : SimTemplate //* 传说 Legends
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Warrior_12 : SimTemplate //* 传说 Legends
+    {
+        //
+        //
+    }
 }

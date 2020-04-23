@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_208 : SimTemplate //* Stone Sentinel
-	{
-		//Battlecry: If you played an Elemental last turn, summon two 2/3 Elementals with Taunt.
+    class Sim_UNG_208 : SimTemplate //* Stone Sentinel
+    {
+        //Battlecry: If you played an Elemental last turn, summon two 2/3 Elementals with Taunt.
 
         SimCard kid = CardIds.NonCollectible.Shaman.StoneSentinel_RockElementalToken; //Rock Elemental
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			if (p.anzOwnElementalsLastTurn > 0 && own.own)
-			{
-                p.callKid(kid, own.zonepos - 1, own.own); //1st left
-                p.callKid(kid, own.zonepos, own.own);
-			}
+            if (p.anzOwnElementalsLastTurn > 0 && own.own)
+            {
+                p.callKid(this.kid, own.zonepos - 1, own.own); //1st left
+                p.callKid(this.kid, own.zonepos, own.own);
+            }
         }
     }
 }

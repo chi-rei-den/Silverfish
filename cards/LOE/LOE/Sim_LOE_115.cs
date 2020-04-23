@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,20 +23,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_115 : SimTemplate //* Raven Idol
-	{
-		//Choose one - Discover a minion; or Discover a spell.
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))
+    class Sim_LOE_115 : SimTemplate //* Raven Idol
+    {
+        //Choose one - Discover a minion; or Discover a spell.
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            if (choice == 1 || p.ownFandralStaghelm > 0 && ownplay)
             {
                 p.drawACard(CardIds.Collectible.Neutral.LeperGnome, ownplay, true);
             }
-            if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
+
+            if (choice == 2 || p.ownFandralStaghelm > 0 && ownplay)
             {
                 p.drawACard(CardIds.NonCollectible.Neutral.TheCoin, ownplay, true);
             }
-		}
-	}
+        }
+    }
 }

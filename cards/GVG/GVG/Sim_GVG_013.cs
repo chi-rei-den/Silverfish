@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -28,19 +25,21 @@ namespace HREngine.Bots
 {
     class Sim_GVG_013 : SimTemplate //* Cogmaster
     {
-
         //    Has +2 Attack while you have a Mech.
 
         public override void onMinionIsSummoned(Playfield p, Minion triggerEffectMinion, Minion summonedMinion)
         {
             if (summonedMinion.handcard.card.Race == Race.MECHANICAL)
             {
-                List<Minion> temp = (triggerEffectMinion.own) ? p.ownMinions : p.enemyMinions;
+                var temp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
 
-                foreach (Minion m in temp)
+                foreach (var m in temp)
                 {
                     //if we have allready a mechanical, we are buffed
-                    if (m.handcard.card.Race == Race.MECHANICAL) return; 
+                    if (m.handcard.card.Race == Race.MECHANICAL)
+                    {
+                        return;
+                    }
                 }
 
                 //we had no mechanical, but now!
@@ -48,22 +47,29 @@ namespace HREngine.Bots
             }
         }
 
-		public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
+        public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {
-            int diedMinions = (m.own) ? p.tempTrigger.ownMechanicDied : p.tempTrigger.enemyMechanicDied;
-            if (diedMinions == 0) return;
-            int residual = (p.pID == m.pID) ? diedMinions - m.extraParam2 : diedMinions;
+            var diedMinions = m.own ? p.tempTrigger.ownMechanicDied : p.tempTrigger.enemyMechanicDied;
+            if (diedMinions == 0)
+            {
+                return;
+            }
+
+            var residual = p.pID == m.pID ? diedMinions - m.extraParam2 : diedMinions;
             m.pID = p.pID;
             m.extraParam2 = diedMinions;
             if (residual >= 1)
-			{
-				List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
-				bool hasmechanics = false;
-                foreach (Minion mTmp in temp) //check if we have more mechanics, or debuff him
+            {
+                var temp = m.own ? p.ownMinions : p.enemyMinions;
+                var hasmechanics = false;
+                foreach (var mTmp in temp) //check if we have more mechanics, or debuff him
                 {
-                    if (mTmp.Hp >=1 && mTmp.handcard.card.Race == Race.MECHANICAL) hasmechanics = true;
+                    if (mTmp.Hp >= 1 && mTmp.handcard.card.Race == Race.MECHANICAL)
+                    {
+                        hasmechanics = true;
+                    }
                 }
-				
+
                 if (!hasmechanics)
                 {
                     p.minionGetBuffed(m, -2, 0);

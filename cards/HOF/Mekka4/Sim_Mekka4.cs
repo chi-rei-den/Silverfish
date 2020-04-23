@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,10 +24,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka4 : SimTemplate //* poultryizer
-	{
+    class Sim_Mekka4 : SimTemplate //* poultryizer
+    {
         SimCard c = CardIds.NonCollectible.Neutral.Chicken;
-                                
+
 //    verwandelt zu beginn eures zuges einen zufälligen diener in ein huhn (1/1).
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
@@ -38,8 +35,8 @@ namespace HREngine.Bots
             if (triggerEffectMinion.own == turnStartOfOwner)
             {
                 Minion tm = null;
-                int ges = 1000;
-                foreach (Minion m in p.ownMinions)
+                var ges = 1000;
+                foreach (var m in p.ownMinions)
                 {
                     if (m.Angr + m.Hp < ges)
                     {
@@ -47,7 +44,8 @@ namespace HREngine.Bots
                         ges = m.Angr + m.Hp;
                     }
                 }
-                foreach (Minion m in p.enemyMinions)
+
+                foreach (var m in p.enemyMinions)
                 {
                     if (m.Angr + m.Hp < ges)
                     {
@@ -55,16 +53,14 @@ namespace HREngine.Bots
                         ges = m.Angr + m.Hp;
                     }
                 }
+
                 if (ges <= 999)
                 {
-                    p.minionTransform(tm, c);
+                    p.minionTransform(tm, this.c);
                     tm.playedThisTurn = false;
                     tm.Ready = true;
                 }
             }
         }
-
-      
-
-	}
+    }
 }

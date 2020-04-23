@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,7 +26,6 @@ namespace HREngine.Bots
 {
     class Sim_GVG_117 : SimTemplate //* Gazlowe
     {
-
         //   Whenever you cast a 1-mana spell, add a random Mech to your hand.
         //(we have to use current cost)
 

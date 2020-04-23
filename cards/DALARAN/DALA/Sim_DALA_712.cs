@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_712",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_712 : SimTemplate //* 未知的宝珠 Orb of the Untold
-	{
-		//Deal $20 damage split between all enemies.
-		//造成$20点伤害，分配到所有敌人身上。
-
-
-	}
+    class Sim_DALA_712 : SimTemplate //* 未知的宝珠 Orb of the Untold
+    {
+        //Deal $20 damage split between all enemies.
+        //造成$20点伤害，分配到所有敌人身上。
+    }
 }

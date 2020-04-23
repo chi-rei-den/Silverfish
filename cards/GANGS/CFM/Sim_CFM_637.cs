@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_637 : SimTemplate //* Patches the Pirate
-	{
-		// Charge. After you play a Pirate, summon this minion from your deck.
-	}
+    class Sim_CFM_637 : SimTemplate //* Patches the Pirate
+    {
+        // Charge. After you play a Pirate, summon this minion from your deck.
+    }
 }

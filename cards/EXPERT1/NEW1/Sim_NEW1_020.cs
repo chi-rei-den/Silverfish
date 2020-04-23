@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_020 : SimTemplate //* Wild Pyromancer
-	{
-		// After you cast a spell, deal 1 damage to ALL minions.
+    class Sim_NEW1_020 : SimTemplate //* Wild Pyromancer
+    {
+        // After you cast a spell, deal 1 damage to ALL minions.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool ownplay, Minion m)
         {
-            if (m.own == ownplay && hc.card.Type == CardType.SPELL) p.allMinionsGetDamage(1);
+            if (m.own == ownplay && hc.card.Type == CardType.SPELL)
+            {
+                p.allMinionsGetDamage(1);
+            }
         }
-	}
+    }
 }

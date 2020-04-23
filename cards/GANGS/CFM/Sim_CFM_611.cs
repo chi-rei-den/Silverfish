@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,14 +23,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_611 : SimTemplate //* Bloodfury Potion
-	{
-		// Give a minion +3 Attack. If it's a Demon, also give it +3 Health.
+    class Sim_CFM_611 : SimTemplate //* Bloodfury Potion
+    {
+        // Give a minion +3 Attack. If it's a Demon, also give it +3 Health.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int hpbaff = 0;
-            if (target.handcard.card.Race == Race.DEMON) hpbaff = 3;
+            var hpbaff = 0;
+            if (target.handcard.card.Race == Race.DEMON)
+            {
+                hpbaff = 3;
+            }
+
             p.minionGetBuffed(target, 3, hpbaff);
         }
     }

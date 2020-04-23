@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,30 +24,37 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_832: SimTemplate //* Malfurion the Pestilent
+    class Sim_ICC_832 : SimTemplate //* Malfurion the Pestilent
     {
         // Choose One - Summon 2 Poisonous Spiders; or 2 Scarabs with Taunt.
 
         SimCard kidSpider = CardIds.NonCollectible.Druid.MalfurionthePestilent_FrostWidowToken; //Frost Widow
         SimCard kidScarab = CardIds.NonCollectible.Druid.MalfurionthePestilent_ScarabBeetleToken; //Scarab Beetle
-        
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.setNewHeroPower(CardIds.NonCollectible.Neutral.MalfurionthePestilent_PlagueLord, ownplay); // Plague Lord
-            if (ownplay) p.ownHero.armor += 5;
-            else p.enemyHero.armor += 5;
-
-            if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))
+            if (ownplay)
             {
-                int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-                p.callKid(kidSpider, pos, ownplay);
-                p.callKid(kidSpider, pos, ownplay);
+                p.ownHero.armor += 5;
             }
-            if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
+            else
             {
-                int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-                p.callKid(kidScarab, pos, ownplay);
-                p.callKid(kidScarab, pos, ownplay);
+                p.enemyHero.armor += 5;
+            }
+
+            if (choice == 1 || p.ownFandralStaghelm > 0 && ownplay)
+            {
+                var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(this.kidSpider, pos, ownplay);
+                p.callKid(this.kidSpider, pos, ownplay);
+            }
+
+            if (choice == 2 || p.ownFandralStaghelm > 0 && ownplay)
+            {
+                var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(this.kidScarab, pos, ownplay);
+                p.callKid(this.kidScarab, pos, ownplay);
             }
         }
     }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX1_04 : SimTemplate //* Skitter
-	{
-		// Hero Power: Summon a 3/1 Nerubian.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.Nerubian;//3/1Nerubian
-		
+    class Sim_NAX1_04 : SimTemplate //* Skitter
+    {
+        // Hero Power: Summon a 3/1 Nerubian.
+
+        SimCard kid = CardIds.NonCollectible.Neutral.Nerubian; //3/1Nerubian
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay, false);
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay, false);
         }
-	}
+    }
 }

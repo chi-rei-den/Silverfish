@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,18 +29,21 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            if (target == null) return;
+            if (target == null)
+            {
+                return;
+            }
 
-            int tmpHp = target.Hp;
-            int tmpMHp = target.maxHp;
-            int tmpAngr = target.Angr;
+            var tmpHp = target.Hp;
+            var tmpMHp = target.maxHp;
+            var tmpAngr = target.Angr;
 
             target.Hp = own.Hp;
             target.maxHp = own.maxHp;
             target.Angr = own.Angr;
 
             own.Hp = tmpHp;
-            own.maxHp= tmpMHp;
+            own.maxHp = tmpMHp;
             own.Angr = tmpAngr;
         }
     }

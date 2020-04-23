@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX15_05 : SimTemplate //* Mr. Bigglesworth
-	{
-		//This is Kel'Thuzad's kitty.
-	}
+    class Sim_NAX15_05 : SimTemplate //* Mr. Bigglesworth
+    {
+        //This is Kel'Thuzad's kitty.
+    }
 }

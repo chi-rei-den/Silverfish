@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,23 +23,23 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_056 : SimTemplate //* Powershot
-	{
-		//Deal 2 damage to a minion and the minions next to it.
+    class Sim_AT_056 : SimTemplate //* Powershot
+    {
+        //Deal 2 damage to a minion and the minions next to it.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
             p.minionGetDamageOrHeal(target, dmg);
-			
-            List<Minion> temp = (target.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+
+            var temp = target.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (target.zonepos == m.zonepos + 1 || target.zonepos + 1 == m.zonepos)
                 {
                     p.minionGetDamageOrHeal(m, dmg);
                 }
             }
-		}
-	}
+        }
+    }
 }

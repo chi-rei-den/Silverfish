@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_999t13 : SimTemplate //* Poison Spit
-	{
-		//Poisonous
+    class Sim_UNG_999t13 : SimTemplate //* Poison Spit
+    {
+        //Poisonous
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            target.poisonous= true;
+            target.poisonous = true;
         }
     }
 }

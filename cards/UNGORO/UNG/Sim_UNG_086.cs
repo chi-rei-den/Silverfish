@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,25 +23,28 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_086 : SimTemplate //* Giant Anaconda
-	{
-		//Deathrattle: Summon a minion from your hand with 5 or more Attack.
+    class Sim_UNG_086 : SimTemplate //* Giant Anaconda
+    {
+        //Deathrattle: Summon a minion from your hand with 5 or more Attack.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             if (m.own)
             {
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
-					if (hc.card.Attack + hc.addattack >= 5)
+                    if (hc.card.Attack + hc.addattack >= 5)
                     {
                         p.callKid(hc.card, p.owncards.Count, m.own);
-						p.removeCard(hc);
+                        p.removeCard(hc);
                         break;
                     }
                 }
             }
-            else p.callKid(CardIds.Collectible.Neutral.SeaGiant, p.enemyMinions.Count, m.own);
+            else
+            {
+                p.callKid(CardIds.Collectible.Neutral.SeaGiant, p.enemyMinions.Count, m.own);
+            }
         }
-	}
+    }
 }

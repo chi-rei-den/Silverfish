@@ -1,7 +1,4 @@
-using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -30,7 +27,7 @@ namespace HREngine.Bots
     {
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            int kids = 7 - p.ownMinions.Count;
+            var kids = 7 - p.ownMinions.Count;
 
             if (kids > 0)
             {
@@ -39,13 +36,20 @@ namespace HREngine.Bots
                     var kid = e.Key;
                     if (kid.Deathrattle)
                     {
-                        for (int i = 0; i < e.Value; i++)
+                        for (var i = 0; i < e.Value; i++)
                         {
                             p.callKid(kid, own.zonepos, own.own);
                             kids--;
-                            if (kids < 1) break;
+                            if (kids < 1)
+                            {
+                                break;
+                            }
                         }
-                        if (kids < 1) break;
+
+                        if (kids < 1)
+                        {
+                            break;
+                        }
                     }
                 }
             }

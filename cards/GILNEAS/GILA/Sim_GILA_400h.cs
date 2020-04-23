@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_400h : SimTemplate //* 驯犬大师肖尔 Houndmaster Shaw
-	{
-		//
-		//
-
-
-	}
+    class Sim_GILA_400h : SimTemplate //* 驯犬大师肖尔 Houndmaster Shaw
+    {
+        //
+        //
+    }
 }

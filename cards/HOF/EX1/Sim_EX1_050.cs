@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_050 : SimTemplate //coldlightoracle
-	{
-
+    class Sim_EX1_050 : SimTemplate //coldlightoracle
+    {
 //    kampfschrei:/ jeder spieler zieht 2 karten.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, true);
             p.drawACard(SimCard.None, true);
             p.drawACard(SimCard.None, false);
             p.drawACard(SimCard.None, false);
-
-		}
-
-
-	}
+        }
+    }
 }

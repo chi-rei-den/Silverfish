@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_036 : SimTemplate //* Anub'arak
-	{
-		//Deathrattle: Return this to your hand and summon a 4/4 Nerubian.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken;//Nerubian
+    class Sim_AT_036 : SimTemplate //* Anub'arak
+    {
+        //Deathrattle: Return this to your hand and summon a 4/4 Nerubian.
+
+        SimCard kid = CardIds.NonCollectible.Neutral.NerubianEgg_NerubianToken; //Nerubian
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			p.minionReturnToHand(m, m.own, 0);
-            p.callKid(kid, m.zonepos - 1, m.own);		
+            p.minionReturnToHand(m, m.own, 0);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

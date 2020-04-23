@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_836: SimTemplate //* Breath of Sindragosa
+    class Sim_ICC_836 : SimTemplate //* Breath of Sindragosa
     {
         // Deal 2 damage to a random enemy minion and Freeze it.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
+            var dmg = ownplay ? p.getSpellDamageDamage(2) : p.getEnemySpellDamageDamage(2);
 
             target = null;
             if (ownplay)
@@ -43,6 +40,7 @@ namespace HREngine.Bots
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.HighAttack); //damage the Highest (pessimistic)
             }
+
             if (target != null)
             {
                 p.minionGetDamageOrHeal(target, dmg);

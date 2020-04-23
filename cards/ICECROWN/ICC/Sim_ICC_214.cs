@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,14 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_214: SimTemplate //* Obsidian Statue
+    class Sim_ICC_214 : SimTemplate //* Obsidian Statue
     {
         // Taunt. Lifesteal. Deathrattle: Destroy a random enemy minion.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            Minion target = p.searchRandomMinion(m.own ? p.enemyMinions : p.ownMinions, SearchMode.LowHealth);
-            if (target != null) p.minionGetDestroyed(target);
+            var target = p.searchRandomMinion(m.own ? p.enemyMinions : p.ownMinions, SearchMode.LowHealth);
+            if (target != null)
+            {
+                p.minionGetDestroyed(target);
+            }
         }
     }
 }

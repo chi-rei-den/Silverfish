@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,18 +23,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_913 : SimTemplate //* Tol'vir Warden
-	{
-		//Battlecry: Draw two 1-Cost minions from your deck.
+    class Sim_UNG_913 : SimTemplate //* Tol'vir Warden
+    {
+        //Battlecry: Draw two 1-Cost minions from your deck.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (own.own)
             {
-                        p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
-                        p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
+                p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
+                p.drawACard(CardIds.Collectible.Neutral.LeperGnome, own.own);
             }
-            else p.enemyAnzCards++;
-		}
-	}
+            else
+            {
+                p.enemyAnzCards++;
+            }
+        }
+    }
 }

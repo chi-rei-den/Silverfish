@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_910: SimTemplate //* Spectral Pillager
+    class Sim_ICC_910 : SimTemplate //* Spectral Pillager
     {
         // Combo: Deal damage equal to the number of other cards you've played this turn.
 
@@ -35,7 +33,10 @@ namespace HREngine.Bots
             {
                 if (p.cardsPlayedThisTurn > 0)
                 {
-                    if (target != null) p.minionGetDamageOrHeal(target, p.cardsPlayedThisTurn);
+                    if (target != null)
+                    {
+                        p.minionGetDamageOrHeal(target, p.cardsPlayedThisTurn);
+                    }
                 }
             }
         }

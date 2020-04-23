@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka1 : SimTemplate //homingchicken
-	{
-
+    class Sim_Mekka1 : SimTemplate //homingchicken
+    {
 //    vernichtet zu beginn eures zuges diesen diener und zieht 3 karten.
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
@@ -41,6 +37,5 @@ namespace HREngine.Bots
                 p.drawACard(SimCard.None, turnStartOfOwner);
             }
         }
-
-	}
+    }
 }

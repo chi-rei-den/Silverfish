@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DALA_BOSS_18h",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_BOSS_18h : SimTemplate //* 蒂丝德拉·雷光 Disidra Stormglory
-	{
-		//<i>Terribly tenacious.Truly thaumaturgic.Totally totemic.</i>
-		//<i>铁石心肠，天纵奇才，图腾大师。</i>
-
-
-	}
+    class Sim_DALA_BOSS_18h : SimTemplate //* 蒂丝德拉·雷光 Disidra Stormglory
+    {
+        //<i>Terribly tenacious.Truly thaumaturgic.Totally totemic.</i>
+        //<i>铁石心肠，天纵奇才，图腾大师。</i>
+    }
 }

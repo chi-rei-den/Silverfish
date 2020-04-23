@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_116t : SimTemplate //* 平衡的缚灵 Bonds of Balance
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRLA_116t : SimTemplate //* 平衡的缚灵 Bonds of Balance
+    {
+        //
+        //
+    }
 }

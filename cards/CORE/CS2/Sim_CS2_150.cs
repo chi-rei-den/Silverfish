@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_150 : SimTemplate //stormpikecommando
-	{
-
+    class Sim_CS2_150 : SimTemplate //stormpikecommando
+    {
 //    kampfschrei:/ verursacht 2 schaden.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.minionGetDamageOrHeal(target, 2);
-		}
-
-
-	}
+        }
+    }
 }

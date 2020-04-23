@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA06_2H : SimTemplate //* The Majordomo
-	{
-		// Hero Power: Summon a 3/3 Flamewaker Acolyte.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.FlamewakerAcolyteHeroic;//3/3Flamewaker Acolyte
-		
+    class Sim_BRMA06_2H : SimTemplate //* The Majordomo
+    {
+        // Hero Power: Summon a 3/3 Flamewaker Acolyte.
+
+        SimCard kid = CardIds.NonCollectible.Neutral.FlamewakerAcolyteHeroic; //3/3Flamewaker Acolyte
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay, false);
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay, false);
         }
-	}
+    }
 }

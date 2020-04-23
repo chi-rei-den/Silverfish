@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_321 : SimTemplate //* Grimestreet Informant
-	{
-		// Battlecry: Discover a Hunter, Paladin or Warrior card.
+    class Sim_CFM_321 : SimTemplate //* Grimestreet Informant
+    {
+        // Battlecry: Discover a Hunter, Paladin or Warrior card.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Finley_11 : SimTemplate //* 救赎之光 Healing
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Finley_11 : SimTemplate //* 救赎之光 Healing
+    {
+        //
+        //
+    }
 }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_052: SimTemplate //* Play Dead
+    class Sim_ICC_052 : SimTemplate //* Play Dead
     {
         // Triger a friendly minion's deathrattle
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.doDeathrattles(new List<Minion>() { target });
+            p.doDeathrattles(new List<Minion> {target});
         }
     }
 }

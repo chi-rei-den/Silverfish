@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_685 : SimTemplate //* Don Han'Cho
-	{
+    class Sim_CFM_685 : SimTemplate //* Don Han'Cho
+    {
         // Battlecry: Give a random minion in your hand +5/+5.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (own.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.MinionOnly);
                 if (hc != null)
                 {
                     hc.addattack += 5;
@@ -44,5 +40,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

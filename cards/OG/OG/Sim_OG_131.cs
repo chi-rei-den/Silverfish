@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_131 : SimTemplate //* Twin Emperor Vek'lor
-	{
-		//Taunt Battlecry:If your C'Thun has at least 10 attack, summon another Emperor.
+    class Sim_OG_131 : SimTemplate //* Twin Emperor Vek'lor
+    {
+        //Taunt Battlecry:If your C'Thun has at least 10 attack, summon another Emperor.
 
         SimCard kid = CardIds.NonCollectible.Neutral.TwinEmperorVeknilash;
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (own.own)
             {
-                if (p.anzOgOwnCThunAngrBonus + 6 > 9) p.callKid(kid, own.zonepos, own.own);
-                else p.evaluatePenality += 5;
+                if (p.anzOgOwnCThunAngrBonus + 6 > 9)
+                {
+                    p.callKid(this.kid, own.zonepos, own.own);
+                }
+                else
+                {
+                    p.evaluatePenality += 5;
+                }
             }
-		}
-	}
+        }
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_031: SimTemplate //* Night Howler
+    class Sim_ICC_031 : SimTemplate //* Night Howler
     {
         // Whenever this minion takes damage, gain +2 Attack.
 
@@ -33,9 +31,9 @@ namespace HREngine.Bots
         {
             if (m.anzGotDmg > 0)
             {
-                int tmp = m.anzGotDmg;
+                var tmp = m.anzGotDmg;
                 m.anzGotDmg = 0;
-                for (int i = 0; i < tmp; i++)
+                for (var i = 0; i < tmp; i++)
                 {
                     p.minionGetBuffed(m, 2, 0);
                 }

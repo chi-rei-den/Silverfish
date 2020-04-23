@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Superfriends002e : SimTemplate
-	{
-	}
+    class Sim_TB_Superfriends002e : SimTemplate
+    {
+    }
 }

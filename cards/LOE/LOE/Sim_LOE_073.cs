@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,20 +23,27 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_073 : SimTemplate //* Fossilized Devilsaur
-	{
-		//Battlecry: If you control a Beast, gain Taunt.
-		
+    class Sim_LOE_073 : SimTemplate //* Fossilized Devilsaur
+    {
+        //Battlecry: If you control a Beast, gain Taunt.
+
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.PET)
                 {
-					own.taunt = true;
-                    if (own.own) p.anzOwnTaunt++;
-                    else p.anzEnemyTaunt++;
+                    own.taunt = true;
+                    if (own.own)
+                    {
+                        p.anzOwnTaunt++;
+                    }
+                    else
+                    {
+                        p.anzEnemyTaunt++;
+                    }
+
                     break;
                 }
             }

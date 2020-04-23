@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_097: SimTemplate //* Grave Shambler
+    class Sim_ICC_097 : SimTemplate //* Grave Shambler
     {
         // Whenever your weapon is destroyed, gain +1/+1.
         // handled

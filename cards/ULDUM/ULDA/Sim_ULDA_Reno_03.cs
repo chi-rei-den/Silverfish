@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_03 : SimTemplate //* 战吼震天 Battlecries
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Reno_03 : SimTemplate //* 战吼震天 Battlecries
+    {
+        //
+        //
+    }
 }

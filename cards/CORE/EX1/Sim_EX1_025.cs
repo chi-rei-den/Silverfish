@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,14 +24,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_025 : SimTemplate//dragonling mechanic
+    class Sim_EX1_025 : SimTemplate //dragonling mechanic
     {
-        SimCard kid = CardIds.NonCollectible.Neutral.DragonlingMechanic_MechanicalDragonlingToken;//mechanicaldragonling
+        SimCard kid = CardIds.NonCollectible.Neutral.DragonlingMechanic_MechanicalDragonlingToken; //mechanicaldragonling
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.callKid(kid, own.zonepos, own.own);
+            p.callKid(this.kid, own.zonepos, own.own);
         }
-
     }
 }

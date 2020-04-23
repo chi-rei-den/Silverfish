@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,22 +24,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_316 : SimTemplate //* Rat Pack
-	{
-		// Deathrattle: Summon a number of 1/1 Rats equal to this minion's Attack.
+    class Sim_CFM_316 : SimTemplate //* Rat Pack
+    {
+        // Deathrattle: Summon a number of 1/1 Rats equal to this minion's Attack.
 
         SimCard kid = CardIds.NonCollectible.Hunter.RatPack_RatToken; //1/1 Rat
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            int anz = m.Angr;
+            var anz = m.Angr;
             if (anz > 0)
             {
-                p.callKid(kid, m.zonepos - 1, m.own, false);
-                anz--;                
-                for (int i = 0; i < anz; i++)
+                p.callKid(this.kid, m.zonepos - 1, m.own, false);
+                anz--;
+                for (var i = 0; i < anz; i++)
                 {
-                    p.callKid(kid, m.zonepos - 1, m.own);
+                    p.callKid(this.kid, m.zonepos - 1, m.own);
                 }
             }
         }

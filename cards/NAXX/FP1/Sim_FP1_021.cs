@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_FP1_021 : SimTemplate//* Death's Bite
+    class Sim_FP1_021 : SimTemplate //* Death's Bite
     {
         //Deathrattle: Deal 1 damage to all minions.
 
@@ -35,9 +32,9 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.allMinionsGetDamage(1);

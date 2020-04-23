@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,16 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_103 : SimTemplate//* Coldlight Seer
+    class Sim_EX1_103 : SimTemplate //* Coldlight Seer
     {
         // Battlecry: Give your other Murlocs +2 Health.
-	
+
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 0, 2);
+                if (m.handcard.card.Race == Race.MURLOC && own.entitiyID != m.entitiyID)
+                {
+                    p.minionGetBuffed(m, 0, 2);
+                }
             }
         }
     }

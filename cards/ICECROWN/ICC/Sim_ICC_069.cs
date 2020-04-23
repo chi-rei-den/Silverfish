@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_069: SimTemplate //* Ghastly Conjurer
+    class Sim_ICC_069 : SimTemplate //* Ghastly Conjurer
     {
         // Battlecry: Add a 'Mirror Image' spell to your hand.
 

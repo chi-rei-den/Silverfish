@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,20 +23,32 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_068: SimTemplate //* Ice Walker
+    class Sim_ICC_068 : SimTemplate //* Ice Walker
     {
         // Your Hero Power also Freezes the target.
 
         public override void onAuraStarts(Playfield p, Minion own)
         {
-            if (own.own) p.ownAbilityFreezesTarget++;
-            else p.enemyAbilityFreezesTarget++;
+            if (own.own)
+            {
+                p.ownAbilityFreezesTarget++;
+            }
+            else
+            {
+                p.enemyAbilityFreezesTarget++;
+            }
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
-            if (own.own) p.ownAbilityFreezesTarget--;
-            else p.enemyAbilityFreezesTarget--;
+            if (own.own)
+            {
+                p.ownAbilityFreezesTarget--;
+            }
+            else
+            {
+                p.enemyAbilityFreezesTarget--;
+            }
         }
     }
 }

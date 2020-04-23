@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,12 +25,7 @@ namespace HREngine.Bots
 {
     class Sim_GVG_122 : SimTemplate //Wee Spellstopper
     {
-
         //   Adjacent minions can't be targeted by spells or Hero Powers.
         // Handled in updateBoards()
-
-
-
     }
-
 }

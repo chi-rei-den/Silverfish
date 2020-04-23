@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_124 : SimTemplate //* Bolf Ramshield
-	{
-		//Whenever your hero takes damage, this minion takes it instead.
+    class Sim_AT_124 : SimTemplate //* Bolf Ramshield
+    {
+        //Whenever your hero takes damage, this minion takes it instead.
 
         public override void onAuraStarts(Playfield p, Minion own)
         {

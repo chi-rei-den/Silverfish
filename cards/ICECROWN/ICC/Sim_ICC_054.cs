@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_054: SimTemplate //* Spreading Plague
+    class Sim_ICC_054 : SimTemplate //* Spreading Plague
     {
         // Summon a 1/5 Scarab with Taunt. If your opponent has more minions, cast this again.
 
@@ -39,9 +36,8 @@ namespace HREngine.Bots
             {
                 do
                 {
-                    p.callKid(kid, p.ownMinions.Count, ownplay);
-                }
-                while (p.enemyMinions.Count > p.ownMinions.Count);
+                    p.callKid(this.kid, p.ownMinions.Count, ownplay);
+                } while (p.enemyMinions.Count > p.ownMinions.Count);
             }
         }
     }

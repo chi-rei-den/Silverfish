@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_221 : SimTemplate //spitefulsmith
-	{
-
+    class Sim_CS2_221 : SimTemplate //spitefulsmith
+    {
 //    wutanfall:/ eure waffe hat +2 angriff.
         public override void onEnrageStart(Playfield p, Minion m)
         {
@@ -39,7 +36,7 @@ namespace HREngine.Bots
                     p.ownWeapon.Angr += 2;
                 }
             }
-            else 
+            else
             {
                 if (p.enemyWeapon.Durability >= 1)
                 {
@@ -68,7 +65,5 @@ namespace HREngine.Bots
                 }
             }
         }
-
-	}
-
+    }
 }

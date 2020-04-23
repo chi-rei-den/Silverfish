@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_810: SimTemplate //* Deathaxe Punisher
+    class Sim_ICC_810 : SimTemplate //* Deathaxe Punisher
     {
         // Battlecry: Give a random Lifesteal minion in your hand +2/+2.
 
@@ -35,7 +31,7 @@ namespace HREngine.Bots
         {
             if (own.own)
             {
-                Handcard hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.LifestealOnly);
+                var hc = p.searchRandomMinionInHand(p.owncards, SearchMode.LowCost, SearchMode.LifestealOnly);
                 if (hc != null)
                 {
                     hc.addattack += 2;

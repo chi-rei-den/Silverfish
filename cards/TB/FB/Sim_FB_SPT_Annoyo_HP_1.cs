@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_SPT_Annoyo_HP_1 : SimTemplate
-	{
-	}
+    class Sim_FB_SPT_Annoyo_HP_1 : SimTemplate
+    {
+    }
 }

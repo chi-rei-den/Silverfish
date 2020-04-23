@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_BOSS_16h",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_BOSS_16h : SimTemplate //* 爆破大师弗拉克 Boommaster Flark
-	{
-		//
-		//
-
-
-	}
+    class Sim_BOTA_BOSS_16h : SimTemplate //* 爆破大师弗拉克 Boommaster Flark
+    {
+        //
+        //
+    }
 }

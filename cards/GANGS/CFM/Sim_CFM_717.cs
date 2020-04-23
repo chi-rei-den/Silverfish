@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_717 : SimTemplate //* Jade Claws
-	{
-		// Battlecry: Summon a Jade Golem. Overload: (1)
+    class Sim_CFM_717 : SimTemplate //* Jade Claws
+    {
+        // Battlecry: Summon a Jade Golem. Overload: (1)
 
         SimCard weapon = CardIds.Collectible.Shaman.JadeClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
 
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
             p.callKid(p.getNextJadeGolem(ownplay), place, ownplay);
         }
     }

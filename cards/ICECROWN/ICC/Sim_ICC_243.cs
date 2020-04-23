@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,20 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_243: SimTemplate //* Corpse Widow
+    class Sim_ICC_243 : SimTemplate //* Corpse Widow
     {
         // Your Deathrattle cards cost (2) less.
 
         public override void onAuraStarts(Playfield p, Minion own)
         {
-            if (own.own) p.ownDRcardsCostMore -= 2;
-            else { } //don't use
+            if (own.own)
+            {
+                p.ownDRcardsCostMore -= 2;
+            }
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
-            if (own.own) p.ownDRcardsCostMore += 2;
-            else { } //don't use
+            if (own.own)
+            {
+                p.ownDRcardsCostMore += 2;
+            }
         }
     }
 }

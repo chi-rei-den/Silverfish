@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,31 +24,31 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX9_05H : SimTemplate //* Runeblade
-	{
-		//Has +6 Attack if the other Horsemen are dead.
-		//Handled in Horsemen
-		SimCard weapon = CardIds.NonCollectible.Neutral.RunebladeHeroic;
+    class Sim_NAX9_05H : SimTemplate //* Runeblade
+    {
+        //Has +6 Attack if the other Horsemen are dead.
+        //Handled in Horsemen
+        SimCard weapon = CardIds.NonCollectible.Neutral.RunebladeHeroic;
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.equipWeapon(weapon, ownplay);
-			if (ownplay)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.equipWeapon(this.weapon, ownplay);
+            if (ownplay)
             {
-				if (p.anzOwnHorsemen < 1)
-				{
-					p.ownWeapon.Angr += 6;
-					p.minionGetBuffed(p.ownHero, 6, 0);
-				}
+                if (p.anzOwnHorsemen < 1)
+                {
+                    p.ownWeapon.Angr += 6;
+                    p.minionGetBuffed(p.ownHero, 6, 0);
+                }
             }
-            else 
+            else
             {
-				if (p.anzEnemyHorsemen < 1)
-				{
-					p.enemyWeapon.Angr += 6;
-					p.minionGetBuffed(p.enemyHero, 6, 0);
-				}
+                if (p.anzEnemyHorsemen < 1)
+                {
+                    p.enemyWeapon.Angr += 6;
+                    p.minionGetBuffed(p.enemyHero, 6, 0);
+                }
             }
-		}
-	}
+        }
+    }
 }

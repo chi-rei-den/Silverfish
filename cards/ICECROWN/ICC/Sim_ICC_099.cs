@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_099: SimTemplate //* Ticking Abomination
+    class Sim_ICC_099 : SimTemplate //* Ticking Abomination
     {
         // Deathrattle: Deal 5 damage to your minions.
 

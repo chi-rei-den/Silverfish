@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,18 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_006 : SimTemplate //* Cloaked Huntress
-	{
-		//Your Secrets cost (0).
+    class Sim_KAR_006 : SimTemplate //* Cloaked Huntress
+    {
+        //Your Secrets cost (0).
 
-		public override void onAuraStarts(Playfield p, Minion m)
-		{
-            if (m.own) p.anzOwnCloakedHuntress++;
-		}
+        public override void onAuraStarts(Playfield p, Minion m)
+        {
+            if (m.own)
+            {
+                p.anzOwnCloakedHuntress++;
+            }
+        }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
-            if (m.own) p.anzOwnCloakedHuntress--;
+            if (m.own)
+            {
+                p.anzOwnCloakedHuntress--;
+            }
         }
-	}
+    }
 }

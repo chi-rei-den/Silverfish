@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_005 : SimTemplate //* Polymorph: Boar
-	{
+    class Sim_AT_005 : SimTemplate //* Polymorph: Boar
+    {
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionTransform(target, CardIds.NonCollectible.Neutral.PolymorphBoar_BoarToken);

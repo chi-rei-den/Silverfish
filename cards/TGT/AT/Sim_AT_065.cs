@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,26 +24,33 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_065 : SimTemplate //* King's Defender
-	{
-		//Battlecry: If you have a minion with Taunt, gain +1 Durability.
+    class Sim_AT_065 : SimTemplate //* King's Defender
+    {
+        //Battlecry: If you have a minion with Taunt, gain +1 Durability.
 
         SimCard weapon = CardIds.Collectible.Warrior.KingsDefender;
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.equipWeapon(weapon, ownplay);
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.equipWeapon(this.weapon, ownplay);
 
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.taunt)
                 {
-                    if (ownplay) p.ownWeapon.Durability++;
-                    else p.enemyWeapon.Durability++;
+                    if (ownplay)
+                    {
+                        p.ownWeapon.Durability++;
+                    }
+                    else
+                    {
+                        p.enemyWeapon.Durability++;
+                    }
+
                     break;
                 }
             }
-		}
-	}
+        }
+    }
 }

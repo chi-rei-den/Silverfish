@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_009 : SimTemplate //* Obsidian Destroyer
-	{
-		//At the end of your turn, summon a 1/1 Scarab with Taunt.
+    class Sim_LOE_009 : SimTemplate //* Obsidian Destroyer
+    {
+        //At the end of your turn, summon a 1/1 Scarab with Taunt.
 
         SimCard kid = CardIds.NonCollectible.Warrior.ObsidianDestroyer_ScarabToken; //Scarab
 
@@ -37,9 +34,9 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int place = triggerEffectMinion.zonepos;
-                p.callKid(kid, place, triggerEffectMinion.own);
+                var place = triggerEffectMinion.zonepos;
+                p.callKid(this.kid, place, triggerEffectMinion.own);
             }
         }
-	}
+    }
 }

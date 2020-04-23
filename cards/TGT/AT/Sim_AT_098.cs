@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_098 : SimTemplate //* Sideshow Spelleater
-	{
-		//Battlecry: Copy your opoonent's Hero Power.
+    class Sim_AT_098 : SimTemplate //* Sideshow Spelleater
+    {
+        //Battlecry: Copy your opoonent's Hero Power.
 
-		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
-		{
-			if (m.own) p.ownHeroAblility = new Handcard(p.enemyHeroAblility);
-            else p.enemyHeroAblility = new Handcard(p.ownHeroAblility);
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
+        {
+            if (m.own)
+            {
+                p.ownHeroAblility = new Handcard(p.enemyHeroAblility);
+            }
+            else
+            {
+                p.enemyHeroAblility = new Handcard(p.ownHeroAblility);
+            }
+        }
+    }
 }

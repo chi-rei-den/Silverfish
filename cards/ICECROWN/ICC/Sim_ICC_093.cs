@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_093: SimTemplate //* Tuskarr Fisherman
+    class Sim_ICC_093 : SimTemplate //* Tuskarr Fisherman
     {
         // Battlecry: Give a friendly minion Spell Damage +1
 
@@ -34,8 +32,14 @@ namespace HREngine.Bots
             if (target != null)
             {
                 target.spellpower++;
-                if (target.own) p.spellpower++;
-                else p.enemyspellpower++;
+                if (target.own)
+                {
+                    p.spellpower++;
+                }
+                else
+                {
+                    p.enemyspellpower++;
+                }
             }
         }
     }

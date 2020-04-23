@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,44 +24,62 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_026 : SimTemplate //* Anyfin Can Happen
-	{
-		//Summon 7 Murlocs that died this game.
+    class Sim_LOE_026 : SimTemplate //* Anyfin Can Happen
+    {
+        //Summon 7 Murlocs that died this game.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            var temp = (ownplay) ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
-            if (place > 6) return;
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            var temp = ownplay ? Probabilitymaker.Instance.ownCardsOut : Probabilitymaker.Instance.enemyCardsOut;
+            if (place > 6)
+            {
+                return;
+            }
 
             SimCard c;
             foreach (var gi in temp)
             {
-                c = (gi.Key);
+                c = gi.Key;
                 if (c.Race == Race.MURLOC)
                 {
                     p.callKid(c, place, ownplay, false);
                     place++;
-                    if (place > 6) break;
+                    if (place > 6)
+                    {
+                        break;
+                    }
+
                     if (gi.Value > 1)
                     {
                         p.callKid(c, place, ownplay, false);
                         place++;
-                        if (place > 6) break;
+                        if (place > 6)
+                        {
+                            break;
+                        }
                     }
                 }
             }
-            if (place > 6) return;
+
+            if (place > 6)
+            {
+                return;
+            }
+
             foreach (var gi in p.diedMinions)
             {
                 if (gi.own == ownplay)
                 {
-                    c = (gi.cardid);
+                    c = gi.cardid;
                     if (c.Race == Race.MURLOC)
                     {
                         p.callKid(c, place, ownplay, false);
                         place++;
-                        if (place > 6) break;
+                        if (place > 6)
+                        {
+                            break;
+                        }
                     }
                 }
             }

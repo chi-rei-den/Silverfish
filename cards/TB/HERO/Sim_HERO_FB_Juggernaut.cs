@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_HERO_FB_Juggernaut : SimTemplate
-	{
-	}
+    class Sim_HERO_FB_Juggernaut : SimTemplate
+    {
+    }
 }

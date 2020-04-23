@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_07 : SimTemplate //* 英雄强化 Heroically Empowered
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Reno_07 : SimTemplate //* 英雄强化 Heroically Empowered
+    {
+        //
+        //
+    }
 }

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Kriziki : SimTemplate //* 克里兹奇 Kriziki
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Kriziki : SimTemplate //* 克里兹奇 Kriziki
+    {
+        //
+        //
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,11 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_012t : SimTemplate //slime
-	{
-
+    class Sim_FP1_012t : SimTemplate //slime
+    {
 //    spott/
-		
-
-	}
+    }
 }

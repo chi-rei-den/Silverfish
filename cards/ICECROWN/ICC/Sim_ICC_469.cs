@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_469: SimTemplate //* Unwilling Sacrifice
+    class Sim_ICC_469 : SimTemplate //* Unwilling Sacrifice
     {
         // Choose a friendly minion. Destroy it and a random enemy minion
 
@@ -34,9 +31,19 @@ namespace HREngine.Bots
         {
             p.minionGetDestroyed(target);
             Minion found = null;
-            if (ownplay) found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
-            else found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
-            if (found != null) p.minionGetDestroyed(found);
+            if (ownplay)
+            {
+                found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
+            }
+            else
+            {
+                found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
+            }
+
+            if (found != null)
+            {
+                p.minionGetDestroyed(found);
+            }
         }
     }
 }

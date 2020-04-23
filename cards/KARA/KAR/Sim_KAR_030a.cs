@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_030a : SimTemplate //* Pantry Spider
-	{
-		//Battlecry: Summon a 1/3 Spider.
-		
-        SimCard kid = CardIds.NonCollectible.Neutral.CellarSpider;//Cellar Spider
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            p.callKid(kid, own.zonepos, own.own);
-		}
-	}
+    class Sim_KAR_030a : SimTemplate //* Pantry Spider
+    {
+        //Battlecry: Summon a 1/3 Spider.
+
+        SimCard kid = CardIds.NonCollectible.Neutral.CellarSpider; //Cellar Spider
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            p.callKid(this.kid, own.zonepos, own.own);
+        }
+    }
 }

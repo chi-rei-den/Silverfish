@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +23,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_827p: SimTemplate //* Death's Shadow
+    class Sim_ICC_827p : SimTemplate //* Death's Shadow
     {
         // Passive Hero Power: During your turn, add a 'Shadow Reflection' to your hand.
 
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {
             //!triggerEffectMinion = null
-            bool found = false;
+            var found = false;
             if (turnStartOfOwner)
             {
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.CardId == CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken)
                     {
@@ -46,7 +42,11 @@ namespace HREngine.Bots
                     }
                 }
             }
-            if (!found) p.drawACard(CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken, turnStartOfOwner, true);
+
+            if (!found)
+            {
+                p.drawACard(CardIds.NonCollectible.Rogue.ValeeratheHollow_ShadowReflectionToken, turnStartOfOwner, true);
+            }
         }
     }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,7 +31,10 @@ namespace HREngine.Bots
         {
             if (ownplay)
             {
-                foreach (Handcard hc in p.owncards) hc.manacost--;
+                foreach (var hc in p.owncards)
+                {
+                    hc.manacost--;
+                }
             }
         }
     }

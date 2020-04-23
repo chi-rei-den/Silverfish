@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_616 : SimTemplate //* Pilfered Power
-	{
-		// Gain an empty Mana Crystal for each friendly minion.
+    class Sim_CFM_616 : SimTemplate //* Pilfered Power
+    {
+        // Gain an empty Mana Crystal for each friendly minion.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (ownplay) p.ownMaxMana = Math.Min(10, p.ownMaxMana + p.ownMinions.Count);
-            else p.enemyMaxMana = Math.Min(10, p.enemyMaxMana + p.enemyMinions.Count);
+            if (ownplay)
+            {
+                p.ownMaxMana = Math.Min(10, p.ownMaxMana + p.ownMinions.Count);
+            }
+            else
+            {
+                p.enemyMaxMana = Math.Min(10, p.enemyMaxMana + p.enemyMinions.Count);
+            }
         }
     }
 }

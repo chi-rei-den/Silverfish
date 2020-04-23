@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_272 : SimTemplate //* Twilight Summoner
-	{
-		//Deathrattle: Summon a 5/5 Faceless Destroyer.
+    class Sim_OG_272 : SimTemplate //* Twilight Summoner
+    {
+        //Deathrattle: Summon a 5/5 Faceless Destroyer.
 
         SimCard kid = CardIds.NonCollectible.Neutral.TwilightSummoner_FacelessDestroyerToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			p.callKid(kid, m.zonepos-1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

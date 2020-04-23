@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_854 : SimTemplate //* Free From Amber
-	{
-		//Discover a minion that costs (8) or more. Summon it.
+    class Sim_UNG_854 : SimTemplate //* Free From Amber
+    {
+        //Discover a minion that costs (8) or more. Summon it.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            if (p.ownHeroHasDirectLethal()) p.callKid(CardIds.Collectible.Neutral.Icehowl, pos, ownplay, false);
-            else p.callKid(CardIds.Collectible.Neutral.FrostGiant, pos, ownplay, false);
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            if (p.ownHeroHasDirectLethal())
+            {
+                p.callKid(CardIds.Collectible.Neutral.Icehowl, pos, ownplay, false);
+            }
+            else
+            {
+                p.callKid(CardIds.Collectible.Neutral.FrostGiant, pos, ownplay, false);
+            }
         }
     }
 }

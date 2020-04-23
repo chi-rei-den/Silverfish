@@ -1,9 +1,4 @@
-using Chireiden.Silverfish;
-using HearthDb.Enums;
-using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 
 /* _BEGIN_TEMPLATE_
@@ -29,16 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_312t : SimTemplate //* 微型机器人 Microbot
-	{
-		//
-		//
-		// SimCard kid = CardDB. Instance.getCardDataFromID(CardIds.NonCollectible.Neutral.ReplicatingMenace_MicrobotToken);
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-{
-if (own.own) p.Magnetic(own);
-}
-
-
-	}
+    class Sim_BOT_312t : SimTemplate //* 微型机器人 Microbot
+    {
+        //
+        //
+        // SimCard kid = CardDB. Instance.getCardDataFromID(CardIds.NonCollectible.Neutral.ReplicatingMenace_MicrobotToken);
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            if (own.own)
+            {
+                p.Magnetic(own);
+            }
+        }
+    }
 }

@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_PDWatcher : SimTemplate
-	{
-	}
+    class Sim_ULDA_Brann_PDWatcher : SimTemplate
+    {
+    }
 }

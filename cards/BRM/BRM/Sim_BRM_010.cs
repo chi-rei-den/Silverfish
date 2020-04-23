@@ -1,9 +1,4 @@
-using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -30,10 +25,10 @@ namespace HREngine.Bots
 {
     class Sim_BRM_010 : SimTemplate //* Druid of the Flame
     {
-		// Choose One - Transform into a 5/2 minion; or a 2/5 minion.
+        // Choose One - Transform into a 5/2 minion; or a 2/5 minion.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        {
             if (p.ownFandralStaghelm > 0)
             {
                 p.minionTransform(own, CardIds.NonCollectible.Druid.FandralStaghelm_DruidOfTheFlame);
@@ -49,6 +44,6 @@ namespace HREngine.Bots
                     p.minionTransform(own, CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken2);
                 }
             }
-		}
-	}
+        }
+    }
 }

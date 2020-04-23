@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,12 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_835: SimTemplate //* Hadronox
+    class Sim_ICC_835 : SimTemplate //* Hadronox
     {
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            int pos = m.own ? p.ownMinions.Count : p.enemyMinions.Count;
-            int kids = 7 - pos;
+            var pos = m.own ? p.ownMinions.Count : p.enemyMinions.Count;
+            var kids = 7 - pos;
             if (kids > 0)
             {
                 foreach (var e in Probabilitymaker.Instance.ownCardsOut)
@@ -38,13 +36,20 @@ namespace HREngine.Bots
                     var kid = e.Key;
                     if (kid.Taunt)
                     {
-                        for (int i = 0; i < e.Value; i++)
+                        for (var i = 0; i < e.Value; i++)
                         {
                             p.callKid(kid, pos, m.own);
                             kids--;
-                            if (kids < 1) break;
+                            if (kids < 1)
+                            {
+                                break;
+                            }
                         }
-                        if (kids < 1) break;
+
+                        if (kids < 1)
+                        {
+                            break;
+                        }
                     }
                 }
             }

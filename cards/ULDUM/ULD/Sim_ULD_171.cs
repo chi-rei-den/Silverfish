@@ -1,7 +1,5 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "ULD_171",
@@ -31,8 +29,8 @@ namespace HREngine.Bots
         //使你的图腾获得+2攻击力。
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion t in temp)
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var t in temp)
             {
                 if (t.handcard.card.Race == Race.MECHANICAL)
                 {
@@ -40,5 +38,5 @@ namespace HREngine.Bots
                 }
             }
         }
-            }
+    }
 }

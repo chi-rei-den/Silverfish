@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_363 : SimTemplate //blessingofwisdom
-	{
-
+    class Sim_EX1_363 : SimTemplate //blessingofwisdom
+    {
 //    wählt einen diener aus. zieht jedes mal eine karte, wenn er angreift.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (ownplay)
             {
                 target.ownBlessingOfWisdom++;
@@ -40,8 +37,6 @@ namespace HREngine.Bots
             {
                 target.enemyBlessingOfWisdom++;
             }
-
-		}
-
-	}
+        }
+    }
 }

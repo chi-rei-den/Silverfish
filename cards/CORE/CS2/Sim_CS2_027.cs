@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,17 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_027 : SimTemplate //* mirrorimage
-	{
+    class Sim_CS2_027 : SimTemplate //* mirrorimage
+    {
         //Summon two 0/2 minions with Taunt.
-		
+
         SimCard kid = CardIds.NonCollectible.Mage.MirrorImage;
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;            
-            p.callKid(kid, pos, ownplay, false);
-            p.callKid(kid, pos, ownplay);
-		}
-	}
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
+            p.callKid(this.kid, pos, ownplay);
+        }
+    }
 }

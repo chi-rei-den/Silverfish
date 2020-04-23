@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_433",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_433 : SimTemplate //* 惊骇风暴 Hurricane of Horrors
-	{
-		//Start Board Clear Puzzle 2-5.
-		//Start Board Clear Puzzle 2-5.
-
-
-	}
+    class Sim_BOTA_433 : SimTemplate //* 惊骇风暴 Hurricane of Horrors
+    {
+        //Start Board Clear Puzzle 2-5.
+        //Start Board Clear Puzzle 2-5.
+    }
 }

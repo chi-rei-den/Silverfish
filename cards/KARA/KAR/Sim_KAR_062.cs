@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,35 +24,36 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_062 : SimTemplate //* Netherspite Historian
-	{
-		//Battlecry: If you're holding a Dragon, Discover a Dragon.
-		
+    class Sim_KAR_062 : SimTemplate //* Netherspite Historian
+    {
+        //Battlecry: If you're holding a Dragon, Discover a Dragon.
+
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			if(own.own)
-			{
-				bool dragonInHand = false;
-				foreach (Handcard hc in p.owncards)
-				{
-					if (hc.card.Race == Race.DRAGON)
-					{
-						dragonInHand = true;
-						break;
-					}
-				}
-				if(dragonInHand)
-				{
-					p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
+            if (own.own)
+            {
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Race == Race.DRAGON)
+                    {
+                        dragonInHand = true;
+                        break;
+                    }
                 }
-			}
-			else
-			{
-				if (p.enemyAnzCards >= 2)
-				{
-					p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
-                }					
-			}
+
+                if (dragonInHand)
+                {
+                    p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
+                }
+            }
+            else
+            {
+                if (p.enemyAnzCards >= 2)
+                {
+                    p.drawACard(CardIds.Collectible.Neutral.DrakonidCrusher, own.own, true);
+                }
+            }
         }
     }
 }

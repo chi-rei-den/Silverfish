@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_082 : SimTemplate //* Thunder Lizard
-	{
-		//Battlecry: If you played an Elemental last turn, Adapt.
+    class Sim_UNG_082 : SimTemplate //* Thunder Lizard
+    {
+        //Battlecry: If you played an Elemental last turn, Adapt.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-			if (p.anzOwnElementalsLastTurn > 0 && own.own) p.getBestAdapt(own);
+            if (p.anzOwnElementalsLastTurn > 0 && own.own)
+            {
+                p.getBestAdapt(own);
+            }
         }
     }
 }

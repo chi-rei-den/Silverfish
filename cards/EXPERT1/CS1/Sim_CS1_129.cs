@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_129 : SimTemplate //innerfire
-	{
-
+    class Sim_CS1_129 : SimTemplate //innerfire
+    {
 //    setzt den angriff eines dieners auf einen wert, der seinem leben entspricht.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.minionSetAngrToHP(target);
-		}
-
-	}
+        }
+    }
 }

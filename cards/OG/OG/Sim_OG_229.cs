@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,12 +31,12 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int heal = (turnEndOfOwner) ? p.getMinionHeal(8) : p.getEnemyMinionHeal(8);
-                List<Minion> temp = (turnEndOfOwner) ? p.ownMinions : p.enemyMinions;
+                var heal = turnEndOfOwner ? p.getMinionHeal(8) : p.getEnemyMinionHeal(8);
+                var temp = turnEndOfOwner ? p.ownMinions : p.enemyMinions;
                 if (temp.Count >= 1)
                 {
-                    bool healed = false;
-                    foreach (Minion m in temp)
+                    var healed = false;
+                    foreach (var m in temp)
                     {
                         if (m.wounded)
                         {

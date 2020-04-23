@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,22 +24,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX11_02H : SimTemplate //* Poison Cloud
-	{
-		// Hero Power: Deal 2 damage to all enemies. If any die, summon a slime.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime;//Fallout Slime
+    class Sim_NAX11_02H : SimTemplate //* Poison Cloud
+    {
+        // Hero Power: Deal 2 damage to all enemies. If any die, summon a slime.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getHeroPowerDamage(2) : p.getEnemyHeroPowerDamage(2);
+        SimCard kid = CardIds.NonCollectible.Neutral.FalloutSlime; //Fallout Slime
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getHeroPowerDamage(2) : p.getEnemyHeroPowerDamage(2);
             p.allMinionOfASideGetDamage(!ownplay, dmg);
-			
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            foreach (Minion m in ownplay ? p.enemyMinions : p.ownMinions)
+
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            foreach (var m in ownplay ? p.enemyMinions : p.ownMinions)
             {
-				if (m.Hp <= 0) p.callKid(kid, place, ownplay);
-			}
-		}
-	}
+                if (m.Hp <= 0)
+                {
+                    p.callKid(this.kid, place, ownplay);
+                }
+            }
+        }
+    }
 }

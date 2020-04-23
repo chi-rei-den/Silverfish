@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_383t : SimTemplate //ashbringer
-	{
-
+    class Sim_EX1_383t : SimTemplate //ashbringer
+    {
 //
         SimCard wcard = CardIds.NonCollectible.Paladin.TirionFordring_AshbringerToken;
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(wcard, ownplay);
+            p.equipWeapon(this.wcard, ownplay);
         }
-
-	}
+    }
 }

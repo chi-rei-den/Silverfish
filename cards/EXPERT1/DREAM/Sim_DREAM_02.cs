@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,26 +23,31 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DREAM_02 : SimTemplate //yseraawakens
-	{
-
+    class Sim_DREAM_02 : SimTemplate //yseraawakens
+    {
 //    fügt allen charakteren mit ausnahme von ysera $5 schaden zu.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
-            foreach (Minion m in p.ownMinions)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(5) : p.getEnemySpellDamageDamage(5);
+            foreach (var m in p.ownMinions)
             {
-                if (m.name != CardIds.Collectible.Neutral.Ysera) p.minionGetDamageOrHeal(m, dmg);
+                if (m.name != CardIds.Collectible.Neutral.Ysera)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
-                if (m.name != CardIds.Collectible.Neutral.Ysera) p.minionGetDamageOrHeal(m, dmg);
+                if (m.name != CardIds.Collectible.Neutral.Ysera)
+                {
+                    p.minionGetDamageOrHeal(m, dmg);
+                }
             }
+
             p.minionGetDamageOrHeal(p.ownHero, dmg);
             p.minionGetDamageOrHeal(p.enemyHero, dmg);
-
-		}
-
-	}
+        }
+    }
 }

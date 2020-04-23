@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_934t1 : SimTemplate //* Sulfuras
-	{
-		//Battlecry: Your Hero Power: becomes 'Deal 8 damage to a random enemy.'
+    class Sim_UNG_934t1 : SimTemplate //* Sulfuras
+    {
+        //Battlecry: Your Hero Power: becomes 'Deal 8 damage to a random enemy.'
 
         SimCard weapon = CardIds.NonCollectible.Warrior.FirePlumesHeart_SulfurasToken;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
             p.setNewHeroPower(CardIds.NonCollectible.Neutral.MajordomoExecutus_DieInsectHeroPower, ownplay); // DIE, INSECT!
         }
     }

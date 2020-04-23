@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_422a",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_422a : SimTemplate //* 施肥 Old Growth
-	{
-		//Give your other minions +1/+1.
-		//使你的所有其他随从获得+1/+1。
-
-
-	}
+    class Sim_BOT_422a : SimTemplate //* 施肥 Old Growth
+    {
+        //Give your other minions +1/+1.
+        //使你的所有其他随从获得+1/+1。
+    }
 }

@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_026 : SimTemplate //* Hungry Dragon
-	{
-		// Battlecry: Summon a random 1-Cost minion for your opponent.
-        		
+    class Sim_BRM_026 : SimTemplate //* Hungry Dragon
+    {
+        // Battlecry: Summon a random 1-Cost minion for your opponent.
+
         SimCard kid = CardIds.NonCollectible.Neutral.Xavius_XavianSatyrToken; //flameofazzinoth
 
-		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
+        public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            int zonepos = (m.own) ? p.enemyMinions.Count : p.ownMinions.Count;
-            p.callKid(kid, zonepos, !m.own);
+            var zonepos = m.own ? p.enemyMinions.Count : p.ownMinions.Count;
+            p.callKid(this.kid, zonepos, !m.own);
         }
-	}
+    }
 }

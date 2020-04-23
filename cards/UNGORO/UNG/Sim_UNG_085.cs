@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,18 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_085 : SimTemplate //* Emerald Hive Queen
-	{
-		//Your minions cost (2) more.
+    class Sim_UNG_085 : SimTemplate //* Emerald Hive Queen
+    {
+        //Your minions cost (2) more.
 
         public override void onAuraStarts(Playfield p, Minion own)
-		{
-           if(own.own) p.ownMinionsCostMore += 2;
-		}
+        {
+            if (own.own)
+            {
+                p.ownMinionsCostMore += 2;
+            }
+        }
 
         public override void onAuraEnds(Playfield p, Minion own)
         {
-           if(own.own) p.ownMinionsCostMore -= 2;
+            if (own.own)
+            {
+                p.ownMinionsCostMore -= 2;
+            }
         }
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -35,6 +33,5 @@ namespace HREngine.Bots
             p.minionReturnToHand(target, !ownplay, 2);
             target.Hp = -100;
         }
-
     }
 }

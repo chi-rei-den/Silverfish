@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,21 +24,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_405: SimTemplate //* Rotface
+    class Sim_ICC_405 : SimTemplate //* Rotface
     {
         // Whenever this minion survives damage, summon a random Legendary minion.
 
-        SimCard kid = CardIds.Collectible.Neutral.KingMukla;//King Mukla 5/5
+        SimCard kid = CardIds.Collectible.Neutral.KingMukla; //King Mukla 5/5
 
         public override void onMinionGotDmgTrigger(Playfield p, Minion m, int anzOwnMinionsGotDmg, int anzEnemyMinionsGotDmg, int anzOwnHeroGotDmg, int anzEnemyHeroGotDmg)
         {
             if (m.anzGotDmg > 0 && m.Hp > 0)
             {
-                int tmp = m.anzGotDmg;
+                var tmp = m.anzGotDmg;
                 m.anzGotDmg = 0;
-                for (int i = 0; i < tmp; i++)
+                for (var i = 0; i < tmp; i++)
                 {
-                    p.callKid(kid, m.zonepos, m.own);
+                    p.callKid(this.kid, m.zonepos, m.own);
                 }
             }
         }

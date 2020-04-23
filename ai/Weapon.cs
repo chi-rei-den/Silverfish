@@ -1,27 +1,23 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using Triton.Game.Mapping;
 
 namespace HREngine.Bots
 {
-    using System;
-    using System.Collections.Generic;
-
     public class Weapon
     {
         public int pID = 0;
         public SimCard name = SimCard.None;
         public SimCard card;
-        public int numAttacksThisTurn = 0;
+        public int numAttacksThisTurn;
 
-        public int Angr = 0;
-        public int Durability = 0;
+        public int Angr;
+        public int Durability;
 
-        public bool windfury = false;
-        public bool immune = false;
-        public bool lifesteal = false;
-        public bool poisonous = false;
-        public bool cantAttackHeroes = false;
+        public bool windfury;
+        public bool immune;
+        public bool lifesteal;
+        public bool poisonous;
+        public bool cantAttackHeroes;
 
         public Weapon()
         {
@@ -46,11 +42,31 @@ namespace HREngine.Bots
 
         public bool isEqual(Weapon w)
         {
-            if (this.Angr != w.Angr) return false;
-            if (this.Durability != w.Durability) return false;
-            if (this.poisonous != w.poisonous) return false;
-            if (this.lifesteal != w.lifesteal) return false;
-            if (this.name != w.name) return false;
+            if (this.Angr != w.Angr)
+            {
+                return false;
+            }
+
+            if (this.Durability != w.Durability)
+            {
+                return false;
+            }
+
+            if (this.poisonous != w.poisonous)
+            {
+                return false;
+            }
+
+            if (this.lifesteal != w.lifesteal)
+            {
+                return false;
+            }
+
+            if (this.name != w.name)
+            {
+                return false;
+            }
+
             return true;
         }
 
@@ -67,7 +83,7 @@ namespace HREngine.Bots
             this.immune = false;
             this.lifesteal = c.Lifesteal;
             this.poisonous = c.Poisonous;
-            this.cantAttackHeroes = (c.CardId == CardIds.Collectible.Warrior.FoolsBane) ? true : false;
+            this.cantAttackHeroes = c.CardId == CardIds.Collectible.Warrior.FoolsBane ? true : false;
         }
 
         public string weaponToString()

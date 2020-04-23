@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_027t2 : SimTemplate //* Pyros
-	{
-		//Deathrattle: Return this to your hand as a 10/10 that costs (10).
+    class Sim_UNG_027t2 : SimTemplate //* Pyros
+    {
+        //Deathrattle: Return this to your hand as a 10/10 that costs (10).
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(CardIds.NonCollectible.Mage.Pyros_PyrosToken2, m.own, true);
         }
-	}
+    }
 }

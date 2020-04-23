@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_234",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_234 : SimTemplate //* 萎缩射线 Shrink Ray
-	{
-		//Set the Attack and Health of all minionsto 1.
-		//将所有随从的攻击力和生命值变为1。
-
-
-	}
+    class Sim_BOT_234 : SimTemplate //* 萎缩射线 Shrink Ray
+    {
+        //Set the Attack and Health of all minionsto 1.
+        //将所有随从的攻击力和生命值变为1。
+    }
 }

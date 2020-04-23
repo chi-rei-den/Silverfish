@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,24 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_014 : SimTemplate //kingmukla
-	{
-
+    class Sim_EX1_014 : SimTemplate //kingmukla
+    {
 //    kampfschrei:/ gebt eurem gegner 2 bananen.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(CardIds.NonCollectible.Neutral.Bananas, !own.own, true);
             if (own.own)
             {
                 p.enemycarddraw -= 1;
             }
+
             p.drawACard(CardIds.NonCollectible.Neutral.Bananas, !own.own, true);
             if (own.own)
             {
                 p.enemycarddraw -= 1;
             }
-		}
-
-
-	}
+        }
+    }
 }

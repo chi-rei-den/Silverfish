@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_BOSS_66h : SimTemplate //* 沉默者 The Mute
-	{
-		//<i>. . .</i>
-		//<i>……</i>
-
-
-	}
+    class Sim_GILA_BOSS_66h : SimTemplate //* 沉默者 The Mute
+    {
+        //<i>. . .</i>
+        //<i>……</i>
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,20 +24,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX10_02H : SimTemplate //* Hook
-	{
-		//Windfury. Deathrattle: Put this weapon into your hand.
+    class Sim_NAX10_02H : SimTemplate //* Hook
+    {
+        //Windfury. Deathrattle: Put this weapon into your hand.
 
         SimCard weapon = CardIds.NonCollectible.Neutral.HookHeroic;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-			p.drawACard(CardIds.NonCollectible.Neutral.HookHeroic, m.own, true);
+            p.drawACard(CardIds.NonCollectible.Neutral.HookHeroic, m.own, true);
         }
     }
 }

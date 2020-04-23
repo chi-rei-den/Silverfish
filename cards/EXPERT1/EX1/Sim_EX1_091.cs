@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,24 +24,27 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_091 : SimTemplate //* Cabal Shadow Priest
-	{
+    {
         //Battlecry: Take control of an enemy minion that has 2 or less Attack.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             if (target != null)
             {
-                List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-                int num = temp.Count;
+                var temp = own.own ? p.ownMinions : p.enemyMinions;
+                var num = temp.Count;
                 p.minionGetControlled(target, own.own, false, true);
                 if (num < 7)
                 {
-                    foreach (Minion m in temp)
+                    foreach (var m in temp)
                     {
-                        if (m.name == CardIds.Collectible.Neutral.KnifeJuggler && !m.silenced) m.handcard.card.Simulator.onMinionWasSummoned(p, m, temp[num]);
+                        if (m.name == CardIds.Collectible.Neutral.KnifeJuggler && !m.silenced)
+                        {
+                            m.handcard.card.Simulator.onMinionWasSummoned(p, m, temp[num]);
+                        }
                     }
                 }
             }
-		}
-	}
+        }
+    }
 }

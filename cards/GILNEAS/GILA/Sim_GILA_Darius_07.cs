@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GILA_Darius_07 : SimTemplate //* 统帅 Commander
-	{
-		//
-		//
-
-
-	}
+    class Sim_GILA_Darius_07 : SimTemplate //* 统帅 Commander
+    {
+        //
+        //
+    }
 }

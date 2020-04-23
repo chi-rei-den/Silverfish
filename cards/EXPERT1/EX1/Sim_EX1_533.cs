@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_533 : SimTemplate//Misdirection
+    class Sim_EX1_533 : SimTemplate //Misdirection
     {
         public override void onSecretPlay(Playfield p, bool ownplay, Minion attacker, Minion target, out int number)
         {
@@ -33,7 +31,7 @@ namespace HREngine.Bots
             Minion newTarget = null;
             if (ownplay)
             {
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
                     if (target.entitiyID != m.entitiyID && attacker.entitiyID != m.entitiyID)
                     {
@@ -43,7 +41,7 @@ namespace HREngine.Bots
 
                 if (newTarget == null)
                 {
-                    foreach (Minion m in p.ownMinions)
+                    foreach (var m in p.ownMinions)
                     {
                         if (target.entitiyID != m.entitiyID && attacker.entitiyID != m.entitiyID)
                         {
@@ -60,7 +58,7 @@ namespace HREngine.Bots
 
             else
             {
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
                     if (target.entitiyID != m.entitiyID && attacker.entitiyID != m.entitiyID)
                     {
@@ -70,7 +68,7 @@ namespace HREngine.Bots
 
                 if (newTarget == null)
                 {
-                    foreach (Minion m in p.enemyMinions)
+                    foreach (var m in p.enemyMinions)
                     {
                         if (target.entitiyID != m.entitiyID && attacker.entitiyID != m.entitiyID)
                         {
@@ -91,7 +89,5 @@ namespace HREngine.Bots
                 number = newTarget.entitiyID;
             }
         }
-
     }
-
 }

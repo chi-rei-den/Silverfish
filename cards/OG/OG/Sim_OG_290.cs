@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_290 : SimTemplate //* Ancient Harbinger
-	{
-		//At the start of your turn, put a 10-Cost minion from your deck into your hand.
-		
+    class Sim_OG_290 : SimTemplate //* Ancient Harbinger
+    {
+        //At the start of your turn, put a 10-Cost minion from your deck into your hand.
+
         public override void onTurnStartTrigger(Playfield p, Minion triggerEffectMinion, bool turnStartOfOwner)
         {
             if (triggerEffectMinion.own == turnStartOfOwner)
             {
-				p.drawACard(CardIds.Collectible.Warrior.VarianWrynn, turnStartOfOwner);
+                p.drawACard(CardIds.Collectible.Warrior.VarianWrynn, turnStartOfOwner);
             }
         }
-	}
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,12 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_621t21 : SimTemplate
-	{
+    class Sim_CFM_621t21 : SimTemplate
+    {
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-			target = (ownplay) ? p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack) : p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack);
-			if (target != null) p.minionTransform(target, CardIds.NonCollectible.Neutral.Kazakus_Sheep);
+            target = ownplay ? p.searchRandomMinion(p.enemyMinions, SearchMode.LowAttack) : p.searchRandomMinion(p.ownMinions, SearchMode.LowAttack);
+            if (target != null)
+            {
+                p.minionTransform(target, CardIds.NonCollectible.Neutral.Kazakus_Sheep);
+            }
         }
     }
 }

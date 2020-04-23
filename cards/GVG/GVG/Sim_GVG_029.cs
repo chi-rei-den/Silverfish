@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,18 +25,17 @@ namespace HREngine.Bots
 {
     class Sim_GVG_029 : SimTemplate //* Ancestor's Call
     {
-
         //    Put a random minion from each player's hand into the battlefield.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             Handcard c = null;
-            int sum = 10000;
-            foreach (Handcard hc in p.owncards)
+            var sum = 10000;
+            foreach (var hc in p.owncards)
             {
                 if (hc.card.Type == CardType.MINION)
                 {
-                    int s = hc.card.Health + hc.card.Attack + ((hc.card.Taunt) ? 1 : 0) + ((hc.card.DivineShield) ? 1 : 0);
+                    var s = hc.card.Health + hc.card.Attack + (hc.card.Taunt ? 1 : 0) + (hc.card.DivineShield ? 1 : 0);
                     if (s < sum)
                     {
                         c = hc;
@@ -47,6 +43,7 @@ namespace HREngine.Bots
                     }
                 }
             }
+
             if (sum < 9999)
             {
                 p.callKid(c.card, p.ownMinions.Count, true, false);

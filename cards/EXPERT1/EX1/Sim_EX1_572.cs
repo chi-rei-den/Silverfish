@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_572 : SimTemplate //ysera
-	{
-
+    class Sim_EX1_572 : SimTemplate //ysera
+    {
 //    zieht am ende eures zuges eine traumkarte.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
@@ -38,6 +34,5 @@ namespace HREngine.Bots
                 p.drawACard(CardIds.NonCollectible.DreamCards.YseraAwakens, turnEndOfOwner, true);
             }
         }
-
-	}
+    }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,8 +24,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_028 : SimTemplate //* Fool's Bane
-	{
+    class Sim_KAR_028 : SimTemplate //* Fool's Bane
+    {
         //Unlimited attacks each turn. Can't attack heroes.
         // handled in public void getMoveList
 
@@ -36,7 +33,7 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
-	}
+    }
 }

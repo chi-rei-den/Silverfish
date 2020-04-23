@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,11 +29,15 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-            for (int i = 0; i < 4; i++)
+            for (var i = 0; i < 4; i++)
             {
                 p.drawACard(CardIds.Collectible.Neutral.MurlocRaider, m.own, true);
             }
-            if (m.own) p.ueberladung += 3;
+
+            if (m.own)
+            {
+                p.ueberladung += 3;
+            }
         }
     }
 }

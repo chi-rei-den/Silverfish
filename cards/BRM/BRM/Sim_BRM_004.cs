@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,23 +29,30 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-			if(m.own)
-			{
-				bool dragonInHand = false;
-				foreach (Handcard hc in p.owncards)
-				{
-					if (hc.card.Race == Race.DRAGON)
-					{
-						dragonInHand = true;
-						break;
-					}
-				}
-				if(dragonInHand) p.minionGetBuffed(m, 0, 2);
-			}
-			else
-			{
-                if (p.enemyAnzCards >= 2) p.minionGetBuffed(m, 0, 2);
-			}
+            if (m.own)
+            {
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Race == Race.DRAGON)
+                    {
+                        dragonInHand = true;
+                        break;
+                    }
+                }
+
+                if (dragonInHand)
+                {
+                    p.minionGetBuffed(m, 0, 2);
+                }
+            }
+            else
+            {
+                if (p.enemyAnzCards >= 2)
+                {
+                    p.minionGetBuffed(m, 0, 2);
+                }
+            }
         }
     }
 }

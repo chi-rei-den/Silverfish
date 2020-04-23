@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,35 +23,42 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_033 : SimTemplate //* Book Wyrm
-	{
-		//Battlecry: If you're holding a Dragon, destroy an enemy minion with 3 Attack or less.
+    class Sim_KAR_033 : SimTemplate //* Book Wyrm
+    {
+        //Battlecry: If you're holding a Dragon, destroy an enemy minion with 3 Attack or less.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-			if(m.own)
-			{
-				bool dragonInHand = false;
-				foreach (Handcard hc in p.owncards)
-				{
-					if (hc.card.Race == Race.DRAGON)
-					{
-						dragonInHand = true;
-						break;
-					}
-				}
-				if(dragonInHand)
-				{
-					if (target!= null) p.minionGetDestroyed(target);
+            if (m.own)
+            {
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.Race == Race.DRAGON)
+                    {
+                        dragonInHand = true;
+                        break;
+                    }
                 }
-			}
-			else
-			{
-				if (p.enemyAnzCards >= 2)
-				{
-					if (target!= null) p.minionGetDestroyed(target);
-                }					
-			}
+
+                if (dragonInHand)
+                {
+                    if (target != null)
+                    {
+                        p.minionGetDestroyed(target);
+                    }
+                }
+            }
+            else
+            {
+                if (p.enemyAnzCards >= 2)
+                {
+                    if (target != null)
+                    {
+                        p.minionGetDestroyed(target);
+                    }
+                }
+            }
         }
     }
 }

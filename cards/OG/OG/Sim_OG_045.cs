@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,9 +29,9 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
 
-            foreach (Minion m in temp)
+            foreach (var m in temp)
             {
                 m.infest++;
             }

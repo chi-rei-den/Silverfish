@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_SPT_DALA_Boss2 : SimTemplate
-	{
-	}
+    class Sim_TB_SPT_DALA_Boss2 : SimTemplate
+    {
+    }
 }

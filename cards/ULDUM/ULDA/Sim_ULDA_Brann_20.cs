@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Brann_20 : SimTemplate //* 探险发现 Discover
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Brann_20 : SimTemplate //* 探险发现 Discover
+    {
+        //
+        //
+    }
 }

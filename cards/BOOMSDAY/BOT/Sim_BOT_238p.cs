@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOT_238p",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOT_238p : SimTemplate //* 红色按钮 Big Red Button
-	{
-		//[x]<b>Hero Power</b>Activate this turn'sMech Suit power!
-		//<b>英雄技能</b>每回合切换动力装置！
-
-
-	}
+    class Sim_BOT_238p : SimTemplate //* 红色按钮 Big Red Button
+    {
+        //[x]<b>Hero Power</b>Activate this turn'sMech Suit power!
+        //<b>英雄技能</b>每回合切换动力装置！
+    }
 }

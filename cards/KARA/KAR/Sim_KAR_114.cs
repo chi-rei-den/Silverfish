@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_114 : SimTemplate //* Barnes
-	{
-		//Battlecry: Summon a 1/1 copy of a random minion in your deck.
-		
+    class Sim_KAR_114 : SimTemplate //* Barnes
+    {
+        //Battlecry: Summon a 1/1 copy of a random minion in your deck.
+
         SimCard kid = CardIds.NonCollectible.Neutral.BilefinTidehunter_Ooze; //Ooze with Taunt
-		
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            p.callKid(kid, own.zonepos, own.own);
-		}
-	}
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            p.callKid(this.kid, own.zonepos, own.own);
+        }
+    }
 }

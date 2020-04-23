@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_019 : SimTemplate //* Dreadsteed
-	{
-		//Deathrattle: Summon a Dreadsteed.
+    class Sim_AT_019 : SimTemplate //* Dreadsteed
+    {
+        //Deathrattle: Summon a Dreadsteed.
 
         SimCard kid = CardIds.Collectible.Warlock.Dreadsteed;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(kid, m.zonepos - 1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

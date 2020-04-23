@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "DAL_579p",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DAL_579p : SimTemplate //* 深蓝魔网 Cobalt Leyline
-	{
-		//<b>Discover</b> a spell.
-		//<b>发现</b>一张法术牌。
-
-
-	}
+    class Sim_DAL_579p : SimTemplate //* 深蓝魔网 Cobalt Leyline
+    {
+        //<b>Discover</b> a spell.
+        //<b>发现</b>一张法术牌。
+    }
 }

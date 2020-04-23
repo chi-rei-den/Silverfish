@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_065 : SimTemplate //* Sherazin, Corpse Flower
-	{
-		//Deathrattle: Go dormant. Play 4 cards in a turn to revive this minion.
+    class Sim_UNG_065 : SimTemplate //* Sherazin, Corpse Flower
+    {
+        //Deathrattle: Go dormant. Play 4 cards in a turn to revive this minion.
 
         SimCard kid = CardIds.NonCollectible.Rogue.SherazinCorpseFlower_SherazinSeedToken; //Sherazin, Seed
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(kid, m.zonepos - 1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
     }
 }

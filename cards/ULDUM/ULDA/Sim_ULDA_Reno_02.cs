@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_02 : SimTemplate //* 亡语不断 Deathrattle
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Reno_02 : SimTemplate //* 亡语不断 Deathrattle
+    {
+        //
+        //
+    }
 }

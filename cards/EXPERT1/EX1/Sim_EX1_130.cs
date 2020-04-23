@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -38,8 +35,8 @@ namespace HREngine.Bots
             number = 0;
             if (ownplay)
             {
-                int pos = p.ownMinions.Count;
-                p.callKid(kid, pos, true, true, true);
+                var pos = p.ownMinions.Count;
+                p.callKid(this.kid, pos, true, true, true);
                 if (p.ownMinions.Count >= 1)
                 {
                     if (p.ownMinions[p.ownMinions.Count - 1].name == CardIds.NonCollectible.Paladin.NobleSacrifice_Defender)
@@ -50,8 +47,8 @@ namespace HREngine.Bots
             }
             else
             {
-                int pos = p.enemyMinions.Count;
-                p.callKid(kid, pos, false, true, true);
+                var pos = p.enemyMinions.Count;
+                p.callKid(this.kid, pos, false, true, true);
 
                 if (p.enemyMinions.Count >= 1)
                 {

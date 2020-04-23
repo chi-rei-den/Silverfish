@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_150 : SimTemplate //* Aberrant Berserker
-	{
-		//Enrage: +2 Attack.
-		
+    class Sim_OG_150 : SimTemplate //* Aberrant Berserker
+    {
+        //Enrage: +2 Attack.
+
         public override void onEnrageStart(Playfield p, Minion m)
         {
             m.Angr += 2;
@@ -38,5 +36,5 @@ namespace HREngine.Bots
         {
             m.Angr -= 2;
         }
-	}
+    }
 }

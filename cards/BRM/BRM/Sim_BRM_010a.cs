@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_010a : SimTemplate //* Firecat Form
-	{
-		// Transform into a 5/2 minion.
-		
+    class Sim_BRM_010a : SimTemplate //* Firecat Form
+    {
+        // Transform into a 5/2 minion.
+
         SimCard cat = CardIds.NonCollectible.Druid.DruidoftheFlame_DruidOfTheFlameToken1;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.minionTransform(target, cat);
+            p.minionTransform(target, this.cat);
         }
-	}
+    }
 }

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Mage_23 : SimTemplate //* 冰寒之霜 Frost
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Mage_23 : SimTemplate //* 冰寒之霜 Frost
+    {
+        //
+        //
+    }
 }

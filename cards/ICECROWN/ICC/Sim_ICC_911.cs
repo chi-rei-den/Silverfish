@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_911: SimTemplate //* Keening Banshee
+    class Sim_ICC_911 : SimTemplate //* Keening Banshee
     {
         // Whenever you play a card, remove the top 3 cards of your deck.
 

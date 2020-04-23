@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_038e : SimTemplate
-	{
-	}
+    class Sim_LOE_038e : SimTemplate
+    {
+    }
 }

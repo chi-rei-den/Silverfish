@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,15 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_025 : SimTemplate //bloodsailcorsair
-	{
-
+    class Sim_NEW1_025 : SimTemplate //bloodsailcorsair
+    {
 //    kampfschrei:/ zieht 1 haltbarkeit von der waffe eures gegners ab.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.lowerWeaponDurability(1, !own.own);
-		}
-
-
-	}
+        }
+    }
 }

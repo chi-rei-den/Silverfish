@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,20 +24,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_040 : SimTemplate //hogger
-	{
-        SimCard kid = CardIds.NonCollectible.Neutral.Hogger_GnollToken;//gnoll
+    class Sim_NEW1_040 : SimTemplate //hogger
+    {
+        SimCard kid = CardIds.NonCollectible.Neutral.Hogger_GnollToken; //gnoll
 //    ruft am ende eures zuges einen gnoll (2/2) mit spott/ herbei.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-                int posi = triggerEffectMinion.zonepos;
+                var posi = triggerEffectMinion.zonepos;
 
-                p.callKid(kid, posi, triggerEffectMinion.own);
+                p.callKid(this.kid, posi, triggerEffectMinion.own);
             }
         }
-
-	}
+    }
 }

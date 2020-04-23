@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,9 +29,19 @@ namespace HREngine.Bots
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
-			if(m.own) p.minionGetBuffed(m, 2, 0);
-            else p.minionGetBuffed(m, 3, 0);
-            if (m.own) p.ueberladung++;
+            if (m.own)
+            {
+                p.minionGetBuffed(m, 2, 0);
+            }
+            else
+            {
+                p.minionGetBuffed(m, 3, 0);
+            }
+
+            if (m.own)
+            {
+                p.ueberladung++;
+            }
         }
     }
 }

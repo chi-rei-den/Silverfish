@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_114t : SimTemplate //* 邦桑迪的秘所 Bwonsamdi's Sanctum
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRLA_114t : SimTemplate //* 邦桑迪的秘所 Bwonsamdi's Sanctum
+    {
+        //
+        //
+    }
 }

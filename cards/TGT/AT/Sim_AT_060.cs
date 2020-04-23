@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_060 : SimTemplate //* Bear Trap
-	{
-		//Secret: After your hero is attacked, summon a 3/3 Bear with Taunt.
+    class Sim_AT_060 : SimTemplate //* Bear Trap
+    {
+        //Secret: After your hero is attacked, summon a 3/3 Bear with Taunt.
 
-		SimCard kid = CardIds.Collectible.Neutral.IronfurGrizzly;//Ironfur Grizzly
+        SimCard kid = CardIds.Collectible.Neutral.IronfurGrizzly; //Ironfur Grizzly
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay);
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay);
         }
     }
 }

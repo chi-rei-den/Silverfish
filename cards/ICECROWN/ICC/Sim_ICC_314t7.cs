@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -33,8 +31,11 @@ namespace HREngine.Bots
         {
             p.allMinionOfASideGetBuffed(ownplay, 2, 2);
 
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp) m.cantBeTargetedBySpellsOrHeroPowers = true;
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
+            {
+                m.cantBeTargetedBySpellsOrHeroPowers = true;
+            }
         }
     }
 }

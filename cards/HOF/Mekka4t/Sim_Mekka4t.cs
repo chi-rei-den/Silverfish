@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,11 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_Mekka4t : SimTemplate //chicken
-	{
-
+    class Sim_Mekka4t : SimTemplate //chicken
+    {
 //    i&gt;put, put, put!/i&gt;
-		
-
-	}
+    }
 }

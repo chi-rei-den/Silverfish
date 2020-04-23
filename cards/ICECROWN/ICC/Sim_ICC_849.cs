@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_849: SimTemplate //* Embrace Darkness
+    class Sim_ICC_849 : SimTemplate //* Embrace Darkness
     {
         // Choose an enemy minion. At the start of your turn, gain control of it.
 

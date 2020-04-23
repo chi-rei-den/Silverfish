@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_018 : SimTemplate //* Dragon Consort
-	{
-		// Battlecry: The next Dragon you play costs (2) less.
+    class Sim_BRM_018 : SimTemplate //* Dragon Consort
+    {
+        // Battlecry: The next Dragon you play costs (2) less.
 
-		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
-		{
-            if (m.own) p.anzOwnDragonConsort++;
-		}
-	}
+        public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
+        {
+            if (m.own)
+            {
+                p.anzOwnDragonConsort++;
+            }
+        }
+    }
 }

@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,10 +23,10 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_046 : SimTemplate //* Huge Toad
-	{
-		//Deathrattle: Deal 1 damage to a random enemy.
-		
+    class Sim_LOE_046 : SimTemplate //* Huge Toad
+    {
+        //Deathrattle: Deal 1 damage to a random enemy.
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
             Minion target = null;
@@ -41,9 +38,13 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth); //(pessimistic)
-                if (target == null) target = p.ownHero;
+                if (target == null)
+                {
+                    target = p.ownHero;
+                }
             }
-			p.minionGetDamageOrHeal(target, 1);
+
+            p.minionGetDamageOrHeal(target, 1);
         }
     }
 }

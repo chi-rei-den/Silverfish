@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,15 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_029 : SimTemplate //dancingswords
-	{
-
+    class Sim_FP1_029 : SimTemplate //dancingswords
+    {
 //    todesröcheln:/ euer gegner zieht eine karte.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(SimCard.None, !m.own);
         }
-
-	}
+    }
 }

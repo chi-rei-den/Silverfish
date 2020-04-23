@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_605 : SimTemplate //* Drakonid Operative
-	{
-		// Battlecry: If you're holding a Dragon, Discover a card in your opponent's deck.
+    class Sim_CFM_605 : SimTemplate //* Drakonid Operative
+    {
+        // Battlecry: If you're holding a Dragon, Discover a card in your opponent's deck.
 
         public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
         {
             if (m.own)
             {
-                bool dragonInHand = false;
-                foreach (Handcard hc in p.owncards)
+                var dragonInHand = false;
+                foreach (var hc in p.owncards)
                 {
                     if (hc.card.Race == Race.DRAGON)
                     {
@@ -44,6 +41,7 @@ namespace HREngine.Bots
                         break;
                     }
                 }
+
                 if (dragonInHand)
                 {
                     p.drawACard(CardIds.Collectible.Druid.EnchantedRaven, m.own, true);

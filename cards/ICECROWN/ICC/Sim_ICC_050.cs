@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_050: SimTemplate //* Webweave
+    class Sim_ICC_050 : SimTemplate //* Webweave
     {
         // Summon two 1/2 Poisonous Spiders
 
@@ -35,10 +32,10 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
 
-            p.callKid(kid, pos, ownplay, false);
-            p.callKid(kid, pos, ownplay);
+            p.callKid(this.kid, pos, ownplay, false);
+            p.callKid(this.kid, pos, ownplay);
         }
     }
 }

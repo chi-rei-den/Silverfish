@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,21 +23,25 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_812: SimTemplate //* Meat Wagon
+    class Sim_ICC_812 : SimTemplate //* Meat Wagon
     {
         // Deathrattle: Summon a minion from your deck with less Attack than this minion.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             SimCard cId = SimCard.None;
-            for (int i = m.Angr - 1; i >= 0; i--)
+            for (var i = m.Angr - 1; i >= 0; i--)
             {
                 cId = p.prozis.getDeckCardsForCost(i);
-                if (cId != SimCard.None) break;
+                if (cId != SimCard.None)
+                {
+                    break;
+                }
             }
+
             if (cId != SimCard.None)
             {
-                SimCard kid = (cId);
+                var kid = cId;
                 p.callKid(kid, m.zonepos - 1, m.own);
             }
         }

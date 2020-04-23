@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_639 : SimTemplate //* Grimestreet Enforcer
-	{
-		// At the end of your turn, give all minions in your hand +1/+1.
+    class Sim_CFM_639 : SimTemplate //* Grimestreet Enforcer
+    {
+        // At the end of your turn, give all minions in your hand +1/+1.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
@@ -36,7 +33,7 @@ namespace HREngine.Bots
             {
                 if (triggerEffectMinion.own)
                 {
-                    foreach (Handcard hc in p.owncards)
+                    foreach (var hc in p.owncards)
                     {
                         if (hc.card.Type == CardType.MINION)
                         {
@@ -48,7 +45,10 @@ namespace HREngine.Bots
                 }
                 else
                 {
-                    if (p.enemyAnzCards > 0) p.anzEnemyExtraAngrHp += 2 * p.enemyAnzCards - 1;
+                    if (p.enemyAnzCards > 0)
+                    {
+                        p.anzEnemyExtraAngrHp += 2 * p.enemyAnzCards - 1;
+                    }
                 }
             }
         }

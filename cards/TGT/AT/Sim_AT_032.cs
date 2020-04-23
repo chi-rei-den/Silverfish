@@ -1,7 +1,4 @@
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,19 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_032 : SimTemplate //* Shady Dealer
-	{
-		//Battlecry: If you have a Pirate, gain +1/+1.
+    class Sim_AT_032 : SimTemplate //* Shady Dealer
+    {
+        //Battlecry: If you have a Pirate, gain +1/+1.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.PIRATE)
                 {
                     p.minionGetBuffed(own, 1, 1);
-					break;
+                    break;
                 }
             }
         }

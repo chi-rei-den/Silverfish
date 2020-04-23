@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS1_113 : SimTemplate //mindcontrol
-	{
-
+    class Sim_CS1_113 : SimTemplate //mindcontrol
+    {
 //    übernehmt die kontrolle über einen feindlichen diener.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.minionGetControlled(target, ownplay, false);
-		}
-
-	}
+        }
+    }
 }

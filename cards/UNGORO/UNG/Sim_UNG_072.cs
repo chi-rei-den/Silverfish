@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,11 +23,11 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_072 : SimTemplate //* Stonehill Defender
-	{
-		//Taunt. Battlecry: Discover a Taunt minion.
+    class Sim_UNG_072 : SimTemplate //* Stonehill Defender
+    {
+        //Taunt. Battlecry: Discover a Taunt minion.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             p.drawACard(CardIds.Collectible.Neutral.PompousThespian, own.own, true);
         }

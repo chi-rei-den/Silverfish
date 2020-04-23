@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_TempleOutrun_Warrior_11 : SimTemplate
-	{
-	}
+    class Sim_TB_TempleOutrun_Warrior_11 : SimTemplate
+    {
+    }
 }

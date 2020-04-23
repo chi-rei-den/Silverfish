@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,39 +24,46 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_173 : SimTemplate //* Blood of The Ancient One
-	{
-		//If you control two of these at the end of your turn, merge them into 'The Ancient One'
+    class Sim_OG_173 : SimTemplate //* Blood of The Ancient One
+    {
+        //If you control two of these at the end of your turn, merge them into 'The Ancient One'
 
         SimCard kid = CardIds.NonCollectible.Neutral.BloodofTheAncientOne_TheAncientOne; //The Ancient One
-		
+
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {
             if (triggerEffectMinion.own == turnEndOfOwner)
             {
-				List<Minion> temp = (turnEndOfOwner) ? p.ownMinions : p.enemyMinions;
-				int anz =0;
-				foreach (Minion m in temp)
-				{
-                    if (m.name == CardIds.Collectible.Neutral.BloodOfTheAncientOne) anz++;
-				}
-				if (anz > 1)
-				{
-					anz = 0;
-					foreach (Minion m in temp)
-					{
-                        if (m.name == CardIds.Collectible.Neutral.BloodOfTheAncientOne)
-						{
-							p.minionGetDestroyed(m);
-							anz++;
-							if (anz == 2) break;
-						}
-					}
+                var temp = turnEndOfOwner ? p.ownMinions : p.enemyMinions;
+                var anz = 0;
+                foreach (var m in temp)
+                {
+                    if (m.name == CardIds.Collectible.Neutral.BloodOfTheAncientOne)
+                    {
+                        anz++;
+                    }
+                }
 
-					int pos = (triggerEffectMinion.own) ? p.ownMinions.Count : p.enemyMinions.Count;
-					p.callKid(kid, pos, triggerEffectMinion.own, false, true); 
-				}
+                if (anz > 1)
+                {
+                    anz = 0;
+                    foreach (var m in temp)
+                    {
+                        if (m.name == CardIds.Collectible.Neutral.BloodOfTheAncientOne)
+                        {
+                            p.minionGetDestroyed(m);
+                            anz++;
+                            if (anz == 2)
+                            {
+                                break;
+                            }
+                        }
+                    }
+
+                    var pos = triggerEffectMinion.own ? p.ownMinions.Count : p.enemyMinions.Count;
+                    p.callKid(this.kid, pos, triggerEffectMinion.own, false, true);
+                }
             }
         }
-	}
+    }
 }

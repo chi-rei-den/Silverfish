@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -29,17 +26,13 @@ namespace HREngine.Bots
 {
     class Sim_GVG_054 : SimTemplate //Ogre Warmaul
     {
-
         //   50% chance to attack the wrong enemy.
         // yolo!?
         SimCard w = CardIds.Collectible.Warrior.OgreWarmaul;
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(w, ownplay);
+            p.equipWeapon(this.w, ownplay);
         }
-
-
-
     }
-
 }

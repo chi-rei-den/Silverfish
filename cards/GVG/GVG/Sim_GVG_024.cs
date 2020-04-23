@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -30,17 +27,16 @@ namespace HREngine.Bots
 {
     class Sim_GVG_024 : SimTemplate //* Cogmaster's Wrench
     {
-
         //    Has +2 Attack while you have a Mech.
 
         SimCard w = CardIds.Collectible.Rogue.CogmastersWrench;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(w, ownplay);
+            p.equipWeapon(this.w, ownplay);
 
-            List<Minion> temp = (ownplay) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var temp = ownplay ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
                 if (m.handcard.card.Race == Race.MECHANICAL)
                 {
@@ -54,6 +50,7 @@ namespace HREngine.Bots
                         p.enemyWeapon.Angr += 2;
                         p.minionGetBuffed(p.enemyHero, 2, 0);
                     }
+
                     break;
                 }
             }
@@ -63,11 +60,14 @@ namespace HREngine.Bots
         {
             if (summonedMinion.handcard.card.Race == Race.MECHANICAL)
             {
-                List<Minion> temp = (triggerEffectMinion.own) ? p.ownMinions : p.enemyMinions;
+                var temp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
 
-                foreach (Minion m in temp)
+                foreach (var m in temp)
                 {
-                    if (m.handcard.card.Race == Race.MECHANICAL) return; 
+                    if (m.handcard.card.Race == Race.MECHANICAL)
+                    {
+                        return;
+                    }
                 }
 
                 if (triggerEffectMinion.own)
@@ -82,35 +82,42 @@ namespace HREngine.Bots
                 }
             }
         }
-		
-		public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
+
+        public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {
-            int diedMinions = (m.own) ? p.tempTrigger.ownMechanicDied : p.tempTrigger.enemyMechanicDied;
-            if (diedMinions == 0) return;
-            int residual = (p.pID == m.pID) ? diedMinions - m.extraParam2 : diedMinions;
+            var diedMinions = m.own ? p.tempTrigger.ownMechanicDied : p.tempTrigger.enemyMechanicDied;
+            if (diedMinions == 0)
+            {
+                return;
+            }
+
+            var residual = p.pID == m.pID ? diedMinions - m.extraParam2 : diedMinions;
             m.pID = p.pID;
             m.extraParam2 = diedMinions;
             if (residual >= 1)
-			{
-				List<Minion> temp = (m.own) ? p.ownMinions : p.enemyMinions;
-				bool hasmechanics = false;
-                foreach (Minion mTmp in temp)
+            {
+                var temp = m.own ? p.ownMinions : p.enemyMinions;
+                var hasmechanics = false;
+                foreach (var mTmp in temp)
                 {
-                    if (mTmp.Hp >=1 && mTmp.handcard.card.Race == Race.MECHANICAL) hasmechanics = true;
+                    if (mTmp.Hp >= 1 && mTmp.handcard.card.Race == Race.MECHANICAL)
+                    {
+                        hasmechanics = true;
+                    }
                 }
-				
+
                 if (!hasmechanics)
                 {
-					if(m.own)
-					{
-						p.ownWeapon.Angr -= 2;
-						p.minionGetBuffed(p.ownHero, -2, 0);
-					}
-					else
-					{
+                    if (m.own)
+                    {
+                        p.ownWeapon.Angr -= 2;
+                        p.minionGetBuffed(p.ownHero, -2, 0);
+                    }
+                    else
+                    {
                         p.enemyWeapon.Angr -= 2;
                         p.minionGetBuffed(p.enemyHero, -2, 0);
-					}
+                    }
                 }
             }
         }

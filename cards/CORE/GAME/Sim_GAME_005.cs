@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GAME_005 : SimTemplate //thecoin
-	{
-
+    class Sim_GAME_005 : SimTemplate //thecoin
+    {
 //    erhaltet 1 manakristall nur für diesen zug.
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
@@ -41,6 +37,5 @@ namespace HREngine.Bots
                 p.mana++;
             }
         }
-
-	}
+    }
 }

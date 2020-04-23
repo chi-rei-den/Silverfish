@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TB_Chupacabran_HP_E : SimTemplate
-	{
-	}
+    class Sim_TB_Chupacabran_HP_E : SimTemplate
+    {
+    }
 }

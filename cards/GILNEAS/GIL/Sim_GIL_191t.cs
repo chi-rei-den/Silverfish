@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_GIL_191t : SimTemplate //* 小鬼 Imp
-	{
-		//
-		//
-
-
-	}
+    class Sim_GIL_191t : SimTemplate //* 小鬼 Imp
+    {
+        //
+        //
+    }
 }

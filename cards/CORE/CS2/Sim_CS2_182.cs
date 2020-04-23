@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,8 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_182 : SimTemplate//Chillwind Yeti
+    class Sim_CS2_182 : SimTemplate //Chillwind Yeti
     {
-
     }
 }

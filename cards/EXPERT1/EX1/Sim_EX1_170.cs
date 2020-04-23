@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,10 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_170 : SimTemplate //emperorcobra
-	{
-
+    class Sim_EX1_170 : SimTemplate //emperorcobra
+    {
 //    vernichtet jeden diener, der von diesem diener verletzt wurde.
-
-	}
+    }
 }

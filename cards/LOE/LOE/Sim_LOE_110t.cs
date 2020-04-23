@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,8 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOE_110t : SimTemplate //* Ancient Curse
-	{
-		//When you draw this, take 7 damage and draw a card.
-	}
+    class Sim_LOE_110t : SimTemplate //* Ancient Curse
+    {
+        //When you draw this, take 7 damage and draw a card.
+    }
 }

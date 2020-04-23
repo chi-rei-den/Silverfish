@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,24 +24,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_160 : SimTemplate //* powerofthewild
-	{
+    class Sim_EX1_160 : SimTemplate //* powerofthewild
+    {
         //Choose One - Give your minions +1/+1; or Summon a 3/2 Panther.
 
-        SimCard kid = CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken;//panther
+        SimCard kid = CardIds.NonCollectible.Druid.PoweroftheWild_PantherToken; //panther
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            if (choice == 1 || (p.ownFandralStaghelm > 0 && ownplay))
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            if (choice == 1 || p.ownFandralStaghelm > 0 && ownplay)
             {
                 p.allMinionOfASideGetBuffed(ownplay, 1, 1);
             }
-            if (choice == 2 || (p.ownFandralStaghelm > 0 && ownplay))
+
+            if (choice == 2 || p.ownFandralStaghelm > 0 && ownplay)
             {
-                int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-                p.callKid(kid, pos, ownplay, false);
-                
+                var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(this.kid, pos, ownplay, false);
             }
-		}
-	}
+        }
+    }
 }

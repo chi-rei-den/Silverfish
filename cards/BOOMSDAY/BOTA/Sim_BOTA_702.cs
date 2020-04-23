@@ -1,4 +1,4 @@
-using HearthDb.Enums;
+
 /* _BEGIN_TEMPLATE_
 {
   "id": "BOTA_702",
@@ -22,11 +22,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BOTA_702 : SimTemplate //* 斩杀 Lethal
-	{
-		//Destroy the enemy hero.
-		//消灭敌方英雄。
-
-
-	}
+    class Sim_BOTA_702 : SimTemplate //* 斩杀 Lethal
+    {
+        //Destroy the enemy hero.
+        //消灭敌方英雄。
+    }
 }

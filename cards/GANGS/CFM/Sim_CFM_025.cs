@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_025 : SimTemplate //* Wind-up Burglebot
-	{
+    class Sim_CFM_025 : SimTemplate //* Wind-up Burglebot
+    {
         // Whenever this attacks a minion and survives, draw a card.
         //handled
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX4_04H : SimTemplate //* Raise Dead
-	{
-		//Passive Hero Power: Whenever an enemy dies, raise a 5/5 Skeleton.
-		//Handled in triggerAMinionDied()
-	}
+    class Sim_NAX4_04H : SimTemplate //* Raise Dead
+    {
+        //Passive Hero Power: Whenever an enemy dies, raise a 5/5 Skeleton.
+        //Handled in triggerAMinionDied()
+    }
 }

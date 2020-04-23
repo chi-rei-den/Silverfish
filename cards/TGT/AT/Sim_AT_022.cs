@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_022 : SimTemplate //* Fist of Jaraxxus
-	{
-		//When you play or discard this, deal 4 damage to a random enemy.
+    class Sim_AT_022 : SimTemplate //* Fist of Jaraxxus
+    {
+        //When you play or discard this, deal 4 damage to a random enemy.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
+            var dmg = ownplay ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
 
             if (ownplay)
             {
@@ -41,19 +38,30 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth); //(pessimistic)
-                if (target == null) target = p.ownHero;
+                if (target == null)
+                {
+                    target = p.ownHero;
+                }
             }
+
             p.minionGetDamageOrHeal(target, dmg);
         }
 
         public override bool onCardDicscard(Playfield p, Handcard hc, Minion own, int num, bool checkBonus)
         {
-            if (checkBonus) return true;
+            if (checkBonus)
+            {
+                return true;
+            }
 
-            bool ownplay = true;
-            if (own != null) ownplay = own.own;
+            var ownplay = true;
+            if (own != null)
+            {
+                ownplay = own.own;
+            }
+
             Minion target = null;
-            int dmg = (ownplay) ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
+            var dmg = ownplay ? p.getSpellDamageDamage(4) : p.getEnemySpellDamageDamage(4);
 
             if (ownplay)
             {
@@ -62,8 +70,12 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.LowHealth); //(pessimistic)
-                if (target == null) target = p.ownHero;
+                if (target == null)
+                {
+                    target = p.ownHero;
+                }
             }
+
             p.minionGetDamageOrHeal(target, dmg);
             return true;
         }

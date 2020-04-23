@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_559 : SimTemplate //archmageantonidas
-	{
-
+    class Sim_EX1_559 : SimTemplate //archmageantonidas
+    {
 //    erhaltet jedes mal einen „feuerball“-zauber auf eure hand, wenn ihr einen zauber wirkt.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
@@ -39,5 +35,5 @@ namespace HREngine.Bots
                 p.drawACard(CardIds.Collectible.Mage.Fireball, wasOwnCard, true);
             }
         }
-	}
+    }
 }

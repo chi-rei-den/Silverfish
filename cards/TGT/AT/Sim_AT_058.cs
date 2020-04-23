@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_058 : SimTemplate //* King's Elekk
-	{
-		//Battlecry: Reveal a minion in each deck. If yours costs more, draw it.
+    class Sim_AT_058 : SimTemplate //* King's Elekk
+    {
+        //Battlecry: Reveal a minion in each deck. If yours costs more, draw it.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, own.own);
-		}
-	}
+        }
+    }
 }

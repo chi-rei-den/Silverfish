@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,29 +23,33 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_222 : SimTemplate //stormwindchampion
-	{
-
+    class Sim_CS2_222 : SimTemplate //stormwindchampion
+    {
 //    eure anderen diener haben +1/+1.
         public override void onAuraStarts(Playfield p, Minion own)
         {
             if (own.own)
             {
                 p.anzOwnStormwindChamps++;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
+                    if (own.entitiyID != m.entitiyID)
+                    {
+                        p.minionGetBuffed(m, 1, 1);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyStormwindChamps++;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID) p.minionGetBuffed(m, 1, 1);
+                    if (own.entitiyID != m.entitiyID)
+                    {
+                        p.minionGetBuffed(m, 1, 1);
+                    }
                 }
             }
-
         }
 
         public override void onAuraEnds(Playfield p, Minion own)
@@ -56,20 +57,25 @@ namespace HREngine.Bots
             if (own.own)
             {
                 p.anzOwnStormwindChamps--;
-                foreach (Minion m in p.ownMinions)
+                foreach (var m in p.ownMinions)
                 {
-                    if (own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
+                    if (own.entitiyID != m.entitiyID)
+                    {
+                        p.minionGetBuffed(m, -1, -1);
+                    }
                 }
             }
             else
             {
                 p.anzEnemyStormwindChamps--;
-                foreach (Minion m in p.enemyMinions)
+                foreach (var m in p.enemyMinions)
                 {
-                    if (own.entitiyID != m.entitiyID) p.minionGetBuffed(m, -1, -1);
+                    if (own.entitiyID != m.entitiyID)
+                    {
+                        p.minionGetBuffed(m, -1, -1);
+                    }
                 }
             }
         }
-
-	}
+    }
 }

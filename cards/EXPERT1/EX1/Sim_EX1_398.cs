@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_398 : SimTemplate//Arathi Weaponsmith
+    class Sim_EX1_398 : SimTemplate //Arathi Weaponsmith
     {
-        SimCard wcard = CardIds.NonCollectible.Warrior.ArathiWeaponsmith_BattleAxeToken;//battleaxe
+        SimCard wcard = CardIds.NonCollectible.Warrior.ArathiWeaponsmith_BattleAxeToken; //battleaxe
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            p.equipWeapon(wcard,own.own);
-
+            p.equipWeapon(this.wcard, own.own);
         }
-
     }
 }

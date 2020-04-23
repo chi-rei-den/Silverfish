@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,18 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_801 : SimTemplate //* Nesting Roc
-	{
-		//Battlecry: If you control at least 2 other minions, gain Taunt.
+    class Sim_UNG_801 : SimTemplate //* Nesting Roc
+    {
+        //Battlecry: If you control at least 2 other minions, gain Taunt.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            int num = (own.own) ? p.ownMinions.Count : p.enemyMinions.Count;
-			if (num > 1)
+            var num = own.own ? p.ownMinions.Count : p.enemyMinions.Count;
+            if (num > 1)
             {
                 own.taunt = true;
-                if (own.own) p.anzOwnTaunt++;
-                else p.anzEnemyTaunt++;
+                if (own.own)
+                {
+                    p.anzOwnTaunt++;
+                }
+                else
+                {
+                    p.anzEnemyTaunt++;
+                }
             }
         }
     }

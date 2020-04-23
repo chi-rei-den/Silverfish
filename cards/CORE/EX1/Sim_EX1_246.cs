@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,15 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_246 : SimTemplate //hex
-	{
+    class Sim_EX1_246 : SimTemplate //hex
+    {
         SimCard card = CardIds.NonCollectible.Neutral.Frog;
 //    verwandelt einen diener in einen frosch (0/1) mit spott/.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.minionTransform(target, card);
-		}
-
-	}
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.minionTransform(target, this.card);
+        }
+    }
 }

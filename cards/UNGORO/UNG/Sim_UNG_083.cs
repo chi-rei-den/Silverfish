@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_083 : SimTemplate //* Devilsaur Egg
-	{
-		//Deathrattle: Summon a 5/5 Devilsaur.
+    class Sim_UNG_083 : SimTemplate //* Devilsaur Egg
+    {
+        //Deathrattle: Summon a 5/5 Devilsaur.
 
         SimCard kid = CardIds.NonCollectible.Neutral.DevilsaurEgg_DevilsaurToken; //5/5 Devilsaur
-        
+
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(kid, m.zonepos-1, m.own);
+            p.callKid(this.kid, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

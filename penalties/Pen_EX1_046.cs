@@ -1,17 +1,13 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 namespace HREngine.Bots
 {
-	class Pen_EX1_046 : PenTemplate //darkirondwarf
-	{
-
+    class Pen_EX1_046 : PenTemplate //darkirondwarf
+    {
 //    kampfschrei:/ verleiht einem diener +2 angriff in diesem zug.
-		public override int getPlayPenalty(Playfield p, Minion m, Minion target, int choice, bool isLethal)
-		{
+        public override int getPlayPenalty(Playfield p, Minion m, Minion target, int choice, bool isLethal)
+        {
             if (target.own)
             {
                 if (!m.Ready)
@@ -21,15 +17,24 @@ namespace HREngine.Bots
             }
             else
             {
-                if (m.handcard.card.Type == CardType.MINION && p.ownMinions.Count == 0) return 0;
-                //allow it if you have biggamehunter
-                foreach (Handcard hc in p.owncards)
+                if (m.handcard.card.Type == CardType.MINION && p.ownMinions.Count == 0)
                 {
-                    if (hc.card.CardId == CardIds.Collectible.Neutral.BigGameHunter || hc.card.CardId == CardIds.Collectible.Priest.ShadowWordDeath) return 0;
+                    return 0;
                 }
+
+                //allow it if you have biggamehunter
+                foreach (var hc in p.owncards)
+                {
+                    if (hc.card.CardId == CardIds.Collectible.Neutral.BigGameHunter || hc.card.CardId == CardIds.Collectible.Priest.ShadowWordDeath)
+                    {
+                        return 0;
+                    }
+                }
+
                 return 500;
             }
+
             return 0;
-		}
-	}
+        }
+    }
 }

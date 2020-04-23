@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -27,22 +24,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_937 : SimTemplate //* Primalfin Lookout
-	{
-		//Battlecry: If you control another Murloc, Discover a Murloc.
+    class Sim_UNG_937 : SimTemplate //* Primalfin Lookout
+    {
+        //Battlecry: If you control another Murloc, Discover a Murloc.
 
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.entitiyID == own.entitiyID) continue;
+                if (m.entitiyID == own.entitiyID)
+                {
+                    continue;
+                }
+
                 if (m.handcard.card.Race == Race.MURLOC)
-				{
-					p.drawACard(CardIds.Collectible.Neutral.BluegillWarrior, own.own, true);
-					break;
-				}
+                {
+                    p.drawACard(CardIds.Collectible.Neutral.BluegillWarrior, own.own, true);
+                    break;
+                }
             }
-		}
-	}
+        }
+    }
 }

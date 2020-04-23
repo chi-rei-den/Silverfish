@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -26,25 +23,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_023 : SimTemplate //* Void Crusher
-	{
-		//Inspire: Destroy a random minion for each player.
+    class Sim_AT_023 : SimTemplate //* Void Crusher
+    {
+        //Inspire: Destroy a random minion for each player.
 
-		public override void onInspire(Playfield p, Minion m, bool own)
+        public override void onInspire(Playfield p, Minion m, bool own)
         {
-			if (m.own == own)
-			{
-                Minion found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
+            if (m.own == own)
+            {
+                var found = p.searchRandomMinion(p.enemyMinions, SearchMode.LowHealth);
                 if (found != null)
                 {
                     p.minionGetDestroyed(found);
                 }
-				found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
+
+                found = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth, SearchMode.LowAttack);
                 if (found != null)
                 {
                     p.minionGetDestroyed(found);
                 }
             }
         }
-	}
+    }
 }

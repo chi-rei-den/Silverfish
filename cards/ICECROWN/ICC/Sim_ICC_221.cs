@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -31,8 +29,14 @@ namespace HREngine.Bots
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (ownplay) p.ownWeapon.lifesteal = true;
-            else p.enemyWeapon.lifesteal = true;
+            if (ownplay)
+            {
+                p.ownWeapon.lifesteal = true;
+            }
+            else
+            {
+                p.enemyWeapon.lifesteal = true;
+            }
         }
     }
 }

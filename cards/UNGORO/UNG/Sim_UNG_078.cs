@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_078 : SimTemplate //* Tortollan Forager
-	{
-		//Battlecry: Add a random minion with 5 or more Attack to your hand.
+    class Sim_UNG_078 : SimTemplate //* Tortollan Forager
+    {
+        //Battlecry: Add a random minion with 5 or more Attack to your hand.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             p.drawACard(CardIds.Collectible.Neutral.BootyBayBodyguard, own.own, true);
         }
-}
+    }
 }

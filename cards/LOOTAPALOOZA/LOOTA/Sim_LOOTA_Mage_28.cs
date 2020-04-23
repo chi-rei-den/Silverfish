@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_LOOTA_Mage_28 : SimTemplate //* 奥妙神术 Arcane
-	{
-		//
-		//
-
-
-	}
+    class Sim_LOOTA_Mage_28 : SimTemplate //* 奥妙神术 Arcane
+    {
+        //
+        //
+    }
 }

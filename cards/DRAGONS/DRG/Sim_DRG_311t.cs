@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_311t : SimTemplate //* 树人 Treant
-	{
-		//
-		//
-
-
-	}
+    class Sim_DRG_311t : SimTemplate //* 树人 Treant
+    {
+        //
+        //
+    }
 }

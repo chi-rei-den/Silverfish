@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132_WARLOCK : SimTemplate //* Soul Tap
-	{
-		//Hero Power. Draw a card (without the Health penalty)
+    class Sim_AT_132_WARLOCK : SimTemplate //* Soul Tap
+    {
+        //Hero Power. Draw a card (without the Health penalty)
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.drawACard(SimCard.None, ownplay);
         }
-	}
+    }
 }

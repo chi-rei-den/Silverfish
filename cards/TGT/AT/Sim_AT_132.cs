@@ -1,9 +1,6 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,48 +25,51 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_132 : SimTemplate //* Justicar Trueheart
-	{
-		//Battlecry: Replace your starting Hero Power with a better one.
-		
-		public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
-		{
-            CardClass HeroStartClass = (m.own) ? p.ownHeroStartClass : p.enemyHeroStartClass;
-			SimCard tmp = SimCard.None;
+    class Sim_AT_132 : SimTemplate //* Justicar Trueheart
+    {
+        //Battlecry: Replace your starting Hero Power with a better one.
+
+        public override void getBattlecryEffect(Playfield p, Minion m, Minion target, int choice)
+        {
+            var HeroStartClass = m.own ? p.ownHeroStartClass : p.enemyHeroStartClass;
+            SimCard tmp = SimCard.None;
 
             switch (HeroStartClass)
             {
                 case CardClass.WARRIOR:
-					tmp = CardIds.NonCollectible.Warrior.JusticarTrueheart_TankUp; //Tank Up!
-					break;
+                    tmp = CardIds.NonCollectible.Warrior.JusticarTrueheart_TankUp; //Tank Up!
+                    break;
                 case CardClass.WARLOCK:
-					tmp = CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap; //Soul Tap
+                    tmp = CardIds.NonCollectible.Warlock.JusticarTrueheart_SoulTap; //Soul Tap
                     break;
                 case CardClass.ROGUE:
-					tmp = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers; //Poisoned Daggers
-					break;
-                case CardClass.SHAMAN:
-					tmp = CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam; //Totemic Slam
-					break;
-                case CardClass.PRIEST:
-					tmp = CardIds.NonCollectible.Priest.JusticarTrueheart_Heal; //Heal
-					break;
-                case CardClass.PALADIN:
-					tmp = CardIds.NonCollectible.Paladin.JusticarTrueheart_TheSilverHand; //The Silver Hand
-					break;
-                case CardClass.MAGE:
-					tmp = CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2; //Fireblast Rank 2
-					break;
-                case CardClass.HUNTER:
-					tmp = CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot; //Ballista Shot
-					break;
-                case CardClass.DRUID:
-					tmp = CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift; //Dire Shapeshift
+                    tmp = CardIds.NonCollectible.Rogue.JusticarTrueheart_PoisonedDaggers; //Poisoned Daggers
                     break;
-				//default:
-			}
+                case CardClass.SHAMAN:
+                    tmp = CardIds.NonCollectible.Shaman.JusticarTrueheart_TotemicSlam; //Totemic Slam
+                    break;
+                case CardClass.PRIEST:
+                    tmp = CardIds.NonCollectible.Priest.JusticarTrueheart_Heal; //Heal
+                    break;
+                case CardClass.PALADIN:
+                    tmp = CardIds.NonCollectible.Paladin.JusticarTrueheart_TheSilverHand; //The Silver Hand
+                    break;
+                case CardClass.MAGE:
+                    tmp = CardIds.NonCollectible.Mage.JusticarTrueheart_FireblastRank2; //Fireblast Rank 2
+                    break;
+                case CardClass.HUNTER:
+                    tmp = CardIds.NonCollectible.Hunter.JusticarTrueheart_BallistaShot; //Ballista Shot
+                    break;
+                case CardClass.DRUID:
+                    tmp = CardIds.NonCollectible.Druid.JusticarTrueheart_DireShapeshift; //Dire Shapeshift
+                    break;
+                //default:
+            }
 
-            if (tmp != SimCard.None) p.setNewHeroPower(tmp, m.own);
-		}
-	}
+            if (tmp != SimCard.None)
+            {
+                p.setNewHeroPower(tmp, m.own);
+            }
+        }
+    }
 }

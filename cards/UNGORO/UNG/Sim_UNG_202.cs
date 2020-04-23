@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
@@ -26,19 +23,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_202 : SimTemplate //* Fire Plume Harbinger
-	{
-		//Battlecry: Reduce the Cost of Elementals in your hand by (1).
-        
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+    class Sim_UNG_202 : SimTemplate //* Fire Plume Harbinger
+    {
+        //Battlecry: Reduce the Cost of Elementals in your hand by (1).
+
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             if (own.own)
             {
-                foreach (Handcard hc in p.owncards)
+                foreach (var hc in p.owncards)
                 {
-                    if (hc.card.Race == Race.ELEMENTAL) hc.manacost--;
+                    if (hc.card.Race == Race.ELEMENTAL)
+                    {
+                        hc.manacost--;
+                    }
                 }
             }
-		}
-	}
+        }
+    }
 }

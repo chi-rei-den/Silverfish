@@ -1,8 +1,4 @@
-using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_094 : SimTemplate //* Deadly Fork
-	{
-		//Deathrattle: Add a 3/2 weapon to your hand.
+    class Sim_KAR_094 : SimTemplate //* Deadly Fork
+    {
+        //Deathrattle: Add a 3/2 weapon to your hand.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {

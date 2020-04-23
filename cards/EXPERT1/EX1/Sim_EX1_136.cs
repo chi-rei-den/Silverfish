@@ -1,7 +1,4 @@
-using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -32,20 +29,23 @@ namespace HREngine.Bots
 
         public override void onSecretPlay(Playfield p, bool ownplay, int number)
         {
-            SimCard kid = (ownplay ? p.revivingOwnMinion : p.revivingEnemyMinion);
-            List<Minion> tmp = ownplay ? p.ownMinions : p.enemyMinions;
-            int pos = tmp.Count;
+            var kid = ownplay ? p.revivingOwnMinion : p.revivingEnemyMinion;
+            var tmp = ownplay ? p.ownMinions : p.enemyMinions;
+            var pos = tmp.Count;
 
             p.callKid(kid, pos, ownplay, true, true);
-            
+
             if (tmp.Count >= 1)
             {
-                Minion summonedMinion = tmp[pos];
+                var summonedMinion = tmp[pos];
                 if (summonedMinion.handcard.card.CardId == kid.CardId)
                 {
                     summonedMinion.Hp = 1;
                     summonedMinion.wounded = false;
-                    if (summonedMinion.Hp < summonedMinion.maxHp) summonedMinion.wounded = true;
+                    if (summonedMinion.Hp < summonedMinion.maxHp)
+                    {
+                        summonedMinion.wounded = true;
+                    }
                 }
             }
         }

@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,23 +23,36 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_830: SimTemplate //* Shadowreaper Anduin
+    class Sim_ICC_830 : SimTemplate //* Shadowreaper Anduin
     {
         // Battlecry: Destroy all minions with 5 or more Attack.
-        
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.setNewHeroPower(CardIds.NonCollectible.Priest.ShadowreaperAnduin_Voidform, ownplay); // Voidform
-            if (ownplay) p.ownHero.armor += 5;
-            else p.enemyHero.armor += 5;
-
-            foreach (Minion m in p.enemyMinions)
+            if (ownplay)
             {
-                if (m.Angr >= 5) p.minionGetDestroyed(m);
+                p.ownHero.armor += 5;
             }
-            foreach (Minion m in p.ownMinions)
+            else
             {
-                if (m.Angr >= 5) p.minionGetDestroyed(m);
+                p.enemyHero.armor += 5;
+            }
+
+            foreach (var m in p.enemyMinions)
+            {
+                if (m.Angr >= 5)
+                {
+                    p.minionGetDestroyed(m);
+                }
+            }
+
+            foreach (var m in p.ownMinions)
+            {
+                if (m.Angr >= 5)
+                {
+                    p.minionGetDestroyed(m);
+                }
             }
         }
     }

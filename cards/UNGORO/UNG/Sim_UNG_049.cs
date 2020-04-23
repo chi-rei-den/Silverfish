@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_049 : SimTemplate //* Tar Lurker
-	{
-		//Taunt. Has +3 Attack during your opponent's turn.
+    class Sim_UNG_049 : SimTemplate //* Tar Lurker
+    {
+        //Taunt. Has +3 Attack during your opponent's turn.
 
         public override void onTurnEndsTrigger(Playfield p, Minion triggerEffectMinion, bool turnEndOfOwner)
         {

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_TRLA_Mage_09 : SimTemplate //* 赛场传说 Gurubashi Legends
-	{
-		//
-		//
-
-
-	}
+    class Sim_TRLA_Mage_09 : SimTemplate //* 赛场传说 Gurubashi Legends
+    {
+        //
+        //
+    }
 }

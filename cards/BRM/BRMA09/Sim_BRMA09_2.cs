@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,18 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA09_2 : SimTemplate //* Open the Gates
-	{
-		// Hero Power: Summon three 1/1 Whelps. Get a new Hero Power.
+    class Sim_BRMA09_2 : SimTemplate //* Open the Gates
+    {
+        // Hero Power: Summon three 1/1 Whelps. Get a new Hero Power.
 
-		SimCard kid = CardIds.NonCollectible.Neutral.OpentheGates_WhelpTokenBRS;//1/1Whelp
-		
+        SimCard kid = CardIds.NonCollectible.Neutral.OpentheGates_WhelpTokenBRS; //1/1Whelp
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay, false);
-            p.callKid(kid, place, ownplay);
-            p.callKid(kid, place, ownplay);
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay, false);
+            p.callKid(this.kid, place, ownplay);
+            p.callKid(this.kid, place, ownplay);
         }
-	}
+    }
 }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,19 +23,26 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_450: SimTemplate //* Death Revenant
+    class Sim_ICC_450 : SimTemplate //* Death Revenant
     {
         // Battlecry: Gain +1/+1 for each damaged minion.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
-            int gain = 0;
-            List<Minion> temp = (own.own) ? p.ownMinions : p.enemyMinions;
-            foreach (Minion m in temp)
+            var gain = 0;
+            var temp = own.own ? p.ownMinions : p.enemyMinions;
+            foreach (var m in temp)
             {
-                if (m.wounded) gain++;
+                if (m.wounded)
+                {
+                    gain++;
+                }
             }
-            if (gain >= 1) p.minionGetBuffed(own, gain, gain);
+
+            if (gain >= 1)
+            {
+                p.minionGetBuffed(own, gain, gain);
+            }
         }
     }
 }

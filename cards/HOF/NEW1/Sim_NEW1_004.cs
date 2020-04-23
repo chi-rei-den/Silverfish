@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,8 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NEW1_004 : SimTemplate //vanish
-	{
-
+    class Sim_NEW1_004 : SimTemplate //vanish
+    {
 //    lasst alle diener auf die hand ihrer besitzer zurückkehren.
         //todo clear playfield
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
@@ -62,7 +59,7 @@ namespace HREngine.Bots
             p.ownBaronRivendare = 0;
             p.enemyBaronRivendare = 0;
             p.ownBrannBronzebeard = 0;
-            p.enemyBrannBronzebeard = 0;            
+            p.enemyBrannBronzebeard = 0;
             p.ownTurnEndEffectsTriggerTwice = 0;
             p.enemyTurnEndEffectsTriggerTwice = 0;
             p.ownFandralStaghelm = 0;
@@ -76,7 +73,7 @@ namespace HREngine.Bots
 
             p.spellpower = 0;
             p.enemyspellpower = 0;
-            
+
             p.winzigebeschwoererin = 0;
             p.managespenst = 0;
             p.ownMinionsCostMore = 0;
@@ -87,23 +84,23 @@ namespace HREngine.Bots
             p.anzOwnCloakedHuntress = 0;
             p.nerubarweblord = 0;
             p.ownSpelsCostMore = 0;
-            
+
 
             p.ownHeroPowerExtraDamage = 0;
             p.enemyHeroPowerExtraDamage = 0;
 
-            foreach (Minion m in p.ownMinions)
+            foreach (var m in p.ownMinions)
             {
                 p.drawACard(m.name, true, true);
             }
-            foreach (Minion m in p.enemyMinions)
+
+            foreach (var m in p.enemyMinions)
             {
                 p.drawACard(m.name, false, true);
             }
+
             p.ownMinions.Clear();
             p.enemyMinions.Clear();
-
         }
-
-	}
+    }
 }

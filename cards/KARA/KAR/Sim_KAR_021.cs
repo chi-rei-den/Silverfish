@@ -1,9 +1,6 @@
 using Chireiden.Silverfish;
 using HearthDb;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,9 +25,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_021 : SimTemplate // Wicked Witchdoctor
-	{
-		//Whenever you cast a spell, summon a random basic Totem.
+    class Sim_KAR_021 : SimTemplate // Wicked Witchdoctor
+    {
+        //Whenever you cast a spell, summon a random basic Totem.
 
         SimCard searing = CardIds.NonCollectible.Shaman.SearingTotem;
         SimCard healing = CardIds.NonCollectible.Shaman.HealingTotem;
@@ -40,31 +37,53 @@ namespace HREngine.Bots
         {
             if (triggerEffectMinion.own == wasOwnCard && hc.card.Type == CardType.SPELL)
             {
-				SimCard kid;
-				int otherTotems = 0;
-				bool wrath = false;
-                foreach (Minion m in (wasOwnCard) ? p.ownMinions : p.enemyMinions)
-				{
-					switch (m.name.CardId)
-					{
-						case CardIds.NonCollectible.Shaman.SearingTotem: otherTotems++; continue;
-						case CardIds.NonCollectible.Shaman.StoneclawTotem: otherTotems++; continue;
-						case CardIds.NonCollectible.Shaman.HealingTotem: otherTotems++; continue;
-						case CardIds.NonCollectible.Shaman.WrathOfAirTotem: wrath = true; continue;
-					}
-				}
-				if (p.isLethalCheck)
-				{
-					if (otherTotems == 3 && !wrath) kid = wrathofair;
-					else kid = healing;
-				}
-				else
-				{
-					if (!wrath) kid = wrathofair;
-					else kid = searing;
-				}
+                SimCard kid;
+                var otherTotems = 0;
+                var wrath = false;
+                foreach (var m in wasOwnCard ? p.ownMinions : p.enemyMinions)
+                {
+                    switch (m.name.CardId)
+                    {
+                        case CardIds.NonCollectible.Shaman.SearingTotem:
+                            otherTotems++;
+                            continue;
+                        case CardIds.NonCollectible.Shaman.StoneclawTotem:
+                            otherTotems++;
+                            continue;
+                        case CardIds.NonCollectible.Shaman.HealingTotem:
+                            otherTotems++;
+                            continue;
+                        case CardIds.NonCollectible.Shaman.WrathOfAirTotem:
+                            wrath = true;
+                            continue;
+                    }
+                }
+
+                if (p.isLethalCheck)
+                {
+                    if (otherTotems == 3 && !wrath)
+                    {
+                        kid = this.wrathofair;
+                    }
+                    else
+                    {
+                        kid = this.healing;
+                    }
+                }
+                else
+                {
+                    if (!wrath)
+                    {
+                        kid = this.wrathofair;
+                    }
+                    else
+                    {
+                        kid = this.searing;
+                    }
+                }
+
                 p.callKid(kid, triggerEffectMinion.zonepos, wasOwnCard);
             }
         }
-	}
+    }
 }

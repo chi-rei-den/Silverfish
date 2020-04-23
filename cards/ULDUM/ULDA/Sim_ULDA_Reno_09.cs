@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_ULDA_Reno_09 : SimTemplate //* 上古之神 Old God
-	{
-		//
-		//
-
-
-	}
+    class Sim_ULDA_Reno_09 : SimTemplate //* 上古之神 Old God
+    {
+        //
+        //
+    }
 }

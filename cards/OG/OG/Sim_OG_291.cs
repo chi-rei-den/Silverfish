@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -36,7 +34,7 @@ namespace HREngine.Bots
                 if (m.own)
                 {
                     p.drawACard(target.handcard.card.CardId, m.own, true);
-                    int i = p.owncards.Count - 1;
+                    var i = p.owncards.Count - 1;
                     p.owncards[i].addattack = 1 - p.owncards[i].card.Attack;
                     p.owncards[i].addHp = 1 - p.owncards[i].card.Health;
                     p.owncards[i].manacost = 1;

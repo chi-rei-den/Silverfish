@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,14 +24,17 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_048 : SimTemplate //* Mark of Y'Shaarj
-	{
-		//Give a minion +2/+2. If it's a Beast, draw a card.
+    class Sim_OG_048 : SimTemplate //* Mark of Y'Shaarj
+    {
+        //Give a minion +2/+2. If it's a Beast, draw a card.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
             p.minionGetBuffed(target, 2, 2);
-			if (target.handcard.card.Race == Race.BEAST) p.drawACard(SimCard.None, ownplay);
+            if (target.handcard.card.Race == Race.BEAST)
+            {
+                p.drawACard(SimCard.None, ownplay);
+            }
         }
     }
 }

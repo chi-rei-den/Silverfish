@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,16 +23,12 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FP1_030 : SimTemplate //loatheb
-	{
-
+    class Sim_FP1_030 : SimTemplate //loatheb
+    {
 //    kampfschrei:/ im nächsten zug kosten zauber für euren gegner (5) mehr.
-		public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
-		{
+        public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
+        {
             p.loatheb = true;
-		}
-
-	
-
-	}
+        }
+    }
 }

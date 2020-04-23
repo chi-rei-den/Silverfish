@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_110 : SimTemplate //* cairnebloodhoof
-	{
+    class Sim_EX1_110 : SimTemplate //* cairnebloodhoof
+    {
         //Deathrattle: Summon a 4/5 Baine Bloodhoof.
 
         SimCard blaine = CardIds.NonCollectible.Neutral.CairneBloodhoof_BaineBloodhoofToken;
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
-            p.callKid(blaine, m.zonepos-1, m.own);
+            p.callKid(this.blaine, m.zonepos - 1, m.own);
         }
-	}
+    }
 }

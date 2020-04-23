@@ -1,8 +1,4 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,17 +23,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_CS2_003 : SimTemplate//Mind Vision
+    class Sim_CS2_003 : SimTemplate //Mind Vision
     {
-
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int anz = (ownplay) ? p.enemyAnzCards : p.owncards.Count;
+            var anz = ownplay ? p.enemyAnzCards : p.owncards.Count;
             if (anz >= 1)
             {
-                p.drawACard(SimCard.None, ownplay,true);
+                p.drawACard(SimCard.None, ownplay, true);
             }
         }
-
     }
 }

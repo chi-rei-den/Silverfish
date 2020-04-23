@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,15 +23,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_tt_004 : SimTemplate //* flesheatingghoul
-	{
+    class Sim_tt_004 : SimTemplate //* flesheatingghoul
+    {
 //    Whenever a minion dies, gain +1 Attack.
 
         public override void onMinionDiedTrigger(Playfield p, Minion m, Minion diedMinion)
         {
-            int diedMinions = p.tempTrigger.ownMinionsDied + p.tempTrigger.enemyMinionsDied;
-            if (diedMinions == 0) return;
-            int residual = (p.pID == m.pID) ? diedMinions - m.extraParam2 : diedMinions;
+            var diedMinions = p.tempTrigger.ownMinionsDied + p.tempTrigger.enemyMinionsDied;
+            if (diedMinions == 0)
+            {
+                return;
+            }
+
+            var residual = p.pID == m.pID ? diedMinions - m.extraParam2 : diedMinions;
             m.pID = p.pID;
             m.extraParam2 = diedMinions;
             if (residual >= 1)
@@ -41,5 +43,5 @@ namespace HREngine.Bots
                 p.minionGetBuffed(m, residual, 0);
             }
         }
-	}
+    }
 }

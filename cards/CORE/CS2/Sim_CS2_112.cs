@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,15 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_112 : SimTemplate //arcanitereaper
-	{
-
+    class Sim_CS2_112 : SimTemplate //arcanitereaper
+    {
         SimCard card = CardIds.Collectible.Warrior.ArcaniteReaper;
+
         //
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(card,ownplay);
+            p.equipWeapon(this.card, ownplay);
         }
-
-	}
+    }
 }

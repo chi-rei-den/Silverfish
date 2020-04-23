@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DREAM_01 : SimTemplate //laughingsister
-	{
-
+    class Sim_DREAM_01 : SimTemplate //laughingsister
+    {
 //    kann nicht als ziel von zaubern oder heldenfähigkeiten gewählt werden.
 
         public override void getBattlecryEffect(Playfield p, Minion own, Minion target, int choice)
         {
             own.cantBeTargetedBySpellsOrHeroPowers = true;
         }
-	}
+    }
 }

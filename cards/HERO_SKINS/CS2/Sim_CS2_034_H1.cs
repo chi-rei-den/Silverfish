@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_034_H1 : SimTemplate //* Fireblast
-	{
-		//Hero Power: Deal 1 damage.
-		
+    class Sim_CS2_034_H1 : SimTemplate //* Fireblast
+    {
+        //Hero Power: Deal 1 damage.
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int dmg = (ownplay) ? p.getHeroPowerDamage(1) : p.getEnemyHeroPowerDamage(1);
+            var dmg = ownplay ? p.getHeroPowerDamage(1) : p.getEnemyHeroPowerDamage(1);
             p.minionGetDamageOrHeal(target, dmg);
         }
-	}
+    }
 }

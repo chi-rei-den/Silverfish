@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRM_017 : SimTemplate //* Resurrect
-	{
-		// Summon a random friendly minion that died this game.
+    class Sim_BRM_017 : SimTemplate //* Resurrect
+    {
+        // Summon a random friendly minion that died this game.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             if (p.ownMaxMana >= 6)
             {
-                int posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                var posi = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
                 if (p.OwnLastDiedMinion == SimCard.None)
                 {
                     p.callKid(CardIds.NonCollectible.Priest.Mindgames_ShadowOfNothingToken, posi, ownplay, false);
@@ -46,6 +42,6 @@ namespace HREngine.Bots
                     p.callKid(p.OwnLastDiedMinion, posi, ownplay, false);
                 }
             }
-		}
-	}
+        }
+    }
 }

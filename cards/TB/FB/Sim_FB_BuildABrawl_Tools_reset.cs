@@ -21,7 +21,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_FB_BuildABrawl_Tools_reset : SimTemplate
-	{
-	}
+    class Sim_FB_BuildABrawl_Tools_reset : SimTemplate
+    {
+    }
 }

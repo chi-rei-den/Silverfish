@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,12 +25,14 @@ namespace HREngine.Bots
 {
     class Sim_GVG_016 : SimTemplate //Fel Reaver
     {
-
         //    Whenever your opponent plays a card, discard the top 3 cards of your deck.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
-            if (wasOwnCard == triggerEffectMinion.own) return; //owner of card = owner of minion -> no effect
+            if (wasOwnCard == triggerEffectMinion.own)
+            {
+                return; //owner of card = owner of minion -> no effect
+            }
 
             if (triggerEffectMinion.own)
             {
@@ -43,7 +43,5 @@ namespace HREngine.Bots
                 p.enemyDeckSize = Math.Max(0, p.enemyDeckSize - 3);
             }
         }
-
     }
-
 }

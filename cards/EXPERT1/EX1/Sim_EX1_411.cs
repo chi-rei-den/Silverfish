@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,13 +24,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_411 : SimTemplate//Gorehowl
+    class Sim_EX1_411 : SimTemplate //Gorehowl
     {
         SimCard wcard = CardIds.Collectible.Warrior.Gorehowl;
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(wcard, ownplay);
+            p.equipWeapon(this.wcard, ownplay);
         }
-
     }
 }

@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,21 +24,22 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_314 : SimTemplate //* Blood to Ichor
-	{
-		//Deal 1 damage to a minion. If it survives, summon a 2/2 Slime.
+    class Sim_OG_314 : SimTemplate //* Blood to Ichor
+    {
+        //Deal 1 damage to a minion. If it survives, summon a 2/2 Slime.
 
         SimCard kid = CardIds.NonCollectible.Neutral.InfestedTauren_Slime;
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
             if (target.Hp > dmg || target.immune || target.divineshild)
             {
-				int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-				p.callKid(kid, pos, ownplay);
+                var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+                p.callKid(this.kid, pos, ownplay);
             }
+
             p.minionGetDamageOrHeal(target, dmg);
-		}
-	}
+        }
+    }
 }

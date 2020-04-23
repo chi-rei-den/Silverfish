@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,9 +23,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX14_03 : SimTemplate //* Frozen Champion
-	{
-		//Permanently Frozen.  Adjacent minions are Immune to Frost Breath.
-		// Handled in Frost Breath
-	}
+    class Sim_NAX14_03 : SimTemplate //* Frozen Champion
+    {
+        //Permanently Frozen.  Adjacent minions are Immune to Frost Breath.
+        // Handled in Frost Breath
+    }
 }

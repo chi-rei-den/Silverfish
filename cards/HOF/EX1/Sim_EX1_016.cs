@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
 using Chireiden.Silverfish;
 
 /* _BEGIN_TEMPLATE_
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 namespace HREngine.Bots
 {
     class Sim_EX1_016 : SimTemplate //* Sylvanas Windrunner
-	{
+    {
         //Deathrattle: Take control of a random enemy minion.
 
         public override void onDeathrattle(Playfield p, Minion m)
@@ -40,9 +37,16 @@ namespace HREngine.Bots
             else
             {
                 target = p.searchRandomMinion(p.ownMinions, SearchMode.HighHealth);
-                if (p.isOwnTurn && target != null && target.Ready) p.evaluatePenality += 5;
+                if (p.isOwnTurn && target != null && target.Ready)
+                {
+                    p.evaluatePenality += 5;
+                }
             }
-            if (target != null) p.minionGetControlled(target, m.own, false);
+
+            if (target != null)
+            {
+                p.minionGetControlled(target, m.own, false);
+            }
         }
-	}
+    }
 }

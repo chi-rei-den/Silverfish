@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_602a : SimTemplate //* Jade Idol
-	{
-		// Summon a Jade Golem.
+    class Sim_CFM_602a : SimTemplate //* Jade Idol
+    {
+        // Summon a Jade Golem.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
             p.callKid(p.getNextJadeGolem(ownplay), pos, ownplay);
         }
     }

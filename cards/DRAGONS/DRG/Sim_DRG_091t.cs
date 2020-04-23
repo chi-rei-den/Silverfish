@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DRG_091t : SimTemplate //* 触手 Tentacle
-	{
-		//
-		//
-
-
-	}
+    class Sim_DRG_091t : SimTemplate //* 触手 Tentacle
+    {
+        //
+        //
+    }
 }

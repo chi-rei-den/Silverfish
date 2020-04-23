@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_626 : SimTemplate //massdispel
-	{
-
+    class Sim_EX1_626 : SimTemplate //massdispel
+    {
 //    bringt alle feindlichen diener zum schweigen/. zieht eine karte.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.allMinionsGetSilenced(!ownplay);
             p.drawACard(SimCard.None, ownplay);
-		}
-
-	}
+        }
+    }
 }

@@ -1,67 +1,67 @@
+using System;
+using System.Collections.Generic;
 using Chireiden.Silverfish;
 using HearthDb;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
 
 namespace HREngine.Bots
 {
     public class Hrtprozis
     {
-        public int pId = 0;
+        public int pId;
         public int attackFaceHp = 15;
-        public int ownHeroFatigue = 0;
+        public int ownHeroFatigue;
         public int ownDeckSize = 30;
         public int enemyDeckSize = 30;
-        public int enemyHeroFatigue = 0;
-        public int gTurn = 0;
-        public int gTurnStep = 0;
+        public int enemyHeroFatigue;
+        public int gTurn;
+        public int gTurnStep;
 
         public int ownHeroEntity = -1;
         public int enemyHeroEntitiy = -1;
         public DateTime roundstart = DateTime.Now;
-        public int currentMana = 0;
+        public int currentMana;
 
         public int heroHp = 30, enemyHp = 30;
-        public int heroAtk = 0, enemyAtk = 0;
-        public int heroDefence = 0, enemyDefence = 0;
-        public bool ownheroisread = false;
-        public int ownHeroNumAttacksThisTurn = 0;
-        public bool ownHeroWindfury = false;
-        public bool herofrozen = false;
-        public bool enemyfrozen = false;
+        public int heroAtk, enemyAtk;
+        public int heroDefence, enemyDefence;
+        public bool ownheroisread;
+        public int ownHeroNumAttacksThisTurn;
+        public bool ownHeroWindfury;
+        public bool herofrozen;
+        public bool enemyfrozen;
 
         public List<SimCard> ownSecretList = new List<SimCard>();
-        public int enemySecretCount = 0;
+        public int enemySecretCount;
         public Dictionary<int, SimCard> DiscoverCards = new Dictionary<int, SimCard>();
         public Dictionary<SimCard, int> turnDeck = new Dictionary<SimCard, int>();
         private Dictionary<int, SimCard> deckCardForCost = new Dictionary<int, SimCard>();
-        public bool noDuplicates = false;
+        public bool noDuplicates;
 
         private int numTauntCards = -1;
         private int numDivineShieldCards = -1;
         private int numLifestealCards = -1;
         private int numWindfuryCards = -1;
 
-        public bool setGameRule = false;
+        public bool setGameRule;
 
         public CardClass ownHeroStartClass;
         public CardClass enemyHeroStartClass;
         public SimCard heroAbility;
-        public bool ownAbilityisReady = false;
+        public bool ownAbilityisReady;
         public int ownHeroPowerCost = 2;
         public SimCard enemyAbility;
         public int enemyHeroPowerCost = 2;
-        public int numOptionsPlayedThisTurn = 0;
-        public int numMinionsPlayedThisTurn = 0;
+        public int numOptionsPlayedThisTurn;
+        public int numMinionsPlayedThisTurn;
         public SimCard OwnLastDiedMinion = SimCard.None;
 
-        public int cardsPlayedThisTurn = 0;
-        public int ueberladung = 0;
-        public int lockedMana = 0;
+        public int cardsPlayedThisTurn;
+        public int ueberladung;
+        public int lockedMana;
 
-        public int ownMaxMana = 0;
-        public int enemyMaxMana = 0;
+        public int ownMaxMana;
+        public int enemyMaxMana;
 
         public Minion ownHero = new Minion();
         public Minion enemyHero = new Minion();
@@ -71,17 +71,17 @@ namespace HREngine.Bots
         public List<Minion> enemyMinions = new List<Minion>();
         public Dictionary<int, IDEnumOwner> LurkersDB = new Dictionary<int, IDEnumOwner>();
 
-        public int anzOgOwnCThunHpBonus = 0;
-        public int anzOgOwnCThunAngrBonus = 0;
-        public int anzOgOwnCThunTaunt = 0;
-        public int anzOwnJadeGolem = 0;
-        public int anzEnemyJadeGolem = 0;
-        public int ownCrystalCore = 0;
-        public bool ownMinionsInDeckCost0 = false;
-        public int anzOwnElementalsThisTurn = 0;
-        public int anzOwnElementalsLastTurn = 0;
-        public int ownElementalsHaveLifesteal = 0;
-        private int ownPlayerController = 0;
+        public int anzOgOwnCThunHpBonus;
+        public int anzOgOwnCThunAngrBonus;
+        public int anzOgOwnCThunTaunt;
+        public int anzOwnJadeGolem;
+        public int anzEnemyJadeGolem;
+        public int ownCrystalCore;
+        public bool ownMinionsInDeckCost0;
+        public int anzOwnElementalsThisTurn;
+        public int anzOwnElementalsLastTurn;
+        public int ownElementalsHaveLifesteal;
+        private int ownPlayerController;
 
         public PenalityManager penman;
         public Settings settings;
@@ -99,9 +99,9 @@ namespace HREngine.Bots
 
         public void setInstances()
         {
-            help = Helpfunctions.Instance;
-            penman = PenalityManager.Instance;
-            settings = Settings.Instance;
+            this.help = Helpfunctions.Instance;
+            this.penman = PenalityManager.Instance;
+            this.settings = Settings.Instance;
         }
 
         private Hrtprozis()
@@ -115,7 +115,7 @@ namespace HREngine.Bots
 
         public int getPid()
         {
-            return pId++;
+            return this.pId++;
         }
 
         public void clearAllNewGame()
@@ -128,39 +128,40 @@ namespace HREngine.Bots
 
         public void clearAllRecalc()
         {
-            pId = 0;
-            ownHeroEntity = -1;
-            enemyHeroEntitiy = -1;
-            currentMana = 0;
-            heroHp = 30;
-            enemyHp = 30;
-            heroAtk = 0;
-            enemyAtk = 0;
-            heroDefence = 0; enemyDefence = 0;
-            ownheroisread = false;
-            ownAbilityisReady = false;
-            ownHeroNumAttacksThisTurn = 0;
-            ownHeroWindfury = false;
-            ownSecretList.Clear();
-            enemySecretCount = 0;
-            enemyHero.CardClass = CardClass.INVALID;
-            heroAbility = new SimCard();
-            enemyAbility = new SimCard();
-            herofrozen = false;
-            enemyfrozen = false;
-            numMinionsPlayedThisTurn = 0;
-            cardsPlayedThisTurn = 0;
-            ueberladung = 0;
-            lockedMana = 0;
-            ownMaxMana = 0;
-            enemyMaxMana = 0;
-            ownWeapon = new Weapon();
-            enemyWeapon = new Weapon();
-            ownMinions.Clear();
-            enemyMinions.Clear();
-            noDuplicates = false;
-            deckCardForCost.Clear();
-            turnDeck.Clear();
+            this.pId = 0;
+            this.ownHeroEntity = -1;
+            this.enemyHeroEntitiy = -1;
+            this.currentMana = 0;
+            this.heroHp = 30;
+            this.enemyHp = 30;
+            this.heroAtk = 0;
+            this.enemyAtk = 0;
+            this.heroDefence = 0;
+            this.enemyDefence = 0;
+            this.ownheroisread = false;
+            this.ownAbilityisReady = false;
+            this.ownHeroNumAttacksThisTurn = 0;
+            this.ownHeroWindfury = false;
+            this.ownSecretList.Clear();
+            this.enemySecretCount = 0;
+            this.enemyHero.CardClass = CardClass.INVALID;
+            this.heroAbility = new SimCard();
+            this.enemyAbility = new SimCard();
+            this.herofrozen = false;
+            this.enemyfrozen = false;
+            this.numMinionsPlayedThisTurn = 0;
+            this.cardsPlayedThisTurn = 0;
+            this.ueberladung = 0;
+            this.lockedMana = 0;
+            this.ownMaxMana = 0;
+            this.enemyMaxMana = 0;
+            this.ownWeapon = new Weapon();
+            this.enemyWeapon = new Weapon();
+            this.ownMinions.Clear();
+            this.enemyMinions.Clear();
+            this.noDuplicates = false;
+            this.deckCardForCost.Clear();
+            this.turnDeck.Clear();
         }
 
 
@@ -176,25 +177,25 @@ namespace HREngine.Bots
 
         public void updateJadeGolemsInfo(int anzOwnJG, int anzEmemyJG)
         {
-            anzOwnJadeGolem = anzOwnJG;
-            anzEnemyJadeGolem = anzEmemyJG;
+            this.anzOwnJadeGolem = anzOwnJG;
+            this.anzEnemyJadeGolem = anzEmemyJG;
         }
 
         public void updateCrystalCore(int num)
         {
-            ownCrystalCore = num;
+            this.ownCrystalCore = num;
         }
 
         public void updateOwnMinionsInDeckCost0(bool tmp)
         {
-            ownMinionsInDeckCost0 = tmp;
+            this.ownMinionsInDeckCost0 = tmp;
         }
 
         public void updateElementals(int anzOwnElemTT, int anzOwnElemLT, int ownElementalsHaveLS)
         {
-            anzOwnElementalsThisTurn = anzOwnElemTT;
-            anzOwnElementalsLastTurn = anzOwnElemLT;
-            ownElementalsHaveLifesteal = ownElementalsHaveLS;
+            this.anzOwnElementalsThisTurn = anzOwnElemTT;
+            this.anzOwnElementalsLastTurn = anzOwnElemLT;
+            this.ownElementalsHaveLifesteal = ownElementalsHaveLS;
         }
 
         public string heroIDtoName(string s)
@@ -244,6 +245,7 @@ namespace HREngine.Bots
             {
                 this.ownMinions.Add(new Minion(item));
             }
+
             //this.ownMinions.AddRange(om);
             foreach (var item in em)
             {
@@ -252,13 +254,13 @@ namespace HREngine.Bots
             //this.enemyMinions.AddRange(em);
 
             //sort them
-            updatePositions();
+            this.updatePositions();
         }
 
         public void updateLurkersDB(Dictionary<int, IDEnumOwner> ldb)
         {
             this.LurkersDB.Clear();
-            foreach (KeyValuePair<int, IDEnumOwner> lt in ldb)
+            foreach (var lt in ldb)
             {
                 this.LurkersDB.Add(lt.Key, lt.Value);
             }
@@ -267,70 +269,121 @@ namespace HREngine.Bots
         public void updateSecretStuff(List<string> ownsecs, int numEnemSec)
         {
             this.ownSecretList.Clear();
-            foreach (string s in ownsecs)
+            foreach (var s in ownsecs)
             {
                 this.ownSecretList.Add(s);
             }
+
             this.enemySecretCount = numEnemSec;
         }
 
         public void updateTurnDeck(Dictionary<SimCard, int> deck, bool noDupl)
         {
             this.turnDeck.Clear();
-            foreach (KeyValuePair<SimCard, int> c in deck)
+            foreach (var c in deck)
             {
                 this.turnDeck.Add(c.Key, c.Value);
             }
+
             this.noDuplicates = noDupl;
-            deckCardForCost.Clear();
+            this.deckCardForCost.Clear();
         }
 
         public SimCard getDeckCardsForCost(int cost)
         {
-            if (deckCardForCost.Count == 0)
+            if (this.deckCardForCost.Count == 0)
             {
                 SimCard c;
-                foreach (KeyValuePair<SimCard, int> cn in turnDeck)
+                foreach (var cn in this.turnDeck)
                 {
                     c = cn.Key;
-                    if (!deckCardForCost.ContainsKey(c.Cost)) deckCardForCost.Add(c.Cost, c);
+                    if (!this.deckCardForCost.ContainsKey(c.Cost))
+                    {
+                        this.deckCardForCost.Add(c.Cost, c);
+                    }
                 }
             }
-            if (deckCardForCost.ContainsKey(cost)) return deckCardForCost[cost];
-            else return SimCard.None;
+
+            if (this.deckCardForCost.ContainsKey(cost))
+            {
+                return this.deckCardForCost[cost];
+            }
+
+            return SimCard.None;
         }
 
         public int numDeckCardsByTag(GameTag tag)
         {
             switch (tag)
             {
-                case GameTag.TAUNT: if (numTauntCards > -1) return numTauntCards; break;
-                case GameTag.DIVINE_SHIELD: if (numDivineShieldCards > -1) return numDivineShieldCards; break;
-                case GameTag.LIFESTEAL: if (numLifestealCards > -1) return numLifestealCards; break;
-                case GameTag.WINDFURY: if (numWindfuryCards > -1) return numWindfuryCards; break;
+                case GameTag.TAUNT:
+                    if (this.numTauntCards > -1)
+                    {
+                        return this.numTauntCards;
+                    }
+
+                    break;
+                case GameTag.DIVINE_SHIELD:
+                    if (this.numDivineShieldCards > -1)
+                    {
+                        return this.numDivineShieldCards;
+                    }
+
+                    break;
+                case GameTag.LIFESTEAL:
+                    if (this.numLifestealCards > -1)
+                    {
+                        return this.numLifestealCards;
+                    }
+
+                    break;
+                case GameTag.WINDFURY:
+                    if (this.numWindfuryCards > -1)
+                    {
+                        return this.numWindfuryCards;
+                    }
+
+                    break;
             }
-            numTauntCards = 0;
-            numDivineShieldCards = 0;
-            numLifestealCards = 0;
-            numWindfuryCards = 0;
+
+            this.numTauntCards = 0;
+            this.numDivineShieldCards = 0;
+            this.numLifestealCards = 0;
+            this.numWindfuryCards = 0;
 
             SimCard c;
-            foreach (KeyValuePair<SimCard, int> cn in turnDeck)
+            foreach (var cn in this.turnDeck)
             {
-                c = (cn.Key);
-                if (c.Taunt) numTauntCards += cn.Value;
-                if (c.DivineShield) numDivineShieldCards += cn.Value;
-                if (c.Lifesteal) numLifestealCards += cn.Value;
-                if (c.Windfury) numWindfuryCards += cn.Value;
+                c = cn.Key;
+                if (c.Taunt)
+                {
+                    this.numTauntCards += cn.Value;
+                }
+
+                if (c.DivineShield)
+                {
+                    this.numDivineShieldCards += cn.Value;
+                }
+
+                if (c.Lifesteal)
+                {
+                    this.numLifestealCards += cn.Value;
+                }
+
+                if (c.Windfury)
+                {
+                    this.numWindfuryCards += cn.Value;
+                }
             }
 
             switch (tag)
             {
-                case GameTag.TAUNT: return numTauntCards;
-                case GameTag.DIVINE_SHIELD: return numDivineShieldCards;
-                case GameTag.LIFESTEAL: return numLifestealCards;
-                case GameTag.WINDFURY: return numWindfuryCards;
+                case GameTag.TAUNT: return this.numTauntCards;
+                case GameTag.DIVINE_SHIELD: return this.numDivineShieldCards;
+                case GameTag.LIFESTEAL: return this.numLifestealCards;
+                case GameTag.WINDFURY: return this.numWindfuryCards;
             }
+
             return -1;
         }
 
@@ -356,7 +409,10 @@ namespace HREngine.Bots
 
         public void updateHero(Weapon w, CardClass heron, SimCard ability, bool abrdy, int abCost, Minion hero, int enMaxMana = 10)
         {
-            if (w.name == CardIds.Collectible.Warrior.FoolsBane) w.cantAttackHeroes = true;
+            if (w.name == CardIds.Collectible.Warrior.FoolsBane)
+            {
+                w.cantAttackHeroes = true;
+            }
 
             if (hero.own)
             {
@@ -364,10 +420,17 @@ namespace HREngine.Bots
 
                 this.ownHero = new Minion(hero);
                 this.ownHero.CardClass = heron;
-                if (this.ownHeroStartClass == CardClass.INVALID) this.ownHeroStartClass = hero.CardClass;
+                if (this.ownHeroStartClass == CardClass.INVALID)
+                {
+                    this.ownHeroStartClass = hero.CardClass;
+                }
+
                 this.ownHero.poisonous = this.ownWeapon.poisonous;
                 this.ownHero.lifesteal = this.ownWeapon.lifesteal;
-                if (this.ownWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.ownHero.immuneWhileAttacking = true;
+                if (this.ownWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow)
+                {
+                    this.ownHero.immuneWhileAttacking = true;
+                }
 
                 this.heroAbility = ability;
                 this.ownHeroPowerCost = abCost;
@@ -376,13 +439,21 @@ namespace HREngine.Bots
             else
             {
                 this.enemyWeapon = new Weapon(w);
-                this.enemyHero = new Minion(hero);;
+                this.enemyHero = new Minion(hero);
+                ;
 
                 this.enemyHero.CardClass = heron;
-                if (this.enemyHeroStartClass == CardClass.INVALID) this.enemyHeroStartClass = enemyHero.CardClass;
+                if (this.enemyHeroStartClass == CardClass.INVALID)
+                {
+                    this.enemyHeroStartClass = this.enemyHero.CardClass;
+                }
+
                 this.enemyHero.poisonous = this.enemyWeapon.poisonous;
                 this.enemyHero.lifesteal = this.enemyWeapon.lifesteal;
-                if (this.enemyWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow) this.enemyHero.immuneWhileAttacking = true;
+                if (this.enemyWeapon.name == CardIds.Collectible.Hunter.GladiatorsLongbow)
+                {
+                    this.enemyHero.immuneWhileAttacking = true;
+                }
 
                 this.enemyAbility = ability;
                 this.enemyHeroPowerCost = abCost;
@@ -416,14 +487,15 @@ namespace HREngine.Bots
         {
             this.ownMinions.Sort((a, b) => a.zonepos.CompareTo(b.zonepos));
             this.enemyMinions.Sort((a, b) => a.zonepos.CompareTo(b.zonepos));
-            int i = 0;
-            foreach (Minion m in this.ownMinions)
+            var i = 0;
+            foreach (var m in this.ownMinions)
             {
                 i++;
                 m.zonepos = i;
             }
+
             i = 0;
-            foreach (Minion m in this.enemyMinions)
+            foreach (var m in this.enemyMinions)
             {
                 i++;
                 m.zonepos = i;
@@ -435,7 +507,7 @@ namespace HREngine.Bots
             if (discoverCardsList.Count == 4)
             {
                 this.DiscoverCards.Clear();
-                for (int i = 0; i < 3; i++)
+                for (var i = 0; i < 3; i++)
                 {
                     this.DiscoverCards.Add(i, discoverCardsList[i + 1]);
                 }
@@ -449,7 +521,7 @@ namespace HREngine.Bots
 
         private Minion createNewMinion(Handcard hc, int id)
         {
-            Minion m = new Minion
+            var m = new Minion
             {
                 handcard = new Handcard(hc),
                 zonepos = id + 1,
@@ -463,18 +535,41 @@ namespace HREngine.Bots
             };
 
 
-            if (hc.card.Windfury) m.windfury = true;
-            if (hc.card.Taunt) m.taunt = true;
+            if (hc.card.Windfury)
+            {
+                m.windfury = true;
+            }
+
+            if (hc.card.Taunt)
+            {
+                m.taunt = true;
+            }
+
             if (hc.card.Charge)
             {
                 m.Ready = true;
                 m.charge = 1;
             }
-            if (hc.card.DivineShield) m.divineshild = true;
-            if (hc.card.Poisonous) m.poisonous = true;
-            if (hc.card.Lifesteal) m.lifesteal = true;
 
-            if (hc.card.Stealth) m.stealth = true;
+            if (hc.card.DivineShield)
+            {
+                m.divineshild = true;
+            }
+
+            if (hc.card.Poisonous)
+            {
+                m.poisonous = true;
+            }
+
+            if (hc.card.Lifesteal)
+            {
+                m.lifesteal = true;
+            }
+
+            if (hc.card.Stealth)
+            {
+                m.stealth = true;
+            }
 
             if (m.name == CardIds.Collectible.Priest.Lightspawn && !m.silenced)
             {
@@ -487,159 +582,460 @@ namespace HREngine.Bots
 
         public void printHero()
         {
-            help.logg("player:");
-            help.logg(
+            this.help.logg("player:");
+            this.help.logg(
                 $"{this.numMinionsPlayedThisTurn} {this.cardsPlayedThisTurn} {this.ueberladung} {this.lockedMana} {this.ownPlayerController}");
 
-            help.logg("ownhero:");
-            help.logg($"{this.ownHero.CardClass} {this.ownHero.Hp} {this.ownHero.maxHp} {this.ownHero.armor} {this.ownHero.immuneWhileAttacking} {this.ownHero.immune} {this.ownHero.entitiyID} {this.ownHero.Ready} {this.ownHero.numAttacksThisTurn} {this.ownHero.frozen} {this.ownHero.Angr} {this.ownHero.tempAttack} {this.enemyHero.stealth}");
-            help.logg(
+            this.help.logg("ownhero:");
+            this.help.logg($"{this.ownHero.CardClass} {this.ownHero.Hp} {this.ownHero.maxHp} {this.ownHero.armor} {this.ownHero.immuneWhileAttacking} {this.ownHero.immune} {this.ownHero.entitiyID} {this.ownHero.Ready} {this.ownHero.numAttacksThisTurn} {this.ownHero.frozen} {this.ownHero.Angr} {this.ownHero.tempAttack} {this.enemyHero.stealth}");
+            this.help.logg(
                 $"weapon: {this.ownWeapon.Angr} {this.ownWeapon.Durability} {this.ownWeapon.name} {this.ownWeapon.card.CardId} {(this.ownWeapon.poisonous ? 1 : 0)} {(this.ownWeapon.lifesteal ? 1 : 0)}");
-            help.logg($"ability: {this.ownAbilityisReady} {this.heroAbility.CardId}");
-            string secs = "";
-            foreach (SimCard sec in this.ownSecretList)
+            this.help.logg($"ability: {this.ownAbilityisReady} {this.heroAbility.CardId}");
+            var secs = "";
+            foreach (var sec in this.ownSecretList)
             {
                 secs += $"{sec} ";
             }
-            help.logg($"osecrets: {secs}");
-            help.logg(
+
+            this.help.logg($"osecrets: {secs}");
+            this.help.logg(
                 $"cthunbonus: {this.anzOgOwnCThunAngrBonus} {this.anzOgOwnCThunHpBonus} {this.anzOgOwnCThunTaunt}");
-            help.logg($"jadegolems: {this.anzOwnJadeGolem} {this.anzEnemyJadeGolem}");
-            help.logg(
+            this.help.logg($"jadegolems: {this.anzOwnJadeGolem} {this.anzEnemyJadeGolem}");
+            this.help.logg(
                 $"elementals: {this.anzOwnElementalsThisTurn} {this.anzOwnElementalsLastTurn} {this.ownElementalsHaveLifesteal}");
-            help.logg(Questmanager.Instance.getQuestsString());
-            help.logg($"advanced: {this.ownCrystalCore} {(this.ownMinionsInDeckCost0 ? 1 : 0)}");
-            help.logg("enemyhero:");
-            help.logg(
-                $"{(this.enemyHero.CardClass)} {this.enemyHero.Hp} {this.enemyHero.maxHp} {this.enemyHero.armor} {this.enemyHero.frozen} {this.enemyHero.immune} {this.enemyHero.entitiyID} {this.enemyHero.stealth}");
-            help.logg(
+            this.help.logg(Questmanager.Instance.getQuestsString());
+            this.help.logg($"advanced: {this.ownCrystalCore} {(this.ownMinionsInDeckCost0 ? 1 : 0)}");
+            this.help.logg("enemyhero:");
+            this.help.logg(
+                $"{this.enemyHero.CardClass} {this.enemyHero.Hp} {this.enemyHero.maxHp} {this.enemyHero.armor} {this.enemyHero.frozen} {this.enemyHero.immune} {this.enemyHero.entitiyID} {this.enemyHero.stealth}");
+            this.help.logg(
                 $"weapon: {this.enemyWeapon.Angr} {this.enemyWeapon.Durability} {this.enemyWeapon.name} {this.enemyWeapon.card.CardId} {(this.enemyWeapon.poisonous ? 1 : 0)} {(this.enemyWeapon.lifesteal ? 1 : 0)}");
-            help.logg($"ability: True {this.enemyAbility.CardId}");
-            help.logg($"fatigue: {this.ownDeckSize} {this.ownHeroFatigue} {this.enemyDeckSize} {this.enemyHeroFatigue}");
+            this.help.logg($"ability: True {this.enemyAbility.CardId}");
+            this.help.logg($"fatigue: {this.ownDeckSize} {this.ownHeroFatigue} {this.enemyDeckSize} {this.enemyHeroFatigue}");
         }
 
 
         public void printOwnMinions()
         {
-            help.logg("OwnMinions:");
-            foreach (Minion m in this.ownMinions)
+            this.help.logg("OwnMinions:");
+            foreach (var m in this.ownMinions)
             {
-                string mini =
+                var mini =
                     $"{m.name} {m.handcard.card.CardId} zp:{m.zonepos} e:{m.entitiyID} A:{m.Angr} H:{m.Hp} mH:{m.maxHp} rdy:{m.Ready} natt:{m.numAttacksThisTurn}";
-                if (m.exhausted) mini += " ex";
-                if (m.taunt) mini += " tnt";
-                if (m.frozen) mini += " frz";
-                if (m.silenced) mini += " silenced";
-                if (m.divineshild) mini += " divshield";
-                if (m.playedThisTurn) mini += " ptt";
-                if (m.windfury) mini += " wndfr";
-                if (m.stealth) mini += " stlth";
-                if (m.poisonous) mini += " poi";
-                if (m.lifesteal) mini += " lfst";
-                if (m.immune) mini += " imm";
-                if (m.untouchable) mini += " untch";
-                if (m.conceal) mini += " cncdl";
-                if (m.destroyOnOwnTurnStart) mini += " dstrOwnTrnStrt";
-                if (m.destroyOnOwnTurnEnd) mini += " dstrOwnTrnnd";
-                if (m.destroyOnEnemyTurnStart) mini += " dstrEnmTrnStrt";
-                if (m.destroyOnEnemyTurnEnd) mini += " dstrEnmTrnnd";
-                if (m.shadowmadnessed) mini += " shdwmdnssd";
-                if (m.cantLowerHPbelowONE) mini += " cantLowerHpBelowOne";
-                if (m.cantBeTargetedBySpellsOrHeroPowers) mini += " cbtBySpells";
+                if (m.exhausted)
+                {
+                    mini += " ex";
+                }
 
-                if (m.charge >= 1) mini += $" chrg({m.charge})";
-                if (m.hChoice >= 1) mini += $" hChoice({m.hChoice})";
-                if (m.AdjacentAngr >= 1) mini += $" adjaattk({m.AdjacentAngr})";
-                if (m.tempAttack != 0) mini += $" tmpattck({m.tempAttack})";
-                if (m.spellpower != 0) mini += $" spllpwr({m.spellpower})";
+                if (m.taunt)
+                {
+                    mini += " tnt";
+                }
 
-                if (m.ancestralspirit >= 1) mini += $" ancstrl({m.ancestralspirit})";
-                if (m.desperatestand >= 1) mini += $" despStand({m.desperatestand})";
-                if (m.ownBlessingOfWisdom >= 1) mini += $" ownBlssng({m.ownBlessingOfWisdom})";
-                if (m.enemyBlessingOfWisdom >= 1) mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
-                if (m.ownPowerWordGlory >= 1) mini += $" ownGlory({m.ownPowerWordGlory})";
-                if (m.enemyPowerWordGlory >= 1) mini += $" enemyGlory({m.enemyPowerWordGlory})";
-                if (m.souloftheforest >= 1) mini += $" souloffrst({m.souloftheforest})";
-                if (m.stegodon >= 1) mini += $" stegodon({m.stegodon})";
-                if (m.livingspores >= 1) mini += $" lspores({m.livingspores})";
-                if (m.explorershat >= 1) mini += $" explHat({m.explorershat})";
-                if (m.returnToHand >= 1) mini += $" retHand({m.returnToHand})";
-                if (m.infest >= 1) mini += $" infest({m.infest})";
-                if (m.deathrattle2 != null) mini += $" dethrl({m.deathrattle2.CardId})";
+                if (m.frozen)
+                {
+                    mini += " frz";
+                }
+
+                if (m.silenced)
+                {
+                    mini += " silenced";
+                }
+
+                if (m.divineshild)
+                {
+                    mini += " divshield";
+                }
+
+                if (m.playedThisTurn)
+                {
+                    mini += " ptt";
+                }
+
+                if (m.windfury)
+                {
+                    mini += " wndfr";
+                }
+
+                if (m.stealth)
+                {
+                    mini += " stlth";
+                }
+
+                if (m.poisonous)
+                {
+                    mini += " poi";
+                }
+
+                if (m.lifesteal)
+                {
+                    mini += " lfst";
+                }
+
+                if (m.immune)
+                {
+                    mini += " imm";
+                }
+
+                if (m.untouchable)
+                {
+                    mini += " untch";
+                }
+
+                if (m.conceal)
+                {
+                    mini += " cncdl";
+                }
+
+                if (m.destroyOnOwnTurnStart)
+                {
+                    mini += " dstrOwnTrnStrt";
+                }
+
+                if (m.destroyOnOwnTurnEnd)
+                {
+                    mini += " dstrOwnTrnnd";
+                }
+
+                if (m.destroyOnEnemyTurnStart)
+                {
+                    mini += " dstrEnmTrnStrt";
+                }
+
+                if (m.destroyOnEnemyTurnEnd)
+                {
+                    mini += " dstrEnmTrnnd";
+                }
+
+                if (m.shadowmadnessed)
+                {
+                    mini += " shdwmdnssd";
+                }
+
+                if (m.cantLowerHPbelowONE)
+                {
+                    mini += " cantLowerHpBelowOne";
+                }
+
+                if (m.cantBeTargetedBySpellsOrHeroPowers)
+                {
+                    mini += " cbtBySpells";
+                }
+
+                if (m.charge >= 1)
+                {
+                    mini += $" chrg({m.charge})";
+                }
+
+                if (m.hChoice >= 1)
+                {
+                    mini += $" hChoice({m.hChoice})";
+                }
+
+                if (m.AdjacentAngr >= 1)
+                {
+                    mini += $" adjaattk({m.AdjacentAngr})";
+                }
+
+                if (m.tempAttack != 0)
+                {
+                    mini += $" tmpattck({m.tempAttack})";
+                }
+
+                if (m.spellpower != 0)
+                {
+                    mini += $" spllpwr({m.spellpower})";
+                }
+
+                if (m.ancestralspirit >= 1)
+                {
+                    mini += $" ancstrl({m.ancestralspirit})";
+                }
+
+                if (m.desperatestand >= 1)
+                {
+                    mini += $" despStand({m.desperatestand})";
+                }
+
+                if (m.ownBlessingOfWisdom >= 1)
+                {
+                    mini += $" ownBlssng({m.ownBlessingOfWisdom})";
+                }
+
+                if (m.enemyBlessingOfWisdom >= 1)
+                {
+                    mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
+                }
+
+                if (m.ownPowerWordGlory >= 1)
+                {
+                    mini += $" ownGlory({m.ownPowerWordGlory})";
+                }
+
+                if (m.enemyPowerWordGlory >= 1)
+                {
+                    mini += $" enemyGlory({m.enemyPowerWordGlory})";
+                }
+
+                if (m.souloftheforest >= 1)
+                {
+                    mini += $" souloffrst({m.souloftheforest})";
+                }
+
+                if (m.stegodon >= 1)
+                {
+                    mini += $" stegodon({m.stegodon})";
+                }
+
+                if (m.livingspores >= 1)
+                {
+                    mini += $" lspores({m.livingspores})";
+                }
+
+                if (m.explorershat >= 1)
+                {
+                    mini += $" explHat({m.explorershat})";
+                }
+
+                if (m.returnToHand >= 1)
+                {
+                    mini += $" retHand({m.returnToHand})";
+                }
+
+                if (m.infest >= 1)
+                {
+                    mini += $" infest({m.infest})";
+                }
+
+                if (m.deathrattle2 != null)
+                {
+                    mini += $" dethrl({m.deathrattle2.CardId})";
+                }
+
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += $" respawn:{this.LurkersDB[m.entitiyID].IDEnum}:{this.LurkersDB[m.entitiyID].own}";
                 }
 
-                help.logg(mini);
+                this.help.logg(mini);
             }
         }
 
         public void printEnemyMinions()
         {
-            help.logg("EnemyMinions:");
-            foreach (Minion m in this.enemyMinions)
+            this.help.logg("EnemyMinions:");
+            foreach (var m in this.enemyMinions)
             {
-                string mini =
-                    $"{m.name} {m.handcard.card.CardId} zp:{m.zonepos} e:{m.entitiyID} A:{m.Angr} H:{m.Hp} mH:{m.maxHp} rdy:{m.Ready}";// +" natt:" + m.numAttacksThisTurn;
-                if (m.exhausted) mini += " ex";
-                if (m.taunt) mini += " tnt";
-                if (m.frozen) mini += " frz";
-                if (m.silenced) mini += " silenced";
-                if (m.divineshild) mini += " divshield";
-                if (m.playedThisTurn) mini += " ptt";
-                if (m.windfury) mini += " wndfr";
-                if (m.stealth) mini += " stlth";
-                if (m.poisonous) mini += " poi";
-                if (m.lifesteal) mini += " lfst";
-                if (m.immune) mini += " imm";
-                if (m.untouchable) mini += " untch";
-                if (m.conceal) mini += " cncdl";
-                if (m.destroyOnOwnTurnStart) mini += " dstrOwnTrnStrt";
-                if (m.destroyOnOwnTurnEnd) mini += " dstrOwnTrnnd";
-                if (m.destroyOnEnemyTurnStart) mini += " dstrEnmTrnStrt";
-                if (m.destroyOnEnemyTurnEnd) mini += " dstrEnmTrnnd";
-                if (m.shadowmadnessed) mini += " shdwmdnssd";
-                if (m.cantLowerHPbelowONE) mini += " cantLowerHpBelowOne";
-                if (m.cantBeTargetedBySpellsOrHeroPowers) mini += " cbtBySpells";
+                var mini =
+                    $"{m.name} {m.handcard.card.CardId} zp:{m.zonepos} e:{m.entitiyID} A:{m.Angr} H:{m.Hp} mH:{m.maxHp} rdy:{m.Ready}"; // +" natt:" + m.numAttacksThisTurn;
+                if (m.exhausted)
+                {
+                    mini += " ex";
+                }
 
-                if (m.charge >= 1) mini += $" chrg({m.charge})";
-                if (m.hChoice >= 1) mini += $" hChoice({m.hChoice})";
-                if (m.AdjacentAngr >= 1) mini += $" adjaattk({m.AdjacentAngr})";
-                if (m.tempAttack != 0) mini += $" tmpattck({m.tempAttack})";
-                if (m.spellpower != 0) mini += $" spllpwr({m.spellpower})";
+                if (m.taunt)
+                {
+                    mini += " tnt";
+                }
 
-                if (m.ancestralspirit >= 1) mini += $" ancstrl({m.ancestralspirit})";
-                if (m.desperatestand >= 1) mini += $" despStand({m.desperatestand})";
-                if (m.ownBlessingOfWisdom >= 1) mini += $" ownBlssng({m.ownBlessingOfWisdom})";
-                if (m.enemyBlessingOfWisdom >= 1) mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
-                if (m.ownPowerWordGlory >= 1) mini += $" ownGlory({m.ownPowerWordGlory})";
-                if (m.enemyPowerWordGlory >= 1) mini += $" enemyGlory({m.enemyPowerWordGlory})";
-                if (m.souloftheforest >= 1) mini += $" souloffrst({m.souloftheforest})";
-                if (m.stegodon >= 1) mini += $" stegodon({m.stegodon})";
-                if (m.livingspores >= 1) mini += $" lspores({m.livingspores})";
-                if (m.explorershat >= 1) mini += $" explHat({m.explorershat})";
-                if (m.returnToHand >= 1) mini += $" retHand({m.returnToHand})";
-                if (m.infest >= 1) mini += $" infest({m.infest})";
-                if (m.deathrattle2 != null) mini += $" dethrl({m.deathrattle2.CardId})";
+                if (m.frozen)
+                {
+                    mini += " frz";
+                }
+
+                if (m.silenced)
+                {
+                    mini += " silenced";
+                }
+
+                if (m.divineshild)
+                {
+                    mini += " divshield";
+                }
+
+                if (m.playedThisTurn)
+                {
+                    mini += " ptt";
+                }
+
+                if (m.windfury)
+                {
+                    mini += " wndfr";
+                }
+
+                if (m.stealth)
+                {
+                    mini += " stlth";
+                }
+
+                if (m.poisonous)
+                {
+                    mini += " poi";
+                }
+
+                if (m.lifesteal)
+                {
+                    mini += " lfst";
+                }
+
+                if (m.immune)
+                {
+                    mini += " imm";
+                }
+
+                if (m.untouchable)
+                {
+                    mini += " untch";
+                }
+
+                if (m.conceal)
+                {
+                    mini += " cncdl";
+                }
+
+                if (m.destroyOnOwnTurnStart)
+                {
+                    mini += " dstrOwnTrnStrt";
+                }
+
+                if (m.destroyOnOwnTurnEnd)
+                {
+                    mini += " dstrOwnTrnnd";
+                }
+
+                if (m.destroyOnEnemyTurnStart)
+                {
+                    mini += " dstrEnmTrnStrt";
+                }
+
+                if (m.destroyOnEnemyTurnEnd)
+                {
+                    mini += " dstrEnmTrnnd";
+                }
+
+                if (m.shadowmadnessed)
+                {
+                    mini += " shdwmdnssd";
+                }
+
+                if (m.cantLowerHPbelowONE)
+                {
+                    mini += " cantLowerHpBelowOne";
+                }
+
+                if (m.cantBeTargetedBySpellsOrHeroPowers)
+                {
+                    mini += " cbtBySpells";
+                }
+
+                if (m.charge >= 1)
+                {
+                    mini += $" chrg({m.charge})";
+                }
+
+                if (m.hChoice >= 1)
+                {
+                    mini += $" hChoice({m.hChoice})";
+                }
+
+                if (m.AdjacentAngr >= 1)
+                {
+                    mini += $" adjaattk({m.AdjacentAngr})";
+                }
+
+                if (m.tempAttack != 0)
+                {
+                    mini += $" tmpattck({m.tempAttack})";
+                }
+
+                if (m.spellpower != 0)
+                {
+                    mini += $" spllpwr({m.spellpower})";
+                }
+
+                if (m.ancestralspirit >= 1)
+                {
+                    mini += $" ancstrl({m.ancestralspirit})";
+                }
+
+                if (m.desperatestand >= 1)
+                {
+                    mini += $" despStand({m.desperatestand})";
+                }
+
+                if (m.ownBlessingOfWisdom >= 1)
+                {
+                    mini += $" ownBlssng({m.ownBlessingOfWisdom})";
+                }
+
+                if (m.enemyBlessingOfWisdom >= 1)
+                {
+                    mini += $" enemyBlssng({m.enemyBlessingOfWisdom})";
+                }
+
+                if (m.ownPowerWordGlory >= 1)
+                {
+                    mini += $" ownGlory({m.ownPowerWordGlory})";
+                }
+
+                if (m.enemyPowerWordGlory >= 1)
+                {
+                    mini += $" enemyGlory({m.enemyPowerWordGlory})";
+                }
+
+                if (m.souloftheforest >= 1)
+                {
+                    mini += $" souloffrst({m.souloftheforest})";
+                }
+
+                if (m.stegodon >= 1)
+                {
+                    mini += $" stegodon({m.stegodon})";
+                }
+
+                if (m.livingspores >= 1)
+                {
+                    mini += $" lspores({m.livingspores})";
+                }
+
+                if (m.explorershat >= 1)
+                {
+                    mini += $" explHat({m.explorershat})";
+                }
+
+                if (m.returnToHand >= 1)
+                {
+                    mini += $" retHand({m.returnToHand})";
+                }
+
+                if (m.infest >= 1)
+                {
+                    mini += $" infest({m.infest})";
+                }
+
+                if (m.deathrattle2 != null)
+                {
+                    mini += $" dethrl({m.deathrattle2.CardId})";
+                }
+
                 if (m.name == CardIds.Collectible.Neutral.MoatLurker && this.LurkersDB.ContainsKey(m.entitiyID))
                 {
                     mini += $" respawn:{this.LurkersDB[m.entitiyID].IDEnum}:{this.LurkersDB[m.entitiyID].own}";
                 }
 
-                help.logg(mini);
+                this.help.logg(mini);
             }
         }
 
         public void printOwnDeck()
         {
-            string od = "od: ";
-            foreach (KeyValuePair<SimCard, int> e in this.turnDeck)
+            var od = "od: ";
+            foreach (var e in this.turnDeck)
             {
                 od += $"{e.Key},{e.Value};";
             }
+
             Helpfunctions.Instance.logg(od);
         }
     }
-
 }

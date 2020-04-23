@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_NAX12_03H : SimTemplate //* 3/5 Jaws
-	{
-		//Whenever a minion with Deathrattle dies, gain +2
-		//Handled in triggerAMinionDied()
-		
+    class Sim_NAX12_03H : SimTemplate //* 3/5 Jaws
+    {
+        //Whenever a minion with Deathrattle dies, gain +2
+        //Handled in triggerAMinionDied()
+
         SimCard weapon = CardIds.NonCollectible.Neutral.JawsHeroic;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
         }
     }
 }

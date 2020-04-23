@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,14 +24,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_106 : SimTemplate //fierywaraxe
-	{
+    class Sim_CS2_106 : SimTemplate //fierywaraxe
+    {
         SimCard card = CardIds.Collectible.Warrior.FieryWarAxe;
-//
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            p.equipWeapon(card,ownplay);
-		}
 
-	}
+//
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            p.equipWeapon(this.card, ownplay);
+        }
+    }
 }

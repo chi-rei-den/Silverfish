@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,15 +24,15 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_KAR_063 : SimTemplate //* Spirit Claws
-	{
-		//Has +2 Attack while you have Spell Damage.
+    class Sim_KAR_063 : SimTemplate //* Spirit Claws
+    {
+        //Has +2 Attack while you have Spell Damage.
 
         SimCard weapon = CardIds.Collectible.Shaman.SpiritClaws;
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            p.equipWeapon(weapon, ownplay);
+            p.equipWeapon(this.weapon, ownplay);
             if (ownplay)
             {
                 if (p.spellpower > 0)
@@ -55,5 +52,5 @@ namespace HREngine.Bots
                 }
             }
         }
-	}
+    }
 }

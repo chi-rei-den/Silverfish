@@ -1,8 +1,5 @@
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,9 +24,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CFM_669 : SimTemplate //* Burgly Bully
-	{
-		// Whenever your opponent casts a spell, add a Coin to your hand.
+    class Sim_CFM_669 : SimTemplate //* Burgly Bully
+    {
+        // Whenever your opponent casts a spell, add a Coin to your hand.
 
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {

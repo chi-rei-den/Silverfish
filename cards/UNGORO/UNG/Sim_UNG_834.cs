@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,21 +24,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_834 : SimTemplate //* Feeding Time
-	{
-		//Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.
+    class Sim_UNG_834 : SimTemplate //* Feeding Time
+    {
+        //Deal $3 damage to a minion. Summon three 1/1 Pterrordaxes.
 
         SimCard kid = CardIds.NonCollectible.Warlock.FeedingTime_PterrordaxToken;
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(3) : p.getEnemySpellDamageDamage(3);
             p.minionGetDamageOrHeal(target, dmg);
-			
-			int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay, false);
-            p.callKid(kid, pos, ownplay);
-            p.callKid(kid, pos, ownplay);
-		}
-	}
+
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay, false);
+            p.callKid(this.kid, pos, ownplay);
+            p.callKid(this.kid, pos, ownplay);
+        }
+    }
 }

@@ -21,11 +21,9 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_DALA_Warrior_08 : SimTemplate //* 护甲 Armored Up
-	{
-		//
-		//
-
-
-	}
+    class Sim_DALA_Warrior_08 : SimTemplate //* 护甲 Armored Up
+    {
+        //
+        //
+    }
 }

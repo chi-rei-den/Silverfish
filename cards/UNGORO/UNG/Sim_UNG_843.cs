@@ -1,9 +1,6 @@
-using HearthDb.Enums;
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using HearthDb.Enums;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,21 +25,21 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_843 : SimTemplate //* The Voraxx
-	{
-		//After you cast a spell on this minion, summon a 1/1 Plant and cast another copy on it.
+    class Sim_UNG_843 : SimTemplate //* The Voraxx
+    {
+        //After you cast a spell on this minion, summon a 1/1 Plant and cast another copy on it.
 
         SimCard kid = CardIds.NonCollectible.Neutral.PlantToken; //Plant
-        
+
         public override void onCardIsGoingToBePlayed(Playfield p, Handcard hc, bool wasOwnCard, Minion triggerEffectMinion)
         {
             if (hc.card.Type == CardType.SPELL && hc.target != null && hc.target.entitiyID == triggerEffectMinion.entitiyID)
             {
-                List<Minion> tmp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
+                var tmp = triggerEffectMinion.own ? p.ownMinions : p.enemyMinions;
 
                 if (tmp.Count < 7)
                 {
-                    p.callKid(kid, triggerEffectMinion.zonepos, triggerEffectMinion.own);
+                    p.callKid(this.kid, triggerEffectMinion.zonepos, triggerEffectMinion.own);
                     hc.card.Simulator.onCardPlay(p, wasOwnCard, tmp[triggerEffectMinion.zonepos], hc.extraParam2);
                 }
             }

@@ -1,6 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -25,14 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_832pa: SimTemplate //* Scarab Shell
+    class Sim_ICC_832pa : SimTemplate //* Scarab Shell
     {
         // +3 Armor.
 
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            if (ownplay) p.minionGetArmor(p.ownHero, 3);
-            else p.minionGetArmor(p.enemyHero, 3);
+            if (ownplay)
+            {
+                p.minionGetArmor(p.ownHero, 3);
+            }
+            else
+            {
+                p.minionGetArmor(p.enemyHero, 3);
+            }
         }
     }
 }

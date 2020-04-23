@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,7 +23,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_EX1_007 : SimTemplate//* Acolyte of Pain
+    class Sim_EX1_007 : SimTemplate //* Acolyte of Pain
     {
         // Whenever this minion takes damage, draw a card.
 
@@ -34,9 +31,9 @@ namespace HREngine.Bots
         {
             if (m.anzGotDmg > 0)
             {
-                int tmp = m.anzGotDmg;
+                var tmp = m.anzGotDmg;
                 m.anzGotDmg = 0;
-                for (int i = 0; i < tmp; i++)
+                for (var i = 0; i < tmp; i++)
                 {
                     p.drawACard(SimCard.None, m.own);
                 }

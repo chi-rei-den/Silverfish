@@ -1,7 +1,4 @@
-using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,21 +23,20 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_126 : SimTemplate //betrayal
-	{
-
+    class Sim_EX1_126 : SimTemplate //betrayal
+    {
 //    zwingt einen feindlichen diener, seinen schaden benachbarten dienern zuzufügen.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             //attack right neightbor
-            if (target.Angr>0)
+            if (target.Angr > 0)
             {
-                int dmg = target.Angr;
-                List<Minion> temp = (ownplay) ? p.enemyMinions : p.ownMinions;
-                foreach (Minion m in p.enemyMinions)
+                var dmg = target.Angr;
+                var temp = ownplay ? p.enemyMinions : p.ownMinions;
+                foreach (var m in p.enemyMinions)
                 {
-                    if (m.zonepos + 1 == target.zonepos || m.zonepos-1 == target.zonepos)
+                    if (m.zonepos + 1 == target.zonepos || m.zonepos - 1 == target.zonepos)
                     {
                         /*int oldhp = m.Hp;
                         p.minionGetDamageOrHeal(m, dmg);
@@ -49,10 +45,7 @@ namespace HREngine.Bots
                         p.minionAttacksMinion(target, m, true);
                     }
                 }
-
             }
-
-		}
-
-	}
+        }
+    }
 }

@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,14 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_UNG_845 : SimTemplate //* Igneous Elemental
-	{
-		//Deathrattle: Add two 1/2 Elementals to your hand.
+    class Sim_UNG_845 : SimTemplate //* Igneous Elemental
+    {
+        //Deathrattle: Add two 1/2 Elementals to your hand.
 
         public override void onDeathrattle(Playfield p, Minion m)
         {
             p.drawACard(CardIds.NonCollectible.Neutral.FireFly_FlameElementalToken, m.own, true);
             p.drawACard(CardIds.NonCollectible.Neutral.FireFly_FlameElementalToken, m.own, true);
         }
-	}
+    }
 }

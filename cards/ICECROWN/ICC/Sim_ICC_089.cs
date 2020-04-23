@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,7 +24,7 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-    class Sim_ICC_089: SimTemplate //* Ice Fishing
+    class Sim_ICC_089 : SimTemplate //* Ice Fishing
     {
         // Draw 2 Murlocs from your deck.
 
@@ -36,19 +33,26 @@ namespace HREngine.Bots
             if (ownplay)
             {
                 SimCard c;
-                int count = 0;
-                foreach (KeyValuePair<SimCard, int> cid in p.prozis.turnDeck)
+                var count = 0;
+                foreach (var cid in p.prozis.turnDeck)
                 {
-                    c = (cid.Key);
+                    c = cid.Key;
                     if (c.Race == Race.MURLOC)
                     {
-                        for (int i = 0; i < cid.Value; i++)
+                        for (var i = 0; i < cid.Value; i++)
                         {
                             p.drawACard(cid.Key, ownplay);
                             count++;
-                            if (count > 1) break;
+                            if (count > 1)
+                            {
+                                break;
+                            }
                         }
-                        if (count > 1) break;
+
+                        if (count > 1)
+                        {
+                            break;
+                        }
                     }
                 }
             }

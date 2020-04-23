@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,19 +24,19 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_061 : SimTemplate //* On the Hunt
-	{
-		//Deal 1 damage. Summon a 1/1 Mastiff.
+    class Sim_OG_061 : SimTemplate //* On the Hunt
+    {
+        //Deal 1 damage. Summon a 1/1 Mastiff.
 
         SimCard kid = CardIds.NonCollectible.Hunter.OntheHunt_MastiffToken;
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
-            int dmg = (ownplay) ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
+            var dmg = ownplay ? p.getSpellDamageDamage(1) : p.getEnemySpellDamageDamage(1);
             p.minionGetDamageOrHeal(target, dmg);
-			
-			int pos = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, pos, ownplay);
-		}
-	}
+
+            var pos = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, pos, ownplay);
+        }
+    }
 }

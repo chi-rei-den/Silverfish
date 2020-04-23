@@ -1,7 +1,4 @@
-using HearthDb.Enums;
-using System;
-using System.Collections.Generic;
-using System.Text;
+
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,20 +23,24 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_CS2_041 : SimTemplate //* ancestralhealing
-	{
-
+    class Sim_CS2_041 : SimTemplate //* ancestralhealing
+    {
 //    Restore a minion to full Health and give it Taunt.
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.minionGetDamageOrHeal(target, -1000);
             if (!target.taunt)
             {
                 target.taunt = true;
-                if (target.own) p.anzOwnTaunt++;
-                else p.anzEnemyTaunt++;
+                if (target.own)
+                {
+                    p.anzOwnTaunt++;
+                }
+                else
+                {
+                    p.anzEnemyTaunt++;
+                }
             }
-		}
-
-	}
+        }
+    }
 }

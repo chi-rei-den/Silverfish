@@ -1,18 +1,12 @@
+using HearthDb.Enums;
+using log4net;
+using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using log4net;
-using Newtonsoft.Json;
 using Triton.Bot.Settings;
 using Triton.Common;
-using Triton.Game.Mapping;
 using Logger = Triton.Common.LogUtilities.Logger;
-
-using Triton.Bot;
-using Triton.Common;
-using Triton.Game;
-using Triton.Game.Data;
-using HearthDb.Enums;
 
 namespace HREngine.Bots
 {
@@ -24,10 +18,7 @@ namespace HREngine.Bots
         private static DefaultRoutineSettings _instance;
 
         /// <summary>The current instance for this class. </summary>
-        public static DefaultRoutineSettings Instance
-        {
-            get { return _instance ?? (_instance = new DefaultRoutineSettings()); }
-        }
+        public static DefaultRoutineSettings Instance => _instance ?? (_instance = new DefaultRoutineSettings());
 
         /// <summary>The default ctor. Will use the settings path "DefaultRoutine".</summary>
         public DefaultRoutineSettings()
@@ -48,16 +39,16 @@ namespace HREngine.Bots
         [DefaultValue(CardClass.HUNTER)]
         public CardClass ArenaPreferredClass1
         {
-            get { return _arenaPreferredClass1; }
+            get => this._arenaPreferredClass1;
             set
             {
-                if (!value.Equals(_arenaPreferredClass1))
+                if (!value.Equals(this._arenaPreferredClass1))
                 {
-                    _arenaPreferredClass1 = value;
-                    NotifyPropertyChanged(() => ArenaPreferredClass1);
+                    this._arenaPreferredClass1 = value;
+                    this.NotifyPropertyChanged(() => this.ArenaPreferredClass1);
 
                 }
-                Log.InfoFormat("[默认策略设置] 竞技场优先种族1 = {0}.", _arenaPreferredClass1);
+                Log.InfoFormat("[默认策略设置] 竞技场优先种族1 = {0}.", this._arenaPreferredClass1);
             }
         }
 
@@ -67,15 +58,15 @@ namespace HREngine.Bots
         [DefaultValue(CardClass.WARLOCK)]
         public CardClass ArenaPreferredClass2
         {
-            get { return _arenaPreferredClass2; }
+            get => this._arenaPreferredClass2;
             set
             {
-                if (!value.Equals(_arenaPreferredClass2))
+                if (!value.Equals(this._arenaPreferredClass2))
                 {
-                    _arenaPreferredClass2 = value;
-                    NotifyPropertyChanged(() => ArenaPreferredClass2);
+                    this._arenaPreferredClass2 = value;
+                    this.NotifyPropertyChanged(() => this.ArenaPreferredClass2);
                 }
-                Log.InfoFormat("[默认策略设置] 竞技场优先种族2 = {0}.", _arenaPreferredClass2);
+                Log.InfoFormat("[默认策略设置] 竞技场优先种族2 = {0}.", this._arenaPreferredClass2);
             }
         }
 
@@ -85,15 +76,15 @@ namespace HREngine.Bots
         [DefaultValue(CardClass.PRIEST)]
         public CardClass ArenaPreferredClass3
         {
-            get { return _arenaPreferredClass3; }
+            get => this._arenaPreferredClass3;
             set
             {
-                if (!value.Equals(_arenaPreferredClass3))
+                if (!value.Equals(this._arenaPreferredClass3))
                 {
-                    _arenaPreferredClass3 = value;
-                    NotifyPropertyChanged(() => ArenaPreferredClass3);
+                    this._arenaPreferredClass3 = value;
+                    this.NotifyPropertyChanged(() => this.ArenaPreferredClass3);
                 }
-                Log.InfoFormat("[默认策略设置] 竞技场优先种族3 = {0}.", _arenaPreferredClass3);
+                Log.InfoFormat("[默认策略设置] 竞技场优先种族3 = {0}.", this._arenaPreferredClass3);
             }
         }
 
@@ -103,15 +94,15 @@ namespace HREngine.Bots
         [DefaultValue(CardClass.ROGUE)]
         public CardClass ArenaPreferredClass4
         {
-            get { return _arenaPreferredClass4; }
+            get => this._arenaPreferredClass4;
             set
             {
-                if (!value.Equals(_arenaPreferredClass4))
+                if (!value.Equals(this._arenaPreferredClass4))
                 {
-                    _arenaPreferredClass4 = value;
-                    NotifyPropertyChanged(() => ArenaPreferredClass4);
+                    this._arenaPreferredClass4 = value;
+                    this.NotifyPropertyChanged(() => this.ArenaPreferredClass4);
                 }
-                Log.InfoFormat("[默认策略设置] 竞技场优先种族4 = {0}.", _arenaPreferredClass4);
+                Log.InfoFormat("[默认策略设置] 竞技场优先种族4 = {0}.", this._arenaPreferredClass4);
             }
         }
 
@@ -121,15 +112,15 @@ namespace HREngine.Bots
         [DefaultValue(CardClass.WARRIOR)]
         public CardClass ArenaPreferredClass5
         {
-            get { return _arenaPreferredClass5; }
+            get => this._arenaPreferredClass5;
             set
             {
-                if (!value.Equals(_arenaPreferredClass5))
+                if (!value.Equals(this._arenaPreferredClass5))
                 {
-                    _arenaPreferredClass5 = value;
-                    NotifyPropertyChanged(() => ArenaPreferredClass5);
+                    this._arenaPreferredClass5 = value;
+                    this.NotifyPropertyChanged(() => this.ArenaPreferredClass5);
                 }
-                Log.InfoFormat("[默认策略设置] 竞技场优先种族5 = {0}.", _arenaPreferredClass5);
+                Log.InfoFormat("[默认策略设置] 竞技场优先种族5 = {0}.", this._arenaPreferredClass5);
             }
         }
 
@@ -141,7 +132,7 @@ namespace HREngine.Bots
         {
             get
             {
-                return _allClasses ?? (_allClasses = new ObservableCollection<CardClass>
+                return this._allClasses ?? (this._allClasses = new ObservableCollection<CardClass>
                 {
                     CardClass.DRUID,
                     CardClass.HUNTER,
@@ -160,15 +151,15 @@ namespace HREngine.Bots
         [DefaultValue("Control")]
         public string DefaultBehavior
         {
-            get { return _defaultBehavior; }
+            get => this._defaultBehavior;
             set
             {
-                if (!value.Equals(_defaultBehavior))
+                if (!value.Equals(this._defaultBehavior))
                 {
-                    _defaultBehavior = value;
-                    NotifyPropertyChanged(() => DefaultBehavior);
+                    this._defaultBehavior = value;
+                    this.NotifyPropertyChanged(() => this.DefaultBehavior);
                 }
-                Log.InfoFormat("[默认策略设置] 默认战斗模式 = {0}.", _defaultBehavior);
+                Log.InfoFormat("[默认策略设置] 默认战斗模式 = {0}.", this._defaultBehavior);
             }
         }
 
@@ -176,20 +167,11 @@ namespace HREngine.Bots
 
         /// <summary>All enum values for this type.</summary>
         [JsonIgnore]
-        public ObservableCollection<string> AllBehav
-        {
-            get
-            {
-                return _allBehav ?? (_allBehav = new ObservableCollection<string>(Silverfish.Instance.BehaviorDB.Keys));
-            }
-        }
+        public ObservableCollection<string> AllBehav => this._allBehav ?? (this._allBehav = new ObservableCollection<string>(Silverfish.Instance.BehaviorDB.Keys));
 
-	    private readonly List<int> _questIdsToCancel = new List<int>();
+        private readonly List<int> _questIdsToCancel = new List<int>();
 
-		[JsonIgnore]
-	    public List<int> QuestIdsToCancel
-	    {
-		    get { return _questIdsToCancel; }
-	    }
+        [JsonIgnore]
+        public List<int> QuestIdsToCancel => this._questIdsToCancel;
     }
 }

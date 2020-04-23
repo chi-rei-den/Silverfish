@@ -1,8 +1,5 @@
 using Chireiden.Silverfish;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -27,18 +24,18 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_AT_076 : SimTemplate //* Murloc Knight
-	{
-		//Inspire: Summon a random Murloc.
-		
-		SimCard kid = CardIds.Collectible.Neutral.ColdlightOracle;//Coldlight Oracle 2/2
+    class Sim_AT_076 : SimTemplate //* Murloc Knight
+    {
+        //Inspire: Summon a random Murloc.
 
-		public override void onInspire(Playfield p, Minion m, bool own)
+        SimCard kid = CardIds.Collectible.Neutral.ColdlightOracle; //Coldlight Oracle 2/2
+
+        public override void onInspire(Playfield p, Minion m, bool own)
         {
-			if (m.own == own)
-			{
-				p.callKid(kid, m.zonepos, m.own);
-			}
+            if (m.own == own)
+            {
+                p.callKid(this.kid, m.zonepos, m.own);
+            }
         }
-	}
+    }
 }

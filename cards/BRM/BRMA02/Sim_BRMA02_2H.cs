@@ -1,9 +1,5 @@
 using Chireiden.Silverfish;
-using HearthDb.Enums;
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,16 +24,16 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_BRMA02_2H : SimTemplate //* Jeering Crowd
-	{
-		// Hero Power: Summon a 1/1 Spectator with Taunt.
-		
-		SimCard kid = CardIds.NonCollectible.Neutral.JeeringCrowd_DarkIronSpectatorToken;//Dark Iron Spectator
-		
+    class Sim_BRMA02_2H : SimTemplate //* Jeering Crowd
+    {
+        // Hero Power: Summon a 1/1 Spectator with Taunt.
+
+        SimCard kid = CardIds.NonCollectible.Neutral.JeeringCrowd_DarkIronSpectatorToken; //Dark Iron Spectator
+
         public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
         {
-            int place = (ownplay) ? p.ownMinions.Count : p.enemyMinions.Count;
-            p.callKid(kid, place, ownplay, false);
+            var place = ownplay ? p.ownMinions.Count : p.enemyMinions.Count;
+            p.callKid(this.kid, place, ownplay, false);
         }
-	}
+    }
 }

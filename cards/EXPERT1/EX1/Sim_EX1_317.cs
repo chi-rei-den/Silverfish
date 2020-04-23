@@ -1,7 +1,4 @@
 using Chireiden.Silverfish;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,16 +23,14 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_EX1_317 : SimTemplate //sensedemons
-	{
-
+    class Sim_EX1_317 : SimTemplate //sensedemons
+    {
 //    fügt eurer hand zwei zufällige dämonen aus eurem deck hinzu.
 
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.drawACard(SimCard.None, ownplay);
             p.drawACard(SimCard.None, ownplay);
-		}
-
-	}
+        }
+    }
 }

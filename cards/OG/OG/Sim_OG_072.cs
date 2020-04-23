@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -26,13 +23,13 @@ _END_TEMPLATE_ */
 
 namespace HREngine.Bots
 {
-	class Sim_OG_072 : SimTemplate //* Journey Below
-	{
-		//Discover a Deathrattle card
-		
-		public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
-		{
+    class Sim_OG_072 : SimTemplate //* Journey Below
+    {
+        //Discover a Deathrattle card
+
+        public override void onCardPlay(Playfield p, bool ownplay, Minion target, int choice)
+        {
             p.drawACard(CardIds.Collectible.Neutral.LeperGnome, ownplay, true);
-		}
-	}
+        }
+    }
 }

@@ -1,7 +1,4 @@
 using HearthDb;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 /* _BEGIN_TEMPLATE_
 {
@@ -28,33 +25,46 @@ namespace HREngine.Bots
 {
     class Sim_GVG_087 : SimTemplate //* Steamwheedle Sniper
     {
-
         //  Your Hero Power can target minions. 
 
         public override void onAuraStarts(Playfield p, Minion m)
         {
-            if (m.own) p.weHaveSteamwheedleSniper = true;
-            else p.enemyHaveSteamwheedleSniper = true;
+            if (m.own)
+            {
+                p.weHaveSteamwheedleSniper = true;
+            }
+            else
+            {
+                p.enemyHaveSteamwheedleSniper = true;
+            }
         }
 
         public override void onAuraEnds(Playfield p, Minion m)
         {
             if (m.own)
             {
-                bool hasss = false;
-                foreach (Minion mnn in p.ownMinions)
+                var hasss = false;
+                foreach (var mnn in p.ownMinions)
                 {
-                    if (m.name == CardIds.Collectible.Hunter.SteamwheedleSniper && !mnn.silenced) hasss = true;
+                    if (m.name == CardIds.Collectible.Hunter.SteamwheedleSniper && !mnn.silenced)
+                    {
+                        hasss = true;
+                    }
                 }
+
                 p.weHaveSteamwheedleSniper = hasss;
             }
             else
             {
-                bool hasss = false;
-                foreach (Minion mnn in p.enemyMinions)
+                var hasss = false;
+                foreach (var mnn in p.enemyMinions)
                 {
-                    if (m.name == CardIds.Collectible.Hunter.SteamwheedleSniper && !mnn.silenced) hasss = true;
+                    if (m.name == CardIds.Collectible.Hunter.SteamwheedleSniper && !mnn.silenced)
+                    {
+                        hasss = true;
+                    }
                 }
+
                 p.enemyHaveSteamwheedleSniper = hasss;
             }
         }
